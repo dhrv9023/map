@@ -706,6 +706,7 @@
     <div class="resource-box">
       <h4>📚 Resources — HF + Tracking</h4>
       <ul>
+        <li><a href="https://github.com/DataTalksClub/mlops-zoomcamp">MLOps Zoomcamp (DataTalksClub)</a> — <strong>Gold standard free MLOps course.</strong> Hands-on modules on experiment tracking (MLflow), orchestration (Prefect), model deployment (Docker, Flask, AWS), and production monitoring (Evidently).</li>
         <li><a href="https://huggingface.co/learn/nlp-course">Hugging Face NLP Course (free)</a> — Official, comprehensive. Covers tokenizers, fine-tuning, model hub. Do the whole thing.</li>
         <li><a href="https://mlflow.org/docs/latest/tutorials-and-examples/index.html">MLflow Tutorials</a> — Learn experiment tracking, model registry, deployment</li>
         <li><a href="https://docs.wandb.ai/guides">Weights & Biases Guides</a> — Better UI than MLflow. Free for personal use.</li>
@@ -756,6 +757,7 @@
     <div class="resource-box">
       <h4>📚 Resources — RAG</h4>
       <ul>
+        <li style="background:rgba(124,106,245,.08);padding:6px 10px;border-radius:6px;margin:4px 0"><span class="pill pill-purple" style="font-size:10px;margin-right:6px">⭐ GOLD STANDARD</span><a href="https://fullstackdeeplearning.com/llm-bootcamp/">Full Stack LLM Bootcamp (FSDL)</a> — <strong>The premier production LLM systems course.</strong> Real-world architectures, evaluation harnesses, GPU serving economics, vector search at scale, and deployment pipelines. Free lectures + labs.</li>
         <li><a href="https://cookbook.openai.com">OpenAI Cookbook</a> — Production RAG patterns, embeddings, function calling. Best practical resource.</li>
         <li><a href="https://www.youtube.com/playlist?list=PLfaIDFEXuae162L8h38_9SgV2-L9xS15S">RAG From Scratch — LangChain (YouTube Playlist)</a> — 14 videos covering every RAG technique</li>
         <li><a href="https://docs.llamaindex.ai/en/stable/">LlamaIndex Documentation</a> — Best framework for RAG. Read the high-level concepts + tutorials.</li>
@@ -800,6 +802,7 @@
     <div class="resource-box">
       <h4>📚 Resources — Fine-tuning</h4>
       <ul>
+        <li><a href="https://timdettmers.com/">Tim Dettmers' Blog (Creator of bitsandbytes &amp; QLoRA)</a> — The definitive guides on GPU hardware selection, VRAM calculations, and the math/intuition behind 8-bit &amp; 4-bit LLM quantization.</li>
         <li><a href="https://huggingface.co/docs/trl/index">TRL (Transformer Reinforcement Learning) Docs</a> — Official HF library for SFT, DPO, RLHF</li>
         <li><a href="https://github.com/unslothai/unsloth">Unsloth GitHub</a> — 2-5x faster fine-tuning. Use this for QLoRA. Excellent notebooks included.</li>
         <li><a href="https://www.youtube.com/watch?v=eC6Hd1hFvos">Fine-tune Llama 3 with Unsloth (YouTube)</a> — Practical walkthrough</li>
@@ -870,6 +873,7 @@
     <div class="resource-box">
       <h4>📚 Resources — Inference</h4>
       <ul>
+        <li style="background:rgba(45,212,191,.08);padding:6px 10px;border-radius:6px;margin:4px 0"><span class="pill pill-teal" style="font-size:10px;margin-right:6px">⭐ GOLD STANDARD</span><a href="https://efficientml.ai/">MIT 6.5940: Efficient ML Computing (Prof. Song Han)</a> — <strong>The premier course on ML efficiency.</strong> Lectures on INT8/INT4/FP8 quantization, KV cache memory footprint, pruning, and hardware-aware inference acceleration. Free slides + YouTube recordings.</li>
         <li><a href="https://docs.vllm.ai/">vLLM Documentation</a> — THE standard for LLM serving. Read everything. Understand PagedAttention.</li>
         <li><a href="https://arxiv.org/abs/2309.06180">vLLM Paper — Efficient Memory Management (arXiv)</a> — Read this paper. Understand PagedAttention deeply.</li>
         <li><a href="https://huggingface.co/docs/text-generation-inference/index">Text Generation Inference (TGI) Docs</a> — Alternative to vLLM. Good to know.</li>
@@ -909,6 +913,87 @@
     <strong>Prerequisites for Phase 4:</strong> You should have completed OS fundamentals (OSTEP memory + concurrency chapters) and C++ reading ability BEFORE starting this phase. If you haven't, see the "OS & C++" tab and do those first. GPU architecture won't make sense without understanding virtual memory, paging, and cache hierarchies.
   </div>
 
+  <!-- THE 4 GOLD STANDARD COURSES -->
+  <div class="card card-accent" style="margin:2rem 0;border:1.5px solid var(--accent);background:var(--bg2)">
+    <div class="card-title" style="font-size:20px;display:flex;align-items:center;gap:8px">
+      <span>🏆 The 4 Gold-Standard AI Systems Curricula (100% Free on the Web)</span>
+    </div>
+    <div class="card-body">
+      <p style="font-size:14.5px;color:var(--text2);margin-bottom:1.25rem;line-height:1.6">
+        No single commercial video course covers full AI Infrastructure because it spans silicon hardware, ML compilers, distributed synchronization, and cloud clusters. Instead, anchor your systems journey in these <strong>4 open-source, university-grade gold standards</strong> perfectly mapped across your roadmap phases:
+      </p>
+
+      <div class="grid2" style="gap:1rem;margin-top:1rem">
+        <!-- 1. Stanford CS149 -->
+        <div class="res-card" style="border-left:3px solid var(--coral);background:var(--bg3)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <span class="pill pill-red" style="font-size:10px">PHASE 4: WEEKS 1–4</span>
+            <span class="pill pill-purple" style="font-size:10px">STANFORD</span>
+          </div>
+          <div class="res-name" style="font-size:16px;margin-top:4px">Stanford CS149: Parallel Computing</div>
+          <div style="font-size:13px;color:var(--text3);font-style:italic">Prof. Kayvon Fatahalian</div>
+          <p style="font-size:13.5px;color:var(--text2);line-height:1.6;margin:.5rem 0">
+            <strong>The hardware &amp; parallel execution bible.</strong> Teaches multi-core execution, SIMD vector instructions, memory bandwidth saturation, the roofline model, and GPU warp scheduling.
+          </p>
+          <div style="margin-top:auto;padding-top:6px;font-size:13px">
+            <a href="https://www.youtube.com/playlist?list=PLoROMvodv4rPOWA-omMM6STXaWW4FvJT8" target="_blank">📺 Free YouTube Lectures</a> &bull; 
+            <a href="https://gfxcourses.stanford.edu/cs149/" target="_blank">Website &amp; Slides</a>
+          </div>
+        </div>
+
+        <!-- 2. CUDA Mode -->
+        <div class="res-card" style="border-left:3px solid var(--coral);background:var(--bg3)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <span class="pill pill-red" style="font-size:10px">PHASE 4: WEEKS 1–7</span>
+            <span class="pill pill-green" style="font-size:10px">OPEN COMMUNITY</span>
+          </div>
+          <div class="res-name" style="font-size:16px;margin-top:4px">CUDA Mode (Lectures &amp; Repo)</div>
+          <div style="font-size:13px;color:var(--text3);font-style:italic">Engineers from PyTorch, Meta, NVIDIA &amp; OpenAI</div>
+          <p style="font-size:13.5px;color:var(--text2);line-height:1.6;margin:.5rem 0">
+            <strong>Hands-on GPU kernel engineering &amp; profiling.</strong> 30+ open lectures: writing custom CUDA kernels, PyTorch C++ extensions, Nsight Systems profiling, Triton kernels, and FlashAttention from scratch.
+          </p>
+          <div style="margin-top:auto;padding-top:6px;font-size:13px">
+            <a href="https://github.com/cuda-mode" target="_blank">💻 GitHub Repository</a> &bull; 
+            <a href="https://www.youtube.com/@cuda-mode" target="_blank">📺 YouTube Channel</a>
+          </div>
+        </div>
+
+        <!-- 3. MIT 6.5940 -->
+        <div class="res-card" style="border-left:3px solid var(--accent);background:var(--bg3)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <span class="pill pill-purple" style="font-size:10px">PHASE 3 &amp; 4: INFERENCE</span>
+            <span class="pill pill-amber" style="font-size:10px">MIT</span>
+          </div>
+          <div class="res-name" style="font-size:16px;margin-top:4px">MIT 6.5940: TinyML &amp; Efficient ML Systems</div>
+          <div style="font-size:13px;color:var(--text3);font-style:italic">Prof. Song Han</div>
+          <p style="font-size:13.5px;color:var(--text2);line-height:1.6;margin:.5rem 0">
+            <strong>The gold standard for model compression &amp; speedup.</strong> INT8/INT4/FP8 quantization, AWQ, SmoothQuant, KV cache memory management, model pruning, and hardware-efficient transformer inference.
+          </p>
+          <div style="margin-top:auto;padding-top:6px;font-size:13px">
+            <a href="https://efficientml.ai/" target="_blank">🌐 Course Website &amp; Slides</a> &bull; 
+            <a href="https://www.youtube.com/playlist?list=PL80kAHvBhnHqF3s_Qp_v-Vw5fM_Gv_C2Q" target="_blank">📺 YouTube Lectures</a>
+          </div>
+        </div>
+
+        <!-- 4. Full Stack LLM Bootcamp -->
+        <div class="res-card" style="border-left:3px solid var(--teal);background:var(--bg3)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <span class="pill pill-teal" style="font-size:10px">PHASE 3: WEEKS 1–14</span>
+            <span class="pill pill-green" style="font-size:10px">FSDL</span>
+          </div>
+          <div class="res-name" style="font-size:16px;margin-top:4px">Full Stack LLM Bootcamp (FSDL)</div>
+          <div style="font-size:13px;color:var(--text3);font-style:italic">Full Stack Deep Learning Team</div>
+          <p style="font-size:13.5px;color:var(--text2);line-height:1.6;margin:.5rem 0">
+            <strong>Full-stack AI production architecture.</strong> Bridges models to production: GPU cluster capacity planning, cost/latency trade-offs, evaluation harnesses (LLM-as-a-judge), RAG infrastructure, and serving stacks.
+          </p>
+          <div style="margin-top:auto;padding-top:6px;font-size:13px">
+            <a href="https://fullstackdeeplearning.com/llm-bootcamp/" target="_blank">🌐 Free Course &amp; Labs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- GPU + CUDA -->
   <div class="phase phase-4">
     <div class="phase-header">
@@ -924,8 +1009,11 @@
     <div class="resource-box">
       <h4>📚 Resources — GPU & CUDA</h4>
       <ul>
+        <li style="background:rgba(248,113,113,.08);padding:6px 10px;border-radius:6px;margin:4px 0"><span class="pill pill-red" style="font-size:10px;margin-right:6px">⭐ GOLD STANDARD</span><a href="https://www.youtube.com/playlist?list=PLoROMvodv4rPOWA-omMM6STXaWW4FvJT8">Stanford CS149 — Parallel Computing (Prof. Kayvon Fatahalian)</a> — <strong>The #1 parallel systems prerequisite.</strong> Teaches multi-core execution, SIMD vector instructions, memory bandwidth saturation, roofline models, and GPU thread scheduling. Watch before writing custom CUDA.</li>
+        <li style="background:rgba(248,113,113,.08);padding:6px 10px;border-radius:6px;margin:4px 0"><span class="pill pill-red" style="font-size:10px;margin-right:6px">⭐ GOLD STANDARD</span><a href="https://github.com/cuda-mode">CUDA Mode Community &amp; Lecture Series</a> — <strong>Industry standard for hands-on GPU kernel engineering.</strong> 30+ open lectures by PyTorch/Meta/OpenAI engineers: writing CUDA kernels, PyTorch C++ extensions, Nsight Systems profiling, Triton kernels, and FlashAttention from scratch.</li>
+        <li><a href="https://github.com/karpathy/llm.c">llm.c — Andrej Karpathy (GitHub)</a> — <strong>Essential AI Infra code study.</strong> LLM training in pure C/CUDA without PyTorch. Learn raw GPU memory management, custom CUDA kernels, and multi-GPU DDP training from scratch.</li>
+        <li><a href="https://triton-lang.org/">OpenAI Triton Language &amp; Documentation</a> — Modern Python DSL for writing high-performance GPU kernels without writing raw CUDA C++. Powers PyTorch 2.0 (TorchInductor).</li>
         <li><a href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/">NVIDIA CUDA Programming Guide</a> — The bible. Read chapters on memory hierarchy, execution model.</li>
-        <li><a href="https://www.youtube.com/playlist?list=PLoROMvodv4rPOWA-omMM6STXaWW4FvJT8">Stanford CS149 — Parallel Computing (YouTube)</a> — Understand parallelism fundamentals before CUDA</li>
         <li><a href="https://github.com/NVIDIA/cuda-samples">NVIDIA CUDA Samples (GitHub)</a> — Study and run these examples</li>
         <li><a href="https://developer.nvidia.com/blog/even-easier-introduction-cuda/">NVIDIA Blog — Easy Intro to CUDA</a> — Start here if CUDA is new</li>
         <li><a href="https://www.youtube.com/watch?v=nOxKExn3iBo">GPU Architecture Explained (YouTube)</a> — Visual explanation of how GPUs work</li>
@@ -962,6 +1050,7 @@
       <ul>
         <li><a href="https://pytorch.org/tutorials/intermediate/ddp_tutorial.html">PyTorch DDP Tutorial (official)</a> — Start here. Understand the basics of data parallelism.</li>
         <li><a href="https://pytorch.org/tutorials/intermediate/FSDP_tutorial.html">PyTorch FSDP Tutorial (official)</a> — For training models that don't fit on one GPU</li>
+        <li><a href="https://docs.ray.io/en/latest/train/train.html">Ray Train (Anyscale)</a> — Scaling PyTorch, DeepSpeed, and FSDP distributed training across clusters with elastic workers.</li>
         <li><a href="https://www.deepspeed.ai/getting-started/">DeepSpeed Getting Started</a> — Microsoft's distributed training library. ZeRO stages are critical to understand.</li>
         <li><a href="https://huggingface.co/docs/accelerate/index">HuggingFace Accelerate Docs</a> — Simplifies distributed training. Good abstraction layer.</li>
         <li><a href="https://lilianweng.github.io/posts/2021-09-25-train-large/">Lilian Weng — How to Train Really Large Models (blog)</a> — Best overview of all parallelism strategies</li>
@@ -995,6 +1084,7 @@
     <div class="resource-box">
       <h4>📚 Resources — Inference at Scale</h4>
       <ul>
+        <li style="background:rgba(248,113,113,.08);padding:6px 10px;border-radius:6px;margin:4px 0"><span class="pill pill-red" style="font-size:10px;margin-right:6px">⭐ GOLD STANDARD</span><a href="https://efficientml.ai/">MIT 6.5940 — Efficient ML Computing &amp; Systems (Prof. Song Han)</a> — <strong>Deep dive into inference acceleration.</strong> Lectures on AWQ (Activation-aware Weight Quantization), SmoothQuant, FlashAttention-2, speculative decoding, and continuous batching architectures.</li>
         <li><a href="https://nvidia.github.io/TensorRT-LLM/">TensorRT-LLM Documentation</a> — NVIDIA's production LLM inference. Complex but powerful.</li>
         <li><a href="https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/index.html">Triton Inference Server Docs</a> — Multi-model serving at enterprise scale</li>
         <li><a href="https://onnxruntime.ai/docs/">ONNX Runtime Documentation</a> — Framework-agnostic inference optimization</li>
@@ -1031,8 +1121,10 @@
     <div class="resource-box">
       <h4>📚 Resources — K8s + Cloud</h4>
       <ul>
+        <li style="background:rgba(248,113,113,.08);padding:6px 10px;border-radius:6px;margin:4px 0"><span class="pill pill-red" style="font-size:10px;margin-right:6px">⭐ GOLD STANDARD</span><a href="https://fullstackdeeplearning.com/llm-bootcamp/">Full Stack LLM Bootcamp (FSDL)</a> — <strong>AI Infrastructure &amp; Cloud Economics.</strong> Essential lectures on GPU cluster capacity planning, spot instance architectures, cold starts, cost attribution, and production monitoring.</li>
         <li><a href="https://kubernetes.io/docs/tutorials/">Kubernetes Official Tutorials</a> — Start with basics, then focus on GPU workloads</li>
         <li><a href="https://www.youtube.com/watch?v=X48VuDVv0do">Kubernetes Tutorial — TechWorld with Nana (YouTube)</a> — Best K8s video course. 4 hours.</li>
+        <li><a href="https://docs.ray.io/en/latest/cluster/kubernetes/index.html">KubeRay (Ray Operator on Kubernetes)</a> — The industry standard for orchestrating distributed AI workloads (Ray clusters, Ray Train, Ray Serve) natively on Kubernetes.</li>
         <li><a href="https://github.com/NVIDIA/k8s-device-plugin">NVIDIA K8s Device Plugin (GitHub)</a> — How GPUs are scheduled in K8s</li>
         <li><a href="https://keda.sh/docs/">KEDA Documentation</a> — Event-driven autoscaling. Critical for AI workloads.</li>
         <li><a href="https://developer.hashicorp.com/terraform/tutorials">Terraform Tutorials</a> — Infrastructure as code for GPU clusters</li>
@@ -3132,7 +3224,7 @@
     <li><strong>Day 1:</strong> Read "Making Deep Learning Go Brrrr From First Principles" (horace.io blog). This is the best intro to GPU performance. Read it twice. Understand: memory bandwidth bound vs compute bound, roofline model.
       <span class="how">Blog posts like this: read actively. After each section, open a Python file and write code that demonstrates the concept. For this post: profile a matrix multiply and see if it's memory or compute bound.</span>
     </li>
-    <li><strong>Day 2:</strong> NVIDIA CUDA Programming Guide — Chapter 1 (Introduction) and Chapter 2 (Programming Model). Understand: threads, blocks, grids, warps, SMs. Watch "GPU Architecture Explained" YouTube video for visual context.</li>
+    <li><strong>Day 2:</strong> NVIDIA CUDA Programming Guide — Chapter 1 (Introduction) and Chapter 2 (Programming Model). Watch <strong>Stanford CS149 (Kayvon Fatahalian) Lectures 1–4</strong> (Parallel Execution &amp; Hardware) and "GPU Architecture Explained" for visual intuition. Understand: threads, blocks, grids, warps, SMs.</li>
     <li><strong>Day 3:</strong> NVIDIA CUDA Guide Chapter 5 (Memory Hierarchy). This is critical. Understand: global memory (HBM), L2 cache, shared memory (SRAM), registers. Know the bandwidth and latency of each tier. This is what PagedAttention optimizes.</li>
     <li><strong>DSA (1h each day):</strong> Day 1: #295 (Find Median from Data Stream — revisit, optimize). Day 2: #480 (Sliding Window Median). Day 3: #502 (IPO — hard greedy).</li>
     <li><strong>System Design (1h each day):</strong> Days 1–3: Read "Designing Machine Learning Systems" (Chip Huyen) Chapter 1–2. Practice: design a "Model Serving Platform" — write full design with components, data flow, scaling strategy.</li>
@@ -3160,11 +3252,11 @@
   <div class="day-title">CUDA Programming + Flash Attention</div>
   <div class="day-goal">Goal: Write CUDA kernels, understand Flash Attention</div>
   <ul class="day-tasks">
-    <li><strong>Day 8:</strong> NVIDIA "Even Easier Introduction to CUDA" blog post. Write your first CUDA kernel: vector addition. Compile with nvcc. Run it. Understand: kernel launch syntax, thread indexing.</li>
+    <li><strong>Day 8:</strong> NVIDIA "Even Easier Introduction to CUDA" blog post + <strong>CUDA Mode Lecture 1 &amp; 2</strong>. Write your first CUDA kernel: vector addition. Compile with nvcc. Run it. Understand: kernel launch syntax, thread indexing.</li>
     <li><strong>Day 9:</strong> Implement tiled matrix multiplication in CUDA. NVIDIA CUDA samples "matrixMul" example — study it, then implement from scratch. Benchmark vs naive version.</li>
     <li><strong>Day 10:</strong> Read Flash Attention paper (arXiv 2205.14135) — sections 1–3. Understand: IO-aware attention, tiling, why it's faster. This is used in every modern LLM.</li>
     <li><strong>Day 11:</strong> Read Flash Attention 2 paper (arXiv 2307.08691). Understand improvements. Install flash-attn library. Benchmark: standard attention vs Flash Attention on a transformer model.</li>
-    <li><strong>Day 12–14:</strong> NVIDIA Nsight Systems profiling. Profile your transformer model with Nsight. Identify: kernel execution time, memory transfers, idle time. Write a report: "I found X bottleneck, here's how I fixed it."</li>
+    <li><strong>Day 12–14:</strong> NVIDIA Nsight Systems profiling (follow <strong>CUDA Mode Profiling Lectures</strong>). Profile your transformer model with Nsight. Identify: kernel execution time, memory transfers, idle time. Write a report: "I found X bottleneck, here's how I fixed it."</li>
     <li><strong>DSA (1h each day):</strong> Days 8–14: Hard problems. #1117 (Building H2O — concurrency), #1242 (Web Crawler Multithreaded), #1188 (Design Bounded Blocking Queue), #1195 (Fizz Buzz Multithreaded), #1114 (Print in Order), #1115 (Print FooBar Alternately), #1116 (Print Zero Even Odd).</li>
     <li><strong>System Design (1h each day):</strong> Days 8–14: Chip Huyen Chapters 5–6. Practice: design "Distributed Training Platform" — full design with parallelism strategy, fault tolerance, checkpointing.</li>
   </ul>
@@ -3222,7 +3314,7 @@
       <span class="how">ONNX docs: follow the "Get Started" tutorial, then the "Inference" section. Export your own model, not the tutorial's model. That's where you'll hit real issues.</span>
     </li>
     <li><strong>Day 30:</strong> TensorRT-LLM docs "Quick Start". This is complex — follow exactly. Build a TRT engine for a small LLM. Benchmark vs vLLM. Understand: kernel fusion, layer optimization, CUDA graphs.</li>
-    <li><strong>Day 31:</strong> Quantization deep dive. Implement GPTQ quantization (use AutoGPTQ library). Implement AWQ (use AutoAWQ). Compare: quality degradation (perplexity) vs speed gain vs memory reduction.</li>
+    <li><strong>Day 31:</strong> Quantization deep dive (watch <strong>MIT 6.5940 Lectures on Quantization &amp; AWQ</strong> by Prof. Song Han). Implement GPTQ quantization (use AutoGPTQ library). Implement AWQ (use AutoAWQ). Compare: quality degradation (perplexity) vs speed gain vs memory reduction.</li>
     <li><strong>Day 32–35:</strong> Build the full optimization pipeline: PyTorch → ONNX → TensorRT. Benchmark at each stage. Create a comparison table: latency, throughput, memory, quality. Open-source this benchmark suite on GitHub.</li>
     <li><strong>DSA (1h each day):</strong> Days 29–35: Hard problems. #42 (Trapping Rain Water — revisit with different approach), #239 (Sliding Window Maximum — revisit), #84 (Largest Rectangle — revisit), #85 (Maximal Rectangle — revisit), #1499 (Max Value of Equation), #862 (Shortest Subarray with Sum at Least K), #2398 (Maximum Number of Robots Within Budget).</li>
     <li><strong>System Design (1h each day):</strong> Days 29–35: Chip Huyen Chapters 9–10. Practice: "Design a Model Monitoring System" — full design with drift detection, alerting, auto-retrain.</li>
@@ -3447,6 +3539,7 @@
       <li><a href="https://www.youtube.com/watch?v=vLnPwxZdW4Y">C++ Tutorial for Beginners — FreeCodeCamp (YouTube, 4h)</a> — Watch at 1.5x speed for syntax familiarity</li>
       <li><a href="https://github.com/pytorch/pytorch/tree/main/aten/src/ATen">PyTorch ATen source (GitHub)</a> — After learning basics, try reading simple tensor operations. This is where PyTorch's math lives.</li>
       <li><a href="https://github.com/vllm-project/vllm/tree/main/csrc">vLLM C++ source (GitHub)</a> — CUDA kernels for attention, sampling. Try to follow the logic after learning CUDA syntax.</li>
+      <li><a href="https://github.com/cuda-mode">CUDA Mode Repository &amp; Lectures (GitHub)</a> — Real-world PyTorch C++ extensions and custom CUDA kernels explained step-by-step with line-by-line breakdowns.</li>
     </ul>
   </div>
   <div class="resource-box">
@@ -8806,7 +8899,7 @@ next_permutation()       // O(n)
   - AWS EC2 / ECS
   - Accessible via URL
   - Monitored + logged</div>
-        <div class="tip-box" style="margin-top:.75rem"><strong>Already in your roadmap:</strong> Phase 1 covers FastAPI, Docker, Git. Phase 3 covers async Python and databases. Use those materials — weeks 7–8 are about combining and applying them to AI deployments.</div>
+        <div class="tip-box" style="margin-top:.75rem"><strong>Already in your roadmap:</strong> Phase 1 covers FastAPI, Docker, Git. Phase 3 covers async Python and databases. For an end-to-end hands-on reference, check out the free <a href="https://github.com/DataTalksClub/mlops-zoomcamp" target="_blank">DataTalksClub MLOps Zoomcamp</a> for Docker containerization, MLflow tracking, and production deployment recipes.</div>
       </div>
     </div>
   </div>
