@@ -19,12 +19,27 @@
   }
   body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
-  .nav{position:sticky;top:0;z-index:100;background:var(--bg2);border-bottom:1px solid var(--border);padding:.5rem 1.5rem;display:flex;align-items:center;flex-wrap:wrap;gap:0;transition:background .3s,border-color .3s}
-  .nav::-webkit-scrollbar{display:none}
-  .nav-logo{font-size:14px;font-weight:800;color:var(--accent);letter-spacing:0.02em;margin-right:1.5rem;flex-shrink:0;padding:.5rem 0}
-  .nav-btn{padding:8px 12px;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;background:none;border:none;color:var(--text3);cursor:pointer;transition:all .2s;flex-shrink:0;font-family:var(--sans);border-radius:6px;margin:2px}
+  .nav{position:sticky;top:0;z-index:100;background:var(--bg2);border-bottom:1px solid var(--border);padding:.5rem 1.25rem;transition:background .3s,border-color .3s;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+  .nav-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;width:100%;margin-bottom:.35rem;padding-bottom:.35rem;border-bottom:1px solid var(--bg4)}
+  .nav-logo-group{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+  .nav-logo{font-size:13.5px;font-weight:900;color:var(--accent);letter-spacing:0.03em;display:flex;align-items:center;gap:6px}
+  .cat-pills{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+  .cat-pill{padding:4px 10px;font-size:11px;font-weight:700;border-radius:20px;border:1px solid var(--border);background:var(--bg3);color:var(--text2);cursor:pointer;transition:all .2s;font-family:var(--sans);display:inline-flex;align-items:center;gap:4px}
+  .cat-pill:hover{color:var(--accent);border-color:var(--accent2);background:var(--how-box-bg)}
+  .cat-pill.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .cat-pill-switch{border-color:rgba(234,88,12,.3);color:var(--coral)}
+  .cat-pill-switch:hover{border-color:var(--coral);color:var(--coral);background:rgba(234,88,12,.08)}
+  .cat-pill-switch.active{background:var(--coral);color:#fff;border-color:var(--coral)}
+  .nav-buttons-wrap{display:flex;align-items:center;flex-wrap:wrap;gap:1.5px;width:100%}
+  .nav-btn{padding:6.5px 10.5px;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;background:none;border:none;color:var(--text3);cursor:pointer;transition:all .2s;flex-shrink:0;font-family:var(--sans);border-radius:6px;margin:1.5px}
   .nav-btn:hover{color:var(--accent);background:rgba(79,70,229,.06)}
   .nav-btn.active{color:#fff;background:var(--accent)}
+  .nav-btn-highlight{color:var(--coral);font-weight:800}
+  .nav-btn-highlight.active{background:var(--coral);color:#fff}
+  .page-footer-nav{display:flex;justify-content:space-between;align-items:center;margin-top:3.5rem;padding:1.5rem 0 0.5rem;border-top:1.5px solid var(--border);gap:1rem;flex-wrap:wrap}
+  .footer-nav-btn{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--text);font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px;font-family:var(--sans)}
+  .footer-nav-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--how-box-bg)}
+  .footer-nav-status{font-size:12px;color:var(--text3);font-family:var(--mono);font-weight:600}
   .page{display:none;padding:3rem 3.5rem;max-width:1100px;margin:0 auto;width:100%}
   .page.active{display:block}
   @media(max-width:900px){.page{padding:1.5rem 1rem}}
@@ -194,35 +209,61 @@
 <body>
 
 <nav class="nav" role="navigation">
-  <span class="nav-logo">AI INFRA ROADMAP ✦ 2026</span>
-  <button class="nav-btn active" onclick="show('s1', this)">Reality</button>
-  <button class="nav-btn" onclick="show('s2', this)">Phase 1</button>
-  <button class="nav-btn" onclick="show('s3', this)">Phase 2</button>
-  <button class="nav-btn" onclick="show('s4', this)">Phase 3</button>
-  <button class="nav-btn" onclick="show('s5', this)">Phase 4</button>
-  <button class="nav-btn" onclick="show('s6', this)">DSA</button>
-  <button class="nav-btn" onclick="show('s7', this)">System Design</button>
-  <button class="nav-btn" onclick="show('s8', this)">Projects</button>
-  <button class="nav-btn" onclick="show('s9', this)">Interviews</button>
-  <button class="nav-btn" onclick="show('s10', this)">Brutal Advice</button>
-  <button class="nav-btn" onclick="show('s11', this)">▶ P1 Day Plan</button>
-  <button class="nav-btn" onclick="show('s12', this)">▶ P2 Day Plan</button>
-  <button class="nav-btn" onclick="show('s13', this)">▶ P3 Day Plan</button>
-  <button class="nav-btn" onclick="show('s14', this)">▶ P4 Day Plan</button>
-  <button class="nav-btn" onclick="show('s15', this)">OS & C++</button>
-  <button class="nav-btn" onclick="show('s16', this)">Sustainability</button>
-  <button class="nav-btn" onclick="show('s17', this)">Strategy</button>
-  <button class="nav-btn" onclick="show('s18', this)">Papers</button>
-  <button class="nav-btn" onclick="show('s19', this)">▶ DSA C++ Plan</button>
-  <button class="nav-btn" onclick="show('s20', this)">▶ DSA Python Plan</button>
-  <button class="nav-btn" onclick="show('s21', this)">📄 Python Cheat Sheet</button>
-  <button class="nav-btn" onclick="show('s22', this)">📄 Git Cheat Sheet</button>
-  <button class="nav-btn" onclick="show('s23', this)">📄 DSA Cheat Sheet</button>
-  <button class="nav-btn" onclick="show('s24', this)">📄 C++ Cheat Sheet</button>
-  <button class="nav-btn" onclick="show('s25', this)" style="color:var(--coral);font-weight:800">🚀 Career Switch</button>
-  <button class="nav-btn" onclick="show('s26', this)" style="color:var(--teal);font-weight:800">📅 My Schedule</button>
-  <button class="nav-btn" onclick="show('s27', this)" style="color:var(--amber);font-weight:800">📓 Weekly Log</button>
-  <button class="dark-mode-toggle" id="dmToggle" onclick="toggleDarkMode()">🌙 Dark</button>
+  <div class="nav-top">
+    <div class="nav-logo-group">
+      <span class="nav-logo">AI INFRA ROADMAP ✦ 2026</span>
+      <div class="cat-pills" id="categoryPills">
+        <button class="cat-pill active" onclick="filterNavCategory('all', this)">All (27)</button>
+        <button class="cat-pill cat-pill-switch" onclick="filterNavCategory('switch', this)">🚀 Fast Switch</button>
+        <button class="cat-pill" onclick="filterNavCategory('core', this)">🏛️ Core Track (P1–P4)</button>
+        <button class="cat-pill" onclick="filterNavCategory('plans', this)">📅 Day Plans</button>
+        <button class="cat-pill" onclick="filterNavCategory('dsa', this)">💻 DSA & Design</button>
+        <button class="cat-pill" onclick="filterNavCategory('prep', this)">🎯 Career & Prep</button>
+        <button class="cat-pill" onclick="filterNavCategory('cheats', this)">📄 Cheats & Logs</button>
+      </div>
+    </div>
+    <button class="dark-mode-toggle" id="dmToggle" onclick="toggleDarkMode()">🌙 Dark</button>
+  </div>
+  <div class="nav-buttons-wrap" id="navButtonsContainer">
+    <!-- Core Track -->
+    <button class="nav-btn active" data-cat="core" onclick="show('s1', this)">Reality</button>
+    <button class="nav-btn" data-cat="core" onclick="show('s2', this)">Phase 1</button>
+    <button class="nav-btn" data-cat="core" onclick="show('s3', this)">Phase 2</button>
+    <button class="nav-btn" data-cat="core" onclick="show('s4', this)">Phase 3</button>
+    <button class="nav-btn" data-cat="core" onclick="show('s5', this)">Phase 4</button>
+    <button class="nav-btn" data-cat="core" onclick="show('s15', this)">OS & C++</button>
+    <button class="nav-btn" data-cat="core" onclick="show('s18', this)">Papers</button>
+
+    <!-- Day Plans -->
+    <button class="nav-btn" data-cat="plans" onclick="show('s11', this)">▶ P1 Day Plan</button>
+    <button class="nav-btn" data-cat="plans" onclick="show('s12', this)">▶ P2 Day Plan</button>
+    <button class="nav-btn" data-cat="plans" onclick="show('s13', this)">▶ P3 Day Plan</button>
+    <button class="nav-btn" data-cat="plans" onclick="show('s14', this)">▶ P4 Day Plan</button>
+
+    <!-- DSA & System Design -->
+    <button class="nav-btn" data-cat="dsa" onclick="show('s6', this)">DSA</button>
+    <button class="nav-btn" data-cat="dsa" onclick="show('s7', this)">System Design</button>
+    <button class="nav-btn" data-cat="dsa" onclick="show('s19', this)">▶ DSA C++ Plan</button>
+    <button class="nav-btn" data-cat="dsa" onclick="show('s20', this)">▶ DSA Python Plan</button>
+
+    <!-- Career & Prep -->
+    <button class="nav-btn" data-cat="prep" onclick="show('s8', this)">Projects</button>
+    <button class="nav-btn" data-cat="prep" onclick="show('s9', this)">Interviews</button>
+    <button class="nav-btn" data-cat="prep" onclick="show('s10', this)">Brutal Advice</button>
+    <button class="nav-btn" data-cat="prep" onclick="show('s16', this)">Sustainability</button>
+    <button class="nav-btn" data-cat="prep" onclick="show('s17', this)">Strategy</button>
+
+    <!-- Fast Track -->
+    <button class="nav-btn nav-btn-highlight" data-cat="switch" onclick="show('s25', this)" style="color:var(--coral);font-weight:800">🚀 Career Switch (Roadmap.sh)</button>
+
+    <!-- Cheats & Logs -->
+    <button class="nav-btn" data-cat="cheats" onclick="show('s21', this)">📄 Python Cheat Sheet</button>
+    <button class="nav-btn" data-cat="cheats" onclick="show('s22', this)">📄 Git Cheat Sheet</button>
+    <button class="nav-btn" data-cat="cheats" onclick="show('s23', this)">📄 DSA Cheat Sheet</button>
+    <button class="nav-btn" data-cat="cheats" onclick="show('s24', this)">📄 C++ Cheat Sheet</button>
+    <button class="nav-btn" data-cat="cheats" onclick="show('s26', this)" style="color:var(--teal);font-weight:800">📅 My Schedule</button>
+    <button class="nav-btn" data-cat="cheats" onclick="show('s27', this)" style="color:var(--amber);font-weight:800">📓 Weekly Log</button>
+  </div>
 </nav>
 
 <!-- SECTION 1: REALITY -->
@@ -8563,12 +8604,13 @@ next_permutation()       // O(n)
 </div>
 <!-- END S24 -->
 
+<!-- SECTION 25: CAREER SWITCH (ROADMAP.SH AI ENGINEER INTEGRATION) -->
 <!-- SECTION 25: CAREER SWITCH -->
 <div id="s25" class="page">
   <div class="hero">
     <p class="hero-eyebrow">Your Transition Strategy</p>
     <h1 class="hero-title">Fast AI Career Switch<br><span style="color:var(--coral)">8–12 Week Track</span></h1>
-    <p class="hero-sub">Get employable first. Build AI Infra depth in parallel.</p>
+    <p class="hero-sub">Get employable first · Integrated with Roadmap.sh AI Engineer 2026 Curriculum · Build AI Infra in parallel</p>
   </div>
 
   <!-- STRATEGY THESIS -->
@@ -8681,6 +8723,194 @@ next_permutation()       // O(n)
   </table>
 
   <!-- CURRICULUM -->
+  
+  <!-- ==================== ROADMAP.SH AI ENGINEER 2026 SYLLABUS ==================== -->
+  <h2>🗺️ Roadmap.sh AI Engineer: The 2026 Core Syllabus &amp; Skill Pillars</h2>
+  <p style="color:var(--text2);font-size:15px;margin-bottom:1.5rem">
+    The complete official skill map from <a href="https://roadmap.sh/ai-engineer" target="_blank">roadmap.sh/ai-engineer</a> synthesized into 7 structured engineering pillars. Use this matrix as your reference map while executing the 8–12 week sprint schedule below:
+  </p>
+
+  <div class="grid2" style="gap:1.25rem;margin-bottom:2.5rem">
+    <!-- PILLAR 1 -->
+    <div class="card card-accent" style="margin:0;padding:1.5rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+        <span class="pill pill-purple">PILLAR 1</span>
+        <span class="pill pill-green">WEEKS 3–5</span>
+      </div>
+      <div class="card-title" style="font-size:16px;color:var(--text)">🧠 Modern Model Ecosystem &amp; Runtimes</div>
+      <p style="font-size:13.5px;color:var(--text2);line-height:1.6;margin-bottom:.75rem">
+        Understanding model capabilities, pricing, latency, context windows, and execution runtimes.
+      </p>
+      <div style="margin-bottom:.5rem">
+        <span class="skill-chip">GPT-4o / o1 / o3</span>
+        <span class="skill-chip">Claude 3.5 Sonnet</span>
+        <span class="skill-chip">Gemini 2.0 Flash/Pro</span>
+        <span class="skill-chip">Llama 3.3</span>
+        <span class="skill-chip">DeepSeek V3 / R1</span>
+        <span class="skill-chip">Qwen 2.5</span>
+        <span class="skill-chip">Ollama</span>
+        <span class="skill-chip">vLLM</span>
+        <span class="skill-chip">OpenRouter</span>
+      </div>
+      <div style="font-size:12.5px;color:var(--text3)">
+        <strong>Key Skill:</strong> Selecting the right model tier (fast utility model vs deep reasoning model) based on token cost, latency, and task complexity.
+      </div>
+    </div>
+
+    <!-- PILLAR 2 -->
+    <div class="card card-coral" style="margin:0;padding:1.5rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+        <span class="pill pill-red" style="background:rgba(234,88,12,.15);color:var(--coral)">PILLAR 2</span>
+        <span class="pill pill-green">WEEKS 5–6</span>
+      </div>
+      <div class="card-title" style="font-size:16px;color:var(--text)">✍️ Context Engineering &amp; Advanced Prompting</div>
+      <p style="font-size:13.5px;color:var(--text2);line-height:1.6;margin-bottom:.75rem">
+        Moving beyond naive prompts to production-grade context control and token optimization.
+      </p>
+      <div style="margin-bottom:.5rem">
+        <span class="skill-chip">System Prompts</span>
+        <span class="skill-chip">Few-Shot In-Context</span>
+        <span class="skill-chip">Chain-of-Thought (CoT)</span>
+        <span class="skill-chip">Structured Outputs (Pydantic)</span>
+        <span class="skill-chip">Prompt Caching</span>
+        <span class="skill-chip">Context Compaction</span>
+        <span class="skill-chip">Context Isolation</span>
+        <span class="skill-chip">Temperature &amp; Top-P</span>
+      </div>
+      <div style="font-size:12.5px;color:var(--text3)">
+        <strong>Key Skill:</strong> Using prompt caching (Anthropic/OpenAI) to cut latency by up to 80% and input token costs by up to 90% in multi-turn apps.
+      </div>
+    </div>
+
+    <!-- PILLAR 3 -->
+    <div class="card card-green" style="margin:0;padding:1.5rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+        <span class="pill pill-green">PILLAR 3</span>
+        <span class="pill pill-teal">WEEKS 7–8</span>
+      </div>
+      <div class="card-title" style="font-size:16px;color:var(--text)">🔌 Model Context Protocol (MCP) — 2026 Standard</div>
+      <p style="font-size:13.5px;color:var(--text2);line-height:1.6;margin-bottom:.75rem">
+        The universal open standard connecting AI models to external tools, databases, and enterprise data.
+      </p>
+      <div style="margin-bottom:.5rem">
+        <span class="skill-chip">MCP Host</span>
+        <span class="skill-chip">MCP Client</span>
+        <span class="skill-chip">MCP Server</span>
+        <span class="skill-chip">stdio Transport</span>
+        <span class="skill-chip">SSE Transport</span>
+        <span class="skill-chip">MCP Resources</span>
+        <span class="skill-chip">MCP Tools</span>
+        <span class="skill-chip">MCP Prompts</span>
+      </div>
+      <div style="font-size:12.5px;color:var(--text3)">
+        <strong>Key Skill:</strong> Building and deploying a custom MCP Server in Python that exposes live database queries and tools to Cursor, Claude Desktop, and agent runtimes.
+      </div>
+    </div>
+
+    <!-- PILLAR 4 -->
+    <div class="card card-teal" style="margin:0;padding:1.5rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+        <span class="pill pill-teal">PILLAR 4</span>
+        <span class="pill pill-green">WEEKS 5–6</span>
+      </div>
+      <div class="card-title" style="font-size:16px;color:var(--text)">🔢 Embeddings &amp; Vector Databases</div>
+      <p style="font-size:13.5px;color:var(--text2);line-height:1.6;margin-bottom:.75rem">
+        Converting unstructured text into mathematical representations and building fast similarity search.
+      </p>
+      <div style="margin-bottom:.5rem">
+        <span class="skill-chip">text-embedding-3</span>
+        <span class="skill-chip">BGE Embeddings</span>
+        <span class="skill-chip">Sentence Transformers</span>
+        <span class="skill-chip">Qdrant</span>
+        <span class="skill-chip">Chroma</span>
+        <span class="skill-chip">LanceDB</span>
+        <span class="skill-chip">pgvector (Postgres)</span>
+        <span class="skill-chip">Cosine Similarity</span>
+        <span class="skill-chip">HNSW Indexing</span>
+      </div>
+      <div style="font-size:12.5px;color:var(--text3)">
+        <strong>Key Skill:</strong> Understanding vector distance metrics, index quantization, and how HNSW graph search scales in production.
+      </div>
+    </div>
+
+    <!-- PILLAR 5 -->
+    <div class="card card-amber" style="margin:0;padding:1.5rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+        <span class="pill pill-amber">PILLAR 5</span>
+        <span class="pill pill-green">WEEKS 5–6</span>
+      </div>
+      <div class="card-title" style="font-size:16px;color:var(--text)">📚 Production RAG &amp; Hybrid Search</div>
+      <p style="font-size:13.5px;color:var(--text2);line-height:1.6;margin-bottom:.75rem">
+        Grounding LLM responses in proprietary enterprise knowledge with verifiable source citations.
+      </p>
+      <div style="margin-bottom:.5rem">
+        <span class="skill-chip">Semantic Chunking</span>
+        <span class="skill-chip">Recursive Splitting</span>
+        <span class="skill-chip">Dense Vector Search</span>
+        <span class="skill-chip">BM25 Sparse Search</span>
+        <span class="skill-chip">Hybrid Search</span>
+        <span class="skill-chip">Cross-Encoder Reranking</span>
+        <span class="skill-chip">Context Injection</span>
+        <span class="skill-chip">Streaming SSE</span>
+      </div>
+      <div style="font-size:12.5px;color:var(--text3)">
+        <strong>Key Skill:</strong> Combining BM25 keyword search with dense vectors + reranker to beat naive vector search by 30%+ on domain accuracy.
+      </div>
+    </div>
+
+    <!-- PILLAR 6 -->
+    <div class="card card-accent" style="margin:0;padding:1.5rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+        <span class="pill pill-purple">PILLAR 6</span>
+        <span class="pill pill-teal">WEEKS 7–8</span>
+      </div>
+      <div class="card-title" style="font-size:16px;color:var(--text)">🤖 AI Agents &amp; Multi-Agent Workflows</div>
+      <p style="font-size:13.5px;color:var(--text2);line-height:1.6;margin-bottom:.75rem">
+        Autonomous systems that reason, execute tools, maintain memory, and self-correct.
+      </p>
+      <div style="margin-bottom:.5rem">
+        <span class="skill-chip">ReAct Loop</span>
+        <span class="skill-chip">Tool Calling</span>
+        <span class="skill-chip">LangGraph</span>
+        <span class="skill-chip">State Machines</span>
+        <span class="skill-chip">Short &amp; Long-term Memory</span>
+        <span class="skill-chip">Multi-Agent Orchestration</span>
+        <span class="skill-chip">Human-in-the-Loop</span>
+        <span class="skill-chip">Retry &amp; Fallback Guards</span>
+      </div>
+      <div style="font-size:12.5px;color:var(--text3)">
+        <strong>Key Skill:</strong> Building deterministic stateful agent graphs with LangGraph instead of brittle loop scripts.
+      </div>
+    </div>
+
+    <!-- PILLAR 7 -->
+    <div class="card card-red" style="margin:0;padding:1.5rem;grid-column:1 / -1">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+        <span class="pill pill-red">PILLAR 7</span>
+        <span class="pill pill-teal">WEEKS 9–10</span>
+      </div>
+      <div class="card-title" style="font-size:16px;color:var(--text)">📊 Evaluation, Observability &amp; AI Safety</div>
+      <p style="font-size:13.5px;color:var(--text2);line-height:1.6;margin-bottom:.75rem">
+        The difference between a toy demo and production software: measuring quality, latency, cost, and security.
+      </p>
+      <div style="margin-bottom:.5rem">
+        <span class="skill-chip">RAGAS Framework</span>
+        <span class="skill-chip">Faithfulness Metric</span>
+        <span class="skill-chip">Answer Relevance</span>
+        <span class="skill-chip">DeepEval</span>
+        <span class="skill-chip">LLM-as-a-Judge</span>
+        <span class="skill-chip">Langfuse</span>
+        <span class="skill-chip">LangSmith</span>
+        <span class="skill-chip">OpenTelemetry</span>
+        <span class="skill-chip">Prompt Injection Mitigation</span>
+        <span class="skill-chip">Cost &amp; Latency Dashboards</span>
+      </div>
+      <div style="font-size:12.5px;color:var(--text3)">
+        <strong>Key Skill:</strong> Setting up an automated eval pipeline with RAGAS/DeepEval that blocks CI/CD if model accuracy or faithfulness drops below 90%.
+      </div>
+    </div>
+  </div>
+
   <h2>📅 The 8–12 Week Accelerated Curriculum</h2>
   <div class="alert alert-success">
     <strong>Already in your AI Infra roadmap?</strong> Python, FastAPI, Docker, PyTorch, ML, LLMs, AWS, Kubernetes, Git — these are all covered in the long-term roadmap. For those topics, the fast track accelerates and focuses, rather than duplicates. Skip or compress anything you have already completed.
@@ -8783,7 +9013,9 @@ next_permutation()       // O(n)
           <li><strong>RAG architecture</strong> — ingestion, chunking strategy, embedding storage, retrieval, reranking, generation</li>
           <li><strong>LLM APIs</strong> — OpenAI, Anthropic, Groq; function calling, structured outputs, streaming</li>
           <li><strong>Prompt design</strong> — system prompts, few-shot, chain-of-thought, prompt injection awareness</li>
-          <li><strong>Tool/function calling</strong> — binding tools to LLMs, parsing structured outputs reliably</li>
+          <li><strong>Prompt Caching &amp; Context Optimization</strong> — Anthropic / OpenAI prompt caching, context compaction, cutting latency by 80%</li>
+          <li><strong>Hybrid Search RAG</strong> — combining dense vector embeddings with BM25 sparse search and cross-encoder reranking</li>
+          <li><strong>Tool/function calling &amp; Structured Outputs</strong> — binding tools to LLMs, parsing structured outputs reliably with Pydantic</li>
           <li><strong>Basic agents</strong> — plan → tool call → observe → repeat; ReAct pattern</li>
           <li><strong>LLM evaluation</strong> — faithfulness, relevance, hallucination detection, RAGAS framework basics</li>
           <li><strong>Cost and latency</strong> — token economics, streaming, caching, choosing model tiers</li>
@@ -8872,6 +9104,8 @@ next_permutation()       // O(n)
           <li><strong>Model serving</strong> — loading model once at startup, stateless inference, batch inference</li>
           <li><strong>Environment variables</strong> — .env, secrets management, never hardcoded keys</li>
           <li><strong>Logging and monitoring</strong> — structured logging, request/response logging, error tracing</li>
+          <li><strong>Model Context Protocol (MCP)</strong> — build and run an MCP Server (stdio/SSE) connecting models to databases and tools</li>
+          <li><strong>Agent State Graphs (LangGraph)</strong> — building deterministic multi-step agent workflows with state persistence</li>
           <li><strong>Auth basics</strong> — API key validation, JWT basics, security headers</li>
           <li><strong>PostgreSQL basics</strong> — tables, queries, psycopg2/SQLAlchemy, connection pooling</li>
           <li><strong>Redis basics</strong> — key-value caching, TTL, caching LLM responses</li>
@@ -8928,6 +9162,7 @@ next_permutation()       // O(n)
           <li><strong>ECS (Fargate)</strong> — deploy Docker container as a service without managing servers</li>
           <li><strong>Basic VPC</strong> — public vs private subnets, security groups, network boundaries</li>
           <li><strong>CloudWatch</strong> — log groups, metrics, basic alarms, viewing container logs</li>
+          <li><strong>LLM Observability &amp; Evals</strong> — tracing with Langfuse / LangSmith, automated RAGAS regression tests in GitHub Actions</li>
           <li><strong>AWS CLI</strong> — configure profiles, run commands, automate deployments</li>
         </ul>
       </div>
@@ -9339,7 +9574,7 @@ AI Systems Engineer / GPU Engineer
   </div>
 
 </div>
-<!-- END S25 -->
+
 
 
 <!-- SECTION 26: MY SCHEDULE -->
@@ -9609,15 +9844,108 @@ AI Systems Engineer / GPU Engineer
 <script>
 const ALL_SECTIONS = ['s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15','s16','s17','s18','s19','s20','s21','s22','s23','s24','s25','s26','s27'];
 
+const SECTION_ORDER = [
+  {id: 's1', title: 'Reality Check', cat: 'core'},
+  {id: 's2', title: 'Phase 1: Foundations', cat: 'core'},
+  {id: 's3', title: 'Phase 2: ML & Deep Learning', cat: 'core'},
+  {id: 's4', title: 'Phase 3: GenAI & LLMs', cat: 'core'},
+  {id: 's5', title: 'Phase 4: AI Infrastructure', cat: 'core'},
+  {id: 's6', title: 'DSA Core', cat: 'dsa'},
+  {id: 's7', title: 'System Design', cat: 'dsa'},
+  {id: 's8', title: 'Projects Portfolio', cat: 'prep'},
+  {id: 's9', title: 'Interviews & Prep', cat: 'prep'},
+  {id: 's10', title: 'Brutal Advice', cat: 'prep'},
+  {id: 's11', title: '▶ P1 Day Plan', cat: 'plans'},
+  {id: 's12', title: '▶ P2 Day Plan', cat: 'plans'},
+  {id: 's13', title: '▶ P3 Day Plan', cat: 'plans'},
+  {id: 's14', title: '▶ P4 Day Plan', cat: 'plans'},
+  {id: 's15', title: 'OS & C++', cat: 'core'},
+  {id: 's16', title: 'Sustainability', cat: 'prep'},
+  {id: 's17', title: 'Strategy', cat: 'prep'},
+  {id: 's18', title: 'Research Papers', cat: 'core'},
+  {id: 's19', title: '▶ DSA C++ Plan', cat: 'dsa'},
+  {id: 's20', title: '▶ DSA Python Plan', cat: 'dsa'},
+  {id: 's21', title: '📄 Python Cheat Sheet', cat: 'cheats'},
+  {id: 's22', title: '📄 Git Cheat Sheet', cat: 'cheats'},
+  {id: 's23', title: '📄 DSA Cheat Sheet', cat: 'cheats'},
+  {id: 's24', title: '📄 C++ Cheat Sheet', cat: 'cheats'},
+  {id: 's25', title: '🚀 Career Switch (Roadmap.sh)', cat: 'switch'},
+  {id: 's26', title: '📅 My Schedule', cat: 'cheats'},
+  {id: 's27', title: '📓 Weekly Log', cat: 'cheats'}
+];
+
 function show(id, btn){
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   const el = document.getElementById(id);
   if(el) el.classList.add('active');
-  // Highlight the clicked button — passed directly so no fragile index lookup needed
-  if(btn) btn.classList.add('active');
+  
+  if(!btn){
+    btn = document.querySelector(`.nav-btn[onclick*="'${id}'"]`);
+  }
+  if(btn) {
+    btn.classList.add('active');
+    // If button is currently hidden due to category filter, sync category filter
+    if(btn.style.display === 'none'){
+      const cat = btn.getAttribute('data-cat');
+      const catPill = document.querySelector(`.cat-pill[onclick*="'${cat}'"]`);
+      if(catPill) filterNavCategory(cat, catPill);
+      else filterNavCategory('all', document.querySelector('.cat-pill'));
+    }
+  }
   window.scrollTo({top:0,behavior:'smooth'});
   if(id === 's27') wlRender();
+}
+
+function filterNavCategory(cat, pillEl){
+  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+  if(pillEl) pillEl.classList.add('active');
+
+  const btns = document.querySelectorAll('.nav-btn');
+  btns.forEach(b => {
+    const btnCat = b.getAttribute('data-cat');
+    if(cat === 'all' || btnCat === cat){
+      b.style.display = 'inline-block';
+    } else {
+      b.style.display = 'none';
+    }
+  });
+
+  if(cat === 'switch'){
+    const switchBtn = document.querySelector('.nav-btn[data-cat="switch"]');
+    show('s25', switchBtn);
+  }
+}
+
+function initFooterNav(){
+  SECTION_ORDER.forEach((sec, idx) => {
+    const pageEl = document.getElementById(sec.id);
+    if(!pageEl) return;
+    if(pageEl.querySelector('.page-footer-nav')) return;
+
+    const footer = document.createElement('div');
+    footer.className = 'page-footer-nav';
+
+    const prevBtnHtml = idx > 0 
+      ? `<button class="footer-nav-btn" onclick="show('${SECTION_ORDER[idx - 1].id}')">← ${SECTION_ORDER[idx - 1].title}</button>` 
+      : `<span style="width:100px"></span>`;
+
+    const statusHtml = `<span class="footer-nav-status">Section ${idx + 1} of ${SECTION_ORDER.length}</span>`;
+
+    const nextBtnHtml = idx < SECTION_ORDER.length - 1 
+      ? `<button class="footer-nav-btn" onclick="show('${SECTION_ORDER[idx + 1].id}')">${SECTION_ORDER[idx + 1].title} →</button>` 
+      : `<span style="width:100px"></span>`;
+
+    footer.innerHTML = `${prevBtnHtml}${statusHtml}${nextBtnHtml}`;
+    pageEl.appendChild(footer);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  initFooterNav();
+});
+if(document.readyState === 'interactive' || document.readyState === 'complete'){
+  initFooterNav();
 }
 
 function toggleDarkMode() {
