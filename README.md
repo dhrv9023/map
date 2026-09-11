@@ -133,7 +133,7 @@ This project is built as a standalone single-page web app and is 100% ready for 
 
 - YouTube channels (NeetCode, Abdul Bari, Striver, etc.)
 - Free courses (freeCodeCamp, fast.ai, DeepLearning.AI)
-- Books (Fluent Python, Deep Learning, etc.)
+- Books (Chip Huyen's "Designing Machine Learning Systems" & "AI Engineering", Martin Kleppmann's "DDIA", "Fluent Python", etc.)
 - Platforms (Leetcode, Kaggle, Hugging Face)
 - Documentation (PyTorch, TensorFlow, etc.)
 

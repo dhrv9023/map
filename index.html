@@ -796,9 +796,11 @@
     </div>
 
     <div class="resource-box">
-      <h4>📚 Resources — RAG</h4>
+      <h4>📚 Resources — RAG &amp; LLM Application Architecture</h4>
       <ul>
+        <li style="background:rgba(124,106,245,.08);padding:6px 10px;border-radius:6px;margin:4px 0"><span class="pill pill-purple" style="font-size:10px;margin-right:6px">⭐ ESSENTIAL BOOK</span><strong>Book:</strong> "AI Engineering: Building Applications with Foundation Models" by Chip Huyen (O'Reilly) — <strong>The definitive textbook for Phase 3.</strong> Comprehensive coverage of foundation model application architecture, evaluation harnesses, context/prompt engineering, production RAG pipelines, agents, and inference latency/cost economics.</li>
         <li style="background:rgba(124,106,245,.08);padding:6px 10px;border-radius:6px;margin:4px 0"><span class="pill pill-purple" style="font-size:10px;margin-right:6px">⭐ GOLD STANDARD</span><a href="https://fullstackdeeplearning.com/llm-bootcamp/">Full Stack LLM Bootcamp (FSDL)</a> — <strong>The premier production LLM systems course.</strong> Real-world architectures, evaluation harnesses, GPU serving economics, vector search at scale, and deployment pipelines. Free lectures + labs.</li>
+        <li><a href="https://huyenchip.com/2023/04/11/llm-engineering.html">Chip Huyen — Building LLM Applications for Production (free essay)</a> — The seminal industry blueprint that defined modern AI engineering.</li>
         <li><a href="https://cookbook.openai.com">OpenAI Cookbook</a> — Production RAG patterns, embeddings, function calling. Best practical resource.</li>
         <li><a href="https://www.youtube.com/playlist?list=PLfaIDFEXuae162L8h38_9SgV2-L9xS15S">RAG From Scratch — LangChain (YouTube Playlist)</a> — 14 videos covering every RAG technique</li>
         <li><a href="https://docs.llamaindex.ai/en/stable/">LlamaIndex Documentation</a> — Best framework for RAG. Read the high-level concepts + tutorials.</li>
@@ -880,6 +882,7 @@
     <div class="resource-box">
       <h4>📚 Resources — Agents</h4>
       <ul>
+        <li><strong>Book Reading:</strong> Chip Huyen — "AI Engineering" (Chapter on Agents &amp; Tool Integration) — Rigorous architectural breakdown of task planning, agent memory, tool integration, error loops, and reliability.</li>
         <li><a href="https://langchain-ai.github.io/langgraph/">LangGraph Documentation</a> — The standard for production agents. Read tutorials + how-to guides.</li>
         <li><a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/">DeepLearning.AI — AI Agents in LangGraph (free)</a> — Good intro to agent patterns</li>
         <li><a href="https://github.com/openai/openai-cookbook/blob/main/examples/How_to_build_an_agent_with_the_node_sdk.md">OpenAI Function Calling Guide</a> — Understand the foundation of tool use</li>
@@ -1507,7 +1510,8 @@
     <h4>📚 AI-Specific System Design</h4>
     <ul>
       <li><a href="https://huyenchip.com/machine-learning-systems-design/toc.html">Chip Huyen — ML Systems Design (free)</a> — Best ML system design resource. Period.</li>
-      <li><strong>Book:</strong> "Designing Machine Learning Systems" by Chip Huyen — Must-read for ML system design interviews</li>
+      <li><strong>Book:</strong> "Designing Machine Learning Systems" by Chip Huyen — Must-read for MLOps and classical ML system design interviews</li>
+      <li><strong>Book:</strong> "AI Engineering: Building Applications with Foundation Models" by Chip Huyen — The modern authority for LLM application architectures, evaluation systems, and foundation model infrastructure</li>
       <li><a href="https://www.youtube.com/playlist?list=PLBRXq5LaddfzDBDg4VyGjGMMLMzcFJOGy">ML System Design Interviews (YouTube)</a> — Practice problems with solutions</li>
       <li><a href="https://madewithml.com/">Made With ML (Goku Mohandas)</a> — End-to-end MLOps + system design. 10/10 resource.</li>
       <li><a href="https://fullstackdeeplearning.com/">Full Stack Deep Learning</a> — Production ML systems course. Free.</li>
@@ -2294,7 +2298,8 @@
     <h4>📚 System Design Interview Prep</h4>
     <ul>
       <li><strong>Book:</strong> "System Design Interview" Vol 1 & 2 by Alex Xu</li>
-      <li><strong>Book:</strong> "Designing Machine Learning Systems" by Chip Huyen</li>
+      <li><strong>Book:</strong> "Designing Machine Learning Systems" by Chip Huyen — Classical ML &amp; MLOps system design rounds</li>
+      <li><strong>Book:</strong> "AI Engineering: Building Applications with Foundation Models" by Chip Huyen — GenAI, LLM architectures &amp; agent system design rounds</li>
       <li><a href="https://www.youtube.com/playlist?list=PLCRMIe5FDPsd0g65UcxCVUdnFkEgqSDG4">System Design Interview — ByteByteGo (YouTube)</a></li>
       <li><a href="https://github.com/donnemartin/system-design-primer">System Design Primer (GitHub)</a></li>
       <li>Practice: explain your projects as system design problems. Draw architecture diagrams. Discuss tradeoffs.</li>
@@ -3111,7 +3116,7 @@
     <li><strong>Day 13:</strong> Add metadata filtering. Store document metadata (date, source, category) in Qdrant payload. Filter by metadata during retrieval. Build a multi-tenant version (user A can't see user B's docs).</li>
     <li><strong>Day 14:</strong> Full RAG platform: FastAPI + Qdrant + Redis + RAGAS eval endpoint + streaming + Docker Compose. Write README with architecture diagram and eval scores. This is your flagship project.</li>
     <li><strong>DSA (1h each day):</strong> Days 8–14: NeetCode "Greedy" section. #53 (Maximum Subarray), #55 (Jump Game), #45 (Jump Game II), #134 (Gas Station), #846 (Hand of Straights), #1899 (Merge Triplets to Form Target), #763 (Partition Labels).</li>
-    <li><strong>System Design (45 min each day):</strong> Days 8–14: DDIA Chapter 5 (Replication). Watch "Design YouTube" and "Design a Key-Value Store" on Alex Xu channel.</li>
+    <li><strong>System Design (45 min each day):</strong> Days 8–14: DDIA Chapter 5 (Replication) + read Chip Huyen's "AI Engineering" (Evaluation &amp; Guardrails chapter). Watch "Design YouTube" and "Design a Key-Value Store" on Alex Xu channel.</li>
   </ul>
 </div>
 
@@ -3177,7 +3182,7 @@
     <li><strong>Day 41:</strong> Build an agent eval harness. Create 20 test tasks. Run agent on all. Measure: success rate, avg steps, failure modes. This is what makes your agent project stand out.</li>
     <li><strong>Day 42:</strong> Multi-agent system: orchestrator + 2 specialist agents. Shared state in Redis. Test: does it complete tasks the single agent couldn't?</li>
     <li><strong>DSA (1h each day):</strong> Days 36–42: NeetCode "Advanced Graphs". #332 (Reconstruct Itinerary), #1584 (Min Cost to Connect All Points — Prim's), #1631 (Path With Minimum Effort), #778 (Swim in Rising Water), #269 (Alien Dictionary), #787 (Cheapest Flights Within K Stops), #743 (Network Delay Time — Bellman-Ford).</li>
-    <li><strong>System Design (45 min each day):</strong> Days 36–42: Practice designing: "Design an LLM serving platform" (write full design, draw diagram). Read DDIA Chapter 9 (Consistency and Consensus).</li>
+    <li><strong>System Design (45 min each day):</strong> Days 36–42: Practice designing: "Design an LLM serving platform" (write full design, draw diagram). Read DDIA Chapter 9 (Consistency and Consensus) + Chip Huyen's "AI Engineering" (Chapter on Agents &amp; Tool Architecture).</li>
     <li><strong>C++ Reading (30 min each day — STARTS NOW):</strong> Days 36–42: Begin LearnCpp.com chapters 1-4 (basics, variables, types, operators). Read during lunch break. Goal: be able to read simple C++ code by end of week.
       <span class="how">LearnCpp: don't do exercises. Just read and understand the syntax. You're building reading ability, not writing ability. After each chapter, open a PyTorch C++ file and try to identify what you just learned.</span>
     </li>
@@ -3204,7 +3209,7 @@
     <li><strong>Day 59:</strong> Read NVIDIA blog "Mastering LLM Techniques: Inference Optimization". Understand: continuous batching, speculative decoding, KV cache management.</li>
     <li><strong>Day 60–63:</strong> Build: OpenAI-compatible API server with vLLM + FastAPI + Redis caching + rate limiting + streaming. Benchmark: TTFT, tokens/sec, p99 latency at 10/50/100 concurrent requests. Document everything.</li>
     <li><strong>DSA (1h each day):</strong> Days 57–63: Hard problems. #124 (Binary Tree Max Path Sum), #297 (Serialize/Deserialize Binary Tree), #23 (Merge K Sorted Lists), #25 (Reverse Nodes in K-Group), #41 (First Missing Positive), #128 (Longest Consecutive Sequence), #76 (Minimum Window Substring).</li>
-    <li><strong>System Design (45 min each day):</strong> Days 57–63: Practice "Design a Fine-tuning Platform" and "Design a Multi-Agent System". Write full designs. Time yourself: 45 min per design.</li>
+    <li><strong>System Design (45 min each day):</strong> Days 57–63: Practice "Design a Fine-tuning Platform" and "Design a Multi-Agent System". Read Chip Huyen's "AI Engineering" (Inference Latency &amp; Cost Economics chapter). Write full designs. Time yourself: 45 min per design.</li>
   </ul>
 </div>
 
@@ -3773,7 +3778,7 @@
       <li><strong>Comfortable budget:</strong> ₹3,000-5,000 / $50-80 total. Colab Pro for 2 months ($20), RunPod for 5 hours ($10), a cheap VPS for 3 months ($15), one domain ($1).</li>
       <li><strong>Ideal budget:</strong> ₹8,000-12,000 / $100-150 total. Colab Pro ($20), RunPod for distributed training ($30), DigitalOcean for K8s ($20), books ($30-50).</li>
     </ul>
-    <p style="margin-top:.75rem;color:var(--amber);font-size:13px"><strong>Books you should buy (worth every rupee):</strong> "Designing Data-Intensive Applications" (₹600), "System Design Interview Vol 1+2" (₹1200), "Designing Machine Learning Systems" (₹700). These 4 books are more valuable than any course.</p>
+    <p style="margin-top:.75rem;color:var(--amber);font-size:13px"><strong>Books you should buy (worth every rupee):</strong> "Designing Data-Intensive Applications" (Martin Kleppmann, ₹600), "Designing Machine Learning Systems" (Chip Huyen, ₹700), "AI Engineering: Building Applications with Foundation Models" (Chip Huyen, ₹900), "System Design Interview Vol 1+2" (Alex Xu, ₹1200). These books are the ultimate industry foundation and worth 100x more than any paid course.</p>
   </div>
 </div>
 
@@ -4369,6 +4374,19 @@
     </tr>
   </tbody>
 </table>
+
+<div class="card card-accent" style="margin:1.5rem 0">
+  <div class="card-title" style="color:var(--accent2)">📖 Essential Industry Systems Literature: Chip Huyen</div>
+  <div class="card-body">
+    <p>Beyond academic arXiv papers, production engineering requires practical systems literature. Chip Huyen (Stanford CS 329S lecturer, former Netflix/Snorkel AI) authored the foundational blueprints for bridging ML theory and real-world infrastructure:</p>
+    <ul class="styled" style="margin-top:.5rem">
+      <li><strong>Book: "AI Engineering: Building Applications with Foundation Models"</strong> (O'Reilly) — The definitive textbook on RAG architectures, evaluation harnesses, prompt/context engineering, agent reliability, and inference latency/cost economics.</li>
+      <li><strong>Book: "Designing Machine Learning Systems"</strong> (O'Reilly) — The industry standard for MLOps, streaming data pipelines, feature stores, online prediction, and drift monitoring.</li>
+      <li><a href="https://huyenchip.com/2023/04/11/llm-engineering.html" target="_blank">"Building LLM Applications for Production"</a> — Her seminal essay read across the AI industry on evaluation, prompting, and deployment tradeoffs.</li>
+      <li><a href="https://huyenchip.com/machine-learning-systems-design/toc.html" target="_blank">Stanford CS 329S: Machine Learning Systems Design Handbook</a> (Free online) — Systematic framework for architecting production ML systems.</li>
+    </ul>
+  </div>
+</div>
 
 <h2>Phase 4 Papers — AI Infrastructure (Read during Phase 4)</h2>
 <div class="alert alert-danger">
