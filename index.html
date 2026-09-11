@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Infra Engineering Roadmap 2026 — Complete</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800;900&display=swap');
   *{box-sizing:border-box;margin:0;padding:0}
   :root{
     --bg:#fafaf9;--bg2:#ffffff;--bg3:#f5f5f4;--bg4:#e7e5e4;
@@ -19,30 +19,361 @@
   }
   body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.8;transition:background .3s,color .3s}
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
-  .nav{position:sticky;top:0;z-index:100;background:var(--bg2);border-bottom:1px solid var(--border);padding:.5rem 1.25rem;transition:background .3s,border-color .3s;box-shadow:0 2px 8px rgba(0,0,0,.03)}
-  .nav-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem;width:100%;margin-bottom:.35rem;padding-bottom:.35rem;border-bottom:1px solid var(--bg4)}
-  .nav-logo-group{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
-  .nav-logo{font-size:13.5px;font-weight:900;color:var(--accent);letter-spacing:0.03em;display:flex;align-items:center;gap:6px}
-  .cat-pills{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
-  .cat-pill{padding:4px 10px;font-size:11px;font-weight:700;border-radius:20px;border:1px solid var(--border);background:var(--bg3);color:var(--text2);cursor:pointer;transition:all .2s;font-family:var(--sans);display:inline-flex;align-items:center;gap:4px}
-  .cat-pill:hover{color:var(--accent);border-color:var(--accent2);background:var(--how-box-bg)}
-  .cat-pill.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-  .cat-pill-switch{border-color:rgba(234,88,12,.3);color:var(--coral)}
-  .cat-pill-switch:hover{border-color:var(--coral);color:var(--coral);background:rgba(234,88,12,.08)}
-  .cat-pill-switch.active{background:var(--coral);color:#fff;border-color:var(--coral)}
-  .nav-buttons-wrap{display:flex;align-items:center;flex-wrap:wrap;gap:1.5px;width:100%}
-  .nav-btn{padding:6.5px 10.5px;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;background:none;border:none;color:var(--text3);cursor:pointer;transition:all .2s;flex-shrink:0;font-family:var(--sans);border-radius:6px;margin:1.5px}
-  .nav-btn:hover{color:var(--accent);background:rgba(79,70,229,.06)}
-  .nav-btn.active{color:#fff;background:var(--accent)}
+
+  /* ============================================================ */
+  /* PREMIUM TOP NAVBAR (Scrolls away with page, not fixed)       */
+  /* ============================================================ */
+  .nav{
+    position:relative;
+    z-index:10;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(20px) saturate(180%);
+    -webkit-backdrop-filter:blur(20px) saturate(180%);
+    border-bottom:1px solid var(--border);
+    padding:.65rem 1.75rem .45rem;
+    transition:all .3s ease;
+    box-shadow:0 4px 20px -2px rgba(0,0,0,0.04);
+  }
+  [data-theme="dark"] .nav{
+    background:rgba(20,20,22,0.85);
+    border-bottom-color:rgba(255,255,255,0.08);
+    box-shadow:0 6px 28px -4px rgba(0,0,0,0.4);
+  }
+  .nav-top{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:.75rem;width:100%;margin-bottom:.4rem;padding-bottom:.4rem;
+    border-bottom:1px solid var(--bg4);
+  }
+  [data-theme="dark"] .nav-top{border-bottom-color:rgba(255,255,255,0.06)}
+  .nav-logo-group{display:flex;align-items:center;gap:.85rem;flex-shrink:0}
+  .nav-logo{
+    font-size:14px;font-weight:900;letter-spacing:0.04em;
+    display:flex;align-items:center;gap:8px;
+    background:linear-gradient(135deg,var(--accent) 0%,var(--teal) 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    cursor:pointer;user-select:none;transition:opacity .2s;
+  }
+  .nav-logo:hover{opacity:.85}
+  .nav-current-badge{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--bg3);border:1px solid var(--border);
+    padding:3px 10px;border-radius:999px;
+    font-size:11px;font-weight:700;color:var(--text2);
+    max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    transition:all .25s;
+  }
+  .nav-current-badge::before{
+    content:'';width:6px;height:6px;border-radius:50%;
+    background:var(--teal);box-shadow:0 0 8px var(--teal);
+    animation:pulseGlow 2s infinite;
+  }
+  @keyframes pulseGlow{
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:.4;transform:scale(0.8)}
+  }
+  .cat-pills-wrap{
+    display:flex;align-items:center;gap:5px;
+    overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
+    padding:2px 0;
+  }
+  .cat-pills-wrap::-webkit-scrollbar{display:none}
+  .cat-pill{
+    padding:5px 12px;font-size:11.5px;font-weight:700;border-radius:999px;
+    border:1px solid var(--border);background:var(--bg3);color:var(--text2);
+    cursor:pointer;transition:all .2s cubic-bezier(0.16,1,0.3,1);
+    font-family:var(--sans);display:inline-flex;align-items:center;gap:5px;
+    white-space:nowrap;flex-shrink:0;
+  }
+  .cat-pill:hover{
+    color:var(--accent);border-color:var(--accent2);background:var(--how-box-bg);
+    transform:translateY(-1px);
+  }
+  .cat-pill.active{
+    background:linear-gradient(135deg,var(--accent) 0%,var(--accent3) 100%);
+    color:#ffffff !important;border-color:transparent;
+    box-shadow:0 3px 12px rgba(79,70,229,0.35);
+    transform:translateY(-1px);
+  }
+  .cat-pill-switch{border-color:rgba(234,88,12,.35);color:var(--coral)}
+  .cat-pill-switch:hover{border-color:var(--coral);background:rgba(234,88,12,.1)}
+  .cat-pill-switch.active{
+    background:linear-gradient(135deg,#f97316 0%,#ea580c 100%) !important;
+    box-shadow:0 3px 12px rgba(234,88,12,0.4);
+  }
+  .nav-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+  .nav-search-btn{
+    padding:5px 12px;font-size:11.5px;font-weight:700;border-radius:999px;
+    border:1px solid var(--border);background:var(--bg3);color:var(--text2);
+    cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;
+    gap:6px;font-family:var(--sans);
+  }
+  .nav-search-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--how-box-bg)}
+  .nav-search-btn kbd{
+    background:var(--bg4);border-radius:4px;padding:1px 5px;
+    font-size:10px;font-family:var(--mono);border:1px solid var(--border);
+  }
+  .nav-buttons-wrap{
+    display:flex;align-items:center;gap:4px;overflow-x:auto;
+    width:100%;padding:3px 0 4px;
+    scrollbar-width:thin;scrollbar-color:var(--border) transparent;
+  }
+  .nav-buttons-wrap::-webkit-scrollbar{height:3px}
+  .nav-buttons-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+  .nav-btn{
+    padding:5px 11px;font-size:11px;font-weight:600;letter-spacing:0.03em;
+    text-transform:uppercase;background:var(--bg3);border:1px solid transparent;
+    color:var(--text3);cursor:pointer;transition:all .2s cubic-bezier(0.16,1,0.3,1);
+    flex-shrink:0;font-family:var(--sans);border-radius:7px;white-space:nowrap;
+  }
+  .nav-btn:hover{color:var(--text);background:var(--bg4);transform:translateY(-1px)}
+  .nav-btn.active{
+    color:#fff !important;background:var(--accent) !important;font-weight:700;
+    box-shadow:0 3px 10px rgba(79,70,229,0.3);border-color:rgba(255,255,255,0.15);
+  }
   .nav-btn-highlight{color:var(--coral);font-weight:800}
-  .nav-btn-highlight.active{background:var(--coral);color:#fff}
+  .nav-btn-highlight.active{background:var(--coral) !important;box-shadow:0 3px 10px rgba(234,88,12,0.35)}
+  .nav-scroll-progress{
+    position:fixed;top:0;left:0;height:2.5px;width:0%;
+    background:linear-gradient(90deg,#7c6af5,#2dd4bf,#f59e0b,#ec4899);
+    transition:width .1s ease-out;box-shadow:0 0 8px rgba(124,106,245,0.6);
+    z-index:99999;pointer-events:none;
+  }
+
+  /* ============================================================ */
+  /* LIQUID MORPH FLOATING ROADMAP MENU (Bottom-Center Command)   */
+  /* ============================================================ */
+  .liquid-menu-wrapper{
+    position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+    z-index:9999;pointer-events:auto;font-family:'Outfit','Inter',system-ui,sans-serif;
+  }
+  .liquid-menu-container{
+    position:relative;overflow:hidden;display:flex;flex-direction:column;
+    width:160px;height:48px;border-radius:999px;cursor:pointer;
+    box-shadow:0 14px 34px -4px rgba(0,0,0,0.28),0 0 0 1px rgba(0,0,0,0.08);
+    transition:width .65s cubic-bezier(0.22,1,0.36,1),
+                height .65s cubic-bezier(0.22,1,0.36,1),
+                border-radius .65s cubic-bezier(0.22,1,0.36,1),
+                transform .2s cubic-bezier(0.22,1,0.36,1);
+  }
+  .liquid-menu-container:hover{transform:scale(1.04)}
+  .liquid-menu-container.is-open{
+    width:min(620px, 94vw);height:min(700px, 85vh);border-radius:26px;cursor:default;transform:scale(1);
+    box-shadow:0 32px 85px -12px rgba(0,0,0,0.7),0 0 0 1px rgba(255,255,255,0.12);
+  }
+  .liquid-menu-bg-yellow{
+    position:absolute;inset:0;background:#FFE862;border:1.5px solid #d1bb3b;
+    border-radius:inherit;transition:background-color .3s,border-color .3s;
+  }
+  .liquid-menu-dark-circle{
+    position:absolute;left:50%;transform:translateX(-50%);
+    width:260%;height:260%;border-radius:50%;background:#16161a;bottom:-260%;
+    transition:bottom .75s cubic-bezier(0.22,1,0.36,1);pointer-events:none;
+  }
+  .liquid-menu-container.is-open .liquid-menu-dark-circle{
+    bottom:-16%;transition-delay:.06s;
+  }
+  .liquid-menu-content{
+    display:none; /* Crucial: 0 height when closed so bottom bar is never pushed out */
+    position:relative;z-index:10;flex-direction:column;
+    gap:10px;padding:16px 16px 8px;
+    opacity:0;pointer-events:none;flex:1;min-height:0;overflow:hidden;
+    transition:opacity .3s ease;
+  }
+  .liquid-menu-container.is-open .liquid-menu-content{
+    display:flex;opacity:1;pointer-events:auto;transition-delay:.15s;
+  }
+  .liquid-menu-header-bar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.08);
+    gap:10px;flex-shrink:0;
+  }
+  .liquid-menu-brand{display:flex;align-items:center;gap:10px;overflow:hidden}
+  .liquid-menu-brand-title{
+    font-size:13px;font-weight:900;letter-spacing:.06em;
+    background:linear-gradient(135deg,#FFE862 0%,#2dd4bf 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    white-space:nowrap;
+  }
+  .liquid-menu-active-pill{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+    padding:3px 9px;border-radius:999px;font-size:11px;color:#f7f1ed;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:170px;font-weight:600;
+  }
+  .liquid-pulse-dot{
+    width:6px;height:6px;border-radius:50%;background:#2dd4bf;
+    box-shadow:0 0 6px #2dd4bf;animation:pulseGlow 2s infinite;flex-shrink:0;
+  }
+  .liquid-menu-quick-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
+  .liquid-quick-btn{
+    background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);
+    border-radius:8px;padding:4px 9px;font-size:11.5px;font-weight:700;
+    color:#f7f1ed;cursor:pointer;transition:all .2s;display:inline-flex;
+    align-items:center;gap:5px;font-family:var(--sans);
+  }
+  .liquid-quick-btn:hover{background:rgba(255,232,98,0.2);border-color:#FFE862;color:#FFE862}
+  .liquid-quick-btn kbd{
+    background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.15);
+    border-radius:4px;padding:1px 4px;font-size:9.5px;font-family:var(--mono);
+  }
+  .liquid-category-rail{
+    display:flex;align-items:center;gap:6px;overflow-x:auto;scrollbar-width:none;
+    padding:2px 0 6px;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .liquid-category-rail::-webkit-scrollbar{display:none}
+  .liquid-cat-pill{
+    padding:4px 11px;font-size:11px;font-weight:700;border-radius:999px;
+    border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);
+    color:rgba(247,241,237,0.75);cursor:pointer;transition:all .2s;
+    white-space:nowrap;flex-shrink:0;font-family:var(--sans);
+  }
+  .liquid-cat-pill:hover{color:#fff;background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.25)}
+  .liquid-cat-pill.active{
+    background:#FFE862;color:#18181b !important;font-weight:800;border-color:#FFE862;
+    box-shadow:0 2px 10px rgba(255,232,98,0.35);
+  }
+  .liquid-cat-switch{border-color:rgba(249,115,22,0.4);color:#fb923c}
+  .liquid-cat-switch.active{background:#ea580c !important;color:#fff !important;border-color:#ea580c}
+  .liquid-sections-grid{
+    display:grid;grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));gap:6px;
+    overflow-y:auto;flex:1;padding:4px 4px 6px 0;scrollbar-width:thin;
+    scrollbar-color:rgba(255,255,255,0.15) transparent;
+  }
+  .liquid-sections-grid::-webkit-scrollbar{width:4px}
+  .liquid-sections-grid::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.18);border-radius:4px}
+  .liquid-sec-card{
+    display:flex;align-items:center;justify-content:space-between;gap:8px;
+    padding:7px 11px;border-radius:10px;background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.06);cursor:pointer;
+    transition:all .18s cubic-bezier(0.16,1,0.3,1);user-select:none;
+  }
+  .liquid-sec-card:hover{
+    background:rgba(255,232,98,0.12);border-color:rgba(255,232,98,0.4);
+    transform:translateX(3px);
+  }
+  .liquid-sec-card.active{
+    background:rgba(124,106,245,0.22);border-color:#7c6af5;
+    box-shadow:0 0 12px rgba(124,106,245,0.25);
+  }
+  .liquid-sec-card-left{display:flex;align-items:center;gap:8px;min-width:0;flex:1}
+  .liquid-sec-num{
+    font-size:10px;font-family:var(--mono);color:rgba(247,241,237,0.4);
+    font-weight:700;flex-shrink:0;width:16px;
+  }
+  .liquid-sec-icon{font-size:14px;flex-shrink:0}
+  .liquid-sec-info{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1}
+  .liquid-sec-title{
+    font-size:12px;font-weight:700;color:#f7f1ed;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .liquid-sec-card:hover .liquid-sec-title{color:#FFE862}
+  .liquid-sec-badge{
+    font-size:8.5px;font-family:var(--mono);font-weight:800;
+    text-transform:uppercase;padding:1px 5px;border-radius:4px;
+    display:inline-block;width:fit-content;letter-spacing:.04em;
+  }
+  .liquid-sec-status{
+    font-size:11px;color:rgba(247,241,237,0.35);font-weight:700;flex-shrink:0;
+    font-family:var(--mono);transition:all .15s;
+  }
+  .liquid-sec-card.active .liquid-sec-status{color:#4ade80;font-weight:900}
+  .liquid-menu-bar{
+    position:relative;z-index:10;display:flex;align-items:center;
+    justify-content:space-between;width:100%;height:48px;padding:0 18px;
+    flex-shrink:0;cursor:pointer;user-select:none;box-sizing:border-box;
+  }
+  .liquid-menu-container.is-open .liquid-menu-bar{
+    border-top:1px solid rgba(255,255,255,0.08);background:rgba(0,0,0,0.22);
+  }
+  .liquid-menu-label{
+    font-size:13px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;
+    color:#1e1e24;transition:color .3s;display:flex;align-items:center;gap:8px;
+  }
+  .liquid-menu-dot{
+    width:7px;height:7px;border-radius:50%;background:#16a34a;
+    box-shadow:0 0 6px rgba(22,163,74,0.7);animation:pulseGlow 2s infinite;
+  }
+  .liquid-menu-container.is-open .liquid-menu-label{color:#f7f1ed}
+  .liquid-menu-container.is-open .liquid-menu-dot{background:#f43f5e;box-shadow:0 0 6px #f43f5e}
+  .liquid-menu-icon{
+    position:relative;width:22px;height:22px;display:flex;align-items:center;justify-content:center;
+  }
+  .liquid-menu-bar-line{
+    position:absolute;width:17px;height:2px;border-radius:999px;background-color:#1e1e24;
+    transition:transform .35s cubic-bezier(0.22,1,0.36,1),background-color .3s,top .35s cubic-bezier(0.22,1,0.36,1);
+  }
+  .liquid-menu-bar-line.line-1{top:6px}
+  .liquid-menu-bar-line.line-2{top:13px}
+  .liquid-menu-container.is-open .liquid-menu-bar-line{background-color:#f7f1ed}
+  .liquid-menu-container.is-open .liquid-menu-bar-line.line-1{top:10px;transform:rotate(45deg)}
+  .liquid-menu-container.is-open .liquid-menu-bar-line.line-2{top:10px;transform:rotate(-45deg)}
+
+  /* ============================================================ */
+  /* SPOTLIGHT QUICK JUMP MODAL                                   */
+  /* ============================================================ */
+  .spotlight-modal-overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,0.65);
+    backdrop-filter:blur(10px);z-index:99999;
+    display:none;align-items:flex-start;justify-content:center;
+    padding-top:12vh;
+  }
+  .spotlight-modal-overlay.active{display:flex}
+  .spotlight-modal-card{
+    background:var(--bg2);border:1px solid var(--border);border-radius:18px;
+    width:94%;max-width:640px;box-shadow:0 25px 70px rgba(0,0,0,0.45);
+    overflow:hidden;display:flex;flex-direction:column;
+    animation:spotlightPop .25s cubic-bezier(0.16,1,0.3,1);
+  }
+  @keyframes spotlightPop{
+    0%{opacity:0;transform:scale(0.96) translateY(-10px)}
+    100%{opacity:1;transform:scale(1) translateY(0)}
+  }
+  .spotlight-search-header{
+    display:flex;align-items:center;gap:12px;padding:1.1rem 1.4rem;
+    border-bottom:1px solid var(--border);
+  }
+  .spotlight-search-header input{
+    flex:1;background:transparent;border:none;outline:none;
+    font-size:16px;color:var(--text);font-family:var(--sans);font-weight:600;
+  }
+  .spotlight-close-btn{
+    background:var(--bg4);border:none;border-radius:6px;width:26px;height:26px;
+    cursor:pointer;color:var(--text2);display:flex;align-items:center;justify-content:center;
+    font-size:12px;transition:background .2s;
+  }
+  .spotlight-close-btn:hover{background:var(--border2);color:var(--text)}
+  .spotlight-results{max-height:380px;overflow-y:auto;padding:.6rem 0}
+  .spotlight-item{
+    padding:.75rem 1.4rem;display:flex;align-items:center;justify-content:space-between;
+    cursor:pointer;transition:background .15s;font-size:14px;color:var(--text);font-weight:600;
+  }
+  .spotlight-item:hover,.spotlight-item.highlighted{
+    background:var(--how-box-bg);color:var(--accent);
+  }
+  .spotlight-footer{
+    padding:.65rem 1.4rem;background:var(--bg3);border-top:1px solid var(--border);
+    display:flex;align-items:center;justify-content:space-between;
+    font-size:11px;color:var(--text3);font-family:var(--mono);
+  }
+  .spotlight-footer kbd{
+    background:var(--bg4);padding:2px 5px;border-radius:4px;border:1px solid var(--border);
+  }
+
+  /* ============================================================ */
+  /* EXPANDED FULL-WIDTH PAGE CONTAINER                           */
+  /* ============================================================ */
   .page-footer-nav{display:flex;justify-content:space-between;align-items:center;margin-top:3.5rem;padding:1.5rem 0 0.5rem;border-top:1.5px solid var(--border);gap:1rem;flex-wrap:wrap}
   .footer-nav-btn{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--text);font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px;font-family:var(--sans)}
   .footer-nav-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--how-box-bg)}
   .footer-nav-status{font-size:12px;color:var(--text3);font-family:var(--mono);font-weight:600}
-  .page{display:none;padding:3rem 3.5rem;max-width:1100px;margin:0 auto;width:100%}
+  .page{
+    display:none;padding:2.5rem 3.5rem 6rem;
+    max-width:1680px;width:95%;margin:0 auto;box-sizing:border-box;
+  }
   .page.active{display:block}
-  @media(max-width:900px){.page{padding:1.5rem 1rem}}
+  @media(min-width:1920px){.page{max-width:1840px;width:92%}}
+  @media(max-width:1200px){.page{padding:2rem 2rem 5rem;width:98%}}
+  @media(max-width:900px){.page{padding:1.5rem 1rem 5rem;width:100%}}
   h1{font-size:42px;font-weight:900;line-height:1.2;margin-bottom:1rem;color:var(--text)}
   h2{font-size:25px;font-weight:800;margin:3rem 0 1.25rem;color:var(--text);border-bottom:2px solid var(--bg4);padding-bottom:.75rem}
   h3{font-size:18px;font-weight:700;margin:2rem 0 .75rem;color:var(--accent3)}
@@ -211,19 +542,29 @@
 <nav class="nav" role="navigation">
   <div class="nav-top">
     <div class="nav-logo-group">
-      <span class="nav-logo">AI INFRA ROADMAP ✦ 2026</span>
-      <div class="cat-pills" id="categoryPills">
-        <button class="cat-pill active" onclick="filterNavCategory('all', this)">All (27)</button>
-        <button class="cat-pill cat-pill-switch" onclick="filterNavCategory('switch', this)">🚀 Fast Switch</button>
-        <button class="cat-pill" onclick="filterNavCategory('core', this)">🏛️ Core Track (P1–P4)</button>
-        <button class="cat-pill" onclick="filterNavCategory('plans', this)">📅 Day Plans</button>
-        <button class="cat-pill" onclick="filterNavCategory('dsa', this)">💻 DSA & Design</button>
-        <button class="cat-pill" onclick="filterNavCategory('prep', this)">🎯 Career & Prep</button>
-        <button class="cat-pill" onclick="filterNavCategory('cheats', this)">📄 Cheats & Logs</button>
-      </div>
+      <span class="nav-logo" onclick="show('s1')">AI INFRA ✦ 2026</span>
+      <span class="nav-current-badge" id="navCurrentBadge">Reality Check</span>
     </div>
-    <button class="dark-mode-toggle" id="dmToggle" onclick="toggleDarkMode()">🌙 Dark</button>
+    
+    <div class="cat-pills-wrap" id="categoryPills">
+      <button class="cat-pill active" onclick="filterNavCategory('all', this)">All (27)</button>
+      <button class="cat-pill cat-pill-switch" onclick="filterNavCategory('switch', this)">🚀 Fast Switch</button>
+      <button class="cat-pill" onclick="filterNavCategory('core', this)">🏛️ Core Track</button>
+      <button class="cat-pill" onclick="filterNavCategory('plans', this)">📅 Day Plans</button>
+      <button class="cat-pill" onclick="filterNavCategory('dsa', this)">💻 DSA &amp; Design</button>
+      <button class="cat-pill" onclick="filterNavCategory('prep', this)">🎯 Career &amp; Prep</button>
+      <button class="cat-pill" onclick="filterNavCategory('cheats', this)">📄 Cheats &amp; Logs</button>
+    </div>
+
+    <div class="nav-actions">
+      <button class="nav-search-btn" onclick="openSearchModal()" title="Search &amp; Quick Jump (Ctrl+K)">
+        <span>🔍 Jump</span>
+        <kbd>⌘K</kbd>
+      </button>
+      <button class="dark-mode-toggle" id="dmToggle" onclick="toggleDarkMode()">🌙 Dark</button>
+    </div>
   </div>
+
   <div class="nav-buttons-wrap" id="navButtonsContainer">
     <!-- Core Track -->
     <button class="nav-btn active" data-cat="core" onclick="show('s1', this)">Reality</button>
@@ -231,7 +572,7 @@
     <button class="nav-btn" data-cat="core" onclick="show('s3', this)">Phase 2</button>
     <button class="nav-btn" data-cat="core" onclick="show('s4', this)">Phase 3</button>
     <button class="nav-btn" data-cat="core" onclick="show('s5', this)">Phase 4</button>
-    <button class="nav-btn" data-cat="core" onclick="show('s15', this)">OS & C++</button>
+    <button class="nav-btn" data-cat="core" onclick="show('s15', this)">OS &amp; C++</button>
     <button class="nav-btn" data-cat="core" onclick="show('s18', this)">Papers</button>
 
     <!-- Day Plans -->
@@ -254,16 +595,19 @@
     <button class="nav-btn" data-cat="prep" onclick="show('s17', this)">Strategy</button>
 
     <!-- Fast Track -->
-    <button class="nav-btn nav-btn-highlight" data-cat="switch" onclick="show('s25', this)" style="color:var(--coral);font-weight:800">🚀 Career Switch (Roadmap.sh)</button>
+    <button class="nav-btn nav-btn-highlight" data-cat="switch" onclick="show('s25', this)" style="color:var(--coral);font-weight:800">🚀 Career Switch</button>
 
     <!-- Cheats & Logs -->
-    <button class="nav-btn" data-cat="cheats" onclick="show('s21', this)">📄 Python Cheat Sheet</button>
-    <button class="nav-btn" data-cat="cheats" onclick="show('s22', this)">📄 Git Cheat Sheet</button>
-    <button class="nav-btn" data-cat="cheats" onclick="show('s23', this)">📄 DSA Cheat Sheet</button>
-    <button class="nav-btn" data-cat="cheats" onclick="show('s24', this)">📄 C++ Cheat Sheet</button>
-    <button class="nav-btn" data-cat="cheats" onclick="show('s26', this)" style="color:var(--teal);font-weight:800">📅 My Schedule</button>
+    <button class="nav-btn" data-cat="cheats" onclick="show('s21', this)">📄 Python</button>
+    <button class="nav-btn" data-cat="cheats" onclick="show('s22', this)">📄 Git</button>
+    <button class="nav-btn" data-cat="cheats" onclick="show('s23', this)">📄 DSA</button>
+    <button class="nav-btn" data-cat="cheats" onclick="show('s24', this)">📄 C++</button>
+    <button class="nav-btn" data-cat="cheats" onclick="show('s26', this)" style="color:var(--teal);font-weight:800">📅 Schedule</button>
     <button class="nav-btn" data-cat="cheats" onclick="show('s27', this)" style="color:var(--amber);font-weight:800">📓 Weekly Log</button>
   </div>
+
+  <!-- Animated Reading Progress Line -->
+  <div class="nav-scroll-progress" id="navScrollProgress"></div>
 </nav>
 
 <!-- SECTION 1: REALITY -->
@@ -3742,7 +4086,7 @@
       <ul class="styled">
         <li><strong>Attention mechanism:</strong> "What is the formula for scaled dot-product attention?" → Q·K^T / √d_k, then softmax, then multiply by V</li>
         <li><strong>PagedAttention:</strong> "How does PagedAttention manage KV cache?" → Divides KV cache into fixed-size blocks (pages), allocates on demand, avoids fragmentation</li>
-        <li><strong>LoRA:</strong> "What does LoRA inject into transformer layers?" → Low-rank matrices A (d×r) and B (r×d) where r << d, added to attention weight matrices</li>
+        <li><strong>LoRA:</strong> "What does LoRA inject into transformer layers?" → Low-rank matrices A (d×r) and B (r×d) where r &lt;&lt; d, added to attention weight matrices</li>
         <li><strong>Flash Attention:</strong> "Why is Flash Attention faster?" → Tiles attention computation to fit in GPU SRAM, reduces HBM reads/writes from O(N²) to O(N)</li>
         <li><strong>Continuous batching:</strong> "How does it differ from static batching?" → Requests can join/leave batch dynamically, no waiting for longest sequence to finish</li>
       </ul>
@@ -5237,11 +5581,11 @@ print(sol.problemName([1,2,3]))</div>
     <div class="arch"># Binary Search Template
 def binary_search(arr, target):
     left, right = 0, len(arr) - 1
-    while left <= right:
+    while left &lt;= right:
         mid = left + (right - left) // 2
         if arr[mid] == target:
             return mid
-        elif arr[mid] < target:
+        elif arr[mid] &lt; target:
             left = mid + 1
         else:
             right = mid - 1
@@ -5334,7 +5678,7 @@ int("123")               # → 123
 float("3.14")            # → 3.14
 str(123)                 # → "123"
 bool(0)                  # → False (0, "", [], {}, None are False)
-type(x)                  # → <class 'int'>
+type(x)                  # → &lt;class 'int'&gt;
 isinstance(x, int)       # → True
 
 # STRING OPERATIONS
@@ -5369,7 +5713,7 @@ s.isalnum()              # → False
 5 % 2                    # → 1 (modulo)
 2 ** 3                   # → 8 (power)
 
-# Comparison: == != < > <= >=
+# Comparison: == != &lt; &gt; &lt;= &gt;=
 # Logical: and or not
 # Identity: is is not
 # Membership: in not in
@@ -5378,7 +5722,7 @@ s.isalnum()              # → False
 # if-elif-else
 if x > 0:
     print("positive")
-elif x < 0:
+elif x &lt; 0:
     print("negative")
 else:
     print("zero")
@@ -5645,7 +5989,7 @@ class Circle:
     
     @radius.setter
     def radius(self, value):
-        if value < 0:
+        if value &lt; 0:
             raise ValueError("Radius must be positive")
         self._radius = value
     
@@ -5780,8 +6124,8 @@ itertools.chain([1, 2], [3, 4])  # → 1, 2, 3, 4
 itertools.islice(range(10), 2, 8, 2)  # → 2, 4, 6 (start, stop, step)
 itertools.groupby([1, 1, 2, 2, 3])  # group consecutive equal elements
 itertools.accumulate([1, 2, 3, 4])  # → 1, 3, 6, 10 (cumulative sum)
-itertools.takewhile(lambda x: x < 5, [1, 2, 6, 3])  # → 1, 2
-itertools.dropwhile(lambda x: x < 5, [1, 2, 6, 3])  # → 6, 3
+itertools.takewhile(lambda x: x &lt; 5, [1, 2, 6, 3])  # → 1, 2
+itertools.dropwhile(lambda x: x &lt; 5, [1, 2, 6, 3])  # → 6, 3
 itertools.filterfalse(lambda x: x % 2, [1, 2, 3, 4])  # → 2, 4
 
 # FUNCTOOLS
@@ -5798,7 +6142,7 @@ square(5)                # → 25
 # lru_cache (memoization)
 @functools.lru_cache(maxsize=128)
 def fibonacci(n):
-    if n < 2:
+    if n &lt; 2:
         return n
     return fibonacci(n-1) + fibonacci(n-2)
 
@@ -6388,7 +6732,7 @@ git merge --no-ff branch # merge with merge commit (no fast-forward)
 git merge --squash branch  # squash all commits into one
 
 # MERGE CONFLICTS
-# 1. Git marks conflicts in files with <<<<<<< ======= >>>>>>>
+# 1. Git marks conflicts in files with &lt;&lt;&lt;&lt;&lt;&lt;&lt; ======= &gt;&gt;&gt;&gt;&gt;&gt;&gt;
 # 2. Edit files to resolve conflicts
 # 3. git add resolved-file.txt
 # 4. git commit
@@ -6738,7 +7082,7 @@ git checkout -b new-branch
 
 # FIX MERGE CONFLICTS
 # 1. Open conflicted files
-# 2. Look for <<<<<<< ======= >>>>>>>
+# 2. Look for &lt;&lt;&lt;&lt;&lt;&lt;&lt; ======= &gt;&gt;&gt;&gt;&gt;&gt;&gt;
 # 3. Edit to resolve
 # 4. git add resolved-file.txt
 # 5. git commit
@@ -6868,7 +7212,7 @@ Dynamic array append: O(1) amortized (occasionally O(n) when resizing)
 
 # MASTER THEOREM (for divide & conquer)
 T(n) = aT(n/b) + f(n)
-- If f(n) = O(n^c) where c < log_b(a): T(n) = O(n^log_b(a))
+- If f(n) = O(n^c) where c &lt; log_b(a): T(n) = O(n^log_b(a))
 - If f(n) = O(n^c) where c = log_b(a): T(n) = O(n^c log n)
 - If f(n) = O(n^c) where c > log_b(a): T(n) = O(f(n))
 
@@ -6881,19 +7225,19 @@ T(n) = aT(n/b) + f(n)
 
 # Template (opposite direction)
 left, right = 0, len(arr) - 1
-while left < right:
+while left &lt; right:
     if condition:
         # process
         left += 1
         right -= 1
-    elif arr[left] + arr[right] < target:
+    elif arr[left] + arr[right] &lt; target:
         left += 1
     else:
         right -= 1
 
 # Template (same direction)
 slow = fast = 0
-while fast < len(arr):
+while fast &lt; len(arr):
     if condition:
         slow += 1
     fast += 1
@@ -6939,7 +7283,7 @@ for num in arr[1:]:
 # Sort array of 0s, 1s, 2s
 low = mid = 0
 high = len(arr) - 1
-while mid <= high:
+while mid &lt;= high:
     if arr[mid] == 0:
         arr[low], arr[mid] = arr[mid], arr[low]
         low += 1
@@ -6964,11 +7308,11 @@ for num in arr:
   <div class="arch"># STANDARD BINARY SEARCH
 def binary_search(arr, target):
     left, right = 0, len(arr) - 1
-    while left <= right:
+    while left &lt;= right:
         mid = left + (right - left) // 2
         if arr[mid] == target:
             return mid
-        elif arr[mid] < target:
+        elif arr[mid] &lt; target:
             left = mid + 1
         else:
             right = mid - 1
@@ -6977,9 +7321,9 @@ def binary_search(arr, target):
 # LOWER BOUND (first >= target)
 def lower_bound(arr, target):
     left, right = 0, len(arr)
-    while left < right:
+    while left &lt; right:
         mid = left + (right - left) // 2
-        if arr[mid] < target:
+        if arr[mid] &lt; target:
             left = mid + 1
         else:
             right = mid
@@ -6988,9 +7332,9 @@ def lower_bound(arr, target):
 # UPPER BOUND (first > target)
 def upper_bound(arr, target):
     left, right = 0, len(arr)
-    while left < right:
+    while left &lt; right:
         mid = left + (right - left) // 2
-        if arr[mid] <= target:
+        if arr[mid] &lt;= target:
             left = mid + 1
         else:
             right = mid
@@ -7001,7 +7345,7 @@ def upper_bound(arr, target):
 def binary_search_answer(arr, condition):
     left, right = min_possible, max_possible
     result = -1
-    while left <= right:
+    while left &lt;= right:
         mid = left + (right - left) // 2
         if condition(mid):
             result = mid
@@ -7014,19 +7358,19 @@ def binary_search_answer(arr, condition):
 # ROTATED SORTED ARRAY
 def search_rotated(arr, target):
     left, right = 0, len(arr) - 1
-    while left <= right:
+    while left &lt;= right:
         mid = left + (right - left) // 2
         if arr[mid] == target:
             return mid
         # Left half sorted
-        if arr[left] <= arr[mid]:
-            if arr[left] <= target < arr[mid]:
+        if arr[left] &lt;= arr[mid]:
+            if arr[left] &lt;= target &lt; arr[mid]:
                 right = mid - 1
             else:
                 left = mid + 1
         # Right half sorted
         else:
-            if arr[mid] < target <= arr[right]:
+            if arr[mid] &lt; target &lt;= arr[right]:
                 left = mid + 1
             else:
                 right = mid - 1
@@ -7098,7 +7442,7 @@ def merge_two_lists(l1, l2):
     dummy = ListNode(0)
     curr = dummy
     while l1 and l2:
-        if l1.val < l2.val:
+        if l1.val &lt; l2.val:
             curr.next = l1
             l1 = l1.next
         else:
@@ -7206,7 +7550,7 @@ def lca(root, p, q):
 def is_valid_bst(root, min_val=float('-inf'), max_val=float('inf')):
     if not root:
         return True
-    if not (min_val < root.val < max_val):
+    if not (min_val &lt; root.val &lt; max_val):
         return False
     return (is_valid_bst(root.left, min_val, root.val) and
             is_valid_bst(root.right, root.val, max_val))
@@ -7310,7 +7654,7 @@ def dijkstra(graph, start):
             continue
         for neighbor, weight in graph[node]:
             distance = curr_dist + weight
-            if distance < distances[neighbor]:
+            if distance &lt; distances[neighbor]:
                 distances[neighbor] = distance
                 heapq.heappush(pq, (distance, neighbor))
     return distances
@@ -7330,7 +7674,7 @@ class UnionFind:
         px, py = self.find(x), self.find(y)
         if px == py:
             return False
-        if self.rank[px] < self.rank[py]:
+        if self.rank[px] &lt; self.rank[py]:
             px, py = py, px
         self.parent[py] = px
         if self.rank[px] == self.rank[py]:
@@ -7382,7 +7726,7 @@ def has_cycle_directed(graph):
 
 # FIBONACCI (1D DP)
 def fib(n):
-    if n <= 1:
+    if n &lt;= 1:
         return n
     dp = [0] * (n + 1)
     dp[1] = 1
@@ -7392,7 +7736,7 @@ def fib(n):
 
 # CLIMBING STAIRS
 def climb_stairs(n):
-    if n <= 2:
+    if n &lt;= 2:
         return n
     dp = [0] * (n + 1)
     dp[1], dp[2] = 1, 2
@@ -7438,7 +7782,7 @@ def lis(nums):
     dp = [1] * len(nums)
     for i in range(1, len(nums)):
         for j in range(i):
-            if nums[j] < nums[i]:
+            if nums[j] &lt; nums[i]:
                 dp[i] = max(dp[i], dp[j] + 1)
     return max(dp)
 
@@ -7476,7 +7820,7 @@ def knapsack(weights, values, capacity):
     dp = [[0] * (capacity + 1) for _ in range(n + 1)]
     for i in range(1, n + 1):
         for w in range(1, capacity + 1):
-            if weights[i-1] <= w:
+            if weights[i-1] &lt;= w:
                 dp[i][w] = max(dp[i-1][w], dp[i-1][w-weights[i-1]] + values[i-1])
             else:
                 dp[i][w] = dp[i-1][w]
@@ -7589,7 +7933,7 @@ def solve_n_queens(n):
             j -= 1
         # Check anti-diagonal
         i, j = row - 1, col + 1
-        while i >= 0 and j < n:
+        while i >= 0 and j &lt; n:
             if board[i][j] == 'Q':
                 return False
             i -= 1
@@ -7613,7 +7957,7 @@ def exist(board, word):
     def backtrack(i, j, k):
         if k == len(word):
             return True
-        if i < 0 or i >= len(board) or j < 0 or j >= len(board[0]) or board[i][j] != word[k]:
+        if i &lt; 0 or i &gt;= len(board) or j &lt; 0 or j &gt;= len(board[0]) or board[i][j] != word[k]:
             return False
         temp = board[i][j]
         board[i][j] = '#'  # mark visited
@@ -7686,7 +8030,7 @@ class MedianFinder:
     def addNum(self, num):
         heapq.heappush(self.small, -num)
         heapq.heappush(self.large, -heapq.heappop(self.small))
-        if len(self.small) < len(self.large):
+        if len(self.small) &lt; len(self.large):
             heapq.heappush(self.small, -heapq.heappop(self.large))
     
     def findMedian(self):
@@ -7734,19 +8078,19 @@ class Trie:
 # BIT MANIPULATION
 # Check if kth bit is set
 def is_bit_set(n, k):
-    return (n & (1 << k)) != 0
+    return (n & (1 &lt;&lt; k)) != 0
 
 # Set kth bit
 def set_bit(n, k):
-    return n | (1 << k)
+    return n | (1 &lt;&lt; k)
 
 # Clear kth bit
 def clear_bit(n, k):
-    return n & ~(1 << k)
+    return n & ~(1 &lt;&lt; k)
 
 # Toggle kth bit
 def toggle_bit(n, k):
-    return n ^ (1 << k)
+    return n ^ (1 &lt;&lt; k)
 
 # Count set bits
 def count_set_bits(n):
@@ -7778,17 +8122,17 @@ def single_number(nums):
   <h2>11. Sorting Algorithms</h2>
   <div class="arch"># QUICK SORT - O(n log n) average, O(n²) worst
 def quick_sort(arr):
-    if len(arr) <= 1:
+    if len(arr) &lt;= 1:
         return arr
     pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
+    left = [x for x in arr if x &lt; pivot]
     middle = [x for x in arr if x == pivot]
     right = [x for x in arr if x > pivot]
     return quick_sort(left) + middle + quick_sort(right)
 
 # MERGE SORT - O(n log n) always
 def merge_sort(arr):
-    if len(arr) <= 1:
+    if len(arr) &lt;= 1:
         return arr
     mid = len(arr) // 2
     left = merge_sort(arr[:mid])
@@ -7798,8 +8142,8 @@ def merge_sort(arr):
 def merge(left, right):
     result = []
     i = j = 0
-    while i < len(left) and j < len(right):
-        if left[i] < right[j]:
+    while i &lt; len(left) and j &lt; len(right):
+        if left[i] &lt; right[j]:
             result.append(left[i])
             i += 1
         else:
@@ -7895,10 +8239,10 @@ constexpr int SIZE = 10; // compile-time constant
 
 // POINTERS & REFERENCES
 int x = 5;
-int* ptr = &x;           // pointer to x
-int& ref = x;            // reference to x
+int* ptr = &amp;x;           // pointer to x
+int&amp; ref = x;            // reference to x
 *ptr = 10;               // dereference
-cout << &x;              // address of x
+cout &lt;&lt; &amp;x;              // address of x
 
 // ARRAYS
 int arr[5] = {1, 2, 3, 4, 5};
@@ -7920,8 +8264,8 @@ delete[] arr;            // deallocate array
 // INPUT/OUTPUT
 int x;
 cin >> x;                // input
-cout << x << endl;       // output
-cout << x << "\n";       // faster than endl
+cout &lt;&lt; x &lt;&lt; endl;       // output
+cout &lt;&lt; x &lt;&lt; "\n";       // faster than endl
 
 // STRING INPUT
 string s;
@@ -7929,7 +8273,7 @@ cin >> s;                // reads until whitespace
 getline(cin, s);         // reads entire line
 
 // FORMATTED OUTPUT
-cout << fixed << setprecision(2) << 3.14159;  // 3.14
+cout &lt;&lt; fixed &lt;&lt; setprecision(2) &lt;&lt; 3.14159;  // 3.14
 
 </div>
 
@@ -8086,7 +8430,7 @@ partition(v.begin(), v.end(), [](int x) { return x % 2 == 0; });
 // ALL_OF, ANY_OF, NONE_OF
 all_of(v.begin(), v.end(), [](int x) { return x > 0; });
 any_of(v.begin(), v.end(), [](int x) { return x > 5; });
-none_of(v.begin(), v.end(), [](int x) { return x < 0; });
+none_of(v.begin(), v.end(), [](int x) { return x &lt; 0; });
 
 </div>
 
@@ -8110,7 +8454,7 @@ s.clear();               // empty string
 
 // COMPARISON
 s1 == s2
-s1 < s2                  // lexicographic
+s1 &lt; s2                  // lexicographic
 
 // CONVERSION
 to_string(123);          // int to string
@@ -8201,7 +8545,7 @@ sort(v.begin(), v.end(), [](int a, int b) { return a > b; });
 
 // RECURSIVE LAMBDA (C++14)
 function&lt;int(int)&gt; fib = [&](int n) {
-    return n <= 1 ? n : fib(n-1) + fib(n-2);
+    return n &lt;= 1 ? n : fib(n-1) + fib(n-2);
 };
 
 </div>
@@ -8228,13 +8572,13 @@ public:
     
     // Method
     void greet() {
-        cout << "Hello, I'm " << name << endl;
+        cout &lt;&lt; "Hello, I'm " &lt;&lt; name &lt;&lt; endl;
     }
     
     // Static member
     static int count;
     static void printCount() {
-        cout << count << endl;
+        cout &lt;&lt; count &lt;&lt; endl;
     }
 };
 
@@ -8247,7 +8591,7 @@ public:
     Student(string n, int a, int id) : Person(n, a), studentId(id) {}
     
     void study() {
-        cout << "Studying..." << endl;
+        cout &lt;&lt; "Studying..." &lt;&lt; endl;
     }
 };
 
@@ -8305,7 +8649,7 @@ auto v = vector&lt;int&gt;{1, 2, 3};
 // RANGE-BASED FOR LOOP (C++11)
 vector&lt;int&gt; v = {1, 2, 3, 4, 5};
 for (int x : v) {
-    cout << x << " ";
+    cout &lt;&lt; x &lt;&lt; " ";
 }
 for (auto& x : v) {      // reference (can modify)
     x *= 2;
@@ -8364,18 +8708,18 @@ int* ptr = get_if&lt;int&gt;(&v);  // returns nullptr if wrong type
 // STRING_VIEW (C++17)
 #include &lt;string_view&gt;
 void func(string_view sv) {  // no copy, just view
-    cout << sv << endl;
+    cout &lt;&lt; sv &lt;&lt; endl;
 }
 
 // CONSTEXPR (C++11/14/17)
 constexpr int factorial(int n) {
-    return n <= 1 ? 1 : n * factorial(n - 1);
+    return n &lt;= 1 ? 1 : n * factorial(n - 1);
 }
 constexpr int result = factorial(5);  // computed at compile time
 
 // IF WITH INITIALIZER (C++17)
 if (auto it = m.find("key"); it != m.end()) {
-    cout << it->second << endl;
+    cout &lt;&lt; it->second &lt;&lt; endl;
 }
 
 </div>
@@ -8384,11 +8728,11 @@ if (auto it = m.find("key"); it != m.end()) {
   <div class="arch"># BINARY SEARCH
 int binary_search(vector&lt;int&gt;& arr, int target) {
     int left = 0, right = arr.size() - 1;
-    while (left <= right) {
+    while (left &lt;= right) {
         int mid = left + (right - left) / 2;
         if (arr[mid] == target)
             return mid;
-        else if (arr[mid] < target)
+        else if (arr[mid] &lt; target)
             left = mid + 1;
         else
             right = mid - 1;
@@ -8442,7 +8786,7 @@ vector&lt;int&gt; dijkstra(vector&lt;vector&lt;pair&lt;int,int&gt;&gt;&gt;& grap
         if (d > dist[u]) continue;
         
         for (auto [v, w] : graph[u]) {
-            if (dist[u] + w < dist[v]) {
+            if (dist[u] + w &lt; dist[v]) {
                 dist[v] = dist[u] + w;
                 pq.push({dist[v], v});
             }
@@ -8468,7 +8812,7 @@ public:
     bool unite(int x, int y) {
         int px = find(x), py = find(y);
         if (px == py) return false;
-        if (rank[px] < rank[py]) swap(px, py);
+        if (rank[px] &lt; rank[py]) swap(px, py);
         parent[py] = px;
         if (rank[px] == rank[py]) rank[px]++;
         return true;
@@ -8525,7 +8869,7 @@ using namespace std;
 #define se second
 #define all(v) v.begin(), v.end()
 #define sz(v) (int)v.size()
-#define rep(i, a, b) for(int i = a; i < b; i++)
+#define rep(i, a, b) for(int i = a; i &lt; b; i++)
 #define per(i, a, b) for(int i = a; i >= b; i--)
 
 const int MOD = 1e9 + 7;
@@ -8562,8 +8906,8 @@ ll power(ll a, ll b, ll mod) {
     return res;
 }
 bool isPrime(ll n) {
-    if(n < 2) return false;
-    for(ll i = 2; i * i <= n; i++)
+    if(n &lt; 2) return false;
+    for(ll i = 2; i * i &lt;= n; i++)
         if(n % i == 0) return false;
     return true;
 }
@@ -9910,7 +10254,22 @@ function show(id, btn){
       if(catPill) filterNavCategory(cat, catPill);
       else filterNavCategory('all', document.querySelector('.cat-pill'));
     }
+    // Smoothly center active button in horizontal rail
+    btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   }
+
+  // Update current viewing section badge in navbar and floating menu
+  const secMeta = SECTION_ORDER.find(s => s.id === id);
+  const badgeEl = document.getElementById('navCurrentBadge');
+  if (badgeEl && secMeta) {
+    badgeEl.textContent = secMeta.title;
+  }
+  updateLiquidActiveCard(id);
+
+  // Reset scroll progress bar
+  const progEl = document.getElementById('navScrollProgress');
+  if (progEl) progEl.style.width = '0%';
+
   window.scrollTo({top:0,behavior:'smooth'});
   if(id === 's27') wlRender();
 }
@@ -9959,11 +10318,257 @@ function initFooterNav(){
   });
 }
 
+// ============================================================
+// SCROLL READING PROGRESS BAR
+// ============================================================
+window.addEventListener('scroll', function() {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const progressPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  const progEl = document.getElementById('navScrollProgress');
+  if (progEl) progEl.style.width = Math.min(100, Math.max(0, progressPercent)) + '%';
+}, { passive: true });
+
+// ============================================================
+// LIQUID MORPH FLOATING ROADMAP MENU (All-in-One Command Center)
+// ============================================================
+let liquidMenuOpen = false;
+let currentLiquidCategory = 'all';
+
+function toggleLiquidMenu(e) {
+  if (e) e.stopPropagation();
+  const container = document.getElementById('liquidMenuContainer');
+  const labelText = document.getElementById('liquidMenuLabelText');
+  if (!container) return;
+  liquidMenuOpen = !liquidMenuOpen;
+  if (liquidMenuOpen) {
+    container.classList.add('is-open');
+    if (labelText) labelText.textContent = 'Close Navigation';
+  } else {
+    container.classList.remove('is-open');
+    if (labelText) labelText.textContent = 'Menu';
+  }
+}
+
+function closeLiquidMenu() {
+  if (!liquidMenuOpen) return;
+  liquidMenuOpen = false;
+  const container = document.getElementById('liquidMenuContainer');
+  const labelText = document.getElementById('liquidMenuLabelText');
+  if (container) container.classList.remove('is-open');
+  if (labelText) labelText.textContent = 'Menu';
+}
+
+function selectFromLiquidMenu(category, sectionId) {
+  closeLiquidMenu();
+  if (sectionId) {
+    show(sectionId);
+  }
+}
+
+function initLiquidMenuSections() {
+  const container = document.getElementById('liquidSectionsGrid');
+  if (!container) return;
+
+  const catMeta = {
+    core: { label: 'Core', icon: '🏛️', badgeColor: 'rgba(124,106,245,0.25)', textColor: '#a78bfa' },
+    plans: { label: 'Plan', icon: '📅', badgeColor: 'rgba(13,148,136,0.25)', textColor: '#2dd4bf' },
+    dsa: { label: 'DSA', icon: '💻', badgeColor: 'rgba(219,39,119,0.25)', textColor: '#f472b6' },
+    prep: { label: 'Prep', icon: '🎯', badgeColor: 'rgba(22,163,74,0.25)', textColor: '#4ade80' },
+    switch: { label: 'Fast Switch', icon: '🚀', badgeColor: 'rgba(234,88,12,0.25)', textColor: '#fb923c' },
+    cheats: { label: 'Cheat / Log', icon: '📄', badgeColor: 'rgba(217,119,6,0.25)', textColor: '#fbbf24' }
+  };
+
+  container.innerHTML = SECTION_ORDER.map((sec, idx) => {
+    const meta = catMeta[sec.cat] || { label: sec.cat.toUpperCase(), icon: '✦', badgeColor: 'rgba(255,255,255,0.1)', textColor: '#fff' };
+    const num = (idx + 1).toString().padStart(2, '0');
+    return `
+      <div class="liquid-sec-card" data-cat="${sec.cat}" data-id="${sec.id}" onclick="selectFromLiquidMenu('${sec.cat}', '${sec.id}')">
+        <div class="liquid-sec-card-left">
+          <span class="liquid-sec-num">${num}</span>
+          <span class="liquid-sec-icon">${meta.icon}</span>
+          <div class="liquid-sec-info">
+            <span class="liquid-sec-title">${sec.title}</span>
+            <span class="liquid-sec-badge" style="background:${meta.badgeColor};color:${meta.textColor}">${meta.label}</span>
+          </div>
+        </div>
+        <span class="liquid-sec-status">→</span>
+      </div>
+    `;
+  }).join('');
+
+  updateLiquidActiveCard('s1');
+}
+
+function updateLiquidActiveCard(id) {
+  document.querySelectorAll('.liquid-sec-card').forEach(card => {
+    const cardId = card.getAttribute('data-id');
+    const statusEl = card.querySelector('.liquid-sec-status');
+    if (cardId === id) {
+      card.classList.add('active');
+      if (statusEl) statusEl.innerHTML = '✓';
+    } else {
+      card.classList.remove('active');
+      if (statusEl) statusEl.innerHTML = '→';
+    }
+  });
+
+  const secMeta = SECTION_ORDER.find(s => s.id === id);
+  const badgeText = document.getElementById('liquidActiveSectionText');
+  if (badgeText && secMeta) {
+    badgeText.textContent = secMeta.title;
+  }
+}
+
+function filterLiquidMenuCategory(cat, chipEl) {
+  currentLiquidCategory = cat;
+  document.querySelectorAll('.liquid-cat-pill').forEach(p => p.classList.remove('active'));
+  if (chipEl) chipEl.classList.add('active');
+
+  const cards = document.querySelectorAll('.liquid-sec-card');
+  cards.forEach(card => {
+    const cardCat = card.getAttribute('data-cat');
+    if (cat === 'all' || cardCat === cat) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// Close liquid menu on outside click or escape
+document.addEventListener('click', function(e) {
+  const wrapper = document.getElementById('liquidMenuWrapper');
+  if (wrapper && !wrapper.contains(e.target)) {
+    closeLiquidMenu();
+  }
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeLiquidMenu();
+    closeSearchModal();
+  }
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+    e.preventDefault();
+    openSearchModal();
+  }
+});
+
+// ============================================================
+// SPOTLIGHT QUICK JUMP MODAL
+// ============================================================
+let spotlightHighlightedIdx = 0;
+let spotlightFilteredItems = [];
+
+function openSearchModal() {
+  closeLiquidMenu();
+  const modal = document.getElementById('spotlightModal');
+  const input = document.getElementById('spotlightInput');
+  if (!modal || !input) return;
+  modal.classList.add('active');
+  input.value = '';
+  filterSpotlightSections('');
+  setTimeout(() => input.focus(), 60);
+}
+
+function closeSearchModal(e) {
+  if (e && e.target !== e.currentTarget && !e.target.classList.contains('spotlight-close-btn')) return;
+  const modal = document.getElementById('spotlightModal');
+  if (modal) modal.classList.remove('active');
+}
+
+function filterSpotlightSections(query) {
+  if (query === undefined) {
+    const input = document.getElementById('spotlightInput');
+    query = input ? input.value : '';
+  }
+  const q = query.toLowerCase().trim();
+  const resultsContainer = document.getElementById('spotlightResults');
+  if (!resultsContainer) return;
+
+  spotlightFilteredItems = SECTION_ORDER.filter(sec => {
+    if (!q) return true;
+    return sec.title.toLowerCase().includes(q) || sec.cat.toLowerCase().includes(q) || sec.id.toLowerCase().includes(q);
+  });
+
+  spotlightHighlightedIdx = 0;
+  renderSpotlightResults();
+}
+
+function renderSpotlightResults() {
+  const resultsContainer = document.getElementById('spotlightResults');
+  if (!resultsContainer) return;
+  if (spotlightFilteredItems.length === 0) {
+    resultsContainer.innerHTML = '<div style="padding:1.75rem;text-align:center;color:var(--text3);font-size:14px">No matching sections found. Try "RAG", "CUDA", "vLLM", or "Leetcode".</div>';
+    return;
+  }
+
+  resultsContainer.innerHTML = spotlightFilteredItems.map((sec, idx) => {
+    const isSelected = idx === spotlightHighlightedIdx;
+    return `
+      <div class="spotlight-item ${isSelected ? 'highlighted' : ''}" onclick="selectSpotlightSection('${sec.id}')" onmouseenter="setSpotlightHighlight(${idx})">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font-size:11px;font-family:var(--mono);color:var(--text3);background:var(--bg4);padding:2px 7px;border-radius:5px;font-weight:700">${sec.id.toUpperCase()}</span>
+          <span>${sec.title}</span>
+        </div>
+        <span style="font-size:11px;font-family:var(--mono);text-transform:uppercase;color:var(--accent);font-weight:700">${sec.cat}</span>
+      </div>
+    `;
+  }).join('');
+}
+
+function setSpotlightHighlight(idx) {
+  spotlightHighlightedIdx = idx;
+  renderSpotlightResults();
+}
+
+function selectSpotlightSection(id) {
+  show(id);
+  const modal = document.getElementById('spotlightModal');
+  if (modal) modal.classList.remove('active');
+}
+
+function handleSpotlightKey(e) {
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    if (spotlightFilteredItems.length > 0) {
+      spotlightHighlightedIdx = (spotlightHighlightedIdx + 1) % spotlightFilteredItems.length;
+      renderSpotlightResults();
+    }
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    if (spotlightFilteredItems.length > 0) {
+      spotlightHighlightedIdx = (spotlightHighlightedIdx - 1 + spotlightFilteredItems.length) % spotlightFilteredItems.length;
+      renderSpotlightResults();
+    }
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    if (spotlightFilteredItems[spotlightHighlightedIdx]) {
+      selectSpotlightSection(spotlightFilteredItems[spotlightHighlightedIdx].id);
+    }
+  }
+}
+
+function updateThemeButtons(isDark) {
+  const topBtn = document.getElementById('dmToggle');
+  const liquidBtn = document.getElementById('liquidDmBtn');
+  const label = isDark ? '☀️ Light' : '🌙 Dark';
+  if (topBtn) topBtn.textContent = label;
+  if (liquidBtn) liquidBtn.textContent = label;
+}
+
 document.addEventListener('DOMContentLoaded', function(){
   initFooterNav();
+  initLiquidMenuSections();
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (isDark) updateThemeButtons(true);
 });
 if(document.readyState === 'interactive' || document.readyState === 'complete'){
   initFooterNav();
+  initLiquidMenuSections();
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  if (isDark) updateThemeButtons(true);
 }
 
 function toggleDarkMode() {
@@ -9972,11 +10577,11 @@ function toggleDarkMode() {
   if(isDark){
     html.removeAttribute('data-theme');
     localStorage.setItem('theme','light');
-    document.getElementById('dmToggle').textContent = '🌙 Dark';
+    updateThemeButtons(false);
   } else {
     html.setAttribute('data-theme','dark');
     localStorage.setItem('theme','dark');
-    document.getElementById('dmToggle').textContent = '☀️ Light';
+    updateThemeButtons(true);
   }
 }
 
@@ -9986,8 +10591,7 @@ function toggleDarkMode() {
   if(saved === 'dark'){
     document.documentElement.setAttribute('data-theme','dark');
     document.addEventListener('DOMContentLoaded', function(){
-      const btn = document.getElementById('dmToggle');
-      if(btn) btn.textContent = '☀️ Light';
+      updateThemeButtons(true);
     });
   }
 })();
@@ -10150,6 +10754,86 @@ function wlUploadJson(event) {
   event.target.value = '';
 }
 </script>
+
+<!-- ============================================================ -->
+<!-- LIQUID MORPH FLOATING ROADMAP MENU (Bottom Command Pill)     -->
+<!-- ============================================================ -->
+<div class="liquid-menu-wrapper" id="liquidMenuWrapper">
+  <div class="liquid-menu-container" id="liquidMenuContainer" onclick="toggleLiquidMenu(event)">
+    <!-- Yellow Background Layer -->
+    <div class="liquid-menu-bg-yellow"></div>
+    
+    <!-- Liquid Dark Circle expanding from bottom -->
+    <div class="liquid-menu-dark-circle"></div>
+
+    <!-- Full Navigation Command Center inside expanding liquid dark circle -->
+    <div class="liquid-menu-content" id="liquidMenuContent" onclick="event.stopPropagation()">
+      <!-- Top Utility Header: Title, Active Badge, Dark Mode, Search -->
+      <div class="liquid-menu-header-bar">
+        <div class="liquid-menu-brand">
+          <span class="liquid-menu-brand-title">AI INFRA ✦ 2026</span>
+          <div class="liquid-menu-active-pill" id="liquidActiveSectionBadge">
+            <span class="liquid-pulse-dot"></span>
+            <span id="liquidActiveSectionText">Reality Check</span>
+          </div>
+        </div>
+        <div class="liquid-menu-quick-actions">
+          <button class="liquid-quick-btn" id="liquidDmBtn" onclick="toggleDarkMode()" title="Toggle Dark/Light Mode">
+            🌙 Dark
+          </button>
+          <button class="liquid-quick-btn" onclick="closeLiquidMenu(); openSearchModal()" title="Search &amp; Quick Jump (Ctrl+K)">
+            🔍 <kbd>⌘K</kbd>
+          </button>
+        </div>
+      </div>
+
+      <!-- Category Filter Rail -->
+      <div class="liquid-category-rail" id="liquidCategoryRail">
+        <button class="liquid-cat-pill active" onclick="filterLiquidMenuCategory('all', this)">All (27)</button>
+        <button class="liquid-cat-pill liquid-cat-switch" onclick="filterLiquidMenuCategory('switch', this)">🚀 Switch</button>
+        <button class="liquid-cat-pill" onclick="filterLiquidMenuCategory('core', this)">🏛️ Core</button>
+        <button class="liquid-cat-pill" onclick="filterLiquidMenuCategory('plans', this)">📅 Plans</button>
+        <button class="liquid-cat-pill" onclick="filterLiquidMenuCategory('dsa', this)">💻 DSA</button>
+        <button class="liquid-cat-pill" onclick="filterLiquidMenuCategory('prep', this)">🎯 Prep</button>
+        <button class="liquid-cat-pill" onclick="filterLiquidMenuCategory('cheats', this)">📄 Cheats</button>
+      </div>
+
+      <!-- All 27 Roadmap Sections Grid -->
+      <div class="liquid-sections-grid" id="liquidSectionsGrid"></div>
+    </div>
+
+    <!-- Bottom Bar: Menu + Animated Hamburger / X -->
+    <div class="liquid-menu-bar" id="liquidMenuBar">
+      <span class="liquid-menu-label">
+        <span class="liquid-menu-dot"></span>
+        <span id="liquidMenuLabelText">Menu</span>
+      </span>
+      <div class="liquid-menu-icon">
+        <span class="liquid-menu-bar-line line-1"></span>
+        <span class="liquid-menu-bar-line line-2"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SPOTLIGHT QUICK JUMP MODAL                                   -->
+<!-- ============================================================ -->
+<div class="spotlight-modal-overlay" id="spotlightModal" onclick="closeSearchModal(event)">
+  <div class="spotlight-modal-card" onclick="event.stopPropagation()">
+    <div class="spotlight-search-header">
+      <span style="font-size:18px">🔍</span>
+      <input type="text" id="spotlightInput" placeholder="Jump to any section (e.g. RAG, CUDA, Leetcode, DDIA, Fast Switch)..." oninput="filterSpotlightSections()" onkeydown="handleSpotlightKey(event)">
+      <button class="spotlight-close-btn" onclick="closeSearchModal()">✕</button>
+    </div>
+    <div class="spotlight-results" id="spotlightResults"></div>
+    <div class="spotlight-footer">
+      <span>Use <kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+      <span>Press <kbd>Enter</kbd> to select</span>
+      <span>Press <kbd>Esc</kbd> to close</span>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

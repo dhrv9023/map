@@ -17,6 +17,35 @@ This project is built as a standalone single-page web app and is 100% ready for 
 
 ---
 
+## 🛠️ Modern Tech Stack & UI Components
+
+The project supports both standalone zero-dependency static deployment (`index.html`) and a full modern React + shadcn UI + Tailwind CSS + TypeScript ecosystem:
+
+- **Liquid Morph Floating Menu (`@/components/ui/liquid-morph-floating-menu.tsx`)**: Framer Motion powered floating command pill with fluid dark circle morphing and split-flap kinetic typography roll.
+- **Interactive Component Preview (`demo.html` / `@/components/ui/demo.tsx`)**: Live interactive showcase for UI components.
+- **Glassmorphic Sticky Navbar**: Frosted glass top navigation bar with live active section tracker, reading progress indicator, and category chip scroller.
+- **Spotlight Quick Jump Modal (<kbd>⌘K</kbd> / <kbd>Ctrl+K</kbd>)**: Real-time filterable search modal across all 27 roadmap sections.
+- **Fluid Widescreen Layout**: Expands smoothly to take full advantage of ultra-wide and large monitors (`max-width: 1680px+`).
+- **Standard shadcn UI Directory**: Configured via `components.json`, `@/*` path aliases, Tailwind CSS v4, and `cn()` utility (`lib/utils.ts`).
+
+### Local Development & Scripts
+
+```bash
+# Install dependencies
+npm install
+
+# Start Vite dev server (serves index.html and /demo.html)
+npm run dev
+
+# Type check & production build
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+---
+
 ## 📚 Core Features
 
 1. **`index.html`** - Unified Roadmap & Study OS
@@ -26,6 +55,7 @@ This project is built as a standalone single-page web app and is 100% ready for 
    - **📓 Weekly Learning Log**: Browser-saved interactive journal to track learnings, DSA, projects, and goals each week with **1-click JSON Backup & Restore**.
    - **🌙 Dark Mode**: Global dark/light theme switch with persistent state.
    - **📄 4 Integrated Cheat Sheets**: Python, Git, DSA, and C++.
+   - **✨ Liquid Morph Floating Navigation & Spotlight (<kbd>⌘K</kbd>)**: Fast keyboard and touch navigation across all curriculum modules.
 
 **Learning Sections:**
 1. Reality - Market insights & salary
