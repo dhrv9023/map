@@ -134,33 +134,32 @@ export default function FloatingMenu({ items }: FloatingMenuProps) {
   return (
     <motion.div
       ref={containerRef}
-      className="fixed bottom-10 left-1/2 z-[100]"
+      className="fixed bottom-6 left-1/2 z-[9999]"
       style={{ x: "-50%", pointerEvents: "auto" }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease }}
     >
       <motion.div
-        className="relative overflow-hidden flex flex-col"
+        className="relative overflow-hidden flex flex-col shadow-2xl"
         onClick={() => {
           if (!isOpen) setIsOpen(true);
         }}
         style={{
-          fontFamily: "'Aeonik TRIAL', 'Inter', sans-serif",
-          letterSpacing: "-0.02em",
+          fontFamily: "'Outfit', 'Inter', sans-serif",
           cursor: isOpen ? "default" : "pointer",
         }}
         animate={{
-          width: isOpen ? 280 : 150,
-          height: isOpen ? 260 : 48,
-          borderRadius: isOpen ? 32 : 72,
+          width: isOpen ? 320 : 156,
+          height: isOpen ? Math.min(menuItems.length * 46 + 100, 520) : 48,
+          borderRadius: isOpen ? 26 : 72,
           scale: 1,
         }}
         whileHover={isOpen ? undefined : { scale: 1.05 }}
         transition={{
           duration: 0.8,
           ease,
-          height: { duration: isOpen ? 0.8 : 0.15 },
+          height: { duration: isOpen ? 0.7 : 0.2 },
           scale: { duration: 0.25, ease },
         }}
       >
@@ -173,7 +172,7 @@ export default function FloatingMenu({ items }: FloatingMenuProps) {
           }}
           transition={{ duration: isOpen ? 0.1 : 0.3, ease }}
           style={{
-            borderWidth: 1,
+            borderWidth: 1.5,
             borderStyle: "solid",
             borderRadius: "inherit",
           }}
@@ -181,36 +180,40 @@ export default function FloatingMenu({ items }: FloatingMenuProps) {
 
         {/* Dark circle expanding from bottom */}
         <motion.div
-          className="absolute left-1/2 bg-[#242424]"
+          className="absolute left-1/2 bg-[#18181b]"
           style={{
-            width: "200%",
-            height: "200%",
+            width: "240%",
+            height: "240%",
             borderRadius: "50%",
             x: "-50%",
           }}
-          animate={{ bottom: isOpen ? "-20%" : "-200%" }}
+          animate={{ bottom: isOpen ? "-20%" : "-240%" }}
           transition={{
             duration: 0.8,
             ease,
-            delay: isOpen ? 0.1 : 0,
+            delay: isOpen ? 0.08 : 0,
           }}
         />
 
         {/* Menu items */}
         <div
-          className="relative z-10 flex flex-col gap-6 items-center justify-center"
+          className="relative z-10 flex flex-col gap-3 items-center justify-center py-4 px-3"
           style={{
             pointerEvents: isOpen ? "auto" : "none",
             opacity: isOpen ? 1 : 0,
             flex: isOpen ? 1 : 0,
-            overflow: "hidden",
+            overflowY: "auto",
+            display: isOpen ? "flex" : "none",
           }}
         >
           {menuItems.map((item, idx) => (
             <MenuButton
               key={item.label}
               label={item.label}
-              onClick={item.onClick}
+              onClick={() => {
+                if (item.onClick) item.onClick();
+                setIsOpen(false);
+              }}
               isOpen={isOpen}
               index={idx}
             />
@@ -220,40 +223,50 @@ export default function FloatingMenu({ items }: FloatingMenuProps) {
         {/* Bottom bar: Menu + hamburger */}
         <motion.div
           className="relative z-10 flex items-center justify-between w-full shrink-0 cursor-pointer"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsOpen(!isOpen);
+          }}
           animate={{
-            paddingLeft: isOpen ? 24 : 20,
-            paddingRight: isOpen ? 24 : 20,
-            paddingBottom: isOpen ? 24 : 0,
+            paddingLeft: isOpen ? 22 : 18,
+            paddingRight: isOpen ? 22 : 18,
+            paddingBottom: isOpen ? 14 : 0,
             height: 48,
           }}
           transition={{ duration: 0.8, ease }}
           style={{ alignItems: "center" }}
         >
           <motion.span
-            className="text-[14px] md:text-[20px] leading-none"
-            animate={{ color: isOpen ? "#f7f1ed" : "#242424" }}
+            className="text-[13px] font-black uppercase tracking-wider leading-none select-none flex items-center gap-2"
+            animate={{ color: isOpen ? "#f7f1ed" : "#1a1a1a" }}
             transition={{ duration: 0.3, ease }}
           >
-            Menu
+            <span
+              className="w-[7px] h-[7px] rounded-full inline-block"
+              style={{
+                backgroundColor: isOpen ? "#f43f5e" : "#16a34a",
+                boxShadow: isOpen ? "0 0 6px #f43f5e" : "0 0 6px #16a34a",
+              }}
+            />
+            {isOpen ? "Close Navigation" : "Menu"}
           </motion.span>
 
-          <div className="relative w-[24px] h-[24px] flex items-center justify-center">
+          <div className="relative w-[22px] h-[22px] flex items-center justify-center">
             <motion.span
-              className="absolute block w-[18px] h-[2px] rounded-full"
+              className="absolute block w-[17px] h-[2px] rounded-full"
               animate={{
                 rotate: isOpen ? 45 : 0,
                 y: isOpen ? 0 : -3,
-                backgroundColor: isOpen ? "#f7f1ed" : "#242424",
+                backgroundColor: isOpen ? "#f7f1ed" : "#1a1a1a",
               }}
               transition={{ duration: 0.4, ease }}
             />
             <motion.span
-              className="absolute block w-[18px] h-[2px] rounded-full"
+              className="absolute block w-[17px] h-[2px] rounded-full"
               animate={{
                 rotate: isOpen ? -45 : 0,
                 y: isOpen ? 0 : 3,
-                backgroundColor: isOpen ? "#f7f1ed" : "#242424",
+                backgroundColor: isOpen ? "#f7f1ed" : "#1a1a1a",
               }}
               transition={{ duration: 0.4, ease }}
             />

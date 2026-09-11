@@ -19,11 +19,11 @@ This project is built as a standalone single-page web app and is 100% ready for 
 
 ## 🛠️ Modern Tech Stack & UI Components
 
-The project supports both standalone zero-dependency static deployment (`index.html`) and a full modern React + shadcn UI + Tailwind CSS + TypeScript ecosystem:
+The project combines the comprehensive AI Infrastructure curriculum with a modern React + shadcn UI + Tailwind CSS + TypeScript architecture:
 
-- **Liquid Morph Floating Menu (`@/components/ui/liquid-morph-floating-menu.tsx`)**: Framer Motion powered floating command pill with fluid dark circle morphing and split-flap kinetic typography roll.
-- **Interactive Component Preview (`demo.html` / `@/components/ui/demo.tsx`)**: Live interactive showcase for UI components.
-- **Glassmorphic Sticky Navbar**: Frosted glass top navigation bar with live active section tracker, reading progress indicator, and category chip scroller.
+- **Liquid Morph Floating Menu (`@/components/ui/liquid-morph-floating-menu.tsx`)**: Directly embedded on the main site! Framer Motion powered floating command pill with fluid dark circle morphing, spring physics, and split-flap kinetic typography roll.
+- **Unified Single-Site Architecture**: React, TypeScript, and Tailwind are bundled directly into `index.html` — no separate pages or disconnected demos.
+- **Top Navigation Bar (Non-sticky on scroll)**: Clean top navigation with reading progress line that scrolls away smoothly when reading down the page.
 - **Spotlight Quick Jump Modal (<kbd>⌘K</kbd> / <kbd>Ctrl+K</kbd>)**: Real-time filterable search modal across all 27 roadmap sections.
 - **Fluid Widescreen Layout**: Expands smoothly to take full advantage of ultra-wide and large monitors (`max-width: 1680px+`).
 - **Standard shadcn UI Directory**: Configured via `components.json`, `@/*` path aliases, Tailwind CSS v4, and `cn()` utility (`lib/utils.ts`).
@@ -34,10 +34,10 @@ The project supports both standalone zero-dependency static deployment (`index.h
 # Install dependencies
 npm install
 
-# Start Vite dev server (serves index.html and /demo.html)
+# Start Vite dev server (serves the roadmap with React floating menu)
 npm run dev
 
-# Type check & production build
+# Type check & production build (compiles all React & TS into dist/)
 npm run build
 
 # Preview production build

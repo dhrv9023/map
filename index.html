@@ -10756,65 +10756,10 @@ function wlUploadJson(event) {
 </script>
 
 <!-- ============================================================ -->
-<!-- LIQUID MORPH FLOATING ROADMAP MENU (Bottom Command Pill)     -->
+<!-- REACT ROOT: LIQUID MORPH FLOATING ROADMAP MENU (Framer Motion)-->
 <!-- ============================================================ -->
-<div class="liquid-menu-wrapper" id="liquidMenuWrapper">
-  <div class="liquid-menu-container" id="liquidMenuContainer" onclick="toggleLiquidMenu(event)">
-    <!-- Yellow Background Layer -->
-    <div class="liquid-menu-bg-yellow"></div>
-    
-    <!-- Liquid Dark Circle expanding from bottom -->
-    <div class="liquid-menu-dark-circle"></div>
-
-    <!-- Full Navigation Command Center inside expanding liquid dark circle -->
-    <div class="liquid-menu-content" id="liquidMenuContent" onclick="event.stopPropagation()">
-      <!-- Top Utility Header: Title, Active Badge, Dark Mode, Search -->
-      <div class="liquid-menu-header-bar">
-        <div class="liquid-menu-brand">
-          <span class="liquid-menu-brand-title">AI INFRA ✦ 2026</span>
-          <div class="liquid-menu-active-pill" id="liquidActiveSectionBadge">
-            <span class="liquid-pulse-dot"></span>
-            <span id="liquidActiveSectionText">Reality Check</span>
-          </div>
-        </div>
-        <div class="liquid-menu-quick-actions">
-          <button class="liquid-quick-btn" id="liquidDmBtn" onclick="toggleDarkMode()" title="Toggle Dark/Light Mode">
-            🌙 Dark
-          </button>
-          <button class="liquid-quick-btn" onclick="closeLiquidMenu(); openSearchModal()" title="Search &amp; Quick Jump (Ctrl+K)">
-            🔍 <kbd>⌘K</kbd>
-          </button>
-        </div>
-      </div>
-
-      <!-- Category Filter Rail -->
-      <div class="liquid-category-rail" id="liquidCategoryRail">
-        <button class="liquid-cat-pill active" onclick="filterLiquidMenuCategory('all', this)">All (27)</button>
-        <button class="liquid-cat-pill liquid-cat-switch" onclick="filterLiquidMenuCategory('switch', this)">🚀 Switch</button>
-        <button class="liquid-cat-pill" onclick="filterLiquidMenuCategory('core', this)">🏛️ Core</button>
-        <button class="liquid-cat-pill" onclick="filterLiquidMenuCategory('plans', this)">📅 Plans</button>
-        <button class="liquid-cat-pill" onclick="filterLiquidMenuCategory('dsa', this)">💻 DSA</button>
-        <button class="liquid-cat-pill" onclick="filterLiquidMenuCategory('prep', this)">🎯 Prep</button>
-        <button class="liquid-cat-pill" onclick="filterLiquidMenuCategory('cheats', this)">📄 Cheats</button>
-      </div>
-
-      <!-- All 27 Roadmap Sections Grid -->
-      <div class="liquid-sections-grid" id="liquidSectionsGrid"></div>
-    </div>
-
-    <!-- Bottom Bar: Menu + Animated Hamburger / X -->
-    <div class="liquid-menu-bar" id="liquidMenuBar">
-      <span class="liquid-menu-label">
-        <span class="liquid-menu-dot"></span>
-        <span id="liquidMenuLabelText">Menu</span>
-      </span>
-      <div class="liquid-menu-icon">
-        <span class="liquid-menu-bar-line line-1"></span>
-        <span class="liquid-menu-bar-line line-2"></span>
-      </div>
-    </div>
-  </div>
-</div>
+<div id="root"></div>
+<script type="module" src="./src/main.tsx"></script>
 
 <!-- ============================================================ -->
 <!-- SPOTLIGHT QUICK JUMP MODAL                                   -->

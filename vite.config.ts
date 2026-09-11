@@ -10,12 +10,4 @@ export default defineConfig({
       "@": path.resolve(import.meta.dirname, "./"),
     },
   },
-  build: {
-    rollupOptions: {
-      input: {
-        main: path.resolve(import.meta.dirname, "index.html"),
-        demo: path.resolve(import.meta.dirname, "demo.html"),
-      },
-    },
-  },
 });
