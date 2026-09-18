@@ -108,12 +108,12 @@ npm run preview
 ## 📚 Core Features
 
 1. **`index.html`** - Unified Roadmap & Study OS
-   - **27 Interactive Sections** covering Foundations, ML, GenAI, LLMs, AI Infra, DSA, System Design, and Projects.
+   - **24 Interactive Sections** covering Foundations, ML, GenAI, LLMs, AI Infra, System Design, and Projects.
    - **🚀 Career Switch Track**: Transition plan from quality/backend engineering to AI roles, remote job strategy for India, USD payment guides, and interview prep.
    - **📅 My Schedule**: Custom weekly timetable (Mon–Thu evenings, Friday power sessions, weekend deep dives, and Sunday revision).
    - **📓 Weekly Learning Log**: Browser-saved interactive journal to track learnings, DSA, projects, and goals each week with **1-click JSON Backup & Restore**.
    - **🌙 Dark Mode**: Global dark/light theme switch with persistent state.
-   - **📄 4 Integrated Cheat Sheets**: Python, Git, DSA, and C++.
+   - **📄 3 Integrated Cheat Sheets**: Python, Git, and C++ (with all algorithmic patterns, templates, and flashcards consolidated into the dedicated [168-Day DSA Cockpit](./dsa/index.html)).
    - **✨ Liquid Morph Floating Navigation & Spotlight (<kbd>⌘K</kbd>)**: Fast keyboard and touch navigation across all curriculum modules.
 
 **Learning Sections:**
@@ -122,7 +122,7 @@ npm run preview
 3. Phase 2 - ML & Deep Learning
 4. Phase 3 - GenAI & LLMs
 5. Phase 4 - AI Infrastructure
-6. DSA - Data Structures & Algorithms
+6. DSA - Direct launchpad to 168-Day Silicon-Aware DSA & NVIDIA Cockpit
 7. System Design - Scalable systems
 8. Projects - Real-world projects
 9. Interviews - Interview prep
@@ -139,14 +139,14 @@ npm run preview
 16. Sustainability - Long-term learning
 17. Strategy - Career strategy
 18. Papers - Research papers
-19. DSA C++ Plan - C++ DSA learning path
-20. DSA Python Plan - Python DSA learning path
 
-**Cheat Sheets:**
-21. Python Cheat Sheet - Complete Python reference
-22. Git Cheat Sheet - All git commands
-23. DSA Cheat Sheet - All algorithms & patterns
-24. C++ Cheat Sheet - STL & modern C++
+**Cheat Sheets & Tools:**
+19. Python Cheat Sheet - Complete Python reference
+20. Git Cheat Sheet - All git commands
+21. C++ Cheat Sheet - STL & modern C++
+22. Career Switch Track - Career switch guide
+23. My Schedule - Structured study schedule
+24. Weekly Learning Log - Interactive browser journal
 
 ## ⏱️ Timeline
 
