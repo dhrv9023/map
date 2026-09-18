@@ -1,25 +1,84 @@
-# 🤖 AI Infrastructure Engineering Roadmap & Study OS (2026)
+# 🤖 AI Infrastructure Engineering Roadmap & 168-Day Silicon DSA Cockpit (2026)
 
-Complete learning path, timetable, career switch guide, and interactive study OS to become an AI / AI Infrastructure Engineer.
-
----
-
-## 🚀 Live Demo & Deployment
-
-This project is built as a standalone single-page web app and is 100% ready for **GitHub Pages**.
-
-### How to Deploy on GitHub Pages:
-1. Push this repository to GitHub.
-2. Go to **Settings** → **Pages** in your GitHub repository.
-3. Under **Build and deployment** → **Source**, select **Deploy from a branch**.
-4. Choose branch `main` (or `master`) and folder `/ (root)`. Click **Save**.
-5. Your live roadmap will be available at: `https://<your-username>.github.io/<repo-name>/`
+> Complete end-to-end learning path, interactive timetable, career transition guide, and specialized **168-Day Silicon-Aware DSA & NVIDIA Cockpit** designed to take you from foundational programming to an AI / AI Infrastructure Systems Engineer.
 
 ---
 
-## 🛠️ Modern Tech Stack & UI Components
+## ⚡ Two Unified Systems in One Repository
 
-The project combines the comprehensive AI Infrastructure curriculum with a modern React + shadcn UI + Tailwind CSS + TypeScript architecture:
+This repository integrates two production-ready web applications:
+
+1. **AI Infrastructure Roadmap & Study OS** (`/index.html`)
+   - **27 Comprehensive Modules**: Foundations, Classical ML, Deep Learning, GenAI, LLMs, AI Infrastructure (vLLM, CUDA, Triton, TensorRT-LLM, NCCL), System Design, and Real-world Projects.
+   - **Modern Interactive UI**: Liquid morph floating navigation pill, Spotlight search (<kbd>⌘K</kbd> / <kbd>Ctrl+K</kbd>), dynamic reading progress indicator, dark/light theme, and browser-saved weekly learning log.
+   - **Instant DSA Linkage**: Direct redirection to the DSA Cockpit from top navbar, section 6 hero card, spotlight search, and floating action button.
+
+2. **168-Day Silicon-Aware DSA & NVIDIA Cockpit** (`/dsa/index.html`)
+   - **9 Dedicated Interactive Pages**: Dashboard, 168-Day Daily Plan (24 weeks), 22 Algorithmic Patterns, Flashcards (with SRS flip & filter), NVIDIA Silicon-Aware DSA, Failure Modes & Fixes, 12 Mock Interviews, Curated Video Resources (Striver, NeetCode, Aditya Verma, Padho with Pratyush, Love Babbar), and Golden Rules.
+   - **100% Zero-Server & Offline**: Built with vanilla HTML/CSS/JS and embedded datasets (`data.js`). Works out-of-the-box locally and on any static host.
+   - **Bidirectional Return**: Every DSA page features an **"🤖 AI Infra Roadmap ↗"** button in both the header and navbar to jump straight back to the main roadmap.
+
+---
+
+## 🌐 1-Click GitHub Pages Deployment
+
+This repository is pre-configured for instant zero-configuration deployment to **GitHub Pages**:
+
+1. Push this repository to GitHub on branch `main` (or `master`).
+2. Open your repository on GitHub and navigate to:
+   **Settings** ➔ **Pages** (in the left sidebar).
+3. Under **Build and deployment** ➔ **Source**, select **Deploy from a branch**.
+4. Set **Branch** to `main` and **Folder** to `/(root)`. Click **Save**.
+5. Your live site will automatically deploy at:
+   ```
+   https://<your-username>.github.io/<your-repository-name>/
+   ```
+   - **AI Infra Roadmap**: `https://<your-username>.github.io/<your-repository-name>/`
+   - **DSA Specialist Cockpit**: `https://<your-username>.github.io/<your-repository-name>/dsa/`
+
+> [!NOTE]
+> A `.nojekyll` file is already included at the root to prevent GitHub Pages from ignoring asset directories or underscore files. All internal links use relative paths, ensuring complete portability across local `file://` usage, custom domains, and GitHub repository sub-paths.
+
+---
+
+## 📁 Repository Directory Structure
+
+```text
+.
+├── index.html                   # AI Infrastructure Roadmap & Study OS (GitHub Pages landing page)
+├── assets/                      # Bundled CSS/JS for AI Roadmap React components
+├── .nojekyll                    # Disables Jekyll processing on GitHub Pages
+├── AI_Engineering_Timetable_v2.pdf # High-resolution printable timetable
+│
+├── dsa/                         # 168-Day Silicon-Aware DSA & NVIDIA Specialist Cockpit
+│   ├── index.html               # DSA Cockpit Dashboard & KPI metrics
+│   ├── plan.html                # 168-Day Day-by-Day Study Plan with filters & checkboxes
+│   ├── patterns.html            # 22 Core Algorithmic Patterns with Big-O & hardware notes
+│   ├── flashcards.html          # Interactive spaced-repetition flashcards
+│   ├── nvidia.html              # NVIDIA Interview Specifics, System Topics & AI Infra DSA
+│   ├── failures.html            # Top 15 Failure Modes & Architectural Fixes
+│   ├── mocks.html               # 12 Step-by-Step Mock Interviews with rubrics
+│   ├── resources.html           # Curated YouTube Channels & Topic-Wise Direct Links
+│   ├── rules.html               # Golden Rules of Silicon DSA & Hardware-Aware Coding
+│   ├── style.css                # Polished dark-mode responsive stylesheet
+│   ├── site.js                  # Client-side filtering, search, local progress storage
+│   ├── data.js                  # Complete 168-day dataset, flashcards, patterns, mocks
+│   ├── data.json                # Raw JSON export for API / scripting use
+│   ├── build_site.py            # Static site generator script
+│   ├── export_data.py           # Data extraction script from Excel workbook
+│   ├── DSA_AI_Infra_Training.xlsx # Complete 168-Day Excel Training Sheet
+│   ├── HOW_TO_USE.md            # Comprehensive English Student Guide
+│   └── HOW_TO_USE_HINGLISH.md   # Casual Hinglish Student Guide for easy reading
+│
+├── src/                         # Source React 19 & TypeScript components
+│   ├── App.tsx                  # Main React container with DSA redirection handler
+│   └── main.tsx                 # Entrypoint for floating widgets
+├── components/                  # shadcn UI components (Liquid Morph Menu, Spotlight, etc.)
+├── template.html                # Vite build template with unbundled script references
+├── package.json                 # Node dependencies & GitHub Pages build scripts
+├── vite.config.ts               # Vite configuration with relative base ('./')
+└── README.md                    # Project documentation
+```
 
 - **Liquid Morph Floating Menu (`@/components/ui/liquid-morph-floating-menu.tsx`)**: Directly embedded on the main site! Framer Motion powered floating command pill with fluid dark circle morphing, spring physics, and split-flap kinetic typography roll.
 - **Unified Single-Site Architecture**: React, TypeScript, and Tailwind are bundled directly into `index.html` — no separate pages or disconnected demos.

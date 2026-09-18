@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Flashcards Deck - NVIDIA & AI-Infra Systems Track</title>
+  <meta name="description" content="168-Day Silicon-Aware DSA & AI-Infrastructure Systems Specialist Training System">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Persistent Header -->
+    <header class="app-header">
+      <div class="header-top">
+        <div class="brand-section">
+          <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+            <span class="brand-badge">NVIDIA TRACK</span>
+            <span class="brand-title">DSA & AI-INFRASTRUCTURE SPECIALIST COCKPIT</span>
+          </a>
+          <a href="../index.html" class="brand-badge" style="background: rgba(168,85,247,0.2); color: #c084fc; border: 1px solid rgba(168,85,247,0.4); text-decoration: none;" title="Go back to the AI Infrastructure Engineering Roadmap">🤖 AI ROADMAP ↗</a>
+        </div>
+        <div class="header-quick-stats">
+          <div class="stat-chip" title="Current Day in 168-Day Program">
+            <span class="chip-label">TODAY:</span>
+            <span class="chip-value highlight-green" id="header-current-day">Day 1</span>
+          </div>
+          <div class="stat-chip" title="Progress across 168 days">
+            <span class="chip-label">PROGRESS:</span>
+            <span class="chip-value" id="header-progress-pct">0%</span>
+          </div>
+          <div class="stat-chip" title="Interview Readiness Score based on real performance">
+            <span class="chip-label">READINESS:</span>
+            <span class="chip-value highlight-green" id="header-readiness-score">0 / 100</span>
+          </div>
+          <div class="stat-chip" title="Consecutive days practiced">
+            <span class="chip-label">🔥 STREAK:</span>
+            <span class="chip-value" id="header-streak">0 Days</span>
+          </div>
+          <button class="btn btn-outline" id="btn-open-sync" title="Export/Import and Backup data">💾 Sync / Backup</button>
+        </div>
+      </div>
+      <!-- Multi-Page Nav Tabs -->
+      <nav class="nav-tabs">
+        <a href="index.html" class="nav-tab">🎛️ Dashboard</a>
+      <a href="plan.html" class="nav-tab">🗓️ 168-Day Plan</a>
+      <a href="patterns.html" class="nav-tab">🧠 Pattern Library</a>
+      <a href="flashcards.html" class="nav-tab active">🃏 3D Flashcards</a>
+      <a href="nvidia.html" class="nav-tab">🟢 NVIDIA Track</a>
+      <a href="failures.html" class="nav-tab">💥 Failure Log</a>
+      <a href="mocks.html" class="nav-tab">🎯 Mocks & Diags</a>
+      <a href="resources.html" class="nav-tab">📺 Resources</a>
+      <a href="rules.html" class="nav-tab">📜 System Rules</a>
+      <a href="../index.html" class="nav-tab" style="color: #c084fc; border: 1px solid rgba(192,132,252,0.35); background: rgba(168,85,247,0.08); margin-left: auto; font-weight: 700;">🤖 AI Infra Roadmap ↗</a>
+      </nav>
+    </header>
+
+    <!-- Page Body -->
+    <main class="main-content">
+      
+      <div class="search-filter-bar">
+        <input type="text" class="search-input" id="flashcard-search" placeholder="Search flashcards by problem or trigger keyword...">
+        <button class="btn btn-outline" id="btn-flip-all">🔄 Flip All Cards</button>
+        <span style="font-size: 0.85rem; color: var(--text-secondary); margin-left: auto;">Total 30 Cards</span>
+      </div>
+      <div class="flashcards-grid" id="flashcards-container">
+        
+          <div class="flashcard-wrapper" data-card-text="lc 560 subarray sum equals k prefix + hash &#x27;count subarrays with sum = k&#x27; + negatives present  -&gt;  window fails">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #1</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Prefix + hash</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 560 Subarray Sum Equals K
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;count subarrays with sum = k&#x27; + negatives present  -&gt;  window fails
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Return the longest such subarray; 2D version; sum divisible by k
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(n) time O(n) space: one pass, O(1) map ops</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    Sliding window fails with negatives (non-monotone). Use prefix+count map.
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    hash map prefix -&gt; count; store what you&#x27;ve seen; look up (prefix - k)
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F11: tries sliding window; fails because negatives break monotonicity
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Contiguous + sum + negatives = prefix hash, not window
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 76 minimum window substring sliding window + counting &#x27;minimum window containing all characters of t&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #2</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Sliding window + counting</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 76 Minimum Window Substring
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;minimum window containing all characters of t&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Multiple pattern strings; window over a stream; minimum window subsequence
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(n+m): amortized pointer movement</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    When &#x27;have&#x27; increments (only when freq goes from need-1 to need); shrink while valid
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    need/have counters + two pointers; expand right, shrink left when have==need
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F6: recomputes the whole counter check each step  -&gt;  O(n^2)
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Shortest valid window = expand right first, shrink left aggressively
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 875 koko eating bananas binary search on answer &#x27;minimum speed such that all piles eaten within h hours&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #3</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Binary search on answer</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 875 Koko Eating Bananas
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;minimum speed such that all piles eaten within h hours&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Non-integer speeds; per-pile costs; maximize instead of minimize
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(n log(max_pile)): predicate is O(n)</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    feasible(x) is monotone: if x works, x+1 also works
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    feasible(speed) = all(ceil(p/speed) for p in piles) &lt;= h; monotone decreasing as speed grows
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F3: tries greedy or average; doesn&#x27;t see the monotone predicate
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> &#x27;minimum X such that condition holds&#x27; = BS on answer
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 84 largest rectangle in histogram monotonic stack &#x27;largest rectangle area under bars&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #4</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Monotonic stack</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 84 Largest Rectangle in Histogram
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;largest rectangle area under bars&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Maximal rectangle in binary matrix; 3D variant; sum of subarray minimums
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(n) amortized: each index pushed and popped exactly once</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    Stack contains indices of bars in strictly increasing height order at all times
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    maintain increasing-height stack of indices; on each pop, compute the rectangle using right-left-1
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F6: nested loops O(n^2); mishandles equal heights or the end-of-array flush
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Need previous-smaller and next-smaller boundaries simultaneously = monotonic stack
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 295 find median from data stream two heaps (streaming) &#x27;median of a stream&#x27; + online insertion">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #5</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Two heaps (streaming)</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 295 Find Median from Data Stream
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;median of a stream&#x27; + online insertion
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Sliding-window median; arbitrary percentile; distributed streaming quantiles
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(log n) insert, O(1) median query</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    max-heap.size  in  {min-heap.size, min-heap.size+1} at all times; max-heap.top &lt;= min-heap.top
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    max-heap for lower half + min-heap for upper half; rebalance so sizes differ by at most 1
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F3: re-sorts on every query; O(n log n) per call
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Online order statistic = two heaps or segment tree + BIT
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 146 lru cache design composition &#x27;o(1) get and put with lru eviction&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #6</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Design composition</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 146 LRU Cache
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;O(1) get and put with LRU eviction&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    TTL eviction; thread-safe LRU; LFU; write-through/write-back
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(1) per operation</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    Most-recently-used node is always at head; least-recently-used is always at tail
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    hash map for O(1) lookup + doubly linked list for O(1) move-to-front and O(1) eviction from tail
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F4: uses array/list  -&gt;  O(n) moves; or forgets to update the map on eviction
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> O(1) ordered access = hash map + doubly linked list
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 460 lfu cache design composition &#x27;o(1) get and put with lfu eviction&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #7</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Design composition</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 460 LFU Cache
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;O(1) get and put with LFU eviction&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Aging/decay of counts; window LFU; hybrid ARC policy
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(1) per operation</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    minFreq can only increase by 0 or 1 on an access; it resets to 1 on every put of a new key
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    freq -&gt; OrderedDict bucket map + key -&gt; (val,freq) map + minFreq pointer
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F3: scans for min frequency O(n); loses the minFreq invariant on edge cases
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Frequency-ordered eviction = bucketed frequency lists with a minFreq pointer
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 124 binary tree maximum path sum tree dp post-order &#x27;maximum path sum&#x27; where path can bend at any node">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #8</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Tree DP post-order</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 124 Binary Tree Maximum Path Sum
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;maximum path sum&#x27; where path can bend at any node
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Path with at most k turns; count of maximum paths; k-ary tree variant
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(n): one visit per node</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    Return value = best downward gain from this node; global answer = best bent path through this node
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    at each node, return max(0, node.val + best_downward) for parent; update global answer with left+node+right
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F3: returns the bent path upward; forgets to clamp negative downward gains to 0
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Global answer updated at node != value returned to parent
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 297 serialize/deserialize tree encoding design &#x27;serialize a tree to a string and deserialize it back&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #9</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Encoding design</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 297 Serialize/Deserialize Tree
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;serialize a tree to a string and deserialize it back&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    N-ary tree; BST-optimized encoding (no nulls needed); compact binary format
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(n) both directions</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    Every null must be explicitly encoded; the grammar determines unique decodability
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    preorder traversal + null markers; use a queue/index cursor during deserialization
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F1: improvises the format; cannot parse back an ambiguous encoding
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Define the grammar BEFORE writing code  -&gt;  guaranteed decodability
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 207 course schedule (topological sort) topological sort &#x27;prerequisites exist&#x27;,&#x27;valid ordering required&#x27;,&#x27;detect cycle in directed graph&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #10</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Topological sort</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 207 Course Schedule (topological sort)
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;prerequisites exist&#x27;,&#x27;valid ordering required&#x27;,&#x27;detect cycle in directed graph&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Lexicographically smallest order; parallel scheduling with k workers; critical path
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(V+E)</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    In-degree-0 nodes are always safe to emit; the queue holds exactly the current safe-to-emit set
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    Kahn: maintain in-degree array + queue; emit when in-degree reaches 0; cycle if emitted &lt; n
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F6: cannot detect cycles; assumes unique ordering
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> &#x27;ordering with dependencies&#x27; = topological sort (Kahn or DFS-colours)
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 743 network delay time dijkstra &#x27;minimum time for signal to reach all nodes&#x27; + non-negative weights">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #11</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Dijkstra</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 743 Network Delay Time
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;minimum time for signal to reach all nodes&#x27; + non-negative weights
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Negative weights (use Bellman-Ford); k-hop limit (add hop dimension); multi-source
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(E log V)</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    Once a node is popped from the min-heap, its distance is final (non-negative weights guarantee this)
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    standard Dijkstra; answer = max of all shortest distances; -1 if any node unreachable
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F3: uses plain BFS on weighted edges; or forgets to skip stale heap entries
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Weighted min cost + non-negative weights = Dijkstra
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 787 cheapest flights within k stops layered dp / bellman-ford &#x27;cheapest path with at most k stops&#x27; = extra constraint on path length">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #12</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Layered DP / Bellman-Ford</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 787 Cheapest Flights Within K Stops
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;cheapest path with at most k stops&#x27; = extra constraint on path length
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Exactly k stops; time windows; multiple path constraints
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(k | E): k+1 rounds of edge relaxation</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    Using exactly t hops distinguishes dp layers; copy previous layer before updating
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    dp[t][v] = min cost to reach v using at most t hops; iterate t from 1 to k+1
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F3: runs plain Dijkstra and ignores the stop constraint; or modifies dist in-place breaking the layer
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Extra constraint on a path = add a state dimension (hops, resources, keys)
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 1293 shortest path grid with obstacles state-space bfs &#x27;minimum steps&#x27; + &#x27;budget of k removals&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #13</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">State-space BFS</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 1293 Shortest Path Grid with Obstacles
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;minimum steps&#x27; + &#x27;budget of k removals&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Multiple resource budgets; weighted removals  -&gt;  Dijkstra over states
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(rows | cols | k)</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    The state is (position + resource); visited must include ALL components of the state
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    BFS over state = (row, col, remaining_removals); visited is a 3D array
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F3: keys visited on (r,c) only  -&gt;  finds a path but not necessarily the minimum (wrong answer silently)
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Budget/resource in problem = extra state dimension  -&gt;  state-space search
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 51 n-queens backtracking + pruning &#x27;place n non-attacking queens on n*n board&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #14</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Backtracking + pruning</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 51 N-Queens
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;place n non-attacking queens on n*n board&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Count only; n&lt;=15 with bitmask DP; other piece types; hexagonal boards
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(n!) with heavy pruning</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    At any partial placement, each attacked set is maintained incrementally (add on enter, remove on exit)
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    recurse row by row; track occupied cols, main diags, anti-diags with bitmasks for O(1) conflict check
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F6: no incremental conflict tracking; rescans the board each step
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Constraint placement = backtracking with O(1) conflict checks via bitmasks
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 300 longest increasing subsequence dp + binary search &#x27;longest strictly increasing subsequence&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #15</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">DP + binary search</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 300 Longest Increasing Subsequence
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;longest strictly increasing subsequence&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Count of LIS; 2D (envelopes); non-strict version; print one LIS
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(n log n); naive DP is O(n^2)</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    tails is always sorted; tails[i] is updated in place; it does NOT store an actual subsequence
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    tails[i] = smallest tail of all LIS of length i+1; binary search to find insertion point
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F3: confuses tails with an actual subsequence; or uses wrong bound (lower vs upper)
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Subsequence + order constraint = DP; optimize with patience sorting (tails + binary search)
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 312 burst balloons interval dp &#x27;optimal order of removals from a range&#x27;, &#x27;multiply with neighbors&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #16</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Interval DP</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 312 Burst Balloons
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;optimal order of removals from a range&#x27;, &#x27;multiply with neighbors&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Merge stones; matrix chain; k-way merges; removing elements with range penalties
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(n^3)</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    The LAST balloon to burst in a range sees its left and right boundaries as fixed; subproblems are independent
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    dp[l][r] = max coins when all balloons in (l,r) are burst; try each k as the LAST to burst in range
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F3: picks the FIRST burst  -&gt;  subproblems overlap; the key is reversing to think about the last operation
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Order-of-operations optimum = interval DP with &#x27;last operation&#x27; framing
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 847 shortest path visiting all nodes bitmask bfs &#x27;shortest path visiting all n nodes&#x27;, n&lt;=12">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #17</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Bitmask BFS</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 847 Shortest Path Visiting All Nodes
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;shortest path visiting all n nodes&#x27;, n&lt;=12
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Weighted edges (Dijkstra over states); must return to start; k-of-n visits
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(2^n | n^2)</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    n&lt;=12 is the only signal needed: 2^1^2=4096 states * 12 nodes = trivially enumerable
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    BFS over state = (node, visited_mask); seed with all (node, 1&lt;&lt;node) states at distance 0
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F2: misses the n&lt;=12 constraint; tries shortest path ignoring the &#x27;visit all&#x27; constraint
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Tiny n + &#x27;visit all&#x27; = bitmask state space
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 1425 constrained subsequence sum dp + monotonic deque &#x27;maximum subsequence sum where index gap &lt;= k&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #18</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">DP + monotonic deque</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 1425 Constrained Subsequence Sum
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;maximum subsequence sum where index gap &lt;= k&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Two-sided constraints; weighted gaps; streaming variant with a sliding window
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(n) after optimizing from O(nk)</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    Deque maintains indices of maximum dp values in decreasing order; evict those outside [i-k, i-1]
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    dp[i] = max(nums[i], max(dp[j] for j in [i-k, i-1]) + nums[i]); optimize with a deque max
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F5: writes O(nk) and times out; or optimizes before verifying correctness of the recurrence
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Sliding-window maximum hidden inside a DP transition = monotonic deque
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 380 insert delete getrandom o(1) design composition &#x27;o(1) insert, delete, and uniform random element&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #19</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Design composition</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 380 Insert Delete GetRandom O(1)
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;O(1) insert, delete, and uniform random element&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Duplicates allowed; weighted random; distributed sampling
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(1) per operation amortized</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    After swap-with-last, update the moved element&#x27;s index in the map; then pop the last element
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    array for O(1) random access + hash map (val -&gt; index) for O(1) lookup; delete by swap-with-last
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F4: uses a set  -&gt;  cannot do O(1) uniform random sample
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Uniform random + O(1) delete = array + index map (swap-with-last)
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 410 split array largest sum bs on answer + dp (2-sol) &#x27;split array into m parts to minimize the largest part sum&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #20</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">BS on answer + DP (2-sol)</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 410 Split Array Largest Sum
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;split array into m parts to minimize the largest part sum&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Return the actual split; k as a variable; weights; minimize sum of maximums
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(n log(sum)); DP: O(mn^2)</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    feasible(x) is monotone: if x works, x+1 also works; this is the key validity condition
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    BS: feasible(mid) = can we split with each part &lt;= mid?  -  greedy O(n); DP: dp[k][i]=min largest for k parts in A[i:]
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F3: jumps to DP and times out; or writes a non-monotone predicate
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> &#x27;Minimize the maximum&#x27; = binary search on answer + greedy feasibility check
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 307 range sum query - mutable segment tree / bit &#x27;mutable array with dynamic range sum queries&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #21</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Segment Tree / BIT</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 307 Range Sum Query - Mutable
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;mutable array with dynamic range sum queries&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Range minimum/maximum query; lazy propagation for range updates; 2D Fenwick
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(log n) update, O(log n) query</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    Range sum in BIT: query(r) - query(l-1); Segment Tree: combine(left_child, right_child)
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    binary tree over array intervals OR lowest-set-bit tree (i &amp; -i); O(log n) update and query
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F6: writes O(n) scan on query or O(n) rebuild on update; TLE on frequent updates
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Mutable array + frequent range queries = Segment Tree or BIT
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 1192 critical connections in a network tarjan&#x27;s dfs &#x27;edges whose removal disconnects the graph (bridges)&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #22</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Tarjan&#x27;s DFS</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 1192 Critical Connections in a Network
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;edges whose removal disconnects the graph (bridges)&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Articulation points (cut vertices); strongly connected components (condensation DAG)
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(V + E) time, O(V) space</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    low[u] = min(low[u], tin[v]) for back-edges; low[u] = min(low[u], low[v]) for tree-edges
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    DFS tracking discovery time tin[u] and lowest reachable ancestor low[u]; bridge if low[v] &gt; tin[u]
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F3: removes each edge and runs BFS O(E * (V+E)) -&gt; TLE; forgets to skip parent edge in low calculation
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Single point of failure / bridge edge = Tarjan tin/low DFS
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 332 reconstruct itinerary eulerian path &#x27;visit every directed edge exactly once in lexicographical order&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #23</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Eulerian Path</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 332 Reconstruct Itinerary
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;visit every directed edge exactly once in lexicographical order&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    De Bruijn sequence; DNA fragment reconstruction; network packet trace
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(E log E) due to sorting edges</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    When current node has no outgoing edges, it must be the end of the Eulerian path; prepend to itinerary
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    Hierholzer&#x27;s algorithm: post-order DFS with sorted adjacency lists; prepend to path on return
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F6: greedy DFS gets stuck in dead ends without backtracking; does not reverse post-order traversal
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Visit all edges exactly once = Hierholzer Eulerian traversal
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 28 find first occurrence in string kmp pattern matching &#x27;find needle in haystack in linear time without backtracking&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #24</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">KMP pattern matching</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 28 Find First Occurrence in String
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;find needle in haystack in linear time without backtracking&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Aho-Corasick multi-pattern search; shortest palindrome prefix; cyclic shift check
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(N + M) time, O(M) space</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    pi[i] is the length of the longest proper prefix of s[0..i] that is also a suffix of s[0..i]
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    precompute prefix function pi[i] (longest proper prefix also a suffix); transition state machine
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F6: resets haystack pointer on mismatch -&gt; O(N*M) worst case on repeating patterns
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Linear string matching without backtracking = KMP prefix function
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="adaptive replacement cache (arc) self-tuning cache &#x27;cache workload with mixed sequential scans and recurring hot loops&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #25</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Self-tuning cache</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    Adaptive Replacement Cache (ARC)
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;cache workload with mixed sequential scans and recurring hot loops&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    2Q cache; Clock-Pro page replacement; LRFU with exponential decay
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(1) per lookup, insertion, and eviction</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    Total cache entries in T1 + T2 &lt;= c; total ghost + active entries in T1 + T2 + B1 + B2 &lt;= 2c
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    four lists (T1 recent, T2 frequent, B1 ghost recent, B2 ghost frequent); adapt target size p
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F4: uses standard LRU; single sequential scan flushes all frequent pages out of memory
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Scan-resistant self-tuning caching = ARC 4-list architecture
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lock-free spsc ring buffer concurrency primitive &#x27;ultra-low latency producer-consumer message queue without mutexes&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #26</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Concurrency primitive</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    Lock-Free SPSC Ring Buffer
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;ultra-low latency producer-consumer message queue without mutexes&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    MPMC bounded queue; work-stealing deque; ring buffer stream compaction
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(1) wait-free operations</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    Buffer is full when (tail - head) == capacity; empty when tail == head; indices monotonically increase
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    head and tail indices with power-of-two mask; cache-line padding (64 bytes); acquire-release semantics
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F10: places head and tail in the same cache line -&gt; massive false sharing penalty; uses slow modulo
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Wait-free single-producer single-consumer = padded lock-free ring buffer
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="chase-lev work-stealing deque work runtime scheduling &#x27;thread pool scheduler with private fast-path and concurrent stealing&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #27</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Work runtime scheduling</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    Chase-Lev Work-Stealing Deque
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;thread pool scheduler with private fast-path and concurrent stealing&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Go runtime scheduler; Tokio async runtime; Ray distributed execution engine
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(1) owner amortized, O(1) concurrent steal</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    Owner operations bottom-- and bottom++ only synchronize with steal_top when bottom - top &lt;= 1
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    owner pushes and pops LIFO at bottom (no CAS needed); thief workers steal FIFO at top with atomic CAS
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F6: synchronizes owner operations with global mutex; destroys parallel scalability
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Task pool with fast owner + concurrent steal = Chase-Lev Deque
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="hnsw vector proximity graph vector search index &#x27;approximate nearest neighbor search on high-dimensional vectors in &lt;5ms&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #28</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Vector search index</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    HNSW Vector Proximity Graph
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;approximate nearest neighbor search on high-dimensional vectors in &lt;5ms&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    IVF-PQ indexing; random projection trees (Annoy); ScaNN anisotropic vector quantization
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(log N) query time, O(N * M) space</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    At each layer, greedy step moves to neighbor closer to query; stops when no neighbor is strictly closer
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    hierarchical proximity graph; greedy search at top sparse layers; beam search on dense layer 0
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F3: uses KD-Tree for d=1536 -&gt; degrades to O(N) exhaustive scan due to curse of dimensionality
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> High-dimensional vector search = HNSW proximity graph navigation
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="lc 2050 parallel courses iii critical path dag &#x27;minimum time to complete all tasks with precedence constraints and task durations&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #29</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Critical Path DAG</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    LC 2050 Parallel Courses III
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;minimum time to complete all tasks with precedence constraints and task durations&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    Memory-bounded operator scheduling; heterogeneous device placement; pipeline latency
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(V + E) time, O(V) space</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    dist[v] represents earliest finish time of course v; global answer is max(dist[v]) across all v
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    topological sort computing longest path on DAG: dist[v] = max(dist[u] + time[v])
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F3: tries Dijkstra with shortest path; critical path is LONGEST path in a DAG
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Precedence constraints + duration = Critical Path DAG scheduling
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="flashcard-wrapper" data-card-text="count-min sketch &amp; misra-gries streaming algorithms &#x27;estimate item frequencies and find top-k heavy hitters in sub-linear space&#x27;">
+            <div class="flashcard-inner">
+              <!-- Front Face -->
+              <div class="flashcard-front">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="diff-tag diff-H" style="font-size: 0.7rem;">CARD #30</span>
+                    <span style="font-size: 0.75rem; color: var(--cyan-accent); font-weight: 600;">Streaming algorithms</span>
+                  </div>
+                  <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">
+                    Count-Min Sketch &amp; Misra-Gries
+                  </h3>
+                  <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                    <strong style="color: var(--amber-accent);">Trigger Cue:</strong><br>
+                    &#x27;estimate item frequencies and find top-K heavy hitters in sub-linear space&#x27;
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.4); border-left: 2px solid var(--cyan-accent); padding: 0.5rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted);">
+                    HyperLogLog cardinality; Bloom filter set membership; Reservoir sampling
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip & reveal Invariant, Code & NVIDIA note</span>
+                </div>
+              </div>
+
+              <!-- Back Face -->
+              <div class="flashcard-back">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <span class="brand-badge" style="font-size: 0.65rem;">REVEALED INVARIANT</span>
+                    <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">O(1) per update, O(w * d) space</span>
+                  </div>
+                  <div style="font-size: 0.85rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;">
+                    Count-Min point estimate is min(C[i, h_i(x)]); Misra-Gries decrements all counts only when pool is full
+                  </div>
+                  <div style="background: rgba(0, 0, 0, 0.6); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-nv); margin-bottom: 0.6rem;">
+                    d x w 2D counter array with independent hash functions; Misra-Gries k-1 candidate pool
+                  </div>
+                  <div style="font-size: 0.78rem; color: #f87171; margin-bottom: 0.5rem;">
+                    <strong>⚠️ Failure Trap:</strong> F4: stores all unique keys in hash map -&gt; O(N) memory explosion on streaming big data
+                  </div>
+                  <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.5rem; font-size: 0.8rem; color: var(--text-nv);">
+                    <strong>🟢 One-Line Anchor:</strong> Streaming top-K and frequency in bounded space = Count-Min Sketch + Misra-Gries
+                  </div>
+                </div>
+                <div class="card-flip-prompt">
+                  <span>👆 Click to flip back</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+    
+    </main>
+  </div>
+
+  <!-- MODAL: Complete Day -->
+  <div class="modal-overlay" id="modal-complete-day">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;" id="modal-day-title">Mark Day Complete</h3>
+        <button class="modal-close" id="btn-close-modal">&times;</button>
+      </div>
+      <form id="form-complete-day">
+        <input type="hidden" id="modal-day-num" value="1">
+        <div class="form-group">
+          <label class="form-label">Total Time Spent (Minutes)</label>
+          <input type="number" class="form-control" id="modal-time-spent" min="10" max="300" value="60" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Solved Both Independently?</label>
+          <select class="form-control" id="modal-solved-indep">
+            <option value="Yes">Yes (No solution viewed, minimal/no hints)</option>
+            <option value="No">No (Struggled or consulted hints)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hints Taken</label>
+          <select class="form-control" id="modal-hints-count">
+            <option value="0">0 Hints</option>
+            <option value="1">1 Hint</option>
+            <option value="2">2 Hints</option>
+            <option value="3">3+ Hints</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Solution / Editorial Viewed?</label>
+          <select class="form-control" id="modal-sol-viewed">
+            <option value="No">No (Clean solve)</option>
+            <option value="Yes">Yes (Looked up approach/code)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Key Invariant / Mental Model Takeaway</label>
+          <textarea class="form-control" id="modal-key-insight" rows="2" placeholder="e.g. Invariant: prefix[r] - prefix[l-1] is the sum of range [l, r]"></textarea>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem;">
+          <button type="button" class="btn btn-outline" id="btn-cancel-modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save & Advance ✨</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: Data Sync & Backup -->
+  <div class="modal-overlay" id="modal-sync">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;">💾 Data Backup & Portability</h3>
+        <button class="modal-close" id="btn-close-sync-modal">&times;</button>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+        Your logs, completed days, and metrics are automatically saved in your browser's <code style="color: var(--nv-green);">localStorage</code> across all pages without needing a server.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <button class="btn btn-primary" id="btn-export-json">⬇️ Export Progress to JSON</button>
+        <button class="btn btn-outline" id="btn-export-csv">⬇️ Export Completed Days to CSV</button>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Restore Progress from JSON</label>
+        <input type="file" id="input-import-file" accept=".json" class="form-control">
+      </div>
+      <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 1.25rem 0;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.75rem; color: var(--red-accent);">Danger Zone:</span>
+        <button class="btn btn-outline" id="btn-reset-data" style="border-color: var(--red-accent); color: var(--red-accent);">Clear All Saved Progress</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

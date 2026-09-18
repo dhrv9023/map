@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curated Resource Center - NVIDIA & AI-Infra Systems Track</title>
+  <meta name="description" content="168-Day Silicon-Aware DSA & AI-Infrastructure Systems Specialist Training System">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Persistent Header -->
+    <header class="app-header">
+      <div class="header-top">
+        <div class="brand-section">
+          <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+            <span class="brand-badge">NVIDIA TRACK</span>
+            <span class="brand-title">DSA & AI-INFRASTRUCTURE SPECIALIST COCKPIT</span>
+          </a>
+          <a href="../index.html" class="brand-badge" style="background: rgba(168,85,247,0.2); color: #c084fc; border: 1px solid rgba(168,85,247,0.4); text-decoration: none;" title="Go back to the AI Infrastructure Engineering Roadmap">🤖 AI ROADMAP ↗</a>
+        </div>
+        <div class="header-quick-stats">
+          <div class="stat-chip" title="Current Day in 168-Day Program">
+            <span class="chip-label">TODAY:</span>
+            <span class="chip-value highlight-green" id="header-current-day">Day 1</span>
+          </div>
+          <div class="stat-chip" title="Progress across 168 days">
+            <span class="chip-label">PROGRESS:</span>
+            <span class="chip-value" id="header-progress-pct">0%</span>
+          </div>
+          <div class="stat-chip" title="Interview Readiness Score based on real performance">
+            <span class="chip-label">READINESS:</span>
+            <span class="chip-value highlight-green" id="header-readiness-score">0 / 100</span>
+          </div>
+          <div class="stat-chip" title="Consecutive days practiced">
+            <span class="chip-label">🔥 STREAK:</span>
+            <span class="chip-value" id="header-streak">0 Days</span>
+          </div>
+          <button class="btn btn-outline" id="btn-open-sync" title="Export/Import and Backup data">💾 Sync / Backup</button>
+        </div>
+      </div>
+      <!-- Multi-Page Nav Tabs -->
+      <nav class="nav-tabs">
+        <a href="index.html" class="nav-tab">🎛️ Dashboard</a>
+      <a href="plan.html" class="nav-tab">🗓️ 168-Day Plan</a>
+      <a href="patterns.html" class="nav-tab">🧠 Pattern Library</a>
+      <a href="flashcards.html" class="nav-tab">🃏 3D Flashcards</a>
+      <a href="nvidia.html" class="nav-tab">🟢 NVIDIA Track</a>
+      <a href="failures.html" class="nav-tab">💥 Failure Log</a>
+      <a href="mocks.html" class="nav-tab">🎯 Mocks & Diags</a>
+      <a href="resources.html" class="nav-tab active">📺 Resources</a>
+      <a href="rules.html" class="nav-tab">📜 System Rules</a>
+      <a href="../index.html" class="nav-tab" style="color: #c084fc; border: 1px solid rgba(192,132,252,0.35); background: rgba(168,85,247,0.08); margin-left: auto; font-weight: 700;">🤖 AI Infra Roadmap ↗</a>
+      </nav>
+    </header>
+
+    <!-- Page Body -->
+    <main class="main-content">
+      
+      <div class="search-filter-bar">
+        <input type="text" class="search-input" id="resource-search" placeholder="Search 35 tutorials by topic, concept, or creator...">
+        <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Creator Filter:</span>
+          <button class="btn btn-outline btn-resource-filter" data-filter="" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">All</button>
+          <button class="btn btn-outline btn-resource-filter" data-filter="striver" style="padding: 0.2rem 0.5rem; font-size: 0.75rem; border-color: rgba(245,158,11,0.5); color: #fbbf24;">Striver</button>
+          <button class="btn btn-outline btn-resource-filter" data-filter="aditya" style="padding: 0.2rem 0.5rem; font-size: 0.75rem; border-color: rgba(118,185,0,0.5); color: var(--nv-green);">Aditya Verma</button>
+          <button class="btn btn-outline btn-resource-filter" data-filter="babbar" style="padding: 0.2rem 0.5rem; font-size: 0.75rem; border-color: rgba(56,189,248,0.5); color: #38bdf8;">Love Babbar</button>
+          <button class="btn btn-outline btn-resource-filter" data-filter="pratyush" style="padding: 0.2rem 0.5rem; font-size: 0.75rem; border-color: rgba(168,85,247,0.5); color: #c084fc;">Padho with Pratyush</button>
+          <button class="btn btn-outline btn-resource-filter" data-filter="neetcode" style="padding: 0.2rem 0.5rem; font-size: 0.75rem; border-color: rgba(16,185,129,0.5); color: #34d399;">NeetCode</button>
+        </div>
+        <span style="font-size: 0.85rem; color: var(--text-secondary); margin-left: auto;">Total 35 Tutorials</span>
+      </div>
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width: 70px;">Day</th>
+              <th style="width: 220px;">Topic & Curriculum Focus</th>
+              <th style="width: 80px;">Duration</th>
+              <th>Why It Matters</th>
+              <th>What to Extract</th>
+              <th style="width: 260px;">Watch on YouTube (Direct Creator Links)</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-resources">
+            
+          <tr class="resource-row-item" data-text="1 big-o + n -&gt; tc constraint mapping neetcode / cph ch.2 without this you cannot eliminate approaches before coding  -  most expensive mistake in interviews the n -&gt; feasible-tc table; how to read constraints; o(n^2) death at n=10^5 striver striver aditya verma love babbar padho with pratyush neetcode abdul bari">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 1</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Big-O + n -&gt; TC constraint mapping</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode / CPH ch.2</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Without this you cannot eliminate approaches before coding  -  most expensive mistake in interviews</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">The n -&gt; feasible-TC table; how to read constraints; O(n^2) death at n=10^5</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20time%20complexity%20analysis" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20time%20complexity%20analysis" target="_blank" class="yt-channel-pill striver" title="Search Big-O + n -&gt; TC constraint mapping on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20time%20complexity" target="_blank" class="yt-channel-pill aditya" title="Search Big-O + n -&gt; TC constraint mapping on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20time%20and%20space%20complexity" target="_blank" class="yt-channel-pill babbar" title="Search Big-O + n -&gt; TC constraint mapping on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20time%20complexity" target="_blank" class="yt-channel-pill pratyush" title="Search Big-O + n -&gt; TC constraint mapping on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20big%20o%20notation" target="_blank" class="yt-channel-pill neetcode" title="Search Big-O + n -&gt; TC constraint mapping on NeetCode">📺 NeetCode ↗</a><a href="https://www.youtube.com/results?search_query=abdul%20bari%20algorithm%20analysis%20time%20complexity" target="_blank" class="yt-channel-pill other" title="Search Big-O + n -&gt; TC constraint mapping on Abdul Bari">📺 Abdul Bari ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="3 prefix sums and prefix+hashmap neetcode prefix+hash is non-obvious and reused for 12+ weeks; gaps here compound badly why a count map beats a seen-set; why prefix[0]=0 must be seeded; loop invariant striver striver aditya verma love babbar padho with pratyush neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 3</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Prefix sums and prefix+hashmap</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">20 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Prefix+hash is non-obvious and reused for 12+ weeks; gaps here compound badly</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Why a COUNT map beats a seen-set; why prefix[0]=0 must be seeded; loop invariant</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20subarray%20sum%20equals%20k%20prefix%20sum" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20subarray%20sum%20equals%20k%20prefix%20sum" target="_blank" class="yt-channel-pill striver" title="Search Prefix sums and prefix+hashmap on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20prefix%20sum%20subarray" target="_blank" class="yt-channel-pill aditya" title="Search Prefix sums and prefix+hashmap on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20prefix%20sum%20subarray" target="_blank" class="yt-channel-pill babbar" title="Search Prefix sums and prefix+hashmap on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20prefix%20sum" target="_blank" class="yt-channel-pill pratyush" title="Search Prefix sums and prefix+hashmap on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20subarray%20sum%20equals%20k" target="_blank" class="yt-channel-pill neetcode" title="Search Prefix sums and prefix+hashmap on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="8 two pointers: why the movement is valid neetcode most learners memorize the motion but cannot explain why no valid pair is skipped the discard argument for each pointer move; the duplicate-skip rule and why it is safe striver striver aditya verma love babbar padho with pratyush neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 8</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Two pointers: why the movement is valid</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">20 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Most learners memorize the motion but cannot explain why no valid pair is skipped</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">The discard argument for each pointer move; the duplicate-skip rule and why it is safe</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20two%20pointers%203sum" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20two%20pointers%203sum" target="_blank" class="yt-channel-pill striver" title="Search Two pointers: why the movement is valid on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20two%20pointer%20approach" target="_blank" class="yt-channel-pill aditya" title="Search Two pointers: why the movement is valid on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20two%20pointer%20approach" target="_blank" class="yt-channel-pill babbar" title="Search Two pointers: why the movement is valid on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20two%20pointers" target="_blank" class="yt-channel-pill pratyush" title="Search Two pointers: why the movement is valid on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20two%20pointers%203sum" target="_blank" class="yt-channel-pill neetcode" title="Search Two pointers: why the movement is valid on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="10 sliding window: expand/shrink + when it fails neetcode knowing when the window is invalid (non-monotone conditions) prevents silent wrong answers the monotone feasibility condition; the loop invariant; one example where window fails aditya verma aditya verma striver love babbar padho with pratyush neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 10</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Sliding window: expand/shrink + when it FAILS</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Knowing when the window is INVALID (non-monotone conditions) prevents silent wrong answers</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">The monotone feasibility condition; the loop invariant; one example where window fails</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20sliding%20window%20playlist" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Aditya Verma) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20sliding%20window%20playlist" target="_blank" class="yt-channel-pill aditya" title="Search Sliding window: expand/shrink + when it FAILS on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=striver%20sliding%20window%20playlist" target="_blank" class="yt-channel-pill striver" title="Search Sliding window: expand/shrink + when it FAILS on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20sliding%20window" target="_blank" class="yt-channel-pill babbar" title="Search Sliding window: expand/shrink + when it FAILS on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20sliding%20window" target="_blank" class="yt-channel-pill pratyush" title="Search Sliding window: expand/shrink + when it FAILS on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20sliding%20window" target="_blank" class="yt-channel-pill neetcode" title="Search Sliding window: expand/shrink + when it FAILS on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="15 binary search boundaries: invariant-first neetcode + cph ch.3 off-by-one bugs here corrupt every future binary search problem silently half-open invariant; lower_bound vs upper_bound; how to derive the correct loop condition aditya verma aditya verma striver love babbar padho with pratyush neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 15</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Binary search boundaries: invariant-first</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode + CPH ch.3</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Off-by-one bugs here corrupt every future binary search problem silently</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Half-open invariant; lower_bound vs upper_bound; how to derive the correct loop condition</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20binary%20search%20playlist" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Aditya Verma) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20binary%20search%20playlist" target="_blank" class="yt-channel-pill aditya" title="Search Binary search boundaries: invariant-first on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=striver%20binary%20search%20playlist" target="_blank" class="yt-channel-pill striver" title="Search Binary search boundaries: invariant-first on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20binary%20search" target="_blank" class="yt-channel-pill babbar" title="Search Binary search boundaries: invariant-first on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20binary%20search" target="_blank" class="yt-channel-pill pratyush" title="Search Binary search boundaries: invariant-first on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20binary%20search" target="_blank" class="yt-channel-pill neetcode" title="Search Binary search boundaries: invariant-first on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="17 binary search on answer (parametric search) neetcode single highest-leverage pattern in this program; appears disguised in infra interviews the 3 validity conditions; how to write feasible(); why the answer space is monotone striver striver aditya verma love babbar padho with pratyush neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 17</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Binary search on answer (parametric search)</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Single highest-leverage pattern in this program; appears disguised in infra interviews</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">The 3 validity conditions; how to write feasible(); why the answer space is monotone</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20binary%20search%20on%20answers%20koko%20eating%20bananas" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20binary%20search%20on%20answers%20koko%20eating%20bananas" target="_blank" class="yt-channel-pill striver" title="Search Binary search on answer (parametric search) on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20allocate%20minimum%20number%20of%20pages%20binary%20search" target="_blank" class="yt-channel-pill aditya" title="Search Binary search on answer (parametric search) on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20book%20allocation%20painter%20partition%20binary%20search" target="_blank" class="yt-channel-pill babbar" title="Search Binary search on answer (parametric search) on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20binary%20search%20on%20answers" target="_blank" class="yt-channel-pill pratyush" title="Search Binary search on answer (parametric search) on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20koko%20eating%20bananas" target="_blank" class="yt-channel-pill neetcode" title="Search Binary search on answer (parametric search) on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="23 sweep line and event counting cph ch.30 / cp-algorithms interval problems collapse once you model them as a sweep; two equivalent implementations event encoding (+1/-1); tie-breaking between end and start events at the same time striver striver padho with pratyush aditya verma love babbar neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 23</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Sweep line and event counting</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">CPH ch.30 / cp-algorithms</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">20 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Interval problems collapse once you model them as a sweep; two equivalent implementations</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Event encoding (+1/-1); tie-breaking between end and start events at the same time</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20meeting%20rooms%20merge%20intervals" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20meeting%20rooms%20merge%20intervals" target="_blank" class="yt-channel-pill striver" title="Search Sweep line and event counting on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20line%20sweep%20intervals" target="_blank" class="yt-channel-pill pratyush" title="Search Sweep line and event counting on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20interval%20merge" target="_blank" class="yt-channel-pill aditya" title="Search Sweep line and event counting on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20merge%20intervals" target="_blank" class="yt-channel-pill babbar" title="Search Sweep line and event counting on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20meeting%20rooms%20insert%20interval" target="_blank" class="yt-channel-pill neetcode" title="Search Sweep line and event counting on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="24 monotonic stack from first principles neetcode the amortized argument is the reusable, transferable part  -  not the specific loop why total pops &lt;= n; what the stack invariant is at any moment; where the answer is resolved aditya verma aditya verma striver love babbar padho with pratyush neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 24</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Monotonic stack from first principles</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">The amortized argument is the reusable, transferable part  -  not the specific loop</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Why total pops &lt;= n; what the stack invariant is at any moment; where the answer is resolved</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20stack%20playlist%20nearest%20greater%20to%20right" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Aditya Verma) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20stack%20playlist%20nearest%20greater%20to%20right" target="_blank" class="yt-channel-pill aditya" title="Search Monotonic stack from first principles on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=striver%20next%20greater%20element%20monotonic%20stack" target="_blank" class="yt-channel-pill striver" title="Search Monotonic stack from first principles on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20largest%20rectangle%20in%20histogram%20stack" target="_blank" class="yt-channel-pill babbar" title="Search Monotonic stack from first principles on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20monotonic%20stack" target="_blank" class="yt-channel-pill pratyush" title="Search Monotonic stack from first principles on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20daily%20temperatures%20monotonic%20stack" target="_blank" class="yt-channel-pill neetcode" title="Search Monotonic stack from first principles on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="29 heaps: sift-up/down, heapify, cost comparison neetcode + cph ch.4 you must be able to compare heap vs sort cost on the spot; heapify being o(n) is non-obvious partial-order insight; heapify o(n) proof sketch; when o(n log k) &lt; o(n log n) aditya verma aditya verma striver love babbar padho with pratyush abdul bari">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 29</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Heaps: sift-up/down, heapify, cost comparison</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode + CPH ch.4</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">You must be able to compare heap vs sort cost on the spot; heapify being O(n) is non-obvious</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Partial-order insight; heapify O(n) proof sketch; when O(n log k) &lt; O(n log n)</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20heap%20playlist%20kth%20smallest%20element" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Aditya Verma) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20heap%20playlist%20kth%20smallest%20element" target="_blank" class="yt-channel-pill aditya" title="Search Heaps: sift-up/down, heapify, cost comparison on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=striver%20heaps%20priority%20queue%20playlist" target="_blank" class="yt-channel-pill striver" title="Search Heaps: sift-up/down, heapify, cost comparison on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20heap%20data%20structure%20heapify" target="_blank" class="yt-channel-pill babbar" title="Search Heaps: sift-up/down, heapify, cost comparison on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20heap%20priority%20queue" target="_blank" class="yt-channel-pill pratyush" title="Search Heaps: sift-up/down, heapify, cost comparison on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=abdul%20bari%20heap%20sort%20heapify" target="_blank" class="yt-channel-pill other" title="Search Heaps: sift-up/down, heapify, cost comparison on Abdul Bari">📺 Abdul Bari ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="32 proving greedy: exchange and staying-ahead arguments cph ch.6 unproven greedy is the top hard-interview failure; you need two reusable proof schemas exchange argument schema; staying-ahead argument schema; how to construct counterexamples striver striver aditya verma love babbar padho with pratyush abdul bari neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 32</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Proving greedy: exchange and staying-ahead arguments</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">CPH ch.6</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">20 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Unproven greedy is the top hard-interview failure; you need two reusable proof schemas</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Exchange argument schema; staying-ahead argument schema; how to construct counterexamples</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20greedy%20algorithms%20playlist" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20greedy%20algorithms%20playlist" target="_blank" class="yt-channel-pill striver" title="Search Proving greedy: exchange and staying-ahead arguments on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20greedy%20algorithms" target="_blank" class="yt-channel-pill aditya" title="Search Proving greedy: exchange and staying-ahead arguments on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20greedy%20algorithm" target="_blank" class="yt-channel-pill babbar" title="Search Proving greedy: exchange and staying-ahead arguments on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20greedy%20exchange%20argument" target="_blank" class="yt-channel-pill pratyush" title="Search Proving greedy: exchange and staying-ahead arguments on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=abdul%20bari%20greedy%20method%20knapsack" target="_blank" class="yt-channel-pill other" title="Search Proving greedy: exchange and staying-ahead arguments on Abdul Bari">📺 Abdul Bari ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20jump%20game%20gas%20station" target="_blank" class="yt-channel-pill neetcode" title="Search Proving greedy: exchange and staying-ahead arguments on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="37 lru cache design: structure composition neetcode canonical structure-composition problem and an ai-infra interview staple why hashmap+dll yields o(1) on all ops; the deletion and move-to-front invariant striver striver padho with pratyush love babbar aditya verma neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 37</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">LRU cache design: structure composition</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">20 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Canonical structure-composition problem and an AI-infra interview staple</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Why hashmap+DLL yields O(1) on all ops; the deletion and move-to-front invariant</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20lru%20cache%20implementation" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20lru%20cache%20implementation" target="_blank" class="yt-channel-pill striver" title="Search LRU cache design: structure composition on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20lru%20cache" target="_blank" class="yt-channel-pill pratyush" title="Search LRU cache design: structure composition on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20lru%20cache" target="_blank" class="yt-channel-pill babbar" title="Search LRU cache design: structure composition on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20lru%20cache" target="_blank" class="yt-channel-pill aditya" title="Search LRU cache design: structure composition on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20lru%20cache" target="_blank" class="yt-channel-pill neetcode" title="Search LRU cache design: structure composition on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="39 bit manipulation that actually recurs cph ch.10 needed for bitmask dp in week 13; also for constraint-tracking in backtracking mask set/clear/test/iterate-all-subsets; xor cancellation; popcount striver striver love babbar aditya verma padho with pratyush neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 39</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Bit manipulation that actually recurs</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">CPH ch.10</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">20 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Needed for bitmask DP in week 13; also for constraint-tracking in backtracking</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Mask set/clear/test/iterate-all-subsets; XOR cancellation; popcount</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20bit%20manipulation%20playlist" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20bit%20manipulation%20playlist" target="_blank" class="yt-channel-pill striver" title="Search Bit manipulation that actually recurs on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20bitwise%20operators" target="_blank" class="yt-channel-pill babbar" title="Search Bit manipulation that actually recurs on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20bit%20manipulation" target="_blank" class="yt-channel-pill aditya" title="Search Bit manipulation that actually recurs on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20bitmask" target="_blank" class="yt-channel-pill pratyush" title="Search Bit manipulation that actually recurs on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20bit%20manipulation" target="_blank" class="yt-channel-pill neetcode" title="Search Bit manipulation that actually recurs on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="43 recursion as contract + call stack neetcode contract-first recursion eliminates most tree bugs before they happen how to state a return contract precisely in english; how the call stack relates to a tree traversal striver striver aditya verma love babbar padho with pratyush neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 43</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Recursion as contract + call stack</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Contract-first recursion eliminates most tree bugs before they happen</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">How to state a return contract precisely in English; how the call stack relates to a tree traversal</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20binary%20tree%20series%20playlist" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20binary%20tree%20series%20playlist" target="_blank" class="yt-channel-pill striver" title="Search Recursion as contract + call stack on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20recursion%20playlist" target="_blank" class="yt-channel-pill aditya" title="Search Recursion as contract + call stack on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20binary%20tree%20recursion" target="_blank" class="yt-channel-pill babbar" title="Search Recursion as contract + call stack on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20binary%20tree" target="_blank" class="yt-channel-pill pratyush" title="Search Recursion as contract + call stack on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20binary%20tree%20maximum%20path%20sum" target="_blank" class="yt-channel-pill neetcode" title="Search Recursion as contract + call stack on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="50 trie construction and use neetcode new data structure with a non-obvious memory/tc trade-off node layout; insert/search; memory trade-off vs hashset; when trie loses striver striver love babbar padho with pratyush aditya verma neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 50</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Trie construction and use</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">20 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">New data structure with a non-obvious memory/TC trade-off</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Node layout; insert/search; memory trade-off vs hashset; when trie loses</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20trie%20series%20playlist" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20trie%20series%20playlist" target="_blank" class="yt-channel-pill striver" title="Search Trie construction and use on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20trie%20implementation" target="_blank" class="yt-channel-pill babbar" title="Search Trie construction and use on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20trie" target="_blank" class="yt-channel-pill pratyush" title="Search Trie construction and use on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20trie" target="_blank" class="yt-channel-pill aditya" title="Search Trie construction and use on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20implement%20trie" target="_blank" class="yt-channel-pill neetcode" title="Search Trie construction and use on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="57 graph representations + bfs/dfs discipline neetcode + cph ch.11-12 modelling errors cause more graph failures than algorithm errors; visited discipline is critical adjacency list vs matrix trade-offs; mark on push not pop; the input that breaks pop-marking striver striver love babbar padho with pratyush aditya verma williamfiset">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 57</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Graph representations + BFS/DFS discipline</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode + CPH ch.11-12</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Modelling errors cause more graph failures than algorithm errors; visited discipline is critical</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Adjacency list vs matrix trade-offs; mark on PUSH not POP; the input that breaks pop-marking</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20graph%20series%20bfs%20dfs" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20graph%20series%20bfs%20dfs" target="_blank" class="yt-channel-pill striver" title="Search Graph representations + BFS/DFS discipline on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20graph%20series%20bfs%20dfs" target="_blank" class="yt-channel-pill babbar" title="Search Graph representations + BFS/DFS discipline on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20graph" target="_blank" class="yt-channel-pill pratyush" title="Search Graph representations + BFS/DFS discipline on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20graph%20bfs%20dfs" target="_blank" class="yt-channel-pill aditya" title="Search Graph representations + BFS/DFS discipline on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=williamfiset%20graph%20theory" target="_blank" class="yt-channel-pill other" title="Search Graph representations + BFS/DFS discipline on WilliamFiset">📺 WilliamFiset ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="59 union-find with path compression + union by size williamfiset (youtube) dsu appears heavily in infra-style problems; must be writeable cold in 5 minutes both optimizations and why each is needed; amortized complexity argument striver striver love babbar padho with pratyush williamfiset neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 59</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Union-Find with path compression + union by size</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">WilliamFiset (YouTube)</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">DSU appears heavily in infra-style problems; must be writeable cold in 5 minutes</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Both optimizations and why each is needed; amortized complexity argument</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20disjoint%20set%20union%20find" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20disjoint%20set%20union%20find" target="_blank" class="yt-channel-pill striver" title="Search Union-Find with path compression + union by size on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20kruskal%20disjoint%20set" target="_blank" class="yt-channel-pill babbar" title="Search Union-Find with path compression + union by size on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20dsu" target="_blank" class="yt-channel-pill pratyush" title="Search Union-Find with path compression + union by size on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=williamfiset%20disjoint%20set%20union%20find" target="_blank" class="yt-channel-pill other" title="Search Union-Find with path compression + union by size on WilliamFiset">📺 WilliamFiset ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20redundant%20connection%20union%20find" target="_blank" class="yt-channel-pill neetcode" title="Search Union-Find with path compression + union by size on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="61 topological sort: kahn + dfs colours neetcode + cph ch.16 dag scheduling is the most infra-relevant graph pattern; must know two implementations in-degree invariant; cycle detection in both variants; what happens to isolated nodes striver striver love babbar padho with pratyush aditya verma neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 61</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Topological sort: Kahn + DFS colours</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode + CPH ch.16</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">20 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">DAG scheduling is the most infra-relevant graph pattern; must know two implementations</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">In-degree invariant; cycle detection in BOTH variants; what happens to isolated nodes</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20topological%20sort%20kahns%20algorithm" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20topological%20sort%20kahns%20algorithm" target="_blank" class="yt-channel-pill striver" title="Search Topological sort: Kahn + DFS colours on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20topological%20sort%20kahn" target="_blank" class="yt-channel-pill babbar" title="Search Topological sort: Kahn + DFS colours on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20topological%20sort" target="_blank" class="yt-channel-pill pratyush" title="Search Topological sort: Kahn + DFS colours on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20topological%20sort" target="_blank" class="yt-channel-pill aditya" title="Search Topological sort: Kahn + DFS colours on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20course%20schedule%20topological%20sort" target="_blank" class="yt-channel-pill neetcode" title="Search Topological sort: Kahn + DFS colours on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="65 state-space search: state encoding and counting cp-algorithms.com keying visited on partial state is a silent bug that produces wrong answers  -  very hard to debug how to define a full state tuple; how to count the state space and derive tc from it striver striver padho with pratyush love babbar aditya verma neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 65</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">State-space search: state encoding and counting</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">cp-algorithms.com</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">20 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Keying visited on partial state is a silent bug that produces wrong answers  -  very hard to debug</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">How to define a full state tuple; how to count the state space and derive TC from it</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20word%20ladder%20bfs%20shortest%20path" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20word%20ladder%20bfs%20shortest%20path" target="_blank" class="yt-channel-pill striver" title="Search State-space search: state encoding and counting on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20state%20space%20search%20bfs" target="_blank" class="yt-channel-pill pratyush" title="Search State-space search: state encoding and counting on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20word%20ladder%20shortest%20path%20bfs" target="_blank" class="yt-channel-pill babbar" title="Search State-space search: state encoding and counting on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20bfs%20shortest%20path" target="_blank" class="yt-channel-pill aditya" title="Search State-space search: state encoding and counting on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20word%20ladder" target="_blank" class="yt-channel-pill neetcode" title="Search State-space search: state encoding and counting on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="66 dijkstra: correctness proof williamfiset + cph ch.13 you must know why the algorithm works, not just the code; negative edges are a common trap relaxation; popped-distance invariant; why negative weights break the invariant striver striver love babbar padho with pratyush abdul bari williamfiset">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 66</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Dijkstra: correctness proof</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">WilliamFiset + CPH ch.13</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">You must know WHY the algorithm works, not just the code; negative edges are a common trap</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Relaxation; popped-distance invariant; why negative weights break the invariant</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20dijkstra%20algorithm%20priority%20queue" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20dijkstra%20algorithm%20priority%20queue" target="_blank" class="yt-channel-pill striver" title="Search Dijkstra: correctness proof on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20dijkstra%20shortest%20path" target="_blank" class="yt-channel-pill babbar" title="Search Dijkstra: correctness proof on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20dijkstra" target="_blank" class="yt-channel-pill pratyush" title="Search Dijkstra: correctness proof on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=abdul%20bari%20dijkstra%20algorithm" target="_blank" class="yt-channel-pill other" title="Search Dijkstra: correctness proof on Abdul Bari">📺 Abdul Bari ↗</a><a href="https://www.youtube.com/results?search_query=williamfiset%20dijkstras%20shortest%20path" target="_blank" class="yt-channel-pill other" title="Search Dijkstra: correctness proof on WilliamFiset">📺 WilliamFiset ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="71 backtracking: template + complexity counting neetcode backtracking complexity counting is almost never taught; you need it for every hard interview choose/explore/unchoose; counting recursion-tree leaves for tc; pruning effect on the tree aditya verma aditya verma striver love babbar padho with pratyush neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 71</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Backtracking: template + complexity counting</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Backtracking complexity counting is almost never taught; you need it for every hard interview</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Choose/explore/unchoose; counting recursion-tree leaves for TC; pruning effect on the tree</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20backtracking%20playlist" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Aditya Verma) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20backtracking%20playlist" target="_blank" class="yt-channel-pill aditya" title="Search Backtracking: template + complexity counting on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=striver%20backtracking%20n%20queens%20subsets" target="_blank" class="yt-channel-pill striver" title="Search Backtracking: template + complexity counting on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20backtracking%20rat%20in%20a%20maze" target="_blank" class="yt-channel-pill babbar" title="Search Backtracking: template + complexity counting on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20backtracking" target="_blank" class="yt-channel-pill pratyush" title="Search Backtracking: template + complexity counting on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20subsets%20backtracking" target="_blank" class="yt-channel-pill neetcode" title="Search Backtracking: template + complexity counting on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="76 from recursion to memoisation: state identification neetcode state identification is the bridge into all dp; without it you cannot design new dp how to detect overlapping subproblems; how to name and count distinct states aditya verma aditya verma striver love babbar padho with pratyush abdul bari">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 76</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">From recursion to memoisation: state identification</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">20 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">State identification is the bridge into all DP; without it you cannot design new DP</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">How to detect overlapping subproblems; how to name and count distinct states</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20dynamic%20programming%20playlist%20intro%20memoization" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Aditya Verma) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20dp%20playlist%20memoization" target="_blank" class="yt-channel-pill aditya" title="Search From recursion to memoisation: state identification on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=striver%20dp%20series%20introduction%20memoization" target="_blank" class="yt-channel-pill striver" title="Search From recursion to memoisation: state identification on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20dp%20playlist%20memoization" target="_blank" class="yt-channel-pill babbar" title="Search From recursion to memoisation: state identification on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20dynamic%20programming" target="_blank" class="yt-channel-pill pratyush" title="Search From recursion to memoisation: state identification on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=abdul%20bari%20dynamic%20programming" target="_blank" class="yt-channel-pill other" title="Search From recursion to memoisation: state identification on Abdul Bari">📺 Abdul Bari ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="78 dp state design (5-step method) neetcode + cph ch.7 templates fail on unfamiliar dp; state-first design does not  -  this is the critical difference state  -&gt;  transition  -&gt;  base case  -&gt;  evaluation order  -&gt;  answer location (in that order) aditya verma aditya verma striver love babbar padho with pratyush abdul bari">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 78</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">DP state design (5-step method)</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">NeetCode + CPH ch.7</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">30 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Templates fail on unfamiliar DP; state-first design does not  -  this is the critical difference</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">State  -&gt;  transition  -&gt;  base case  -&gt;  evaluation order  -&gt;  answer location (in that order)</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20dp%20playlist" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Aditya Verma) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20dp%20playlist" target="_blank" class="yt-channel-pill aditya" title="Search DP state design (5-step method) on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=striver%20dp%20series%20playlist" target="_blank" class="yt-channel-pill striver" title="Search DP state design (5-step method) on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20dynamic%20programming" target="_blank" class="yt-channel-pill babbar" title="Search DP state design (5-step method) on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20dp%20space%20optimization" target="_blank" class="yt-channel-pill pratyush" title="Search DP state design (5-step method) on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=abdul%20bari%20dynamic%20programming" target="_blank" class="yt-channel-pill other" title="Search DP state design (5-step method) on Abdul Bari">📺 Abdul Bari ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="80 knapsack variants and loop order cph ch.7 / cp-algorithms loop order is the single most misunderstood dp detail; most candidates guess and get wrong why 0/1 knapsack goes descending; why unbounded goes ascending; construct the failing example aditya verma aditya verma striver love babbar padho with pratyush neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 80</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Knapsack variants and loop order</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">CPH ch.7 / cp-algorithms</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Loop order is the single most misunderstood DP detail; most candidates guess and get wrong</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Why 0/1 knapsack goes descending; why unbounded goes ascending; construct the failing example</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%2001%20knapsack%20playlist" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Aditya Verma) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%2001%20knapsack%20playlist" target="_blank" class="yt-channel-pill aditya" title="Search Knapsack variants and loop order on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=striver%2001%20knapsack%20subset%20sum" target="_blank" class="yt-channel-pill striver" title="Search Knapsack variants and loop order on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20knapsack%20problem" target="_blank" class="yt-channel-pill babbar" title="Search Knapsack variants and loop order on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20knapsack" target="_blank" class="yt-channel-pill pratyush" title="Search Knapsack variants and loop order on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20coin%20change%20knapsack" target="_blank" class="yt-channel-pill neetcode" title="Search Knapsack variants and loop order on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="85 interval dp cp-algorithms.com the &#x27;last operation&#x27; insight is non-obvious and cannot be guessed; must be understood once deeply iterate by length; why picking the last operation makes subproblems independent aditya verma aditya verma striver padho with pratyush love babbar neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 85</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Interval DP</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">cp-algorithms.com</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">20 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">The &#x27;last operation&#x27; insight is non-obvious and cannot be guessed; must be understood once deeply</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Iterate by length; why picking the LAST operation makes subproblems independent</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20matrix%20chain%20multiplication%20mcm%20playlist" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Aditya Verma) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=aditya%20verma%20matrix%20chain%20multiplication%20mcm%20playlist" target="_blank" class="yt-channel-pill aditya" title="Search Interval DP on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=striver%20matrix%20chain%20multiplication%20burst%20balloons" target="_blank" class="yt-channel-pill striver" title="Search Interval DP on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20interval%20dp" target="_blank" class="yt-channel-pill pratyush" title="Search Interval DP on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20matrix%20chain%20multiplication" target="_blank" class="yt-channel-pill babbar" title="Search Interval DP on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20burst%20balloons" target="_blank" class="yt-channel-pill neetcode" title="Search Interval DP on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="87 bitmask dp: state design cp-algorithms.com problems with n&lt;=20 are unsolvable without this; the constraint is the only signal you get (mask, position) state design; transition over bits; exact state count formula striver striver padho with pratyush aditya verma love babbar errichto">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 87</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Bitmask DP: state design</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">cp-algorithms.com</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">20 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Problems with n&lt;=20 are unsolvable without this; the constraint is the only signal you get</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">(mask, position) state design; transition over bits; exact state count formula</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20bitmask%20dp" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20bitmask%20dp" target="_blank" class="yt-channel-pill striver" title="Search Bitmask DP: state design on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20bitmask%20dp" target="_blank" class="yt-channel-pill pratyush" title="Search Bitmask DP: state design on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20bitmask%20dp" target="_blank" class="yt-channel-pill aditya" title="Search Bitmask DP: state design on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20bitmasking" target="_blank" class="yt-channel-pill babbar" title="Search Bitmask DP: state design on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=errichto%20bitmask%20dynamic%20programming" target="_blank" class="yt-channel-pill other" title="Search Bitmask DP: state design on Errichto">📺 Errichto ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="99 fenwick tree (bit): point update and range sum errichto / cp-algorithms mastering the binary index structure and lowest-set-bit trick the (i &amp; -i) isolation proof; how 1-based indexing maps partial sums; 2d extension striver striver padho with pratyush love babbar williamfiset errichto">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 99</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Fenwick Tree (BIT): point update and range sum</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">Errichto / CP-Algorithms</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Mastering the binary index structure and lowest-set-bit trick</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">The (i &amp; -i) isolation proof; how 1-based indexing maps partial sums; 2D extension</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20fenwick%20tree%20binary%20indexed%20tree" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20fenwick%20tree%20binary%20indexed%20tree" target="_blank" class="yt-channel-pill striver" title="Search Fenwick Tree (BIT): point update and range sum on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20fenwick%20tree" target="_blank" class="yt-channel-pill pratyush" title="Search Fenwick Tree (BIT): point update and range sum on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20binary%20indexed%20tree%20fenwick" target="_blank" class="yt-channel-pill babbar" title="Search Fenwick Tree (BIT): point update and range sum on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=williamfiset%20fenwick%20tree%20binary%20indexed%20tree" target="_blank" class="yt-channel-pill other" title="Search Fenwick Tree (BIT): point update and range sum on WilliamFiset">📺 WilliamFiset ↗</a><a href="https://www.youtube.com/results?search_query=errichto%20fenwick%20tree" target="_blank" class="yt-channel-pill other" title="Search Fenwick Tree (BIT): point update and range sum on Errichto">📺 Errichto ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="100 segment tree: point update and range query errichto / cp-algorithms associative range queries require understanding the binary tree representation array representation (2i, 2i+1); divide-and-conquer range intersection; 4n size bound striver striver padho with pratyush love babbar williamfiset errichto">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 100</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Segment Tree: point update and range query</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">Errichto / CP-Algorithms</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Associative range queries require understanding the binary tree representation</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Array representation (2i, 2i+1); divide-and-conquer range intersection; 4n size bound</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20segment%20tree%20playlist" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20segment%20tree%20playlist" target="_blank" class="yt-channel-pill striver" title="Search Segment Tree: point update and range query on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20segment%20tree" target="_blank" class="yt-channel-pill pratyush" title="Search Segment Tree: point update and range query on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20segment%20tree" target="_blank" class="yt-channel-pill babbar" title="Search Segment Tree: point update and range query on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=williamfiset%20segment%20tree" target="_blank" class="yt-channel-pill other" title="Search Segment Tree: point update and range query on WilliamFiset">📺 WilliamFiset ↗</a><a href="https://www.youtube.com/results?search_query=errichto%20segment%20trees" target="_blank" class="yt-channel-pill other" title="Search Segment Tree: point update and range query on Errichto">📺 Errichto ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="101 lazy propagation in segment trees william fiset deferred updates are critical for range additions and interval modifications the push_down invariant; clearing lazy tags before recursive child visits striver striver padho with pratyush love babbar williamfiset errichto">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 101</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Lazy Propagation in Segment Trees</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">William Fiset</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Deferred updates are critical for range additions and interval modifications</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">The push_down invariant; clearing lazy tags before recursive child visits</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20lazy%20propagation%20segment%20tree" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20lazy%20propagation%20segment%20tree" target="_blank" class="yt-channel-pill striver" title="Search Lazy Propagation in Segment Trees on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20segment%20tree%20lazy%20propagation" target="_blank" class="yt-channel-pill pratyush" title="Search Lazy Propagation in Segment Trees on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20segment%20tree%20lazy%20propagation" target="_blank" class="yt-channel-pill babbar" title="Search Lazy Propagation in Segment Trees on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=williamfiset%20segment%20tree%20lazy%20propagation" target="_blank" class="yt-channel-pill other" title="Search Lazy Propagation in Segment Trees on WilliamFiset">📺 WilliamFiset ↗</a><a href="https://www.youtube.com/results?search_query=errichto%20lazy%20propagation" target="_blank" class="yt-channel-pill other" title="Search Lazy Propagation in Segment Trees on Errichto">📺 Errichto ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="106 tarjan&#x27;s bridge &amp; cut vertex algorithm william fiset single point of failure discovery in graphs without brute-force re-checking tin[u] vs low[u]; tree edges vs back edges; bridge condition low[v] &gt; tin[u] striver striver padho with pratyush love babbar williamfiset abdul bari">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 106</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Tarjan&#x27;s Bridge &amp; Cut Vertex Algorithm</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">William Fiset</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Single point of failure discovery in graphs without brute-force re-checking</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">tin[u] vs low[u]; tree edges vs back edges; bridge condition low[v] &gt; tin[u]</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=striver%20bridges%20in%20graph%20tarjans%20algorithm" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Striver) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=striver%20bridges%20in%20graph%20tarjans%20algorithm" target="_blank" class="yt-channel-pill striver" title="Search Tarjan&#x27;s Bridge &amp; Cut Vertex Algorithm on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20tarjan%20bridges" target="_blank" class="yt-channel-pill pratyush" title="Search Tarjan&#x27;s Bridge &amp; Cut Vertex Algorithm on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20bridges%20in%20a%20graph" target="_blank" class="yt-channel-pill babbar" title="Search Tarjan&#x27;s Bridge &amp; Cut Vertex Algorithm on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=williamfiset%20bridges%20and%20articulation%20points" target="_blank" class="yt-channel-pill other" title="Search Tarjan&#x27;s Bridge &amp; Cut Vertex Algorithm on WilliamFiset">📺 WilliamFiset ↗</a><a href="https://www.youtube.com/results?search_query=abdul%20bari%20tarjan%20strongly%20connected%20components" target="_blank" class="yt-channel-pill other" title="Search Tarjan&#x27;s Bridge &amp; Cut Vertex Algorithm on Abdul Bari">📺 Abdul Bari ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="109 network flow: dinic&#x27;s algorithm &amp; min-cut william fiset capacity-constrained routing and bipartite matching equivalence residual graph; augmenting paths; level graph via bfs; blocking flow via dfs williamfiset williamfiset padho with pratyush striver love babbar abdul bari">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 109</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Network Flow: Dinic&#x27;s Algorithm &amp; Min-Cut</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">William Fiset</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Capacity-constrained routing and bipartite matching equivalence</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Residual graph; augmenting paths; level graph via BFS; blocking flow via DFS</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=williamfiset%20dinics%20algorithm%20max%20flow" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (WilliamFiset) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=williamfiset%20dinics%20algorithm%20max%20flow" target="_blank" class="yt-channel-pill other" title="Search Network Flow: Dinic&#x27;s Algorithm &amp; Min-Cut on WilliamFiset">📺 WilliamFiset ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20max%20flow" target="_blank" class="yt-channel-pill pratyush" title="Search Network Flow: Dinic&#x27;s Algorithm &amp; Min-Cut on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=striver%20max%20flow%20dinic" target="_blank" class="yt-channel-pill striver" title="Search Network Flow: Dinic&#x27;s Algorithm &amp; Min-Cut on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20max%20flow" target="_blank" class="yt-channel-pill babbar" title="Search Network Flow: Dinic&#x27;s Algorithm &amp; Min-Cut on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=abdul%20bari%20ford%20fulkerson%20max%20flow" target="_blank" class="yt-channel-pill other" title="Search Network Flow: Dinic&#x27;s Algorithm &amp; Min-Cut on Abdul Bari">📺 Abdul Bari ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="120 kmp algorithm: prefix function &amp; state machine abdul bari / neetcode linear string matching without backtracking is non-obvious and heavily tested prefix function pi derivation; state transition fallback j = pi[j-1]; o(n) amortized argument abdul bari abdul bari striver love babbar aditya verma padho with pratyush neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 120</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">KMP Algorithm: Prefix Function &amp; State Machine</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">Abdul Bari / NeetCode</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Linear string matching without backtracking is non-obvious and heavily tested</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Prefix function pi derivation; state transition fallback j = pi[j-1]; O(N) amortized argument</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=abdul%20bari%20kmp%20algorithm%20string%20matching" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Abdul Bari) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=abdul%20bari%20kmp%20algorithm%20string%20matching" target="_blank" class="yt-channel-pill other" title="Search KMP Algorithm: Prefix Function &amp; State Machine on Abdul Bari">📺 Abdul Bari ↗</a><a href="https://www.youtube.com/results?search_query=striver%20kmp%20string%20matching%20algorithm" target="_blank" class="yt-channel-pill striver" title="Search KMP Algorithm: Prefix Function &amp; State Machine on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20kmp%20string%20matching" target="_blank" class="yt-channel-pill babbar" title="Search KMP Algorithm: Prefix Function &amp; State Machine on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=aditya%20verma%20string%20algorithms" target="_blank" class="yt-channel-pill aditya" title="Search KMP Algorithm: Prefix Function &amp; State Machine on Aditya Verma">📺 Aditya Verma ↗</a><a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20kmp" target="_blank" class="yt-channel-pill pratyush" title="Search KMP Algorithm: Prefix Function &amp; State Machine on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20kmp%20algorithm" target="_blank" class="yt-channel-pill neetcode" title="Search KMP Algorithm: Prefix Function &amp; State Machine on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="127 adaptive replacement cache (arc) paper &amp; mechanics usenix fast &#x27;03 industrial standard for scan-resistant buffer caching in distributed systems four lists (t1, t2, b1, b2); learning parameter p adaptation rule; ghost cache utility padho with pratyush padho with pratyush striver love babbar cmu database group neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 127</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Adaptive Replacement Cache (ARC) Paper &amp; Mechanics</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">USENIX Fast &#x27;03</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Industrial standard for scan-resistant buffer caching in distributed systems</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Four lists (T1, T2, B1, B2); learning parameter p adaptation rule; ghost cache utility</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20lru%20arc%20cache%20buffer%20pool" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Padho with Pratyush) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20lru%20arc%20cache%20buffer%20pool" target="_blank" class="yt-channel-pill pratyush" title="Search Adaptive Replacement Cache (ARC) Paper &amp; Mechanics on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=striver%20lru%20cache%20lfu%20cache%20design" target="_blank" class="yt-channel-pill striver" title="Search Adaptive Replacement Cache (ARC) Paper &amp; Mechanics on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20lru%20cache%20design" target="_blank" class="yt-channel-pill babbar" title="Search Adaptive Replacement Cache (ARC) Paper &amp; Mechanics on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=cmu%20database%20buffer%20pool%20replacement%20arc" target="_blank" class="yt-channel-pill other" title="Search Adaptive Replacement Cache (ARC) Paper &amp; Mechanics on CMU Database Group">📺 CMU Database Group ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20lru%20lfu%20cache" target="_blank" class="yt-channel-pill neetcode" title="Search Adaptive Replacement Cache (ARC) Paper &amp; Mechanics on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="134 lock-free spsc queue &amp; mechanical sympathy martin thompson understanding false sharing, memory barriers, and cache lines in concurrent queues 64-byte cache line padding; monotonic sequence counters; acquire-release semantics padho with pratyush padho with pratyush love babbar cppcon martin thompson neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 134</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">Lock-Free SPSC Queue &amp; Mechanical Sympathy</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">Martin Thompson</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Understanding false sharing, memory barriers, and cache lines in concurrent queues</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">64-byte cache line padding; monotonic sequence counters; acquire-release semantics</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20lock%20free%20queue%20ring%20buffer" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Padho with Pratyush) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20lock%20free%20queue%20ring%20buffer" target="_blank" class="yt-channel-pill pratyush" title="Search Lock-Free SPSC Queue &amp; Mechanical Sympathy on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20queue%20operating%20systems%20concurrency" target="_blank" class="yt-channel-pill babbar" title="Search Lock-Free SPSC Queue &amp; Mechanical Sympathy on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=cppcon%20lock%20free%20ring%20buffer%20spsc" target="_blank" class="yt-channel-pill other" title="Search Lock-Free SPSC Queue &amp; Mechanical Sympathy on CppCon">📺 CppCon ↗</a><a href="https://www.youtube.com/results?search_query=martin%20thompson%20mechanical%20sympathy%20lock%20free%20queue" target="_blank" class="yt-channel-pill other" title="Search Lock-Free SPSC Queue &amp; Mechanical Sympathy on Martin Thompson">📺 Martin Thompson ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20design%20bounded%20blocking%20queue" target="_blank" class="yt-channel-pill neetcode" title="Search Lock-Free SPSC Queue &amp; Mechanical Sympathy on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="143 hnsw algorithm: proximity graph navigation malkov &amp; yashunin foundation of vector databases and embedding search in modern ai infrastructure multi-layer skip-list graph; greedy coarse routing; beam search on layer 0; efsearch trade-off padho with pratyush padho with pratyush pinecone james briggs striver neetcode">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 143</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">HNSW Algorithm: Proximity Graph Navigation</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">Malkov &amp; Yashunin</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Foundation of vector databases and embedding search in modern AI infrastructure</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Multi-layer skip-list graph; greedy coarse routing; beam search on layer 0; efSearch trade-off</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20hnsw%20vector%20search" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Padho with Pratyush) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20hnsw%20vector%20search" target="_blank" class="yt-channel-pill pratyush" title="Search HNSW Algorithm: Proximity Graph Navigation on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=pinecone%20hnsw%20algorithm%20vector%20search" target="_blank" class="yt-channel-pill other" title="Search HNSW Algorithm: Proximity Graph Navigation on Pinecone">📺 Pinecone ↗</a><a href="https://www.youtube.com/results?search_query=james%20briggs%20hierarchical%20navigable%20small%20world%20hnsw" target="_blank" class="yt-channel-pill other" title="Search HNSW Algorithm: Proximity Graph Navigation on James Briggs">📺 James Briggs ↗</a><a href="https://www.youtube.com/results?search_query=striver%20k%20nearest%20neighbors%20graph" target="_blank" class="yt-channel-pill striver" title="Search HNSW Algorithm: Proximity Graph Navigation on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=neetcode%20vector%20embeddings%20search" target="_blank" class="yt-channel-pill neetcode" title="Search HNSW Algorithm: Proximity Graph Navigation on NeetCode">📺 NeetCode ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          <tr class="resource-row-item" data-text="148 dag scheduling &amp; critical path method in ml compilers stanford / mit core algorithm for operator scheduling, pipeline parallelism, and activation memory earliest start time (est), latest start time (lst), slack = lst - est; critical path dag dp padho with pratyush padho with pratyush abdul bari striver love babbar mit opencourseware">
+            <td style="font-weight: 700; color: var(--nv-green); white-space: nowrap;">Day 148</td>
+            <td>
+              <div style="font-weight: 700; color: #fff; font-size: 0.95rem; margin-bottom: 0.25rem;">DAG Scheduling &amp; Critical Path Method in ML Compilers</div>
+              <div style="font-size: 0.75rem; color: var(--cyan-accent);">Stanford / MIT</div>
+            </td>
+            <td style="font-family: var(--font-mono); font-size: 0.8rem; white-space: nowrap;">25 min</td>
+            <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">Core algorithm for operator scheduling, pipeline parallelism, and activation memory</td>
+            <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">Earliest Start Time (EST), Latest Start Time (LST), slack = LST - EST; critical path DAG DP</td>
+            <td style="min-width: 250px;">
+              <div style="margin-bottom: 0.45rem;">
+                <a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20dag%20scheduling%20critical%20path" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch (Padho with Pratyush) ↗
+                </a>
+              </div>
+              <div class="channel-links-group">
+                <a href="https://www.youtube.com/results?search_query=padho%20with%20pratyush%20dag%20scheduling%20critical%20path" target="_blank" class="yt-channel-pill pratyush" title="Search DAG Scheduling &amp; Critical Path Method in ML Compilers on Padho with Pratyush">📺 Padho with Pratyush ↗</a><a href="https://www.youtube.com/results?search_query=abdul%20bari%20critical%20path%20method%20dag" target="_blank" class="yt-channel-pill other" title="Search DAG Scheduling &amp; Critical Path Method in ML Compilers on Abdul Bari">📺 Abdul Bari ↗</a><a href="https://www.youtube.com/results?search_query=striver%20topological%20sort%20dag%20scheduling" target="_blank" class="yt-channel-pill striver" title="Search DAG Scheduling &amp; Critical Path Method in ML Compilers on Striver">📺 Striver ↗</a><a href="https://www.youtube.com/results?search_query=love%20babbar%20dag%20topological%20sort" target="_blank" class="yt-channel-pill babbar" title="Search DAG Scheduling &amp; Critical Path Method in ML Compilers on Love Babbar">📺 Love Babbar ↗</a><a href="https://www.youtube.com/results?search_query=mit%206.172%20dag%20scheduling%20critical%20path" target="_blank" class="yt-channel-pill other" title="Search DAG Scheduling &amp; Critical Path Method in ML Compilers on MIT OpenCourseWare">📺 MIT OpenCourseWare ↗</a>
+              </div>
+            </td>
+          </tr>
+        
+          </tbody>
+        </table>
+      </div>
+    
+    </main>
+  </div>
+
+  <!-- MODAL: Complete Day -->
+  <div class="modal-overlay" id="modal-complete-day">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;" id="modal-day-title">Mark Day Complete</h3>
+        <button class="modal-close" id="btn-close-modal">&times;</button>
+      </div>
+      <form id="form-complete-day">
+        <input type="hidden" id="modal-day-num" value="1">
+        <div class="form-group">
+          <label class="form-label">Total Time Spent (Minutes)</label>
+          <input type="number" class="form-control" id="modal-time-spent" min="10" max="300" value="60" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Solved Both Independently?</label>
+          <select class="form-control" id="modal-solved-indep">
+            <option value="Yes">Yes (No solution viewed, minimal/no hints)</option>
+            <option value="No">No (Struggled or consulted hints)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hints Taken</label>
+          <select class="form-control" id="modal-hints-count">
+            <option value="0">0 Hints</option>
+            <option value="1">1 Hint</option>
+            <option value="2">2 Hints</option>
+            <option value="3">3+ Hints</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Solution / Editorial Viewed?</label>
+          <select class="form-control" id="modal-sol-viewed">
+            <option value="No">No (Clean solve)</option>
+            <option value="Yes">Yes (Looked up approach/code)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Key Invariant / Mental Model Takeaway</label>
+          <textarea class="form-control" id="modal-key-insight" rows="2" placeholder="e.g. Invariant: prefix[r] - prefix[l-1] is the sum of range [l, r]"></textarea>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem;">
+          <button type="button" class="btn btn-outline" id="btn-cancel-modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save & Advance ✨</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: Data Sync & Backup -->
+  <div class="modal-overlay" id="modal-sync">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;">💾 Data Backup & Portability</h3>
+        <button class="modal-close" id="btn-close-sync-modal">&times;</button>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+        Your logs, completed days, and metrics are automatically saved in your browser's <code style="color: var(--nv-green);">localStorage</code> across all pages without needing a server.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <button class="btn btn-primary" id="btn-export-json">⬇️ Export Progress to JSON</button>
+        <button class="btn btn-outline" id="btn-export-csv">⬇️ Export Completed Days to CSV</button>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Restore Progress from JSON</label>
+        <input type="file" id="input-import-file" accept=".json" class="form-control">
+      </div>
+      <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 1.25rem 0;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.75rem; color: var(--red-accent);">Danger Zone:</span>
+        <button class="btn btn-outline" id="btn-reset-data" style="border-color: var(--red-accent); color: var(--red-accent);">Clear All Saved Progress</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

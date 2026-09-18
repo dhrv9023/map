@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - NVIDIA & AI-Infra Systems Track</title>
+  <meta name="description" content="168-Day Silicon-Aware DSA & AI-Infrastructure Systems Specialist Training System">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Persistent Header -->
+    <header class="app-header">
+      <div class="header-top">
+        <div class="brand-section">
+          <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+            <span class="brand-badge">NVIDIA TRACK</span>
+            <span class="brand-title">DSA & AI-INFRASTRUCTURE SPECIALIST COCKPIT</span>
+          </a>
+          <a href="../index.html" class="brand-badge" style="background: rgba(168,85,247,0.2); color: #c084fc; border: 1px solid rgba(168,85,247,0.4); text-decoration: none;" title="Go back to the AI Infrastructure Engineering Roadmap">🤖 AI ROADMAP ↗</a>
+        </div>
+        <div class="header-quick-stats">
+          <div class="stat-chip" title="Current Day in 168-Day Program">
+            <span class="chip-label">TODAY:</span>
+            <span class="chip-value highlight-green" id="header-current-day">Day 1</span>
+          </div>
+          <div class="stat-chip" title="Progress across 168 days">
+            <span class="chip-label">PROGRESS:</span>
+            <span class="chip-value" id="header-progress-pct">0%</span>
+          </div>
+          <div class="stat-chip" title="Interview Readiness Score based on real performance">
+            <span class="chip-label">READINESS:</span>
+            <span class="chip-value highlight-green" id="header-readiness-score">0 / 100</span>
+          </div>
+          <div class="stat-chip" title="Consecutive days practiced">
+            <span class="chip-label">🔥 STREAK:</span>
+            <span class="chip-value" id="header-streak">0 Days</span>
+          </div>
+          <button class="btn btn-outline" id="btn-open-sync" title="Export/Import and Backup data">💾 Sync / Backup</button>
+        </div>
+      </div>
+      <!-- Multi-Page Nav Tabs -->
+      <nav class="nav-tabs">
+        <a href="index.html" class="nav-tab active">🎛️ Dashboard</a>
+      <a href="plan.html" class="nav-tab">🗓️ 168-Day Plan</a>
+      <a href="patterns.html" class="nav-tab">🧠 Pattern Library</a>
+      <a href="flashcards.html" class="nav-tab">🃏 3D Flashcards</a>
+      <a href="nvidia.html" class="nav-tab">🟢 NVIDIA Track</a>
+      <a href="failures.html" class="nav-tab">💥 Failure Log</a>
+      <a href="mocks.html" class="nav-tab">🎯 Mocks & Diags</a>
+      <a href="resources.html" class="nav-tab">📺 Resources</a>
+      <a href="rules.html" class="nav-tab">📜 System Rules</a>
+      <a href="../index.html" class="nav-tab" style="color: #c084fc; border: 1px solid rgba(192,132,252,0.35); background: rgba(168,85,247,0.08); margin-left: auto; font-weight: 700;">🤖 AI Infra Roadmap ↗</a>
+      </nav>
+    </header>
+
+    <!-- Page Body -->
+    <main class="main-content">
+      
+      <!-- Hero Mission Banner -->
+      <div class="mission-hero">
+        <div class="mission-header">
+          <div>
+            <div class="mission-day-badge">
+              <span>🟢 TODAY'S MISSION</span> &bull; <span id="hero-day-date">Day 1 of 168 (Fri, 18 Sep 2026)</span>
+            </div>
+            <h1 class="mission-title" id="hero-topic">Complexity calibration</h1>
+            <div class="mission-topic" id="hero-objective">Build constraint -&gt; complexity map; learn to target TC before writing code</div>
+          </div>
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <button class="btn btn-outline" id="btn-prev-mission" title="Inspect previous day">◀</button>
+            <button class="btn btn-outline" id="btn-next-mission" title="Inspect next day">▶</button>
+            <button class="btn btn-primary" id="btn-complete-today">✓ Mark Day Complete</button>
+          </div>
+        </div>
+
+        <div class="mission-grid">
+          <!-- Left Box: Assigned Problems & NVIDIA Hardware Hint -->
+          <div>
+            <div class="problem-box" id="hero-p1-box">
+              <div class="problem-info">
+                <span class="diff-tag diff-E" id="hero-p1-diff">E</span>
+                <div>
+                  <div class="problem-title" id="hero-p1-title">LC 1 Two Sum</div>
+                  <div class="problem-meta" id="hero-p1-meta">Target: 12 min | Mode: Untimed</div>
+                </div>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <a href="https://leetcode.com/problem-list/all/?search=Two%20Sum" target="_blank" class="btn btn-outline" id="hero-p1-link">Solve on LC ↗</a>
+              </div>
+            </div>
+
+            <div class="problem-box" id="hero-p2-box">
+              <div class="problem-info">
+                <span class="diff-tag diff-E" id="hero-p2-diff">E</span>
+                <div>
+                  <div class="problem-title" id="hero-p2-title">LC 121 Best Time to Buy &amp; Sell Stock</div>
+                  <div class="problem-meta" id="hero-p2-meta">Target: 15 min | Difficulty: E</div>
+                </div>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <a href="https://leetcode.com/problem-list/all/?search=Best%20Time%20to%20Buy%20%26%20Sell%20Stock" target="_blank" class="btn btn-outline" id="hero-p2-link">Solve on LC ↗</a>
+              </div>
+            </div>
+
+            <!-- Today's Tutorial Video Callout (if scheduled) -->
+            <div class="problem-box" id="hero-tut-box" style="border-left: 3px solid #f59e0b; background: rgba(245, 158, 11, 0.04); margin-bottom: 0.75rem; ">
+              <div class="problem-info">
+                <span class="diff-tag" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;" id="hero-tut-badge">📺 TUTORIAL (25m)</span>
+                <div>
+                  <div class="problem-title" id="hero-tut-title">Big-O calibration + n -&gt; TC mapping</div>
+                  <div class="problem-meta" id="hero-tut-meta">Recommended: Striver &bull; Striver, Aditya Verma, Love Babbar, Padho with Pratyush, NeetCode</div>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.35rem; align-items: flex-end;" id="hero-tut-actions">
+                <a href="https://www.youtube.com/results?search_query=striver%20time%20complexity%20analysis" target="_blank" class="btn btn-primary" id="hero-tut-link" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; text-decoration: none; font-weight: 700;">
+                  ▶ Watch on YouTube ↗
+                </a>
+                <a href="resources.html" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">All 35 Tutorials &rarr;</a>
+              </div>
+            </div>
+
+            <!-- AI Infra / Hardware Callout -->
+            <div style="background: rgba(118, 185, 0, 0.08); border: 1px solid rgba(118, 185, 0, 0.3); border-radius: var(--radius-md); padding: 0.75rem 1rem; font-size: 0.85rem;">
+              <span style="color: var(--nv-green); font-weight: 700;">🟢 NVIDIA & AI-INFRA CONNECTION:</span>
+              <span id="hero-infra-note" style="color: var(--text-primary); margin-left: 0.25rem;">Latency budgets: algorithm choice is a function of input scale, not taste</span>
+            </div>
+          </div>
+
+          <!-- Right Box: Live Stuck Protocol Timer -->
+          <div class="timer-card">
+            <div>
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); letter-spacing: 0.05em; text-transform: uppercase;">
+                ⏱️ STUCK PROTOCOL STOPWATCH
+              </div>
+              <div class="timer-display" id="timer-display">45:00</div>
+              <div class="timer-status-badge status-silence" id="timer-status-badge">Phase 1: Complete Silence (0–10m)</div>
+              <div id="timer-instruction" style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                Derive target TC, annotate constraints, sketch 2 custom test inputs. Zero hints permitted.
+              </div>
+            </div>
+            <div class="timer-controls">
+              <button class="btn btn-primary" id="timer-btn-start">▶ Start</button>
+              <button class="btn btn-outline" id="timer-btn-pause">⏸ Pause</button>
+              <button class="btn btn-outline" id="timer-btn-reset">🔄 Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metric Cards Grid -->
+      <div class="grid-4" style="margin-bottom: 1.5rem;">
+        <div class="card">
+          <div class="card-subtitle">INTERVIEW READINESS (B28)</div>
+          <div style="font-size: 2rem; font-weight: 800; font-family: var(--font-mono); color: var(--nv-green);" id="kpi-readiness">0 / 100</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">30% Indep + 25% Hint + 25% Mock + 20% TTP</div>
+        </div>
+        <div class="card">
+          <div class="card-subtitle">INDEPENDENT SOLVE RATE</div>
+          <div style="font-size: 2rem; font-weight: 800; font-family: var(--font-mono);" id="kpi-indep">0%</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Target: &gt;80% (Certified Specialist: &gt;95%)</div>
+        </div>
+        <div class="card">
+          <div class="card-subtitle">HINT DEPENDENCY RATE</div>
+          <div style="font-size: 2rem; font-weight: 800; font-family: var(--font-mono);" id="kpi-hints">0%</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Target: &lt;20% (Certified Specialist: &lt;8%)</div>
+        </div>
+        <div class="card">
+          <div class="card-subtitle">AVG TIME-TO-PATTERN</div>
+          <div style="font-size: 2rem; font-weight: 800; font-family: var(--font-mono);" id="kpi-ttp">-- min</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Target: &lt;5 min (Certified Specialist: &lt;3 min)</div>
+        </div>
+      </div>
+
+      <!-- Two Columns: Diagnostics & Quick Failure Action -->
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">🎯 Next Upcoming Milestone Diagnostic</div>
+          <div id="dashboard-next-diag" style="margin-top: 0.75rem;">Loading upcoming diagnostic...</div>
+        </div>
+        <div class="card">
+          <div class="card-title">💥 Quick Failure Hotspot Alert</div>
+          <div id="dashboard-failure-hotspot" style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-secondary);">
+            No recurring failure hotspots detected yet. Keep logging all stuck points in the Failure Log.
+          </div>
+        </div>
+      </div>
+    
+    </main>
+  </div>
+
+  <!-- MODAL: Complete Day -->
+  <div class="modal-overlay" id="modal-complete-day">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;" id="modal-day-title">Mark Day Complete</h3>
+        <button class="modal-close" id="btn-close-modal">&times;</button>
+      </div>
+      <form id="form-complete-day">
+        <input type="hidden" id="modal-day-num" value="1">
+        <div class="form-group">
+          <label class="form-label">Total Time Spent (Minutes)</label>
+          <input type="number" class="form-control" id="modal-time-spent" min="10" max="300" value="60" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Solved Both Independently?</label>
+          <select class="form-control" id="modal-solved-indep">
+            <option value="Yes">Yes (No solution viewed, minimal/no hints)</option>
+            <option value="No">No (Struggled or consulted hints)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hints Taken</label>
+          <select class="form-control" id="modal-hints-count">
+            <option value="0">0 Hints</option>
+            <option value="1">1 Hint</option>
+            <option value="2">2 Hints</option>
+            <option value="3">3+ Hints</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Solution / Editorial Viewed?</label>
+          <select class="form-control" id="modal-sol-viewed">
+            <option value="No">No (Clean solve)</option>
+            <option value="Yes">Yes (Looked up approach/code)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Key Invariant / Mental Model Takeaway</label>
+          <textarea class="form-control" id="modal-key-insight" rows="2" placeholder="e.g. Invariant: prefix[r] - prefix[l-1] is the sum of range [l, r]"></textarea>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem;">
+          <button type="button" class="btn btn-outline" id="btn-cancel-modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save & Advance ✨</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: Data Sync & Backup -->
+  <div class="modal-overlay" id="modal-sync">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;">💾 Data Backup & Portability</h3>
+        <button class="modal-close" id="btn-close-sync-modal">&times;</button>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+        Your logs, completed days, and metrics are automatically saved in your browser's <code style="color: var(--nv-green);">localStorage</code> across all pages without needing a server.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <button class="btn btn-primary" id="btn-export-json">⬇️ Export Progress to JSON</button>
+        <button class="btn btn-outline" id="btn-export-csv">⬇️ Export Completed Days to CSV</button>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Restore Progress from JSON</label>
+        <input type="file" id="input-import-file" accept=".json" class="form-control">
+      </div>
+      <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 1.25rem 0;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.75rem; color: var(--red-accent);">Danger Zone:</span>
+        <button class="btn btn-outline" id="btn-reset-data" style="border-color: var(--red-accent); color: var(--red-accent);">Clear All Saved Progress</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

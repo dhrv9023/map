@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pattern Library - NVIDIA & AI-Infra Systems Track</title>
+  <meta name="description" content="168-Day Silicon-Aware DSA & AI-Infrastructure Systems Specialist Training System">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Persistent Header -->
+    <header class="app-header">
+      <div class="header-top">
+        <div class="brand-section">
+          <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+            <span class="brand-badge">NVIDIA TRACK</span>
+            <span class="brand-title">DSA & AI-INFRASTRUCTURE SPECIALIST COCKPIT</span>
+          </a>
+          <a href="../index.html" class="brand-badge" style="background: rgba(168,85,247,0.2); color: #c084fc; border: 1px solid rgba(168,85,247,0.4); text-decoration: none;" title="Go back to the AI Infrastructure Engineering Roadmap">🤖 AI ROADMAP ↗</a>
+        </div>
+        <div class="header-quick-stats">
+          <div class="stat-chip" title="Current Day in 168-Day Program">
+            <span class="chip-label">TODAY:</span>
+            <span class="chip-value highlight-green" id="header-current-day">Day 1</span>
+          </div>
+          <div class="stat-chip" title="Progress across 168 days">
+            <span class="chip-label">PROGRESS:</span>
+            <span class="chip-value" id="header-progress-pct">0%</span>
+          </div>
+          <div class="stat-chip" title="Interview Readiness Score based on real performance">
+            <span class="chip-label">READINESS:</span>
+            <span class="chip-value highlight-green" id="header-readiness-score">0 / 100</span>
+          </div>
+          <div class="stat-chip" title="Consecutive days practiced">
+            <span class="chip-label">🔥 STREAK:</span>
+            <span class="chip-value" id="header-streak">0 Days</span>
+          </div>
+          <button class="btn btn-outline" id="btn-open-sync" title="Export/Import and Backup data">💾 Sync / Backup</button>
+        </div>
+      </div>
+      <!-- Multi-Page Nav Tabs -->
+      <nav class="nav-tabs">
+        <a href="index.html" class="nav-tab">🎛️ Dashboard</a>
+      <a href="plan.html" class="nav-tab">🗓️ 168-Day Plan</a>
+      <a href="patterns.html" class="nav-tab active">🧠 Pattern Library</a>
+      <a href="flashcards.html" class="nav-tab">🃏 3D Flashcards</a>
+      <a href="nvidia.html" class="nav-tab">🟢 NVIDIA Track</a>
+      <a href="failures.html" class="nav-tab">💥 Failure Log</a>
+      <a href="mocks.html" class="nav-tab">🎯 Mocks & Diags</a>
+      <a href="resources.html" class="nav-tab">📺 Resources</a>
+      <a href="rules.html" class="nav-tab">📜 System Rules</a>
+      <a href="../index.html" class="nav-tab" style="color: #c084fc; border: 1px solid rgba(192,132,252,0.35); background: rgba(168,85,247,0.08); margin-left: auto; font-weight: 700;">🤖 AI Infra Roadmap ↗</a>
+      </nav>
+    </header>
+
+    <!-- Page Body -->
+    <main class="main-content">
+      
+      <div class="search-filter-bar">
+        <input type="text" class="search-input" id="pattern-search" placeholder="Search all 42 patterns by cue, constraint, name, or hardware relevance...">
+        <span style="font-size: 0.85rem; color: var(--text-secondary); margin-left: auto;">Total 42 Patterns</span>
+      </div>
+      <div class="grid-2" id="patterns-grid">
+        
+          <div class="card pattern-card-item" data-pattern-name="complexity calibration" data-pattern-desc="any problem with &#x27;efficient&#x27; + a large n stated derive acceptable tc from n before designing anything; eliminate approaches that cannot fit latency budgets; slo thresholds; batch-size selection">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#1 Complexity calibration</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">Pre-code decision</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> Any problem with &#x27;efficient&#x27; + a large n stated
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Derive acceptable TC from n BEFORE designing anything; eliminate approaches that cannot fit
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> None  -  pure reasoning
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Latency budgets; SLO thresholds; batch-size selection
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="frequency/counting + hashing" data-pattern-desc="&#x27;anagram&#x27;,&#x27;k most frequent&#x27;,&#x27;duplicates&#x27;,&#x27;count of&#x27;,&#x27;appears more than once&#x27; replace repeated scans with one pass building counts; hash the key that captures the invariant hot-key detection, metric counters, histogram-based alerting">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#2 Frequency/counting + hashing</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n) time, O(k) space</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;anagram&#x27;,&#x27;k most frequent&#x27;,&#x27;duplicates&#x27;,&#x27;count of&#x27;,&#x27;appears more than once&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Replace repeated scans with one pass building counts; hash the KEY that captures the invariant
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> hash map, count array, bucket array
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Hot-key detection, metric counters, histogram-based alerting
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="prefix/suffix reasoning" data-pattern-desc="&#x27;subarray sum&#x27;,&#x27;range query&#x27;,&#x27;product except self&#x27;,&#x27;subarrays satisfying condition&#x27; precompute cumulative info so any range is o(1); prefix+hash converts a condition into a lookup rolling aggregates, cumulative metrics, event-log windows">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#3 Prefix/suffix reasoning</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n) build, O(1) query</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;subarray sum&#x27;,&#x27;range query&#x27;,&#x27;product except self&#x27;,&#x27;subarrays satisfying condition&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Precompute cumulative info so any range is O(1); prefix+hash converts a condition into a lookup
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> prefix array, hash map (prefix -&gt; count or prefix -&gt; first-index)
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Rolling aggregates, cumulative metrics, event-log windows
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="two pointers (opposite ends)" data-pattern-desc="sorted or sortable input; &#x27;pair/triplet sums to&#x27;; &#x27;maximum area between&#x27; move the pointer that provably cannot improve the answer; prove no valid pair is skipped merging sorted shard scans; two-way join on sorted data">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#4 Two pointers (opposite ends)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n) after sort</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> sorted or sortable input; &#x27;pair/triplet sums to&#x27;; &#x27;maximum area between&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Move the pointer that provably cannot improve the answer; prove no valid pair is skipped
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> two indices into the same array
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Merging sorted shard scans; two-way join on sorted data
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="two pointers (same direction / read-write)" data-pattern-desc="&#x27;in place&#x27;,&#x27;remove elements&#x27;,&#x27;partition&#x27;,&#x27;k-th from end&#x27; separate a slow write-index from a fast read-index; maintain a region invariant in-place buffer compaction; zero-copy stream rewriting">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#5 Two pointers (same direction / read-write)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n) time, O(1) space</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;in place&#x27;,&#x27;remove elements&#x27;,&#x27;partition&#x27;,&#x27;k-th from end&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Separate a slow write-index from a fast read-index; maintain a region invariant
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> two indices, optional dummy node for lists
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> In-place buffer compaction; zero-copy stream rewriting
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="sliding window (variable)" data-pattern-desc="&#x27;longest/shortest subarray/substring satisfying condition&#x27;; contiguous required grow right pointer; shrink left while invalid. only valid when extending cannot repair a violation. rate limiting, windowed quotas, token bucket">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#6 Sliding window (variable)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;longest/shortest subarray/substring satisfying condition&#x27;; contiguous required
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Grow right pointer; shrink left while invalid. ONLY valid when extending cannot repair a violation.
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> hash map or count array for window contents, two indices
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Rate limiting, windowed quotas, token bucket
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="sliding window + counting" data-pattern-desc="&#x27;at most k distinct&#x27;,&#x27;replace at most k characters&#x27;,&#x27;subarrays with exactly k&#x27; track frequency inside the window; exactly(k) = atmost(k) - atmost(k-1) cardinality-bounded caches; distinct-key windows in streaming analytics">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#7 Sliding window + counting</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n) or O(n | |alphabet|)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;at most K distinct&#x27;,&#x27;replace at most k characters&#x27;,&#x27;subarrays with exactly k&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Track frequency inside the window; exactly(K) = atMost(K) - atMost(K-1)
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> hash map, freq array, maxFreq variable
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Cardinality-bounded caches; distinct-key windows in streaming analytics
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="binary search (index)" data-pattern-desc="sorted array; &#x27;first/last position&#x27;; &#x27;o(log n) required&#x27; maintain a half-open invariant (lo&lt;=answer&lt;hi); shrink systematically; no templates sstable lookups, sorted offset indexes, version search">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#8 Binary search (index)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(log n)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> sorted array; &#x27;first/last position&#x27;; &#x27;O(log n) required&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Maintain a half-open invariant (lo&lt;=answer&lt;hi); shrink systematically; no templates
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> sorted array (or implicit sorted space)
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> SSTable lookups, sorted offset indexes, version search
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="binary search on answer" data-pattern-desc="&#x27;minimize the maximum&#x27;,&#x27;maximize the minimum&#x27;,&#x27;minimum capacity/speed/time&#x27;; large answer range search the answer space with a monotone feasible(x) predicate; 3 validity conditions must hold capacity planning, autoscaling, slo fitting, quota allocation">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#9 Binary search on answer</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n log(answer_range))</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;minimize the maximum&#x27;,&#x27;maximize the minimum&#x27;,&#x27;minimum capacity/speed/time&#x27;; large answer range
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Search the ANSWER SPACE with a monotone feasible(x) predicate; 3 validity conditions must hold
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> feasibility predicate function + binary search loop
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Capacity planning, autoscaling, SLO fitting, quota allocation
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="sort + linear scan (preprocessing)" data-pattern-desc="&#x27;intervals&#x27;,&#x27;pairs&#x27;,&#x27;sorted input assumed&#x27;; o(n log n) acceptable sorting creates a monotonicity you can then exploit with a single greedy pass log compaction ordering, sorted shard merging, lsm-tree compaction">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#10 Sort + linear scan (preprocessing)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n log n)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;intervals&#x27;,&#x27;pairs&#x27;,&#x27;sorted input assumed&#x27;; O(n log n) acceptable
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Sorting creates a monotonicity you can then exploit with a single greedy pass
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> sort + one or two pointers or a heap
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Log compaction ordering, sorted shard merging, LSM-tree compaction
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="interval / sweep line" data-pattern-desc="&#x27;overlapping intervals&#x27;,&#x27;maximum concurrent events&#x27;,&#x27;resources needed at peak&#x27; convert intervals to +1/-1 events and sweep; or maintain a min-heap of active end times concurrent resource counting (gpu/cpu slots), admission control">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#11 Interval / sweep line</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n log n)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;overlapping intervals&#x27;,&#x27;maximum concurrent events&#x27;,&#x27;resources needed at peak&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Convert intervals to +1/-1 events and sweep; or maintain a min-heap of active end times
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> sorted events array, min-heap of end times
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Concurrent resource counting (GPU/CPU slots), admission control
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="monotonic stack" data-pattern-desc="&#x27;next greater/smaller element&#x27;,&#x27;previous smaller&#x27;,&#x27;span&#x27;,&#x27;largest rectangle&#x27; keep a monotone stack; each pop resolves one answer; total pops &lt;= n  -&gt;  amortized o(n) monotone-break detection in metric streams, backpressure onset">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#12 Monotonic stack</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n) amortized</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;next greater/smaller element&#x27;,&#x27;previous smaller&#x27;,&#x27;span&#x27;,&#x27;largest rectangle&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Keep a monotone stack; each pop resolves one answer; total pops &lt;= n  -&gt;  amortized O(n)
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> stack of indices (not values)
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Monotone-break detection in metric streams, backpressure onset
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="monotonic deque" data-pattern-desc="&#x27;maximum/minimum of every window of size k&#x27;,&#x27;sliding extremum&#x27;,&#x27;windowed dp&#x27; maintain a deque of indices in monotone order; evict out-of-window and dominated candidates rolling max latency, watermarks, windowed dp in schedulers">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#13 Monotonic deque</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;maximum/minimum of every window of size k&#x27;,&#x27;sliding extremum&#x27;,&#x27;windowed DP&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Maintain a deque of indices in monotone order; evict out-of-window and dominated candidates
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> deque of indices
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Rolling max latency, watermarks, windowed DP in schedulers
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="heap / top-k / streaming extremum" data-pattern-desc="&#x27;k largest/smallest&#x27;,&#x27;median of stream&#x27;,&#x27;schedule next available resource&#x27; partial order is enough; a heap gives the extreme in o(log n); heapify is o(n) top-k hot keys, p99 estimation, eviction candidate selection, priority scheduling">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#14 Heap / top-K / streaming extremum</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n log k) or O(log n) per operation</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;k largest/smallest&#x27;,&#x27;median of stream&#x27;,&#x27;schedule next available resource&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Partial order is enough; a heap gives the extreme in O(log n); heapify is O(n)
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> min-heap or max-heap; two heaps for median; heap of (key, cursor) for merge
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Top-K hot keys, p99 estimation, eviction candidate selection, priority scheduling
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="greedy invariants" data-pattern-desc="&#x27;maximum number of&#x27;,&#x27;minimum steps&#x27;,&#x27;locally safe choice&#x27;; often after sorting prove by exchange or staying-ahead that the local choice is in some optimal solution admission control, retry budgets, checkpoint placement">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#15 Greedy invariants</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n log n) typically</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;maximum number of&#x27;,&#x27;minimum steps&#x27;,&#x27;locally safe choice&#x27;; often after sorting
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Prove by exchange or staying-ahead that the local choice is in some optimal solution
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> sort + counters, heap, or simple scan
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Admission control, retry budgets, checkpoint placement
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="design / structure composition" data-pattern-desc="&#x27;implement x with o(1) get/put/delete&#x27;,&#x27;lru&#x27;,&#x27;lfu&#x27;,&#x27;getrandom&#x27; compose two structures so each required operation is o(1)/o(log n); api dictates structures page/feature/embedding caches, kv stores, rate limiters, versioned stores">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#16 Design / structure composition</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(1) per operation</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;implement X with O(1) get/put/delete&#x27;,&#x27;LRU&#x27;,&#x27;LFU&#x27;,&#x27;getRandom&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Compose two structures so each required operation is O(1)/O(log n); API dictates structures
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> hash map + doubly linked list (LRU), freq buckets + maps (LFU), array + index map (getRandom)
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Page/feature/embedding caches, KV stores, rate limiters, versioned stores
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="bit manipulation" data-pattern-desc="&#x27;subset of at most 20 items&#x27;,&#x27;xor&#x27;,&#x27;without extra space&#x27;,&#x27;count bits&#x27;,&#x27;feature flags&#x27; a bitmask is a tiny set with o(1) set operations; xor cancels pairs; use popcount for size bitmaps, feature flags, gpu lane/warp masks, bloom filter ops">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#17 Bit manipulation</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(1) per mask op</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;subset of at most 20 items&#x27;,&#x27;XOR&#x27;,&#x27;without extra space&#x27;,&#x27;count bits&#x27;,&#x27;feature flags&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> A bitmask is a tiny set with O(1) set operations; XOR cancels pairs; use popcount for size
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> integer masks, popcount, __builtin_ctz
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Bitmaps, feature flags, GPU lane/warp masks, bloom filter ops
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="tree recursion (contract-first)" data-pattern-desc="&#x27;depth&#x27;,&#x27;balanced&#x27;,&#x27;path sum&#x27;,&#x27;subtree property&#x27;,&#x27;lowest common ancestor&#x27; define exactly what the function returns for a subtree; write it in english before coding; then trust it recursive dependency evaluation, nested config resolution">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#18 Tree recursion (contract-first)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;depth&#x27;,&#x27;balanced&#x27;,&#x27;path sum&#x27;,&#x27;subtree property&#x27;,&#x27;lowest common ancestor&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Define exactly what the function returns for a subtree; write it in English before coding; then trust it
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> recursion, call stack, optional memoisation
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Recursive dependency evaluation, nested config resolution
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="tree dp (post-order)" data-pattern-desc="&#x27;max path&#x27;,&#x27;rob houses in tree&#x27;,&#x27;distribute coins&#x27;,&#x27;max sum with no adjacent&#x27; combine children&#x27;s return values at the parent; return one value upward; update global answer separately aggregating metrics up a topology/ownership tree">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#19 Tree DP (post-order)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;max path&#x27;,&#x27;rob houses in tree&#x27;,&#x27;distribute coins&#x27;,&#x27;max sum with no adjacent&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Combine children&#x27;s return values at the parent; return one value upward; update global answer separately
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> recursion + tuple return (gain upward, answer updated)
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Aggregating metrics up a topology/ownership tree
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="bst ordering" data-pattern-desc="&#x27;validate bst&#x27;,&#x27;k-th smallest in bst&#x27;,&#x27;bst range queries&#x27; in-order traversal is sorted; propagate valid range (lo, hi) top-down instead of comparing parent-child ordered indexes, range scans, b-tree node invariants">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#20 BST ordering</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(h) per operation</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;validate BST&#x27;,&#x27;k-th smallest in BST&#x27;,&#x27;BST range queries&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> In-order traversal is sorted; propagate valid range (lo, hi) top-down instead of comparing parent-child
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> recursion with range bounds, iterative inorder stack
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Ordered indexes, range scans, B-tree node invariants
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="bfs levels / shortest hops" data-pattern-desc="&#x27;minimum steps&#x27;,&#x27;level order&#x27;,&#x27;nearest x&#x27;,&#x27;spread from source&#x27; first visit = shortest distance; seed all sources at level 0 for multi-source; expand in layers hop counts, blast-radius analysis, bfs-based propagation">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#21 BFS levels / shortest hops</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(V+E)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;minimum steps&#x27;,&#x27;level order&#x27;,&#x27;nearest X&#x27;,&#x27;spread from source&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> First visit = shortest distance; seed all sources at level 0 for multi-source; expand in layers
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> queue, visited set/array
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Hop counts, blast-radius analysis, BFS-based propagation
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="graph dfs / components" data-pattern-desc="&#x27;islands&#x27;,&#x27;connected components&#x27;,&#x27;clone graph&#x27;,&#x27;cycle detection&#x27;,&#x27;safe states&#x27; explore exhaustively; component identity or cycle colour (white/grey/black) is the output topology discovery, cluster membership, service-graph crawling">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#22 Graph DFS / components</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(V+E)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;islands&#x27;,&#x27;connected components&#x27;,&#x27;clone graph&#x27;,&#x27;cycle detection&#x27;,&#x27;safe states&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Explore exhaustively; component identity or cycle colour (white/grey/black) is the output
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> recursion or explicit stack, visited array, colour array for directed cycles
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Topology discovery, cluster membership, service-graph crawling
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="union find (dsu)" data-pattern-desc="&#x27;connected components that grow&#x27;,&#x27;merge groups&#x27;,&#x27;edges arrive incrementally&#x27;,&#x27;redundant edge&#x27; maintain disjoint sets with path compression + union by size for near-o(1) amortized ops cluster membership, shard grouping, entity dedup, dynamic edge-stream connectivity">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#23 Union Find (DSU)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(alpha(n)) amortized per op</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;connected components that grow&#x27;,&#x27;merge groups&#x27;,&#x27;edges arrive incrementally&#x27;,&#x27;redundant edge&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Maintain disjoint sets with path compression + union by size for near-O(1) amortized ops
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> parent array + size array
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Cluster membership, shard grouping, entity dedup, dynamic edge-stream connectivity
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="topological sorting" data-pattern-desc="&#x27;prerequisites&#x27;,&#x27;build order&#x27;,&#x27;dependency resolution&#x27;,&#x27;detect cycle in directed graph&#x27; remove in-degree-0 nodes repeatedly (kahn); or dfs with 3 colours; cycle = fewer than n emitted dag job scheduling, ml pipeline orchestration, build dependency resolution">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#24 Topological sorting</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(V+E)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;prerequisites&#x27;,&#x27;build order&#x27;,&#x27;dependency resolution&#x27;,&#x27;detect cycle in directed graph&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Remove in-degree-0 nodes repeatedly (Kahn); or DFS with 3 colours; cycle = fewer than n emitted
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> in-degree array + queue (Kahn), or recursion + colour array (DFS)
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> DAG job scheduling, ML pipeline orchestration, build dependency resolution
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="dijkstra / weighted shortest path" data-pattern-desc="&#x27;minimum cost/time path&#x27;,&#x27;non-negative edge weights&#x27;,&#x27;network delay&#x27; greedily finalize the closest unfinished node; the popped distance is final (non-negative weights only) latency-aware routing, cost-based placement, weighted service graphs">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#25 Dijkstra / weighted shortest path</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(E log V)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;minimum cost/time path&#x27;,&#x27;non-negative edge weights&#x27;,&#x27;network delay&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Greedily finalize the closest unfinished node; the popped distance is final (non-negative weights only)
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> min-heap of (distance, node) + dist array
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Latency-aware routing, cost-based placement, weighted service graphs
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="state-space bfs/dijkstra" data-pattern-desc="&#x27;minimum moves with a resource budget&#x27;,&#x27;compound state&#x27;,&#x27;configuration reachability&#x27; nodes are full states (not just position); encode the state tuple; visited keyed on the complete state scheduler/config state exploration, rollout planning, deployment state machines">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#26 State-space BFS/Dijkstra</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(states * transitions)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;minimum moves with a resource budget&#x27;,&#x27;compound state&#x27;,&#x27;configuration reachability&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Nodes are FULL STATES (not just position); encode the state tuple; visited keyed on the complete state
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> queue or min-heap, visited set of encoded state tuples
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Scheduler/config state exploration, rollout planning, deployment state machines
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="backtracking + pruning" data-pattern-desc="&#x27;all combinations/permutations/partitions&#x27;,&#x27;place n items with constraints&#x27; choose, explore, unchoose; the real skill is pruning branches that cannot lead to valid solutions config search, placement under conflict constraints, hyperparameter enumeration">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#27 Backtracking + pruning</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">Exponential with pruning factor</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;all combinations/permutations/partitions&#x27;,&#x27;place N items with constraints&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Choose, explore, unchoose; the real skill is pruning branches that cannot lead to valid solutions
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> recursion, path array, bitmasks for O(1) constraint checks
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Config search, placement under conflict constraints, hyperparameter enumeration
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="trie / prefix tree" data-pattern-desc="&#x27;prefix queries&#x27;,&#x27;dictionary of words&#x27;,&#x27;autocomplete&#x27;,&#x27;search with wildcards&#x27; share prefixes to make prefix queries proportional to word length; enables dfs pruning autocomplete, tokenizer vocabularies, longest-prefix-match routing">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#28 Trie / prefix tree</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(L) per operation (L = word length)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;prefix queries&#x27;,&#x27;dictionary of words&#x27;,&#x27;autocomplete&#x27;,&#x27;search with wildcards&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Share prefixes to make prefix queries proportional to word length; enables DFS pruning
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> trie nodes (array or hash map per node) with end flags
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Autocomplete, tokenizer vocabularies, longest-prefix-match routing
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="dp (1d state design)" data-pattern-desc="&#x27;number of ways&#x27;,&#x27;min/max cost&#x27;,&#x27;can we reach target&#x27;,&#x27;decisions at each step&#x27; define state  -&gt;  transition  -&gt;  base case  -&gt;  evaluation order  -&gt;  answer location (in that exact order) stage-wise cost optimisation, pipeline configuration selection">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#29 DP (1D state design)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n * states_per_position)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;number of ways&#x27;,&#x27;min/max cost&#x27;,&#x27;can we reach target&#x27;,&#x27;decisions at each step&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Define state  -&gt;  transition  -&gt;  base case  -&gt;  evaluation order  -&gt;  answer location (in that exact order)
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> 1D array or hash map
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Stage-wise cost optimisation, pipeline configuration selection
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="dp (knapsack family)" data-pattern-desc="&#x27;subset sum&#x27;,&#x27;choose items under capacity budget&#x27;,&#x27;coin change&#x27;,&#x27;ways to make amount&#x27; capacity is a dp dimension; loop order encodes 0/1 (descending) vs unbounded (ascending) memory/gpu packing, multi-resource quota allocation">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#30 DP (knapsack family)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n * capacity)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;subset sum&#x27;,&#x27;choose items under capacity budget&#x27;,&#x27;coin change&#x27;,&#x27;ways to make amount&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Capacity is a DP dimension; loop order encodes 0/1 (descending) vs unbounded (ascending)
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> 1D or 2D DP arrays
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Memory/GPU packing, multi-resource quota allocation
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="dp (two sequences)" data-pattern-desc="&#x27;two strings&#x27;,&#x27;edit distance&#x27;,&#x27;common subsequence&#x27;,&#x27;interleaving&#x27; dp[i][j] over prefixes of both sequences; derive transitions from the problem definition diffing, log/sequence alignment, tokenizer alignment">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#31 DP (two sequences)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(mn) time, O(min(m,n)) space with rolling</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;two strings&#x27;,&#x27;edit distance&#x27;,&#x27;common subsequence&#x27;,&#x27;interleaving&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> dp[i][j] over prefixes of both sequences; derive transitions from the problem definition
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> 2D array or rolling 1D for space optimization
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Diffing, log/sequence alignment, tokenizer alignment
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="dp (interval)" data-pattern-desc="&#x27;optimal order of operations on a range&#x27;,&#x27;merge/burst/remove from a subarray&#x27; solve shorter ranges first; pick the last operation (not first) to keep subproblems independent optimal chunking, merge ordering, compaction cost minimisation">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#32 DP (interval)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n^3)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;optimal order of operations on a range&#x27;,&#x27;merge/burst/remove from a subarray&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Solve shorter ranges first; pick the LAST operation (not first) to keep subproblems independent
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> 2D DP array dp[left][right]
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Optimal chunking, merge ordering, compaction cost minimisation
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="dp (bitmask)" data-pattern-desc="&#x27;n&lt;=20&#x27;,&#x27;visit all nodes&#x27;,&#x27;assign items to groups&#x27;,&#x27;travelling salesman variant&#x27; state includes a subset bitmask; transition adds one element; (mask, position) is the full state job-to-machine assignment, small-scale optimal placement">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#33 DP (bitmask)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(2^n | n) or O(2^n | n^2)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;n&lt;=20&#x27;,&#x27;visit all nodes&#x27;,&#x27;assign items to groups&#x27;,&#x27;travelling salesman variant&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> State includes a subset bitmask; transition adds one element; (mask, position) is the full state
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> dp[mask][...] arrays
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Job-to-machine assignment, small-scale optimal placement
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="dp optimization (deque/heap in transition)" data-pattern-desc="naive dp transition is o(nk) or o(n^2) and n&gt;10^3 optimize the transition by hiding a sliding-window maximum/minimum (monotonic deque) inside it streaming dp with bounded lookback; windowed online decisions">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#34 DP optimization (deque/heap in transition)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n) or O(n log n)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> naive DP transition is O(nk) or O(n^2) and n&gt;10^3
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Optimize the transition by hiding a sliding-window maximum/minimum (monotonic deque) inside it
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> DP array + monotonic deque or heap or prefix max array
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Streaming DP with bounded lookback; windowed online decisions
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="fenwick tree (bit)" data-pattern-desc="&#x27;mutable range sum&#x27;,&#x27;inversion count&#x27;,&#x27;point update + prefix query&#x27; lowest set bit (i &amp; -i) tree decomposition; o(log n) update and query with tiny constant factor high-frequency telemetry counters, rolling latency meters">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#35 Fenwick Tree (BIT)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(log n) update/query</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;mutable range sum&#x27;,&#x27;inversion count&#x27;,&#x27;point update + prefix query&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Lowest set bit (i &amp; -i) tree decomposition; O(log n) update and query with tiny constant factor
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> 1D array (1-indexed)
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> High-frequency telemetry counters, rolling latency meters
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="segment tree (range query)" data-pattern-desc="&#x27;range min/max/sum/gcd query&#x27;,&#x27;point or range updates&#x27;; associative function divide-and-conquer binary tree over array intervals; 4n array representation; lazy propagation distributed sla monitoring, physical memory reservation maps">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#36 Segment Tree (range query)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n) build, O(log n) update/query</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;range min/max/sum/gcd query&#x27;,&#x27;point or range updates&#x27;; associative function
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Divide-and-conquer binary tree over array intervals; 4n array representation; lazy propagation
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> tree array, lazy array
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Distributed SLA monitoring, physical memory reservation maps
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="tarjan&#x27;s dfs (bridges &amp; scc)" data-pattern-desc="&#x27;critical connections&#x27;,&#x27;single point of failure&#x27;,&#x27;strongly connected components&#x27; discovery time tin[u] and lowest ancestor low[u]; back-edge detection; condensation dag fault-domain isolation, deadlock detection, build dependency validation">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#37 Tarjan&#x27;s DFS (bridges &amp; SCC)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(V + E)</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> &#x27;critical connections&#x27;,&#x27;single point of failure&#x27;,&#x27;strongly connected components&#x27;
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Discovery time tin[u] and lowest ancestor low[u]; back-edge detection; condensation DAG
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> tin array, low array, visited stack
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Fault-domain isolation, deadlock detection, build dependency validation
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="hardware / cache calibration" data-pattern-desc="high throughput, 10m+ qps, low latency slo, memory-constrained traversal structure data contiguously (aos vs soa); eliminate pointer chasing; size blocks to l1/l2 cache tensor memory layouts, gpu shared memory tiling, low-latency trading">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#38 Hardware / Cache calibration</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(n) with 10x lower constant factor</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> high throughput, 10M+ QPS, low latency SLO, memory-constrained traversal
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Structure data contiguously (AOS vs SOA); eliminate pointer chasing; size blocks to L1/L2 cache
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> flat contiguous buffers, cyclic arrays
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Tensor memory layouts, GPU shared memory tiling, low-latency trading
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="high-performance hashing" data-pattern-desc="zero tail-latency, low collision variance, predictable lookup time robin hood displacement or cuckoo two-table hashing; bounded worst-case probe lengths storage engine block caches, memcached, redis hash tables">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#39 High-performance hashing</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(1) average and worst-case</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> zero tail-latency, low collision variance, predictable lookup time
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Robin Hood displacement or Cuckoo two-table hashing; bounded worst-case probe lengths
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> flat key/value array + probe count byte
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Storage engine block caches, Memcached, Redis hash tables
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="adaptive cache (arc)" data-pattern-desc="dynamic workload with mixed scans and recurring loops; hit ratio optimization balance recency (t1) and frequency (t2) dynamically using ghost history lists (b1, b2) database buffer managers, kernel page caches, multi-tenant ai caching">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#40 Adaptive Cache (ARC)</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(1) per lookup and update</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> dynamic workload with mixed scans and recurring loops; hit ratio optimization
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Balance recency (T1) and frequency (T2) dynamically using ghost history lists (B1, B2)
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> 4 LRU lists (T1, T2, B1, B2) + hash map
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Database buffer managers, kernel page caches, multi-tenant AI caching
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="lock-free ring buffer" data-pattern-desc="high-speed inter-thread message passing; zero lock contention; producer-consumer head and tail indices advancing monotonically; masking with (size - 1); cache line padding (64 bytes) lmax disruptor, gpu command rings, high-throughput network packet ingestion">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#41 Lock-free ring buffer</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(1) wait-free SPSC / lock-free MPMC</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> high-speed inter-thread message passing; zero lock contention; producer-consumer
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Head and tail indices advancing monotonically; masking with (size - 1); cache line padding (64 bytes)
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> atomic size_t head, tail; contiguous array buffer
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> LMAX Disruptor, GPU command rings, high-throughput network packet ingestion
+            </div>
+          </div>
+        
+          <div class="card pattern-card-item" data-pattern-name="hnsw graph search" data-pattern-desc="approximate nearest neighbor (ann), vector similarity, high dimensionality (d=128 to 1536) multi-layer proximity graph (skip-list concept); greedy routing on coarse upper layers, beam search on layer 0 vector databases (milvus, pinecone, qdrant, faiss), rag pipelines">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #fff;">#42 HNSW graph search</h4>
+              <span class="brand-badge" style="font-size: 0.65rem;">O(log N) average query time</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--cyan-accent); margin-bottom: 0.5rem;">
+              <strong>Trigger:</strong> approximate nearest neighbor (ANN), vector similarity, high dimensionality (d=128 to 1536)
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+              <strong>Core Idea:</strong> Multi-layer proximity graph (skip-list concept); greedy routing on coarse upper layers, beam search on layer 0
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: var(--radius-sm); font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.75rem;">
+              <strong>Structures:</strong> layered adjacency list, candidate priority queue, visited set
+            </div>
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 0.6rem; font-size: 0.8rem; color: var(--text-nv);">
+              <strong>🟢 AI-Infra / Hardware:</strong> Vector databases (Milvus, Pinecone, Qdrant, FAISS), RAG pipelines
+            </div>
+          </div>
+        
+      </div>
+    
+    </main>
+  </div>
+
+  <!-- MODAL: Complete Day -->
+  <div class="modal-overlay" id="modal-complete-day">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;" id="modal-day-title">Mark Day Complete</h3>
+        <button class="modal-close" id="btn-close-modal">&times;</button>
+      </div>
+      <form id="form-complete-day">
+        <input type="hidden" id="modal-day-num" value="1">
+        <div class="form-group">
+          <label class="form-label">Total Time Spent (Minutes)</label>
+          <input type="number" class="form-control" id="modal-time-spent" min="10" max="300" value="60" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Solved Both Independently?</label>
+          <select class="form-control" id="modal-solved-indep">
+            <option value="Yes">Yes (No solution viewed, minimal/no hints)</option>
+            <option value="No">No (Struggled or consulted hints)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hints Taken</label>
+          <select class="form-control" id="modal-hints-count">
+            <option value="0">0 Hints</option>
+            <option value="1">1 Hint</option>
+            <option value="2">2 Hints</option>
+            <option value="3">3+ Hints</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Solution / Editorial Viewed?</label>
+          <select class="form-control" id="modal-sol-viewed">
+            <option value="No">No (Clean solve)</option>
+            <option value="Yes">Yes (Looked up approach/code)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Key Invariant / Mental Model Takeaway</label>
+          <textarea class="form-control" id="modal-key-insight" rows="2" placeholder="e.g. Invariant: prefix[r] - prefix[l-1] is the sum of range [l, r]"></textarea>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem;">
+          <button type="button" class="btn btn-outline" id="btn-cancel-modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save & Advance ✨</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: Data Sync & Backup -->
+  <div class="modal-overlay" id="modal-sync">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;">💾 Data Backup & Portability</h3>
+        <button class="modal-close" id="btn-close-sync-modal">&times;</button>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+        Your logs, completed days, and metrics are automatically saved in your browser's <code style="color: var(--nv-green);">localStorage</code> across all pages without needing a server.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <button class="btn btn-primary" id="btn-export-json">⬇️ Export Progress to JSON</button>
+        <button class="btn btn-outline" id="btn-export-csv">⬇️ Export Completed Days to CSV</button>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Restore Progress from JSON</label>
+        <input type="file" id="input-import-file" accept=".json" class="form-control">
+      </div>
+      <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 1.25rem 0;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.75rem; color: var(--red-accent);">Danger Zone:</span>
+        <button class="btn btn-outline" id="btn-reset-data" style="border-color: var(--red-accent); color: var(--red-accent);">Clear All Saved Progress</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NVIDIA Systems Playbook - NVIDIA & AI-Infra Systems Track</title>
+  <meta name="description" content="168-Day Silicon-Aware DSA & AI-Infrastructure Systems Specialist Training System">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Persistent Header -->
+    <header class="app-header">
+      <div class="header-top">
+        <div class="brand-section">
+          <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+            <span class="brand-badge">NVIDIA TRACK</span>
+            <span class="brand-title">DSA & AI-INFRASTRUCTURE SPECIALIST COCKPIT</span>
+          </a>
+          <a href="../index.html" class="brand-badge" style="background: rgba(168,85,247,0.2); color: #c084fc; border: 1px solid rgba(168,85,247,0.4); text-decoration: none;" title="Go back to the AI Infrastructure Engineering Roadmap">🤖 AI ROADMAP ↗</a>
+        </div>
+        <div class="header-quick-stats">
+          <div class="stat-chip" title="Current Day in 168-Day Program">
+            <span class="chip-label">TODAY:</span>
+            <span class="chip-value highlight-green" id="header-current-day">Day 1</span>
+          </div>
+          <div class="stat-chip" title="Progress across 168 days">
+            <span class="chip-label">PROGRESS:</span>
+            <span class="chip-value" id="header-progress-pct">0%</span>
+          </div>
+          <div class="stat-chip" title="Interview Readiness Score based on real performance">
+            <span class="chip-label">READINESS:</span>
+            <span class="chip-value highlight-green" id="header-readiness-score">0 / 100</span>
+          </div>
+          <div class="stat-chip" title="Consecutive days practiced">
+            <span class="chip-label">🔥 STREAK:</span>
+            <span class="chip-value" id="header-streak">0 Days</span>
+          </div>
+          <button class="btn btn-outline" id="btn-open-sync" title="Export/Import and Backup data">💾 Sync / Backup</button>
+        </div>
+      </div>
+      <!-- Multi-Page Nav Tabs -->
+      <nav class="nav-tabs">
+        <a href="index.html" class="nav-tab">🎛️ Dashboard</a>
+      <a href="plan.html" class="nav-tab">🗓️ 168-Day Plan</a>
+      <a href="patterns.html" class="nav-tab">🧠 Pattern Library</a>
+      <a href="flashcards.html" class="nav-tab">🃏 3D Flashcards</a>
+      <a href="nvidia.html" class="nav-tab active">🟢 NVIDIA Track</a>
+      <a href="failures.html" class="nav-tab">💥 Failure Log</a>
+      <a href="mocks.html" class="nav-tab">🎯 Mocks & Diags</a>
+      <a href="resources.html" class="nav-tab">📺 Resources</a>
+      <a href="rules.html" class="nav-tab">📜 System Rules</a>
+      <a href="../index.html" class="nav-tab" style="color: #c084fc; border: 1px solid rgba(192,132,252,0.35); background: rgba(168,85,247,0.08); margin-left: auto; font-weight: 700;">🤖 AI Infra Roadmap ↗</a>
+      </nav>
+    </header>
+
+    <!-- Page Body -->
+    <main class="main-content">
+      
+      <div class="nvidia-banner">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+          <span class="brand-badge" style="font-size: 0.85rem;">GREEN TEAM EXCELLENCE</span>
+          <h2 style="font-size: 1.4rem; font-weight: 800; color: #fff;">The NVIDIA Systems, CUDA & AI-Infrastructure Playbook</h2>
+        </div>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 900px; margin-bottom: 1rem;">
+          At NVIDIA, Big-O alone in a vacuum is rejected. Interviews in CUDA, TensorRT, Triton, NCCL, and GPU System Software test whether your algorithmic intuition respects physical silicon: cache lines, memory coalescing, warp divergence, and lock-free queues.
+        </p>
+        <div style="background: rgba(0, 0, 0, 0.4); border-left: 3px solid var(--nv-green); padding: 0.85rem 1.25rem; border-radius: var(--radius-sm); font-size: 0.88rem;">
+          <strong style="color: var(--nv-green);">🎙️ The Killer Interview Dialogue:</strong>
+          <p style="color: #e2e8f0; font-style: italic; margin-top: 0.25rem;">
+            "Theoretically, this is O(N) time and O(N) space. However, in high-performance GPU systems or low-level CUDA kernels, instead of a pointer-based tree or linked list, I would lay this out in a contiguous 1D array (Structure of Arrays) aligned to 64-byte boundaries. This guarantees spatial locality, maximizes L1/L2 cache hit rate, and enables 128-byte memory transaction coalescing across warps without branch divergence."
+          </p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; color: #fff;">The 7 Pillars of Silicon Empathy</h3>
+      <div id="nvidia-pillars-container">
+        
+          <div class="nvidia-pillar-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff;">
+                Pillar 1: Memory Coalescing &amp; Contiguous Layouts (SoA vs. AoS)
+              </h4>
+              <span class="brand-badge" style="font-size: 0.7rem;">Hardware Memory</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Structure of Arrays enables 32 SIMD/CUDA lanes to load consecutive 4-byte floats in a single coalesced 128-byte DRAM transaction.</p>
+            <div style="font-size: 0.8rem; color: #f87171; margin-top: 0.35rem;"><strong>The Trap:</strong> Array of Structures (struct Particle { float x,y,z; } p[N]) causes strided uncoalesced access (32 transactions instead of 1).</div>
+            
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.75rem; border-top: 1px solid var(--border-subtle); padding-top: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Practiced in Curriculum: Days 1, 113, 114</span>
+              <a href="plan.html" class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">
+                View Days in Plan ↗
+              </a>
+            </div>
+          </div>
+        
+          <div class="nvidia-pillar-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff;">
+                Pillar 2: Bitwise Arithmetic as a First-Class Language
+              </h4>
+              <span class="brand-badge" style="font-size: 0.7rem;">Bit Manipulation</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">32-bit registers represent thread execution masks (__activemask). Alignment, bit-reversal, and popcount are production primitives.</p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.75rem 0;"><div style="background: rgba(0,0,0,0.5); border: 1px solid var(--border-subtle); border-radius: 4px; padding: 0.25rem 0.5rem; font-size: 0.75rem;"><code style="color: var(--nv-green);">(addr + 63) &amp; ~63</code> &bull; <span style="color: var(--text-secondary);">64-byte cache line alignment</span></div><div style="background: rgba(0,0,0,0.5); border: 1px solid var(--border-subtle); border-radius: 4px; padding: 0.25rem 0.5rem; font-size: 0.75rem;"><code style="color: var(--nv-green);">(n &gt; 0) &amp;&amp; ((n &amp; (n - 1)) == 0)</code> &bull; <span style="color: var(--text-secondary);">Power-of-two check</span></div><div style="background: rgba(0,0,0,0.5); border: 1px solid var(--border-subtle); border-radius: 4px; padding: 0.25rem 0.5rem; font-size: 0.75rem;"><code style="color: var(--nv-green);">x &amp; (power_of_2_size - 1)</code> &bull; <span style="color: var(--text-secondary);">Fast branchless modulo</span></div><div style="background: rgba(0,0,0,0.5); border: 1px solid var(--border-subtle); border-radius: 4px; padding: 0.25rem 0.5rem; font-size: 0.75rem;"><code style="color: var(--nv-green);">x &amp; -x</code> &bull; <span style="color: var(--text-secondary);">Lowest set bit (Fenwick trees / sparse indexing)</span></div><div style="background: rgba(0,0,0,0.5); border: 1px solid var(--border-subtle); border-radius: 4px; padding: 0.25rem 0.5rem; font-size: 0.75rem;"><code style="color: var(--nv-green);">__builtin_popcount(mask)</code> &bull; <span style="color: var(--text-secondary);">Active warp thread count</span></div></div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.75rem; border-top: 1px solid var(--border-subtle); padding-top: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Practiced in Curriculum: Days 41, 85, 117</span>
+              <a href="plan.html" class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">
+                View Days in Plan ↗
+              </a>
+            </div>
+          </div>
+        
+          <div class="nvidia-pillar-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff;">
+                Pillar 3: Warp-Level Parallel Reductions (Shuffle Trees &amp; Blelloch Scan)
+              </h4>
+              <span class="brand-badge" style="font-size: 0.7rem;">Parallel Algorithms</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Replace sequential loops with 5-step __shfl_down_sync tree reductions (log2(32)=5 cycles, zero shared memory) and Blelloch up-sweep/down-sweep prefix scans.</p>
+            
+            
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.75rem; border-top: 1px solid var(--border-subtle); padding-top: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Practiced in Curriculum: Days 153, 154</span>
+              <a href="plan.html" class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">
+                View Days in Plan ↗
+              </a>
+            </div>
+          </div>
+        
+          <div class="nvidia-pillar-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff;">
+                Pillar 4: Sparse Representations &amp; 2:4 Structured Sparsity
+              </h4>
+              <span class="brand-badge" style="font-size: 0.7rem;">AI Tensor Cores</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Compressed Sparse Row (CSR) &amp; CSC matrix representations. NVIDIA Ampere/Hopper Tensor Cores provide 2x hardware throughput for 2:4 structured sparsity.</p>
+            
+            
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.75rem; border-top: 1px solid var(--border-subtle); padding-top: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Practiced in Curriculum: Days 151, 152</span>
+              <a href="plan.html" class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">
+                View Days in Plan ↗
+              </a>
+            </div>
+          </div>
+        
+          <div class="nvidia-pillar-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff;">
+                Pillar 5: Lock-Free Ring Buffers &amp; Command Queues (SPSC / MPMC)
+              </h4>
+              <span class="brand-badge" style="font-size: 0.7rem;">Concurrency</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Host CPU drivers submit GPU commands via lock-free circular ring buffers with acquire/release memory fences and 64-byte padding (alignas(64)) to eliminate false sharing.</p>
+            
+            
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.75rem; border-top: 1px solid var(--border-subtle); padding-top: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Practiced in Curriculum: Days 134, 135, 136</span>
+              <a href="plan.html" class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">
+                View Days in Plan ↗
+              </a>
+            </div>
+          </div>
+        
+          <div class="nvidia-pillar-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff;">
+                Pillar 6: Custom Memory Allocators (Buddy &amp; Slab / Arena)
+              </h4>
+              <span class="brand-badge" style="font-size: 0.7rem;">Memory Management</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">cudaMalloc freezes GPU streams. High-performance frameworks use binary Buddy Allocators (buddy = addr ^ size) and Slab memory pools (PyTorch Caching Allocator).</p>
+            
+            
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.75rem; border-top: 1px solid var(--border-subtle); padding-top: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Practiced in Curriculum: Days 162, 163</span>
+              <a href="plan.html" class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">
+                View Days in Plan ↗
+              </a>
+            </div>
+          </div>
+        
+          <div class="nvidia-pillar-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <h4 style="font-size: 1.1rem; font-weight: 700; color: #fff;">
+                Pillar 7: Distributed Collective Communication (NCCL Ring All-Reduce)
+              </h4>
+              <span class="brand-badge" style="font-size: 0.7rem;">Distributed Systems</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Large-scale LLM training across DGX SuperPODs. Total data transferred in Ring All-Reduce is 2*(P-1)/P * S bytes (bandwidth scaling independent of cluster size P).</p>
+            
+            
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.75rem; border-top: 1px solid var(--border-subtle); padding-top: 0.5rem;">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Practiced in Curriculum: Days 166, 167</span>
+              <a href="plan.html" class="btn btn-outline" style="padding: 0.25rem 0.6rem; font-size: 0.75rem;">
+                View Days in Plan ↗
+              </a>
+            </div>
+          </div>
+        
+      </div>
+
+      <h3 style="font-size: 1.15rem; font-weight: 700; margin: 1.5rem 0 1rem 0; color: #fff;">The 3-Tier NVIDIA Interview Response Structure</h3>
+      <div>
+        
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 0.75rem;">
+            <div style="font-weight: 700; color: var(--cyan-accent); margin-bottom: 0.25rem;">Step 1: The Classical Algorithm (Big-O Baseline)</div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); font-style: italic;">"Theoretically, this problem can be solved in O(N) time and O(N) space using an adjacency list and Dijkstra&#x27;s..."</div>
+          </div>
+        
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 0.75rem;">
+            <div style="font-weight: 700; color: var(--cyan-accent); margin-bottom: 0.25rem;">Step 2: The Hardware Reality Check (The Differentiator)</div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); font-style: italic;">"However, in high-performance GPU systems or low-level CUDA kernels, pointer-heavy node allocations cause continuous L1/L2 cache misses. I will represent this using a contiguous CSR flat array layout aligned to 64-byte boundaries..."</div>
+          </div>
+        
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 0.75rem;">
+            <div style="font-weight: 700; color: var(--cyan-accent); margin-bottom: 0.25rem;">Step 3: The Parallel / Scale Follow-Up (The Closer)</div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); font-style: italic;">"If executed across a 32-thread GPU warp, we can replace the sequential reduction with a 5-step __shfl_down_sync tree, achieving zero-allocation reduction directly in registers."</div>
+          </div>
+        
+      </div>
+    
+    </main>
+  </div>
+
+  <!-- MODAL: Complete Day -->
+  <div class="modal-overlay" id="modal-complete-day">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;" id="modal-day-title">Mark Day Complete</h3>
+        <button class="modal-close" id="btn-close-modal">&times;</button>
+      </div>
+      <form id="form-complete-day">
+        <input type="hidden" id="modal-day-num" value="1">
+        <div class="form-group">
+          <label class="form-label">Total Time Spent (Minutes)</label>
+          <input type="number" class="form-control" id="modal-time-spent" min="10" max="300" value="60" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Solved Both Independently?</label>
+          <select class="form-control" id="modal-solved-indep">
+            <option value="Yes">Yes (No solution viewed, minimal/no hints)</option>
+            <option value="No">No (Struggled or consulted hints)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hints Taken</label>
+          <select class="form-control" id="modal-hints-count">
+            <option value="0">0 Hints</option>
+            <option value="1">1 Hint</option>
+            <option value="2">2 Hints</option>
+            <option value="3">3+ Hints</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Solution / Editorial Viewed?</label>
+          <select class="form-control" id="modal-sol-viewed">
+            <option value="No">No (Clean solve)</option>
+            <option value="Yes">Yes (Looked up approach/code)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Key Invariant / Mental Model Takeaway</label>
+          <textarea class="form-control" id="modal-key-insight" rows="2" placeholder="e.g. Invariant: prefix[r] - prefix[l-1] is the sum of range [l, r]"></textarea>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem;">
+          <button type="button" class="btn btn-outline" id="btn-cancel-modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save & Advance ✨</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: Data Sync & Backup -->
+  <div class="modal-overlay" id="modal-sync">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;">💾 Data Backup & Portability</h3>
+        <button class="modal-close" id="btn-close-sync-modal">&times;</button>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+        Your logs, completed days, and metrics are automatically saved in your browser's <code style="color: var(--nv-green);">localStorage</code> across all pages without needing a server.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <button class="btn btn-primary" id="btn-export-json">⬇️ Export Progress to JSON</button>
+        <button class="btn btn-outline" id="btn-export-csv">⬇️ Export Completed Days to CSV</button>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Restore Progress from JSON</label>
+        <input type="file" id="input-import-file" accept=".json" class="form-control">
+      </div>
+      <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 1.25rem 0;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.75rem; color: var(--red-accent);">Danger Zone:</span>
+        <button class="btn btn-outline" id="btn-reset-data" style="border-color: var(--red-accent); color: var(--red-accent);">Clear All Saved Progress</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

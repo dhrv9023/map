@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Rules &amp; Protocols - NVIDIA & AI-Infra Systems Track</title>
+  <meta name="description" content="168-Day Silicon-Aware DSA & AI-Infrastructure Systems Specialist Training System">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Persistent Header -->
+    <header class="app-header">
+      <div class="header-top">
+        <div class="brand-section">
+          <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+            <span class="brand-badge">NVIDIA TRACK</span>
+            <span class="brand-title">DSA & AI-INFRASTRUCTURE SPECIALIST COCKPIT</span>
+          </a>
+          <a href="../index.html" class="brand-badge" style="background: rgba(168,85,247,0.2); color: #c084fc; border: 1px solid rgba(168,85,247,0.4); text-decoration: none;" title="Go back to the AI Infrastructure Engineering Roadmap">🤖 AI ROADMAP ↗</a>
+        </div>
+        <div class="header-quick-stats">
+          <div class="stat-chip" title="Current Day in 168-Day Program">
+            <span class="chip-label">TODAY:</span>
+            <span class="chip-value highlight-green" id="header-current-day">Day 1</span>
+          </div>
+          <div class="stat-chip" title="Progress across 168 days">
+            <span class="chip-label">PROGRESS:</span>
+            <span class="chip-value" id="header-progress-pct">0%</span>
+          </div>
+          <div class="stat-chip" title="Interview Readiness Score based on real performance">
+            <span class="chip-label">READINESS:</span>
+            <span class="chip-value highlight-green" id="header-readiness-score">0 / 100</span>
+          </div>
+          <div class="stat-chip" title="Consecutive days practiced">
+            <span class="chip-label">🔥 STREAK:</span>
+            <span class="chip-value" id="header-streak">0 Days</span>
+          </div>
+          <button class="btn btn-outline" id="btn-open-sync" title="Export/Import and Backup data">💾 Sync / Backup</button>
+        </div>
+      </div>
+      <!-- Multi-Page Nav Tabs -->
+      <nav class="nav-tabs">
+        <a href="index.html" class="nav-tab">🎛️ Dashboard</a>
+      <a href="plan.html" class="nav-tab">🗓️ 168-Day Plan</a>
+      <a href="patterns.html" class="nav-tab">🧠 Pattern Library</a>
+      <a href="flashcards.html" class="nav-tab">🃏 3D Flashcards</a>
+      <a href="nvidia.html" class="nav-tab">🟢 NVIDIA Track</a>
+      <a href="failures.html" class="nav-tab">💥 Failure Log</a>
+      <a href="mocks.html" class="nav-tab">🎯 Mocks & Diags</a>
+      <a href="resources.html" class="nav-tab">📺 Resources</a>
+      <a href="rules.html" class="nav-tab active">📜 System Rules</a>
+      <a href="../index.html" class="nav-tab" style="color: #c084fc; border: 1px solid rgba(192,132,252,0.35); background: rgba(168,85,247,0.08); margin-left: auto; font-weight: 700;">🤖 AI Infra Roadmap ↗</a>
+      </nav>
+    </header>
+
+    <!-- Page Body -->
+    <main class="main-content">
+      
+      <div style="margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: #fff; margin-bottom: 0.25rem;">Program Operating Rules & System Protocols</h2>
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">
+          Non-negotiable training guidelines, the Stuck Protocol, Failure categorization, and NVIDIA systems hiring standards.
+        </p>
+      </div>
+      <div id="rules-container">
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">THE ONLY METRIC THAT MATTERS</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              Problem count is a lagging metric and a vanity number.
+The metric that predicts interview success:
+  * Time-to-pattern on UNLABELLED problems (target: &lt;5 min for Medium by week 10)
+  * Independent-solve rate (target: &gt;70% by week 12)
+  * Hint-dependency rate (target: &lt;20% by week 10)
+  * Ability to reconstruct any solved problem from memory 3 days later
+Dashboard tracks all four. Fill it honestly or it becomes useless.
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">DAILY BLOCK STRUCTURE  (1-2 hours total)</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              A) RETRIEVAL  [10-15 min]
+   From memory, no notes: state yesterday&#x27;s pattern trigger + invariant + complexity.
+   If you cannot, add it to ReviewQueue immediately.
+
+B) CONCEPT / TUTORIAL  [0-25 min  -  ONLY if DayPlan says YES]
+   Read the DayPlan tutorial column. If it says NO, do not watch anything.
+   The urge to watch a tutorial instead of struggling is a productivity trap.
+
+C) DEEP SOLVING  [45-70 min  -  the real training block]
+   Obey the STUCK PROTOCOL below. No shortcuts.
+
+D) RECONSTRUCTION  [10 min]
+   Close your solution. Open a blank file. Rebuild it from memory.
+   If you cannot reconstruct it, you did not learn it.
+
+E) FAILURE ANALYSIS  [5 min]
+   Log every failure in FailureLog with an honest category + one preventive rule.
+
+F) REVIEW  [10 min]
+   Top item from ReviewQueue. Retrieval only  -  no re-reading.
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">THE STUCK PROTOCOL  (non-negotiable, enforced in DayPlan column)</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              0-10 min   -&gt;  NO help. Restate the problem in your own words.
+              Write constraints. Write brute-force + its TC. Write target TC.
+              Write 2-3 candidate approaches.
+
+10-20 min  -&gt;  ONE conceptual hint only. No code. No data-structure name if avoidable.
+              Hint = a question that points you toward the right abstraction.
+
+20-30 min  -&gt;  Stronger hint: name the pattern or the key invariant.
+              Still no implementation.
+
+30+ min    -&gt;  Read ONLY the core approach (2-3 sentences). Then close it.
+              Implement entirely from scratch  -  never copy code.
+
+If you read code  -&gt;  problem is auto-logged as &quot;Solution Viewed = Yes&quot; and re-queued at +1 day.
+If you solve with hints  -&gt;  re-queued at +3 days, not +7.
+The goal: &quot;I understand WHY this solution exists.&quot; NOT &quot;I understood it after being shown.&quot;
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">PHASE SEQUENCE FOR EVERY IMPORTANT PROBLEM</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              1. UNDERSTAND   -  What is asked? What are constraints? What changes? What is reusable?
+2. PREDICT       -  Write target TC from constraints. List 2-3 approaches. Name the bottleneck.
+3. DERIVE        -  Attempt yourself. Use stuck protocol if needed.
+4. IMPLEMENT     -  Write clean code.
+5. ATTACK        -  Test: empty input, single element, all duplicates, max n, negatives, overflow, adversarial order.
+6. OPTIMIZE      -  Can TC improve? If no, can SC improve? Is there a hidden invariant?
+7. RECONSTRUCT   -  Close everything. Rebuild from memory and explain aloud.
+8. SCHEDULE      -  ProblemDB auto-computes review dates based on your performance.
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">TUTORIAL RULES  (35 curated tutorials across 168 days)</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              Watch BEFORE a problem only when the mental model is genuinely new (DayPlan marks these explicitly).
+Do NOT watch because a specific problem is hard. Struggle first.
+Watch AFTER only when you failed to recognise the SAME pattern twice.
+Rewatch only if you cannot reconstruct the concept from memory.
+
+For every tutorial, extract:
+  * The TRIGGER (what wording in a problem should activate this pattern?)
+  * The INVARIANT (what remains true throughout the algorithm?)
+  * The COMPLEXITY ARGUMENT (why is it O(n)? O(n log n)?  -  derive it, do not accept it)
+
+Do NOT memorise the presenter&#x27;s code. That is passive consumption, not learning.
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">FAILURE CATEGORIES  -  USE THESE CODES EVERYWHERE</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              F1-Understand    : misread or misunderstood the problem statement
+F2-Pattern       : could not identify the correct pattern
+F3-Derive        : knew the pattern, could not derive the approach
+F4-WrongDS       : identified the right approach, chose the wrong data structure
+F5-Complexity    : wrong or absent complexity analysis
+F6-Implementation: correct approach, coding bug
+F7-EdgeCase      : correct solution, missed an edge case
+F8-Debugging     : took too long to find the bug
+F9-Forgot        : knew this technique previously, forgot it
+F10-Pressure     : failed specifically because of time pressure (fine in untimed)
+F11-HintDependent: required a hint to make progress
+F12-CantExplain  : could implement but could not explain the solution
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">AUTO-ESCALATION RULES  (the plan adjusts to your failures)</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              If any category appears 3+ times in one week:
+  F2 (Pattern)      -&gt;  next week&#x27;s 2 blind days must target that pattern family
+                     + do 10 &quot;name the pattern only&quot; reps daily (5 min, no coding)
+  F3 (Derive)       -&gt;  add 1 extra reconstruction per day from the failed pattern
+  F5 (Complexity)   -&gt;  estimate TC out loud BEFORE every single problem  -  no exceptions
+  F6 (Implement)    -&gt;  write the invariant as a comment before every loop
+  F7 (EdgeCase)     -&gt;  run your personal edge-case checklist before every submission
+  F10 (Pressure)    -&gt;  replace one untimed day per week with a timed session
+  F11 (HintDep)     -&gt;  the stuck-protocol clock resets to 0  -  you must wait the full 30 min
+
+If F2 or F3 each appear 5+ times in a single week: run a pattern-recognition drill session
+(20 problems, no coding, just write &quot;pattern: X&quot; for each) before continuing the plan.
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">MISSED DAYS  (no restarts, ever)</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              1 day missed      -&gt;  resume exactly where you left off. Nothing special.
+2-3 days missed   -&gt;  RECOVERY SESSION: 15 min retrieval of last 3 patterns +
+                    2 problems from top of ReviewQueue + nothing new.
+1+ week missed    -&gt;  MINI-DIAGNOSTIC: 3 unlabelled problems from the pool (60 min).
+                    Re-enter the plan at the week whose patterns you failed.
+                    Do NOT go back to Day 1. Do NOT do a multi-day catch-up pile.
+                    Catch-up piles produce shallow results and break motivation.
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">PRODUCTIVITY TRAPS  (re-read every Sunday)</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              * Watching tutorials instead of struggling
+* Solving only easy problems
+* Solving problems already labelled with the pattern (defeats the whole purpose)
+* Reading the solution before 30 minutes are up
+* Memorising templates instead of understanding invariants
+* Copying code from solutions
+* Doing 10 shallow solves instead of 3 deep ones
+* Never revisiting problems (mastery requires forgetting and re-retrieving)
+* Confusing recognition with mastery
+* Confusing &quot;I understood when shown&quot; with &quot;I could derive it&quot;
+* Micro-optimising code whose algorithm you cannot explain
+* Avoiding hard problems (they teach 5x more per minute)
+* Switching resources mid-plan (new resource = new procrastination)
+* Spending hours on beautiful notes instead of solving problems
+* Tracking problem counts instead of solve quality
+* Random LeetCode grinding with no failure analysis
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">SECOND-SOLUTION RULE</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              For every problem marked [2-SOL] in DayPlan, find a fundamentally different approach:
+  HashMap  &lt;-&gt;  Sorting     |  DFS  &lt;-&gt;  BFS          |  Greedy  &lt;-&gt;  DP
+  Heap  &lt;-&gt;  Sorting        |  Binary Search  &lt;-&gt;  Math|  Recursion  &lt;-&gt;  Iteration+Stack
+
+This kills problem -&gt; template reflexes. Template-locked candidates fail on variants.
+Write both approaches, compare TC/SC, and state when each is preferable.
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">DIAGNOSTICS SCHEDULE</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              Day 28  (90 min)  Pool A: LC 918, LC 795, LC 581         -  unlabelled, no hints
+Day 56  (100 min) Pool B: LC 315, LC 1110, LC 1396        -  unlabelled, no hints
+Day 84  (110 min) Pool C: LC 1383, LC 1326, LC 2092       -  unlabelled, no hints
+Day 98  (110 min) Final:  LC 1751, LC 2421, LC 1463       -  unlabelled, no hints
+
+Metric to track across all four: time-to-pattern, hint dependency, TC/SC accuracy, explanation quality.
+A diagnostic where you improve on all four metrics = the plan is working.
+A diagnostic where you stagnate = the plan must change, not the effort.
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">MOCK INTERVIEW SCHEDULE</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              Day 42  Mock #1  -  2 hints allowed, generous time, narrate aloud
+Day 70  Mock #2  -  1 hint, 45 min, state TC/SC unprompted, one follow-up
+Day 92  Mock #3  -  no hints, verbal reasoning required throughout
+Day 95  Mock #4  -  unfamiliar hard problem, 45 min, follow-up required
+Day 98  Final    -  included in final diagnostic
+
+Every mock: narrate every decision aloud. State TC/SC before coding.
+Answer one infra follow-up: &quot;What if input is streaming / distributed / 10^9 elements?&quot;
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">AI-INFRA LENS  (use only where it genuinely adds clarity)</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              Caching/eviction       -&gt;  LRU, LFU, ARC (hashmap + ordered structure)
+Scheduling             -&gt;  heaps, topological order, priority queues
+Dependency resolution  -&gt;  DAG + Kahn&#x27;s algorithm
+Rate limiting          -&gt;  sliding window, token bucket
+Load balancing         -&gt;  binary search on answer + greedy
+Streaming metrics      -&gt;  two heaps, monotonic deque, reservoir sampling
+Sharding/partitioning  -&gt;  hashing, consistent hashing, Union-Find
+Indexing / search      -&gt;  binary search, tries, sorted structures
+Memory management      -&gt;  knapsack, bin packing (intuition)
+Log merging            -&gt;  k-way merge, interval merging
+Distributed connect.   -&gt;  offline graph algorithms, DSU over streams
+
+Do NOT force an infra analogy into every problem. Use it when it genuinely deepens understanding.
+The interview DSA / infra DSA overlap is strongest in: heaps, hashing, graphs/DAGs,
+binary search on answer, and O(1) structure design.
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">THE NVIDIA &amp; GPU-SYSTEMS INTERVIEW STANDARD</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              NVIDIA does NOT interview like standard web/app Big Tech.
+Interviewers in CUDA, TensorRT, Triton, NCCL, Tegra, Drivers, and AI Infrastructure
+test whether your mental model matches the underlying SILICON.
+
+1. HARDWARE-AWARE COMPLEXITY (Big-O in a vacuum is rejected):
+   * Cache Lines: CPU/GPU memory moves in 64-byte or 128-byte chunks.
+     A pointer-chasing O(N) linked-list is 50x slower than a contiguous O(N) array due to cache misses.
+   * Memory Coalescing &amp; Bank Conflicts: Consecutive threads must access consecutive
+     memory addresses. Strided access serializes memory transactions into separate bus requests.
+   * Branch Divergence: If threads in a 32-thread warp take different branches (if/else),
+     both execution paths are serialized. Write branchless / bit-predicated logic where possible.
+
+2. BITWISE ARITHMETIC AS A NATIVE LANGUAGE:
+   * Thread &amp; Warp Masks: __activemask(), __ballot_sync(), popcount (__builtin_popcount).
+   * Memory Alignment: Aligning address X to 64 bytes: (X + 63) &amp; ~63.
+   * Fast Power-of-Two: (n &amp; (n - 1)) == 0, modulo mask (x &amp; (2^k - 1)).
+   * Bit-reversal and lowest set bit (x &amp; -x) for Fenwick trees and parallel FFTs.
+
+3. PARALLEL REDUCTIONS &amp; WARP PRIMITIVES:
+   * Never stop at a sequential loop. Always be prepared to answer:
+     &quot;How does this run across 32 parallel threads in a warp?&quot;
+   * Master Blelloch work-efficient parallel scan (up-sweep / down-sweep tree reduction).
+   * Master warp-shuffle reductions (__shfl_down_sync) for sum, min, max without shared memory.
+
+4. DATA LAYOUT: SoA vs AoS:
+   * Structure of Arrays (SoA: x[N], y[N], z[N]) allows SIMD/GPU coalesced vector loads.
+   * Array of Structures (AoS: struct Point{x,y,z} pts[N]) causes strided, uncoalesced memory fetches.
+
+5. LOCK-FREE COMMAND QUEUES &amp; PRODUCER-CONSUMER:
+   * SPSC (Single-Producer Single-Consumer) ring buffers with acquire/release memory fences.
+   * Power-of-two buffer sizing for branchless index wrapping.
+   * Avoid false sharing by padding cache lines (alignas(64)).
+
+6. SPARSE MATRICES &amp; TENSOR STRIDES:
+   * Compressed Sparse Row (CSR: values, column_indices, row_pointers) and CSC.
+   * 2:4 Structured Sparsity (NVIDIA Ampere/Hopper Tensor Core 2x throughput).
+   * Strided indexing (offset = sum(coord[i] * stride[i])) and in-place tensor transposition.
+
+7. NCCL &amp; DISTRIBUTED COLLECTIVES:
+   * Ring All-Reduce vs Tree All-Reduce: bandwidth vs latency trade-offs.
+   * Ring All-Reduce: 2*(P-1)/P * S transfer size (constant bandwidth scaling as cluster size P grows).
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">COMPLEXITY TRAINING  (first-class skill)</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              For EVERY problem, answer these before writing a single line of code:
+  1. What is the brute-force TC and why?
+  2. What makes it slow? (which step is repeated unnecessarily?)
+  3. What is the target TC? (derived from n in the constraints)
+  4. What is the likely lower bound? (can we prove nothing faster exists?)
+  5. What is the SC?
+  6. What happens at maximum input size? (n=10^5, n=10^9)
+
+n &lt;= 20        -&gt;  O(2^n) or O(n!) acceptable (backtracking, bitmask DP)
+n &lt;= 500       -&gt;  O(n^2) or O(n^2 log n) acceptable
+n &lt;= 5,000     -&gt;  O(n^2) tight
+n &lt;= 100,000   -&gt;  O(n log n) required
+n &lt;= 1,000,000 -&gt;  O(n) strongly preferred
+n &lt;= 10^9      -&gt;  O(log n) or O(1) only
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">RESOURCE DISCIPLINE &amp; CURATED YOUTUBE CREATORS</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              Curated tutorial channels:
+  - Striver (take U forward) - algorithmic patterns &amp; technical interview rigor
+  - Aditya Verma - intuition &amp; recurrence templates (DP, Stack, Sliding Window, BS)
+  - Love Babbar (CodeHelp) - clear structural breakdowns &amp; Hindi explanations
+  - Padho with Pratyush - deep systems intuition, cache/concurrency &amp; advanced DSA
+  - NeetCode (neetcode.io) - concise visual problem walkthroughs &amp; clean code
+  - Specialized channels: Abdul Bari (algorithms), WilliamFiset (graphs), Errichto (range trees)
+
+Direct 1-click clickable YouTube hyperlinks for all 35 tutorials are embedded
+directly in both the &#x27;DayPlan&#x27; and &#x27;ResourcePlan&#x27; sheets.
+            </div>
+          </div>
+        
+      </div>
+    
+    </main>
+  </div>
+
+  <!-- MODAL: Complete Day -->
+  <div class="modal-overlay" id="modal-complete-day">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;" id="modal-day-title">Mark Day Complete</h3>
+        <button class="modal-close" id="btn-close-modal">&times;</button>
+      </div>
+      <form id="form-complete-day">
+        <input type="hidden" id="modal-day-num" value="1">
+        <div class="form-group">
+          <label class="form-label">Total Time Spent (Minutes)</label>
+          <input type="number" class="form-control" id="modal-time-spent" min="10" max="300" value="60" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Solved Both Independently?</label>
+          <select class="form-control" id="modal-solved-indep">
+            <option value="Yes">Yes (No solution viewed, minimal/no hints)</option>
+            <option value="No">No (Struggled or consulted hints)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Hints Taken</label>
+          <select class="form-control" id="modal-hints-count">
+            <option value="0">0 Hints</option>
+            <option value="1">1 Hint</option>
+            <option value="2">2 Hints</option>
+            <option value="3">3+ Hints</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Solution / Editorial Viewed?</label>
+          <select class="form-control" id="modal-sol-viewed">
+            <option value="No">No (Clean solve)</option>
+            <option value="Yes">Yes (Looked up approach/code)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Key Invariant / Mental Model Takeaway</label>
+          <textarea class="form-control" id="modal-key-insight" rows="2" placeholder="e.g. Invariant: prefix[r] - prefix[l-1] is the sum of range [l, r]"></textarea>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem;">
+          <button type="button" class="btn btn-outline" id="btn-cancel-modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save & Advance ✨</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: Data Sync & Backup -->
+  <div class="modal-overlay" id="modal-sync">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;">💾 Data Backup & Portability</h3>
+        <button class="modal-close" id="btn-close-sync-modal">&times;</button>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+        Your logs, completed days, and metrics are automatically saved in your browser's <code style="color: var(--nv-green);">localStorage</code> across all pages without needing a server.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <button class="btn btn-primary" id="btn-export-json">⬇️ Export Progress to JSON</button>
+        <button class="btn btn-outline" id="btn-export-csv">⬇️ Export Completed Days to CSV</button>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Restore Progress from JSON</label>
+        <input type="file" id="input-import-file" accept=".json" class="form-control">
+      </div>
+      <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 1.25rem 0;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.75rem; color: var(--red-accent);">Danger Zone:</span>
+        <button class="btn btn-outline" id="btn-reset-data" style="border-color: var(--red-accent); color: var(--red-accent);">Clear All Saved Progress</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

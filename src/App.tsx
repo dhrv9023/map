@@ -10,6 +10,10 @@ declare global {
 
 export default function App() {
   const handleSelectSection = (id: string) => {
+    if (id === "s6") {
+      window.location.href = "./dsa/index.html";
+      return;
+    }
     if (window.show) {
       window.show(id);
     }

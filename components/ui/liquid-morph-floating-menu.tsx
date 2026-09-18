@@ -26,7 +26,7 @@ export const ALL_SECTIONS: RoadmapSection[] = [
   { id: "s12", title: "Phase 2 Day Plan", cat: "plans", icon: "📅" },
   { id: "s13", title: "Phase 3 Day Plan", cat: "plans", icon: "📅" },
   { id: "s14", title: "Phase 4 Day Plan", cat: "plans", icon: "📅" },
-  { id: "s6", title: "DSA Core", cat: "dsa", icon: "💻" },
+  { id: "s6", title: "DSA Cockpit (168D) ↗", cat: "dsa", icon: "🚀" },
   { id: "s7", title: "System Design", cat: "dsa", icon: "🌐" },
   { id: "s19", title: "DSA C++ Plan", cat: "dsa", icon: "🚀" },
   { id: "s20", title: "DSA Python Plan", cat: "dsa", icon: "🐍" },
