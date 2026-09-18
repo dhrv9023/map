@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "cp template.html index.html && vite",
-    "build": "cp template.html index.html && tsc && vite build && cp -r dist/assets/* assets/ && cp dist/index.html index.html",
+    "build": "cp template.html index.html && tsc && vite build && cp -r dsa dist/dsa && rm -rf dist/dsa/__pycache__ && cp .nojekyll dist/ && cp -f AI_Engineering_Timetable_v2.pdf dist/ && cp -r dist/assets/* assets/ && cp dist/index.html index.html",
     "preview": "vite preview"
   },
   "dependencies": {

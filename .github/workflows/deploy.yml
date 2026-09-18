@@ -31,7 +31,12 @@ jobs:
         run: npm ci
 
       - name: Build with Vite & TypeScript
-        run: npm run build
+        run: |
+          npm run build
+          cp -r dsa dist/dsa
+          rm -rf dist/dsa/__pycache__
+          cp .nojekyll dist/
+          cp -f AI_Engineering_Timetable_v2.pdf dist/ || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
