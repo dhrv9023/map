@@ -35,8 +35,9 @@ jobs:
           npm run build
           cp -r dsa dist/dsa
           rm -rf dist/dsa/__pycache__
-          cp .nojekyll dist/
+          cp .nojekyll dist/ || true
           cp -f AI_Engineering_Timetable_v2.pdf dist/ || true
+          cp -f DSA_AI_Infra_Training.xlsx dist/ || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

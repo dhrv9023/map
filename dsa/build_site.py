@@ -86,6 +86,7 @@ def page_shell(title, active_page, content_html):
             <span class="chip-label">🔥 STREAK:</span>
             <span class="chip-value" id="header-streak">0 Days</span>
           </div>
+          <a href="../DSA_AI_Infra_Training.xlsx" class="btn btn-outline" style="background: rgba(118,185,0,0.12); border-color: rgba(118,185,0,0.4); color: var(--nv-green); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" download title="Download Complete 14-Sheet Master Excel Workbook">📥 Excel Sheet</a>
           <button class="btn btn-outline" id="btn-open-sync" title="Export/Import and Backup data">💾 Sync / Backup</button>
         </div>
       </div>
@@ -747,6 +748,177 @@ def generate_resources_html(data):
         """)
 
     content = f"""
+      <!-- MASTER YOUTUBE CREATORS DIRECTORY SHOWCASE -->
+      <div class="card" style="margin-bottom: 1.5rem; background: linear-gradient(135deg, rgba(18, 28, 42, 0.95), rgba(9, 16, 24, 0.95)); border: 1px solid rgba(118, 185, 0, 0.35);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.75rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+              <span class="brand-badge" style="font-size: 0.7rem;">MASTER DIRECTORY</span>
+              <span style="font-size: 0.75rem; color: var(--text-nv); font-family: var(--font-mono);">10 Curated Creators • Direct Master Playlists</span>
+            </div>
+            <h2 style="font-size: 1.35rem; font-weight: 800; color: #fff; margin: 0;">Silicon-Aware Algorithmic &amp; Systems Creators</h2>
+          </div>
+          <a href="../DSA_AI_Infra_Training.xlsx" download="DSA_AI_Infra_Training.xlsx" class="btn btn-primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: 0.85rem;">
+            <span>📥 Download Master Excel Sheet (.xlsx)</span>
+          </a>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+          Every tutorial in this curriculum is mapped to top global educators in algorithmic patterns, C++ concurrency, and AI infrastructure systems. Use the 1-click links below to jump straight to their flagship master series:
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+          <!-- Striver -->
+          <div style="background: rgba(7, 10, 14, 0.7); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; border-top: 3px solid #f59e0b;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <strong style="color: #fff; font-size: 0.95rem;">Striver (take U forward)</strong>
+              <span style="font-size: 0.7rem; color: #fbbf24; background: rgba(245,158,11,0.15); padding: 0.1rem 0.4rem; border-radius: 4px;">Baseline</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.75rem;">
+              A2Z DSA Course, SDE Sheet, Graph Series (54 vids), DP Series (56 vids), Binary Trees. Standard interview baseline.
+            </p>
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <a href="https://www.youtube.com/playlist?list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #fbbf24; border-color: rgba(245,158,11,0.4);">▶ A2Z Course ↗</a>
+              <a href="https://www.youtube.com/@takeUforward" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">📺 Channel ↗</a>
+            </div>
+          </div>
+
+          <!-- Aditya Verma -->
+          <div style="background: rgba(7, 10, 14, 0.7); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; border-top: 3px solid #76b900;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <strong style="color: #fff; font-size: 0.95rem;">Aditya Verma</strong>
+              <span style="font-size: 0.7rem; color: var(--nv-green); background: rgba(118,185,0,0.15); padding: 0.1rem 0.4rem; border-radius: 4px;">DP Master</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.75rem;">
+              DP Recurrence (Knapsack, LCS, MCM), Sliding Window (16 vids), Stack &amp; Monotonic Stack, Heaps.
+            </p>
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <a href="https://www.youtube.com/playlist?list=PL_z_8CaSLPWekqh3KpdC9045s07upF834" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: var(--nv-green); border-color: rgba(118,185,0,0.4);">▶ DP Series ↗</a>
+              <a href="https://www.youtube.com/@TheAdityaVerma" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">📺 Channel ↗</a>
+            </div>
+          </div>
+
+          <!-- Padho with Pratyush -->
+          <div style="background: rgba(7, 10, 14, 0.7); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; border-top: 3px solid #a855f7;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <strong style="color: #fff; font-size: 0.95rem;">Padho with Pratyush</strong>
+              <span style="font-size: 0.7rem; color: #c084fc; background: rgba(168,85,247,0.15); padding: 0.1rem 0.4rem; border-radius: 4px;">Systems DSA</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.75rem;">
+              LRU/ARC Buffer Pools, Lock-Free Ring Buffers, HNSW Vector Indexing, DAG Compiler Scheduling, Interval DP.
+            </p>
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <a href="https://www.youtube.com/@padhowithpratyush" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #c084fc; border-color: rgba(168,85,247,0.4);">▶ Systems Playlists ↗</a>
+              <a href="https://www.youtube.com/@padhowithpratyush" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">📺 Channel ↗</a>
+            </div>
+          </div>
+
+          <!-- Love Babbar -->
+          <div style="background: rgba(7, 10, 14, 0.7); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; border-top: 3px solid #38bdf8;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <strong style="color: #fff; font-size: 0.95rem;">Love Babbar (CodeHelp)</strong>
+              <span style="font-size: 0.7rem; color: #38bdf8; background: rgba(56,189,248,0.15); padding: 0.1rem 0.4rem; border-radius: 4px;">C++ DSA</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.75rem;">
+              Complete C++ DSA Course (140+ videos), Pointer diagrams, Recursion &amp; Backtracking, Trees, Graphs.
+            </p>
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <a href="https://www.youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #38bdf8; border-color: rgba(56,189,248,0.4);">▶ C++ Course ↗</a>
+              <a href="https://www.youtube.com/@CodeHelp" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">📺 Channel ↗</a>
+            </div>
+          </div>
+
+          <!-- NeetCode -->
+          <div style="background: rgba(7, 10, 14, 0.7); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; border-top: 3px solid #10b981;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <strong style="color: #fff; font-size: 0.95rem;">NeetCode</strong>
+              <span style="font-size: 0.7rem; color: #34d399; background: rgba(16,185,129,0.15); padding: 0.1rem 0.4rem; border-radius: 4px;">Rapid Review</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.75rem;">
+              NeetCode 150 &amp; Blind 75 walkthroughs. 5-10 min animated diagrams with optimal invariant checks.
+            </p>
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <a href="https://www.youtube.com/playlist?list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #34d399; border-color: rgba(16,185,129,0.4);">▶ NeetCode 150 ↗</a>
+              <a href="https://www.youtube.com/@NeetCode" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">📺 Channel ↗</a>
+            </div>
+          </div>
+
+          <!-- Abdul Bari -->
+          <div style="background: rgba(7, 10, 14, 0.7); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; border-top: 3px solid #6366f1;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <strong style="color: #fff; font-size: 0.95rem;">Abdul Bari</strong>
+              <span style="font-size: 0.7rem; color: #818cf8; background: rgba(99,102,241,0.15); padding: 0.1rem 0.4rem; border-radius: 4px;">Proofs &amp; Theory</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.75rem;">
+              Algorithm analysis, recurrence proofs, divide &amp; conquer, dynamic programming proofs, shortest paths.
+            </p>
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <a href="https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #818cf8; border-color: rgba(99,102,241,0.4);">▶ Algorithms ↗</a>
+              <a href="https://www.youtube.com/@abdul_bari" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">📺 Channel ↗</a>
+            </div>
+          </div>
+
+          <!-- WilliamFiset -->
+          <div style="background: rgba(7, 10, 14, 0.7); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; border-top: 3px solid #ec4899;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <strong style="color: #fff; font-size: 0.95rem;">WilliamFiset</strong>
+              <span style="font-size: 0.7rem; color: #f472b6; background: rgba(236,72,153,0.15); padding: 0.1rem 0.4rem; border-radius: 4px;">Advanced Graphs</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.75rem;">
+              Graph Theory animations, Fenwick &amp; Segment trees, Tarjan's SCC &amp; bridges, Dinic's network flow.
+            </p>
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <a href="https://www.youtube.com/playlist?list=PLDV1Zeh2NRsDGO4--qE8yH72HFL1Km93P" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #f472b6; border-color: rgba(236,72,153,0.4);">▶ Graph Theory ↗</a>
+              <a href="https://www.youtube.com/@WilliamFiset-videos" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">📺 Channel ↗</a>
+            </div>
+          </div>
+
+          <!-- Errichto -->
+          <div style="background: rgba(7, 10, 14, 0.7); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; border-top: 3px solid #ea580c;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <strong style="color: #fff; font-size: 0.95rem;">Errichto</strong>
+              <span style="font-size: 0.7rem; color: #fb923c; background: rgba(234,88,12,0.15); padding: 0.1rem 0.4rem; border-radius: 4px;">CP &amp; Bit Tricks</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.75rem;">
+              Competitive programming master. Bitwise tricks, bitmask DP, fast modulo math, lazy propagation.
+            </p>
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <a href="https://www.youtube.com/playlist?list=PLl0KD3g-oDOHpWRyyGBUJ9jmul0lUODS5" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #fb923c; border-color: rgba(234,88,12,0.4);">▶ DP &amp; Bitwise ↗</a>
+              <a href="https://www.youtube.com/@Errichto" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">📺 Channel ↗</a>
+            </div>
+          </div>
+
+          <!-- Martin Thompson / CppCon -->
+          <div style="background: rgba(7, 10, 14, 0.7); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; border-top: 3px solid #0d9488;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <strong style="color: #fff; font-size: 0.95rem;">CppCon &amp; Martin Thompson</strong>
+              <span style="font-size: 0.7rem; color: #2dd4bf; background: rgba(13,148,136,0.15); padding: 0.1rem 0.4rem; border-radius: 4px;">Lock-Free</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.75rem;">
+              Mechanical sympathy, hardware cache lines, lock-free SPSC ring buffers, cache false sharing.
+            </p>
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <a href="https://www.youtube.com/@CppCon" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #2dd4bf; border-color: rgba(13,148,136,0.4);">▶ Concurrency ↗</a>
+              <a href="https://www.youtube.com/@CppCon" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">📺 Channel ↗</a>
+            </div>
+          </div>
+
+          <!-- CMU DB -->
+          <div style="background: rgba(7, 10, 14, 0.7); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; border-top: 3px solid #4f46e5;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <strong style="color: #fff; font-size: 0.95rem;">CMU Database Group</strong>
+              <span style="font-size: 0.7rem; color: #818cf8; background: rgba(79,70,229,0.15); padding: 0.1rem 0.4rem; border-radius: 4px;">Paging &amp; Buffers</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.75rem;">
+              Prof. Andy Pavlo. Buffer pool management (LRU-K, ARC), in-memory indexing, KV-cache paging architecture.
+            </p>
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <a href="https://www.youtube.com/@CMUDatabaseGroup" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #818cf8; border-color: rgba(79,70,229,0.4);">▶ CMU 15-445 ↗</a>
+              <a href="https://www.youtube.com/@CMUDatabaseGroup" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">📺 Channel ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="search-filter-bar">
         <input type="text" class="search-input" id="resource-search" placeholder="Search 35 tutorials by topic, concept, or creator...">
         <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">

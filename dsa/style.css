@@ -95,7 +95,7 @@ header.app-header {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-subtle);
-  padding: 0.75rem 1.5rem;
+  padding: 0.65rem clamp(0.75rem, 2vw, 2rem);
 }
 
 .header-top {
@@ -207,13 +207,19 @@ nav.nav-tabs {
   font-family: var(--font-mono);
 }
 
-/* Main Content Area */
+/* Main Content Area - Full Canvas Space Utilization */
 main.main-content {
   flex: 1;
-  max-width: 1440px;
+  max-width: min(98.5vw, 1920px);
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 1.25rem clamp(0.75rem, 2vw, 2.5rem);
   width: 100%;
+}
+
+@media (min-width: 1920px) {
+  main.main-content {
+    max-width: min(98.5vw, 2160px);
+  }
 }
 
 .tab-pane {
@@ -814,5 +820,119 @@ table.data-table tr:hover td {
 .yt-channel-pill.other:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: #fff;
+}
+
+/* ==============================================================================
+   COMPREHENSIVE MOBILE RESPONSIVE ENGINE (< 768px and < 480px)
+   ============================================================================== */
+@media (max-width: 768px) {
+  header.app-header {
+    padding: 0.6rem 0.75rem;
+  }
+  .header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .brand-section {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .brand-title {
+    font-size: 0.92rem;
+  }
+  .header-quick-stats {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: flex-start;
+  }
+  .stat-chip {
+    padding: 0.2rem 0.45rem;
+    font-size: 0.72rem;
+  }
+  .nav-tabs {
+    gap: 0.35rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+    width: 100%;
+    scrollbar-width: none;
+  }
+  .nav-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-tab {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  main.main-content {
+    padding: 1rem 0.65rem 4rem;
+  }
+  .mission-hero {
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-lg);
+  }
+  .mission-title {
+    font-size: 1.25rem;
+  }
+  .mission-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .search-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+    padding: 0.75rem;
+  }
+  .search-input {
+    width: 100%;
+  }
+  .table-container {
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+  .data-table {
+    min-width: 600px;
+  }
+  .card {
+    padding: 1rem;
+  }
+  .modal-card {
+    max-width: 95vw !important;
+    width: 95vw !important;
+    max-height: 88vh;
+    padding: 1.25rem 1rem;
+  }
+  .btn {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-title {
+    font-size: 0.82rem;
+  }
+  .header-quick-stats {
+    gap: 0.25rem;
+  }
+  .stat-chip {
+    font-size: 0.68rem;
+    padding: 0.18rem 0.35rem;
+  }
+  .mission-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mission-day-badge {
+    font-size: 0.75rem;
+  }
 }
 

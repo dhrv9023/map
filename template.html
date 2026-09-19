@@ -366,14 +366,110 @@
   .footer-nav-btn{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);color:var(--text);font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:6px;font-family:var(--sans)}
   .footer-nav-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--how-box-bg)}
   .footer-nav-status{font-size:12px;color:var(--text3);font-family:var(--mono);font-weight:600}
-  .page{
-    display:none;padding:2.5rem 3.5rem 6rem;
-    max-width:1680px;width:95%;margin:0 auto;box-sizing:border-box;
+  /* ============================================================ */
+  /* EXPANDED FULL-WIDTH ROADMAP CANVAS & MOBILE RESPONSIVE ENGINE*/
+  /* ============================================================ */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
   }
-  .page.active{display:block}
-  @media(min-width:1920px){.page{max-width:1840px;width:92%}}
-  @media(max-width:1200px){.page{padding:2rem 2rem 5rem;width:98%}}
-  @media(max-width:900px){.page{padding:1.5rem 1rem 5rem;width:100%}}
+  .page {
+    display: none;
+    padding: 2rem clamp(0.85rem, 2.5vw, 2.75rem) 6rem;
+    max-width: min(98.5vw, 1920px);
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .page.active { display: block; }
+  @media(min-width: 1920px) {
+    .page {
+      max-width: min(98.5vw, 2160px);
+      width: 100%;
+      padding: 2.25rem clamp(1.25rem, 2.5vw, 3.5rem) 6rem;
+    }
+  }
+  @media(max-width: 1200px) {
+    .page {
+      padding: 1.75rem clamp(0.75rem, 2vw, 1.75rem) 5rem;
+      width: 100%;
+    }
+  }
+  @media(max-width: 768px) {
+    .page {
+      padding: 1.15rem 0.65rem 5rem;
+      width: 100%;
+    }
+    h1 {
+      font-size: clamp(25px, 6.5vw, 34px) !important;
+      line-height: 1.25 !important;
+    }
+    h2 {
+      font-size: clamp(19px, 5vw, 23px) !important;
+      margin: 2rem 0 1rem !important;
+    }
+    h3 {
+      font-size: clamp(15px, 4vw, 18px) !important;
+    }
+    p {
+      font-size: 15px !important;
+      line-height: 1.65 !important;
+    }
+    .card {
+      padding: 1.2rem 0.95rem !important;
+      margin-bottom: 1rem !important;
+    }
+    .phase {
+      padding-left: 1rem !important;
+      margin-left: 0.15rem !important;
+    }
+    .nav-top {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .nav-current-badge {
+      display: none !important;
+    }
+    .nav-logo {
+      font-size: 13px !important;
+    }
+    .cat-pills-wrap, .nav-buttons-wrap {
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .cat-pills-wrap::-webkit-scrollbar, .nav-buttons-wrap::-webkit-scrollbar {
+      display: none;
+    }
+    .cat-pill, .nav-btn {
+      padding: 6px 11px !important;
+      font-size: 11.5px !important;
+    }
+    .tbl-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1rem 0;
+    }
+    table.tbl {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      min-width: 520px;
+    }
+    .page-footer-nav {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.75rem;
+    }
+    .footer-nav-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
   h1{font-size:42px;font-weight:900;line-height:1.2;margin-bottom:1rem;color:var(--text)}
   h2{font-size:25px;font-weight:800;margin:3rem 0 1.25rem;color:var(--text);border-bottom:2px solid var(--bg4);padding-bottom:.75rem}
   h3{font-size:18px;font-weight:700;margin:2rem 0 .75rem;color:var(--accent3)}
@@ -1743,6 +1839,319 @@
       <a href="./dsa/plan.html" style="display: inline-flex; align-items: center; gap: 8px; background: var(--bg2); color: var(--text); border: 1.5px solid var(--border); font-weight: 700; padding: 14px 24px; border-radius: 12px; font-size: 16px; text-decoration: none; border-bottom: 1.5px solid var(--border);">
         <span>🗓️ View 168-Day Roadmap</span>
       </a>
+    </div>
+  </div>
+
+  <!-- 1-CLICK EXCEL WORKBOOK DOWNLOAD CARD -->
+  <div class="card" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(37, 99, 235, 0.08) 100%); border: 2px solid rgba(16, 185, 129, 0.4); border-radius: 16px; padding: 1.75rem 2rem; margin: 1.5rem 0 2rem; box-shadow: 0 4px 20px -2px rgba(16, 185, 129, 0.15);">
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 280px;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 0.5rem; flex-wrap: wrap;">
+          <span class="pill pill-green" style="font-size: 11px; font-weight: 800;">📊 14 DEDICATED SHEETS</span>
+          <span class="pill pill-teal" style="font-size: 11px; font-weight: 700;">6,547 AUTOMATED FORMULAS</span>
+          <span class="pill pill-purple" style="font-size: 11px; font-weight: 700;">100% OFFLINE &amp; 0-SERVER</span>
+        </div>
+        <h3 style="font-size: 22px; font-weight: 900; margin: 0 0 0.5rem; color: var(--text);">
+          Download Master Training Workbook (Excel .xlsx)
+        </h3>
+        <p style="font-size: 14.5px; color: var(--text2); margin: 0; line-height: 1.6;">
+          Complete executive training workbook updated with the new <strong>YouTubeChannels master directory</strong> tab! Includes the 168-day curriculum, 750+ problem database with automated spaced repetition, 42 pattern cards, failure log (F1-F12), and direct 1-click hyperlinks for <strong>Striver, Aditya Verma, Padho with Pratyush, Love Babbar, NeetCode, Abdul Bari, and WilliamFiset</strong>.
+        </p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; flex-shrink: 0;">
+        <a href="./DSA_AI_Infra_Training.xlsx" download="DSA_AI_Infra_Training.xlsx" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #10b981, #059669); color: #ffffff !important; font-weight: 800; font-size: 16px; padding: 14px 26px; border-radius: 12px; text-decoration: none; border-bottom: none; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4); transition: transform 0.15s ease;">
+          <span>📥 Download Master Sheet (.xlsx)</span>
+          <span style="font-size: 18px;">⬇</span>
+        </a>
+        <span style="font-size: 11px; color: var(--text3); font-family: var(--mono);">Direct Excel File • 0 Broken Formulas • Works in Excel &amp; Sheets</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SILICON-AWARE AI INFRA ENGINEERING MATRIX -->
+  <div style="margin: 2.5rem 0 2rem;">
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.75rem; flex-wrap: wrap;">
+      <span class="tag tag-coral" style="margin: 0; font-size: 11.5px;">SYSTEMS STRATEGY</span>
+      <span class="tag tag-accent" style="margin: 0; font-size: 11.5px;">NVIDIA &amp; HYPERSCALER STANDARD</span>
+    </div>
+    <h2 style="margin: 0 0 0.75rem; border: none; padding: 0;">
+      Silicon-Aware AI Infra Engineering Matrix (DSA ↔ AI Silicon Systems)
+    </h2>
+    <p style="font-size: 15.5px; color: var(--text2); line-height: 1.7; max-width: 960px; margin-bottom: 1.25rem;">
+      Why do elite AI systems teams test algorithmic problem solving? In modern AI Infrastructure, classic data structures are not academic trivia—they form the exact mathematical blueprints for GPU memory hierarchies, asynchronous CUDA streams, compiler DAG lowerings, and distributed collective communication:
+    </p>
+
+    <div class="tbl-wrap">
+      <table class="tbl" style="border: 1px solid var(--border); border-radius: 10px; overflow: hidden;">
+        <thead>
+          <tr>
+            <th style="width: 18%;">DSA Paradigm &amp; Pattern</th>
+            <th style="width: 22%;">GPU Architecture &amp; Silicon Component</th>
+            <th style="width: 30%;">Production AI Infrastructure System</th>
+            <th style="width: 30%;">Hardware &amp; Performance Mechanism</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Arrays, Sliding Window &amp; Ring Buffers</strong></td>
+            <td><span class="pill pill-teal">PagedAttention &amp; KV-Cache</span></td>
+            <td><strong>vLLM &amp; TensorRT-LLM</strong> Paging; Mistral-7B Sliding Window Attention</td>
+            <td>Virtual memory pagination of non-contiguous key/value blocks eliminates 60-80% HBM memory fragmentation during token generation.</td>
+          </tr>
+          <tr>
+            <td><strong>Prefix Sums &amp; Parallel Scan</strong></td>
+            <td><span class="pill pill-purple">CUDA Shared Memory Scan</span></td>
+            <td><strong>Mamba SSM &amp; Flash-Linear-Attention</strong> State Space updates; CTC Beam Search</td>
+            <td>Blelloch work-efficient parallel tree scan in CUDA shared memory reduces $O(N)$ sequential recurrent state tracking to $O(\log N)$ parallel steps.</td>
+          </tr>
+          <tr>
+            <td><strong>Topological Sort &amp; Kahn's Algorithm</strong></td>
+            <td><span class="pill pill-green">Compiler Computational DAGs</span></td>
+            <td><strong>PyTorch Inductor (FX Graph) &amp; TVM / TensorRT</strong> Kernel Fusion</td>
+            <td>Dependency graph resolution, dead-code elimination, and scheduling fused kernel waves across concurrent CUDA streams without race conditions.</td>
+          </tr>
+          <tr>
+            <td><strong>Two Heaps &amp; Priority Queues</strong></td>
+            <td><span class="pill pill-amber">Continuous Batching Scheduler</span></td>
+            <td><strong>vLLM / TGI</strong> Dynamic Request Engine; Speculative Decoding verification queues</td>
+            <td>Real-time priority scheduling of variable-length prompts and speculative draft tree verification to maximize GPU compute saturation.</td>
+          </tr>
+          <tr>
+            <td><strong>Disjoint Set Union (DSU / Kruskal)</strong></td>
+            <td><span class="pill pill-red">Distributed Network Topologies</span></td>
+            <td><strong>Megatron-LM &amp; DeepSpeed ZeRO</strong> Interconnect Topology Partitioning</td>
+            <td>Cluster topology discovery, NVLink vs InfiniBand rail grouping, and optimal communication domain mapping for gradient All-Reduce rings.</td>
+          </tr>
+          <tr>
+            <td><strong>Bit Manipulation &amp; Bitmasks</strong></td>
+            <td><span class="pill pill-purple">Warp Primitives &amp; Quantization</span></td>
+            <td><strong>NVIDIA Blackwell / Hopper FP4 / FP8</strong> &amp; CUTLASS Matrix Kernels</td>
+            <td>Sub-byte quantization bit-packing (`e4m3`, `e5m2`), warp ballot masks (`__ballot_sync`), and register warp-shuffles (`__shfl_down_sync`) avoiding shared memory latency.</td>
+          </tr>
+          <tr>
+            <td><strong>Dynamic Programming &amp; Recurrence</strong></td>
+            <td><span class="pill pill-teal">2D GPU Tile Scheduling</span></td>
+            <td><strong>FlashAttention-2/3</strong> Tiling; Alpa Distributed Pipeline Stage Partitioning</td>
+            <td>Online softmax normalizer recurrence ($m_{\text{new}} = \max(m, x)$) allows computing attention without materializing the $N \times N$ matrix in high-latency HBM.</td>
+          </tr>
+          <tr>
+            <td><strong>Tries &amp; Radix Trees</strong></td>
+            <td><span class="pill pill-green">Radix Attention Prefix Cache</span></td>
+            <td><strong>SGLang</strong> Shared Prefix KV-Cache for Multi-Turn Agent Conversations</td>
+            <td>Hierarchical token sequence indexing allowing instant $O(1)$ lookup and reuse of existing KV-cache tensors across parallel agent conversations.</td>
+          </tr>
+          <tr>
+            <td><strong>HNSW &amp; Proximity Graphs</strong></td>
+            <td><span class="pill pill-amber">Vector Similarity Search</span></td>
+            <td><strong>Faiss, Milvus &amp; cuVS</strong> Billion-Scale Vector Retrieval for RAG</td>
+            <td>Hierarchical Navigable Small World graphs enabling sub-millisecond approximate nearest neighbor (ANN) retrieval over multi-gigabyte embedding spaces.</td>
+          </tr>
+          <tr>
+            <td><strong>Lock-Free Concurrency &amp; SPSC Queues</strong></td>
+            <td><span class="pill pill-teal">Host-to-Device Asynchronous IPC</span></td>
+            <td><strong>CUDA Driver Command Ring &amp; NCCL</strong> Cross-Process Shared Memory Queues</td>
+            <td>Single-Producer Single-Consumer circular lock-free queues with acquire/release memory barriers eliminating OS mutex contention in high-throughput inference serving.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CURATED YOUTUBE CREATOR & PLAYLIST DIRECTORY SHOWCASE -->
+  <div style="margin: 2.5rem 0 2rem;">
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.75rem; flex-wrap: wrap;">
+      <span class="tag tag-teal" style="margin: 0; font-size: 11.5px;">CURATED CREATOR DIRECTORY</span>
+      <span class="tag tag-green" style="margin: 0; font-size: 11.5px;">DIRECT 1-CLICK LINKS</span>
+    </div>
+    <h2 style="margin: 0 0 0.75rem; border: none; padding: 0;">
+      Curated YouTube Creators &amp; Flagship Playlists Directory
+    </h2>
+    <p style="font-size: 15.5px; color: var(--text2); line-height: 1.7; max-width: 960px; margin-bottom: 1.5rem;">
+      To maximize your time efficiency, do not wander randomly on YouTube. Use these hand-picked educators matched to their exact superpowers:
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem;">
+      
+      <!-- Striver -->
+      <div class="card" style="border-top: 3.5px solid #f59e0b; margin: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+          <div>
+            <h4 style="margin: 0; font-size: 16px; color: var(--text);">Striver (take U forward)</h4>
+            <span style="font-size: 12px; color: var(--text3); font-family: var(--mono);">@takeUforward • Hinglish/English</span>
+          </div>
+          <span class="pill pill-amber">Interview Baseline</span>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text2); line-height: 1.5; margin-bottom: 0.75rem;">
+          The benchmark for standard interview preparation. Systematic step-by-step traces, optimal invariants, and comprehensive courses for Trees, Graphs, DP, and Binary Search.
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://www.youtube.com/playlist?list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: var(--accent); background: var(--how-box-bg); padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border);">▶ A2Z DSA Course ↗</a>
+          <a href="https://www.youtube.com/@takeUforward" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 600; color: var(--text2); padding: 4px 8px;">📺 Channel ↗</a>
+        </div>
+      </div>
+
+      <!-- Aditya Verma -->
+      <div class="card" style="border-top: 3.5px solid #10b981; margin: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+          <div>
+            <h4 style="margin: 0; font-size: 16px; color: var(--text);">Aditya Verma</h4>
+            <span style="font-size: 12px; color: var(--text3); font-family: var(--mono);">@TheAdityaVerma • Hindi</span>
+          </div>
+          <span class="pill pill-green">DP &amp; Window GOAT</span>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text2); line-height: 1.5; margin-bottom: 0.75rem;">
+          The undisputed master for intuitive mental models in Dynamic Programming (Knapsack, LCS, MCM), Sliding Window, and Monotonic Stacks. Eliminates fear of state transitions.
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://www.youtube.com/playlist?list=PL_z_8CaSLPWekqh3KpdC9045s07upF834" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #10b981; background: rgba(16,185,129,0.1); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(16,185,129,0.3);">▶ DP Master Series ↗</a>
+          <a href="https://www.youtube.com/@TheAdityaVerma" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 600; color: var(--text2); padding: 4px 8px;">📺 Channel ↗</a>
+        </div>
+      </div>
+
+      <!-- Padho with Pratyush -->
+      <div class="card" style="border-top: 3.5px solid #a855f7; margin: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+          <div>
+            <h4 style="margin: 0; font-size: 16px; color: var(--text);">Padho with Pratyush</h4>
+            <span style="font-size: 12px; color: var(--text3); font-family: var(--mono);">@padhowithpratyush • Hinglish</span>
+          </div>
+          <span class="pill pill-purple">Systems &amp; AI Infra DSA</span>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text2); line-height: 1.5; margin-bottom: 0.75rem;">
+          Crucial for AI Infra &amp; Systems engineers. Explains LRU/ARC buffer caches, lock-free ring buffers, HNSW vector search, compiler DAG scheduling, and interval DP.
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://www.youtube.com/@padhowithpratyush" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #a855f7; background: rgba(168,85,247,0.1); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(168,85,247,0.3);">▶ Systems &amp; CP Playlists ↗</a>
+          <a href="https://www.youtube.com/@padhowithpratyush" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 600; color: var(--text2); padding: 4px 8px;">📺 Channel ↗</a>
+        </div>
+      </div>
+
+      <!-- Love Babbar -->
+      <div class="card" style="border-top: 3.5px solid #38bdf8; margin: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+          <div>
+            <h4 style="margin: 0; font-size: 16px; color: var(--text);">Love Babbar (CodeHelp)</h4>
+            <span style="font-size: 12px; color: var(--text3); font-family: var(--mono);">@CodeHelp • Hindi</span>
+          </div>
+          <span class="pill pill-teal">C++ Mastery</span>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text2); line-height: 1.5; margin-bottom: 0.75rem;">
+          Energetic and crystal-clear C++ implementation walkthroughs. Superb memory pointer visual diagrams, recursion trees, and foundational C++ DSA curriculum.
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://www.youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #0284c7; background: rgba(56,189,248,0.1); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(56,189,248,0.3);">▶ Complete C++ DSA ↗</a>
+          <a href="https://www.youtube.com/@CodeHelp" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 600; color: var(--text2); padding: 4px 8px;">📺 Channel ↗</a>
+        </div>
+      </div>
+
+      <!-- NeetCode -->
+      <div class="card" style="border-top: 3.5px solid #059669; margin: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+          <div>
+            <h4 style="margin: 0; font-size: 16px; color: var(--text);">NeetCode</h4>
+            <span style="font-size: 12px; color: var(--text3); font-family: var(--mono);">@NeetCode • English</span>
+          </div>
+          <span class="pill pill-green">5-10 Min Rapid Walkthrough</span>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text2); line-height: 1.5; margin-bottom: 0.75rem;">
+          The undisputed standard for rapid daily problem review. Crisp 5-10 minute animated diagrams, invariant explanations, and optimal C++/Python code for NeetCode 150.
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://www.youtube.com/playlist?list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #059669; background: rgba(16,185,129,0.1); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(16,185,129,0.3);">▶ NeetCode 150 ↗</a>
+          <a href="https://www.youtube.com/@NeetCode" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 600; color: var(--text2); padding: 4px 8px;">📺 Channel ↗</a>
+        </div>
+      </div>
+
+      <!-- Abdul Bari -->
+      <div class="card" style="border-top: 3.5px solid #6366f1; margin: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+          <div>
+            <h4 style="margin: 0; font-size: 16px; color: var(--text);">Abdul Bari</h4>
+            <span style="font-size: 12px; color: var(--text3); font-family: var(--mono);">@abdul_bari • English</span>
+          </div>
+          <span class="pill pill-purple">Academic Rigor &amp; Proofs</span>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text2); line-height: 1.5; margin-bottom: 0.75rem;">
+          The chalkboard legend. Watch when you need rigorous mathematical recurrence proofs, divide-and-conquer analysis, or algorithmic optimality derivations.
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #6366f1; background: rgba(99,102,241,0.1); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(99,102,241,0.3);">▶ Algorithms Course ↗</a>
+          <a href="https://www.youtube.com/@abdul_bari" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 600; color: var(--text2); padding: 4px 8px;">📺 Channel ↗</a>
+        </div>
+      </div>
+
+      <!-- WilliamFiset -->
+      <div class="card" style="border-top: 3.5px solid #ec4899; margin: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+          <div>
+            <h4 style="margin: 0; font-size: 16px; color: var(--text);">WilliamFiset</h4>
+            <span style="font-size: 12px; color: var(--text3); font-family: var(--mono);">@WilliamFiset-videos • English</span>
+          </div>
+          <span class="pill pill-pink">Advanced Graphs &amp; Trees</span>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text2); line-height: 1.5; margin-bottom: 0.75rem;">
+          World-class visual animations for graph theory, Fenwick &amp; Segment trees, Tarjan's SCC &amp; bridges, and Dinic's network max flow. Unmatched conceptual clarity.
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://www.youtube.com/playlist?list=PLDV1Zeh2NRsDGO4--qE8yH72HFL1Km93P" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #ec4899; background: rgba(236,72,153,0.1); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(236,72,153,0.3);">▶ Graph Theory Series ↗</a>
+          <a href="https://www.youtube.com/@WilliamFiset-videos" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 600; color: var(--text2); padding: 4px 8px;">📺 Channel ↗</a>
+        </div>
+      </div>
+
+      <!-- Errichto -->
+      <div class="card" style="border-top: 3.5px solid #ea580c; margin: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+          <div>
+            <h4 style="margin: 0; font-size: 16px; color: var(--text);">Errichto</h4>
+            <span style="font-size: 12px; color: var(--text3); font-family: var(--mono);">@Errichto • English</span>
+          </div>
+          <span class="pill pill-coral">CP Speed &amp; Bit Tricks</span>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text2); line-height: 1.5; margin-bottom: 0.75rem;">
+          Grandmaster competitive programming tips. Bitwise arithmetic hacks, bitmask DP, fast math, and lazy propagation range queries.
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://www.youtube.com/playlist?list=PLl0KD3g-oDOHpWRyyGBUJ9jmul0lUODS5" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #ea580c; background: rgba(234,88,12,0.1); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(234,88,12,0.3);">▶ DP &amp; Bitwise Series ↗</a>
+          <a href="https://www.youtube.com/@Errichto" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 600; color: var(--text2); padding: 4px 8px;">📺 Channel ↗</a>
+        </div>
+      </div>
+
+      <!-- Martin Thompson / CppCon -->
+      <div class="card" style="border-top: 3.5px solid #0d9488; margin: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+          <div>
+            <h4 style="margin: 0; font-size: 16px; color: var(--text);">CppCon &amp; Martin Thompson</h4>
+            <span style="font-size: 12px; color: var(--text3); font-family: var(--mono);">@CppCon • English</span>
+          </div>
+          <span class="pill pill-teal">Silicon &amp; Lock-Free</span>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text2); line-height: 1.5; margin-bottom: 0.75rem;">
+          Mechanical sympathy and silicon-level hardware alignment. Lock-free SPSC circular queues, cache line false sharing (`alignas(64)`), and low-latency C++.
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://www.youtube.com/@CppCon" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #0d9488; background: rgba(13,148,136,0.1); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(13,148,136,0.3);">▶ Concurrency &amp; Memory ↗</a>
+          <a href="https://www.youtube.com/@CppCon" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 600; color: var(--text2); padding: 4px 8px;">📺 CppCon Channel ↗</a>
+        </div>
+      </div>
+
+      <!-- CMU DB -->
+      <div class="card" style="border-top: 3.5px solid #4f46e5; margin: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+          <div>
+            <h4 style="margin: 0; font-size: 16px; color: var(--text);">CMU Database Group</h4>
+            <span style="font-size: 12px; color: var(--text3); font-family: var(--mono);">@CMUDatabaseGroup • English</span>
+          </div>
+          <span class="pill pill-purple">Paging &amp; Storage</span>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text2); line-height: 1.5; margin-bottom: 0.75rem;">
+          Prof. Andy Pavlo's CMU 15-445/645. Buffer pool management (LRU-K, Clock, ARC), in-memory B+ trees, and vectorized engines directly relevant to KV-cache paging.
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://www.youtube.com/@CMUDatabaseGroup" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 700; color: #4f46e5; background: rgba(79,70,229,0.1); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(79,70,229,0.3);">▶ CMU 15-445 Lectures ↗</a>
+          <a href="https://www.youtube.com/@CMUDatabaseGroup" target="_blank" rel="noopener" style="font-size: 12px; font-weight: 600; color: var(--text2); padding: 4px 8px;">📺 Channel ↗</a>
+        </div>
+      </div>
+
     </div>
   </div>
 

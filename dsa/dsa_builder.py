@@ -370,10 +370,9 @@ n <= 10^9      ->  O(log n) or O(1) only"""),
   - Love Babbar (CodeHelp) - clear structural breakdowns & Hindi explanations
   - Padho with Pratyush - deep systems intuition, cache/concurrency & advanced DSA
   - NeetCode (neetcode.io) - concise visual problem walkthroughs & clean code
-  - Specialized channels: Abdul Bari (algorithms), WilliamFiset (graphs), Errichto (range trees)
+  - Specialized channels: Abdul Bari (algorithms), WilliamFiset (graphs), Errichto (range trees), Martin Thompson (lock-free), CMU DB (paging)
 
-Direct 1-click clickable YouTube hyperlinks for all 35 tutorials are embedded
-directly in both the 'DayPlan' and 'ResourcePlan' sheets."""),
+See the dedicated 'YouTubeChannels' sheet tab in this workbook for direct 1-click links to master playlists and channel URLs."""),
 ]
 
 r = 4
@@ -4132,6 +4131,156 @@ ws_rp["U1"] = (f"RULE: {len(RESOURCES)} tutorials in {DAYS} days = the cap. "
 ws_rp["U1"].font = fnt(bold=True, sz=10, color=RED_D)
 print(f"[OK] ResourcePlan: {len(RESOURCES)} tutorials")
 
+# --- SHEET: YouTubeChannels (Master YouTube Creator & Playlists Directory) ------
+ws_ch = wb.create_sheet("YouTubeChannels")
+ws_ch.sheet_view.showGridLines = False
+
+YTC_H = [
+    "Creator / Channel",
+    "Platform Handle",
+    "Pedagogy & Language",
+    "Domain Specialization",
+    "Strategist Recommendation (Why Watch)",
+    "Flagship Master Series & Playlists",
+    "Master Playlist Link (1-Click)",
+    "Channel Link (1-Click)",
+    "Curriculum Alignment (Weeks)"
+]
+YTC_W = [26, 20, 26, 38, 52, 44, 28, 24, 24]
+write_header(ws_ch, YTC_H, YTC_W, freeze="B2", bg=NAVY)
+
+YOUTUBE_CHANNELS_DATA = [
+    (
+        "Striver (take U forward)",
+        "@takeUforward",
+        "Systematic & Template-Driven (Hinglish / English)",
+        "A2Z DSA Course, SDE Sheet, Trees, Graphs, DP, Disjoint Set, Binary Search on Answers",
+        "Primary interview baseline. Watch complete playlists for new topics (Trees, Graphs, DP) to master edge cases and standard optimal templates.",
+        "A2Z DSA Course, SDE Sheet, Graph Series (54 vids), DP Series (56 vids), Binary Trees",
+        "https://www.youtube.com/playlist?list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz",
+        "https://www.youtube.com/@takeUforward",
+        "Weeks 1 - 18 (Core to Advanced DSA)"
+    ),
+    (
+        "Aditya Verma",
+        "@TheAdityaVerma",
+        "Intuitive Mental Models (Hindi)",
+        "Dynamic Programming (Knapsack, LCS, MCM), Sliding Window, Monotonic Stack, Heaps / Top-K",
+        "The undisputed master for DP recurrence intuition and sliding window. Watch whenever stuck on state transitions or identification.",
+        "DP Playlist (50+ vids), Sliding Window (16 vids), Stack & Monotonic Stack, Heap Playlist",
+        "https://www.youtube.com/playlist?list=PL_z_8CaSLPWekqh3KpdC9045s07upF834",
+        "https://www.youtube.com/@TheAdityaVerma",
+        "Weeks 2, 3, 4, 5, 11 - 14 (DP & Window)"
+    ),
+    (
+        "Padho with Pratyush",
+        "@padhowithpratyush",
+        "Systems-Level & Low-Level Depth (Hinglish)",
+        "Systems DSA: LRU/ARC Buffer Pools, Lock-Free Ring Buffers, HNSW Vector Indexing, DAG Compiler Scheduling, Interval DP",
+        "Crucial for AI Infra & Systems tracks. Bridges competitive DSA with kernel/storage engineering, cache hierarchies, and vector search internals.",
+        "Advanced DSA Series, Dynamic Programming & Recursion, Systems Concurrency & Cache Internals",
+        "https://www.youtube.com/@padhowithpratyush",
+        "https://www.youtube.com/@padhowithpratyush",
+        "Weeks 6, 15 - 18, 19 - 24 (Systems & AI Infra)"
+    ),
+    (
+        "Love Babbar (CodeHelp)",
+        "@CodeHelp",
+        "Visual & Energetic C++ (Hindi)",
+        "Complete C++ DSA Course, Recursion & Backtracking, Linked Lists, Trees, Graph Traversals",
+        "Exceptional C++ memory layout diagrams and clean implementations. Ideal for building rock-solid C++ pointer, tree, and recursion fundamentals.",
+        "Complete C++ DSA Course (140+ videos), Recursion Series, Graph Theory Series",
+        "https://www.youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA",
+        "https://www.youtube.com/@CodeHelp",
+        "Weeks 1 - 12 (C++ Foundation & Classic DSA)"
+    ),
+    (
+        "NeetCode",
+        "@NeetCode",
+        "Concise Visual Walkthroughs (English)",
+        "NeetCode 150, Blind 75, LeetCode Problem Walkthroughs, System Design, Algorithm Visualizations",
+        "The gold standard for rapid daily problem review (5-15 min). Watch after 20 min of struggling to verify optimal time/space complexity invariants.",
+        "NeetCode 150 Walkthroughs, Blind 75, DP Playlist, Advanced Graphs",
+        "https://www.youtube.com/playlist?list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf",
+        "https://www.youtube.com/@NeetCode",
+        "Weeks 1 - 24 (Daily Verification & Diagnostics)"
+    ),
+    (
+        "Abdul Bari",
+        "@abdul_bari",
+        "Academic Chalkboard Rigor (English)",
+        "Analysis of Algorithms, Dynamic Programming proofs, Divide & Conquer, Greedy, Shortest Paths (Dijkstra, Bellman-Ford)",
+        "Essential for mathematical rigor and recurrence relations. If an interviewer asks to prove optimality or asymptotic bounds, Bari gives the proof.",
+        "Algorithms (Design & Analysis) Complete Course, Dynamic Programming Series, Graph Algorithms",
+        "https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O",
+        "https://www.youtube.com/@abdul_bari",
+        "Weeks 1, 5, 10 - 12 (Algorithm Proofs & DP)"
+    ),
+    (
+        "WilliamFiset",
+        "@WilliamFiset-videos",
+        "Animated Visual Slide Decks (English)",
+        "Graph Theory, Segment Trees, Fenwick Trees, Tarjan's SCC & Bridges, Dinic's Max Flow, Eulerian Paths",
+        "The best visualizer for advanced graph and tree algorithms. Invaluable for internalizing residual graphs, flow networks, and range trees.",
+        "Graph Theory Series (Complete), Data Structures Series, Network Flow / Dinic's Algorithm",
+        "https://www.youtube.com/playlist?list=PLDV1Zeh2NRsDGO4--qE8yH72HFL1Km93P",
+        "https://www.youtube.com/@WilliamFiset-videos",
+        "Weeks 9, 10, 15 - 18 (Range Trees & Flow)"
+    ),
+    (
+        "Errichto (Kamil Debowski)",
+        "@Errichto",
+        "Competitive Programming Master (English)",
+        "Bitwise Operations, Bitmask DP, Segment Trees with Lazy Propagation, Two Pointers vs DP, Fast Modulo Math",
+        "World-class competitive programming speed techniques. Watch during Week 7 (Bitwise) and Week 13 (Bitmask DP) for hardware-level bit tricks.",
+        "Competitive Programming Tutorials, Dynamic Programming Series, Bitwise Operations Playlist",
+        "https://www.youtube.com/playlist?list=PLl0KD3g-oDOHpWRyyGBUJ9jmul0lUODS5",
+        "https://www.youtube.com/@Errichto",
+        "Weeks 7, 13, 15 (Bitmask DP & Range Trees)"
+    ),
+    (
+        "Martin Thompson / CppCon",
+        "@CppCon",
+        "Silicon & Hardware Sympathy (English)",
+        "Lock-Free SPSC Ring Buffers, Cache Locality, False Sharing, Atomic Memory Fences, Low-Latency C++",
+        "Mandatory for NVIDIA, Tenstorrent, Cerebras, and AI Infra interviews. Explains lock-free queues, cache alignment, and GPU work dispatching.",
+        "CppCon Back to Basics: Concurrency, Mechanical Sympathy, Cache-Conscious Data Structures",
+        "https://www.youtube.com/@CppCon",
+        "https://www.youtube.com/@CppCon",
+        "Weeks 19 - 24 (Silicon Concurrency & AI Infra)"
+    ),
+    (
+        "CMU Database Group (Prof. Andy Pavlo)",
+        "@CMUDatabaseGroup",
+        "Systems Architecture & Storage (English)",
+        "Buffer Pool Replacement (LRU, ARC, Clock), B+ Trees, Concurrent Hash Tables, Vectorized Query Execution",
+        "Provides the production architecture behind paging and caching. Directly maps to LLM KV-cache paging (vLLM) and GPU memory hierarchies.",
+        "CMU 15-445/645 Database Systems, Storage Engine Internals, Buffer Pool Policies",
+        "https://www.youtube.com/@CMUDatabaseGroup",
+        "https://www.youtube.com/@CMUDatabaseGroup",
+        "Weeks 6, 19 - 24 (Paging & Buffer Systems)"
+    )
+]
+
+for idx, item in enumerate(YOUTUBE_CHANNELS_DATA, start=2):
+    c_name, c_handle, c_ped, c_spec, c_rec, c_flag, c_plist, c_churl, c_align = item
+    bg = "F8FAFC" if idx % 2 == 0 else WHITE
+    put(ws_ch, idx, 1, c_name, bold=True, bg=bg, sz=10)
+    put(ws_ch, idx, 2, c_handle, color="64748B", bg=bg, sz=9)
+    put(ws_ch, idx, 3, c_ped, bg=bg, sz=9)
+    put(ws_ch, idx, 4, c_spec, bg=bg, sz=9)
+    put(ws_ch, idx, 5, c_rec, bg=bg, sz=9)
+    put(ws_ch, idx, 6, c_flag, bg=bg, sz=9)
+    put(ws_ch, idx, 7, f'=HYPERLINK("{c_plist}", "▶ Master Playlist ↗")', align=CTR, bg=bg)
+    ws_ch.cell(idx, 7).font = fnt(color=GREEN_D, underline="single", bold=True, sz=9)
+    put(ws_ch, idx, 8, f'=HYPERLINK("{c_churl}", "📺 Visit Channel ↗")', align=CTR, bg=bg)
+    ws_ch.cell(idx, 8).font = fnt(color=BLUE, underline="single", sz=9)
+    put(ws_ch, idx, 9, c_align, align=CTR, bg=bg, color="475569", sz=9)
+    ws_ch.row_dimensions[idx].height = 36
+
+ws_ch.auto_filter.ref = f"A1:I{len(YOUTUBE_CHANNELS_DATA)+1}"
+print(f"[OK] YouTubeChannels: {len(YOUTUBE_CHANNELS_DATA)} creator guides built")
+
 # --- SHEET: ProgressionCurve --------------------------------------------------
 ws_prog = wb.create_sheet("ProgressionCurve")
 ws_prog.sheet_view.showGridLines = False
@@ -4478,6 +4627,34 @@ ws_dash.conditional_formatting.add("E4:E15",
     ColorScaleRule(start_type="min", start_color=GREEN_D,
                    end_type="max",   end_color=RED_D))
 
+# Link to Master YouTube Directory in Dashboard
+ws_dash.merge_cells("D17:E17")
+c17 = ws_dash["D17"]
+c17.value = "MASTER YOUTUBE DIRECTORY"
+c17.font = fnt(bold=True, sz=10, color=WHITE)
+c17.fill = fill(NAVY)
+c17.alignment = Alignment(vertical="center", horizontal="left")
+c17.border = BORDER_H
+ws_dash.row_dimensions[17].height = 24
+
+ws_dash.merge_cells("D18:E18")
+c18 = ws_dash["D18"]
+c18.value = '=HYPERLINK("#\'YouTubeChannels\'!A1", "📺 Open Master YouTube Directory (10 Creators) ↗")'
+c18.font = fnt(bold=True, sz=9, color=GREEN_D, underline="single")
+c18.fill = fill(LIGHT)
+c18.alignment = CTR
+c18.border = BORDER
+ws_dash.row_dimensions[18].height = 24
+
+ws_dash.merge_cells("D19:E19")
+c19 = ws_dash["D19"]
+c19.value = "Striver • Aditya Verma • Pratyush • Babbar • NeetCode"
+c19.font = fnt(sz=8, color="64748B", italic=True)
+c19.fill = fill(WHITE)
+c19.alignment = CTR
+c19.border = BORDER
+ws_dash.row_dimensions[19].height = 20
+
 # Quick-start guide column G
 GUIDE_LINES = [
     ("QUICK-START DAILY PROTOCOL", True),
@@ -4488,6 +4665,7 @@ GUIDE_LINES = [
     ("5. Log every failure in FailureLog with a category + one preventive rule.", False),
     ("6. Sunday: fill WeeklyAssessment. Let the data steer the next week.", False),
     ("7. Diagnostics on Days 28/56/84/98. Unlabelled. Timed. No hints. Real measurements.", False),
+    ("8. Master YouTube Directory: Check 'YouTubeChannels' sheet for flagship playlists.", False),
     ("", False),
     ("SIGNS THE PLAN IS WORKING", True),
     ("[OK] Time-to-pattern dropping at each diagnostic", False),
@@ -4525,7 +4703,7 @@ print("[OK] Dashboard sheet built")
 # Final sheet order:
 # Dashboard | README | DayPlan | PatternLibrary | PatternCards |
 # ProblemDB | FailureLog | ReviewQueue | WeeklyAssessment |
-# MockInterviews | ResourcePlan | ProgressionCurve | BlindProblemPool
+# MockInterviews | ResourcePlan | YouTubeChannels | ProgressionCurve | BlindProblemPool
 
 # --- UNIVERSAL FONT NORMALIZATION (Strict Arial across all cells) -------------
 print("[...] Normalizing all workbook cell fonts to Arial...")
@@ -4549,6 +4727,13 @@ for sheet in wb.worksheets:
 wb.save(OUT)
 print(f"\n{'='*60}")
 print(f"[SUCCESS] {OUT} saved successfully")
+import shutil, os
+if os.path.exists("../package.json"):
+    shutil.copyfile(OUT, "../DSA_AI_Infra_Training.xlsx")
+    print(f"[SYNC] Copied {OUT} -> ../DSA_AI_Infra_Training.xlsx")
+elif os.path.exists("dsa"):
+    shutil.copyfile(OUT, "dsa/DSA_AI_Infra_Training.xlsx")
+    print(f"[SYNC] Copied {OUT} -> dsa/DSA_AI_Infra_Training.xlsx")
 print(f"{'='*60}")
 print(f"Sheets : {', '.join(ws.title for ws in wb.worksheets)}")
 print(f"Days   : {DAYS}")
