@@ -34,12 +34,14 @@ def get_nav_html(active_page):
         ("failures.html", "💥 Failure Log"),
         ("mocks.html", "🎯 Mocks & Diags"),
         ("resources.html", "📺 Resources"),
-        ("rules.html", "📜 System Rules")
+        ("rules.html", "📜 System Rules"),
+        ("assess.html", "🧭 Day 0 Assessment")
     ]
     links = []
     for href, label in nav_items:
         cls = "nav-tab active" if href == active_page else "nav-tab"
-        links.append(f'<a href="{href}" class="{cls}">{label}</a>')
+        extra_style = ' style="color:var(--nv-green);border-color:rgba(118,185,0,0.35);"' if href == "assess.html" and href != active_page else ''
+        links.append(f'<a href="{href}" class="{cls}"{extra_style}>{label}</a>')
     links.append('<a href="../index.html" class="nav-tab" style="color: #c084fc; border: 1px solid rgba(192,132,252,0.35); background: rgba(168,85,247,0.08); margin-left: auto; font-weight: 700;">🤖 AI Infra Roadmap ↗</a>')
     return "\n      ".join(links)
 
@@ -297,6 +299,91 @@ def generate_index_html(data):
           <div class="card-subtitle">AVG TIME-TO-PATTERN</div>
           <div style="font-size: 2rem; font-weight: 800; font-family: var(--font-mono);" id="kpi-ttp">-- min</div>
           <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Target: &lt;5 min (Certified Specialist: &lt;3 min)</div>
+        </div>
+      </div>
+
+      <!-- Assessment Banner (JS-toggled) -->
+      <div id="assessment-banner" style="display:none;background:rgba(118,185,0,0.07);border:1px solid rgba(118,185,0,0.25);border-radius:10px;padding:0.75rem 1.25rem;margin-bottom:1rem;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:1.1rem;">🧭</span><div><div style="font-size:0.8rem;font-weight:800;color:var(--nv-green);letter-spacing:0.06em;">DAY 0 ASSESSMENT COMPLETE</div><div style="font-size:0.82rem;color:var(--text-secondary);" id="banner-assess-text">Recommended start: Week 1 &middot; Score: 0/45</div></div></div>
+        <a href="assess.html" style="font-size:0.78rem;font-weight:700;color:var(--nv-green);background:rgba(118,185,0,0.12);border:1px solid rgba(118,185,0,0.3);padding:4px 12px;border-radius:6px;text-decoration:none;">Retake ↗</a>
+      </div>
+      <div id="no-assessment-banner" style="background:rgba(245,158,11,0.07);border:1px dashed rgba(245,158,11,0.3);border-radius:10px;padding:0.65rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+        <span style="font-size:0.82rem;color:var(--amber-accent);">🧭 <strong>Haven't taken the Day 0 Assessment yet?</strong> Find your optimal starting week and skip what you already know.</span>
+        <a href="assess.html" style="font-size:0.78rem;font-weight:800;color:#000;background:linear-gradient(135deg,#f59e0b,#d97706);padding:5px 14px;border-radius:6px;text-decoration:none;white-space:nowrap;">Take Assessment &rarr;</a>
+      </div>
+      <!-- ══════════════════════════════════════════════════════════ -->
+      <!-- ADAPTIVE WEEKLY ENGINE                                    -->
+      <!-- ══════════════════════════════════════════════════════════ -->
+      <div class="card" style="margin-bottom:1.5rem;border-color:rgba(56,189,248,0.3);">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.25rem;">
+          <div>
+            <div class="card-subtitle" style="color:var(--cyan-accent);">⚙️ ADAPTIVE WEEKLY ENGINE</div>
+            <div class="card-title" style="font-size:1rem;font-weight:800;">Weekly Check-In → Next Week Recommendation</div>
+          </div>
+          <button id="awe-toggle-history" style="font-size:0.75rem;font-weight:700;background:transparent;border:1px solid var(--border-subtle);color:var(--text-muted);padding:4px 12px;border-radius:6px;cursor:pointer;" title="View past check-ins">📋 History</button>
+        </div>
+
+        <!-- Status display -->
+        <div id="awe-status-display" style="display:none;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.25rem;border-left-width:3px;border-left-style:solid;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.4rem;">
+            <span id="awe-status-icon" style="font-size:1.5rem;">⚡</span>
+            <div>
+              <div id="awe-status-badge" style="font-size:0.7rem;font-weight:900;letter-spacing:0.1em;">STATUS</div>
+              <div id="awe-status-title" style="font-size:1rem;font-weight:800;">—</div>
+            </div>
+          </div>
+          <div id="awe-status-action" style="font-size:0.85rem;line-height:1.6;"></div>
+        </div>
+
+        <!-- Check-in form -->
+        <form id="awe-form" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.85rem;align-items:end;">
+          <div>
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);margin-bottom:0.35rem;text-transform:uppercase;letter-spacing:0.06em;">Week Completed</div>
+            <select id="awe-week" class="form-control">
+              <option value="">— Select Week —</option>
+              <!-- filled by JS -->
+            </select>
+          </div>
+          <div>
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);margin-bottom:0.35rem;text-transform:uppercase;letter-spacing:0.06em;">Problems Solved Independently</div>
+            <select id="awe-indep" class="form-control">
+              <option value="0">0 problems</option>
+              <option value="1">1–3 problems</option>
+              <option value="2">4–7 problems</option>
+              <option value="3">8–10 problems</option>
+              <option value="4">11–14 problems</option>
+            </select>
+          </div>
+          <div>
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);margin-bottom:0.35rem;text-transform:uppercase;letter-spacing:0.06em;">Mocks Completed This Week</div>
+            <select id="awe-mocks" class="form-control">
+              <option value="0">0 mocks</option>
+              <option value="1">1 mock</option>
+              <option value="2">2+ mocks</option>
+            </select>
+          </div>
+          <div>
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);margin-bottom:0.35rem;text-transform:uppercase;letter-spacing:0.06em;">Primary Failure Code</div>
+            <select id="awe-fcode" class="form-control">
+              <option value="none">No recurring failure</option>
+              <option value="pattern">F1/F2 — Pattern identification</option>
+              <option value="derive">F3 — Can't derive recurrence</option>
+              <option value="ds">F4 — Wrong data structure</option>
+              <option value="complexity">F5 — Wrong complexity / TLE</option>
+              <option value="impl">F6/F7/F8 — Implementation bugs</option>
+              <option value="recall">F9 — Forgot previously learned</option>
+              <option value="pressure">F10 — Timer panic / freeze</option>
+            </select>
+          </div>
+          <div style="display:flex;align-items:flex-end;">
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">⚡ Compute</button>
+          </div>
+        </form>
+
+        <!-- History panel (hidden by default) -->
+        <div id="awe-history-panel" style="display:none;margin-top:1.25rem;border-top:1px solid var(--border-subtle);padding-top:1rem;">
+          <div style="font-size:0.75rem;font-weight:800;color:var(--text-muted);letter-spacing:0.06em;margin-bottom:0.75rem;">PAST CHECK-INS (last 6 weeks)</div>
+          <div id="awe-history-list" style="display:flex;flex-direction:column;gap:0.5rem;"></div>
         </div>
       </div>
 

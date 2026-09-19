@@ -288,7 +288,7 @@ To re-calendar the 168-day journey to start from today:
 1. Open [`dsa_builder.py`](file:///home/dhruv/Desktop/dsa_new/dsa_builder.py).
 2. Edit line 21 to set your start date:
    ```python
-   START = date(2026, 9, 18)
+   START = date(2026, 10, 1)
    ```
 3. Run the generator in your terminal:
    ```bash

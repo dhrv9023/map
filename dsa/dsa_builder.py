@@ -20,7 +20,7 @@ import urllib.parse
 from tutorial_data import TUTORIAL_CREATORS, get_tutorial_resource
 
 # --- CONFIG --------------------------------------------------------------------
-START    = date.today()
+START    = date(2026, 10, 1)
 OUT      = "DSA_AI_Infra_Training.xlsx"
 WEEKS    = 24
 DAYS     = WEEKS * 7   # 168 days (24 weeks)

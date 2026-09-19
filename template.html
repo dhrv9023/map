@@ -1362,8 +1362,52 @@
     </div>
   </div>
 
+  <!-- PHASE 2 CAPSTONE DELIVERABLE CARD -->
+  <div style="background:linear-gradient(135deg,rgba(13,148,136,0.1) 0%,rgba(99,102,241,0.1) 100%);border:2px solid var(--teal);border-radius:14px;padding:1.75rem 2rem;margin:1.5rem 0 1rem;">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.75rem;flex-wrap:wrap;">
+      <span class="tag tag-teal" style="margin:0;font-size:11px;font-weight:900;letter-spacing:0.08em;">🏆 PHASE 2 CAPSTONE DELIVERABLE</span>
+      <span class="tag tag-accent" style="margin:0;font-size:11px;">GITHUB-READY PORTFOLIO ARTIFACT</span>
+    </div>
+    <h3 style="margin:0 0 0.6rem;font-size:19px;font-weight:900;color:var(--text);">Build: mini-sklearn — A Transformer Training Library from Scratch</h3>
+    <p style="font-size:14px;color:var(--text2);line-height:1.65;margin-bottom:1rem;">
+      Phase 2 ends when you can prove deep learning is <em>not a black box to you</em>. The capstone is a public GitHub repo that functions as a self-contained ML training library — demonstrating you understand the full stack from math to deployment.
+    </p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0.85rem;">
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+        <div style="font-size:12px;font-weight:800;color:var(--teal);margin-bottom:0.4rem;">COMPONENT 1 — Core Engine</div>
+        <ul style="font-size:13px;color:var(--text2);line-height:1.7;padding-left:1.1rem;margin:0;">
+          <li>Autograd engine (like micrograd) — forward + backward pass in pure NumPy</li>
+          <li>Manual implementation of: Linear, LayerNorm, MultiHeadAttention, MLP</li>
+          <li>Custom training loop with AdamW + cosine LR scheduler</li>
+          <li>Target: train a 10M-param mini-GPT on WikiText-2 to convergence</li>
+        </ul>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+        <div style="font-size:12px;font-weight:800;color:var(--accent);margin-bottom:0.4rem;">COMPONENT 2 — MLOps Layer</div>
+        <ul style="font-size:13px;color:var(--text2);line-height:1.7;padding-left:1.1rem;margin:0;">
+          <li>MLflow experiment tracking: log loss curves, LR, batch size, grad norms</li>
+          <li>W&B sweep: compare 4 configs (LR × batch size grid)</li>
+          <li>Model registry: best checkpoint auto-registered on validation loss plateau</li>
+          <li>Dockerized training job with reproducible <code>requirements.txt</code> + seed</li>
+        </ul>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+        <div style="font-size:12px;font-weight:800;color:var(--coral);margin-bottom:0.4rem;">COMPONENT 3 — Deployment Proof</div>
+        <ul style="font-size:13px;color:var(--text2);line-height:1.7;padding-left:1.1rem;margin:0;">
+          <li>FastAPI inference endpoint serving trained model with <code>/generate</code> route</li>
+          <li>Deployed on HuggingFace Spaces (free GPU tier) — public live demo URL</li>
+          <li>README: architecture diagram, loss curve screenshot, latency benchmarks</li>
+          <li>Blog post: "I built GPT from scratch — here's what I learned"</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:1rem;padding:0.65rem 1rem;background:var(--alert-warn-bg);border-radius:8px;border-left:3px solid var(--amber);font-size:13px;color:var(--text2);">
+      <strong style="color:var(--amber);">Gate check:</strong> If a recruiter clicks your GitHub and sees this repo, they should immediately understand that you built DL from first principles. That is what separates a Phase 2 pass from a Phase 2 tutorial-watcher.
+    </div>
+  </div>
+
   <div class="alert alert-success">
-    <strong>Phase 2 completion check:</strong> Can you build a transformer from scratch? Can you fine-tune a model with HuggingFace? Can you track experiments properly? Can you explain attention mechanism clearly? If yes → Phase 3.
+    <strong>Phase 2 completion check:</strong> Can you build a transformer from scratch? Can you fine-tune a model with HuggingFace? Can you track experiments properly? Can you explain attention mechanism clearly? <strong>And can you point to a live GitHub repo proving it?</strong> If yes → Phase 3.
   </div>
 </div>
 
@@ -1532,8 +1576,53 @@
     </div>
   </div>
 
+  <!-- PHASE 3 CAPSTONE DELIVERABLE CARD -->
+  <div style="background:linear-gradient(135deg,rgba(124,58,237,0.1) 0%,rgba(59,130,246,0.1) 100%);border:2px solid var(--accent);border-radius:14px;padding:1.75rem 2rem;margin:1.5rem 0 1rem;">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.75rem;flex-wrap:wrap;">
+      <span class="tag tag-accent" style="margin:0;font-size:11px;font-weight:900;letter-spacing:0.08em;">🏆 PHASE 3 CAPSTONE DELIVERABLE</span>
+      <span class="tag tag-coral" style="margin:0;font-size:11px;">PRODUCTION DEPLOYED — PUBLIC URL REQUIRED</span>
+    </div>
+    <h3 style="margin:0 0 0.6rem;font-size:19px;font-weight:900;color:var(--text);">Build: Production RAG Chatbot — Deployed on HuggingFace Spaces</h3>
+    <p style="font-size:14px;color:var(--text2);line-height:1.65;margin-bottom:1rem;">
+      Phase 3's capstone is your <strong>flagship portfolio piece</strong>. It must be deployed publicly, evaluated rigorously, and documented well enough that an NVIDIA recruiter can open it, ask it a question, and see real latency numbers. "I built a RAG" is table stakes — your version must be production-graded.
+    </p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0.85rem;">
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+        <div style="font-size:12px;font-weight:800;color:var(--accent);margin-bottom:0.4rem;">STACK (non-negotiable)</div>
+        <ul style="font-size:13px;color:var(--text2);line-height:1.7;padding-left:1.1rem;margin:0;">
+          <li>Qdrant (self-hosted) + BGE-M3 embeddings + BM25 sparse hybrid search</li>
+          <li>Cohere reranker or cross-encoder for final retrieval step</li>
+          <li>Llama 3 served with vLLM (quantized to fit free GPU)</li>
+          <li>LangGraph for multi-turn memory + ReAct agent tool calling</li>
+          <li>FastAPI backend + Gradio or Streamlit frontend on HF Spaces</li>
+        </ul>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+        <div style="font-size:12px;font-weight:800;color:var(--pink);margin-bottom:0.4rem;">EVAL HARNESS (the differentiator)</div>
+        <ul style="font-size:13px;color:var(--text2);line-height:1.7;padding-left:1.1rem;margin:0;">
+          <li>RAGAS metrics: faithfulness ≥ 0.80, context_recall ≥ 0.75, answer_relevancy ≥ 0.80</li>
+          <li>50-question golden test set with human-written reference answers</li>
+          <li>Latency benchmark: TTFT &lt; 800ms at p95, tokens/sec on your GPU</li>
+          <li>Cost per query documented — model inference + embedding + reranking</li>
+        </ul>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+        <div style="font-size:12px;font-weight:800;color:var(--teal);margin-bottom:0.4rem;">DOCUMENTATION (proof of engineering depth)</div>
+        <ul style="font-size:13px;color:var(--text2);line-height:1.7;padding-left:1.1rem;margin:0;">
+          <li>Architecture diagram with latency annotations at each hop</li>
+          <li>README: chunking strategy rationale + why hybrid &gt; dense-only on your dataset</li>
+          <li>Blog post: "How I evaluated my RAG system — what RAGAS told me and what it didn't"</li>
+          <li>GitHub README includes live demo link and benchmark table</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:1rem;padding:0.65rem 1rem;background:var(--alert-warn-bg);border-radius:8px;border-left:3px solid var(--amber);font-size:13px;color:var(--text2);">
+      <strong style="color:var(--amber);">Gate check:</strong> Phase 3 is only complete when you have a <strong>live URL</strong>, RAGAS scores above threshold, and a blog post published. No URL = not done.
+    </div>
+  </div>
+
   <div class="alert alert-success">
-    <strong>Phase 3 completion check:</strong> Can you build production RAG with evals? Can you fine-tune an LLM and measure improvement? Can you build a reliable agent? Can you serve a model with vLLM? If yes → Phase 4 (the AI Infra specialization).
+    <strong>Phase 3 completion check:</strong> Can you build production RAG with evals? Can you fine-tune an LLM and measure improvement? Can you build a reliable agent? Can you serve a model with vLLM? <strong>Is it deployed at a public URL with documented latency benchmarks?</strong> If yes → Phase 4 (the AI Infra specialization).
   </div>
 </div>
 
@@ -1817,8 +1906,53 @@
     </div>
   </div>
 
+  <!-- PHASE 4 CAPSTONE DELIVERABLE CARD -->
+  <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08) 0%,rgba(234,88,12,0.08) 100%);border:2px solid var(--coral);border-radius:14px;padding:1.75rem 2rem;margin:1.5rem 0 1rem;">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.75rem;flex-wrap:wrap;">
+      <span class="tag tag-coral" style="margin:0;font-size:11px;font-weight:900;letter-spacing:0.08em;">🏆 PHASE 4 CAPSTONE DELIVERABLE</span>
+      <span style="background:rgba(220,38,38,0.15);color:var(--red);border:1px solid rgba(220,38,38,0.3);padding:2px 8px;border-radius:999px;font-size:11px;font-weight:800;">NVIDIA INTERVIEW PROOF — CUDA KERNEL REQUIRED</span>
+    </div>
+    <h3 style="margin:0 0 0.6rem;font-size:19px;font-weight:900;color:var(--text);">Build: Flash Attention CUDA Kernel — Benchmark vs cuBLAS + Production Serving Stack</h3>
+    <p style="font-size:14px;color:var(--text2);line-height:1.65;margin-bottom:1rem;">
+      Phase 4 ends when you can write GPU code from scratch, profile it against a reference baseline, and explain every performance decision. This is the single project that signals "I am not a framework consumer, I am an AI infrastructure engineer."
+    </p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0.85rem;">
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+        <div style="font-size:12px;font-weight:800;color:var(--red);margin-bottom:0.4rem;">KERNEL ENGINEERING (CUDA C++)</div>
+        <ul style="font-size:13px;color:var(--text2);line-height:1.7;padding-left:1.1rem;margin:0;">
+          <li>Naive CUDA matmul (global memory only) — establish baseline TFLOPS</li>
+          <li>Tiled shared-memory matmul with configurable tile size — analyze bank conflicts</li>
+          <li>Flash Attention forward pass (tiled, IO-aware) — no N×N materialization</li>
+          <li>Profile with Nsight Compute: arithmetic intensity, memory bandwidth utilization, SM occupancy</li>
+          <li>Roofline chart showing each kernel vs hardware ceiling (A100/H100/RTX 4090)</li>
+        </ul>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+        <div style="font-size:12px;font-weight:800;color:var(--coral);margin-bottom:0.4rem;">PRODUCTION SERVING STACK</div>
+        <ul style="font-size:13px;color:var(--text2);line-height:1.7;padding-left:1.1rem;margin:0;">
+          <li>vLLM + custom kernel replacement via PyTorch C++ extension (<code>torch.utils.cpp_extension</code>)</li>
+          <li>ONNX → TensorRT pipeline: FP32 → FP16 → INT8, measure quality degradation vs latency gain</li>
+          <li>K8s deployment: KEDA autoscale on GPU queue depth metric from Prometheus</li>
+          <li>Grafana dashboard: TTFT p50/p95/p99, tokens/sec, GPU utilization, VRAM headroom</li>
+        </ul>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem;">
+        <div style="font-size:12px;font-weight:800;color:var(--amber);margin-bottom:0.4rem;">DOCUMENTATION ARTIFACTS</div>
+        <ul style="font-size:13px;color:var(--text2);line-height:1.7;padding-left:1.1rem;margin:0;">
+          <li>GitHub README: roofline chart, benchmark table, Nsight screenshots</li>
+          <li>Technical blog: "Implementing Flash Attention from scratch — what the paper doesn't tell you"</li>
+          <li>Short video walkthrough (5 min, screen record) explaining kernel design choices</li>
+          <li>Open-source the kernel — contribute tiled matmul to CUDA Mode community repo</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:1rem;padding:0.65rem 1rem;background:rgba(220,38,38,0.06);border-radius:8px;border-left:3px solid var(--red);font-size:13px;color:var(--text2);">
+      <strong style="color:var(--red);">NVIDIA Interview Gate:</strong> In a real NVIDIA systems interview, you will be asked to describe a kernel you wrote, justify your tile size, and explain why your design is memory-bandwidth-bound or compute-bound. This project is the <strong>only</strong> way to answer those questions with confidence instead of memorized theory.
+    </div>
+  </div>
+
   <div class="alert alert-success">
-    <strong>Phase 4 completion check:</strong> Can you profile GPU workloads? Can you set up distributed training? Can you optimize inference latency by 3x+? Can you deploy on K8s with autoscaling? Can you build observability for AI systems? If yes → you're AI Infra ready.
+    <strong>Phase 4 completion check:</strong> Can you profile GPU workloads? Can you set up distributed training? Can you optimize inference latency by 3x+? Can you deploy on K8s with autoscaling? Can you build observability for AI systems? <strong>Can you point to a CUDA kernel you wrote and explain its roofline chart?</strong> If yes → you're AI Infra ready.
   </div>
 </div>
 
@@ -1954,6 +2088,100 @@
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+
+  <!-- NVIDIA CRITICAL PATH — 120-DAY COMPRESSED VIEW -->
+  <div style="margin:2.5rem 0 2rem;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.75rem;flex-wrap:wrap;">
+      <span class="tag tag-coral" style="margin:0;font-size:11.5px;font-weight:900;">⚡ CRITICAL PATH</span>
+      <span class="tag tag-red" style="margin:0;font-size:11.5px;">NVIDIA SCREENING STANDARD</span>
+      <span class="tag tag-accent" style="margin:0;font-size:11.5px;">120 DAYS OR LESS</span>
+    </div>
+    <h2 style="margin:0 0 0.5rem;border:none;padding:0;">NVIDIA Critical Path — Top 30 Topics in 120 Days</h2>
+    <p style="font-size:15px;color:var(--text2);line-height:1.7;max-width:960px;margin-bottom:1.25rem;">
+      The full 168-day plan is the <em>complete</em> path. But if you have 120 days or less, or are actively interviewing at NVIDIA soon, this compressed critical path shows exactly which 30 topics to attack first — ordered by NVIDIA interview frequency. Everything else in the 168-day plan is still valuable, but these 30 are <strong>non-negotiable minimums</strong> to pass an NVIDIA DSA + systems screen.
+    </p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem;margin-bottom:1.25rem;">
+      <!-- Phase A -->
+      <div style="background:linear-gradient(135deg,rgba(220,38,38,0.08),rgba(234,88,12,0.08));border:1.5px solid rgba(220,38,38,0.3);border-radius:12px;padding:1.25rem;">
+        <div style="font-size:11px;font-weight:900;color:var(--red);letter-spacing:0.1em;margin-bottom:0.5rem;">PHASE A · DAYS 1–30 · LINEAR CORE</div>
+        <div style="font-size:12.5px;color:var(--text2);line-height:1.8;">
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--red);font-weight:700;min-width:22px;">T1</span> Complexity calibration (n → TC mapping)</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--red);font-weight:700;min-width:22px;">T2</span> Two pointers + sliding window invariants</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--red);font-weight:700;min-width:22px;">T3</span> Binary search on answer (not just index)</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--red);font-weight:700;min-width:22px;">T4</span> Prefix sum + difference arrays</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--red);font-weight:700;min-width:22px;">T5</span> Monotonic stack + deque (next greater element)</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--red);font-weight:700;min-width:22px;">T6</span> Heap: top-K, K-th largest, median stream</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--red);font-weight:700;min-width:22px;">T7</span> LRU Cache / LFU Cache design (HashMap + DLL)</div>
+          <div style="display:flex;gap:6px;align-items:baseline;"><span style="color:var(--red);font-weight:700;min-width:22px;">T8</span> Bit manipulation: masks, popcount, XOR tricks</div>
+        </div>
+      </div>
+      <!-- Phase B -->
+      <div style="background:linear-gradient(135deg,rgba(79,70,229,0.08),rgba(99,102,241,0.08));border:1.5px solid rgba(79,70,229,0.3);border-radius:12px;padding:1.25rem;">
+        <div style="font-size:11px;font-weight:900;color:var(--accent);letter-spacing:0.1em;margin-bottom:0.5rem;">PHASE B · DAYS 31–70 · HIERARCHICAL</div>
+        <div style="font-size:12.5px;color:var(--text2);line-height:1.8;">
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--accent);font-weight:700;min-width:22px;">T9</span> Tree recursion contract (post-order DP)</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--accent);font-weight:700;min-width:22px;">T10</span> BFS level-order + multi-source BFS</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--accent);font-weight:700;min-width:22px;">T11</span> Graph DFS: cycle detection, connected components</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--accent);font-weight:700;min-width:22px;">T12</span> Topological sort (Kahn's + DFS) — <em>DAG scheduling</em></div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--accent);font-weight:700;min-width:22px;">T13</span> Disjoint Set Union — cluster/rank partitioning</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--accent);font-weight:700;min-width:22px;">T14</span> Dijkstra + Bellman-Ford (GPU task-graph routing)</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--accent);font-weight:700;min-width:22px;">T15</span> 1D DP: LIS, knapsack variants, coin change</div>
+          <div style="display:flex;gap:6px;align-items:baseline;"><span style="color:var(--accent);font-weight:700;min-width:22px;">T16</span> 2-sequence DP: LCS, edit distance</div>
+        </div>
+      </div>
+      <!-- Phase C -->
+      <div style="background:linear-gradient(135deg,rgba(13,148,136,0.08),rgba(16,185,129,0.08));border:1.5px solid rgba(13,148,136,0.3);border-radius:12px;padding:1.25rem;">
+        <div style="font-size:11px;font-weight:900;color:var(--teal);letter-spacing:0.1em;margin-bottom:0.5rem;">PHASE C · DAYS 71–120 · SILICON-SPECIFIC</div>
+        <div style="font-size:12.5px;color:var(--text2);line-height:1.8;">
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--teal);font-weight:700;min-width:22px;">T17</span> Interval DP (matrix chain, burst balloons)</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--teal);font-weight:700;min-width:22px;">T18</span> Bitmask DP (TSP-style, NP-hard approximation)</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--teal);font-weight:700;min-width:22px;">T19</span> Segment tree (range sum/max with lazy propagation)</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--teal);font-weight:700;min-width:22px;">T20</span> Fenwick tree (BIT) — online frequency queries</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--teal);font-weight:700;min-width:22px;">T21</span> Blelloch parallel prefix scan (CUDA shared memory)</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--teal);font-weight:700;min-width:22px;">T22</span> Warp-level primitives: <code>__ballot_sync</code>, <code>__shfl_down_sync</code></div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--teal);font-weight:700;min-width:22px;">T23</span> SPSC/MPMC ring buffer — lock-free concurrency</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--teal);font-weight:700;min-width:22px;">T24</span> PagedAttention / KV-cache virtual paging</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--teal);font-weight:700;min-width:22px;">T25</span> HNSW graph construction + ANN search</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--teal);font-weight:700;min-width:22px;">T26</span> ML compiler DAG scheduling (topo + priority)</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--teal);font-weight:700;min-width:22px;">T27</span> Buddy allocator / slab allocator internals</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--teal);font-weight:700;min-width:22px;">T28</span> Count-Min Sketch + HyperLogLog (streaming queries)</div>
+          <div style="display:flex;gap:6px;align-items:baseline;margin-bottom:3px;"><span style="color:var(--teal);font-weight:700;min-width:22px;">T29</span> Tarjan's SCC + Bridges (distributed graph partitioning)</div>
+          <div style="display:flex;gap:6px;align-items:baseline;"><span style="color:var(--teal);font-weight:700;min-width:22px;">T30</span> KMP + Z-algorithm (BPE tokenizer internals)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Priority Matrix -->
+    <div class="tbl-wrap">
+      <table class="tbl" style="border:1px solid var(--border);border-radius:10px;overflow:hidden;">
+        <thead>
+          <tr>
+            <th style="width:12%;">Topic #</th>
+            <th style="width:28%;">Topic</th>
+            <th style="width:20%;">NVIDIA Interview Freq.</th>
+            <th style="width:20%;">DSA Cockpit Week</th>
+            <th style="width:20%;">Silicon Mapping</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>T12</strong></td><td>Topological Sort (Kahn's)</td><td><span class="pill pill-red">🔥 Critical</span></td><td>Week 9</td><td>PyTorch Inductor FX Graph scheduling</td></tr>
+          <tr><td><strong>T21</strong></td><td>Blelloch Parallel Scan</td><td><span class="pill pill-red">🔥 Critical</span></td><td>Week 20</td><td>CUDA shared-memory parallel reduction</td></tr>
+          <tr><td><strong>T22</strong></td><td>Warp Primitives</td><td><span class="pill pill-red">🔥 Critical</span></td><td>Week 20</td><td>warp ballot / shfl — no shared mem overhead</td></tr>
+          <tr><td><strong>T24</strong></td><td>PagedAttention / KV Cache</td><td><span class="pill pill-red">🔥 Critical</span></td><td>Week 19</td><td>vLLM HBM virtual memory paging</td></tr>
+          <tr><td><strong>T7</strong></td><td>LRU + LFU Cache Design</td><td><span class="pill pill-amber">⚡ High</span></td><td>Week 6</td><td>GPU L2 cache eviction policies (ARC, 2Q)</td></tr>
+          <tr><td><strong>T23</strong></td><td>SPSC Ring Buffer</td><td><span class="pill pill-amber">⚡ High</span></td><td>Week 20</td><td>CUDA command ring, NCCL IPC queues</td></tr>
+          <tr><td><strong>T26</strong></td><td>ML Compiler DAG Scheduling</td><td><span class="pill pill-amber">⚡ High</span></td><td>Week 22</td><td>TVM / TensorRT kernel fusion waves</td></tr>
+          <tr><td><strong>T13</strong></td><td>Disjoint Set Union</td><td><span class="pill pill-teal">▲ Medium-High</span></td><td>Week 9</td><td>NVLink / InfiniBand topology partitioning</td></tr>
+          <tr><td><strong>T25</strong></td><td>HNSW Graph</td><td><span class="pill pill-teal">▲ Medium-High</span></td><td>Week 21</td><td>Faiss / cuVS billion-scale ANN retrieval</td></tr>
+          <tr><td><strong>T27</strong></td><td>Buddy / Slab Allocator</td><td><span class="pill pill-teal">▲ Medium-High</span></td><td>Week 22</td><td>CUDA memory pool (cudaMallocAsync)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:0.75rem;padding:0.65rem 1rem;background:var(--alert-info-bg);border-radius:8px;border-left:3px solid var(--accent);font-size:13px;color:var(--text2);">
+      <strong>Usage:</strong> If you are 90+ days from your target interview, follow the full 168-day plan. If you have &lt;120 days, skip Weeks 13–16 range queries and cover them only if time allows after T30 is solid.
     </div>
   </div>
 
@@ -3268,6 +3496,153 @@
 
   <div class="alert alert-warn">
     <strong>Timeline:</strong> Start applying when you have 2-3 solid projects + can solve Leetcode Mediums consistently. Don't wait for perfection. Interview experience itself is the best prep. Apply to 5-10 companies/week.
+  </div>
+
+  <!-- MOCK INTERVIEW RAMP SCHEDULE -->
+  <h2 style="margin-top:2.5rem;">Mock Interview Pressure Ramp — Mandatory Calendar</h2>
+  <div class="alert alert-danger">
+    <strong>The #1 roadmap gap:</strong> Most people start mocks too late (Week 20+) and freeze in real interviews due to timer shock. The ramp below is <strong>non-negotiable</strong>. Starting at Day 49 is not optional — it is a system rule, same as the no-restart policy.
+  </div>
+
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>DSA Cockpit Day</th>
+          <th>Mock Type</th>
+          <th>Time Limit</th>
+          <th>Difficulty</th>
+          <th>Where</th>
+          <th>What to measure</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="pill pill-green">Day 49</span></td>
+          <td><strong>First Mock Ever</strong> — untimed warm-up</td>
+          <td>No timer</td>
+          <td>Easy × 2</td>
+          <td>Pramp (peer)</td>
+          <td>Communication quality, explaining thought process aloud</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-green">Day 56</span></td>
+          <td>Timed warm-up (after Diagnostic 2)</td>
+          <td>60 min / problem</td>
+          <td>Easy + Medium</td>
+          <td>Pramp or self-recorded</td>
+          <td>Can you articulate approach before coding?</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-teal">Day 63</span></td>
+          <td>Peer mock #2</td>
+          <td>45 min</td>
+          <td>Medium</td>
+          <td>Pramp</td>
+          <td>Time-to-first-correct-approach (&lt; 8 min target)</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-teal">Day 70</span></td>
+          <td>FAANG-format self-mock</td>
+          <td>45 min hard stop</td>
+          <td>Medium</td>
+          <td>Self (screen record, review after)</td>
+          <td>Did panic/freeze occur? Edge cases caught?</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-teal">Day 77</span></td>
+          <td>Peer mock #3</td>
+          <td>45 min hard stop</td>
+          <td>Medium</td>
+          <td>Pramp or peer</td>
+          <td>Explanation quality (can interviewer follow your reasoning?)</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-amber">Day 84</span></td>
+          <td>Diagnostic 3 reflection mock</td>
+          <td>45 min hard stop</td>
+          <td>Medium-Hard</td>
+          <td>Self (LeetCode contest format)</td>
+          <td>Identify top-3 failure codes (F1-F12) from this session</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-amber">Day 91</span></td>
+          <td>Peer mock (systems-flavored)</td>
+          <td>45 min hard stop</td>
+          <td>Medium: concurrency/cache problem</td>
+          <td>Pramp or interviewing.io (free tier)</td>
+          <td>First attempt at hardware-flavored problem (LRU, thread pool)</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-amber">Day 98</span></td>
+          <td><strong>Mid-Program Full Mock</strong> (Diagnostic 4)</td>
+          <td>45 min × 2 problems</td>
+          <td>Medium + Medium-Hard</td>
+          <td>interviewing.io (real engineer interviewer)</td>
+          <td>Feedback from a real engineer — write full debrief</td>
+        </tr>
+        <tr style="background:rgba(220,38,38,0.04);">
+          <td><span class="pill pill-red">Day 112</span></td>
+          <td><strong>Weekly mocks begin (every 7 days)</strong></td>
+          <td>45 min hard stop</td>
+          <td>Medium-Hard alternating Hard</td>
+          <td>interviewing.io / Pramp rotation</td>
+          <td>Track pass-rate week-over-week. Target: ≥ 70% solve rate</td>
+        </tr>
+        <tr style="background:rgba(220,38,38,0.04);">
+          <td><span class="pill pill-red">Day 126</span></td>
+          <td>NVIDIA-style DSA mock (silicon problem)</td>
+          <td>45 min hard stop</td>
+          <td>Medium-Hard: concurrency/cache/graph</td>
+          <td>Self-designed from NVIDIA interview reports (Glassdoor)</td>
+          <td>Can you frame algorithmic solution in GPU context when asked?</td>
+        </tr>
+        <tr style="background:rgba(220,38,38,0.04);">
+          <td><span class="pill pill-red">Day 140–168</span></td>
+          <td><strong>Peak Mode</strong> — 2 mocks/week minimum</td>
+          <td>45 min hard stop each</td>
+          <td>Hard + systems design</td>
+          <td>interviewing.io (paid session) + self</td>
+          <td>Solve rate ≥ 80%, TTFA &lt; 6 min, zero freeze episodes</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:1.25rem 0;">
+    <div class="card card-accent">
+      <div class="card-title">📊 Ramp KPIs to Track</div>
+      <div class="card-body">
+        <ul class="styled">
+          <li><strong>TTFA</strong> (Time To First Approach): aim &lt; 8 min for Medium by Day 84</li>
+          <li><strong>Solve Rate</strong>: % of mocks where you submit a passing solution within time</li>
+          <li><strong>Freeze Episodes</strong>: count of blank-mind moments; should reach 0 by Day 126</li>
+          <li><strong>Explanation Score</strong>: ask your peer mock partner to rate clarity 1-5</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card card-teal">
+      <div class="card-title">🎯 The Rule of Pressure Escalation</div>
+      <div class="card-body">
+        <ul class="styled">
+          <li>Start untimed → add timer → hard stop → real interviewer. Never skip a stage.</li>
+          <li>If solve rate drops below 50% in any 2-week window → invoke Stuck Protocol and pause new content</li>
+          <li>Every mock session must end with: what went wrong, which F-code, exact drill for next 3 days</li>
+          <li>Never do a mock without reviewing it immediately after — replay recording if self-recorded</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card card-red">
+      <div class="card-title">⛔ Mock Anti-Patterns to Avoid</div>
+      <div class="card-body">
+        <ul class="styled">
+          <li>Skipping mocks for "one more week of prep" — this is a cope. Start Day 49.</li>
+          <li>Only doing Pramp (peer mocks) — add real-engineer mocks by Day 98</li>
+          <li>Treating a mock like Leetcode practice (no communication, silent coding)</li>
+          <li>Not tracking KPIs — if you can't measure it, you won't improve it</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <h2>Salary Negotiation — Don't Leave Money on the Table</h2>

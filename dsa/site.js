@@ -771,3 +771,139 @@
 
   window.addEventListener('DOMContentLoaded', init);
 })();
+
+/* ============================================================ */
+/* ADAPTIVE WEEKLY ENGINE + ASSESSMENT BANNER (Dashboard only)  */
+/* ============================================================ */
+(function () {
+  'use strict';
+  var AWE_KEY = 'DSA_WEEKLY_ENGINE_V1';
+  var ASSESS_KEY = 'DSA_ASSESSMENT_V1';
+
+  function computeStatus(indep, mocks, fcode, prevFcode) {
+    var criticalFail = (fcode === 'pattern' || fcode === 'derive');
+    var repeatedCritical = criticalFail && (prevFcode === 'pattern' || prevFcode === 'derive');
+    if (indep === 0 || repeatedCritical) {
+      return { key: 'STUCK', icon: '🚨', badge: 'STUCK PROTOCOL ACTIVATED',
+        title: 'Stop advancing — invoke the Stuck Protocol', color: '#ef4444', bg: 'rgba(239,68,68,0.07)',
+        action: '<strong>Do NOT proceed to next week\'s content.</strong> For the next 7 days:<br>1. Re-solve every problem from this week you couldn\'t do independently — blank editor, no hints.<br>2. Drill your F-code\'s specific exercise for 20 min/day.<br>3. Only proceed when you can solve any 3 problems from this week within target time.<br><span style="color:var(--amber-accent);font-size:0.82rem;">Remember: Stuck Protocol, not restart.</span>' };
+    }
+    if (indep >= 3 && mocks >= 1 && !criticalFail) {
+      return { key: 'ACCELERATE', icon: '🚀', badge: 'ACCELERATE',
+        title: 'You\'re ahead — push harder next week', color: '#76b900', bg: 'rgba(118,185,0,0.07)',
+        action: '<strong>Next week: Replace one Medium with one Hard problem per day.</strong><br>Skip scheduled buffer/review days — you earned them back.<br>If mocks ≥ 2 this week: add one extra timed mock coming week.<br><span style="color:var(--text-muted);font-size:0.82rem;">If solve rate drops next week, drop back to On Track automatically.</span>' };
+    }
+    if (indep >= 2) {
+      return { key: 'ON_TRACK', icon: '✅', badge: 'ON TRACK',
+        title: 'Solid week — continue as planned', color: '#38bdf8', bg: 'rgba(56,189,248,0.07)',
+        action: '<strong>Follow next week\'s plan exactly as written.</strong><br>' +
+          (mocks === 0 ? '⚠️ <strong>No mock this week</strong> — schedule one for the coming week.<br>' : '✓ Mock completed — good.<br>') +
+          (fcode !== 'none' ? 'Drill for <strong>' + fcode.toUpperCase() + '</strong>: 15 min targeted exercise/day.<br>' : 'No recurring failure — continue varied practice.<br>') +
+          '<span style="color:var(--text-muted);font-size:0.82rem;">Consistency beats acceleration. Stay the course.</span>' };
+    }
+    return { key: 'SLOW_DOWN', icon: '⚠️', badge: 'SLOW DOWN',
+      title: 'Below target — consolidate before advancing', color: '#f59e0b', bg: 'rgba(245,158,11,0.07)',
+      action: '<strong>Next week: Repeat the hardest pattern from this week before any new content.</strong><br>Add 1 extra review day: re-solve 3 most difficult problems timed.<br>' +
+        (fcode !== 'none' ? 'Dominant failure <strong>(' + fcode + ')</strong>: run its drill every single day.<br>' : '') +
+        '<span style="color:var(--amber-accent);font-size:0.82rem;">2nd consecutive Slow Down → activate Stuck Protocol next check-in.</span>' };
+  }
+
+  function showStatus(status) {
+    var disp = document.getElementById('awe-status-display');
+    if (!disp) return;
+    disp.style.display = 'block';
+    disp.style.background = status.bg;
+    disp.style.borderLeftColor = status.color;
+    document.getElementById('awe-status-icon').textContent = status.icon;
+    document.getElementById('awe-status-badge').textContent = status.badge;
+    document.getElementById('awe-status-badge').style.color = status.color;
+    document.getElementById('awe-status-title').textContent = status.title;
+    document.getElementById('awe-status-action').innerHTML = status.action;
+  }
+
+  function renderHistory(history) {
+    var list = document.getElementById('awe-history-list');
+    if (!list) return;
+    if (!history || history.length === 0) {
+      list.innerHTML = '<span style="font-size:0.82rem;color:var(--text-muted);">No check-ins yet. Complete your first week and log it above.</span>';
+      return;
+    }
+    var colors = { ACCELERATE: '#76b900', ON_TRACK: '#38bdf8', SLOW_DOWN: '#f59e0b', STUCK: '#ef4444' };
+    list.innerHTML = history.slice().reverse().map(function (h) {
+      var col = colors[h.status.key] || '#94a3b8';
+      var dt = new Date(h.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+      return '<div style="display:flex;align-items:center;gap:10px;background:var(--bg-secondary);border:1px solid var(--border-subtle);border-radius:8px;padding:0.55rem 0.9rem;">' +
+        '<span style="font-size:1rem;">' + h.status.icon + '</span><div style="flex:1;">' +
+        '<span style="font-size:0.8rem;font-weight:800;color:' + col + ';">' + h.status.badge + '</span>' +
+        '<span style="font-size:0.78rem;color:var(--text-muted);margin-left:8px;">Week ' + h.week + '</span></div>' +
+        '<span style="font-size:0.72rem;color:var(--text-muted);font-family:var(--font-mono);">' + dt + '</span></div>';
+    }).join('');
+  }
+
+  function initAdaptiveEngine() {
+    var form = document.getElementById('awe-form');
+    if (!form) return;
+    var history = [];
+    try { history = JSON.parse(localStorage.getItem(AWE_KEY)) || []; } catch (e) {}
+
+    var weekSel = document.getElementById('awe-week');
+    for (var w = 1; w <= 24; w++) {
+      var opt = document.createElement('option');
+      opt.value = w; opt.textContent = 'Week ' + w;
+      weekSel.appendChild(opt);
+    }
+    if (history.length > 0) {
+      var lw = history[history.length - 1].week;
+      if (lw < 24) weekSel.value = lw + 1;
+    } else { weekSel.value = 1; }
+
+    if (history.length > 0) showStatus(history[history.length - 1].status);
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var week  = parseInt(weekSel.value, 10);
+      var indep = parseInt(document.getElementById('awe-indep').value, 10);
+      var mocks = parseInt(document.getElementById('awe-mocks').value, 10);
+      var fcode = document.getElementById('awe-fcode').value;
+      var prevFcode = history.length > 0 ? history[history.length - 1].fcode : 'none';
+      if (!week) { weekSel.focus(); return; }
+      var status = computeStatus(indep, mocks, fcode, prevFcode);
+      var entry = { week: week, indep: indep, mocks: mocks, fcode: fcode, status: status, date: new Date().toISOString() };
+      var idx = -1;
+      for (var i = 0; i < history.length; i++) { if (history[i].week === week) { idx = i; break; } }
+      if (idx >= 0) history[idx] = entry; else history.push(entry);
+      if (history.length > 6) history = history.slice(-6);
+      try { localStorage.setItem(AWE_KEY, JSON.stringify(history)); } catch (e) {}
+      showStatus(status);
+      renderHistory(history);
+    });
+
+    document.getElementById('awe-toggle-history').addEventListener('click', function () {
+      var panel = document.getElementById('awe-history-panel');
+      var vis = panel.style.display !== 'none';
+      panel.style.display = vis ? 'none' : 'block';
+      this.textContent = vis ? '📋 History' : '📋 Hide';
+      if (!vis) renderHistory(history);
+    });
+  }
+
+  function initAssessmentBanner() {
+    var ab  = document.getElementById('assessment-banner');
+    var nab = document.getElementById('no-assessment-banner');
+    if (!ab || !nab) return;
+    try {
+      var result = JSON.parse(localStorage.getItem(ASSESS_KEY));
+      if (result && result.startWeek) {
+        ab.style.display = 'flex'; nab.style.display = 'none';
+        var el = document.getElementById('banner-assess-text');
+        if (el) el.textContent = 'Recommended start: Week ' + result.startWeek +
+          ' · Score: ' + result.totalScore + '/45 · ' + result.daysSaved + ' days saved';
+      } else { ab.style.display = 'none'; nab.style.display = 'flex'; }
+    } catch (e) { ab.style.display = 'none'; nab.style.display = 'flex'; }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    initAdaptiveEngine();
+    initAssessmentBanner();
+  });
+})();
