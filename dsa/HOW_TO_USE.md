@@ -302,21 +302,23 @@ To re-calendar the 168-day journey to start from today:
 
 The entire curriculum, dataset, and operating protocols are packaged into a modular, multi-page static website with **100% pre-rendered data parity**. You **never need to run a Python server**—simply double-click any HTML file in your browser:
 
-### 📄 Site Architecture (9 Dedicated Pages)
-1. 👉 **[`index.html`](file:///home/dhruv/Desktop/dsa_new/index.html)** : **Executive Dashboard & Mission Cockpit** (Today's mission, live Stuck Stopwatch, real-time readiness gauge).
+### 📄 Site Architecture (10 Dedicated Interactive Pages)
+1. 👉 **[`index.html`](file:///home/dhruv/Desktop/dsa_new/index.html)** : **Executive Dashboard & Mission Cockpit** (Today's mission, live Stuck Stopwatch, Emergency Stuck Triage guide, real-time readiness gauge).
 2. 👉 **[`plan.html`](file:///home/dhruv/Desktop/dsa_new/plan.html)** : **168-Day Roadmap Explorer** (Phases 1–4, Weeks 1–24, direct problem links, multi-facet filtering).
-3. 👉 **[`patterns.html`](file:///home/dhruv/Desktop/dsa_new/patterns.html)** : **42-Pattern Comprehensive Library** (Triggers, typical constraints, invariants, hardware relevance).
-4. 👉 **[`flashcards.html`](file:///home/dhruv/Desktop/dsa_new/flashcards.html)** : **30 Interactive 3D Flashcards** (Active recall testing with flip animations and failure trap warnings).
-5. 👉 **[`nvidia.html`](file:///home/dhruv/Desktop/dsa_new/nvidia.html)** : **NVIDIA Systems & CUDA Playbook** (The 7 Pillars, memory coalescing, 2:4 sparsity, response framework).
-6. 👉 **[`failures.html`](file:///home/dhruv/Desktop/dsa_new/failures.html)** : **Failure Log & SRS Review Queue** (F1–F12 root-cause logging, automated 3-day spaced repetition).
-7. 👉 **[`mocks.html`](file:///home/dhruv/Desktop/dsa_new/mocks.html)** : **24 Mock Interviews & Diagnostics Roadmap** (Full testing calendar with pass/fail criteria).
-8. 👉 **[`resources.html`](file:///home/dhruv/Desktop/dsa_new/resources.html)** : **35 Curated Video Tutorials with Direct YouTube Links** (Direct 1-click video links to top creators: **Striver**, **Padho with Pratyush**, **Aditya Verma**, **NeetCode**, **Love Babbar**, **Abdul Bari**, **WilliamFiset**, **Errichto** with instant creator filtering buttons).
-9. 👉 **[`rules.html`](file:///home/dhruv/Desktop/dsa_new/rules.html)** : **System Rules & Protocols** (Stuck Protocol, F-codes, auto-escalation gates).
+3. 👉 **[`revision.html`](file:///home/dhruv/Desktop/dsa_new/dsa/revision.html)** : **🔄 Day Revision Vault (Day-Gated Unlock System)** (Every day's comprehensive revision dossier is strictly locked until you complete that day on your Cockpit Dashboard. Unlocks theoretical invariants, assigned problems, curated video masterclasses, and an auto-saving personal notes journal).
+4. 👉 **[`patterns.html`](file:///home/dhruv/Desktop/dsa_new/dsa/patterns.html)** : **15 Core FAANG Patterns Checklist, 3-Minute Decision Matrix & 42-Pattern Comprehensive Library** (Track milestone checkboxes for Conceptual Clarity, 3 Solved, and Timed execution; quick trigger cue lookups; hardware relevance).
+5. 👉 **[`flashcards.html`](file:///home/dhruv/Desktop/dsa_new/dsa/flashcards.html)** : **30 Interactive 3D Flashcards** (Active recall testing with flip animations and failure trap warnings).
+6. 👉 **[`nvidia.html`](file:///home/dhruv/Desktop/dsa_new/dsa/nvidia.html)** : **NVIDIA Systems & CUDA Playbook** (The 7 Pillars, memory coalescing, 2:4 sparsity, response framework).
+7. 👉 **[`failures.html`](file:///home/dhruv/Desktop/dsa_new/dsa/failures.html)** : **Failure Log & SRS Review Queue** (F1–F12 root-cause logging, automated 3-day spaced repetition).
+8. 👉 **[`mocks.html`](file:///home/dhruv/Desktop/dsa_new/dsa/mocks.html)** : **24 Mock Interviews & Diagnostics Roadmap** (Full testing calendar with pass/fail criteria).
+9. 👉 **[`resources.html`](file:///home/dhruv/Desktop/dsa_new/dsa/resources.html)** : **35 Curated Video Tutorials with Direct YouTube Links** (Direct 1-click video links to top creators: **Striver**, **Padho with Pratyush**, **Aditya Verma**, **NeetCode**, **Love Babbar**, **Abdul Bari**, **WilliamFiset**, **Errichto** with instant creator filtering buttons).
+10. 👉 **[`rules.html`](file:///home/dhruv/Desktop/dsa_new/dsa/rules.html)** : **System Rules & Protocols** (Stuck Protocol, F-codes, auto-escalation gates).
 
 ### Key Features
 * **Zero Dependencies & Zero Server:** Runs 100% offline directly via the `file://` protocol.
-* **Pre-Rendered Static HTML:** All 168 days, 42 patterns, and tutorials are already baked into the HTML for instant loading and full text-searchability.
-* **Integrated YouTube Video Hub:** Every single tutorial topic across `resources.html`, `plan.html`, and `index.html` features direct 1-click video links to your favorite teachers (**Striver**, **Padho with Pratyush**, **Aditya Verma**, **NeetCode**, **Love Babbar**) plus quick creator filter buttons.
-* **Unified State:** All 9 pages share state via browser `localStorage`—completing a day on `plan.html` or `index.html` updates the metrics and streak across all pages instantly.
+* **Day-Gated Revision Vault:** Locked cards prevent skipping ahead while giving you a complete, organized repository of everything you studied on completed days.
+* **Emergency Stuck Protocol & Video Unblocking:** 4-phase step-by-step triage (0–15m Pen & Paper, 15–25m Pattern Match, 25–35m Visual Video Unblock with NeetCode/Pratyush, 35m+ Failure Logging).
+* **15 FAANG Patterns Mastery Checklist:** Persistent milestone tracking across the non-negotiable interview patterns.
+* **Unified State:** All 10 pages share state via browser `localStorage`—completing a day on `plan.html` or `index.html` updates metrics, unlocks the day's dossier in `revision.html`, and persists your notes across the entire cockpit.
 
 

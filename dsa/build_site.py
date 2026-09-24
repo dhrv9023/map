@@ -18,6 +18,9 @@ Pages generated:
 
 import json
 import html
+import os
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def escape(s):
     if s is None:
@@ -28,6 +31,7 @@ def get_nav_html(active_page):
     nav_items = [
         ("index.html", "🎛️ Dashboard"),
         ("plan.html", "🗓️ 168-Day Plan"),
+        ("revision.html", "🔄 Day Revision Vault"),
         ("patterns.html", "🧠 Pattern Library"),
         ("flashcards.html", "🃏 3D Flashcards"),
         ("nvidia.html", "🟢 NVIDIA Track"),
@@ -197,10 +201,11 @@ def generate_index_html(data):
             <h1 class="mission-title" id="hero-topic">{escape(d1['pattern'])}</h1>
             <div class="mission-topic" id="hero-objective">{escape(d1['objective'])}</div>
           </div>
-          <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
             <button class="btn btn-outline" id="btn-prev-mission" title="Inspect previous day">◀</button>
             <button class="btn btn-outline" id="btn-next-mission" title="Inspect next day">▶</button>
             <button class="btn btn-primary" id="btn-complete-today">✓ Mark Day Complete</button>
+            <a href="revision.html" id="hero-revision-link" class="btn btn-outline" style="display: none; border-color: rgba(16,185,129,0.5); background: rgba(16,185,129,0.12); color: var(--nv-green); text-decoration: none; font-weight: 700;">📖 Day 1 Vault Unlocked ↗</a>
           </div>
         </div>
 
@@ -273,6 +278,57 @@ def generate_index_html(data):
               <button class="btn btn-primary" id="timer-btn-start">▶ Start</button>
               <button class="btn btn-outline" id="timer-btn-pause">⏸ Pause</button>
               <button class="btn btn-outline" id="timer-btn-reset">🔄 Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- EMERGENCY STUCK TRIAGE & CREATOR VIDEO UNBLOCKING PROTOCOL -->
+        <div class="stuck-triage-container">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span class="stuck-phase-tag phase-tag-4">EMERGENCY PROTOCOL</span>
+              <strong style="color: #fff; font-size: 0.95rem;">🚨 Stuck on Today's Problem? Follow the 4-Phase Unblocking Rule</strong>
+            </div>
+            <a href="rules.html#stuck-protocol" style="font-size: 0.78rem; color: var(--cyan-accent); text-decoration: none;">System Rules &rarr;</a>
+          </div>
+          
+          <div class="stuck-step-grid">
+            <div class="stuck-step-card">
+              <span class="stuck-phase-tag phase-tag-1">PHASE 1 (0–15m) • PEN & PAPER</span>
+              <div style="font-size: 0.8rem; color: var(--text-primary); font-weight: 700; margin-bottom: 0.35rem;">Zero-Code Mental Model</div>
+              <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.45; margin: 0;">
+                Close code editor. Draw array state on paper for <strong>n = 3</strong>. Annotate constraints to deduce target Big-O. Test monotonicity: does shifting left/right predictably improve the answer?
+              </p>
+            </div>
+
+            <div class="stuck-step-card">
+              <span class="stuck-phase-tag phase-tag-2">PHASE 2 (15–25m) • PATTERN MATCH</span>
+              <div style="font-size: 0.8rem; color: var(--text-primary); font-weight: 700; margin-bottom: 0.35rem;">Trigger Cue Diagnostic</div>
+              <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 0.5rem;">
+                Check the 15 FAANG triggers: Subarray sum &rarr; Prefix+Hash. Contiguous window &rarr; Sliding Window. Nearest greater &rarr; Monotonic Stack. Min of max &rarr; BS on Answer.
+              </p>
+              <a href="patterns.html#decision-matrix" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none;">⚡ Open Pattern Matrix</a>
+            </div>
+
+            <div class="stuck-step-card">
+              <span class="stuck-phase-tag phase-tag-3">PHASE 3 (25–35m) • VIDEO UNBLOCK</span>
+              <div style="font-size: 0.8rem; color: var(--text-primary); font-weight: 700; margin-bottom: 0.35rem;">Watch Visual Intuition Only</div>
+              <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 0.4rem;">
+                <strong>Do NOT read full code!</strong> Watch the first 3–5 minutes of <strong style="color: #fff;">NeetCode</strong> (visual diagram) or <strong style="color: #fff;">Padho with Pratyush</strong> (pattern archetype). <strong>Pause before code is shown</strong> and implement yourself.
+              </p>
+              <div style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
+                <a href="resources.html" class="btn btn-outline" style="font-size: 0.7rem; padding: 0.15rem 0.45rem;">📺 NeetCode ↗</a>
+                <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" class="btn btn-outline" style="font-size: 0.7rem; padding: 0.15rem 0.45rem; color: #c084fc; border-color: rgba(168,85,247,0.4);">📺 Pratyush Patterns ↗</a>
+              </div>
+            </div>
+
+            <div class="stuck-step-card">
+              <span class="stuck-phase-tag phase-tag-4">PHASE 4 (35m+) • LOG FAILURE</span>
+              <div style="font-size: 0.8rem; color: var(--text-primary); font-weight: 700; margin-bottom: 0.35rem;">Spaced Repetition Recovery</div>
+              <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 0.5rem;">
+                If solution code was consulted, mark <strong>Solved Independently: No</strong>. Log dominant failure (F1–F12) in Failure Log. System automatically schedules a blank-editor retry in 3 days.
+              </p>
+              <a href="failures.html" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #ef4444; border-color: rgba(239,68,68,0.4);">💥 Log Failure Code</a>
             </div>
           </div>
         </div>
@@ -459,9 +515,14 @@ def generate_plan_html(data):
               </span>
             </td>
             <td>
-              <button class="btn btn-outline btn-complete-row" style="padding: 0.2rem 0.6rem; font-size: 0.75rem;" data-day="{d['day']}">
-                Complete
-              </button>
+              <div style="display: flex; gap: 0.35rem; align-items: center;">
+                <button class="btn btn-outline btn-complete-row" style="padding: 0.2rem 0.6rem; font-size: 0.75rem;" data-day="{d['day']}">
+                  Complete
+                </button>
+                <a href="revision.html#day-{d['day']}" class="btn btn-outline btn-vault-row" data-day="{d['day']}" style="display: none; padding: 0.2rem 0.5rem; font-size: 0.72rem; text-decoration: none; border-color: rgba(16,185,129,0.4); color: var(--nv-green); background: rgba(16,185,129,0.1); font-weight: 700;" title="Open Revision Dossier">
+                  📖 Vault ↗
+                </a>
+              </div>
             </td>
           </tr>
         """)
@@ -516,7 +577,235 @@ def generate_plan_html(data):
     """
     return page_shell("168-Day Curriculum Plan", "plan.html", content)
 
+FAANG_15_PATTERNS = [
+    {
+        "id": "two_pointers",
+        "num": 1,
+        "name": "Two Pointers (Opposite Ends)",
+        "signal": "Sorted array, pair/triplet sum, container with most water, palindrome",
+        "invariant": "Monotonic search space; eliminate one extreme index per step without missing optimal pairs",
+        "creator": "Padho with Pratyush / Striver",
+        "url": "https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2",
+        "lc": "LC 11, LC 15, LC 167",
+        "tag": "Arrays"
+    },
+    {
+        "id": "fast_slow",
+        "num": 2,
+        "name": "Fast & Slow Pointers (Floyd's)",
+        "signal": "Linked list cycle, list midpoint, circular array loop, find duplicate number",
+        "invariant": "Gap between pointers closes by 1 each step in a cycle; Phase 2 finds cycle entry",
+        "creator": "NeetCode / Striver",
+        "url": "https://www.youtube.com/playlist?list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf",
+        "lc": "LC 141, LC 142, LC 287, LC 876",
+        "tag": "Pointers"
+    },
+    {
+        "id": "sliding_window",
+        "num": 3,
+        "name": "Sliding Window (Dynamic & Fixed)",
+        "signal": "Contiguous subarray/substring satisfying condition (max sum, K distinct, min window)",
+        "invariant": "Expand right until constraint breaks; contract left until invariant restored; O(N) total passes",
+        "creator": "Aditya Verma / Padho with Pratyush",
+        "url": "https://www.youtube.com/playlist?list=PL_z_8CaSLPWeM8BDJmIYDaoQ5zuwyxnfj",
+        "lc": "LC 3, LC 76, LC 209, LC 424",
+        "tag": "Arrays"
+    },
+    {
+        "id": "prefix_sum",
+        "num": 4,
+        "name": "Prefix Sums & Frequency Hashing",
+        "signal": "Subarray sum equals K, count of matching subarrays, 2D range sum query",
+        "invariant": "P[j] - P[i] = K <=> P[i] = P[j] - K; replaces nested O(N^2) range sums with O(1) hash lookup",
+        "creator": "Padho with Pratyush / Striver",
+        "url": "https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2",
+        "lc": "LC 560, LC 523, LC 525, LC 304",
+        "tag": "Hashing"
+    },
+    {
+        "id": "monotonic_stack",
+        "num": 5,
+        "name": "Monotonic Stack & Queue",
+        "signal": "Next greater / smaller element, daily temperatures, stock span, largest rectangle in histogram",
+        "invariant": "Stack holds monotonic candidates; incoming elements pop all elements they dominate",
+        "creator": "Aditya Verma / NeetCode",
+        "url": "https://www.youtube.com/playlist?list=PL_z_8CaSLPWdeOezg68SKkeQI4-Se_jNH",
+        "lc": "LC 739, LC 84, LC 496, LC 85",
+        "tag": "Stacks"
+    },
+    {
+        "id": "bs_answers",
+        "num": 6,
+        "name": "Binary Search on Answer Space",
+        "signal": "Min capacity, max speed, allocation with monotonic feasibility check P(x)",
+        "invariant": "Feasibility space is monotonic (FFFFTTTT or TTTTFFFF); binary search on [lo, hi] answer range",
+        "creator": "Striver / Padho with Pratyush",
+        "url": "https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2",
+        "lc": "LC 875, LC 1011, LC 410, LC 1482",
+        "tag": "Binary Search"
+    },
+    {
+        "id": "heaps_topk",
+        "num": 7,
+        "name": "Top-K Elements & Priority Queues",
+        "signal": "Kth largest element, merge K sorted lists, running median, task scheduler",
+        "invariant": "Maintain min-heap of size K for K-largest; heap root is always the Kth cutoff boundary",
+        "creator": "Aditya Verma / NeetCode",
+        "url": "https://www.youtube.com/playlist?list=PL_z_8CaSLPWdtY9hTUbi51K13PXQ724hr",
+        "lc": "LC 215, LC 295, LC 23, LC 347",
+        "tag": "Heaps"
+    },
+    {
+        "id": "intervals",
+        "num": 8,
+        "name": "Merge Intervals & Line Sweep",
+        "signal": "Overlapping intervals, meeting rooms, non-overlapping intervals, timeline sweep",
+        "invariant": "Sort by start time; interval i overlaps with current merged if start_i <= end_merged",
+        "creator": "NeetCode / Padho with Pratyush",
+        "url": "https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2",
+        "lc": "LC 56, LC 57, LC 252, LC 435",
+        "tag": "Intervals"
+    },
+    {
+        "id": "tree_traversals",
+        "num": 9,
+        "name": "Tree Traversals (BFS & DFS)",
+        "signal": "Level order, max depth, LCA, path sum, diameter, serialize/deserialize tree",
+        "invariant": "Post-order aggregates child answers upward; Pre-order propagates path state downward",
+        "creator": "Striver / Love Babbar",
+        "url": "https://www.youtube.com/playlist?list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk",
+        "lc": "LC 102, LC 236, LC 124, LC 105",
+        "tag": "Trees"
+    },
+    {
+        "id": "topological_sort",
+        "num": 10,
+        "name": "Graph Topologies & Topological Sort",
+        "signal": "Course prerequisites, compiler dependency DAGs, alien dictionary",
+        "invariant": "Queue zero-in-degree nodes; decrement neighbor dependencies; cycle detected if visited < V",
+        "creator": "Striver / WilliamFiset",
+        "url": "https://www.youtube.com/playlist?list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn",
+        "lc": "LC 207, LC 210, LC 269, LC 310",
+        "tag": "Graphs"
+    },
+    {
+        "id": "dsu",
+        "num": 11,
+        "name": "Disjoint Set Union (DSU / Union-Find)",
+        "signal": "Connected components, redundant connection, Kruskal's MST, dynamic connectivity",
+        "invariant": "Path compression + union by rank guarantees near O(1) amortized alpha(N) operations",
+        "creator": "Striver / WilliamFiset",
+        "url": "https://www.youtube.com/playlist?list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn",
+        "lc": "LC 684, LC 547, LC 128, LC 721",
+        "tag": "Graphs"
+    },
+    {
+        "id": "dijkstra",
+        "num": 12,
+        "name": "Shortest Paths (Dijkstra)",
+        "signal": "Network latency, cheapest flights, min effort path in non-negative weighted graph",
+        "invariant": "Greedy extraction of minimum tentative distance node ensures optimal shortest path",
+        "creator": "Abdul Bari / Striver",
+        "url": "https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O",
+        "lc": "LC 743, LC 1631, LC 787, LC 1514",
+        "tag": "Graphs"
+    },
+    {
+        "id": "backtracking",
+        "num": 13,
+        "name": "Backtracking & Decision Trees",
+        "signal": "Subsets, permutations, combinations, word search, N-Queens, Sudoku solver",
+        "invariant": "Choose candidate -> Recurse to next depth -> Unchoose (revert state); prune dead branches early",
+        "creator": "NeetCode / Love Babbar",
+        "url": "https://www.youtube.com/playlist?list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf",
+        "lc": "LC 78, LC 46, LC 39, LC 51",
+        "tag": "Recursion"
+    },
+    {
+        "id": "dp_subproblems",
+        "num": 14,
+        "name": "Dynamic Programming (Knapsack & Subsequences)",
+        "signal": "0/1 Knapsack, coin change, longest common subsequence (LCS), edit distance, MCM",
+        "invariant": "Optimal substructure + overlapping subproblems; state transitions memoized in table/array",
+        "creator": "Aditya Verma (DP GOAT) / Striver",
+        "url": "https://www.youtube.com/playlist?list=PL_z_8CaSLPWekqh3KpdC9045s07upF834",
+        "lc": "LC 322, LC 1143, LC 300, LC 72",
+        "tag": "DP"
+    },
+    {
+        "id": "bitmask_dp",
+        "num": 15,
+        "name": "Bit Manipulation & Bitmask DP",
+        "signal": "N <= 20 elements, traveling salesperson, assignment problem, subset representation",
+        "invariant": "Integer bit string (1 << i) encodes active set; bitwise operators do O(1) state transitions",
+        "creator": "Errichto / Padho with Pratyush",
+        "url": "https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2",
+        "lc": "LC 136, LC 191, LC 847, LC 1879",
+        "tag": "Bitwise"
+    }
+]
+
 def generate_patterns_html(data):
+    # 1. FAANG 15 Patterns Checklist Items
+    faang_items_html = []
+    for p in FAANG_15_PATTERNS:
+        faang_items_html.append(f"""
+          <div class="faang-pat-item" id="faang-item-{p['id']}">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#{p['num']} {escape(p['name'])}</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">{escape(p['tag'])}</span>
+              </div>
+              <a href="{p['url']}" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> {escape(p['signal'])}
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: {escape(p['lc'])}
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_{p['id']}">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_{p['id']}">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_{p['id']}">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        """)
+
+    # 2. Decision Matrix Table Rows
+    matrix_rows_html = []
+    for p in FAANG_15_PATTERNS:
+        matrix_rows_html.append(f"""
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#{p['num']}</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">{escape(p['name'])}</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">{escape(p['lc'])}</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>{escape(p['signal'])}</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              {escape(p['invariant'])}
+            </td>
+            <td>
+              <a href="{p['url']}" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ {escape(p['creator'])} ↗
+              </a>
+            </td>
+          </tr>
+        """)
+
+    # 3. 42 Pattern Library Cards
     cards_html = []
     for p in data["patterns"]:
         cards_html.append(f"""
@@ -541,6 +830,68 @@ def generate_patterns_html(data):
         """)
 
     content = f"""
+      <!-- SECTION 1: 15 Core FAANG Patterns Mastery Checklist -->
+      <div class="faang-checklist-wrapper" id="faang-checklist-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <h2 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin: 0;">🎯 15 Core FAANG Algorithmic Patterns Checklist</h2>
+              <span class="brand-badge" style="background: rgba(118,185,0,0.15); color: var(--nv-green);">INTERVIEW READINESS TRACKER</span>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0.25rem 0 0 0;">
+              Master these 15 pattern archetypes. Check off your progress across Conceptual Clarity, 3 Practice Solves, and Timed (&lt;15m) Independent execution. Saved automatically.
+            </p>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--nv-green); font-family: var(--font-mono);" id="faang-prog-text">
+              0 / 45 Milestones Complete (0%)
+            </div>
+          </div>
+        </div>
+        <div style="width: 100%; background: rgba(255,255,255,0.05); height: 6px; border-radius: 9999px; margin: 0.75rem 0; overflow: hidden;">
+          <div id="faang-prog-fill" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--nv-green), var(--cyan-accent)); transition: width 0.3s ease;"></div>
+        </div>
+        <div class="faang-pat-grid">
+          {''.join(faang_items_html)}
+        </div>
+      </div>
+
+      <!-- SECTION 2: 3-Minute Pattern Decision Matrix -->
+      <div class="card" id="decision-matrix" style="margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <h3 style="font-size: 1.2rem; font-weight: 800; color: #fff; margin: 0;">⚡ 3-Minute Pattern Decision Matrix: Problem Signal &rarr; Pattern</h3>
+              <span class="pill pill-purple" style="font-size: 0.7rem;">Time-to-Pattern Optimizer</span>
+            </div>
+            <p style="font-size: 0.84rem; color: var(--text-secondary); margin: 0.25rem 0 0 0;">
+              In technical interviews, you must recognize the underlying pattern within 180 seconds. Match your problem's input clues and constraints directly to the invariant:
+            </p>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width: 40px;">#</th>
+                <th style="width: 180px;">Pattern</th>
+                <th style="width: 260px;">Problem Signal &amp; Keywords</th>
+                <th>Underlying Invariant Rule</th>
+                <th style="width: 160px;">Creator Masterclass</th>
+              </tr>
+            </thead>
+            <tbody>
+              {''.join(matrix_rows_html)}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SECTION 3: All 42 Algorithmic Patterns Master Library -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: #fff; margin: 0;">📚 42 Algorithmic Patterns Master Library</h3>
+        <span style="font-size: 0.85rem; color: var(--text-secondary);">Silicon &amp; Hardware Annotated</span>
+      </div>
       <div class="search-filter-bar">
         <input type="text" class="search-input" id="pattern-search" placeholder="Search all 42 patterns by cue, constraint, name, or hardware relevance...">
         <span style="font-size: 0.85rem; color: var(--text-secondary); margin-left: auto;">Total 42 Patterns</span>
@@ -549,7 +900,216 @@ def generate_patterns_html(data):
         {''.join(cards_html)}
       </div>
     """
-    return page_shell("Pattern Library", "patterns.html", content)
+    return page_shell("Pattern Library & Decision Matrix", "patterns.html", content)
+
+def generate_revision_html(data):
+    days = data["days"]
+    cards_html = []
+    
+    for d in days:
+        day_num = d["day"]
+        pat = d["pattern"]
+        concept = d["concept"]
+        phase = d["phase"]
+        week = d["week"]
+        obj = d["objective"]
+        p1 = d["p1"]
+        d1 = d["d1"]
+        t1 = d["t1"]
+        p1_url = d["p1Url"]
+        p2 = d["p2"]
+        d2 = d["d2"]
+        t2 = d["t2"]
+        p2_url = d["p2Url"]
+        rev = d.get("review", "-")
+        recon = d.get("reconstruction", "")
+        assess = d.get("assessment", "")
+        infra = d.get("infra", "")
+        skill = d.get("skill", "")
+        tut_topic = d.get("tutTopic", "")
+        tut_res = d.get("tutResource")
+        
+        # Build creator video links for this day
+        tut_html = ""
+        if tut_res:
+            p_chan = tut_res.get("primaryChannel", "Striver")
+            p_url = tut_res.get("primaryUrl", "#")
+            tut_html += f"""
+              <div style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                <span style="font-size: 0.72rem; color: var(--amber-accent); font-weight: 700; text-transform: uppercase;">Primary Masterclass:</span>
+                <a href="{p_url}" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 4px; padding: 0.25rem 0.65rem; font-size: 0.75rem; text-decoration: none;">
+                  ▶ {escape(p_chan)}: {escape(tut_topic)} ↗
+                </a>
+              </div>
+              <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+            """
+            for ch in tut_res.get("channels", []):
+                tut_html += f"""<a href="{ch['url']}" target="_blank" class="btn btn-outline" style="font-size: 0.7rem; padding: 0.18rem 0.5rem; text-decoration: none;">📺 {escape(ch['name'])} ↗</a>"""
+            tut_html += "</div>"
+        else:
+            tut_html = f"""<span style="font-size: 0.8rem; color: var(--text-muted);">Self-directed problem set &amp; pattern consolidation. Explore <a href="resources.html" style="color: var(--cyan-accent); text-decoration: none;">Resources Directory</a> for supplementary tutorials.</span>"""
+
+        cards_html.append(f"""
+        <div class="revision-card locked" id="rev-card-{day_num}" data-day="{day_num}" data-search="{escape(f'day {day_num} {pat} {concept} {p1} {p2} week {week} phase {phase}'.lower())}">
+          <a id="day-{day_num}" class="rev-anchor" style="position: relative; top: -75px; display: block; visibility: hidden;"></a>
+          <!-- LOCKED VIEW -->
+          <div class="revision-locked-view">
+            <div class="rev-lock-icon">🔒</div>
+            <h4 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin: 0;">Day {day_num}: {escape(pat)} (Locked)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); max-width: 520px; margin: 0;">
+              This revision dossier unlocks automatically once you complete Day {day_num} on your Cockpit Dashboard.
+            </p>
+            <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+              <a href="index.html" class="btn btn-primary" style="font-size: 0.8rem; text-decoration: none;" onclick="try {{ localStorage.setItem('DSA_PENDING_DAY', {day_num}); }} catch(e){{}}">⚡ Open Day {day_num} in Cockpit</a>
+              <a href="plan.html#day-{day_num}" class="btn btn-outline" style="font-size: 0.8rem; text-decoration: none;">🗓️ View in 168-Day Plan</a>
+            </div>
+          </div>
+
+          <!-- UNLOCKED VIEW -->
+          <div class="revision-unlocked-view">
+            <div class="rev-card-header">
+              <div>
+                <span class="rev-badge-day">DAY {day_num} DOSSIER</span>
+                <span class="rev-badge-phase">Phase {phase} &bull; Week {week} ({escape(d.get('theme', ''))})</span>
+                <h3 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin-top: 0.35rem;">
+                  {escape(pat)}: <span style="color: var(--cyan-accent); font-weight: 600;">{escape(concept)}</span>
+                </h3>
+              </div>
+              <div class="rev-stamp-completed">
+                <span>✓ UNLOCKED</span>
+                <span id="rev-comp-date-{day_num}" style="opacity: 0.8; font-size: 0.7rem; font-family: var(--font-mono);"></span>
+              </div>
+            </div>
+
+            <!-- Dynamic User Performance from completion -->
+            <div class="rev-perf-bar" id="rev-perf-bar-{day_num}">
+              <div>⏱️ Time: <strong id="rev-time-{day_num}">--</strong></div>
+              <div>🎯 Solved Independently: <strong id="rev-indep-{day_num}">--</strong></div>
+              <div>💡 Hints Taken: <strong id="rev-hints-{day_num}">--</strong></div>
+              <div>📖 Solution Viewed: <strong id="rev-sol-{day_num}">--</strong></div>
+            </div>
+
+            <!-- User Invariant Takeaway (if logged during completion) -->
+            <div class="rev-user-insight-callout" id="rev-insight-box-{day_num}" style="display: none;">
+              <strong style="color: #c084fc;">💡 Your Logged Takeaway / Invariant:</strong>
+              <div id="rev-insight-text-{day_num}" style="margin-top: 0.25rem; font-style: italic;"></div>
+            </div>
+
+            <!-- Detailed Revision Dossier Grid -->
+            <div class="rev-grid-layout">
+              <!-- Box 1: Core Theory & Pattern -->
+              <div class="rev-box">
+                <div class="rev-box-title">🎯 Pattern Invariant &amp; Objective</div>
+                <div style="font-size: 0.82rem; color: var(--text-primary); margin-bottom: 0.5rem; line-height: 1.5;">
+                  <strong>Objective:</strong> {escape(obj)}
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                  <strong style="color: var(--nv-green);">Target Skill:</strong> {escape(skill)}
+                </div>
+                <div style="background: rgba(0,0,0,0.4); padding: 0.5rem 0.75rem; border-radius: 4px; font-size: 0.75rem; font-family: var(--font-mono); color: var(--cyan-accent);">
+                  Invariant: {escape(pat)} &bull; Mode: {escape(d.get('mode', 'Timed'))}
+                </div>
+              </div>
+
+              <!-- Box 2: Problems Solved -->
+              <div class="rev-box">
+                <div class="rev-box-title">💻 Assigned Problems &amp; Links</div>
+                <div class="rev-prob-row">
+                  <div>
+                    <span class="diff-tag diff-{d1}">{d1}</span>
+                    <strong style="color: #fff; margin-left: 0.35rem;">{escape(p1)}</strong>
+                    <span style="font-size: 0.72rem; color: var(--text-muted); margin-left: 0.35rem;">({t1}m)</span>
+                  </div>
+                  <a href="{p1_url}" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none;">Solve on LC ↗</a>
+                </div>
+                <div class="rev-prob-row">
+                  <div>
+                    <span class="diff-tag diff-{d2}">{d2}</span>
+                    <strong style="color: #fff; margin-left: 0.35rem;">{escape(p2)}</strong>
+                    <span style="font-size: 0.72rem; color: var(--text-muted); margin-left: 0.35rem;">({t2}m)</span>
+                  </div>
+                  <a href="{p2_url}" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none;">Solve on LC ↗</a>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; padding-top: 0.4rem; border-top: 1px solid rgba(255,255,255,0.05);">
+                  <strong>🔄 Spaced Repetition Review:</strong> {escape(rev)}
+                </div>
+              </div>
+
+              <!-- Box 3: Masterclass & Creator Links -->
+              <div class="rev-box" style="grid-column: 1 / -1;">
+                <div class="rev-box-title">📺 Curated Tutorial Masterclasses</div>
+                {tut_html}
+              </div>
+
+              <!-- Box 4: Evening Reconstruction & Invariant Recall -->
+              <div class="rev-box">
+                <div class="rev-box-title">🧠 Evening Reconstruction Prompt</div>
+                <div style="font-size: 0.8rem; color: var(--text-primary); line-height: 1.5; margin-bottom: 0.5rem; background: rgba(0,0,0,0.3); padding: 0.6rem; border-radius: 4px; border-left: 2px solid var(--amber-accent);">
+                  {escape(recon)}
+                </div>
+                <div style="font-size: 0.78rem; color: var(--text-secondary);">
+                  <strong style="color: var(--amber-accent);">Diagnostic Question:</strong> {escape(assess)}
+                </div>
+              </div>
+
+              <!-- Box 5: Systems & AI Infra Hardware Invariant -->
+              <div class="rev-box">
+                <div class="rev-box-title">🟢 Systems &amp; AI-Infra Mechanical Sympathy</div>
+                <div style="font-size: 0.82rem; color: var(--text-nv); line-height: 1.5; background: rgba(118, 185, 0, 0.06); padding: 0.6rem; border-radius: 4px; border-left: 2px solid var(--nv-green);">
+                  {escape(infra)}
+                </div>
+              </div>
+
+              <!-- Box 6: User Personal Revision Notes -->
+              <div class="rev-box" style="grid-column: 1 / -1; background: rgba(56, 189, 248, 0.03); border-color: rgba(56, 189, 248, 0.25);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <div class="rev-box-title" style="margin: 0; color: var(--cyan-accent);">📝 Your Personal Revision Notes &amp; Code Snippets</div>
+                  <span id="rev-save-status-{day_num}" style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">Auto-saved</span>
+                </div>
+                <textarea class="rev-notes-textarea" id="rev-notes-{day_num}" data-day="{day_num}" placeholder="Add your custom notes, edge case traps (e.g. integer overflow, empty array), or personal solution templates for Day {day_num}... Saves automatically."></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        """)
+
+    content = f"""
+      <div class="rev-vault-summary">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+            <h2 style="font-size: 1.45rem; font-weight: 800; color: #fff; margin: 0;">🔄 Day Revision Vault</h2>
+            <span class="rev-metric-pill">🔒 Day-Gated Unlock System</span>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.88rem; max-width: 820px; margin: 0;">
+            Every day's comprehensive dossier is strictly locked until you complete that day on your Cockpit Dashboard.
+            Once unlocked, review all problems, theory, invariants, curated video masterclasses, and your personal study notes.
+          </p>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono); text-transform: uppercase;">Revision Coverage</div>
+          <div style="font-size: 1.75rem; font-weight: 800; color: var(--nv-green); font-family: var(--font-mono);">
+            <span id="rev-unlocked-count">0</span> / 168 Days
+          </div>
+          <div style="font-size: 0.8rem; color: var(--cyan-accent); font-weight: 600;" id="rev-unlocked-pct">0%</div>
+        </div>
+      </div>
+
+      <div style="width: 100%; background: rgba(255,255,255,0.05); height: 6px; border-radius: 9999px; margin-bottom: 1.25rem; overflow: hidden;">
+        <div id="rev-prog-fill" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--nv-green), var(--cyan-accent)); transition: width 0.3s ease;"></div>
+      </div>
+
+      <div class="rev-filter-row">
+        <button class="rev-filter-btn active" data-filter="all">All Days (168)</button>
+        <button class="rev-filter-btn" data-filter="unlocked">🔓 Unlocked Only</button>
+        <button class="rev-filter-btn" data-filter="locked">🔒 Locked Only</button>
+        <input type="text" class="rev-search-input" id="rev-search-input" placeholder="Search revision dossiers by Day #, Pattern, Problem (e.g. 'Two Sum', 'DP', 'Day 1')...">
+      </div>
+
+      <div id="revision-vault-container">
+        {''.join(cards_html)}
+      </div>
+    """
+    return page_shell("Day Revision Vault", "revision.html", content)
 
 def generate_flashcards_html(data):
     cards_html = []
@@ -888,14 +1448,14 @@ def generate_resources_html(data):
           <div style="background: rgba(7, 10, 14, 0.7); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; border-top: 3px solid #a855f7;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
               <strong style="color: #fff; font-size: 0.95rem;">Padho with Pratyush</strong>
-              <span style="font-size: 0.7rem; color: #c084fc; background: rgba(168,85,247,0.15); padding: 0.1rem 0.4rem; border-radius: 4px;">Systems DSA</span>
+              <span style="font-size: 0.7rem; color: #c084fc; background: rgba(168,85,247,0.15); padding: 0.1rem 0.4rem; border-radius: 4px;">Pattern-Based DSA</span>
             </div>
             <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.75rem;">
-              LRU/ARC Buffer Pools, Lock-Free Ring Buffers, HNSW Vector Indexing, DAG Compiler Scheduling, Interval DP.
+              Teaches DSA on the basis of algorithmic patterns (Two Pointers, Sliding Window, Monotonic Stack, Trees, DP) for FAANG prep.
             </p>
             <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
-              <a href="https://www.youtube.com/@padhowithpratyush" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #c084fc; border-color: rgba(168,85,247,0.4);">▶ Systems Playlists ↗</a>
-              <a href="https://www.youtube.com/@padhowithpratyush" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">📺 Channel ↗</a>
+              <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #c084fc; border-color: rgba(168,85,247,0.4);">▶ DSA Patterns Playlist ↗</a>
+              <a href="https://www.youtube.com/@padho_with_pratyush" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">📺 Channel ↗</a>
             </div>
           </div>
 
@@ -1067,12 +1627,14 @@ def generate_rules_html(data):
     return page_shell("System Rules & Protocols", "rules.html", content)
 
 def build_all():
-    with open("data.json", "r", encoding="utf-8") as f:
+    data_path = os.path.join(SCRIPT_DIR, "data.json")
+    with open(data_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     pages = {
         "index.html": generate_index_html(data),
         "plan.html": generate_plan_html(data),
+        "revision.html": generate_revision_html(data),
         "patterns.html": generate_patterns_html(data),
         "flashcards.html": generate_flashcards_html(data),
         "nvidia.html": generate_nvidia_html(data),
@@ -1083,11 +1645,12 @@ def build_all():
     }
 
     for filename, html_content in pages.items():
-        with open(filename, "w", encoding="utf-8") as f:
+        out_path = os.path.join(SCRIPT_DIR, filename)
+        with open(out_path, "w", encoding="utf-8") as f:
             f.write(html_content)
         print(f"[OK] Generated {filename} ({len(html_content)} bytes)")
 
-    print("[SUCCESS] All 9 static HTML pages generated with pre-rendered data and zero server dependency.")
+    print("[SUCCESS] All 10 static HTML pages generated with pre-rendered data and zero server dependency.")
 
 if __name__ == "__main__":
     build_all()

@@ -14,6 +14,8 @@
   let state = {
     completedDays: {},    // { [dayNum]: { completed, timeSpent, solvedIndep, hints, solViewed, keyInsight, date } }
     failures: [],         // [ { id, date, problem, code, rule, nextDue, reviewed } ]
+    dayNotes: {},         // { [dayNum]: "personal notes..." }
+    faangMastery: {},     // { [checkKey]: boolean }
     currentDayIndex: 0,
     timer: {
       totalSeconds: 45 * 60,
@@ -31,11 +33,23 @@
         const parsed = JSON.parse(saved);
         state.completedDays = parsed.completedDays || {};
         state.failures = parsed.failures || [];
+        state.dayNotes = parsed.dayNotes || {};
+        state.faangMastery = parsed.faangMastery || {};
       }
     } catch (e) {
       console.warn("Could not load from localStorage:", e);
     }
-    // Set currentDayIndex to first uncompleted day
+    // Check if a specific day was requested from another page (e.g. Revision Vault)
+    const pendingDay = localStorage.getItem('DSA_PENDING_DAY');
+    if (pendingDay && DATA.days && DATA.days.length) {
+      const pIdx = DATA.days.findIndex(d => d.day === Number(pendingDay));
+      if (pIdx >= 0) {
+        state.currentDayIndex = pIdx;
+        localStorage.removeItem('DSA_PENDING_DAY');
+        return;
+      }
+    }
+    // Default to first uncompleted day
     if (DATA.days && DATA.days.length) {
       const firstIncomplete = DATA.days.findIndex(d => !state.completedDays[d.day]);
       state.currentDayIndex = firstIncomplete >= 0 ? firstIncomplete : 0;
@@ -46,7 +60,9 @@
     try {
       const payload = {
         completedDays: state.completedDays,
-        failures: state.failures
+        failures: state.failures,
+        dayNotes: state.dayNotes,
+        faangMastery: state.faangMastery
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
     } catch (e) {
@@ -287,13 +303,22 @@
 
     // Button state
     const btnComplete = document.getElementById('btn-complete-today');
+    const heroRevLink = document.getElementById('hero-revision-link');
     if (btnComplete) {
       if (state.completedDays[day.day]) {
         btnComplete.textContent = "✓ Completed";
         btnComplete.className = "btn btn-success";
+        if (heroRevLink) {
+          heroRevLink.style.display = 'inline-flex';
+          heroRevLink.href = `revision.html#rev-card-${day.day}`;
+          heroRevLink.textContent = `📖 Day ${day.day} Vault Unlocked ↗`;
+        }
       } else {
         btnComplete.textContent = "✓ Mark Day Complete";
         btnComplete.className = "btn btn-primary";
+        if (heroRevLink) {
+          heroRevLink.style.display = 'none';
+        }
       }
     }
 
@@ -370,6 +395,13 @@
       const dayNum = Number(btn.getAttribute('data-day'));
       const isDone = !!state.completedDays[dayNum];
       btn.textContent = isDone ? "Edit" : "Complete";
+    });
+
+    const vaultBtns = document.querySelectorAll('.btn-vault-row');
+    vaultBtns.forEach(vb => {
+      const dayNum = Number(vb.getAttribute('data-day'));
+      const isDone = !!state.completedDays[dayNum];
+      vb.style.display = isDone ? 'inline-flex' : 'none';
     });
 
     // Filtering logic
@@ -752,11 +784,214 @@
     }
   }
 
+  // Revision Vault Handlers
+  function initRevisionVault() {
+    const revContainer = document.getElementById('revision-vault-container');
+    if (!revContainer) return;
+
+    // Filter Buttons
+    const filterBtns = document.querySelectorAll('.rev-filter-btn');
+    const searchInput = document.getElementById('rev-search-input');
+    let currentFilter = 'all';
+
+    function applyFilters() {
+      const q = (searchInput ? searchInput.value : '').toLowerCase().trim();
+      const cards = document.querySelectorAll('.revision-card');
+
+      cards.forEach(card => {
+        const isLocked = card.classList.contains('locked');
+        const text = (card.getAttribute('data-search') || '') + ' ' + (card.textContent || '').toLowerCase();
+
+        let matchesFilter = true;
+        if (currentFilter === 'unlocked' && isLocked) matchesFilter = false;
+        if (currentFilter === 'locked' && !isLocked) matchesFilter = false;
+
+        let matchesSearch = true;
+        if (q && !text.includes(q)) matchesSearch = false;
+
+        card.style.display = (matchesFilter && matchesSearch) ? 'block' : 'none';
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter') || 'all';
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilters);
+    }
+
+    // Bind Notes Textareas with auto-save
+    document.querySelectorAll('.rev-notes-textarea').forEach(textarea => {
+      const dNum = textarea.getAttribute('data-day');
+      if (state.dayNotes && state.dayNotes[dNum]) {
+        textarea.value = state.dayNotes[dNum];
+      }
+      textarea.addEventListener('input', () => {
+        state.dayNotes[dNum] = textarea.value;
+        const ind = document.getElementById(`rev-save-status-${dNum}`);
+        if (ind) {
+          ind.textContent = "Saving...";
+          ind.style.color = "var(--amber-accent)";
+        }
+        try {
+          const payload = {
+            completedDays: state.completedDays,
+            failures: state.failures,
+            dayNotes: state.dayNotes,
+            faangMastery: state.faangMastery
+          };
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+          if (ind) {
+            setTimeout(() => {
+              ind.textContent = "✓ Saved";
+              ind.style.color = "var(--nv-green)";
+            }, 300);
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      });
+    });
+
+    updateRevisionVaultView();
+
+    // Auto-scroll and highlight target card if navigated with hash #rev-card-X or #day-X
+    if (window.location.hash) {
+      setTimeout(() => {
+        const rawHash = window.location.hash.substring(1);
+        const dayMatch = rawHash.match(/\d+/);
+        const dayNum = dayMatch ? dayMatch[0] : null;
+        const target = document.getElementById(rawHash) || (dayNum ? document.getElementById(`rev-card-${dayNum}`) : null);
+        if (target) {
+          target.style.display = 'block';
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.classList.add('rev-card-target-highlight');
+          setTimeout(() => target.classList.remove('rev-card-target-highlight'), 3000);
+        }
+      }, 200);
+    }
+  }
+
+  function updateRevisionVaultView() {
+    const revContainer = document.getElementById('revision-vault-container');
+    if (!revContainer || !DATA.days) return;
+
+    const completedList = Object.keys(state.completedDays);
+    const completedCount = completedList.length;
+    const totalDays = DATA.days.length;
+    const pct = Math.round((completedCount / totalDays) * 100);
+
+    const countEl = document.getElementById('rev-unlocked-count');
+    const pctEl = document.getElementById('rev-unlocked-pct');
+    if (countEl) countEl.textContent = completedCount;
+    if (pctEl) pctEl.textContent = `${pct}%`;
+
+    const progBar = document.getElementById('rev-prog-fill');
+    if (progBar) progBar.style.width = `${pct}%`;
+
+    DATA.days.forEach(d => {
+      const card = document.getElementById(`rev-card-${d.day}`);
+      if (!card) return;
+
+      const completion = state.completedDays[d.day];
+      if (completion) {
+        card.classList.remove('locked');
+        card.classList.add('unlocked');
+
+        const dateEl = document.getElementById(`rev-comp-date-${d.day}`);
+        if (dateEl && completion.date) dateEl.textContent = `• Completed ${completion.date}`;
+
+        const timeEl = document.getElementById(`rev-time-${d.day}`);
+        if (timeEl) timeEl.textContent = `${completion.timeSpent || 60}m`;
+
+        const indepEl = document.getElementById(`rev-indep-${d.day}`);
+        if (indepEl) {
+          indepEl.textContent = completion.solvedIndep || "Yes";
+          indepEl.style.color = completion.solvedIndep === "Yes" ? "var(--nv-green)" : "var(--amber-accent)";
+        }
+
+        const hintsEl = document.getElementById(`rev-hints-${d.day}`);
+        if (hintsEl) hintsEl.textContent = `${completion.hints || "0"} hints`;
+
+        const solEl = document.getElementById(`rev-sol-${d.day}`);
+        if (solEl) {
+          solEl.textContent = completion.solViewed || "No";
+          solEl.style.color = completion.solViewed === "No" ? "var(--nv-green)" : "var(--red-accent)";
+        }
+
+        const insightBox = document.getElementById(`rev-insight-box-${d.day}`);
+        const insightText = document.getElementById(`rev-insight-text-${d.day}`);
+        if (insightBox && insightText) {
+          if (completion.keyInsight && completion.keyInsight.trim()) {
+            insightBox.style.display = 'block';
+            insightText.textContent = `"${completion.keyInsight.trim()}"`;
+          } else {
+            insightBox.style.display = 'none';
+          }
+        }
+      } else {
+        card.classList.remove('unlocked');
+        card.classList.add('locked');
+      }
+    });
+  }
+
+  // FAANG Patterns Checklist Handler
+  function initFaangChecklist() {
+    const checklistBox = document.getElementById('faang-checklist-container');
+    if (!checklistBox) return;
+
+    const checkboxes = checklistBox.querySelectorAll('input[type="checkbox"]');
+    const totalChecks = checkboxes.length;
+
+    function updateProgress() {
+      let checkedCount = 0;
+      checkboxes.forEach(cb => {
+        const key = cb.getAttribute('data-check-key');
+        if (cb.checked) checkedCount++;
+        if (key) state.faangMastery[key] = cb.checked;
+      });
+
+      const fillEl = document.getElementById('faang-prog-fill');
+      const textEl = document.getElementById('faang-prog-text');
+      const pct = Math.round((checkedCount / totalChecks) * 100);
+      if (fillEl) fillEl.style.width = `${pct}%`;
+      if (textEl) textEl.textContent = `${checkedCount} / ${totalChecks} Milestones Complete (${pct}%)`;
+
+      document.querySelectorAll('.faang-pat-item').forEach(item => {
+        const cbs = item.querySelectorAll('input[type="checkbox"]');
+        const allChecked = Array.from(cbs).every(c => c.checked);
+        if (allChecked) item.classList.add('fully-mastered');
+        else item.classList.remove('fully-mastered');
+      });
+    }
+
+    checkboxes.forEach(cb => {
+      const key = cb.getAttribute('data-check-key');
+      if (key && state.faangMastery && state.faangMastery[key]) {
+        cb.checked = true;
+      }
+      cb.addEventListener('change', () => {
+        updateProgress();
+        saveState();
+      });
+    });
+
+    updateProgress();
+  }
+
   function updateAllViews() {
     updateHeader();
     updateDashboardView();
     updatePlanView();
     updateFailuresView();
+    updateRevisionVaultView();
   }
 
   function init() {
@@ -766,6 +1001,8 @@
     initPatternSearch();
     initResourceSearch();
     initModals();
+    initRevisionVault();
+    initFaangChecklist();
     updateAllViews();
   }
 

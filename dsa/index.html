@@ -47,6 +47,7 @@
       <nav class="nav-tabs">
         <a href="index.html" class="nav-tab active">🎛️ Dashboard</a>
       <a href="plan.html" class="nav-tab">🗓️ 168-Day Plan</a>
+      <a href="revision.html" class="nav-tab">🔄 Day Revision Vault</a>
       <a href="patterns.html" class="nav-tab">🧠 Pattern Library</a>
       <a href="flashcards.html" class="nav-tab">🃏 3D Flashcards</a>
       <a href="nvidia.html" class="nav-tab">🟢 NVIDIA Track</a>
@@ -72,10 +73,11 @@
             <h1 class="mission-title" id="hero-topic">Complexity calibration</h1>
             <div class="mission-topic" id="hero-objective">Build constraint -&gt; complexity map; learn to target TC before writing code</div>
           </div>
-          <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
             <button class="btn btn-outline" id="btn-prev-mission" title="Inspect previous day">◀</button>
             <button class="btn btn-outline" id="btn-next-mission" title="Inspect next day">▶</button>
             <button class="btn btn-primary" id="btn-complete-today">✓ Mark Day Complete</button>
+            <a href="revision.html" id="hero-revision-link" class="btn btn-outline" style="display: none; border-color: rgba(16,185,129,0.5); background: rgba(16,185,129,0.12); color: var(--nv-green); text-decoration: none; font-weight: 700;">📖 Day 1 Vault Unlocked ↗</a>
           </div>
         </div>
 
@@ -148,6 +150,57 @@
               <button class="btn btn-primary" id="timer-btn-start">▶ Start</button>
               <button class="btn btn-outline" id="timer-btn-pause">⏸ Pause</button>
               <button class="btn btn-outline" id="timer-btn-reset">🔄 Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- EMERGENCY STUCK TRIAGE & CREATOR VIDEO UNBLOCKING PROTOCOL -->
+        <div class="stuck-triage-container">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span class="stuck-phase-tag phase-tag-4">EMERGENCY PROTOCOL</span>
+              <strong style="color: #fff; font-size: 0.95rem;">🚨 Stuck on Today's Problem? Follow the 4-Phase Unblocking Rule</strong>
+            </div>
+            <a href="rules.html#stuck-protocol" style="font-size: 0.78rem; color: var(--cyan-accent); text-decoration: none;">System Rules &rarr;</a>
+          </div>
+          
+          <div class="stuck-step-grid">
+            <div class="stuck-step-card">
+              <span class="stuck-phase-tag phase-tag-1">PHASE 1 (0–15m) • PEN & PAPER</span>
+              <div style="font-size: 0.8rem; color: var(--text-primary); font-weight: 700; margin-bottom: 0.35rem;">Zero-Code Mental Model</div>
+              <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.45; margin: 0;">
+                Close code editor. Draw array state on paper for <strong>n = 3</strong>. Annotate constraints to deduce target Big-O. Test monotonicity: does shifting left/right predictably improve the answer?
+              </p>
+            </div>
+
+            <div class="stuck-step-card">
+              <span class="stuck-phase-tag phase-tag-2">PHASE 2 (15–25m) • PATTERN MATCH</span>
+              <div style="font-size: 0.8rem; color: var(--text-primary); font-weight: 700; margin-bottom: 0.35rem;">Trigger Cue Diagnostic</div>
+              <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 0.5rem;">
+                Check the 15 FAANG triggers: Subarray sum &rarr; Prefix+Hash. Contiguous window &rarr; Sliding Window. Nearest greater &rarr; Monotonic Stack. Min of max &rarr; BS on Answer.
+              </p>
+              <a href="patterns.html#decision-matrix" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none;">⚡ Open Pattern Matrix</a>
+            </div>
+
+            <div class="stuck-step-card">
+              <span class="stuck-phase-tag phase-tag-3">PHASE 3 (25–35m) • VIDEO UNBLOCK</span>
+              <div style="font-size: 0.8rem; color: var(--text-primary); font-weight: 700; margin-bottom: 0.35rem;">Watch Visual Intuition Only</div>
+              <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 0.4rem;">
+                <strong>Do NOT read full code!</strong> Watch the first 3–5 minutes of <strong style="color: #fff;">NeetCode</strong> (visual diagram) or <strong style="color: #fff;">Padho with Pratyush</strong> (pattern archetype). <strong>Pause before code is shown</strong> and implement yourself.
+              </p>
+              <div style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
+                <a href="resources.html" class="btn btn-outline" style="font-size: 0.7rem; padding: 0.15rem 0.45rem;">📺 NeetCode ↗</a>
+                <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" class="btn btn-outline" style="font-size: 0.7rem; padding: 0.15rem 0.45rem; color: #c084fc; border-color: rgba(168,85,247,0.4);">📺 Pratyush Patterns ↗</a>
+              </div>
+            </div>
+
+            <div class="stuck-step-card">
+              <span class="stuck-phase-tag phase-tag-4">PHASE 4 (35m+) • LOG FAILURE</span>
+              <div style="font-size: 0.8rem; color: var(--text-primary); font-weight: 700; margin-bottom: 0.35rem;">Spaced Repetition Recovery</div>
+              <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 0.5rem;">
+                If solution code was consulted, mark <strong>Solved Independently: No</strong>. Log dominant failure (F1–F12) in Failure Log. System automatically schedules a blank-editor retry in 3 days.
+              </p>
+              <a href="failures.html" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #ef4444; border-color: rgba(239,68,68,0.4);">💥 Log Failure Code</a>
             </div>
           </div>
         </div>

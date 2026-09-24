@@ -368,7 +368,7 @@ n <= 10^9      ->  O(log n) or O(1) only"""),
   - Striver (take U forward) - algorithmic patterns & technical interview rigor
   - Aditya Verma - intuition & recurrence templates (DP, Stack, Sliding Window, BS)
   - Love Babbar (CodeHelp) - clear structural breakdowns & Hindi explanations
-  - Padho with Pratyush - deep systems intuition, cache/concurrency & advanced DSA
+  - Padho with Pratyush - pattern-based DSA mastery, algorithmic pattern recognition & FAANG problem archetypes
   - NeetCode (neetcode.io) - concise visual problem walkthroughs & clean code
   - Specialized channels: Abdul Bari (algorithms), WilliamFiset (graphs), Errichto (range trees), Martin Thompson (lock-free), CMU DB (paging)
 
@@ -4174,14 +4174,14 @@ YOUTUBE_CHANNELS_DATA = [
     ),
     (
         "Padho with Pratyush",
-        "@padhowithpratyush",
-        "Systems-Level & Low-Level Depth (Hinglish)",
-        "Systems DSA: LRU/ARC Buffer Pools, Lock-Free Ring Buffers, HNSW Vector Indexing, DAG Compiler Scheduling, Interval DP",
-        "Crucial for AI Infra & Systems tracks. Bridges competitive DSA with kernel/storage engineering, cache hierarchies, and vector search internals.",
-        "Advanced DSA Series, Dynamic Programming & Recursion, Systems Concurrency & Cache Internals",
-        "https://www.youtube.com/@padhowithpratyush",
-        "https://www.youtube.com/@padhowithpratyush",
-        "Weeks 6, 15 - 18, 19 - 24 (Systems & AI Infra)"
+        "@padho_with_pratyush",
+        "Pattern-Based DSA Mastery (Hinglish)",
+        "Algorithmic Patterns: Two Pointers, Sliding Window, Monotonic Stack, Binary Search, Trees, Graphs, DP Patterns",
+        "Teaches DSA fundamentally on the basis of algorithmic patterns rather than rote memorization. Master pattern recognition across problem variants to crack FAANG/Tier-1 coding rounds in 3 months.",
+        "DSA Patterns 2025 (Crack FAANG in 3 Months), Pattern-Based Problem Solving Series",
+        "https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2",
+        "https://www.youtube.com/@padho_with_pratyush",
+        "Weeks 1 - 24 (Algorithmic Patterns & FAANG Prep)"
     ),
     (
         "Love Babbar (CodeHelp)",

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pattern Library - NVIDIA & AI-Infra Systems Track</title>
+  <title>Pattern Library &amp; Decision Matrix - NVIDIA & AI-Infra Systems Track</title>
   <meta name="description" content="168-Day Silicon-Aware DSA & AI-Infrastructure Systems Specialist Training System">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,6 +47,7 @@
       <nav class="nav-tabs">
         <a href="index.html" class="nav-tab">🎛️ Dashboard</a>
       <a href="plan.html" class="nav-tab">🗓️ 168-Day Plan</a>
+      <a href="revision.html" class="nav-tab">🔄 Day Revision Vault</a>
       <a href="patterns.html" class="nav-tab active">🧠 Pattern Library</a>
       <a href="flashcards.html" class="nav-tab">🃏 3D Flashcards</a>
       <a href="nvidia.html" class="nav-tab">🟢 NVIDIA Track</a>
@@ -62,6 +63,803 @@
     <!-- Page Body -->
     <main class="main-content">
       
+      <!-- SECTION 1: 15 Core FAANG Patterns Mastery Checklist -->
+      <div class="faang-checklist-wrapper" id="faang-checklist-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <h2 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin: 0;">🎯 15 Core FAANG Algorithmic Patterns Checklist</h2>
+              <span class="brand-badge" style="background: rgba(118,185,0,0.15); color: var(--nv-green);">INTERVIEW READINESS TRACKER</span>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0.25rem 0 0 0;">
+              Master these 15 pattern archetypes. Check off your progress across Conceptual Clarity, 3 Practice Solves, and Timed (&lt;15m) Independent execution. Saved automatically.
+            </p>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--nv-green); font-family: var(--font-mono);" id="faang-prog-text">
+              0 / 45 Milestones Complete (0%)
+            </div>
+          </div>
+        </div>
+        <div style="width: 100%; background: rgba(255,255,255,0.05); height: 6px; border-radius: 9999px; margin: 0.75rem 0; overflow: hidden;">
+          <div id="faang-prog-fill" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--nv-green), var(--cyan-accent)); transition: width 0.3s ease;"></div>
+        </div>
+        <div class="faang-pat-grid">
+          
+          <div class="faang-pat-item" id="faang-item-two_pointers">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#1 Two Pointers (Opposite Ends)</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">Arrays</span>
+              </div>
+              <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> Sorted array, pair/triplet sum, container with most water, palindrome
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 11, LC 15, LC 167
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_two_pointers">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_two_pointers">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_two_pointers">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+          <div class="faang-pat-item" id="faang-item-fast_slow">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#2 Fast &amp; Slow Pointers (Floyd&#x27;s)</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">Pointers</span>
+              </div>
+              <a href="https://www.youtube.com/playlist?list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> Linked list cycle, list midpoint, circular array loop, find duplicate number
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 141, LC 142, LC 287, LC 876
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_fast_slow">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_fast_slow">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_fast_slow">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+          <div class="faang-pat-item" id="faang-item-sliding_window">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#3 Sliding Window (Dynamic &amp; Fixed)</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">Arrays</span>
+              </div>
+              <a href="https://www.youtube.com/playlist?list=PL_z_8CaSLPWeM8BDJmIYDaoQ5zuwyxnfj" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> Contiguous subarray/substring satisfying condition (max sum, K distinct, min window)
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 3, LC 76, LC 209, LC 424
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_sliding_window">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_sliding_window">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_sliding_window">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+          <div class="faang-pat-item" id="faang-item-prefix_sum">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#4 Prefix Sums &amp; Frequency Hashing</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">Hashing</span>
+              </div>
+              <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> Subarray sum equals K, count of matching subarrays, 2D range sum query
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 560, LC 523, LC 525, LC 304
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_prefix_sum">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_prefix_sum">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_prefix_sum">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+          <div class="faang-pat-item" id="faang-item-monotonic_stack">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#5 Monotonic Stack &amp; Queue</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">Stacks</span>
+              </div>
+              <a href="https://www.youtube.com/playlist?list=PL_z_8CaSLPWdeOezg68SKkeQI4-Se_jNH" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> Next greater / smaller element, daily temperatures, stock span, largest rectangle in histogram
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 739, LC 84, LC 496, LC 85
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_monotonic_stack">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_monotonic_stack">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_monotonic_stack">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+          <div class="faang-pat-item" id="faang-item-bs_answers">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#6 Binary Search on Answer Space</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">Binary Search</span>
+              </div>
+              <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> Min capacity, max speed, allocation with monotonic feasibility check P(x)
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 875, LC 1011, LC 410, LC 1482
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_bs_answers">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_bs_answers">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_bs_answers">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+          <div class="faang-pat-item" id="faang-item-heaps_topk">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#7 Top-K Elements &amp; Priority Queues</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">Heaps</span>
+              </div>
+              <a href="https://www.youtube.com/playlist?list=PL_z_8CaSLPWdtY9hTUbi51K13PXQ724hr" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> Kth largest element, merge K sorted lists, running median, task scheduler
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 215, LC 295, LC 23, LC 347
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_heaps_topk">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_heaps_topk">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_heaps_topk">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+          <div class="faang-pat-item" id="faang-item-intervals">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#8 Merge Intervals &amp; Line Sweep</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">Intervals</span>
+              </div>
+              <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> Overlapping intervals, meeting rooms, non-overlapping intervals, timeline sweep
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 56, LC 57, LC 252, LC 435
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_intervals">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_intervals">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_intervals">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+          <div class="faang-pat-item" id="faang-item-tree_traversals">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#9 Tree Traversals (BFS &amp; DFS)</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">Trees</span>
+              </div>
+              <a href="https://www.youtube.com/playlist?list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> Level order, max depth, LCA, path sum, diameter, serialize/deserialize tree
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 102, LC 236, LC 124, LC 105
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_tree_traversals">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_tree_traversals">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_tree_traversals">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+          <div class="faang-pat-item" id="faang-item-topological_sort">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#10 Graph Topologies &amp; Topological Sort</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">Graphs</span>
+              </div>
+              <a href="https://www.youtube.com/playlist?list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> Course prerequisites, compiler dependency DAGs, alien dictionary
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 207, LC 210, LC 269, LC 310
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_topological_sort">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_topological_sort">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_topological_sort">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+          <div class="faang-pat-item" id="faang-item-dsu">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#11 Disjoint Set Union (DSU / Union-Find)</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">Graphs</span>
+              </div>
+              <a href="https://www.youtube.com/playlist?list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> Connected components, redundant connection, Kruskal&#x27;s MST, dynamic connectivity
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 684, LC 547, LC 128, LC 721
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_dsu">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_dsu">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_dsu">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+          <div class="faang-pat-item" id="faang-item-dijkstra">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#12 Shortest Paths (Dijkstra)</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">Graphs</span>
+              </div>
+              <a href="https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> Network latency, cheapest flights, min effort path in non-negative weighted graph
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 743, LC 1631, LC 787, LC 1514
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_dijkstra">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_dijkstra">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_dijkstra">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+          <div class="faang-pat-item" id="faang-item-backtracking">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#13 Backtracking &amp; Decision Trees</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">Recursion</span>
+              </div>
+              <a href="https://www.youtube.com/playlist?list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> Subsets, permutations, combinations, word search, N-Queens, Sudoku solver
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 78, LC 46, LC 39, LC 51
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_backtracking">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_backtracking">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_backtracking">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+          <div class="faang-pat-item" id="faang-item-dp_subproblems">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#14 Dynamic Programming (Knapsack &amp; Subsequences)</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">DP</span>
+              </div>
+              <a href="https://www.youtube.com/playlist?list=PL_z_8CaSLPWekqh3KpdC9045s07upF834" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> 0/1 Knapsack, coin change, longest common subsequence (LCS), edit distance, MCM
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 322, LC 1143, LC 300, LC 72
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_dp_subproblems">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_dp_subproblems">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_dp_subproblems">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+          <div class="faang-pat-item" id="faang-item-bitmask_dp">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <strong style="color: #fff; font-size: 0.88rem;">#15 Bit Manipulation &amp; Bitmask DP</strong>
+                <span class="brand-badge" style="font-size: 0.65rem; margin-left: 0.35rem;">Bitwise</span>
+              </div>
+              <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">Watch Lesson ↗</a>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.3rem;">
+              <strong style="color: var(--amber-accent);">Trigger:</strong> N &lt;= 20 elements, traveling salesperson, assignment problem, subset representation
+            </div>
+            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">
+              Bench: LC 136, LC 191, LC 847, LC 1879
+            </div>
+            <div class="faang-checks-group">
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c1_bitmask_dp">
+                <span>Concept Clear</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c2_bitmask_dp">
+                <span>3 Solved</span>
+              </label>
+              <label class="faang-check-label">
+                <input type="checkbox" data-check-key="c3_bitmask_dp">
+                <span>Timed (&lt;15m)</span>
+              </label>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+
+      <!-- SECTION 2: 3-Minute Pattern Decision Matrix -->
+      <div class="card" id="decision-matrix" style="margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <h3 style="font-size: 1.2rem; font-weight: 800; color: #fff; margin: 0;">⚡ 3-Minute Pattern Decision Matrix: Problem Signal &rarr; Pattern</h3>
+              <span class="pill pill-purple" style="font-size: 0.7rem;">Time-to-Pattern Optimizer</span>
+            </div>
+            <p style="font-size: 0.84rem; color: var(--text-secondary); margin: 0.25rem 0 0 0;">
+              In technical interviews, you must recognize the underlying pattern within 180 seconds. Match your problem's input clues and constraints directly to the invariant:
+            </p>
+          </div>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width: 40px;">#</th>
+                <th style="width: 180px;">Pattern</th>
+                <th style="width: 260px;">Problem Signal &amp; Keywords</th>
+                <th>Underlying Invariant Rule</th>
+                <th style="width: 160px;">Creator Masterclass</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#1</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Two Pointers (Opposite Ends)</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 11, LC 15, LC 167</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>Sorted array, pair/triplet sum, container with most water, palindrome</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              Monotonic search space; eliminate one extreme index per step without missing optimal pairs
+            </td>
+            <td>
+              <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ Padho with Pratyush / Striver ↗
+              </a>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#2</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Fast &amp; Slow Pointers (Floyd&#x27;s)</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 141, LC 142, LC 287, LC 876</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>Linked list cycle, list midpoint, circular array loop, find duplicate number</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              Gap between pointers closes by 1 each step in a cycle; Phase 2 finds cycle entry
+            </td>
+            <td>
+              <a href="https://www.youtube.com/playlist?list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ NeetCode / Striver ↗
+              </a>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#3</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Sliding Window (Dynamic &amp; Fixed)</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 3, LC 76, LC 209, LC 424</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>Contiguous subarray/substring satisfying condition (max sum, K distinct, min window)</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              Expand right until constraint breaks; contract left until invariant restored; O(N) total passes
+            </td>
+            <td>
+              <a href="https://www.youtube.com/playlist?list=PL_z_8CaSLPWeM8BDJmIYDaoQ5zuwyxnfj" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ Aditya Verma / Padho with Pratyush ↗
+              </a>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#4</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Prefix Sums &amp; Frequency Hashing</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 560, LC 523, LC 525, LC 304</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>Subarray sum equals K, count of matching subarrays, 2D range sum query</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              P[j] - P[i] = K &lt;=&gt; P[i] = P[j] - K; replaces nested O(N^2) range sums with O(1) hash lookup
+            </td>
+            <td>
+              <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ Padho with Pratyush / Striver ↗
+              </a>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#5</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Monotonic Stack &amp; Queue</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 739, LC 84, LC 496, LC 85</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>Next greater / smaller element, daily temperatures, stock span, largest rectangle in histogram</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              Stack holds monotonic candidates; incoming elements pop all elements they dominate
+            </td>
+            <td>
+              <a href="https://www.youtube.com/playlist?list=PL_z_8CaSLPWdeOezg68SKkeQI4-Se_jNH" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ Aditya Verma / NeetCode ↗
+              </a>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#6</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Binary Search on Answer Space</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 875, LC 1011, LC 410, LC 1482</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>Min capacity, max speed, allocation with monotonic feasibility check P(x)</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              Feasibility space is monotonic (FFFFTTTT or TTTTFFFF); binary search on [lo, hi] answer range
+            </td>
+            <td>
+              <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ Striver / Padho with Pratyush ↗
+              </a>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#7</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Top-K Elements &amp; Priority Queues</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 215, LC 295, LC 23, LC 347</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>Kth largest element, merge K sorted lists, running median, task scheduler</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              Maintain min-heap of size K for K-largest; heap root is always the Kth cutoff boundary
+            </td>
+            <td>
+              <a href="https://www.youtube.com/playlist?list=PL_z_8CaSLPWdtY9hTUbi51K13PXQ724hr" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ Aditya Verma / NeetCode ↗
+              </a>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#8</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Merge Intervals &amp; Line Sweep</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 56, LC 57, LC 252, LC 435</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>Overlapping intervals, meeting rooms, non-overlapping intervals, timeline sweep</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              Sort by start time; interval i overlaps with current merged if start_i &lt;= end_merged
+            </td>
+            <td>
+              <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ NeetCode / Padho with Pratyush ↗
+              </a>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#9</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Tree Traversals (BFS &amp; DFS)</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 102, LC 236, LC 124, LC 105</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>Level order, max depth, LCA, path sum, diameter, serialize/deserialize tree</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              Post-order aggregates child answers upward; Pre-order propagates path state downward
+            </td>
+            <td>
+              <a href="https://www.youtube.com/playlist?list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ Striver / Love Babbar ↗
+              </a>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#10</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Graph Topologies &amp; Topological Sort</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 207, LC 210, LC 269, LC 310</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>Course prerequisites, compiler dependency DAGs, alien dictionary</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              Queue zero-in-degree nodes; decrement neighbor dependencies; cycle detected if visited &lt; V
+            </td>
+            <td>
+              <a href="https://www.youtube.com/playlist?list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ Striver / WilliamFiset ↗
+              </a>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#11</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Disjoint Set Union (DSU / Union-Find)</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 684, LC 547, LC 128, LC 721</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>Connected components, redundant connection, Kruskal&#x27;s MST, dynamic connectivity</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              Path compression + union by rank guarantees near O(1) amortized alpha(N) operations
+            </td>
+            <td>
+              <a href="https://www.youtube.com/playlist?list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ Striver / WilliamFiset ↗
+              </a>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#12</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Shortest Paths (Dijkstra)</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 743, LC 1631, LC 787, LC 1514</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>Network latency, cheapest flights, min effort path in non-negative weighted graph</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              Greedy extraction of minimum tentative distance node ensures optimal shortest path
+            </td>
+            <td>
+              <a href="https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ Abdul Bari / Striver ↗
+              </a>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#13</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Backtracking &amp; Decision Trees</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 78, LC 46, LC 39, LC 51</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>Subsets, permutations, combinations, word search, N-Queens, Sudoku solver</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              Choose candidate -&gt; Recurse to next depth -&gt; Unchoose (revert state); prune dead branches early
+            </td>
+            <td>
+              <a href="https://www.youtube.com/playlist?list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ NeetCode / Love Babbar ↗
+              </a>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#14</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Dynamic Programming (Knapsack &amp; Subsequences)</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 322, LC 1143, LC 300, LC 72</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>0/1 Knapsack, coin change, longest common subsequence (LCS), edit distance, MCM</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              Optimal substructure + overlapping subproblems; state transitions memoized in table/array
+            </td>
+            <td>
+              <a href="https://www.youtube.com/playlist?list=PL_z_8CaSLPWekqh3KpdC9045s07upF834" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ Aditya Verma (DP GOAT) / Striver ↗
+              </a>
+            </td>
+          </tr>
+        
+          <tr>
+            <td style="font-weight: 700; color: #fff; font-family: var(--font-mono); font-size: 0.8rem;">#15</td>
+            <td>
+              <strong style="color: var(--cyan-accent); font-size: 0.85rem;">Bit Manipulation &amp; Bitmask DP</strong>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">LC 136, LC 191, LC 847, LC 1879</div>
+            </td>
+            <td style="font-size: 0.82rem; color: #fef08a;">
+              <strong>N &lt;= 20 elements, traveling salesperson, assignment problem, subset representation</strong>
+            </td>
+            <td style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">
+              Integer bit string (1 &lt;&lt; i) encodes active set; bitwise operators do O(1) state transitions
+            </td>
+            <td>
+              <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                ▶ Errichto / Padho with Pratyush ↗
+              </a>
+            </td>
+          </tr>
+        
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SECTION 3: All 42 Algorithmic Patterns Master Library -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+        <h3 style="font-size: 1.2rem; font-weight: 800; color: #fff; margin: 0;">📚 42 Algorithmic Patterns Master Library</h3>
+        <span style="font-size: 0.85rem; color: var(--text-secondary);">Silicon &amp; Hardware Annotated</span>
+      </div>
       <div class="search-filter-bar">
         <input type="text" class="search-input" id="pattern-search" placeholder="Search all 42 patterns by cue, constraint, name, or hardware relevance...">
         <span style="font-size: 0.85rem; color: var(--text-secondary); margin-left: auto;">Total 42 Patterns</span>
