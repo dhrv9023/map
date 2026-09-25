@@ -21,151 +21,705 @@
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 
   /* ============================================================ */
-  /* PREMIUM TOP NAVBAR (Scrolls away with page, not fixed)       */
   /* ============================================================ */
-  .nav{
-    position:relative;
-    z-index:10;
-    background:rgba(255,255,255,0.85);
-    backdrop-filter:blur(24px) saturate(190%);
-    -webkit-backdrop-filter:blur(24px) saturate(190%);
-    border-bottom:1px solid var(--border);
-    padding:.5rem 1.75rem .4rem;
-    transition:all .25s ease;
-    box-shadow:0 4px 20px -2px rgba(0,0,0,0.04);
+  /* LINEAR / VERCEL COMMAND-TIER HEADER SYSTEM                   */
+  /* ============================================================ */
+  .app-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+    transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
   }
-  [data-theme="dark"] .nav{
-    background:rgba(18,18,22,0.92);
-    border-bottom-color:rgba(255,255,255,0.07);
-    box-shadow:0 8px 30px -4px rgba(0,0,0,0.55);
+  [data-theme="dark"] .app-header {
+    background: rgba(13, 13, 16, 0.90);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.55);
   }
-  .nav-top{
-    display:flex;align-items:center;justify-content:space-between;
-    gap:.85rem;width:100%;margin-bottom:.35rem;padding-bottom:.35rem;
-    border-bottom:1px solid rgba(0,0,0,0.05);
+
+  /* ---------------- PRIMARY TIER (Top Bar) ---------------- */
+  .nav-primary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 48px;
+    padding: 0 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
-  [data-theme="dark"] .nav-top{border-bottom-color:rgba(255,255,255,0.06)}
-  .nav-logo-group{display:flex;align-items:center;gap:.85rem;flex-shrink:0}
-  .nav-logo{
-    font-size:14px;font-weight:900;letter-spacing:0.04em;
-    display:flex;align-items:center;gap:8px;
-    background:linear-gradient(135deg,var(--accent) 0%,var(--teal) 100%);
-    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-    cursor:pointer;user-select:none;transition:opacity .2s;
+  [data-theme="dark"] .nav-primary {
+    border-bottom-color: rgba(255, 255, 255, 0.06);
   }
-  .nav-logo:hover{opacity:.85}
-  .nav-current-badge{
-    display:inline-flex;align-items:center;gap:6px;
-    background:var(--bg3);border:1px solid var(--border);
-    padding:3px 10px;border-radius:999px;
-    font-size:11px;font-weight:700;color:var(--text2);
-    max-width:280px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-    transition:all .25s;
+
+  /* Brand & Contextual Breadcrumb */
+  .nav-brand-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex-shrink: 0;
   }
-  .nav-current-badge::before{
-    content:'';width:6px;height:6px;border-radius:50%;
-    background:var(--teal);box-shadow:0 0 8px var(--teal);
-    animation:pulseGlow 2s infinite;
+  .nav-brand {
+    font-size: 13.5px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--text);
+    user-select: none;
+    transition: opacity .18s;
   }
-  @keyframes pulseGlow{
-    0%,100%{opacity:1;transform:scale(1)}
-    50%{opacity:.4;transform:scale(0.8)}
+  .nav-brand:hover { opacity: 0.85; }
+  .nav-brand-mark {
+    color: var(--accent2);
+    font-size: 13px;
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
   }
-  .cat-pills-wrap{
-    display:flex;align-items:center;gap:5px;
-    overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
-    padding:2px 0;
+  .nav-brand-text {
+    background: linear-gradient(135deg, var(--text) 30%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-  .cat-pills-wrap::-webkit-scrollbar{display:none}
-  .cat-pill{
-    padding:4px 11px;font-size:11.5px;font-weight:700;border-radius:999px;
-    border:1px solid var(--border);background:var(--bg3);color:var(--text2);
-    cursor:pointer;transition:all .2s cubic-bezier(0.16,1,0.3,1);
-    font-family:var(--sans);display:inline-flex;align-items:center;gap:5px;
-    white-space:nowrap;flex-shrink:0;
+  .nav-brand-arrow {
+    color: var(--teal);
+    font-weight: 900;
+    margin: 0 1px;
+    -webkit-text-fill-color: initial;
   }
-  .cat-pill:hover{
-    color:var(--accent);border-color:var(--accent2);background:var(--how-box-bg);
-    transform:translateY(-1px);
+  .nav-crumb-sep {
+    color: var(--text3);
+    opacity: 0.45;
+    font-size: 13px;
+    font-weight: 300;
   }
-  .cat-pill.active{
-    background:linear-gradient(135deg,var(--accent) 0%,var(--accent3) 100%);
-    color:#ffffff !important;border-color:transparent;
-    box-shadow:0 3px 12px rgba(79,70,229,0.35);
-    transform:translateY(-1px);
+  .nav-breadcrumb-context {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text2);
+    cursor: pointer;
+    max-width: 260px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all .2s;
   }
-  .cat-pill-switch{border-color:rgba(234,88,12,.35);color:var(--coral)}
-  .cat-pill-switch:hover{border-color:var(--coral);background:rgba(234,88,12,.1)}
-  .cat-pill-switch.active{
-    background:linear-gradient(135deg,#f97316 0%,#ea580c 100%) !important;
-    box-shadow:0 3px 12px rgba(234,88,12,0.4);
+  [data-theme="dark"] .nav-breadcrumb-context {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
   }
-  .cat-pill-timetable{border-color:rgba(13,148,136,.35);color:var(--teal)}
-  .cat-pill-timetable:hover{border-color:var(--teal);background:rgba(13,148,136,.1)}
-  .cat-pill-timetable.active{
-    background:linear-gradient(135deg,#0d9488 0%,#14b8a6 100%) !important;
-    color:#ffffff !important;box-shadow:0 3px 12px rgba(13,148,136,0.4);
+  .nav-breadcrumb-context:hover {
+    border-color: var(--accent);
+    color: var(--text);
+    background: var(--how-box-bg);
   }
-  .nav-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
-  .nav-menu-btn, .nav-search-btn{
-    padding:4px 11px;font-size:11.5px;font-weight:700;border-radius:999px;
-    border:1px solid var(--border);background:var(--bg3);color:var(--text2);
-    cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;
-    gap:5px;font-family:var(--sans);
+  .nav-crumb-pulse {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 7px var(--teal);
+    animation: pulseGlow 2s infinite;
+    flex-shrink: 0;
   }
-  .nav-menu-btn:hover{border-color:#FFE862;color:#FFE862;background:rgba(255,232,98,0.12)}
-  .nav-search-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--how-box-bg)}
-  .nav-menu-btn kbd, .nav-search-btn kbd{
-    background:var(--bg4);border-radius:4px;padding:1px 5px;
-    font-size:9.5px;font-family:var(--mono);border:1px solid var(--border);
+  .nav-crumb-cat {
+    color: var(--text3);
+    font-weight: 500;
   }
-  .nav-buttons-wrap{
-    display:flex;align-items:center;gap:5px;overflow-x:auto;
-    width:100%;padding:2px 0 3px;
-    scrollbar-width:none;-ms-overflow-style:none;
-    -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 12px, #000 calc(100% - 12px), transparent 100%);
-    mask-image:linear-gradient(90deg, transparent 0%, #000 12px, #000 calc(100% - 12px), transparent 100%);
+  .nav-crumb-arrow {
+    color: var(--text3);
+    font-size: 11px;
+    opacity: 0.7;
   }
-  .nav-buttons-wrap::-webkit-scrollbar{display:none}
-  .nav-btn{
-    padding:4px 11px;font-size:11.5px;font-weight:600;letter-spacing:-0.01em;
-    text-transform:none;background:var(--bg3);border:1px solid var(--border);
-    color:var(--text2);cursor:pointer;transition:all .18s cubic-bezier(0.16,1,0.3,1);
-    flex-shrink:0;font-family:var(--sans);border-radius:7px;white-space:nowrap;
-    display:inline-flex;align-items:center;gap:6px;
+  .nav-crumb-title {
+    color: var(--text);
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  .nav-btn:hover{color:var(--text);background:var(--bg4);border-color:var(--border2);transform:translateY(-1px)}
-  .nav-btn.active{
-    color:#fff !important;background:linear-gradient(135deg,var(--accent) 0%,var(--accent3) 100%) !important;font-weight:700;
-    box-shadow:0 3px 12px rgba(79,70,229,0.35);border-color:transparent !important;transform:translateY(-1px);
+
+  /* Primary Navigation Tabs (Center) */
+  .nav-primary-tabs {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-  .nav-btn span.num-badge{
-    font-size:9.5px;font-family:var(--mono);color:var(--text3);font-weight:700;
-    opacity:0.8;
+  .nav-primary-tabs::-webkit-scrollbar { display: none; }
+  .nav-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text2);
+    font-size: 12.5px;
+    font-weight: 500;
+    font-family: var(--sans);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all .16s ease;
+    text-decoration: none;
   }
-  .nav-btn.active span.num-badge{color:rgba(255,255,255,0.8)}
-  .nav-btn-highlight{color:#22c55e;font-weight:700;border-color:rgba(34,197,94,0.35);background:rgba(34,197,94,0.08)}
-  .nav-btn-highlight:hover{color:#4ade80;border-color:#22c55e;background:rgba(34,197,94,0.16)}
-  .nav-btn-highlight.active{background:#16a34a !important;color:#fff !important}
-  .nav-btn-switch{color:var(--coral);font-weight:700;border-color:rgba(234,88,12,0.35);background:rgba(234,88,12,0.08)}
-  .nav-btn-switch:hover{border-color:var(--coral);background:rgba(234,88,12,0.16)}
-  .nav-btn-switch.active{background:var(--coral) !important;color:#fff !important;box-shadow:0 3px 10px rgba(234,88,12,0.35)}
-  .nav-btn-timetable{color:var(--teal);font-weight:700;border-color:rgba(13,148,136,0.35);background:rgba(13,148,136,0.08)}
-  .nav-btn-timetable:hover{border-color:var(--teal);background:rgba(13,148,136,0.16)}
-  .nav-btn-timetable.active{background:var(--teal) !important;color:#fff !important}
-  .nav-scroll-progress{
-    position:fixed;top:0;left:0;height:2.5px;width:0%;
-    background:linear-gradient(90deg,#7c6af5,#2dd4bf,#f59e0b,#ec4899);
-    transition:width .1s ease-out;box-shadow:0 0 8px rgba(124,106,245,0.6);
-    z-index:99999;pointer-events:none;
+  .nav-tab:hover {
+    color: var(--text);
+    background: var(--bg3);
+  }
+  [data-theme="dark"] .nav-tab:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+  .nav-tab.active {
+    color: var(--text) !important;
+    background: var(--bg4);
+    border-color: var(--border);
+    font-weight: 700;
+  }
+  [data-theme="dark"] .nav-tab.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  }
+  .nav-tab-badge {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: var(--bg4);
+    color: var(--text3);
+    transition: all .16s;
+  }
+  [data-theme="dark"] .nav-tab-badge {
+    background: rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .nav-tab.active .nav-tab-badge {
+    background: var(--accent);
+    color: #fff;
+  }
+  .nav-tab-caret {
+    font-size: 10px;
+    color: var(--text3);
+    transition: transform .2s ease;
+  }
+  .nav-tab-has-dd.is-open .nav-tab-caret {
+    transform: rotate(180deg);
+  }
+
+  /* Specific Tab Accents */
+  .nav-tab-dsa {
+    color: #16a34a;
+  }
+  [data-theme="dark"] .nav-tab-dsa {
+    color: #4ade80;
+  }
+  .nav-tab-dsa:hover {
+    background: rgba(34, 197, 94, 0.1) !important;
+    border-color: rgba(34, 197, 94, 0.25);
+  }
+  .nav-tab-dsa .nav-tab-badge-accent {
+    background: rgba(34, 197, 94, 0.15);
+    color: #16a34a;
+  }
+  [data-theme="dark"] .nav-tab-dsa .nav-tab-badge-accent {
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.18);
+  }
+
+  .nav-tab-timetable {
+    color: var(--teal);
+  }
+  .nav-tab-timetable:hover {
+    background: rgba(13, 148, 136, 0.1) !important;
+    border-color: rgba(13, 148, 136, 0.25);
+  }
+  .nav-tab-timetable .nav-tab-badge-live {
+    background: rgba(13, 148, 136, 0.15);
+    color: var(--teal);
+    font-weight: 800;
+  }
+  [data-theme="dark"] .nav-tab-timetable .nav-tab-badge-live {
+    color: #2dd4bf;
+    background: rgba(45, 212, 191, 0.18);
+  }
+
+  .nav-tab-switch {
+    color: var(--coral);
+  }
+  .nav-tab-switch:hover {
+    background: rgba(234, 88, 12, 0.1) !important;
+    border-color: rgba(234, 88, 12, 0.25);
+  }
+
+  /* Right Utility Actions */
+  .nav-utilities {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .nav-util-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 7px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--text2);
+    cursor: pointer;
+    transition: all .18s;
+    font-family: var(--sans);
+  }
+  [data-theme="dark"] .nav-util-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .nav-util-btn:hover {
+    background: var(--bg4);
+    border-color: var(--border2);
+    color: var(--text);
+  }
+  [data-theme="dark"] .nav-util-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.18);
+    color: #fff;
+  }
+  .nav-search-trigger:hover {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+    background: var(--how-box-bg) !important;
+  }
+  .nav-menu-trigger:hover {
+    border-color: #FFE862 !important;
+    color: #FFE862 !important;
+    background: rgba(255, 232, 98, 0.12) !important;
+  }
+  .nav-kbd {
+    background: var(--bg4);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 9.5px;
+    font-family: var(--mono);
+    border: 1px solid var(--border);
+    color: var(--text3);
+  }
+  [data-theme="dark"] .nav-kbd {
+    background: rgba(0, 0, 0, 0.35);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  /* ---------------- SECONDARY TIER (Phase Navigation) ---------------- */
+  .nav-secondary {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    padding: 0 1.5rem;
+    background: rgba(0, 0, 0, 0.02);
+  }
+  [data-theme="dark"] .nav-secondary {
+    background: rgba(0, 0, 0, 0.22);
+  }
+  .nav-secondary-inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .nav-secondary-inner::-webkit-scrollbar { display: none; }
+
+  /* Phase Buttons Row */
+  .nav-phases-row {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+  }
+  .nav-sec-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 9px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text2);
+    cursor: pointer;
+    transition: all .16s ease;
+    white-space: nowrap;
+    font-family: var(--sans);
+  }
+  .nav-sec-btn:hover {
+    color: var(--text);
+    background: var(--bg3);
+  }
+  [data-theme="dark"] .nav-sec-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+  }
+  .sec-btn-num {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    font-weight: 700;
+    color: var(--text3);
+    opacity: 0.8;
+  }
+  .nav-sec-btn.active {
+    color: var(--text) !important;
+    background: var(--bg3);
+    font-weight: 700;
+    border-color: var(--border);
+    box-shadow: inset 0 -2px 0 0 var(--accent);
+  }
+  [data-theme="dark"] .nav-sec-btn.active {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 -2px 0 0 #818cf8;
+  }
+  .nav-sec-btn.active .sec-btn-num {
+    color: var(--accent2);
+    opacity: 1;
+  }
+
+  .nav-sec-divider {
+    width: 1px;
+    height: 16px;
+    background: var(--border);
+    opacity: 0.6;
+    margin: 0 4px;
+    flex-shrink: 0;
+  }
+  [data-theme="dark"] .nav-sec-divider {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Dropdown Trigger Buttons in Secondary Bar */
+  .nav-tab-dropdown-wrap, .nav-sec-dropdown-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .nav-sec-dd-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 9px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--bg2);
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--text2);
+    cursor: pointer;
+    transition: all .16s;
+    white-space: nowrap;
+    font-family: var(--sans);
+  }
+  [data-theme="dark"] .nav-sec-dd-btn {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .nav-sec-dd-btn:hover {
+    background: var(--bg3);
+    border-color: var(--border2);
+    color: var(--text);
+  }
+  [data-theme="dark"] .nav-sec-dd-btn:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.16);
+    color: #fff;
+  }
+  .nav-sec-dd-btn.active {
+    color: var(--accent) !important;
+    border-color: var(--accent2);
+    background: var(--how-box-bg);
+    box-shadow: inset 0 -2px 0 0 var(--accent);
+  }
+  [data-theme="dark"] .nav-sec-dd-btn.active {
+    color: #a5b4fc !important;
+    border-color: rgba(129, 140, 248, 0.4);
+    background: rgba(99, 102, 241, 0.12);
+    box-shadow: inset 0 -2px 0 0 #818cf8;
+  }
+  .sec-dd-caret {
+    font-size: 10px;
+    color: var(--text3);
+    transition: transform .2s ease;
+  }
+  .nav-sec-dd-btn.is-open .sec-dd-caret {
+    transform: rotate(180deg);
+  }
+
+  /* Contextual Progressive Sub-Nav Strip */
+  .nav-contextual-strip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 4px;
+    border-radius: 7px;
+    background: var(--how-box-bg);
+    border: 1px solid rgba(79, 70, 229, 0.25);
+    margin-left: auto;
+    flex-shrink: 0;
+    transition: all .2s;
+  }
+  [data-theme="dark"] .nav-contextual-strip {
+    background: rgba(99, 102, 241, 0.09);
+    border-color: rgba(129, 140, 248, 0.25);
+  }
+  .nav-contextual-tag {
+    font-size: 10px;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    padding: 0 4px;
+    font-weight: 800;
+  }
+  [data-theme="dark"] .nav-contextual-tag {
+    color: #a5b4fc;
+  }
+  .nav-contextual-pill {
+    border: none;
+    background: transparent;
+    color: var(--text2);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .15s;
+    font-family: var(--sans);
+  }
+  .nav-contextual-pill:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.5);
+  }
+  [data-theme="dark"] .nav-contextual-pill:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .nav-contextual-pill.active {
+    color: #ffffff !important;
+    background: var(--accent);
+    font-weight: 700;
+    box-shadow: 0 1px 4px rgba(79, 70, 229, 0.4);
+  }
+  [data-theme="dark"] .nav-contextual-pill.active {
+    background: #6366f1;
+    box-shadow: 0 1px 6px rgba(99, 102, 241, 0.5);
+  }
+
+  /* ---------------- GLASSMORPHIC DROPDOWN MENUS ---------------- */
+  .nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(28px) saturate(190%);
+    -webkit-backdrop-filter: blur(28px) saturate(190%);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 18px 45px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    padding: 6px;
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px) scale(0.98);
+    transition: opacity .18s cubic-bezier(0.16, 1, 0.3, 1),
+                transform .18s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility .18s;
+    pointer-events: none;
+  }
+  [data-theme="dark"] .nav-dropdown-menu {
+    background: rgba(18, 18, 22, 0.96);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 24px 54px -8px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  }
+  .nav-dropdown-menu.align-right {
+    left: auto;
+    right: 0;
+  }
+  .nav-dropdown-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+  .dd-group-header {
+    font-size: 10px;
+    font-family: var(--mono);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--text3);
+    padding: 6px 10px 4px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 4px;
+  }
+  [data-theme="dark"] .dd-group-header {
+    border-bottom-color: rgba(255, 255, 255, 0.06);
+  }
+  .dd-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text2);
+    transition: all .14s ease;
+    cursor: pointer;
+  }
+  .dd-item:hover {
+    background: var(--bg3);
+    color: var(--text);
+  }
+  [data-theme="dark"] .dd-item:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+  }
+  .dd-item.active {
+    background: var(--how-box-bg);
+    color: var(--accent) !important;
+  }
+  [data-theme="dark"] .dd-item.active {
+    background: rgba(99, 102, 241, 0.16);
+    color: #a5b4fc !important;
+  }
+  .dd-item-num {
+    font-size: 10px;
+    font-family: var(--mono);
+    font-weight: 800;
+    color: var(--text3);
+    background: var(--bg4);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+  [data-theme="dark"] .dd-item-num {
+    background: rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .dd-item-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .dd-item-bullet {
+    font-size: 11px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .dd-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+    flex: 1;
+  }
+  .dd-item-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  [data-theme="dark"] .dd-item-title {
+    color: #f3f4f6;
+  }
+  .dd-badge {
+    font-size: 9.5px;
+    font-family: var(--mono);
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: var(--bg4);
+    color: var(--text3);
+  }
+  [data-theme="dark"] .dd-badge {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.65);
+  }
+  .dd-item-desc {
+    font-size: 11px;
+    color: var(--text3);
+    line-height: 1.35;
+    white-space: normal;
+  }
+
+  .nav-scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2.5px;
+    width: 0%;
+    background: linear-gradient(90deg, #7c6af5, #2dd4bf, #f59e0b, #ec4899);
+    transition: width .1s ease-out;
+    box-shadow: 0 0 8px rgba(124, 106, 245, 0.6);
+    z-index: 99999;
+    pointer-events: none;
   }
 
   /* ============================================================ */
-  /* LIQUID MORPH FLOATING ROADMAP MENU (Bottom-Center Command)   */
+  /* LIQUID MORPH FLOATING ROADMAP MENU (Auto-Hide on Scroll)     */
   /* ============================================================ */
-  .liquid-menu-wrapper{
-    position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
-    z-index:9999;pointer-events:auto;font-family:'Outfit','Inter',system-ui,sans-serif;
+  .liquid-menu-wrapper {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    pointer-events: auto;
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+    transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1), opacity .25s ease;
+    will-change: transform, opacity;
+  }
+  .liquid-menu-wrapper.is-hidden {
+    transform: translate(-50%, 110px) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  /* Bottom trigger hover zone to reveal floating menu */
+  .bottom-reveal-zone {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 28px;
+    z-index: 9990;
+    pointer-events: auto;
+    background: transparent;
   }
   .liquid-menu-container{
     position:relative;overflow:hidden;display:flex;flex-direction:column;
@@ -444,29 +998,32 @@
       padding-left: 1rem !important;
       margin-left: 0.15rem !important;
     }
-    .nav-top {
-      flex-wrap: wrap;
+    .nav-primary {
+      padding: 0 0.85rem;
       gap: 0.5rem;
     }
-    .nav-current-badge {
-      display: none !important;
+    .nav-breadcrumb-context {
+      max-width: 130px;
     }
-    .nav-logo {
-      font-size: 13px !important;
+    .nav-primary-tabs {
+      display: none; /* Streamlined on small screens; accessible via Jump (⌘K) & Floating Menu (M) */
     }
-    .cat-pills-wrap, .nav-buttons-wrap {
-      width: 100%;
-      overflow-x: auto;
-      padding-bottom: 4px;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
+    .nav-secondary {
+      padding: 0 0.85rem;
+      height: 36px;
     }
-    .cat-pills-wrap::-webkit-scrollbar, .nav-buttons-wrap::-webkit-scrollbar {
+    .nav-secondary-inner {
+      gap: 4px;
+    }
+    .nav-sec-btn, .nav-sec-dd-btn {
+      padding: 3px 7px !important;
+      font-size: 11px !important;
+    }
+    .nav-contextual-strip {
+      padding: 1px 3px;
+    }
+    .nav-contextual-tag {
       display: none;
-    }
-    .cat-pill, .nav-btn {
-      padding: 6px 11px !important;
-      font-size: 11.5px !important;
     }
     .tbl-wrap {
       width: 100%;
@@ -1055,78 +1612,335 @@
 </head>
 <body>
 
-<nav class="nav" role="navigation">
-  <div class="nav-top">
-    <div class="nav-logo-group">
-      <span class="nav-logo" onclick="show('s1')">AI INFRA ✦ 2026</span>
-      <span class="nav-current-badge" id="navCurrentBadge">Reality Check</span>
-    </div>
-    
-    <div class="cat-pills-wrap" id="categoryPills">
-      <button class="cat-pill active" onclick="filterNavCategory('all', this)">All (24)</button>
-      <button class="cat-pill cat-pill-switch" onclick="filterNavCategory('switch', this)">🚀 Switch</button>
-      <button class="cat-pill" onclick="filterNavCategory('core', this)">🏛️ Core (7)</button>
-      <button class="cat-pill" onclick="filterNavCategory('plans', this)">📅 Day Plans (4)</button>
-      <button class="cat-pill" onclick="window.location.href='./dsa/index.html'" style="color:#4ade80;border-color:rgba(74,222,128,0.4)" title="Launch 168-Day Silicon DSA Cockpit">💻 DSA Cockpit ↗</button>
-      <button class="cat-pill" onclick="filterNavCategory('prep', this)">🎯 Career (5)</button>
-      <button class="cat-pill cat-pill-timetable" onclick="show('s26'); filterNavCategory('cheats', this)">⏱️ Timetable</button>
-      <button class="cat-pill" onclick="filterNavCategory('cheats', this)">📄 Cheats &amp; Logs (5)</button>
+<header class="app-header" id="appHeader" role="banner">
+  <!-- PRIMARY TIER: Global Command Bar (Level 1 & 2) -->
+  <div class="nav-primary">
+    <!-- Left: Identity & Live Dynamic Breadcrumb -->
+    <div class="nav-brand-wrap">
+      <a class="nav-brand" href="javascript:void(0)" onclick="show('s1')" title="AI Infra Engineering Roadmap 2026">
+        <span class="nav-brand-mark">✦</span>
+        <span class="nav-brand-text">AI INFRA <span class="nav-brand-arrow">→</span> 2026</span>
+      </a>
+      <span class="nav-crumb-sep">/</span>
+      <div class="nav-breadcrumb-context" id="navBreadcrumbContext" onclick="openSearchModal()" title="Current Context (Click to jump / ⌘K)">
+        <span class="nav-crumb-pulse" id="navCrumbPulse"></span>
+        <span class="nav-crumb-cat" id="navCrumbCat">Core</span>
+        <span class="nav-crumb-arrow">›</span>
+        <span class="nav-crumb-title" id="navCrumbTitle">Reality Check</span>
+      </div>
     </div>
 
-    <div class="nav-actions">
-      <button class="nav-menu-btn" onclick="toggleLiquidMenu(event)" title="Toggle Roadmap Quick Menu (Press M)">
-        <span>✦ Menu</span>
-        <kbd>M</kbd>
+    <!-- Center: Global Category Links (Sleek text links with subtle counts) -->
+    <nav class="nav-primary-tabs" id="navPrimaryTabs" aria-label="Global Navigation">
+      <button type="button" class="nav-tab active" id="tab-s1" data-nav-target="s1" onclick="show('s1')">
+        <span class="nav-tab-label">Reality Check</span>
       </button>
-      <button class="nav-search-btn" onclick="openSearchModal()" title="Search &amp; Quick Jump (Ctrl+K)">
-        <span>🔍 Jump</span>
-        <kbd>⌘K</kbd>
+
+      <button type="button" class="nav-tab" id="tab-core" data-nav-group="core" onclick="show('s2')">
+        <span class="nav-tab-label">Core</span>
+        <span class="nav-tab-badge">7</span>
       </button>
-      <button class="dark-mode-toggle" id="dmToggle" onclick="toggleDarkMode()">🌙 Dark</button>
+
+      <!-- Day Plans Dropdown -->
+      <div class="nav-tab-dropdown-wrap">
+        <button type="button" class="nav-tab nav-tab-has-dd" id="tab-plans" onclick="toggleNavDropdown('ddDayPlans', event)">
+          <span class="nav-tab-label">Day Plans</span>
+          <span class="nav-tab-badge">4</span>
+          <span class="nav-tab-caret">▾</span>
+        </button>
+        <div class="nav-dropdown-menu" id="ddDayPlans">
+          <div class="dd-group-header">168-Day Master Execution Tracks</div>
+          <a class="dd-item" id="ddItem-s11" href="javascript:void(0)" onclick="show('s11'); closeAllNavDropdowns()">
+            <span class="dd-item-bullet" style="color:#22c55e">▶</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Phase 1 Day Plan <span class="dd-badge">Days 1–30</span></span>
+              <span class="dd-item-desc">Python internals, POSIX C, Linux kernels &amp; linear algebra</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s12" href="javascript:void(0)" onclick="show('s12'); closeAllNavDropdowns()">
+            <span class="dd-item-bullet" style="color:#06b6d4">▶</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Phase 2 Day Plan <span class="dd-badge">Days 31–75</span></span>
+              <span class="dd-item-desc">PyTorch from scratch, backprop, autograd, CNNs &amp; Transformers</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s13" href="javascript:void(0)" onclick="show('s13'); closeAllNavDropdowns()">
+            <span class="dd-item-bullet" style="color:#818cf8">▶</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Phase 3 Day Plan <span class="dd-badge">Days 76–120</span></span>
+              <span class="dd-item-desc">RAG pipelines, LoRA fine-tuning, quantization &amp; vLLM serving</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s14" href="javascript:void(0)" onclick="show('s14'); closeAllNavDropdowns()">
+            <span class="dd-item-bullet" style="color:#f59e0b">▶</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Phase 4 Day Plan <span class="dd-badge">Days 121–168</span></span>
+              <span class="dd-item-desc">CUDA C++, TensorRT-LLM, Triton kernels &amp; Megatron parallelism</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- DSA Cockpit Direct Link -->
+      <a class="nav-tab nav-tab-dsa" href="./dsa/index.html" title="Launch 168-Day Silicon DSA Cockpit">
+        <span class="nav-tab-label">DSA Cockpit</span>
+        <span class="nav-tab-badge nav-tab-badge-accent">↗</span>
+      </a>
+
+      <button type="button" class="nav-tab" id="tab-career" data-nav-group="prep" onclick="show('s8')">
+        <span class="nav-tab-label">Career</span>
+        <span class="nav-tab-badge">5</span>
+      </button>
+
+      <button type="button" class="nav-tab nav-tab-timetable" id="tab-timetable" data-nav-target="s26" onclick="show('s26')">
+        <span class="nav-tab-label">Timetable</span>
+        <span class="nav-tab-badge nav-tab-badge-live">24/7</span>
+      </button>
+
+      <!-- Cheats & Logs Dropdown -->
+      <div class="nav-tab-dropdown-wrap">
+        <button type="button" class="nav-tab nav-tab-has-dd" id="tab-cheats" onclick="toggleNavDropdown('ddCheats', event)">
+          <span class="nav-tab-label">Cheats &amp; Logs</span>
+          <span class="nav-tab-badge">5</span>
+          <span class="nav-tab-caret">▾</span>
+        </button>
+        <div class="nav-dropdown-menu" id="ddCheats">
+          <div class="dd-group-header">Cheatsheets &amp; Retrospectives</div>
+          <a class="dd-item" id="ddItem-s21" href="javascript:void(0)" onclick="show('s21'); closeAllNavDropdowns()">
+            <span class="dd-item-icon">📄</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Python Cheat Sheet</span>
+              <span class="dd-item-desc">Asyncio, multiprocessing, memory profiling, type hints</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s22" href="javascript:void(0)" onclick="show('s22'); closeAllNavDropdowns()">
+            <span class="dd-item-icon">📄</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Git Cheat Sheet</span>
+              <span class="dd-item-desc">Worktrees, interactive rebase, cherry-pick, submodules</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s24" href="javascript:void(0)" onclick="show('s24'); closeAllNavDropdowns()">
+            <span class="dd-item-icon">📄</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">C++ Cheat Sheet</span>
+              <span class="dd-item-desc">Modern C++20, smart pointers, RAII, threads, lockless queues</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s26" href="javascript:void(0)" onclick="show('s26'); closeAllNavDropdowns()">
+            <span class="dd-item-icon">⏱️</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Master Timetable &amp; Routine</span>
+              <span class="dd-item-desc">Office balance, WFH deep work, weekend sprints, hacking</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s27" href="javascript:void(0)" onclick="show('s27'); closeAllNavDropdowns()">
+            <span class="dd-item-icon">📓</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Weekly Retrospective Log</span>
+              <span class="dd-item-desc">Interactive weekly journal, confidence tracking &amp; notes</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <button type="button" class="nav-tab nav-tab-switch" id="tab-switch" data-nav-target="s25" onclick="show('s25')" title="Roadmap.sh Accelerated Path">
+        <span class="nav-tab-label">Switch</span>
+        <span class="nav-tab-badge">🚀</span>
+      </button>
+    </nav>
+
+    <!-- Right: Utility Actions (Jump, Menu, Theme) -->
+    <div class="nav-utilities">
+      <button type="button" class="nav-util-btn nav-search-trigger" onclick="openSearchModal()" title="Search &amp; Quick Jump (⌘K or Ctrl+K)">
+        <span class="nav-util-icon">🔍</span>
+        <span class="nav-util-label">Jump</span>
+        <kbd class="nav-kbd">⌘K</kbd>
+      </button>
+      <button type="button" class="nav-util-btn nav-menu-trigger" onclick="toggleLiquidMenu(event)" title="Toggle Floating Roadmap Menu (Press M)">
+        <span class="nav-util-icon">✦</span>
+        <span class="nav-util-label">Menu</span>
+        <kbd class="nav-kbd">M</kbd>
+      </button>
+      <button type="button" class="nav-util-btn nav-theme-trigger" id="dmToggle" onclick="toggleDarkMode()" title="Toggle Dark / Light Theme">
+        <span class="theme-icon">🌙</span>
+        <span class="theme-label">Dark</span>
+      </button>
     </div>
   </div>
 
-  <div class="nav-buttons-wrap" id="navButtonsContainer">
-    <!-- Core Track -->
-    <button class="nav-btn active" data-cat="core" onclick="show('s1', this)"><span class="num-badge">01</span> Reality Check</button>
-    <button class="nav-btn" data-cat="core" onclick="show('s2', this)"><span class="num-badge">02</span> Phase 1: Foundations</button>
-    <button class="nav-btn" data-cat="core" onclick="show('s3', this)"><span class="num-badge">03</span> Phase 2: ML &amp; DL</button>
-    <button class="nav-btn" data-cat="core" onclick="show('s4', this)"><span class="num-badge">04</span> Phase 3: GenAI &amp; LLMs</button>
-    <button class="nav-btn" data-cat="core" onclick="show('s5', this)"><span class="num-badge">05</span> Phase 4: AI Infra</button>
-    <button class="nav-btn" data-cat="core" onclick="show('s15', this)"><span class="num-badge">15</span> OS &amp; C++ Deep Dive</button>
-    <button class="nav-btn" data-cat="core" onclick="show('s18', this)"><span class="num-badge">18</span> Research Papers</button>
+  <!-- SECONDARY TIER: Phase Navigation & Progressive Contextual Sub-Nav -->
+  <div class="nav-secondary">
+    <div class="nav-secondary-inner">
+      <!-- Phases Row -->
+      <div class="nav-phases-row" role="tablist">
+        <button type="button" class="nav-sec-btn active" id="secBtn-s1" onclick="show('s1')" role="tab">
+          <span class="sec-btn-num">01</span>
+          <span class="sec-btn-name">Reality Check</span>
+        </button>
 
-    <!-- Day Plans -->
-    <button class="nav-btn" data-cat="plans" onclick="show('s11', this)">▶ P1 Day Plan</button>
-    <button class="nav-btn" data-cat="plans" onclick="show('s12', this)">▶ P2 Day Plan</button>
-    <button class="nav-btn" data-cat="plans" onclick="show('s13', this)">▶ P3 Day Plan</button>
-    <button class="nav-btn" data-cat="plans" onclick="show('s14', this)">▶ P4 Day Plan</button>
+        <button type="button" class="nav-sec-btn" id="secBtn-p1" onclick="show('s2')" role="tab">
+          <span class="sec-btn-num">02</span>
+          <span class="sec-btn-name">Phase 1: Foundations</span>
+        </button>
 
-    <!-- DSA & System Design -->
-    <button class="nav-btn nav-btn-highlight" data-cat="dsa" onclick="window.location.href='./dsa/index.html'" title="Launch 168-Day Silicon DSA Cockpit">🚀 DSA Cockpit ↗</button>
-    <button class="nav-btn" data-cat="dsa" onclick="show('s7', this)"><span class="num-badge">07</span> System Design</button>
+        <button type="button" class="nav-sec-btn" id="secBtn-p2" onclick="show('s3')" role="tab">
+          <span class="sec-btn-num">03</span>
+          <span class="sec-btn-name">Phase 2: ML &amp; DL</span>
+        </button>
 
-    <!-- Career & Prep -->
-    <button class="nav-btn" data-cat="prep" onclick="show('s8', this)"><span class="num-badge">08</span> Projects Portfolio</button>
-    <button class="nav-btn" data-cat="prep" onclick="show('s9', this)"><span class="num-badge">09</span> Interviews &amp; Prep</button>
-    <button class="nav-btn" data-cat="prep" onclick="show('s10', this)"><span class="num-badge">10</span> Brutal Advice</button>
-    <button class="nav-btn" data-cat="prep" onclick="show('s16', this)"><span class="num-badge">16</span> Sustainability</button>
-    <button class="nav-btn" data-cat="prep" onclick="show('s17', this)"><span class="num-badge">17</span> Execution Strategy</button>
+        <button type="button" class="nav-sec-btn" id="secBtn-p3" onclick="show('s4')" role="tab">
+          <span class="sec-btn-num">04</span>
+          <span class="sec-btn-name">Phase 3: GenAI &amp; LLMs</span>
+        </button>
 
-    <!-- Fast Track -->
-    <button class="nav-btn nav-btn-switch" data-cat="switch" onclick="show('s25', this)">🚀 Career Switch (Roadmap.sh)</button>
+        <button type="button" class="nav-sec-btn" id="secBtn-p4" onclick="show('s5')" role="tab">
+          <span class="sec-btn-num">05</span>
+          <span class="sec-btn-name">Phase 4: AI Infra</span>
+        </button>
+      </div>
 
-    <!-- Cheats, Routine & Logs -->
-    <button class="nav-btn nav-btn-timetable" data-cat="cheats" onclick="show('s26', this)">⏱️ Master Timetable &amp; Routine</button>
-    <button class="nav-btn" data-cat="cheats" onclick="show('s21', this)">📄 Python Cheat</button>
-    <button class="nav-btn" data-cat="cheats" onclick="show('s22', this)">📄 Git Cheat</button>
-    <button class="nav-btn" data-cat="cheats" onclick="show('s24', this)">📄 C++ Cheat</button>
-    <button class="nav-btn" data-cat="cheats" onclick="show('s27', this)">📓 Weekly Log</button>
+      <div class="nav-sec-divider"></div>
+
+      <!-- Deep Dives ▾ Dropdown -->
+      <div class="nav-sec-dropdown-wrap">
+        <button type="button" class="nav-sec-dd-btn" id="secBtn-deepdives" onclick="toggleNavDropdown('ddDeepDives', event)">
+          <span>Deep Dives</span>
+          <span class="sec-dd-caret">▾</span>
+        </button>
+        <div class="nav-dropdown-menu" id="ddDeepDives">
+          <div class="dd-group-header">Systems &amp; Architecture Deep Dives</div>
+          <a class="dd-item" id="ddItem-s15" href="javascript:void(0)" onclick="show('s15'); closeAllNavDropdowns()">
+            <span class="dd-item-num">15</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">OS &amp; C++ Deep Dive</span>
+              <span class="dd-item-desc">Virtual memory, paging, mmap, POSIX threads, SIMD</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s7" href="javascript:void(0)" onclick="show('s7'); closeAllNavDropdowns()">
+            <span class="dd-item-num">07</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">System Design</span>
+              <span class="dd-item-desc">vLLM PagedAttention, distributed kv-cache, rate limiters</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s8" href="javascript:void(0)" onclick="show('s8'); closeAllNavDropdowns()">
+            <span class="dd-item-num">08</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Projects Portfolio</span>
+              <span class="dd-item-desc">6 production-grade AI Infra capstone repos</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s18" href="javascript:void(0)" onclick="show('s18'); closeAllNavDropdowns()">
+            <span class="dd-item-num">18</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Research Papers</span>
+              <span class="dd-item-desc">Attention, RoPE, DeepSeek-V3/R1, FlashAttention-3</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s25" href="javascript:void(0)" onclick="show('s25'); closeAllNavDropdowns()">
+            <span class="dd-item-num">25</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Career Switch Protocol</span>
+              <span class="dd-item-desc">Roadmap.sh accelerated path for SWEs</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Resources & Prep ▾ Dropdown -->
+      <div class="nav-sec-dropdown-wrap">
+        <button type="button" class="nav-sec-dd-btn" id="secBtn-resources" onclick="toggleNavDropdown('ddResources', event)">
+          <span>Resources &amp; Prep</span>
+          <span class="sec-dd-caret">▾</span>
+        </button>
+        <div class="nav-dropdown-menu" id="ddResources">
+          <div class="dd-group-header">Interview Prep &amp; Execution Guides</div>
+          <a class="dd-item" id="ddItem-s9" href="javascript:void(0)" onclick="show('s9'); closeAllNavDropdowns()">
+            <span class="dd-item-num">09</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Interviews &amp; Question Bank</span>
+              <span class="dd-item-desc">NVIDIA, OpenAI, Meta AI Infra technical questions</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s10" href="javascript:void(0)" onclick="show('s10'); closeAllNavDropdowns()">
+            <span class="dd-item-num">10</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Brutal Advice &amp; Industry Truths</span>
+              <span class="dd-item-desc">Uncomfortable realities of breaking into AI infra</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s16" href="javascript:void(0)" onclick="show('s16'); closeAllNavDropdowns()">
+            <span class="dd-item-num">16</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Sustainability &amp; Longevity</span>
+              <span class="dd-item-desc">Anti-burnout protocol for working professionals</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s17" href="javascript:void(0)" onclick="show('s17'); closeAllNavDropdowns()">
+            <span class="dd-item-num">17</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">Execution Strategy</span>
+              <span class="dd-item-desc">Compounding feedback loops &amp; portfolio proof</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s26-r" href="javascript:void(0)" onclick="show('s26'); closeAllNavDropdowns()">
+            <span class="dd-item-num">26</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">⏱️ Master Timetable &amp; Routine</span>
+              <span class="dd-item-desc">Office hours, WFH deep work, weekend sprints</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s27-r" href="javascript:void(0)" onclick="show('s27'); closeAllNavDropdowns()">
+            <span class="dd-item-num">27</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">📓 Weekly Progress Journal</span>
+              <span class="dd-item-desc">Interactive weekly log &amp; self-evaluations</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s21-r" href="javascript:void(0)" onclick="show('s21'); closeAllNavDropdowns()">
+            <span class="dd-item-num">21</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">📄 Python Cheat Sheet</span>
+              <span class="dd-item-desc">Asyncio, multiprocessing, memory profiling</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s22-r" href="javascript:void(0)" onclick="show('s22'); closeAllNavDropdowns()">
+            <span class="dd-item-num">22</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">📄 Git Cheat Sheet</span>
+              <span class="dd-item-desc">Worktrees, interactive rebase, cherry-pick</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s24-r" href="javascript:void(0)" onclick="show('s24'); closeAllNavDropdowns()">
+            <span class="dd-item-num">24</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">📄 C++ Cheat Sheet</span>
+              <span class="dd-item-desc">Modern C++20, smart pointers, SIMD, lockless queues</span>
+            </div>
+          </a>
+          <a class="dd-item" id="ddItem-s6" href="./dsa/index.html" target="_blank" onclick="closeAllNavDropdowns()">
+            <span class="dd-item-num">06</span>
+            <div class="dd-item-info">
+              <span class="dd-item-title">🚀 168-Day DSA Cockpit ↗</span>
+              <span class="dd-item-desc">15 algorithm patterns, dual-tier channels, interactive practice</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contextual Progressive Disclosure Strip -->
+      <div class="nav-contextual-strip" id="navContextualStrip">
+        <span class="nav-contextual-tag" id="navContextualTag">Phase 1 Context:</span>
+        <button type="button" class="nav-contextual-pill active" id="ctxBtn-overview" onclick="ctxNavigateOverview()">Overview</button>
+        <button type="button" class="nav-contextual-pill" id="ctxBtn-dayplan" onclick="ctxNavigateDayPlan()">▶ Day Plan</button>
+      </div>
+    </div>
   </div>
 
   <!-- Animated Reading Progress Line -->
   <div class="nav-scroll-progress" id="navScrollProgress"></div>
-</nav>
+</header>
 
 <!-- SECTION 1: REALITY -->
 <div id="s1" class="page active">
@@ -10476,99 +11290,223 @@ if (document.readyState === 'loading') {
 const ALL_SECTIONS = ['s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15','s16','s17','s18','s21','s22','s24','s25','s26','s27'];
 
 const SECTION_ORDER = [
-  {id: 's1', title: 'Reality Check', cat: 'core'},
-  {id: 's2', title: 'Phase 1: Foundations', cat: 'core'},
-  {id: 's3', title: 'Phase 2: ML & Deep Learning', cat: 'core'},
-  {id: 's4', title: 'Phase 3: GenAI & LLMs', cat: 'core'},
-  {id: 's5', title: 'Phase 4: AI Infrastructure', cat: 'core'},
-  {id: 's6', title: '🚀 168-Day DSA Cockpit ↗', cat: 'dsa'},
-  {id: 's7', title: 'System Design', cat: 'dsa'},
-  {id: 's8', title: 'Projects Portfolio', cat: 'prep'},
-  {id: 's9', title: 'Interviews & Prep', cat: 'prep'},
-  {id: 's10', title: 'Brutal Advice', cat: 'prep'},
-  {id: 's11', title: '▶ P1 Day Plan', cat: 'plans'},
-  {id: 's12', title: '▶ P2 Day Plan', cat: 'plans'},
-  {id: 's13', title: '▶ P3 Day Plan', cat: 'plans'},
-  {id: 's14', title: '▶ P4 Day Plan', cat: 'plans'},
-  {id: 's15', title: 'OS & C++', cat: 'core'},
-  {id: 's16', title: 'Sustainability', cat: 'prep'},
-  {id: 's17', title: 'Strategy', cat: 'prep'},
-  {id: 's18', title: 'Research Papers', cat: 'core'},
-  {id: 's21', title: '📄 Python Cheat Sheet', cat: 'cheats'},
-  {id: 's22', title: '📄 Git Cheat Sheet', cat: 'cheats'},
-  {id: 's24', title: '📄 C++ Cheat Sheet', cat: 'cheats'},
-  {id: 's25', title: '🚀 Career Switch (Roadmap.sh)', cat: 'switch'},
-  {id: 's26', title: '⏱️ Master Timetable & Routine', cat: 'cheats', keywords: 'timetable schedule routine hours hacking video editing dsa daily working professional wfh office time balance'},
-  {id: 's27', title: '📓 Weekly Log', cat: 'cheats'}
+  {id: 's1', title: 'Reality Check', cat: 'core', phase: 's1', desc: 'No sugarcoating. High cognitive load, market truths & requirements'},
+  {id: 's2', title: 'Phase 1: Foundations', cat: 'core', phase: 'p1', desc: 'Python internals, memory management, POSIX C, Linux kernels, Math'},
+  {id: 's3', title: 'Phase 2: ML & Deep Learning', cat: 'core', phase: 'p2', desc: 'PyTorch autograd from scratch, CUDA basics, CNNs & Transformers'},
+  {id: 's4', title: 'Phase 3: GenAI & LLMs', cat: 'core', phase: 'p3', desc: 'RAG pipelines, LoRA fine-tuning, quantization & vLLM serving'},
+  {id: 's5', title: 'Phase 4: AI Infrastructure', cat: 'core', phase: 'p4', desc: 'Custom CUDA C++ kernels, TensorRT-LLM, Triton & Megatron parallelism'},
+  {id: 's6', title: '🚀 168-Day DSA Cockpit ↗', cat: 'dsa', phase: null, desc: '15 algorithmic patterns, dual-tier channels, interactive practice'},
+  {id: 's7', title: 'System Design', cat: 'dsa', phase: null, desc: 'Distributed AI systems, PagedAttention, KV-cache management'},
+  {id: 's8', title: 'Projects Portfolio', cat: 'prep', phase: null, desc: '6 production-grade capstone repositories and architecture diagrams'},
+  {id: 's9', title: 'Interviews & Prep', cat: 'prep', phase: null, desc: 'Technical questions, systems questions, FAANG & Unicorn bar'},
+  {id: 's10', title: 'Brutal Advice', cat: 'prep', phase: null, desc: 'Uncomfortable truths about breaking into AI infrastructure'},
+  {id: 's11', title: '▶ P1 Day Plan', cat: 'plans', phase: 'p1', desc: 'Days 1 to 30: Foundations, Python, C, Linux & linear algebra'},
+  {id: 's12', title: '▶ P2 Day Plan', cat: 'plans', phase: 'p2', desc: 'Days 31 to 75: ML & DL, PyTorch autograd, micrograd, attention'},
+  {id: 's13', title: '▶ P3 Day Plan', cat: 'plans', phase: 'p3', desc: 'Days 76 to 120: GenAI, RAG, Quantization, LoRA & vLLM evaluation'},
+  {id: 's14', title: '▶ P4 Day Plan', cat: 'plans', phase: 'p4', desc: 'Days 121 to 168: AI Infra, CUDA C++, FlashAttention, Triton, Distributed'},
+  {id: 's15', title: 'OS & C++ Deep Dive', cat: 'core', phase: null, desc: 'Kernel paging, mmap, virtual memory, SIMD vectorization'},
+  {id: 's16', title: 'Sustainability', cat: 'prep', phase: null, desc: 'Anti-burnout protocol, sleep, health, sustainable compounding'},
+  {id: 's17', title: 'Strategy', cat: 'prep', phase: null, desc: 'Compounding feedback loops, portfolio validation, timeline'},
+  {id: 's18', title: 'Research Papers', cat: 'core', phase: null, desc: 'Attention Is All You Need, RoPE, DeepSeek-V3/R1, FlashAttention-3'},
+  {id: 's21', title: '📄 Python Cheat Sheet', cat: 'cheats', phase: null, desc: 'Asyncio, multiprocessing, generators, memory profiling, type hints'},
+  {id: 's22', title: '📄 Git Cheat Sheet', cat: 'cheats', phase: null, desc: 'Worktrees, interactive rebase, cherry-pick, submodule management'},
+  {id: 's24', title: '📄 C++ Cheat Sheet', cat: 'cheats', phase: null, desc: 'Modern C++20, smart pointers, RAII, threads, atomic primitives'},
+  {id: 's25', title: '🚀 Career Switch (Roadmap.sh)', cat: 'switch', phase: null, desc: 'Accelerated transition roadmap for existing software engineers'},
+  {id: 's26', title: '⏱️ Master Timetable & Routine', cat: 'cheats', phase: null, keywords: 'timetable schedule routine hours hacking video editing dsa daily working professional wfh office time balance', desc: 'Weekday office balance, WFH deep work, weekend sprints, hacking, video editing'},
+  {id: 's27', title: '📓 Weekly Log', cat: 'cheats', phase: null, desc: 'Interactive week-by-week journal, notes, and goal tracking'}
 ];
 
-function show(id, btn){
+let currentPhaseContext = 'p1';
+
+function syncNavContext(id) {
+  const secMeta = SECTION_ORDER.find(s => s.id === id);
+  if (!secMeta) return;
+
+  // 1. Update Breadcrumb Context
+  const crumbCatEl = document.getElementById('navCrumbCat');
+  const crumbTitleEl = document.getElementById('navCrumbTitle');
+  if (crumbCatEl && crumbTitleEl) {
+    let catLabel = 'Core';
+    if (secMeta.phase === 'p1') catLabel = 'Phase 1';
+    else if (secMeta.phase === 'p2') catLabel = 'Phase 2';
+    else if (secMeta.phase === 'p3') catLabel = 'Phase 3';
+    else if (secMeta.phase === 'p4') catLabel = 'Phase 4';
+    else if (['s15','s7','s8','s18','s25'].includes(id)) catLabel = 'Deep Dive';
+    else if (['s9','s10','s16','s17','s26','s27','s21','s22','s24'].includes(id)) catLabel = 'Resource';
+    else if (secMeta.cat === 'dsa') catLabel = 'DSA';
+
+    crumbCatEl.textContent = catLabel;
+    crumbTitleEl.textContent = secMeta.title;
+  }
+
+  // 2. Primary Tabs Active State
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  if (id === 's1') {
+    const t = document.getElementById('tab-s1');
+    if (t) t.classList.add('active');
+  } else if (['s2', 's3', 's4', 's5', 's15', 's18'].includes(id)) {
+    const t = document.getElementById('tab-core');
+    if (t) t.classList.add('active');
+  } else if (['s11', 's12', 's13', 's14'].includes(id)) {
+    const t = document.getElementById('tab-plans');
+    if (t) t.classList.add('active');
+  } else if (['s8', 's9', 's10', 's16', 's17'].includes(id)) {
+    const t = document.getElementById('tab-career');
+    if (t) t.classList.add('active');
+  } else if (id === 's26') {
+    const t = document.getElementById('tab-timetable');
+    if (t) t.classList.add('active');
+  } else if (['s21', 's22', 's24', 's27'].includes(id)) {
+    const t = document.getElementById('tab-cheats');
+    if (t) t.classList.add('active');
+  } else if (id === 's25') {
+    const t = document.getElementById('tab-switch');
+    if (t) t.classList.add('active');
+  }
+
+  // 3. Secondary Bar Buttons & Dropdowns
+  document.querySelectorAll('.nav-sec-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.nav-sec-dd-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.dd-item').forEach(i => i.classList.remove('active'));
+
+  const ddItem = document.getElementById(`ddItem-${id}`) || document.getElementById(`ddItem-${id}-r`);
+  if (ddItem) ddItem.classList.add('active');
+
+  const ctxStrip = document.getElementById('navContextualStrip');
+  const ctxTag = document.getElementById('navContextualTag');
+  const ctxOverview = document.getElementById('ctxBtn-overview');
+  const ctxDayplan = document.getElementById('ctxBtn-dayplan');
+
+  if (id === 's1') {
+    const b = document.getElementById('secBtn-s1');
+    if (b) b.classList.add('active');
+    if (ctxStrip) ctxStrip.style.display = 'none';
+  } else if (id === 's2' || id === 's11') {
+    currentPhaseContext = 'p1';
+    const b = document.getElementById('secBtn-p1');
+    if (b) b.classList.add('active');
+    if (ctxStrip) {
+      ctxStrip.style.display = 'inline-flex';
+      if (ctxTag) ctxTag.textContent = 'Phase 1 Context:';
+      if (ctxOverview) { ctxOverview.style.display = 'inline-block'; ctxOverview.classList.toggle('active', id === 's2'); ctxOverview.textContent = 'Overview'; }
+      if (ctxDayplan) { ctxDayplan.style.display = 'inline-block'; ctxDayplan.textContent = '▶ P1 Day Plan'; ctxDayplan.classList.toggle('active', id === 's11'); }
+    }
+  } else if (id === 's3' || id === 's12') {
+    currentPhaseContext = 'p2';
+    const b = document.getElementById('secBtn-p2');
+    if (b) b.classList.add('active');
+    if (ctxStrip) {
+      ctxStrip.style.display = 'inline-flex';
+      if (ctxTag) ctxTag.textContent = 'Phase 2 Context:';
+      if (ctxOverview) { ctxOverview.style.display = 'inline-block'; ctxOverview.classList.toggle('active', id === 's3'); ctxOverview.textContent = 'Overview'; }
+      if (ctxDayplan) { ctxDayplan.style.display = 'inline-block'; ctxDayplan.textContent = '▶ P2 Day Plan'; ctxDayplan.classList.toggle('active', id === 's12'); }
+    }
+  } else if (id === 's4' || id === 's13') {
+    currentPhaseContext = 'p3';
+    const b = document.getElementById('secBtn-p3');
+    if (b) b.classList.add('active');
+    if (ctxStrip) {
+      ctxStrip.style.display = 'inline-flex';
+      if (ctxTag) ctxTag.textContent = 'Phase 3 Context:';
+      if (ctxOverview) { ctxOverview.style.display = 'inline-block'; ctxOverview.classList.toggle('active', id === 's4'); ctxOverview.textContent = 'Overview'; }
+      if (ctxDayplan) { ctxDayplan.style.display = 'inline-block'; ctxDayplan.textContent = '▶ P3 Day Plan'; ctxDayplan.classList.toggle('active', id === 's13'); }
+    }
+  } else if (id === 's5' || id === 's14') {
+    currentPhaseContext = 'p4';
+    const b = document.getElementById('secBtn-p4');
+    if (b) b.classList.add('active');
+    if (ctxStrip) {
+      ctxStrip.style.display = 'inline-flex';
+      if (ctxTag) ctxTag.textContent = 'Phase 4 Context:';
+      if (ctxOverview) { ctxOverview.style.display = 'inline-block'; ctxOverview.classList.toggle('active', id === 's5'); ctxOverview.textContent = 'Overview'; }
+      if (ctxDayplan) { ctxDayplan.style.display = 'inline-block'; ctxDayplan.textContent = '▶ P4 Day Plan'; ctxDayplan.classList.toggle('active', id === 's14'); }
+    }
+  } else if (['s15', 's7', 's8', 's18', 's25'].includes(id)) {
+    const b = document.getElementById('secBtn-deepdives');
+    if (b) b.classList.add('active');
+    if (ctxStrip) {
+      ctxStrip.style.display = 'inline-flex';
+      if (ctxTag) ctxTag.textContent = 'Deep Dive:';
+      if (ctxOverview) { ctxOverview.style.display = 'inline-block'; ctxOverview.classList.add('active'); ctxOverview.textContent = secMeta.title; }
+      if (ctxDayplan) ctxDayplan.style.display = 'none';
+    }
+  } else if (['s9', 's10', 's16', 's17', 's26', 's27', 's21', 's22', 's24'].includes(id)) {
+    const b = document.getElementById('secBtn-resources');
+    if (b) b.classList.add('active');
+    if (ctxStrip) {
+      ctxStrip.style.display = 'inline-flex';
+      if (ctxTag) ctxTag.textContent = 'Resource:';
+      if (ctxOverview) { ctxOverview.style.display = 'inline-block'; ctxOverview.classList.add('active'); ctxOverview.textContent = secMeta.title; }
+      if (ctxDayplan) ctxDayplan.style.display = 'none';
+    }
+  }
+
+  // Update floating menu active card
+  updateLiquidActiveCard(id);
+}
+
+function show(id, btn) {
   if (id === 's6') {
     window.location.href = './dsa/index.html';
     return;
   }
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   const el = document.getElementById(id);
-  if(el) el.classList.add('active');
-  
-  if(!btn){
-    btn = document.querySelector(`.nav-btn[onclick*="'${id}'"]`);
-  }
-  if(btn) {
-    btn.classList.add('active');
-    // If button is currently hidden due to category filter, sync category filter
-    if(btn.style.display === 'none'){
-      const cat = btn.getAttribute('data-cat');
-      const catPill = document.querySelector(`.cat-pill[onclick*="'${cat}'"]`);
-      if(catPill) filterNavCategory(cat, catPill);
-      else filterNavCategory('all', document.querySelector('.cat-pill'));
-    }
-    // Smoothly center active button in horizontal rail
-    btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-  }
+  if (el) el.classList.add('active');
 
-  // Update current viewing section badge in navbar and floating menu
-  const secMeta = SECTION_ORDER.find(s => s.id === id);
-  const badgeEl = document.getElementById('navCurrentBadge');
-  if (badgeEl && secMeta) {
-    badgeEl.textContent = secMeta.title;
-  }
-  updateLiquidActiveCard(id);
+  syncNavContext(id);
 
   // Reset scroll progress bar
   const progEl = document.getElementById('navScrollProgress');
   if (progEl) progEl.style.width = '0%';
 
-  window.scrollTo({top:0,behavior:'smooth'});
-  if(id === 's27') wlRender();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  if (id === 's27') wlRender();
 }
 
-function filterNavCategory(cat, pillEl){
-  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
-  if(pillEl) pillEl.classList.add('active');
+function ctxNavigateOverview() {
+  if (currentPhaseContext === 'p1') show('s2');
+  else if (currentPhaseContext === 'p2') show('s3');
+  else if (currentPhaseContext === 'p3') show('s4');
+  else if (currentPhaseContext === 'p4') show('s5');
+}
 
-  const btns = document.querySelectorAll('.nav-btn');
-  btns.forEach(b => {
-    const btnCat = b.getAttribute('data-cat');
-    if(cat === 'all' || btnCat === cat){
-      b.style.display = 'inline-block';
-    } else {
-      b.style.display = 'none';
-    }
-  });
+function ctxNavigateDayPlan() {
+  if (currentPhaseContext === 'p1') show('s11');
+  else if (currentPhaseContext === 'p2') show('s12');
+  else if (currentPhaseContext === 'p3') show('s13');
+  else if (currentPhaseContext === 'p4') show('s14');
+}
 
-  if(cat === 'switch'){
-    const switchBtn = document.querySelector('.nav-btn[data-cat="switch"]');
-    show('s25', switchBtn);
+function toggleNavDropdown(ddId, e) {
+  if (e) e.stopPropagation();
+  const target = document.getElementById(ddId);
+  if (!target) return;
+  const wasOpen = target.classList.contains('is-open');
+  closeAllNavDropdowns();
+  if (!wasOpen) {
+    target.classList.add('is-open');
+    const triggerBtn = target.previousElementSibling;
+    if (triggerBtn) triggerBtn.classList.add('is-open');
   }
 }
 
-function initFooterNav(){
+function closeAllNavDropdowns() {
+  document.querySelectorAll('.nav-dropdown-menu').forEach(dd => dd.classList.remove('is-open'));
+  document.querySelectorAll('.nav-tab-has-dd, .nav-sec-dd-btn').forEach(btn => btn.classList.remove('is-open'));
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.nav-tab-dropdown-wrap') && !e.target.closest('.nav-sec-dropdown-wrap')) {
+    closeAllNavDropdowns();
+  }
+});
+
+function initFooterNav() {
   SECTION_ORDER.forEach((sec, idx) => {
     const pageEl = document.getElementById(sec.id);
-    if(!pageEl) return;
-    if(pageEl.querySelector('.page-footer-nav')) return;
+    if (!pageEl) return;
+    if (pageEl.querySelector('.page-footer-nav')) return;
 
     const footer = document.createElement('div');
     footer.className = 'page-footer-nav';
@@ -10589,14 +11527,51 @@ function initFooterNav(){
 }
 
 // ============================================================
-// SCROLL READING PROGRESS BAR
+// SCROLL READING PROGRESS & FLOATING MENU AUTO-HIDE ON SCROLL
 // ============================================================
+let lastScrollY = window.scrollY || document.documentElement.scrollTop;
+let menuHiddenByScroll = false;
+
 window.addEventListener('scroll', function() {
-  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const currentY = window.scrollY || document.documentElement.scrollTop;
+  const deltaY = currentY - lastScrollY;
+  const wrapper = document.getElementById('liquidMenuWrapper');
+
+  // Reading progress line
   const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const progressPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  const progressPercent = docHeight > 0 ? (currentY / docHeight) * 100 : 0;
   const progEl = document.getElementById('navScrollProgress');
   if (progEl) progEl.style.width = Math.min(100, Math.max(0, progressPercent)) + '%';
+
+  // Floating menu auto-hide logic
+  if (wrapper && !liquidMenuOpen) {
+    if (currentY > 90 && deltaY > 6) {
+      // Scrolling down -> hide smoothly
+      if (!menuHiddenByScroll) {
+        wrapper.classList.add('is-hidden');
+        menuHiddenByScroll = true;
+      }
+    } else if (deltaY < -6 || currentY < 60) {
+      // Scrolling up or near top -> reveal
+      if (menuHiddenByScroll) {
+        wrapper.classList.remove('is-hidden');
+        menuHiddenByScroll = false;
+      }
+    }
+  }
+  lastScrollY = currentY;
+}, { passive: true });
+
+// Mouse hover near bottom edge reveals floating menu
+window.addEventListener('mousemove', function(e) {
+  const wrapper = document.getElementById('liquidMenuWrapper');
+  if (!wrapper) return;
+  if (window.innerHeight - e.clientY < 60) {
+    if (menuHiddenByScroll) {
+      wrapper.classList.remove('is-hidden');
+      menuHiddenByScroll = false;
+    }
+  }
 }, { passive: true });
 
 // ============================================================
@@ -10607,6 +11582,12 @@ let currentLiquidCategory = 'all';
 
 function toggleLiquidMenu(e) {
   if (e) e.stopPropagation();
+  closeAllNavDropdowns();
+  const wrapper = document.getElementById('liquidMenuWrapper');
+  if (wrapper) {
+    wrapper.classList.remove('is-hidden');
+    menuHiddenByScroll = false;
+  }
   const container = document.getElementById('liquidMenuContainer');
   const labelText = document.getElementById('liquidMenuLabelText');
   if (!container) return;
@@ -10616,7 +11597,7 @@ function toggleLiquidMenu(e) {
     if (labelText) labelText.textContent = 'Close Navigation';
   } else {
     container.classList.remove('is-open');
-    if (labelText) labelText.textContent = 'Menu';
+    if (labelText) labelText.textContent = 'Roadmap Menu';
   }
 }
 
@@ -10626,7 +11607,7 @@ function closeLiquidMenu() {
   const container = document.getElementById('liquidMenuContainer');
   const labelText = document.getElementById('liquidMenuLabelText');
   if (container) container.classList.remove('is-open');
-  if (labelText) labelText.textContent = 'Menu';
+  if (labelText) labelText.textContent = 'Roadmap Menu';
 }
 
 function selectFromLiquidMenu(category, sectionId) {
@@ -10718,6 +11699,7 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     closeLiquidMenu();
     closeSearchModal();
+    closeAllNavDropdowns();
   }
   if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
     e.preventDefault();
@@ -10729,19 +11711,6 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-// Enable horizontal mouse wheel scrolling on navbar buttons
-window.addEventListener('DOMContentLoaded', function() {
-  const navRail = document.getElementById('navButtonsContainer');
-  if (navRail) {
-    navRail.addEventListener('wheel', function(e) {
-      if (e.deltaY !== 0 && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        navRail.scrollLeft += e.deltaY;
-      }
-    }, { passive: false });
-  }
-});
-
 // ============================================================
 // SPOTLIGHT QUICK JUMP MODAL
 // ============================================================
@@ -10750,6 +11719,7 @@ let spotlightFilteredItems = [];
 
 function openSearchModal() {
   closeLiquidMenu();
+  closeAllNavDropdowns();
   const modal = document.getElementById('spotlightModal');
   const input = document.getElementById('spotlightInput');
   if (!modal || !input) return;
@@ -10774,10 +11744,19 @@ function filterSpotlightSections(query) {
   const resultsContainer = document.getElementById('spotlightResults');
   if (!resultsContainer) return;
 
-  spotlightFilteredItems = SECTION_ORDER.filter(sec => {
-    if (!q) return true;
-    return sec.title.toLowerCase().includes(q) || sec.cat.toLowerCase().includes(q) || sec.id.toLowerCase().includes(q) || (sec.keywords && sec.keywords.toLowerCase().includes(q));
-  });
+  if (!q) {
+    // Show curated recommended quick jumps when query is empty
+    const recommendedIds = ['s1', 's2', 's3', 's4', 's5', 's15', 's7', 's18', 's26', 's6'];
+    spotlightFilteredItems = SECTION_ORDER.filter(sec => recommendedIds.includes(sec.id));
+  } else {
+    spotlightFilteredItems = SECTION_ORDER.filter(sec => {
+      return sec.title.toLowerCase().includes(q) || 
+             sec.cat.toLowerCase().includes(q) || 
+             sec.id.toLowerCase().includes(q) || 
+             (sec.desc && sec.desc.toLowerCase().includes(q)) ||
+             (sec.keywords && sec.keywords.toLowerCase().includes(q));
+    });
+  }
 
   spotlightHighlightedIdx = 0;
   renderSpotlightResults();
@@ -10787,19 +11766,35 @@ function renderSpotlightResults() {
   const resultsContainer = document.getElementById('spotlightResults');
   if (!resultsContainer) return;
   if (spotlightFilteredItems.length === 0) {
-    resultsContainer.innerHTML = '<div style="padding:1.75rem;text-align:center;color:var(--text3);font-size:14px">No matching sections found. Try "RAG", "CUDA", "vLLM", or "Leetcode".</div>';
+    resultsContainer.innerHTML = '<div style="padding:1.75rem;text-align:center;color:var(--text3);font-size:14px">No matching sections found. Try "CUDA", "vLLM", "FlashAttention", or "Leetcode".</div>';
     return;
   }
 
+  const catColors = {
+    core: '#818cf8',
+    plans: '#06b6d4',
+    dsa: '#4ade80',
+    prep: '#f59e0b',
+    switch: '#fb923c',
+    cheats: '#a78bfa'
+  };
+
   resultsContainer.innerHTML = spotlightFilteredItems.map((sec, idx) => {
     const isSelected = idx === spotlightHighlightedIdx;
+    const catColor = catColors[sec.cat] || '#818cf8';
     return `
       <div class="spotlight-item ${isSelected ? 'highlighted' : ''}" onclick="selectSpotlightSection('${sec.id}')" onmouseenter="setSpotlightHighlight(${idx})">
-        <div style="display:flex;align-items:center;gap:10px">
-          <span style="font-size:11px;font-family:var(--mono);color:var(--text3);background:var(--bg4);padding:2px 7px;border-radius:5px;font-weight:700">${sec.id.toUpperCase()}</span>
-          <span>${sec.title}</span>
+        <div style="display:flex;align-items:center;gap:10px;min-width:0;flex:1">
+          <span style="font-size:10px;font-family:var(--mono);color:var(--text3);background:var(--bg4);padding:2px 6px;border-radius:4px;font-weight:800;flex-shrink:0">${sec.id.toUpperCase()}</span>
+          <div style="display:flex;flex-direction:column;gap:1px;min-width:0">
+            <span style="font-weight:700;color:var(--text);font-size:13.5px">${sec.title}</span>
+            ${sec.desc ? `<span style="font-size:11px;color:var(--text3);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${sec.desc}</span>` : ''}
+          </div>
         </div>
-        <span style="font-size:11px;font-family:var(--mono);text-transform:uppercase;color:var(--accent);font-weight:700">${sec.cat}</span>
+        <div style="display:flex;align-items:center;gap:6px;flex-shrink:0">
+          <span style="font-size:10px;font-family:var(--mono);text-transform:uppercase;color:${catColor};font-weight:800;background:rgba(255,255,255,0.06);padding:2px 7px;border-radius:4px">${sec.cat}</span>
+          <span style="font-size:11px;color:var(--text3);font-family:var(--mono);opacity:0.6">↵</span>
+        </div>
       </div>
     `;
   }).join('');
@@ -10848,12 +11843,14 @@ function updateThemeButtons(isDark) {
 document.addEventListener('DOMContentLoaded', function(){
   initFooterNav();
   initLiquidMenuSections();
+  syncNavContext('s1');
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
   if (isDark) updateThemeButtons(true);
 });
 if(document.readyState === 'interactive' || document.readyState === 'complete'){
   initFooterNav();
   initLiquidMenuSections();
+  syncNavContext('s1');
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
   if (isDark) updateThemeButtons(true);
 }
@@ -11041,6 +12038,9 @@ function wlUploadJson(event) {
   event.target.value = '';
 }
 </script>
+
+<!-- Bottom Hover Reveal Zone (detects mouse hovering near bottom edge) -->
+<div class="bottom-reveal-zone" id="bottomRevealZone" onmouseenter="if(typeof menuHiddenByScroll !== 'undefined' && menuHiddenByScroll) { const w = document.getElementById('liquidMenuWrapper'); if(w){ w.classList.remove('is-hidden'); menuHiddenByScroll = false; } }"></div>
 
 <!-- ============================================================ -->
 <!-- LIQUID MORPH FLOATING ROADMAP MENU (Bottom-Center Command)   -->
