@@ -28,6 +28,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    overflow: visible !important;
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
@@ -43,6 +44,9 @@
 
   /* ---------------- PRIMARY TIER (Top Bar) ---------------- */
   .nav-primary {
+    position: relative;
+    z-index: 30;
+    overflow: visible !important;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -155,11 +159,8 @@
     display: flex;
     align-items: center;
     gap: 3px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    overflow: visible !important;
   }
-  .nav-primary-tabs::-webkit-scrollbar { display: none; }
   .nav-tab {
     display: inline-flex;
     align-items: center;
@@ -331,6 +332,9 @@
 
   /* ---------------- SECONDARY TIER (Phase Navigation) ---------------- */
   .nav-secondary {
+    position: relative;
+    z-index: 20;
+    overflow: visible !important;
     display: flex;
     align-items: center;
     height: 38px;
@@ -345,11 +349,8 @@
     align-items: center;
     width: 100%;
     gap: 6px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    overflow: visible !important;
   }
-  .nav-secondary-inner::-webkit-scrollbar { display: none; }
 
   /* Phase Buttons Row */
   .nav-phases-row {
@@ -541,15 +542,19 @@
     position: absolute;
     top: calc(100% + 6px);
     left: 0;
-    min-width: 300px;
+    min-width: 310px;
+    max-width: 400px;
+    max-height: min(500px, calc(100vh - 96px));
+    overflow-y: auto;
+    scrollbar-width: thin;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(28px) saturate(190%);
     -webkit-backdrop-filter: blur(28px) saturate(190%);
     border: 1px solid var(--border);
     border-radius: 12px;
-    box-shadow: 0 18px 45px -8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 20px 48px -6px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.06);
     padding: 6px;
-    z-index: 1100;
+    z-index: 99999;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-6px) scale(0.98);
@@ -557,21 +562,50 @@
                 transform .18s cubic-bezier(0.16, 1, 0.3, 1),
                 visibility .18s;
     pointer-events: none;
+    display: block;
+  }
+  /* Invisible hover bridge to prevent losing hover in the 6px gap */
+  .nav-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    right: 0;
+    height: 8px;
   }
   [data-theme="dark"] .nav-dropdown-menu {
     background: rgba(18, 18, 22, 0.96);
     border-color: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 24px 54px -8px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.04);
+    box-shadow: 0 24px 54px -8px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.06);
   }
-  .nav-dropdown-menu.align-right {
-    left: auto;
-    right: 0;
+  .nav-dropdown-menu.align-right,
+  #ddCheats,
+  #ddResources {
+    left: auto !important;
+    right: 0 !important;
   }
   .nav-dropdown-menu.is-open {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0) scale(1);
-    pointer-events: auto;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) scale(1) !important;
+    pointer-events: auto !important;
+    display: block !important;
+  }
+
+  /* Desktop hover triggers for instant fluid access */
+  @media (min-width: 769px) {
+    .nav-tab-dropdown-wrap:hover > .nav-dropdown-menu,
+    .nav-sec-dropdown-wrap:hover > .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+      display: block;
+    }
+    .nav-tab-dropdown-wrap:hover > .nav-tab .nav-tab-caret,
+    .nav-sec-dropdown-wrap:hover > .nav-sec-dd-btn .sec-dd-caret {
+      transform: rotate(180deg);
+    }
   }
   .dd-group-header {
     font-size: 10px;
@@ -1010,14 +1044,40 @@
     }
     .nav-secondary {
       padding: 0 0.85rem;
-      height: 36px;
+      height: 38px;
     }
     .nav-secondary-inner {
       gap: 4px;
+      overflow-x: auto !important;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .nav-secondary-inner::-webkit-scrollbar { display: none; }
+    .nav-secondary-inner.has-open-dropdown,
+    .nav-secondary-inner:has(.nav-dropdown-menu.is-open) {
+      overflow: visible !important;
     }
     .nav-sec-btn, .nav-sec-dd-btn {
       padding: 3px 7px !important;
       font-size: 11px !important;
+    }
+    .nav-dropdown-menu {
+      position: fixed !important;
+      top: 86px !important;
+      left: 10px !important;
+      right: 10px !important;
+      width: auto !important;
+      min-width: 0 !important;
+      max-width: calc(100vw - 20px) !important;
+      max-height: calc(100vh - 100px) !important;
+      overflow-y: auto !important;
+      z-index: 999999 !important;
+    }
+    .nav-dropdown-menu.align-right,
+    #ddCheats,
+    #ddResources {
+      left: 10px !important;
+      right: 10px !important;
     }
     .nav-contextual-strip {
       padding: 1px 3px;
@@ -11479,7 +11539,10 @@ function ctxNavigateDayPlan() {
 }
 
 function toggleNavDropdown(ddId, e) {
-  if (e) e.stopPropagation();
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
   const target = document.getElementById(ddId);
   if (!target) return;
   const wasOpen = target.classList.contains('is-open');
@@ -11488,16 +11551,53 @@ function toggleNavDropdown(ddId, e) {
     target.classList.add('is-open');
     const triggerBtn = target.previousElementSibling;
     if (triggerBtn) triggerBtn.classList.add('is-open');
+
+    // Add flag to parent inner container so mobile overflow switches to visible
+    const innerSec = target.closest('.nav-secondary-inner');
+    if (innerSec) innerSec.classList.add('has-open-dropdown');
+    const innerPri = target.closest('.nav-primary-tabs');
+    if (innerPri) innerPri.classList.add('has-open-dropdown');
+
+    // Elevate parent z-index so dropdown is always above sibling bars
+    const secWrap = target.closest('.nav-secondary');
+    if (secWrap) secWrap.style.zIndex = '999';
+    const priWrap = target.closest('.nav-primary');
+    if (priWrap) priWrap.style.zIndex = '999';
+
+    // Desktop viewport right-boundary safety check
+    if (window.innerWidth > 768) {
+      const rect = target.getBoundingClientRect();
+      if (rect.right > window.innerWidth - 12) {
+        target.classList.add('align-right');
+      }
+    }
   }
 }
 
 function closeAllNavDropdowns() {
-  document.querySelectorAll('.nav-dropdown-menu').forEach(dd => dd.classList.remove('is-open'));
-  document.querySelectorAll('.nav-tab-has-dd, .nav-sec-dd-btn').forEach(btn => btn.classList.remove('is-open'));
+  document.querySelectorAll('.nav-dropdown-menu').forEach(dd => {
+    dd.classList.remove('is-open');
+  });
+  document.querySelectorAll('.nav-tab-has-dd, .nav-sec-dd-btn').forEach(btn => {
+    btn.classList.remove('is-open');
+  });
+  document.querySelectorAll('.nav-secondary-inner, .nav-primary-tabs').forEach(el => {
+    el.classList.remove('has-open-dropdown');
+  });
+  const secWrap = document.querySelector('.nav-secondary');
+  if (secWrap) secWrap.style.zIndex = '';
+  const priWrap = document.querySelector('.nav-primary');
+  if (priWrap) priWrap.style.zIndex = '';
 }
 
 document.addEventListener('click', function(e) {
   if (!e.target.closest('.nav-tab-dropdown-wrap') && !e.target.closest('.nav-sec-dropdown-wrap')) {
+    closeAllNavDropdowns();
+  }
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
     closeAllNavDropdowns();
   }
 });
