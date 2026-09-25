@@ -27,22 +27,22 @@
     position:relative;
     z-index:10;
     background:rgba(255,255,255,0.85);
-    backdrop-filter:blur(20px) saturate(180%);
-    -webkit-backdrop-filter:blur(20px) saturate(180%);
+    backdrop-filter:blur(24px) saturate(190%);
+    -webkit-backdrop-filter:blur(24px) saturate(190%);
     border-bottom:1px solid var(--border);
-    padding:.65rem 1.75rem .45rem;
-    transition:all .3s ease;
+    padding:.5rem 1.75rem .4rem;
+    transition:all .25s ease;
     box-shadow:0 4px 20px -2px rgba(0,0,0,0.04);
   }
   [data-theme="dark"] .nav{
-    background:rgba(20,20,22,0.85);
-    border-bottom-color:rgba(255,255,255,0.08);
-    box-shadow:0 6px 28px -4px rgba(0,0,0,0.4);
+    background:rgba(18,18,22,0.92);
+    border-bottom-color:rgba(255,255,255,0.07);
+    box-shadow:0 8px 30px -4px rgba(0,0,0,0.55);
   }
   .nav-top{
     display:flex;align-items:center;justify-content:space-between;
-    gap:.75rem;width:100%;margin-bottom:.4rem;padding-bottom:.4rem;
-    border-bottom:1px solid var(--bg4);
+    gap:.85rem;width:100%;margin-bottom:.35rem;padding-bottom:.35rem;
+    border-bottom:1px solid rgba(0,0,0,0.05);
   }
   [data-theme="dark"] .nav-top{border-bottom-color:rgba(255,255,255,0.06)}
   .nav-logo-group{display:flex;align-items:center;gap:.85rem;flex-shrink:0}
@@ -59,7 +59,7 @@
     background:var(--bg3);border:1px solid var(--border);
     padding:3px 10px;border-radius:999px;
     font-size:11px;font-weight:700;color:var(--text2);
-    max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    max-width:280px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
     transition:all .25s;
   }
   .nav-current-badge::before{
@@ -78,7 +78,7 @@
   }
   .cat-pills-wrap::-webkit-scrollbar{display:none}
   .cat-pill{
-    padding:5px 12px;font-size:11.5px;font-weight:700;border-radius:999px;
+    padding:4px 11px;font-size:11.5px;font-weight:700;border-radius:999px;
     border:1px solid var(--border);background:var(--bg3);color:var(--text2);
     cursor:pointer;transition:all .2s cubic-bezier(0.16,1,0.3,1);
     font-family:var(--sans);display:inline-flex;align-items:center;gap:5px;
@@ -100,38 +100,59 @@
     background:linear-gradient(135deg,#f97316 0%,#ea580c 100%) !important;
     box-shadow:0 3px 12px rgba(234,88,12,0.4);
   }
-  .nav-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
-  .nav-search-btn{
-    padding:5px 12px;font-size:11.5px;font-weight:700;border-radius:999px;
+  .cat-pill-timetable{border-color:rgba(13,148,136,.35);color:var(--teal)}
+  .cat-pill-timetable:hover{border-color:var(--teal);background:rgba(13,148,136,.1)}
+  .cat-pill-timetable.active{
+    background:linear-gradient(135deg,#0d9488 0%,#14b8a6 100%) !important;
+    color:#ffffff !important;box-shadow:0 3px 12px rgba(13,148,136,0.4);
+  }
+  .nav-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
+  .nav-menu-btn, .nav-search-btn{
+    padding:4px 11px;font-size:11.5px;font-weight:700;border-radius:999px;
     border:1px solid var(--border);background:var(--bg3);color:var(--text2);
     cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;
-    gap:6px;font-family:var(--sans);
+    gap:5px;font-family:var(--sans);
   }
+  .nav-menu-btn:hover{border-color:#FFE862;color:#FFE862;background:rgba(255,232,98,0.12)}
   .nav-search-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--how-box-bg)}
-  .nav-search-btn kbd{
+  .nav-menu-btn kbd, .nav-search-btn kbd{
     background:var(--bg4);border-radius:4px;padding:1px 5px;
-    font-size:10px;font-family:var(--mono);border:1px solid var(--border);
+    font-size:9.5px;font-family:var(--mono);border:1px solid var(--border);
   }
   .nav-buttons-wrap{
-    display:flex;align-items:center;gap:4px;overflow-x:auto;
-    width:100%;padding:3px 0 4px;
-    scrollbar-width:thin;scrollbar-color:var(--border) transparent;
+    display:flex;align-items:center;gap:5px;overflow-x:auto;
+    width:100%;padding:2px 0 3px;
+    scrollbar-width:none;-ms-overflow-style:none;
+    -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 12px, #000 calc(100% - 12px), transparent 100%);
+    mask-image:linear-gradient(90deg, transparent 0%, #000 12px, #000 calc(100% - 12px), transparent 100%);
   }
-  .nav-buttons-wrap::-webkit-scrollbar{height:3px}
-  .nav-buttons-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+  .nav-buttons-wrap::-webkit-scrollbar{display:none}
   .nav-btn{
-    padding:5px 11px;font-size:11px;font-weight:600;letter-spacing:0.03em;
-    text-transform:uppercase;background:var(--bg3);border:1px solid transparent;
-    color:var(--text3);cursor:pointer;transition:all .2s cubic-bezier(0.16,1,0.3,1);
+    padding:4px 11px;font-size:11.5px;font-weight:600;letter-spacing:-0.01em;
+    text-transform:none;background:var(--bg3);border:1px solid var(--border);
+    color:var(--text2);cursor:pointer;transition:all .18s cubic-bezier(0.16,1,0.3,1);
     flex-shrink:0;font-family:var(--sans);border-radius:7px;white-space:nowrap;
+    display:inline-flex;align-items:center;gap:6px;
   }
-  .nav-btn:hover{color:var(--text);background:var(--bg4);transform:translateY(-1px)}
+  .nav-btn:hover{color:var(--text);background:var(--bg4);border-color:var(--border2);transform:translateY(-1px)}
   .nav-btn.active{
-    color:#fff !important;background:var(--accent) !important;font-weight:700;
-    box-shadow:0 3px 10px rgba(79,70,229,0.3);border-color:rgba(255,255,255,0.15);
+    color:#fff !important;background:linear-gradient(135deg,var(--accent) 0%,var(--accent3) 100%) !important;font-weight:700;
+    box-shadow:0 3px 12px rgba(79,70,229,0.35);border-color:transparent !important;transform:translateY(-1px);
   }
-  .nav-btn-highlight{color:var(--coral);font-weight:800}
-  .nav-btn-highlight.active{background:var(--coral) !important;box-shadow:0 3px 10px rgba(234,88,12,0.35)}
+  .nav-btn span.num-badge{
+    font-size:9.5px;font-family:var(--mono);color:var(--text3);font-weight:700;
+    opacity:0.8;
+  }
+  .nav-btn.active span.num-badge{color:rgba(255,255,255,0.8)}
+  .nav-btn-highlight{color:#22c55e;font-weight:700;border-color:rgba(34,197,94,0.35);background:rgba(34,197,94,0.08)}
+  .nav-btn-highlight:hover{color:#4ade80;border-color:#22c55e;background:rgba(34,197,94,0.16)}
+  .nav-btn-highlight.active{background:#16a34a !important;color:#fff !important}
+  .nav-btn-switch{color:var(--coral);font-weight:700;border-color:rgba(234,88,12,0.35);background:rgba(234,88,12,0.08)}
+  .nav-btn-switch:hover{border-color:var(--coral);background:rgba(234,88,12,0.16)}
+  .nav-btn-switch.active{background:var(--coral) !important;color:#fff !important;box-shadow:0 3px 10px rgba(234,88,12,0.35)}
+  .nav-btn-timetable{color:var(--teal);font-weight:700;border-color:rgba(13,148,136,0.35);background:rgba(13,148,136,0.08)}
+  .nav-btn-timetable:hover{border-color:var(--teal);background:rgba(13,148,136,0.16)}
+  .nav-btn-timetable.active{background:var(--teal) !important;color:#fff !important}
   .nav-scroll-progress{
     position:fixed;top:0;left:0;height:2.5px;width:0%;
     background:linear-gradient(90deg,#7c6af5,#2dd4bf,#f59e0b,#ec4899);
@@ -1043,15 +1064,20 @@
     
     <div class="cat-pills-wrap" id="categoryPills">
       <button class="cat-pill active" onclick="filterNavCategory('all', this)">All (24)</button>
-      <button class="cat-pill cat-pill-switch" onclick="filterNavCategory('switch', this)">🚀 Fast Switch</button>
-      <button class="cat-pill" onclick="filterNavCategory('core', this)">🏛️ Core Track</button>
-      <button class="cat-pill" onclick="filterNavCategory('plans', this)">📅 Day Plans</button>
-      <button class="cat-pill" onclick="filterNavCategory('dsa', this)">💻 DSA &amp; Design</button>
-      <button class="cat-pill" onclick="filterNavCategory('prep', this)">🎯 Career &amp; Prep</button>
-      <button class="cat-pill" onclick="filterNavCategory('cheats', this)">📄 Cheats &amp; Logs</button>
+      <button class="cat-pill cat-pill-switch" onclick="filterNavCategory('switch', this)">🚀 Switch</button>
+      <button class="cat-pill" onclick="filterNavCategory('core', this)">🏛️ Core (7)</button>
+      <button class="cat-pill" onclick="filterNavCategory('plans', this)">📅 Day Plans (4)</button>
+      <button class="cat-pill" onclick="window.location.href='./dsa/index.html'" style="color:#4ade80;border-color:rgba(74,222,128,0.4)" title="Launch 168-Day Silicon DSA Cockpit">💻 DSA Cockpit ↗</button>
+      <button class="cat-pill" onclick="filterNavCategory('prep', this)">🎯 Career (5)</button>
+      <button class="cat-pill cat-pill-timetable" onclick="show('s26'); filterNavCategory('cheats', this)">⏱️ Timetable</button>
+      <button class="cat-pill" onclick="filterNavCategory('cheats', this)">📄 Cheats &amp; Logs (5)</button>
     </div>
 
     <div class="nav-actions">
+      <button class="nav-menu-btn" onclick="toggleLiquidMenu(event)" title="Toggle Roadmap Quick Menu (Press M)">
+        <span>✦ Menu</span>
+        <kbd>M</kbd>
+      </button>
       <button class="nav-search-btn" onclick="openSearchModal()" title="Search &amp; Quick Jump (Ctrl+K)">
         <span>🔍 Jump</span>
         <kbd>⌘K</kbd>
@@ -1062,13 +1088,13 @@
 
   <div class="nav-buttons-wrap" id="navButtonsContainer">
     <!-- Core Track -->
-    <button class="nav-btn active" data-cat="core" onclick="show('s1', this)">Reality</button>
-    <button class="nav-btn" data-cat="core" onclick="show('s2', this)">Phase 1</button>
-    <button class="nav-btn" data-cat="core" onclick="show('s3', this)">Phase 2</button>
-    <button class="nav-btn" data-cat="core" onclick="show('s4', this)">Phase 3</button>
-    <button class="nav-btn" data-cat="core" onclick="show('s5', this)">Phase 4</button>
-    <button class="nav-btn" data-cat="core" onclick="show('s15', this)">OS &amp; C++</button>
-    <button class="nav-btn" data-cat="core" onclick="show('s18', this)">Papers</button>
+    <button class="nav-btn active" data-cat="core" onclick="show('s1', this)"><span class="num-badge">01</span> Reality Check</button>
+    <button class="nav-btn" data-cat="core" onclick="show('s2', this)"><span class="num-badge">02</span> Phase 1: Foundations</button>
+    <button class="nav-btn" data-cat="core" onclick="show('s3', this)"><span class="num-badge">03</span> Phase 2: ML &amp; DL</button>
+    <button class="nav-btn" data-cat="core" onclick="show('s4', this)"><span class="num-badge">04</span> Phase 3: GenAI &amp; LLMs</button>
+    <button class="nav-btn" data-cat="core" onclick="show('s5', this)"><span class="num-badge">05</span> Phase 4: AI Infra</button>
+    <button class="nav-btn" data-cat="core" onclick="show('s15', this)"><span class="num-badge">15</span> OS &amp; C++ Deep Dive</button>
+    <button class="nav-btn" data-cat="core" onclick="show('s18', this)"><span class="num-badge">18</span> Research Papers</button>
 
     <!-- Day Plans -->
     <button class="nav-btn" data-cat="plans" onclick="show('s11', this)">▶ P1 Day Plan</button>
@@ -1077,25 +1103,25 @@
     <button class="nav-btn" data-cat="plans" onclick="show('s14', this)">▶ P4 Day Plan</button>
 
     <!-- DSA & System Design -->
-    <button class="nav-btn nav-btn-highlight" data-cat="dsa" onclick="window.location.href='./dsa/index.html'" title="Launch 168-Day DSA & NVIDIA Cockpit" style="color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.5); font-weight: 800; background: rgba(34, 197, 94, 0.12);">🚀 DSA Cockpit ↗</button>
-    <button class="nav-btn" data-cat="dsa" onclick="show('s7', this)">System Design</button>
+    <button class="nav-btn nav-btn-highlight" data-cat="dsa" onclick="window.location.href='./dsa/index.html'" title="Launch 168-Day Silicon DSA Cockpit">🚀 DSA Cockpit ↗</button>
+    <button class="nav-btn" data-cat="dsa" onclick="show('s7', this)"><span class="num-badge">07</span> System Design</button>
 
     <!-- Career & Prep -->
-    <button class="nav-btn" data-cat="prep" onclick="show('s8', this)">Projects</button>
-    <button class="nav-btn" data-cat="prep" onclick="show('s9', this)">Interviews</button>
-    <button class="nav-btn" data-cat="prep" onclick="show('s10', this)">Brutal Advice</button>
-    <button class="nav-btn" data-cat="prep" onclick="show('s16', this)">Sustainability</button>
-    <button class="nav-btn" data-cat="prep" onclick="show('s17', this)">Strategy</button>
+    <button class="nav-btn" data-cat="prep" onclick="show('s8', this)"><span class="num-badge">08</span> Projects Portfolio</button>
+    <button class="nav-btn" data-cat="prep" onclick="show('s9', this)"><span class="num-badge">09</span> Interviews &amp; Prep</button>
+    <button class="nav-btn" data-cat="prep" onclick="show('s10', this)"><span class="num-badge">10</span> Brutal Advice</button>
+    <button class="nav-btn" data-cat="prep" onclick="show('s16', this)"><span class="num-badge">16</span> Sustainability</button>
+    <button class="nav-btn" data-cat="prep" onclick="show('s17', this)"><span class="num-badge">17</span> Execution Strategy</button>
 
     <!-- Fast Track -->
-    <button class="nav-btn nav-btn-highlight" data-cat="switch" onclick="show('s25', this)" style="color:var(--coral);font-weight:800">🚀 Career Switch</button>
+    <button class="nav-btn nav-btn-switch" data-cat="switch" onclick="show('s25', this)">🚀 Career Switch (Roadmap.sh)</button>
 
-    <!-- Cheats & Logs -->
-    <button class="nav-btn" data-cat="cheats" onclick="show('s21', this)">📄 Python</button>
-    <button class="nav-btn" data-cat="cheats" onclick="show('s22', this)">📄 Git</button>
-    <button class="nav-btn" data-cat="cheats" onclick="show('s24', this)">📄 C++</button>
-    <button class="nav-btn" data-cat="cheats" onclick="show('s26', this)" style="color:var(--teal);font-weight:800">⏱️ Master Timetable</button>
-    <button class="nav-btn" data-cat="cheats" onclick="show('s27', this)" style="color:var(--amber);font-weight:800">📓 Weekly Log</button>
+    <!-- Cheats, Routine & Logs -->
+    <button class="nav-btn nav-btn-timetable" data-cat="cheats" onclick="show('s26', this)">⏱️ Master Timetable &amp; Routine</button>
+    <button class="nav-btn" data-cat="cheats" onclick="show('s21', this)">📄 Python Cheat</button>
+    <button class="nav-btn" data-cat="cheats" onclick="show('s22', this)">📄 Git Cheat</button>
+    <button class="nav-btn" data-cat="cheats" onclick="show('s24', this)">📄 C++ Cheat</button>
+    <button class="nav-btn" data-cat="cheats" onclick="show('s27', this)">📓 Weekly Log</button>
   </div>
 
   <!-- Animated Reading Progress Line -->
@@ -5963,6 +5989,18 @@
       <td>★★★ Must read</td>
     </tr>
     <tr>
+      <td><strong>"FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-Precision"</strong><br><span style="font-size:11px;color:var(--text3)">Dao et al., 2024</span></td>
+      <td>State-of-the-art attention for NVIDIA Hopper (H100/H200). Exploits Tensor Memory Accelerator (TMA), WGMMA instructions, warp-specialization, and FP8 GEMM. Must understand for modern GPU clusters.</td>
+      <td><span class="pill pill-purple">Hard</span></td>
+      <td>★★★ Must read</td>
+    </tr>
+    <tr>
+      <td><strong>"DeepSeek-V3 &amp; DeepSeek-R1 Technical Reports"</strong><br><span style="font-size:11px;color:var(--text3)">DeepSeek-AI, 2024–2025</span></td>
+      <td>THE 2025/2026 AI Infra blueprint: Multi-Head Latent Attention (MLA) for 93% KV cache compression, DualPipe computation-communication overlap, and auxiliary-loss-free load balancing across 256 fine-grained MoE experts.</td>
+      <td><span class="pill pill-purple">Hard</span></td>
+      <td>★★★ Must read</td>
+    </tr>
+    <tr>
       <td><strong>"ZeRO: Memory Optimizations Toward Training Trillion Parameter Models"</strong><br><span style="font-size:11px;color:var(--text3)">Rajbhandari et al., 2020</span></td>
       <td>Foundation of DeepSpeed. ZeRO stages 1/2/3. You'll use this for distributed training. Read sections 1-4.</td>
       <td><span class="pill pill-purple">Hard</span></td>
@@ -10685,6 +10723,23 @@ document.addEventListener('keydown', function(e) {
     e.preventDefault();
     openSearchModal();
   }
+  if (e.key.toLowerCase() === 'm' && !e.metaKey && !e.ctrlKey && !e.altKey && !['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) {
+    e.preventDefault();
+    toggleLiquidMenu();
+  }
+});
+
+// Enable horizontal mouse wheel scrolling on navbar buttons
+window.addEventListener('DOMContentLoaded', function() {
+  const navRail = document.getElementById('navButtonsContainer');
+  if (navRail) {
+    navRail.addEventListener('wheel', function(e) {
+      if (e.deltaY !== 0 && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        navRail.scrollLeft += e.deltaY;
+      }
+    }, { passive: false });
+  }
 });
 
 // ============================================================
@@ -10988,10 +11043,68 @@ function wlUploadJson(event) {
 </script>
 
 <!-- ============================================================ -->
-<!-- REACT ROOT: LIQUID MORPH FLOATING ROADMAP MENU (Framer Motion)-->
+<!-- LIQUID MORPH FLOATING ROADMAP MENU (Bottom-Center Command)   -->
 <!-- ============================================================ -->
-<div id="root"></div>
-<script type="module" src="./src/main.tsx"></script>
+<div class="liquid-menu-wrapper" id="liquidMenuWrapper">
+  <div class="liquid-menu-container" id="liquidMenuContainer" onclick="toggleLiquidMenu(event)">
+    <!-- Yellow Background Layer -->
+    <div class="liquid-menu-bg-yellow"></div>
+    
+    <!-- Liquid Dark Circle expanding from bottom -->
+    <div class="liquid-menu-dark-circle"></div>
+
+    <!-- Full Navigation Command Center inside expanding liquid dark circle -->
+    <div class="liquid-menu-content" id="liquidMenuContent" onclick="event.stopPropagation()">
+      <!-- Top Utility Header: Title, Active Badge, Dark Mode, Search -->
+      <div class="liquid-menu-header-bar">
+        <div class="liquid-menu-brand">
+          <span class="liquid-menu-brand-title">AI INFRA ✦ 2026</span>
+          <div class="liquid-menu-active-pill" id="liquidActiveSectionBadge">
+            <span class="liquid-pulse-dot"></span>
+            <span id="liquidActiveSectionText">Reality Check</span>
+          </div>
+        </div>
+        <div class="liquid-menu-quick-actions">
+          <button class="liquid-quick-btn" id="liquidDmBtn" onclick="toggleDarkMode()" title="Toggle Dark/Light Mode">
+            🌙 Dark
+          </button>
+          <button class="liquid-quick-btn" onclick="closeLiquidMenu(); openSearchModal()" title="Search &amp; Quick Jump (Ctrl+K)">
+            🔍 <kbd>⌘K</kbd>
+          </button>
+          <button class="liquid-quick-btn" onclick="closeLiquidMenu()" title="Close Menu (Esc)">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <!-- Category Filter Rail -->
+      <div class="liquid-category-rail" id="liquidCategoryRail">
+        <button class="liquid-cat-pill active" onclick="filterLiquidMenuCategory('all', this)">All (24)</button>
+        <button class="liquid-cat-pill liquid-cat-switch" onclick="filterLiquidMenuCategory('switch', this)">🚀 Switch</button>
+        <button class="liquid-cat-pill" onclick="filterLiquidMenuCategory('core', this)">🏛️ Core</button>
+        <button class="liquid-cat-pill" onclick="filterLiquidMenuCategory('plans', this)">📅 Plans</button>
+        <button class="liquid-cat-pill" onclick="window.location.href='./dsa/index.html'" style="color:#4ade80">💻 DSA</button>
+        <button class="liquid-cat-pill" onclick="filterLiquidMenuCategory('prep', this)">🎯 Prep</button>
+        <button class="liquid-cat-pill" onclick="filterLiquidMenuCategory('cheats', this)">📄 Cheats</button>
+      </div>
+
+      <!-- All 24 Roadmap Sections Grid -->
+      <div class="liquid-sections-grid" id="liquidSectionsGrid"></div>
+    </div>
+
+    <!-- Bottom Bar: Menu + Animated Hamburger / X -->
+    <div class="liquid-menu-bar" id="liquidMenuBar">
+      <span class="liquid-menu-label">
+        <span class="liquid-menu-dot"></span>
+        <span id="liquidMenuLabelText">Roadmap Menu</span>
+      </span>
+      <div class="liquid-menu-icon">
+        <span class="liquid-menu-bar-line line-1"></span>
+        <span class="liquid-menu-bar-line line-2"></span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ============================================================ -->
 <!-- SPOTLIGHT QUICK JUMP MODAL                                   -->
