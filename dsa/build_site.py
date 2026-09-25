@@ -29,24 +29,24 @@ def escape(s):
 
 def get_nav_html(active_page):
     nav_items = [
-        ("index.html", "🎛️ Dashboard"),
-        ("plan.html", "🗓️ 168-Day Plan"),
-        ("revision.html", "🔄 Day Revision Vault"),
-        ("patterns.html", "🧠 Pattern Library"),
-        ("flashcards.html", "🃏 3D Flashcards"),
-        ("nvidia.html", "🟢 NVIDIA Track"),
-        ("failures.html", "💥 Failure Log"),
-        ("mocks.html", "🎯 Mocks & Diags"),
-        ("resources.html", "📺 Resources"),
-        ("rules.html", "📜 System Rules"),
-        ("assess.html", "🧭 Day 0 Assessment")
+        ("index.html", "Dashboard"),
+        ("plan.html", "168-Day Plan"),
+        ("revision.html", "Revision Vault"),
+        ("patterns.html", "Pattern Library"),
+        ("flashcards.html", "Flashcards"),
+        ("nvidia.html", "NVIDIA Track"),
+        ("failures.html", "Failure Log"),
+        ("mocks.html", "Mocks & Diags"),
+        ("resources.html", "Resources"),
+        ("rules.html", "Rules"),
+        ("assess.html", "Assessment")
     ]
     links = []
     for href, label in nav_items:
         cls = "nav-tab active" if href == active_page else "nav-tab"
-        extra_style = ' style="color:var(--nv-green);border-color:rgba(118,185,0,0.35);"' if href == "assess.html" and href != active_page else ''
+        extra_style = ' style="color:var(--nv-green);border-color:rgba(16,185,129,0.4);"' if href == "assess.html" and href != active_page else ''
         links.append(f'<a href="{href}" class="{cls}"{extra_style}>{label}</a>')
-    links.append('<a href="../index.html" class="nav-tab" style="color: #c084fc; border: 1px solid rgba(192,132,252,0.35); background: rgba(168,85,247,0.08); margin-left: auto; font-weight: 700;">🤖 AI Infra Roadmap ↗</a>')
+    links.append('<a href="../index.html" class="nav-tab nav-tab-ai" style="margin-left: auto;">AI Roadmap ↗</a>')
     return "\n      ".join(links)
 
 def page_shell(title, active_page, content_html):
@@ -69,31 +69,33 @@ def page_shell(title, active_page, content_html):
     <header class="app-header">
       <div class="header-top">
         <div class="brand-section">
-          <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
-            <span class="brand-badge">NVIDIA TRACK</span>
-            <span class="brand-title">DSA & AI-INFRASTRUCTURE SPECIALIST COCKPIT</span>
+          <a href="index.html" class="brand-lockup">
+            <span class="brand-indicator"></span>
+            <div class="brand-titles">
+              <span class="brand-title">DSA Cockpit</span>
+              <span class="brand-subtitle">NVIDIA &bull; Systems Engineering</span>
+            </div>
           </a>
-          <a href="../index.html" class="brand-badge" style="background: rgba(168,85,247,0.2); color: #c084fc; border: 1px solid rgba(168,85,247,0.4); text-decoration: none;" title="Go back to the AI Infrastructure Engineering Roadmap">🤖 AI ROADMAP ↗</a>
         </div>
         <div class="header-quick-stats">
           <div class="stat-chip" title="Current Day in 168-Day Program">
-            <span class="chip-label">TODAY:</span>
+            <span class="chip-label">Today</span>
             <span class="chip-value highlight-green" id="header-current-day">Day 1</span>
           </div>
           <div class="stat-chip" title="Progress across 168 days">
-            <span class="chip-label">PROGRESS:</span>
+            <span class="chip-label">Progress</span>
             <span class="chip-value" id="header-progress-pct">0%</span>
           </div>
           <div class="stat-chip" title="Interview Readiness Score based on real performance">
-            <span class="chip-label">READINESS:</span>
+            <span class="chip-label">Readiness</span>
             <span class="chip-value highlight-green" id="header-readiness-score">0 / 100</span>
           </div>
           <div class="stat-chip" title="Consecutive days practiced">
-            <span class="chip-label">🔥 STREAK:</span>
-            <span class="chip-value" id="header-streak">0 Days</span>
+            <span class="chip-label">Streak</span>
+            <span class="chip-value" id="header-streak">0d</span>
           </div>
-          <a href="../DSA_AI_Infra_Training.xlsx" class="btn btn-outline" style="background: rgba(118,185,0,0.12); border-color: rgba(118,185,0,0.4); color: var(--nv-green); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" download title="Download Complete 14-Sheet Master Excel Workbook">📥 Excel Sheet</a>
-          <button class="btn btn-outline" id="btn-open-sync" title="Export/Import and Backup data">💾 Sync / Backup</button>
+          <a href="../DSA_AI_Infra_Training.xlsx" class="btn btn-header-action" download title="Download Complete 14-Sheet Master Excel Workbook">📥 Excel</a>
+          <button class="btn btn-header-action" id="btn-open-sync" title="Export/Import and Backup data">💾 Backup</button>
         </div>
       </div>
       <!-- Multi-Page Nav Tabs -->
@@ -191,170 +193,201 @@ def page_shell(title, active_page, content_html):
 def generate_index_html(data):
     d1 = data["days"][0]
     content = f"""
-      <!-- Hero Mission Banner -->
-      <div class="mission-hero">
-        <div class="mission-header">
-          <div>
-            <div class="mission-day-badge">
-              <span>🟢 TODAY'S MISSION</span> &bull; <span id="hero-day-date">Day 1 of 168 ({escape(d1['dateDisplay'])})</span>
+      <!-- Mission Workspace -->
+      <section class="mission-workspace">
+        <!-- Top Day Navigation & Actions -->
+        <div class="workspace-header">
+          <div class="workspace-title-group">
+            <div class="workspace-eyebrow">
+              <span class="day-indicator-dot"></span>
+              <span id="hero-day-date">Day 1 of 168 &bull; {escape(d1['dateDisplay'])}</span>
+              <span class="eyebrow-divider">/</span>
+              <span class="track-tag">Phase 1: Linear &amp; Hardware</span>
             </div>
-            <h1 class="mission-title" id="hero-topic">{escape(d1['pattern'])}</h1>
-            <div class="mission-topic" id="hero-objective">{escape(d1['objective'])}</div>
-          </div>
-          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-            <button class="btn btn-outline" id="btn-prev-mission" title="Inspect previous day">◀</button>
-            <button class="btn btn-outline" id="btn-next-mission" title="Inspect next day">▶</button>
-            <button class="btn btn-primary" id="btn-complete-today">✓ Mark Day Complete</button>
-            <a href="revision.html" id="hero-revision-link" class="btn btn-outline" style="display: none; border-color: rgba(16,185,129,0.5); background: rgba(16,185,129,0.12); color: var(--nv-green); text-decoration: none; font-weight: 700;">📖 Day 1 Vault Unlocked ↗</a>
-          </div>
-        </div>
-
-        <div class="mission-grid">
-          <!-- Left Box: Assigned Problems & NVIDIA Hardware Hint -->
-          <div>
-            <div class="problem-box" id="hero-p1-box">
-              <div class="problem-info">
-                <span class="diff-tag diff-{d1['d1']}" id="hero-p1-diff">{d1['d1']}</span>
-                <div>
-                  <div class="problem-title" id="hero-p1-title">{escape(d1['p1'])}</div>
-                  <div class="problem-meta" id="hero-p1-meta">Target: {d1['t1']} min | Mode: {escape(d1['mode'])}</div>
-                </div>
-              </div>
-              <div style="display: flex; gap: 0.5rem;">
-                <a href="{d1['p1Url']}" target="_blank" class="btn btn-outline" id="hero-p1-link">Solve on LC ↗</a>
-              </div>
-            </div>
-
-            <div class="problem-box" id="hero-p2-box">
-              <div class="problem-info">
-                <span class="diff-tag diff-{d1['d2']}" id="hero-p2-diff">{d1['d2']}</span>
-                <div>
-                  <div class="problem-title" id="hero-p2-title">{escape(d1['p2'])}</div>
-                  <div class="problem-meta" id="hero-p2-meta">Target: {d1['t2']} min | Difficulty: {d1['d2']}</div>
-                </div>
-              </div>
-              <div style="display: flex; gap: 0.5rem;">
-                <a href="{d1['p2Url']}" target="_blank" class="btn btn-outline" id="hero-p2-link">Solve on LC ↗</a>
-              </div>
-            </div>
-
-            <!-- Today's Tutorial Video Callout (if scheduled) -->
-            <div class="problem-box" id="hero-tut-box" style="border-left: 3px solid #f59e0b; background: rgba(245, 158, 11, 0.04); margin-bottom: 0.75rem; {'' if d1.get('tutYn') == 'YES' else 'display: none;'}">
-              <div class="problem-info">
-                <span class="diff-tag" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;" id="hero-tut-badge">📺 TUTORIAL ({d1.get('tutMin', 25)}m)</span>
-                <div>
-                  <div class="problem-title" id="hero-tut-title">{escape(d1.get('tutTopic', ''))}</div>
-                  <div class="problem-meta" id="hero-tut-meta">Recommended: {escape(d1.get('tutResource', {}).get('primaryChannel', 'Striver') if d1.get('tutResource') else 'Striver')} &bull; Striver, Aditya Verma, Love Babbar, Padho with Pratyush, NeetCode</div>
-                </div>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 0.35rem; align-items: flex-end;" id="hero-tut-actions">
-                <a href="{d1.get('tutResource', {}).get('primaryUrl', 'resources.html') if d1.get('tutResource') else 'resources.html'}" target="_blank" class="btn btn-primary" id="hero-tut-link" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; text-decoration: none; font-weight: 700;">
-                  ▶ Watch on YouTube ↗
-                </a>
-                <a href="resources.html" style="font-size: 0.72rem; color: var(--cyan-accent); text-decoration: none;">All 35 Tutorials &rarr;</a>
-              </div>
-            </div>
-
-            <!-- AI Infra / Hardware Callout -->
-            <div style="background: rgba(118, 185, 0, 0.08); border: 1px solid rgba(118, 185, 0, 0.3); border-radius: var(--radius-md); padding: 0.75rem 1rem; font-size: 0.85rem;">
-              <span style="color: var(--nv-green); font-weight: 700;">🟢 NVIDIA & AI-INFRA CONNECTION:</span>
-              <span id="hero-infra-note" style="color: var(--text-primary); margin-left: 0.25rem;">{escape(d1['infra'])}</span>
-            </div>
-          </div>
-
-          <!-- Right Box: Live Stuck Protocol Timer -->
-          <div class="timer-card">
-            <div>
-              <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); letter-spacing: 0.05em; text-transform: uppercase;">
-                ⏱️ STUCK PROTOCOL STOPWATCH
-              </div>
-              <div class="timer-display" id="timer-display">45:00</div>
-              <div class="timer-status-badge status-silence" id="timer-status-badge">Phase 1: Complete Silence (0–10m)</div>
-              <div id="timer-instruction" style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem;">
-                Derive target TC, annotate constraints, sketch 2 custom test inputs. Zero hints permitted.
-              </div>
-            </div>
-            <div class="timer-controls">
-              <button class="btn btn-primary" id="timer-btn-start">▶ Start</button>
-              <button class="btn btn-outline" id="timer-btn-pause">⏸ Pause</button>
-              <button class="btn btn-outline" id="timer-btn-reset">🔄 Reset</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- EMERGENCY STUCK TRIAGE & CREATOR VIDEO UNBLOCKING PROTOCOL -->
-        <div class="stuck-triage-container">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <span class="stuck-phase-tag phase-tag-4">EMERGENCY PROTOCOL</span>
-              <strong style="color: #fff; font-size: 0.95rem;">🚨 Stuck on Today's Problem? Follow the 4-Phase Unblocking Rule</strong>
-            </div>
-            <a href="rules.html#stuck-protocol" style="font-size: 0.78rem; color: var(--cyan-accent); text-decoration: none;">System Rules &rarr;</a>
+            <h1 class="workspace-title" id="hero-topic">{escape(d1['pattern'])}</h1>
+            <p class="workspace-subtitle" id="hero-objective">{escape(d1['objective'])}</p>
           </div>
           
-          <div class="stuck-step-grid">
-            <div class="stuck-step-card">
-              <span class="stuck-phase-tag phase-tag-1">PHASE 1 (0–15m) • PEN & PAPER</span>
-              <div style="font-size: 0.8rem; color: var(--text-primary); font-weight: 700; margin-bottom: 0.35rem;">Zero-Code Mental Model</div>
-              <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.45; margin: 0;">
-                Close code editor. Draw array state on paper for <strong>n = 3</strong>. Annotate constraints to deduce target Big-O. Test monotonicity: does shifting left/right predictably improve the answer?
-              </p>
+          <div class="workspace-actions">
+            <div class="stepper-group">
+              <button class="btn btn-stepper" id="btn-prev-mission" title="Previous day">&larr;</button>
+              <button class="btn btn-stepper" id="btn-next-mission" title="Next day">&rarr;</button>
             </div>
+            <button class="btn btn-primary" id="btn-complete-today">✓ Mark Day Complete</button>
+            <a href="revision.html" id="hero-revision-link" class="btn btn-vault-link" style="display: none;">📖 Day 1 Vault Unlocked &rarr;</a>
+          </div>
+        </div>
 
-            <div class="stuck-step-card">
-              <span class="stuck-phase-tag phase-tag-2">PHASE 2 (15–25m) • PATTERN MATCH</span>
-              <div style="font-size: 0.8rem; color: var(--text-primary); font-weight: 700; margin-bottom: 0.35rem;">Trigger Cue Diagnostic</div>
-              <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 0.5rem;">
-                Check the 15 FAANG triggers: Subarray sum &rarr; Prefix+Hash. Contiguous window &rarr; Sliding Window. Nearest greater &rarr; Monotonic Stack. Min of max &rarr; BS on Answer.
-              </p>
-              <a href="patterns.html#decision-matrix" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; text-decoration: none;">⚡ Open Pattern Matrix</a>
-            </div>
+        <div class="workspace-grid">
+          <!-- Left Column: Open Problem Roster & Context -->
+          <div class="workspace-main">
+            <div class="section-label">Assigned Problems &amp; Benchmarks</div>
+            
+            <div class="problem-roster">
+              <!-- Problem 1 -->
+              <div class="problem-row" id="hero-p1-box">
+                <div class="problem-left">
+                  <span class="diff-tag diff-{d1['d1']}" id="hero-p1-diff">{d1['d1']}</span>
+                  <div class="problem-details">
+                    <span class="problem-name" id="hero-p1-title">{escape(d1['p1'])}</span>
+                    <span class="problem-meta-line" id="hero-p1-meta">Target: {d1['t1']} min &bull; Mode: {escape(d1['mode'])}</span>
+                  </div>
+                </div>
+                <a href="{d1['p1Url']}" target="_blank" class="btn btn-solve" id="hero-p1-link">Solve on LC &nearr;</a>
+              </div>
 
-            <div class="stuck-step-card">
-              <span class="stuck-phase-tag phase-tag-3">PHASE 3 (25–35m) • VIDEO UNBLOCK</span>
-              <div style="font-size: 0.8rem; color: var(--text-primary); font-weight: 700; margin-bottom: 0.35rem;">Watch Visual Intuition Only</div>
-              <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 0.4rem;">
-                <strong>Do NOT read full code!</strong> Watch the first 3–5 minutes of <strong style="color: #fff;">NeetCode</strong> (visual diagram) or <strong style="color: #fff;">Padho with Pratyush</strong> (pattern archetype). <strong>Pause before code is shown</strong> and implement yourself.
-              </p>
-              <div style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
-                <a href="resources.html" class="btn btn-outline" style="font-size: 0.7rem; padding: 0.15rem 0.45rem;">📺 NeetCode ↗</a>
-                <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" class="btn btn-outline" style="font-size: 0.7rem; padding: 0.15rem 0.45rem; color: #c084fc; border-color: rgba(168,85,247,0.4);">📺 Pratyush Patterns ↗</a>
+              <!-- Problem 2 -->
+              <div class="problem-row" id="hero-p2-box">
+                <div class="problem-left">
+                  <span class="diff-tag diff-{d1['d2']}" id="hero-p2-diff">{d1['d2']}</span>
+                  <div class="problem-details">
+                    <span class="problem-name" id="hero-p2-title">{escape(d1['p2'])}</span>
+                    <span class="problem-meta-line" id="hero-p2-meta">Target: {d1['t2']} min &bull; Difficulty: {d1['d2']}</span>
+                  </div>
+                </div>
+                <a href="{d1['p2Url']}" target="_blank" class="btn btn-solve" id="hero-p2-link">Solve on LC &nearr;</a>
               </div>
             </div>
 
-            <div class="stuck-step-card">
-              <span class="stuck-phase-tag phase-tag-4">PHASE 4 (35m+) • LOG FAILURE</span>
-              <div style="font-size: 0.8rem; color: var(--text-primary); font-weight: 700; margin-bottom: 0.35rem;">Spaced Repetition Recovery</div>
-              <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.45; margin-bottom: 0.5rem;">
-                If solution code was consulted, mark <strong>Solved Independently: No</strong>. Log dominant failure (F1–F12) in Failure Log. System automatically schedules a blank-editor retry in 3 days.
+            <!-- Curated Video Tutorial (if scheduled) -->
+            <div class="tutorial-row" id="hero-tut-box" style="{'' if d1.get('tutYn') == 'YES' else 'display: none;'}">
+              <div class="tutorial-left">
+                <span class="tutorial-icon-badge" id="hero-tut-badge">Tutorial ({d1.get('tutMin', 25)}m)</span>
+                <div class="tutorial-info">
+                  <span class="tutorial-title" id="hero-tut-title">{escape(d1.get('tutTopic', ''))}</span>
+                  <span class="tutorial-meta" id="hero-tut-meta">Recommended: {escape(d1.get('tutResource', {}).get('primaryChannel', 'Striver') if d1.get('tutResource') else 'Striver')} &bull; Striver, Aditya Verma, Padho with Pratyush, NeetCode</span>
+                </div>
+              </div>
+              <div class="tutorial-actions" id="hero-tut-actions">
+                <a href="{d1.get('tutResource', {}).get('primaryUrl', 'resources.html') if d1.get('tutResource') else 'resources.html'}" target="_blank" class="btn btn-tutorial-action" id="hero-tut-link">
+                  &blacktriangleright; Watch Tutorial &nearr;
+                </a>
+              </div>
+            </div>
+
+            <!-- Systems & Hardware Connection -->
+            <div class="systems-callout">
+              <div class="systems-callout-header">
+                <span class="systems-accent-pill">SYSTEMS INVARIANT</span>
+                <span class="systems-callout-label">NVIDIA AI-Infrastructure Context</span>
+              </div>
+              <p class="systems-callout-text" id="hero-infra-note">{escape(d1['infra'])}</p>
+            </div>
+          </div>
+
+          <!-- Right Column: Sleek Focus Timer -->
+          <div class="workspace-sidebar">
+            <div class="timer-panel">
+              <div class="timer-panel-header">
+                <span class="timer-panel-title">FOCUS STOPWATCH</span>
+                <span class="timer-status-badge status-silence" id="timer-status-badge">Phase 1: Silence (0–10m)</span>
+              </div>
+              
+              <div class="timer-display" id="timer-display">45:00</div>
+              
+              <p class="timer-instruction" id="timer-instruction">
+                Derive target TC, annotate constraints, sketch 2 custom test inputs. Zero hints permitted.
               </p>
-              <a href="failures.html" class="btn btn-outline" style="font-size: 0.72rem; padding: 0.2rem 0.5rem; color: #ef4444; border-color: rgba(239,68,68,0.4);">💥 Log Failure Code</a>
+
+              <div class="timer-controls">
+                <button class="btn btn-timer-start" id="timer-btn-start">&blacktriangleright; Start</button>
+                <button class="btn btn-timer-ghost" id="timer-btn-pause">&Verbar;&Verbar; Pause</button>
+                <button class="btn btn-timer-ghost" id="timer-btn-reset">&#8635; Reset</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+
+        <!-- Collapsible Unblocking Guide (Eliminates Visual Clutter by 70%) -->
+        <details class="stuck-triage-drawer">
+          <summary class="stuck-triage-summary">
+            <div class="stuck-summary-left">
+              <span class="stuck-indicator-dot"></span>
+              <span class="stuck-summary-title">Stuck on Today's Problem?</span>
+              <span class="stuck-summary-subtitle">Follow the 4-Phase Unblocking Protocol &amp; Video Guide</span>
+            </div>
+            <div class="stuck-summary-right">
+              <span class="stuck-toggle-btn">View Protocol <span class="stuck-arrow">&blacktriangledown;</span></span>
+            </div>
+          </summary>
+          
+          <div class="stuck-triage-body">
+            <div class="stuck-step-grid">
+              <div class="stuck-step-card">
+                <div class="stuck-step-header">
+                  <span class="stuck-phase-tag phase-tag-1">Phase 1 (0–15m)</span>
+                  <span class="stuck-phase-label">Pen &amp; Paper</span>
+                </div>
+                <div class="stuck-step-title">Zero-Code Mental Model</div>
+                <p class="stuck-step-desc">
+                  Close code editor. Draw array state on paper for <strong>n = 3</strong>. Annotate constraints to deduce target Big-O. Test monotonicity: does shifting left/right predictably improve the answer?
+                </p>
+              </div>
+
+              <div class="stuck-step-card">
+                <div class="stuck-step-header">
+                  <span class="stuck-phase-tag phase-tag-2">Phase 2 (15–25m)</span>
+                  <span class="stuck-phase-label">Pattern Match</span>
+                </div>
+                <div class="stuck-step-title">Trigger Cue Diagnostic</div>
+                <p class="stuck-step-desc">
+                  Check the 15 FAANG triggers: Subarray sum &rarr; Prefix+Hash. Contiguous window &rarr; Sliding Window. Nearest greater &rarr; Monotonic Stack. Min of max &rarr; BS on Answer.
+                </p>
+                <a href="patterns.html#decision-matrix" class="btn btn-step-link">Open Pattern Matrix &nearr;</a>
+              </div>
+
+              <div class="stuck-step-card">
+                <div class="stuck-step-header">
+                  <span class="stuck-phase-tag phase-tag-3">Phase 3 (25–35m)</span>
+                  <span class="stuck-phase-label">Video Unblock</span>
+                </div>
+                <div class="stuck-step-title">Watch Visual Intuition Only</div>
+                <p class="stuck-step-desc">
+                  <strong>Do NOT read full code!</strong> Watch the first 3–5 minutes of <strong>NeetCode</strong> (diagram) or <strong>Padho with Pratyush</strong> (archetype). <strong>Pause before code is shown</strong> and implement yourself.
+                </p>
+                <div class="stuck-step-actions">
+                  <a href="resources.html" class="btn btn-step-link">NeetCode &nearr;</a>
+                  <a href="https://youtube.com/playlist?list=PLbJhGqY-mq47k_WLUtzVjmarUm1EuXPj2" target="_blank" class="btn btn-step-link" style="color: #c084fc;">Pratyush Patterns &nearr;</a>
+                </div>
+              </div>
+
+              <div class="stuck-step-card">
+                <div class="stuck-step-header">
+                  <span class="stuck-phase-tag phase-tag-4">Phase 4 (35m+)</span>
+                  <span class="stuck-phase-label">SRS Recovery</span>
+                </div>
+                <div class="stuck-step-title">Spaced Repetition Logging</div>
+                <p class="stuck-step-desc">
+                  If solution code was consulted, mark <strong>Solved Independently: No</strong>. Log dominant failure (F1–F12) in Failure Log. System automatically schedules a blank-editor retry in 3 days.
+                </p>
+                <a href="failures.html" class="btn btn-step-link" style="color: #f87171;">Log Failure Code &nearr;</a>
+              </div>
+            </div>
+          </div>
+        </details>
+      </section>
 
       <!-- Metric Cards Grid -->
-      <div class="grid-4" style="margin-bottom: 1.5rem;">
-        <div class="card">
-          <div class="card-subtitle">INTERVIEW READINESS (B28)</div>
-          <div style="font-size: 2rem; font-weight: 800; font-family: var(--font-mono); color: var(--nv-green);" id="kpi-readiness">0 / 100</div>
-          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">30% Indep + 25% Hint + 25% Mock + 20% TTP</div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Interview Readiness</div>
+          <div class="kpi-metric highlight-green" id="kpi-readiness">0 / 100</div>
+          <div class="kpi-subtext">30% Indep + 25% Hint + 25% Mock + 20% TTP</div>
         </div>
-        <div class="card">
-          <div class="card-subtitle">INDEPENDENT SOLVE RATE</div>
-          <div style="font-size: 2rem; font-weight: 800; font-family: var(--font-mono);" id="kpi-indep">0%</div>
-          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Target: &gt;80% (Certified Specialist: &gt;95%)</div>
+        <div class="kpi-card">
+          <div class="kpi-label">Independent Solve Rate</div>
+          <div class="kpi-metric" id="kpi-indep">0%</div>
+          <div class="kpi-subtext">Target: &gt;80% &bull; Certified: &gt;95%</div>
         </div>
-        <div class="card">
-          <div class="card-subtitle">HINT DEPENDENCY RATE</div>
-          <div style="font-size: 2rem; font-weight: 800; font-family: var(--font-mono);" id="kpi-hints">0%</div>
-          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Target: &lt;20% (Certified Specialist: &lt;8%)</div>
+        <div class="kpi-card">
+          <div class="kpi-label">Hint Dependency</div>
+          <div class="kpi-metric" id="kpi-hints">0%</div>
+          <div class="kpi-subtext">Target: &lt;20% &bull; Certified: &lt;8%</div>
         </div>
-        <div class="card">
-          <div class="card-subtitle">AVG TIME-TO-PATTERN</div>
-          <div style="font-size: 2rem; font-weight: 800; font-family: var(--font-mono);" id="kpi-ttp">-- min</div>
-          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Target: &lt;5 min (Certified Specialist: &lt;3 min)</div>
+        <div class="kpi-card">
+          <div class="kpi-label">Avg Time-to-Pattern</div>
+          <div class="kpi-metric" id="kpi-ttp">-- min</div>
+          <div class="kpi-subtext">Target: &lt;5 min &bull; Certified: &lt;3 min</div>
         </div>
       </div>
 

@@ -37,7 +37,7 @@ export const ALL_SECTIONS: RoadmapSection[] = [
   { id: "s21", title: "Python Cheat Sheet", cat: "cheats", icon: "🐍" },
   { id: "s22", title: "Git Cheat Sheet", cat: "cheats", icon: "🌿" },
   { id: "s24", title: "C++ Cheat Sheet", cat: "cheats", icon: "⚙️" },
-  { id: "s26", title: "My Schedule", cat: "cheats", icon: "⏱️" },
+  { id: "s26", title: "Master Timetable", cat: "cheats", icon: "⏱️" },
   { id: "s27", title: "Weekly Log", cat: "cheats", icon: "📓" },
 ];
 
