@@ -289,72 +289,66 @@ window.DSA_DATA = {
       "date": "2026-10-01",
       "dateDisplay": "Thu, 01 Oct 2026",
       "dayOfWeek": "Thursday",
-      "objective": "Build constraint -> complexity map; learn to target TC before writing code",
-      "pattern": "Complexity calibration",
-      "concept": "Map n to feasible TC; O(n^2) failure at n=10^5; recursion/hash constants",
+      "objective": "Set up C++ environment, learn syntax, types, and get your very first green Accepted checkmark on LeetCode without intimidation",
+      "pattern": "C++ Fundamentals & I/O",
+      "concept": "Basic syntax, #include <iostream>, int main(), primitive types, cin/cout, LeetCode function signatures",
       "tutYn": "YES",
-      "tutTopic": "Big-O calibration + n -> TC mapping",
-      "tutMin": 25,
+      "tutTopic": "C++ Setup, Syntax & LeetCode Workflow",
+      "tutMin": 30,
       "tutResource": {
         "primary": "Striver",
         "primaryChannel": "Striver",
-        "primary_url": "https://www.youtube.com/results?search_query=striver%20time%20complexity%20analysis",
-        "primaryUrl": "https://www.youtube.com/results?search_query=striver%20time%20complexity%20analysis",
+        "primary_url": "https://www.youtube.com/results?search_query=striver%20c%2B%2B%20basics%20for%20beginners%20setup",
+        "primaryUrl": "https://www.youtube.com/results?search_query=striver%20c%2B%2B%20basics%20for%20beginners%20setup",
         "channels": [
           {
             "name": "Striver",
-            "url": "https://www.youtube.com/results?search_query=striver%20time%20complexity%20analysis",
+            "url": "https://www.youtube.com/results?search_query=striver%20c%2B%2B%20basics%20for%20beginners%20setup",
             "cls": "striver",
-            "query": "striver time complexity analysis"
-          },
-          {
-            "name": "Aditya Verma",
-            "url": "https://www.youtube.com/results?search_query=aditya%20verma%20time%20complexity",
-            "cls": "aditya",
-            "query": "aditya verma time complexity"
+            "query": "striver c++ basics for beginners setup"
           },
           {
             "name": "Love Babbar",
-            "url": "https://www.youtube.com/results?search_query=love%20babbar%20time%20and%20space%20complexity",
+            "url": "https://www.youtube.com/results?search_query=love%20babbar%20c%2B%2B%20course%20lecture%201%20introduction",
             "cls": "babbar",
-            "query": "love babbar time and space complexity"
+            "query": "love babbar c++ course lecture 1 introduction"
           },
           {
-            "name": "Padho with Pratyush",
-            "url": "https://www.youtube.com/results?search_query=padho%20with%20pratyush%20time%20complexity",
-            "cls": "pratyush",
-            "query": "padho with pratyush time complexity"
+            "name": "CodeHelp",
+            "url": "https://www.youtube.com/results?search_query=codehelp%20c%2B%2B%20first%20program",
+            "cls": "babbar",
+            "query": "codehelp c++ first program"
+          },
+          {
+            "name": "FreeCodeCamp",
+            "url": "https://www.youtube.com/results?search_query=freecodecamp%20c%2B%2B%20full%20course%20for%20beginners",
+            "cls": "other",
+            "query": "freecodecamp c++ full course for beginners"
           },
           {
             "name": "NeetCode",
-            "url": "https://www.youtube.com/results?search_query=neetcode%20big%20o%20notation",
+            "url": "https://www.youtube.com/results?search_query=neetcode%20getting%20started%20with%20leetcode",
             "cls": "neetcode",
-            "query": "neetcode big o notation"
-          },
-          {
-            "name": "Abdul Bari",
-            "url": "https://www.youtube.com/results?search_query=abdul%20bari%20algorithm%20analysis%20time%20complexity",
-            "cls": "other",
-            "query": "abdul bari algorithm analysis time complexity"
+            "query": "neetcode getting started with leetcode"
           }
         ],
-        "query": "striver time complexity analysis"
+        "query": "striver c++ basics for beginners setup"
       },
       "mode": "Untimed",
-      "help": "Tutorial only",
-      "p1": "LC 1 Two Sum",
+      "help": "Tutorial & step-by-step guidance",
+      "p1": "LC 2235 Add Two Integers",
       "d1": "E",
-      "t1": 12,
-      "p1Url": "https://leetcode.com/problem-list/all/?search=Two%20Sum",
-      "p2": "LC 121 Best Time to Buy & Sell Stock",
+      "t1": 5,
+      "p1Url": "https://leetcode.com/problem-list/all/?search=Add%20Two%20Integers",
+      "p2": "LC 2469 Convert the Temperature",
       "d2": "E",
-      "t2": 15,
-      "p2Url": "https://leetcode.com/problem-list/all/?search=Best%20Time%20to%20Buy%20%26%20Sell%20Stock",
+      "t2": 10,
+      "p2Url": "https://leetcode.com/problem-list/all/?search=Convert%20the%20Temperature",
       "review": "-",
-      "reconstruction": "Write from memory: n -> max-feasible-TC table (20/500/5k/100k/1M/1B) + your 6-step pre-code checklist",
-      "assessment": "Did you state a target TC before writing a single line? Yes/No  -  be honest.",
-      "infra": "Latency budgets: algorithm choice is a function of input scale, not taste",
-      "skill": "Constraint-first thinking",
+      "reconstruction": "Write a minimal C++ program with main(), cin/cout, and basic type declarations from memory",
+      "assessment": "Did your code compile without syntax errors and pass all tests on LeetCode? Yes/No",
+      "infra": "Every GPU kernel in CUDA and AI engine is written in static, strongly-typed C++",
+      "skill": "C++ syntax & environment setup",
       "isDiagnostic": false,
       "isMock": false,
       "isNvidia": true
@@ -367,31 +361,57 @@ window.DSA_DATA = {
       "date": "2026-10-02",
       "dateDisplay": "Fri, 02 Oct 2026",
       "dayOfWeek": "Friday",
-      "objective": "Turn counting into O(1) lookups; design the hash KEY deliberately",
-      "pattern": "Frequency/counting + hashing",
-      "concept": "Hash map as an index, not just storage; bucket counting vs sorting",
-      "tutYn": "NO",
-      "tutTopic": "-",
-      "tutMin": 0,
-      "tutResource": null,
+      "objective": "Master if-else logic and loop mechanics (for, while); learn to step-trace variables on paper before typing",
+      "pattern": "Conditionals & Loops",
+      "concept": "if/else branching; for and while loop bounds; step-tracing variables on paper; digit extraction via % 10 and / 10",
+      "tutYn": "YES",
+      "tutTopic": "Loop Mechanics & Tracing on Paper",
+      "tutMin": 25,
+      "tutResource": {
+        "primary": "Striver",
+        "primaryChannel": "Striver",
+        "primary_url": "https://www.youtube.com/results?search_query=striver%20loops%20and%20conditions%20c%2B%2B",
+        "primaryUrl": "https://www.youtube.com/results?search_query=striver%20loops%20and%20conditions%20c%2B%2B",
+        "channels": [
+          {
+            "name": "Striver",
+            "url": "https://www.youtube.com/results?search_query=striver%20loops%20and%20conditions%20c%2B%2B",
+            "cls": "striver",
+            "query": "striver loops and conditions c++"
+          },
+          {
+            "name": "Love Babbar",
+            "url": "https://www.youtube.com/results?search_query=love%20babbar%20while%20loop%20for%20loop%20patterns",
+            "cls": "babbar",
+            "query": "love babbar while loop for loop patterns"
+          },
+          {
+            "name": "Abdul Bari",
+            "url": "https://www.youtube.com/results?search_query=abdul%20bari%20loops%20and%20flowchart%20tracing",
+            "cls": "other",
+            "query": "abdul bari loops and flowchart tracing"
+          }
+        ],
+        "query": "striver loops and conditions c++"
+      },
       "mode": "Untimed",
-      "help": "1 hint @20min",
-      "p1": "LC 49 Group Anagrams",
-      "d1": "M",
-      "t1": 25,
-      "p1Url": "https://leetcode.com/problem-list/all/?search=Group%20Anagrams",
-      "p2": "LC 347 Top K Frequent Elements",
-      "d2": "M",
-      "t2": 25,
-      "p2Url": "https://leetcode.com/problem-list/all/?search=Top%20K%20Frequent%20Elements",
-      "review": "LC 1 Two Sum",
-      "reconstruction": "Rederive bucket-sort top-K with no notes; state why it is O(n) not O(n log n)",
-      "assessment": "Was your hash KEY chosen from the invariant, or guessed by trial?",
-      "infra": "Hot-key detection, metric counters, hash-based sharding in distributed systems",
-      "skill": "Key design + counting",
+      "help": "Step trace on paper first",
+      "p1": "LC 9 Palindrome Number",
+      "d1": "E",
+      "t1": 15,
+      "p1Url": "https://leetcode.com/problem-list/all/?search=Palindrome%20Number",
+      "p2": "LC 1480 Running Sum of 1d Array",
+      "d2": "E",
+      "t2": 10,
+      "p2Url": "https://leetcode.com/problem-list/all/?search=Running%20Sum%20of%201d%20Array",
+      "review": "LC 2235 Add Two Integers",
+      "reconstruction": "Trace loop states on paper for n = 121 (x % 10, x / 10, rev) without running code",
+      "assessment": "Did you trace the loop iteration by iteration on paper before submitting?",
+      "infra": "Loop bounds and stepping control thread-grid execution in GPU blocks",
+      "skill": "Loop execution & state tracing",
       "isDiagnostic": false,
       "isMock": false,
-      "isNvidia": false
+      "isNvidia": true
     },
     {
       "day": 3,
@@ -401,69 +421,63 @@ window.DSA_DATA = {
       "date": "2026-10-03",
       "dateDisplay": "Sat, 03 Oct 2026",
       "dayOfWeek": "Saturday",
-      "objective": "Reuse computed sums instead of recomputing; prefix+hash is the unlock",
-      "pattern": "Prefix/suffix reasoning",
-      "concept": "Prefix sums; prefix+hashmap for subarray conditions; why count map != seen set",
+      "objective": "Demystify Big-O through loop iterations: 1 loop = O(N), nested loops = O(N^2), 10^8 operations/sec CPU limit",
+      "pattern": "Complexity calibration",
+      "concept": "Loop counting: 1 loop = O(N), 2 nested loops = O(N^2), binary halving = O(log N); modern CPUs do ~10^8 ops/sec; why N=10^5 causes TLE on O(N^2)",
       "tutYn": "YES",
-      "tutTopic": "Prefix sum & prefix-hash pattern",
-      "tutMin": 20,
+      "tutTopic": "Time & Space Complexity from Loops",
+      "tutMin": 30,
       "tutResource": {
-        "primary": "Striver",
-        "primaryChannel": "Striver",
-        "primary_url": "https://www.youtube.com/results?search_query=striver%20subarray%20sum%20equals%20k%20prefix%20sum",
-        "primaryUrl": "https://www.youtube.com/results?search_query=striver%20subarray%20sum%20equals%20k%20prefix%20sum",
+        "primary": "Abdul Bari",
+        "primaryChannel": "Abdul Bari",
+        "primary_url": "https://www.youtube.com/results?search_query=abdul%20bari%20algorithm%20analysis%20time%20complexity%20big%20o",
+        "primaryUrl": "https://www.youtube.com/results?search_query=abdul%20bari%20algorithm%20analysis%20time%20complexity%20big%20o",
         "channels": [
           {
-            "name": "Striver",
-            "url": "https://www.youtube.com/results?search_query=striver%20subarray%20sum%20equals%20k%20prefix%20sum",
-            "cls": "striver",
-            "query": "striver subarray sum equals k prefix sum"
+            "name": "Abdul Bari",
+            "url": "https://www.youtube.com/results?search_query=abdul%20bari%20algorithm%20analysis%20time%20complexity%20big%20o",
+            "cls": "other",
+            "query": "abdul bari algorithm analysis time complexity big o"
           },
           {
-            "name": "Aditya Verma",
-            "url": "https://www.youtube.com/results?search_query=aditya%20verma%20prefix%20sum%20subarray",
-            "cls": "aditya",
-            "query": "aditya verma prefix sum subarray"
+            "name": "Striver",
+            "url": "https://www.youtube.com/results?search_query=striver%20time%20complexity%20big%20o%20notation",
+            "cls": "striver",
+            "query": "striver time complexity big o notation"
           },
           {
             "name": "Love Babbar",
-            "url": "https://www.youtube.com/results?search_query=love%20babbar%20prefix%20sum%20subarray",
+            "url": "https://www.youtube.com/results?search_query=love%20babbar%20time%20and%20space%20complexity",
             "cls": "babbar",
-            "query": "love babbar prefix sum subarray"
-          },
-          {
-            "name": "Padho with Pratyush",
-            "url": "https://www.youtube.com/results?search_query=padho%20with%20pratyush%20prefix%20sum",
-            "cls": "pratyush",
-            "query": "padho with pratyush prefix sum"
+            "query": "love babbar time and space complexity"
           },
           {
             "name": "NeetCode",
-            "url": "https://www.youtube.com/results?search_query=neetcode%20subarray%20sum%20equals%20k",
+            "url": "https://www.youtube.com/results?search_query=neetcode%20big%20o%20notation",
             "cls": "neetcode",
-            "query": "neetcode subarray sum equals k"
+            "query": "neetcode big o notation"
           }
         ],
-        "query": "striver subarray sum equals k prefix sum"
+        "query": "abdul bari algorithm analysis time complexity big o"
       },
       "mode": "Untimed",
-      "help": "1 hint @20min",
-      "p1": "LC 560 Subarray Sum Equals K",
-      "d1": "M",
-      "t1": 30,
-      "p1Url": "https://leetcode.com/problem-list/all/?search=Subarray%20Sum%20Equals%20K",
-      "p2": "LC 238 Product of Array Except Self",
-      "d2": "M",
-      "t2": 25,
-      "p2Url": "https://leetcode.com/problem-list/all/?search=Product%20of%20Array%20Except%20Self",
-      "review": "LC 49 Group Anagrams",
-      "reconstruction": "Explain why prefix+hash needs a COUNT map and why prefix 0 is seeded before any element",
-      "assessment": "Can you state the loop invariant of the prefix map in one sentence without notes?",
-      "infra": "Cumulative counters, rolling aggregation over event logs, prefix histograms",
-      "skill": "Reuse of partial results",
+      "help": "Count loop operations",
+      "p1": "LC 1929 Concatenation of Array",
+      "d1": "E",
+      "t1": 10,
+      "p1Url": "https://leetcode.com/problem-list/all/?search=Concatenation%20of%20Array",
+      "p2": "LC 2011 Final Value of Variable After Operations",
+      "d2": "E",
+      "t2": 10,
+      "p2Url": "https://leetcode.com/problem-list/all/?search=Final%20Value%20of%20Variable%20After%20Operations",
+      "review": "LC 9 Palindrome Number",
+      "reconstruction": "Write the 10^8 rule: given N = 20, 500, 5000, 10^5, 10^6, 10^9, state max feasible Big-O",
+      "assessment": "Can you calculate Big-O of a nested loop without guessing?",
+      "infra": "Latency budgets in NVIDIA GPU kernels depend on input scale, not intuition",
+      "skill": "Constraint-first thinking",
       "isDiagnostic": false,
       "isMock": false,
-      "isNvidia": false
+      "isNvidia": true
     },
     {
       "day": 4,
@@ -473,31 +487,57 @@ window.DSA_DATA = {
       "date": "2026-10-04",
       "dateDisplay": "Sun, 04 Oct 2026",
       "dayOfWeek": "Sunday",
-      "objective": "Encode a condition as a prefix value  -  problem transformation",
-      "pattern": "Prefix/suffix (encoding)",
-      "concept": "Rewrite equal-count as prefix equality; 2D prefix sums inclusion-exclusion",
-      "tutYn": "NO",
-      "tutTopic": "-",
-      "tutMin": 0,
-      "tutResource": null,
+      "objective": "Understand memory passing: pass-by-value vs pass-by-reference (&), and dynamic arrays (std::vector)",
+      "pattern": "Memory References & Vectors",
+      "concept": "Pass by value vs reference (&); std::vector<int>, push_back(), size(), indexing; range-based for loops; avoiding copy overhead",
+      "tutYn": "YES",
+      "tutTopic": "C++ Vectors & Pass-by-Reference (&)",
+      "tutMin": 25,
+      "tutResource": {
+        "primary": "Love Babbar",
+        "primaryChannel": "Love Babbar",
+        "primary_url": "https://www.youtube.com/results?search_query=love%20babbar%20c%2B%2B%20stl%20vector%20pass%20by%20reference",
+        "primaryUrl": "https://www.youtube.com/results?search_query=love%20babbar%20c%2B%2B%20stl%20vector%20pass%20by%20reference",
+        "channels": [
+          {
+            "name": "Love Babbar",
+            "url": "https://www.youtube.com/results?search_query=love%20babbar%20c%2B%2B%20stl%20vector%20pass%20by%20reference",
+            "cls": "babbar",
+            "query": "love babbar c++ stl vector pass by reference"
+          },
+          {
+            "name": "Striver",
+            "url": "https://www.youtube.com/results?search_query=striver%20c%2B%2B%20stl%20vectors%20functions",
+            "cls": "striver",
+            "query": "striver c++ stl vectors functions"
+          },
+          {
+            "name": "The Cherno",
+            "url": "https://www.youtube.com/results?search_query=the%20cherno%20c%2B%2B%20references%20pointers",
+            "cls": "other",
+            "query": "the cherno c++ references pointers"
+          }
+        ],
+        "query": "love babbar c++ stl vector pass by reference"
+      },
       "mode": "Untimed",
-      "help": "1 hint @20min",
-      "p1": "LC 525 Contiguous Array",
-      "d1": "M",
-      "t1": 30,
-      "p1Url": "https://leetcode.com/problem-list/all/?search=Contiguous%20Array",
-      "p2": "LC 304 Range Sum Query 2D - Immutable",
-      "d2": "M",
-      "t2": 25,
-      "p2Url": "https://leetcode.com/problem-list/all/?search=Range%20Sum%20Query%202D%20-%20Immutable",
-      "review": "LC 560 Subarray Sum Equals K",
-      "reconstruction": "Explain the +1/-1 transformation and the first-occurrence rule; derive 2D inclusion-exclusion formula",
-      "assessment": "Did you invent the encoding yourself? That determines your real review date.",
-      "infra": "Region aggregation queries over tiled/sharded data, 2D coverage metrics",
-      "skill": "Problem transformation",
+      "help": "Understand memory passing",
+      "p1": "LC 27 Remove Element",
+      "d1": "E",
+      "t1": 15,
+      "p1Url": "https://leetcode.com/problem-list/all/?search=Remove%20Element",
+      "p2": "LC 26 Remove Duplicates from Sorted Array",
+      "d2": "E",
+      "t2": 15,
+      "p2Url": "https://leetcode.com/problem-list/all/?search=Remove%20Duplicates%20from%20Sorted%20Array",
+      "review": "LC 1480 Running Sum of 1d Array",
+      "reconstruction": "Explain why passing vector<int>& avoids an O(N) memory copy in RAM/cache",
+      "assessment": "Did you use in-place write pointer without creating an auxiliary vector?",
+      "infra": "Zero-copy pointer passing is mandatory in high-performance GPU tensor engines",
+      "skill": "In-place array manipulation",
       "isDiagnostic": false,
       "isMock": false,
-      "isNvidia": false
+      "isNvidia": true
     },
     {
       "day": 5,
@@ -507,28 +547,54 @@ window.DSA_DATA = {
       "date": "2026-10-05",
       "dateDisplay": "Mon, 05 Oct 2026",
       "dayOfWeek": "Monday",
-      "objective": "Interleave week-1 patterns; first blind session  -  no pattern labels",
-      "pattern": "Blind (mixed W1 patterns)",
-      "concept": "Pattern discrimination under ambiguity; hashing invariants",
-      "tutYn": "NO",
-      "tutTopic": "-",
-      "tutMin": 0,
-      "tutResource": null,
+      "objective": "Learn to maintain running state (min, max, count) in a single pass without extra memory",
+      "pattern": "Array Traversal & Running State",
+      "concept": "Initializing sentinel bounds (INT_MAX, INT_MIN); single-pass running tracking; in-place array shifting",
+      "tutYn": "YES",
+      "tutTopic": "Array Traversal & In-Place Shifts",
+      "tutMin": 20,
+      "tutResource": {
+        "primary": "Striver",
+        "primaryChannel": "Striver",
+        "primary_url": "https://www.youtube.com/results?search_query=striver%20array%20basics%20easy%20problems",
+        "primaryUrl": "https://www.youtube.com/results?search_query=striver%20array%20basics%20easy%20problems",
+        "channels": [
+          {
+            "name": "Striver",
+            "url": "https://www.youtube.com/results?search_query=striver%20array%20basics%20easy%20problems",
+            "cls": "striver",
+            "query": "striver array basics easy problems"
+          },
+          {
+            "name": "Love Babbar",
+            "url": "https://www.youtube.com/results?search_query=love%20babbar%20arrays%20linear%20search%20reverse",
+            "cls": "babbar",
+            "query": "love babbar arrays linear search reverse"
+          },
+          {
+            "name": "NeetCode",
+            "url": "https://www.youtube.com/results?search_query=neetcode%20move%20zeroes%20array",
+            "cls": "neetcode",
+            "query": "neetcode move zeroes array"
+          }
+        ],
+        "query": "striver array basics easy problems"
+      },
       "mode": "Untimed",
-      "help": "No hints before 20min",
-      "p1": "LC 128 Longest Consecutive Sequence",
-      "d1": "M",
-      "t1": 30,
-      "p1Url": "https://leetcode.com/problem-list/all/?search=Longest%20Consecutive%20Sequence",
-      "p2": "LC 724 Find Pivot Index",
+      "help": "Single-pass invariant",
+      "p1": "LC 283 Move Zeroes",
+      "d1": "E",
+      "t1": 15,
+      "p1Url": "https://leetcode.com/problem-list/all/?search=Move%20Zeroes",
+      "p2": "LC 1752 Check if Array Is Sorted and Rotated",
       "d2": "E",
-      "t2": 12,
-      "p2Url": "https://leetcode.com/problem-list/all/?search=Find%20Pivot%20Index",
-      "review": "LC 238 Product of Array Except Self",
-      "reconstruction": "For both problems write a PatternCards entry: Trigger + Core Insight + Recognition Cue",
-      "assessment": "Time-to-pattern for each problem (record the number). Target: <6 min.",
-      "infra": "Set membership/dedup at scale; pivot-based load distribution",
-      "skill": "Pattern recognition without labels",
+      "t2": 20,
+      "p2Url": "https://leetcode.com/problem-list/all/?search=Check%20if%20Array%20Is%20Sorted%20and%20Rotated",
+      "review": "LC 26 Remove Duplicates from Sorted Array",
+      "reconstruction": "Write Move Zeroes with 2 pointers without using an auxiliary vector from memory",
+      "assessment": "Could you solve Move Zeroes in O(1) auxiliary space?",
+      "infra": "In-place compaction mirrors zero-copy buffer compaction in network pipelines",
+      "skill": "Single-pass running state",
       "isDiagnostic": false,
       "isMock": false,
       "isNvidia": false
@@ -541,31 +607,57 @@ window.DSA_DATA = {
       "date": "2026-10-06",
       "dateDisplay": "Tue, 06 Oct 2026",
       "dayOfWeek": "Tuesday",
-      "objective": "[2-SOL] First timed session  -  2 unlabelled problems; also find second solution for LC 380",
-      "pattern": "Blind + O(1) design",
-      "concept": "Working under a clock; index-map + swap-with-last deletion invariant",
-      "tutYn": "NO",
-      "tutTopic": "-",
-      "tutMin": 0,
-      "tutResource": null,
-      "mode": "Timed-60",
-      "help": "None",
-      "p1": "LC 380 Insert Delete GetRandom O(1)",
-      "d1": "M",
-      "t1": 25,
-      "p1Url": "https://leetcode.com/problem-list/all/?search=Insert%20Delete%20GetRandom%20O",
-      "p2": "LC 36 Valid Sudoku",
-      "d2": "M",
-      "t2": 25,
-      "p2Url": "https://leetcode.com/problem-list/all/?search=Valid%20Sudoku",
-      "review": "LC 525 Contiguous Array",
-      "reconstruction": "State the swap-with-last deletion invariant and why element order in the array does not matter",
-      "assessment": "Did the clock reduce your decision quality? Identify exactly which decision suffered.",
-      "infra": "Uniform random sampling from a live set; validation pipelines in data-quality systems",
-      "skill": "Timed execution + O(1) design",
+      "objective": "Discover opposite-end two pointers: moving left and right pointers towards the center with clear termination",
+      "pattern": "Two pointers (opposite ends)",
+      "concept": "left = 0, right = n - 1; while (left < right); inward convergence; alphanumeric filtering",
+      "tutYn": "YES",
+      "tutTopic": "Two Pointers: Inward Convergence",
+      "tutMin": 20,
+      "tutResource": {
+        "primary": "NeetCode",
+        "primaryChannel": "NeetCode",
+        "primary_url": "https://www.youtube.com/results?search_query=neetcode%20valid%20palindrome%20two%20pointers",
+        "primaryUrl": "https://www.youtube.com/results?search_query=neetcode%20valid%20palindrome%20two%20pointers",
+        "channels": [
+          {
+            "name": "NeetCode",
+            "url": "https://www.youtube.com/results?search_query=neetcode%20valid%20palindrome%20two%20pointers",
+            "cls": "neetcode",
+            "query": "neetcode valid palindrome two pointers"
+          },
+          {
+            "name": "Striver",
+            "url": "https://www.youtube.com/results?search_query=striver%20two%20pointers%20reverse%20string%20palindrome",
+            "cls": "striver",
+            "query": "striver two pointers reverse string palindrome"
+          },
+          {
+            "name": "Love Babbar",
+            "url": "https://www.youtube.com/results?search_query=love%20babbar%20two%20pointer%20approach",
+            "cls": "babbar",
+            "query": "love babbar two pointer approach"
+          }
+        ],
+        "query": "neetcode valid palindrome two pointers"
+      },
+      "mode": "Untimed",
+      "help": "Two pointers opposite ends",
+      "p1": "LC 125 Valid Palindrome",
+      "d1": "E",
+      "t1": 15,
+      "p1Url": "https://leetcode.com/problem-list/all/?search=Valid%20Palindrome",
+      "p2": "LC 344 Reverse String",
+      "d2": "E",
+      "t2": 10,
+      "p2Url": "https://leetcode.com/problem-list/all/?search=Reverse%20String",
+      "review": "LC 283 Move Zeroes",
+      "reconstruction": "Prove why left < right terminates correctly and what happens on odd vs even lengths",
+      "assessment": "Did you handle punctuation and uppercase without extra array allocation?",
+      "infra": "Bidirectional stream compaction in ring buffers",
+      "skill": "Inward pointer convergence",
       "isDiagnostic": false,
       "isMock": false,
-      "isNvidia": false
+      "isNvidia": true
     },
     {
       "day": 7,
@@ -575,31 +667,31 @@ window.DSA_DATA = {
       "date": "2026-10-07",
       "dateDisplay": "Wed, 07 Oct 2026",
       "dayOfWeek": "Wednesday",
-      "objective": "Week 1 assessment + full reconstruction. Zero new patterns.",
+      "objective": "Lock in Week 1 patterns: syntax, loop mechanics, vectors, and in-place pointers without looking at solutions",
       "pattern": "Review/audit",
-      "concept": "Retention without notes  -  the only real test of week 1",
+      "concept": "Retention without notes: C++ syntax, loops, vectors, in-place pointer shifts",
       "tutYn": "NO",
       "tutTopic": "-",
       "tutMin": 0,
       "tutResource": null,
       "mode": "Untimed",
       "help": "Notes forbidden",
-      "p1": "Rederive: prefix+hash (LC 560), bucket top-K (LC 347), prefix-0 seed reason",
-      "d1": "M",
-      "t1": 45,
-      "p1Url": "https://leetcode.com/problem-list/all/?search=Rederive%3A%20prefix%2Bhash",
-      "p2": "Fill WeeklyAssessment row + cluster FailureLog by category",
-      "d2": "-",
-      "t2": 20,
-      "p2Url": "https://leetcode.com/problem-list/all/?search=Fill%20WeeklyAssessment%20row%20%2B%20cluster%20FailureLog%20by%20category",
-      "review": "All week-1 rows with Mastered=No",
-      "reconstruction": "Rebuild prefix+hash and bucket top-K from a blank editor; diff your version against your first solution",
-      "assessment": "Score pattern recognition 1-5 HONESTLY. Cannot rebuild = was never learned.",
-      "infra": "-",
+      "p1": "LC 9 Palindrome Number",
+      "d1": "E",
+      "t1": 15,
+      "p1Url": "https://leetcode.com/problem-list/all/?search=Palindrome%20Number",
+      "p2": "LC 283 Move Zeroes",
+      "d2": "E",
+      "t2": 15,
+      "p2Url": "https://leetcode.com/problem-list/all/?search=Move%20Zeroes",
+      "review": "All Week 1 problems",
+      "reconstruction": "Re-solve Palindrome Number and Move Zeroes on a blank editor with zero notes",
+      "assessment": "Can you write clean, compiling C++ vector code without syntax errors?",
+      "infra": "Foundational fluency is required before hardware-aware optimization",
       "skill": "Retention + self-audit",
       "isDiagnostic": false,
       "isMock": false,
-      "isNvidia": false
+      "isNvidia": true
     },
     {
       "day": 8,
@@ -609,69 +701,63 @@ window.DSA_DATA = {
       "date": "2026-10-08",
       "dateDisplay": "Thu, 08 Oct 2026",
       "dayOfWeek": "Thursday",
-      "objective": "Learn WHY two pointers is valid  -  the monotonic movement proof",
-      "pattern": "Two pointers (opposite ends)",
-      "concept": "Convergence argument; proof no pair is skipped; duplicate handling",
+      "objective": "Turn counting into O(1) lookups: frequency arrays count[26] vs unordered_map",
+      "pattern": "Frequency/counting + hashing",
+      "concept": "Direct index hashing via s[i] - 'a'; hash map as an index; O(1) average lookup vs O(N) linear search",
       "tutYn": "YES",
-      "tutTopic": "Two pointers: the validity argument (not just the template)",
-      "tutMin": 20,
+      "tutTopic": "Hashing & Frequency Counting",
+      "tutMin": 30,
       "tutResource": {
         "primary": "Striver",
         "primaryChannel": "Striver",
-        "primary_url": "https://www.youtube.com/results?search_query=striver%20two%20pointers%203sum",
-        "primaryUrl": "https://www.youtube.com/results?search_query=striver%20two%20pointers%203sum",
+        "primary_url": "https://www.youtube.com/results?search_query=striver%20hashing%20hashmap%20frequency%20counting",
+        "primaryUrl": "https://www.youtube.com/results?search_query=striver%20hashing%20hashmap%20frequency%20counting",
         "channels": [
           {
             "name": "Striver",
-            "url": "https://www.youtube.com/results?search_query=striver%20two%20pointers%203sum",
+            "url": "https://www.youtube.com/results?search_query=striver%20hashing%20hashmap%20frequency%20counting",
             "cls": "striver",
-            "query": "striver two pointers 3sum"
+            "query": "striver hashing hashmap frequency counting"
           },
           {
             "name": "Aditya Verma",
-            "url": "https://www.youtube.com/results?search_query=aditya%20verma%20two%20pointer%20approach",
+            "url": "https://www.youtube.com/results?search_query=aditya%20verma%20hashing%20map%20frequency",
             "cls": "aditya",
-            "query": "aditya verma two pointer approach"
-          },
-          {
-            "name": "Love Babbar",
-            "url": "https://www.youtube.com/results?search_query=love%20babbar%20two%20pointer%20approach",
-            "cls": "babbar",
-            "query": "love babbar two pointer approach"
-          },
-          {
-            "name": "Padho with Pratyush",
-            "url": "https://www.youtube.com/results?search_query=padho%20with%20pratyush%20two%20pointers",
-            "cls": "pratyush",
-            "query": "padho with pratyush two pointers"
+            "query": "aditya verma hashing map frequency"
           },
           {
             "name": "NeetCode",
-            "url": "https://www.youtube.com/results?search_query=neetcode%20two%20pointers%203sum",
+            "url": "https://www.youtube.com/results?search_query=neetcode%20valid%20anagram%20contains%20duplicate",
             "cls": "neetcode",
-            "query": "neetcode two pointers 3sum"
+            "query": "neetcode valid anagram contains duplicate"
+          },
+          {
+            "name": "Love Babbar",
+            "url": "https://www.youtube.com/results?search_query=love%20babbar%20hashing%20hashmap",
+            "cls": "babbar",
+            "query": "love babbar hashing hashmap"
           }
         ],
-        "query": "striver two pointers 3sum"
+        "query": "striver hashing hashmap frequency counting"
       },
       "mode": "Untimed",
-      "help": "1 hint @20min",
-      "p1": "LC 167 Two Sum II",
+      "help": "Hash map as index",
+      "p1": "LC 242 Valid Anagram",
       "d1": "E",
-      "t1": 12,
-      "p1Url": "https://leetcode.com/problem-list/all/?search=Two%20Sum%20II",
-      "p2": "LC 15 3Sum",
-      "d2": "M",
-      "t2": 35,
-      "p2Url": "https://leetcode.com/problem-list/all/?search=3Sum",
-      "review": "LC 347 Top K Frequent Elements",
-      "reconstruction": "Prove why skipping duplicates in 3Sum cannot lose any valid solution",
-      "assessment": "Can you justify each pointer move with a logical argument, or are you pattern-matching?",
-      "infra": "Merging two sorted streams; sorted shard scans in distributed databases",
-      "skill": "Monotonic pointer proof",
+      "t1": 15,
+      "p1Url": "https://leetcode.com/problem-list/all/?search=Valid%20Anagram",
+      "p2": "LC 217 Contains Duplicate",
+      "d2": "E",
+      "t2": 12,
+      "p2Url": "https://leetcode.com/problem-list/all/?search=Contains%20Duplicate",
+      "review": "LC 125 Valid Palindrome",
+      "reconstruction": "Explain why int count[26] is 10x faster than unordered_map due to L1 cache locality",
+      "assessment": "Could you design the frequency array yourself without hints?",
+      "infra": "Direct index tables underpin GPU kernel launch lookup tables",
+      "skill": "Hash key design",
       "isDiagnostic": false,
       "isMock": false,
-      "isNvidia": false
+      "isNvidia": true
     },
     {
       "day": 9,
@@ -681,31 +767,57 @@ window.DSA_DATA = {
       "date": "2026-10-09",
       "dateDisplay": "Fri, 09 Oct 2026",
       "dayOfWeek": "Friday",
-      "objective": "Same-direction pointers; in-place rewriting; greedy discard argument",
-      "pattern": "Two pointers (read/write index)",
-      "concept": "Write-index vs read-index; discard step must be justified not assumed",
-      "tutYn": "NO",
-      "tutTopic": "-",
-      "tutMin": 0,
-      "tutResource": null,
+      "objective": "Master the complement lookup: transforming O(N^2) brute force into O(N) single-pass with a hash map",
+      "pattern": "Complement Lookup (Hash Map)",
+      "concept": "For each x, check if target - x is in map; value -> index map; single-pass lookup",
+      "tutYn": "YES",
+      "tutTopic": "Two Sum & Stock Mental Model",
+      "tutMin": 25,
+      "tutResource": {
+        "primary": "NeetCode",
+        "primaryChannel": "NeetCode",
+        "primary_url": "https://www.youtube.com/results?search_query=neetcode%20two%20sum%20best%20time%20to%20buy%20and%20sell%20stock",
+        "primaryUrl": "https://www.youtube.com/results?search_query=neetcode%20two%20sum%20best%20time%20to%20buy%20and%20sell%20stock",
+        "channels": [
+          {
+            "name": "NeetCode",
+            "url": "https://www.youtube.com/results?search_query=neetcode%20two%20sum%20best%20time%20to%20buy%20and%20sell%20stock",
+            "cls": "neetcode",
+            "query": "neetcode two sum best time to buy and sell stock"
+          },
+          {
+            "name": "Striver",
+            "url": "https://www.youtube.com/results?search_query=striver%20two%20sum%20problem%20best%20time%20to%20buy%20sell%20stock",
+            "cls": "striver",
+            "query": "striver two sum problem best time to buy sell stock"
+          },
+          {
+            "name": "Aditya Verma",
+            "url": "https://www.youtube.com/results?search_query=aditya%20verma%20two%20sum%20hash%20map",
+            "cls": "aditya",
+            "query": "aditya verma two sum hash map"
+          }
+        ],
+        "query": "neetcode two sum best time to buy and sell stock"
+      },
       "mode": "Untimed",
-      "help": "1 hint @20min",
-      "p1": "LC 11 Container With Most Water",
-      "d1": "M",
-      "t1": 30,
-      "p1Url": "https://leetcode.com/problem-list/all/?search=Container%20With%20Most%20Water",
-      "p2": "LC 75 Sort Colors (Dutch flag)",
-      "d2": "M",
-      "t2": 20,
-      "p2Url": "https://leetcode.com/problem-list/all/?search=Sort%20Colors",
-      "review": "LC 15 3Sum",
-      "reconstruction": "Write the exchange argument for discarding the shorter wall; state Sort Colors' 3-region invariant",
-      "assessment": "Did you PROVE the discard step, or just accept it as obvious?",
-      "infra": "In-place buffer compaction; zero-copy stream rewriting",
-      "skill": "Invariant-based greedy",
+      "help": "Complement lookup",
+      "p1": "LC 1 Two Sum",
+      "d1": "E",
+      "t1": 15,
+      "p1Url": "https://leetcode.com/problem-list/all/?search=Two%20Sum",
+      "p2": "LC 121 Best Time to Buy & Sell Stock",
+      "d2": "E",
+      "t2": 15,
+      "p2Url": "https://leetcode.com/problem-list/all/?search=Best%20Time%20to%20Buy%20%26%20Sell%20Stock",
+      "review": "LC 217 Contains Duplicate",
+      "reconstruction": "Derive Two Sum brute force O(N^2) vs hash map O(N) on paper; explain one-pass complement check",
+      "assessment": "Did you state why one-pass map prevents using the same element twice?",
+      "infra": "Key-value indexing in high-throughput inference caches",
+      "skill": "Complement lookup",
       "isDiagnostic": false,
       "isMock": false,
-      "isNvidia": false
+      "isNvidia": true
     },
     {
       "day": 10,
@@ -715,66 +827,54 @@ window.DSA_DATA = {
       "date": "2026-10-10",
       "dateDisplay": "Sat, 10 Oct 2026",
       "dayOfWeek": "Saturday",
-      "objective": "Variable-size sliding window: learn the shrink condition and its validity proof",
-      "pattern": "Sliding window (variable)",
-      "concept": "Monotone feasibility: growing never repairs a violation; shrink until valid",
+      "objective": "Learn when sorting unlocks two pointers: achieving O(N) time and O(1) space without hash map memory overhead",
+      "pattern": "Two pointers (sorted input)",
+      "concept": "If sorted: sum < target -> left++; sum > target -> right--; eliminating entire search halves",
       "tutYn": "YES",
-      "tutTopic": "Sliding window: expand/shrink + when it FAILS (negatives, non-monotone)",
-      "tutMin": 25,
+      "tutTopic": "Two Pointers on Sorted Arrays",
+      "tutMin": 20,
       "tutResource": {
-        "primary": "Aditya Verma",
-        "primaryChannel": "Aditya Verma",
-        "primary_url": "https://www.youtube.com/results?search_query=aditya%20verma%20sliding%20window%20playlist",
-        "primaryUrl": "https://www.youtube.com/results?search_query=aditya%20verma%20sliding%20window%20playlist",
+        "primary": "Striver",
+        "primaryChannel": "Striver",
+        "primary_url": "https://www.youtube.com/results?search_query=striver%20two%20pointers%20sorted%20array%20two%20sum%202",
+        "primaryUrl": "https://www.youtube.com/results?search_query=striver%20two%20pointers%20sorted%20array%20two%20sum%202",
         "channels": [
           {
-            "name": "Aditya Verma",
-            "url": "https://www.youtube.com/results?search_query=aditya%20verma%20sliding%20window%20playlist",
-            "cls": "aditya",
-            "query": "aditya verma sliding window playlist"
-          },
-          {
             "name": "Striver",
-            "url": "https://www.youtube.com/results?search_query=striver%20sliding%20window%20playlist",
+            "url": "https://www.youtube.com/results?search_query=striver%20two%20pointers%20sorted%20array%20two%20sum%202",
             "cls": "striver",
-            "query": "striver sliding window playlist"
-          },
-          {
-            "name": "Love Babbar",
-            "url": "https://www.youtube.com/results?search_query=love%20babbar%20sliding%20window",
-            "cls": "babbar",
-            "query": "love babbar sliding window"
-          },
-          {
-            "name": "Padho with Pratyush",
-            "url": "https://www.youtube.com/results?search_query=padho%20with%20pratyush%20sliding%20window",
-            "cls": "pratyush",
-            "query": "padho with pratyush sliding window"
+            "query": "striver two pointers sorted array two sum 2"
           },
           {
             "name": "NeetCode",
-            "url": "https://www.youtube.com/results?search_query=neetcode%20sliding%20window",
+            "url": "https://www.youtube.com/results?search_query=neetcode%20two%20sum%20ii%20input%20array%20is%20sorted",
             "cls": "neetcode",
-            "query": "neetcode sliding window"
+            "query": "neetcode two sum ii input array is sorted"
+          },
+          {
+            "name": "Love Babbar",
+            "url": "https://www.youtube.com/results?search_query=love%20babbar%20two%20pointer%20sorted%20array",
+            "cls": "babbar",
+            "query": "love babbar two pointer sorted array"
           }
         ],
-        "query": "aditya verma sliding window playlist"
+        "query": "striver two pointers sorted array two sum 2"
       },
       "mode": "Untimed",
-      "help": "Tutorial before; no solution reading",
-      "p1": "LC 3 Longest Substring Without Repeating Characters",
-      "d1": "M",
-      "t1": 25,
-      "p1Url": "https://leetcode.com/problem-list/all/?search=Longest%20Substring%20Without%20Repeating%20Characters",
-      "p2": "LC 209 Minimum Size Subarray Sum",
-      "d2": "M",
-      "t2": 25,
-      "p2Url": "https://leetcode.com/problem-list/all/?search=Minimum%20Size%20Subarray%20Sum",
-      "review": "LC 75 Sort Colors",
-      "reconstruction": "Write your window's loop invariant; then construct one problem where sliding window is INVALID",
-      "assessment": "Do you know the VALIDITY CONDITION, or only the template? They are not the same thing.",
-      "infra": "Rate limiting over time windows; token bucket implementation",
-      "skill": "Window invariants + validity condition",
+      "help": "Sorted two pointers",
+      "p1": "LC 167 Two Sum II",
+      "d1": "E",
+      "t1": 15,
+      "p1Url": "https://leetcode.com/problem-list/all/?search=Two%20Sum%20II",
+      "p2": "LC 977 Squares of a Sorted Array",
+      "d2": "E",
+      "t2": 18,
+      "p2Url": "https://leetcode.com/problem-list/all/?search=Squares%20of%20a%20Sorted%20Array",
+      "review": "LC 1 Two Sum",
+      "reconstruction": "Prove why Two Sum II on sorted input never misses the answer with two pointers",
+      "assessment": "Did you avoid allocating an O(N) hash map when the input is sorted?",
+      "infra": "Sorted shard scans and merge joins in distributed columnar databases",
+      "skill": "Monotonic pointer proof",
       "isDiagnostic": false,
       "isMock": false,
       "isNvidia": false
@@ -787,31 +887,57 @@ window.DSA_DATA = {
       "date": "2026-10-11",
       "dateDisplay": "Sun, 11 Oct 2026",
       "dayOfWeek": "Sunday",
-      "objective": "Windows with a counting constraint; the atMost(K) subtraction trick",
-      "pattern": "Sliding window + frequency",
-      "concept": "exactly(K) = atMost(K) - atMost(K-1); frequency maps inside windows",
-      "tutYn": "NO",
-      "tutTopic": "-",
-      "tutMin": 0,
-      "tutResource": null,
+      "objective": "Learn partial-sum precomputation to answer any range sum query in O(1) time",
+      "pattern": "Prefix/suffix reasoning",
+      "concept": "prefix[i] = prefix[i-1] + nums[i]; range [L, R] = prefix[R] - prefix[L-1]; avoiding repeated O(N) scans",
+      "tutYn": "YES",
+      "tutTopic": "Prefix Sum Fundamentals",
+      "tutMin": 25,
+      "tutResource": {
+        "primary": "Striver",
+        "primaryChannel": "Striver",
+        "primary_url": "https://www.youtube.com/results?search_query=striver%20prefix%20sum%20pattern%20find%20pivot%20index",
+        "primaryUrl": "https://www.youtube.com/results?search_query=striver%20prefix%20sum%20pattern%20find%20pivot%20index",
+        "channels": [
+          {
+            "name": "Striver",
+            "url": "https://www.youtube.com/results?search_query=striver%20prefix%20sum%20pattern%20find%20pivot%20index",
+            "cls": "striver",
+            "query": "striver prefix sum pattern find pivot index"
+          },
+          {
+            "name": "NeetCode",
+            "url": "https://www.youtube.com/results?search_query=neetcode%20find%20pivot%20index%20range%20sum%20query",
+            "cls": "neetcode",
+            "query": "neetcode find pivot index range sum query"
+          },
+          {
+            "name": "Aditya Verma",
+            "url": "https://www.youtube.com/results?search_query=aditya%20verma%20prefix%20sum%20array",
+            "cls": "aditya",
+            "query": "aditya verma prefix sum array"
+          }
+        ],
+        "query": "striver prefix sum pattern find pivot index"
+      },
       "mode": "Untimed",
-      "help": "1 hint @25min only",
-      "p1": "LC 424 Longest Repeating Character Replacement",
-      "d1": "M",
-      "t1": 35,
-      "p1Url": "https://leetcode.com/problem-list/all/?search=Longest%20Repeating%20Character%20Replacement",
-      "p2": "LC 992 Subarrays with K Different Integers",
-      "d2": "H",
-      "t2": 40,
-      "p2Url": "https://leetcode.com/problem-list/all/?search=Subarrays%20with%20K%20Different%20Integers",
-      "review": "LC 3 Longest Substring Without Repeating Characters",
-      "reconstruction": "Derive the subtraction identity yourself; explain why maxFreq need not be recomputed on shrink in LC 424",
-      "assessment": "Did you reach the subtraction trick independently? If not  ->  F3, review at +2 days.",
-      "infra": "Cardinality-bounded caches; distinct-key windows in streaming analytics",
-      "skill": "Counting inside windows",
+      "help": "Precompute partial sums",
+      "p1": "LC 724 Find Pivot Index",
+      "d1": "E",
+      "t1": 15,
+      "p1Url": "https://leetcode.com/problem-list/all/?search=Find%20Pivot%20Index",
+      "p2": "LC 303 Range Sum Query - Immutable",
+      "d2": "E",
+      "t2": 15,
+      "p2Url": "https://leetcode.com/problem-list/all/?search=Range%20Sum%20Query%20-%20Immutable",
+      "review": "LC 121 Best Time to Buy & Sell Stock",
+      "reconstruction": "Write the prefix sum formula for range [L, R] and explain the L=0 edge case from memory",
+      "assessment": "Can you state the loop invariant of the prefix sum array in one sentence?",
+      "infra": "Cumulative metrics and rolling latency telemetry over time-series data",
+      "skill": "Reuse of partial results",
       "isDiagnostic": false,
       "isMock": false,
-      "isNvidia": true
+      "isNvidia": false
     },
     {
       "day": 12,
@@ -821,28 +947,54 @@ window.DSA_DATA = {
       "date": "2026-10-12",
       "dateDisplay": "Mon, 12 Oct 2026",
       "dayOfWeek": "Monday",
-      "objective": "Fixed windows and the hardest window bookkeeping  -  need/have counters",
-      "pattern": "Sliding window (fixed/need-have)",
-      "concept": "Fixed-size window state; need/have counters; when 'have' increments",
-      "tutYn": "NO",
-      "tutTopic": "-",
-      "tutMin": 0,
-      "tutResource": null,
+      "objective": "Learn to slide a window of size K in O(1) per step by adding incoming and subtracting outgoing",
+      "pattern": "Sliding window (fixed)",
+      "concept": "Fixed size K: compute initial window of size K; then loop i from K to N-1, updating sum += nums[i] - nums[i-K]",
+      "tutYn": "YES",
+      "tutTopic": "Sliding Window: Fixed Size",
+      "tutMin": 25,
+      "tutResource": {
+        "primary": "Aditya Verma",
+        "primaryChannel": "Aditya Verma",
+        "primary_url": "https://www.youtube.com/results?search_query=aditya%20verma%20sliding%20window%20fixed%20size%20maximum%20average%20subarray",
+        "primaryUrl": "https://www.youtube.com/results?search_query=aditya%20verma%20sliding%20window%20fixed%20size%20maximum%20average%20subarray",
+        "channels": [
+          {
+            "name": "Aditya Verma",
+            "url": "https://www.youtube.com/results?search_query=aditya%20verma%20sliding%20window%20fixed%20size%20maximum%20average%20subarray",
+            "cls": "aditya",
+            "query": "aditya verma sliding window fixed size maximum average subarray"
+          },
+          {
+            "name": "Striver",
+            "url": "https://www.youtube.com/results?search_query=striver%20sliding%20window%20maximum%20average%20subarray",
+            "cls": "striver",
+            "query": "striver sliding window maximum average subarray"
+          },
+          {
+            "name": "NeetCode",
+            "url": "https://www.youtube.com/results?search_query=neetcode%20sliding%20window%20fixed%20size",
+            "cls": "neetcode",
+            "query": "neetcode sliding window fixed size"
+          }
+        ],
+        "query": "aditya verma sliding window fixed size maximum average subarray"
+      },
       "mode": "Untimed",
-      "help": "No hints before 30min",
-      "p1": "LC 567 Permutation in String",
-      "d1": "M",
-      "t1": 25,
-      "p1Url": "https://leetcode.com/problem-list/all/?search=Permutation%20in%20String",
-      "p2": "LC 76 Minimum Window Substring",
-      "d2": "H",
-      "t2": 40,
-      "p2Url": "https://leetcode.com/problem-list/all/?search=Minimum%20Window%20Substring",
-      "review": "LC 424 Longest Repeating Character Replacement",
-      "reconstruction": "Rebuild the have/need counter logic of LC 76 from memory with no notes",
-      "assessment": "Was your bug in the LOGIC or the CODE? Different failure category, completely different fix.",
-      "infra": "Pattern matching over log streams; sequence detection in telemetry pipelines",
-      "skill": "Careful state maintenance under constraints",
+      "help": "Fixed window slide",
+      "p1": "LC 643 Maximum Average Subarray I",
+      "d1": "E",
+      "t1": 15,
+      "p1Url": "https://leetcode.com/problem-list/all/?search=Maximum%20Average%20Subarray%20I",
+      "p2": "LC 1876 Substrings of Size Three with Distinct Characters",
+      "d2": "E",
+      "t2": 15,
+      "p2Url": "https://leetcode.com/problem-list/all/?search=Substrings%20of%20Size%20Three%20with%20Distinct%20Characters",
+      "review": "LC 724 Find Pivot Index",
+      "reconstruction": "Write the sliding window sum update step: sum += incoming - outgoing from memory",
+      "assessment": "Did you avoid recomputing the sum of K elements at each step?",
+      "infra": "Sliding rate-limit windows and token buckets in API gateways",
+      "skill": "Fixed window sliding",
       "isDiagnostic": false,
       "isMock": false,
       "isNvidia": false
@@ -855,28 +1007,54 @@ window.DSA_DATA = {
       "date": "2026-10-13",
       "dateDisplay": "Tue, 13 Oct 2026",
       "dayOfWeek": "Tuesday",
-      "objective": "Blind mix: two pointers vs window vs prefix  -  discriminate without labels",
-      "pattern": "Blind (W1+W2 mix)",
-      "concept": "Choosing between near-neighbour patterns from problem wording alone",
-      "tutYn": "NO",
-      "tutTopic": "-",
-      "tutMin": 0,
-      "tutResource": null,
+      "objective": "Understand dynamic window expansion and shrinking based on monotonic conditions",
+      "pattern": "Sliding window (variable)",
+      "concept": "Expand right pointer; while (condition violated) shrink left pointer; tracking window metrics",
+      "tutYn": "YES",
+      "tutTopic": "Sliding Window: Variable Size",
+      "tutMin": 25,
+      "tutResource": {
+        "primary": "Aditya Verma",
+        "primaryChannel": "Aditya Verma",
+        "primary_url": "https://www.youtube.com/results?search_query=aditya%20verma%20variable%20size%20sliding%20window%20minimum%20size%20subarray",
+        "primaryUrl": "https://www.youtube.com/results?search_query=aditya%20verma%20variable%20size%20sliding%20window%20minimum%20size%20subarray",
+        "channels": [
+          {
+            "name": "Aditya Verma",
+            "url": "https://www.youtube.com/results?search_query=aditya%20verma%20variable%20size%20sliding%20window%20minimum%20size%20subarray",
+            "cls": "aditya",
+            "query": "aditya verma variable size sliding window minimum size subarray"
+          },
+          {
+            "name": "NeetCode",
+            "url": "https://www.youtube.com/results?search_query=neetcode%20minimum%20size%20subarray%20sum%20max%20consecutive%20ones",
+            "cls": "neetcode",
+            "query": "neetcode minimum size subarray sum max consecutive ones"
+          },
+          {
+            "name": "Striver",
+            "url": "https://www.youtube.com/results?search_query=striver%20sliding%20window%20variable%20size",
+            "cls": "striver",
+            "query": "striver sliding window variable size"
+          }
+        ],
+        "query": "aditya verma variable size sliding window minimum size subarray"
+      },
       "mode": "Untimed",
-      "help": "None",
-      "p1": "LC 904 Fruit Into Baskets",
+      "help": "Expand right, shrink left",
+      "p1": "LC 209 Minimum Size Subarray Sum",
       "d1": "M",
       "t1": 25,
-      "p1Url": "https://leetcode.com/problem-list/all/?search=Fruit%20Into%20Baskets",
+      "p1Url": "https://leetcode.com/problem-list/all/?search=Minimum%20Size%20Subarray%20Sum",
       "p2": "LC 1004 Max Consecutive Ones III",
       "d2": "M",
       "t2": 25,
       "p2Url": "https://leetcode.com/problem-list/all/?search=Max%20Consecutive%20Ones%20III",
-      "review": "LC 76 Minimum Window Substring",
-      "reconstruction": "Write a 3-question decision tree: prefix vs window vs two-pointers (use it from today onwards)",
-      "assessment": "Correct pattern on first guess for both? Log the misread cue if wrong.",
-      "infra": "Sliding aggregates over time-series telemetry data",
-      "skill": "Pattern discrimination",
+      "review": "LC 643 Maximum Average Subarray I",
+      "reconstruction": "Write the expand and shrink loop conditions for LC 209; explain why total steps is 2*N -> O(N)",
+      "assessment": "Did you understand why the nested while loop still yields O(N) amortized time?",
+      "infra": "Dynamic queue window sizing under varying network packet congestion",
+      "skill": "Variable window invariants",
       "isDiagnostic": false,
       "isMock": false,
       "isNvidia": false
@@ -889,31 +1067,31 @@ window.DSA_DATA = {
       "date": "2026-10-14",
       "dateDisplay": "Wed, 14 Oct 2026",
       "dayOfWeek": "Wednesday",
-      "objective": "Week 2 assessment + timed retest of failures",
+      "objective": "Comprehensive test across all linear foundations: Vectors, Hashing, Two Pointers, Prefix Sum, Sliding Window",
       "pattern": "Review/audit",
-      "concept": "Retention under time pressure; failure clustering",
+      "concept": "Pattern discrimination: recognizing whether a problem requires Hashing, Two Pointers, or Sliding Window",
       "tutYn": "NO",
       "tutTopic": "-",
       "tutMin": 0,
       "tutResource": null,
       "mode": "Timed-40",
-      "help": "None",
-      "p1": "Retest your 2 worst W2 problems, timed",
-      "d1": "M",
-      "t1": 40,
-      "p1Url": "https://leetcode.com/problem-list/all/?search=Retest%20your%202%20worst%20W2%20problems%2C%20timed",
-      "p2": "WeeklyAssessment + failure clustering",
-      "d2": "-",
-      "t2": 25,
-      "p2Url": "https://leetcode.com/problem-list/all/?search=WeeklyAssessment%20%2B%20failure%20clustering",
+      "help": "No hints",
+      "p1": "LC 1 Two Sum",
+      "d1": "E",
+      "t1": 12,
+      "p1Url": "https://leetcode.com/problem-list/all/?search=Two%20Sum",
+      "p2": "LC 724 Find Pivot Index",
+      "d2": "E",
+      "t2": 15,
+      "p2Url": "https://leetcode.com/problem-list/all/?search=Find%20Pivot%20Index",
       "review": "ReviewQueue top 3",
-      "reconstruction": "Rederive the window shrink rule and the atMost(K) identity from memory",
-      "assessment": "Which failure category repeated from W1? It drives next week's blind days.",
-      "infra": "-",
-      "skill": "Self-diagnosis",
+      "reconstruction": "Draw a 3-way decision tree: When to use Two Pointers vs Sliding Window vs Hash Map",
+      "assessment": "Did you solve both problems within 30 minutes without looking at past code?",
+      "infra": "Linear scan optimization is the foundation for GPU memory streaming",
+      "skill": "Linear foundations mastery",
       "isDiagnostic": false,
       "isMock": false,
-      "isNvidia": false
+      "isNvidia": true
     },
     {
       "day": 15,
@@ -9507,43 +9685,37 @@ window.DSA_DATA = {
       "problemsUnlocked": "LC 1, LC 121",
       "retrievalTest": "Recite the n -> TC table from memory",
       "primaryChannel": "Striver",
-      "primaryUrl": "https://www.youtube.com/results?search_query=striver%20time%20complexity%20analysis",
+      "primaryUrl": "https://www.youtube.com/results?search_query=striver%20c%2B%2B%20basics%20for%20beginners%20setup",
       "channels": [
         {
           "name": "Striver",
-          "url": "https://www.youtube.com/results?search_query=striver%20time%20complexity%20analysis",
+          "url": "https://www.youtube.com/results?search_query=striver%20c%2B%2B%20basics%20for%20beginners%20setup",
           "cls": "striver",
-          "query": "striver time complexity analysis"
-        },
-        {
-          "name": "Aditya Verma",
-          "url": "https://www.youtube.com/results?search_query=aditya%20verma%20time%20complexity",
-          "cls": "aditya",
-          "query": "aditya verma time complexity"
+          "query": "striver c++ basics for beginners setup"
         },
         {
           "name": "Love Babbar",
-          "url": "https://www.youtube.com/results?search_query=love%20babbar%20time%20and%20space%20complexity",
+          "url": "https://www.youtube.com/results?search_query=love%20babbar%20c%2B%2B%20course%20lecture%201%20introduction",
           "cls": "babbar",
-          "query": "love babbar time and space complexity"
+          "query": "love babbar c++ course lecture 1 introduction"
         },
         {
-          "name": "Padho with Pratyush",
-          "url": "https://www.youtube.com/results?search_query=padho%20with%20pratyush%20time%20complexity",
-          "cls": "pratyush",
-          "query": "padho with pratyush time complexity"
+          "name": "CodeHelp",
+          "url": "https://www.youtube.com/results?search_query=codehelp%20c%2B%2B%20first%20program",
+          "cls": "babbar",
+          "query": "codehelp c++ first program"
+        },
+        {
+          "name": "FreeCodeCamp",
+          "url": "https://www.youtube.com/results?search_query=freecodecamp%20c%2B%2B%20full%20course%20for%20beginners",
+          "cls": "other",
+          "query": "freecodecamp c++ full course for beginners"
         },
         {
           "name": "NeetCode",
-          "url": "https://www.youtube.com/results?search_query=neetcode%20big%20o%20notation",
+          "url": "https://www.youtube.com/results?search_query=neetcode%20getting%20started%20with%20leetcode",
           "cls": "neetcode",
-          "query": "neetcode big o notation"
-        },
-        {
-          "name": "Abdul Bari",
-          "url": "https://www.youtube.com/results?search_query=abdul%20bari%20algorithm%20analysis%20time%20complexity",
-          "cls": "other",
-          "query": "abdul bari algorithm analysis time complexity"
+          "query": "neetcode getting started with leetcode"
         }
       ]
     },
@@ -9558,38 +9730,32 @@ window.DSA_DATA = {
       "whatNotToCopy": "The exact code; how to handle overflow",
       "problemsUnlocked": "LC 560, LC 238",
       "retrievalTest": "Explain the prefix invariant in one sentence",
-      "primaryChannel": "Striver",
-      "primaryUrl": "https://www.youtube.com/results?search_query=striver%20subarray%20sum%20equals%20k%20prefix%20sum",
+      "primaryChannel": "Abdul Bari",
+      "primaryUrl": "https://www.youtube.com/results?search_query=abdul%20bari%20algorithm%20analysis%20time%20complexity%20big%20o",
       "channels": [
         {
-          "name": "Striver",
-          "url": "https://www.youtube.com/results?search_query=striver%20subarray%20sum%20equals%20k%20prefix%20sum",
-          "cls": "striver",
-          "query": "striver subarray sum equals k prefix sum"
+          "name": "Abdul Bari",
+          "url": "https://www.youtube.com/results?search_query=abdul%20bari%20algorithm%20analysis%20time%20complexity%20big%20o",
+          "cls": "other",
+          "query": "abdul bari algorithm analysis time complexity big o"
         },
         {
-          "name": "Aditya Verma",
-          "url": "https://www.youtube.com/results?search_query=aditya%20verma%20prefix%20sum%20subarray",
-          "cls": "aditya",
-          "query": "aditya verma prefix sum subarray"
+          "name": "Striver",
+          "url": "https://www.youtube.com/results?search_query=striver%20time%20complexity%20big%20o%20notation",
+          "cls": "striver",
+          "query": "striver time complexity big o notation"
         },
         {
           "name": "Love Babbar",
-          "url": "https://www.youtube.com/results?search_query=love%20babbar%20prefix%20sum%20subarray",
+          "url": "https://www.youtube.com/results?search_query=love%20babbar%20time%20and%20space%20complexity",
           "cls": "babbar",
-          "query": "love babbar prefix sum subarray"
-        },
-        {
-          "name": "Padho with Pratyush",
-          "url": "https://www.youtube.com/results?search_query=padho%20with%20pratyush%20prefix%20sum",
-          "cls": "pratyush",
-          "query": "padho with pratyush prefix sum"
+          "query": "love babbar time and space complexity"
         },
         {
           "name": "NeetCode",
-          "url": "https://www.youtube.com/results?search_query=neetcode%20subarray%20sum%20equals%20k",
+          "url": "https://www.youtube.com/results?search_query=neetcode%20big%20o%20notation",
           "cls": "neetcode",
-          "query": "neetcode subarray sum equals k"
+          "query": "neetcode big o notation"
         }
       ]
     },
@@ -9605,37 +9771,31 @@ window.DSA_DATA = {
       "problemsUnlocked": "LC 167, LC 15",
       "retrievalTest": "State the discard argument without notes",
       "primaryChannel": "Striver",
-      "primaryUrl": "https://www.youtube.com/results?search_query=striver%20two%20pointers%203sum",
+      "primaryUrl": "https://www.youtube.com/results?search_query=striver%20hashing%20hashmap%20frequency%20counting",
       "channels": [
         {
           "name": "Striver",
-          "url": "https://www.youtube.com/results?search_query=striver%20two%20pointers%203sum",
+          "url": "https://www.youtube.com/results?search_query=striver%20hashing%20hashmap%20frequency%20counting",
           "cls": "striver",
-          "query": "striver two pointers 3sum"
+          "query": "striver hashing hashmap frequency counting"
         },
         {
           "name": "Aditya Verma",
-          "url": "https://www.youtube.com/results?search_query=aditya%20verma%20two%20pointer%20approach",
+          "url": "https://www.youtube.com/results?search_query=aditya%20verma%20hashing%20map%20frequency",
           "cls": "aditya",
-          "query": "aditya verma two pointer approach"
-        },
-        {
-          "name": "Love Babbar",
-          "url": "https://www.youtube.com/results?search_query=love%20babbar%20two%20pointer%20approach",
-          "cls": "babbar",
-          "query": "love babbar two pointer approach"
-        },
-        {
-          "name": "Padho with Pratyush",
-          "url": "https://www.youtube.com/results?search_query=padho%20with%20pratyush%20two%20pointers",
-          "cls": "pratyush",
-          "query": "padho with pratyush two pointers"
+          "query": "aditya verma hashing map frequency"
         },
         {
           "name": "NeetCode",
-          "url": "https://www.youtube.com/results?search_query=neetcode%20two%20pointers%203sum",
+          "url": "https://www.youtube.com/results?search_query=neetcode%20valid%20anagram%20contains%20duplicate",
           "cls": "neetcode",
-          "query": "neetcode two pointers 3sum"
+          "query": "neetcode valid anagram contains duplicate"
+        },
+        {
+          "name": "Love Babbar",
+          "url": "https://www.youtube.com/results?search_query=love%20babbar%20hashing%20hashmap",
+          "cls": "babbar",
+          "query": "love babbar hashing hashmap"
         }
       ]
     },
@@ -9650,38 +9810,26 @@ window.DSA_DATA = {
       "whatNotToCopy": "The while-loop skeleton",
       "problemsUnlocked": "LC 3, LC 209",
       "retrievalTest": "Name a problem where sliding window fails and why",
-      "primaryChannel": "Aditya Verma",
-      "primaryUrl": "https://www.youtube.com/results?search_query=aditya%20verma%20sliding%20window%20playlist",
+      "primaryChannel": "Striver",
+      "primaryUrl": "https://www.youtube.com/results?search_query=striver%20two%20pointers%20sorted%20array%20two%20sum%202",
       "channels": [
         {
-          "name": "Aditya Verma",
-          "url": "https://www.youtube.com/results?search_query=aditya%20verma%20sliding%20window%20playlist",
-          "cls": "aditya",
-          "query": "aditya verma sliding window playlist"
-        },
-        {
           "name": "Striver",
-          "url": "https://www.youtube.com/results?search_query=striver%20sliding%20window%20playlist",
+          "url": "https://www.youtube.com/results?search_query=striver%20two%20pointers%20sorted%20array%20two%20sum%202",
           "cls": "striver",
-          "query": "striver sliding window playlist"
-        },
-        {
-          "name": "Love Babbar",
-          "url": "https://www.youtube.com/results?search_query=love%20babbar%20sliding%20window",
-          "cls": "babbar",
-          "query": "love babbar sliding window"
-        },
-        {
-          "name": "Padho with Pratyush",
-          "url": "https://www.youtube.com/results?search_query=padho%20with%20pratyush%20sliding%20window",
-          "cls": "pratyush",
-          "query": "padho with pratyush sliding window"
+          "query": "striver two pointers sorted array two sum 2"
         },
         {
           "name": "NeetCode",
-          "url": "https://www.youtube.com/results?search_query=neetcode%20sliding%20window",
+          "url": "https://www.youtube.com/results?search_query=neetcode%20two%20sum%20ii%20input%20array%20is%20sorted",
           "cls": "neetcode",
-          "query": "neetcode sliding window"
+          "query": "neetcode two sum ii input array is sorted"
+        },
+        {
+          "name": "Love Babbar",
+          "url": "https://www.youtube.com/results?search_query=love%20babbar%20two%20pointer%20sorted%20array",
+          "cls": "babbar",
+          "query": "love babbar two pointer sorted array"
         }
       ]
     },
@@ -11853,7 +12001,7 @@ window.DSA_DATA = {
     },
     {
       "title": "RESOURCE DISCIPLINE & CURATED YOUTUBE CREATORS",
-      "body": "Curated tutorial channels:\n  - Striver (take U forward) - algorithmic patterns & technical interview rigor\n  - Aditya Verma - intuition & recurrence templates (DP, Stack, Sliding Window, BS)\n  - Love Babbar (CodeHelp) - clear structural breakdowns & Hindi explanations\n  - Padho with Pratyush - deep systems intuition, cache/concurrency & advanced DSA\n  - NeetCode (neetcode.io) - concise visual problem walkthroughs & clean code\n  - Specialized channels: Abdul Bari (algorithms), WilliamFiset (graphs), Errichto (range trees), Martin Thompson (lock-free), CMU DB (paging)\n\nSee the dedicated 'YouTubeChannels' sheet tab in this workbook for direct 1-click links to master playlists and channel URLs."
+      "body": "Curated tutorial channels:\n  - Striver (take U forward) - algorithmic patterns & technical interview rigor\n  - Aditya Verma - intuition & recurrence templates (DP, Stack, Sliding Window, BS)\n  - Love Babbar (CodeHelp) - clear structural breakdowns & Hindi explanations\n  - Padho with Pratyush - pattern-based DSA mastery, algorithmic pattern recognition & FAANG problem archetypes\n  - NeetCode (neetcode.io) - concise visual problem walkthroughs & clean code\n  - Specialized channels: Abdul Bari (algorithms), WilliamFiset (graphs), Errichto (range trees), Martin Thompson (lock-free), CMU DB (paging)\n\nSee the dedicated 'YouTubeChannels' sheet tab in this workbook for direct 1-click links to master playlists and channel URLs."
     }
   ],
   "nvidiaPlaybook": {

@@ -30,7 +30,7 @@ def escape(s):
 def get_nav_html(active_page):
     nav_items = [
         ("index.html", "Dashboard"),
-        ("plan.html", "168-Day Plan"),
+        ("plan.html", "Topic Curriculum"),
         ("revision.html", "Revision Vault"),
         ("patterns.html", "Pattern Library"),
         ("flashcards.html", "Flashcards"),

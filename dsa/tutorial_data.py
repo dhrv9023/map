@@ -18,47 +18,114 @@ import urllib.parse
 TUTORIAL_CREATORS = {
     1: {
         "primary": "Striver",
-        "query": "striver time complexity analysis",
+        "query": "striver c++ basics for beginners setup",
         "channels": [
-            {"name": "Striver", "query": "striver time complexity analysis", "cls": "striver"},
-            {"name": "Aditya Verma", "query": "aditya verma time complexity", "cls": "aditya"},
-            {"name": "Love Babbar", "query": "love babbar time and space complexity", "cls": "babbar"},
-            {"name": "Padho with Pratyush", "query": "padho with pratyush time complexity", "cls": "pratyush"},
-            {"name": "NeetCode", "query": "neetcode big o notation", "cls": "neetcode"},
-            {"name": "Abdul Bari", "query": "abdul bari algorithm analysis time complexity", "cls": "other"}
+            {"name": "Striver", "query": "striver c++ basics for beginners setup", "cls": "striver"},
+            {"name": "Love Babbar", "query": "love babbar c++ course lecture 1 introduction", "cls": "babbar"},
+            {"name": "CodeHelp", "query": "codehelp c++ first program", "cls": "babbar"},
+            {"name": "FreeCodeCamp", "query": "freecodecamp c++ full course for beginners", "cls": "other"},
+            {"name": "NeetCode", "query": "neetcode getting started with leetcode", "cls": "neetcode"}
+        ]
+    },
+    2: {
+        "primary": "Striver",
+        "query": "striver loops and conditions c++",
+        "channels": [
+            {"name": "Striver", "query": "striver loops and conditions c++", "cls": "striver"},
+            {"name": "Love Babbar", "query": "love babbar while loop for loop patterns", "cls": "babbar"},
+            {"name": "Abdul Bari", "query": "abdul bari loops and flowchart tracing", "cls": "other"}
         ]
     },
     3: {
-        "primary": "Striver",
-        "query": "striver subarray sum equals k prefix sum",
+        "primary": "Abdul Bari",
+        "query": "abdul bari algorithm analysis time complexity big o",
         "channels": [
-            {"name": "Striver", "query": "striver subarray sum equals k prefix sum", "cls": "striver"},
-            {"name": "Aditya Verma", "query": "aditya verma prefix sum subarray", "cls": "aditya"},
-            {"name": "Love Babbar", "query": "love babbar prefix sum subarray", "cls": "babbar"},
-            {"name": "Padho with Pratyush", "query": "padho with pratyush prefix sum", "cls": "pratyush"},
-            {"name": "NeetCode", "query": "neetcode subarray sum equals k", "cls": "neetcode"}
+            {"name": "Abdul Bari", "query": "abdul bari algorithm analysis time complexity big o", "cls": "other"},
+            {"name": "Striver", "query": "striver time complexity big o notation", "cls": "striver"},
+            {"name": "Love Babbar", "query": "love babbar time and space complexity", "cls": "babbar"},
+            {"name": "NeetCode", "query": "neetcode big o notation", "cls": "neetcode"}
+        ]
+    },
+    4: {
+        "primary": "Love Babbar",
+        "query": "love babbar c++ stl vector pass by reference",
+        "channels": [
+            {"name": "Love Babbar", "query": "love babbar c++ stl vector pass by reference", "cls": "babbar"},
+            {"name": "Striver", "query": "striver c++ stl vectors functions", "cls": "striver"},
+            {"name": "The Cherno", "query": "the cherno c++ references pointers", "cls": "other"}
+        ]
+    },
+    5: {
+        "primary": "Striver",
+        "query": "striver array basics easy problems",
+        "channels": [
+            {"name": "Striver", "query": "striver array basics easy problems", "cls": "striver"},
+            {"name": "Love Babbar", "query": "love babbar arrays linear search reverse", "cls": "babbar"},
+            {"name": "NeetCode", "query": "neetcode move zeroes array", "cls": "neetcode"}
+        ]
+    },
+    6: {
+        "primary": "NeetCode",
+        "query": "neetcode valid palindrome two pointers",
+        "channels": [
+            {"name": "NeetCode", "query": "neetcode valid palindrome two pointers", "cls": "neetcode"},
+            {"name": "Striver", "query": "striver two pointers reverse string palindrome", "cls": "striver"},
+            {"name": "Love Babbar", "query": "love babbar two pointer approach", "cls": "babbar"}
         ]
     },
     8: {
         "primary": "Striver",
-        "query": "striver two pointers 3sum",
+        "query": "striver hashing hashmap frequency counting",
         "channels": [
-            {"name": "Striver", "query": "striver two pointers 3sum", "cls": "striver"},
-            {"name": "Aditya Verma", "query": "aditya verma two pointer approach", "cls": "aditya"},
-            {"name": "Love Babbar", "query": "love babbar two pointer approach", "cls": "babbar"},
-            {"name": "Padho with Pratyush", "query": "padho with pratyush two pointers", "cls": "pratyush"},
-            {"name": "NeetCode", "query": "neetcode two pointers 3sum", "cls": "neetcode"}
+            {"name": "Striver", "query": "striver hashing hashmap frequency counting", "cls": "striver"},
+            {"name": "Aditya Verma", "query": "aditya verma hashing map frequency", "cls": "aditya"},
+            {"name": "NeetCode", "query": "neetcode valid anagram contains duplicate", "cls": "neetcode"},
+            {"name": "Love Babbar", "query": "love babbar hashing hashmap", "cls": "babbar"}
+        ]
+    },
+    9: {
+        "primary": "NeetCode",
+        "query": "neetcode two sum best time to buy and sell stock",
+        "channels": [
+            {"name": "NeetCode", "query": "neetcode two sum best time to buy and sell stock", "cls": "neetcode"},
+            {"name": "Striver", "query": "striver two sum problem best time to buy sell stock", "cls": "striver"},
+            {"name": "Aditya Verma", "query": "aditya verma two sum hash map", "cls": "aditya"}
         ]
     },
     10: {
-        "primary": "Aditya Verma",
-        "query": "aditya verma sliding window playlist",
+        "primary": "Striver",
+        "query": "striver two pointers sorted array two sum 2",
         "channels": [
-            {"name": "Aditya Verma", "query": "aditya verma sliding window playlist", "cls": "aditya"},
-            {"name": "Striver", "query": "striver sliding window playlist", "cls": "striver"},
-            {"name": "Love Babbar", "query": "love babbar sliding window", "cls": "babbar"},
-            {"name": "Padho with Pratyush", "query": "padho with pratyush sliding window", "cls": "pratyush"},
-            {"name": "NeetCode", "query": "neetcode sliding window", "cls": "neetcode"}
+            {"name": "Striver", "query": "striver two pointers sorted array two sum 2", "cls": "striver"},
+            {"name": "NeetCode", "query": "neetcode two sum ii input array is sorted", "cls": "neetcode"},
+            {"name": "Love Babbar", "query": "love babbar two pointer sorted array", "cls": "babbar"}
+        ]
+    },
+    11: {
+        "primary": "Striver",
+        "query": "striver prefix sum pattern find pivot index",
+        "channels": [
+            {"name": "Striver", "query": "striver prefix sum pattern find pivot index", "cls": "striver"},
+            {"name": "NeetCode", "query": "neetcode find pivot index range sum query", "cls": "neetcode"},
+            {"name": "Aditya Verma", "query": "aditya verma prefix sum array", "cls": "aditya"}
+        ]
+    },
+    12: {
+        "primary": "Aditya Verma",
+        "query": "aditya verma sliding window fixed size maximum average subarray",
+        "channels": [
+            {"name": "Aditya Verma", "query": "aditya verma sliding window fixed size maximum average subarray", "cls": "aditya"},
+            {"name": "Striver", "query": "striver sliding window maximum average subarray", "cls": "striver"},
+            {"name": "NeetCode", "query": "neetcode sliding window fixed size", "cls": "neetcode"}
+        ]
+    },
+    13: {
+        "primary": "Aditya Verma",
+        "query": "aditya verma variable size sliding window minimum size subarray",
+        "channels": [
+            {"name": "Aditya Verma", "query": "aditya verma variable size sliding window minimum size subarray", "cls": "aditya"},
+            {"name": "NeetCode", "query": "neetcode minimum size subarray sum max consecutive ones", "cls": "neetcode"},
+            {"name": "Striver", "query": "striver sliding window variable size", "cls": "striver"}
         ]
     },
     15: {
