@@ -42,8 +42,9 @@ def get_phase(day_num):
     else:
         return 4, "Phase 4: Systems & AI-Infrastructure Domain Specialization"
 
-# Curated YouTube Creators imported from tutorial_data
+# Curated YouTube Creators and Docs imported from tutorial_data and curated_resources
 from tutorial_data import TUTORIAL_CREATORS, get_tutorial_resource
+from curated_resources import get_curated_resource
 
 def run_export():
     start_dt = dsa_builder.START
@@ -143,7 +144,8 @@ def run_export():
         is_mock = day_num in (42, 70, 92, 95, 164, 165, 166)
         is_nv = is_nvidia_related(day_num, pat, infra, skill)
 
-        tut_resource = get_tutorial_resource(day_num, tT) if tY == 'YES' else None
+        curated_res = get_curated_resource(day_num, tT)
+        tut_resource = get_tutorial_resource(day_num, tT) if (tY == 'YES' or curated_res.get('yt')) else None
 
         days_data.append({
             "day": day_num,
@@ -157,9 +159,11 @@ def run_export():
             "pattern": pat,
             "concept": con,
             "tutYn": tY,
-            "tutTopic": tT,
+            "tutTopic": curated_res.get("topic") if curated_res.get("topic") else tT,
             "tutMin": tM if tM else 0,
             "tutResource": tut_resource,
+            "tutYt": curated_res.get("yt"),
+            "tutDoc": curated_res.get("doc"),
             "mode": mode,
             "help": help_,
             "p1": p1,
@@ -215,11 +219,12 @@ def run_export():
             "lcUrl": generate_lc_url(prob)
         })
 
-    # 8. Resources (35 Tutorials) with Curated YouTube Creator Links
+    # 8. Resources (35 Tutorials) with Curated YouTube Creator & Doc Links
     resources_data = []
     for r in dsa_builder.RESOURCES:
         (r_day, r_src, r_topic, r_url_desc, r_dur, r_why, r_extract, r_not_copy, r_unlocks, r_test) = r
         tut_res = get_tutorial_resource(r_day, r_topic)
+        curated_res = get_curated_resource(r_day, r_topic)
 
         resources_data.append({
             "day": r_day,
@@ -234,7 +239,9 @@ def run_export():
             "retrievalTest": r_test,
             "primaryChannel": tut_res["primaryChannel"],
             "primaryUrl": tut_res["primaryUrl"],
-            "channels": tut_res["channels"]
+            "channels": tut_res["channels"],
+            "yt": curated_res.get("yt"),
+            "doc": curated_res.get("doc")
         })
 
     # 9. Mock Interviews & Diagnostics (24 Sessions)

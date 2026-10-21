@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7 Progressive Projects - System Design Cockpit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand-section">
+        <a href="index.html" class="brand-lockup">
+          <div class="brand-icon">📐</div>
+          <div class="brand-titles">
+            <span class="brand-title">System Design Cockpit</span>
+            <span class="brand-subtitle">7 Progressive Engineering Projects</span>
+          </div>
+        </a>
+      </div>
+      <div class="header-stats">
+        <div class="stat-chip"><span class="label">Architecture:</span><span class="val">Progressive Stack</span></div>
+        <div class="stat-chip"><span class="label">Hardware:</span><span class="val green">Laptop 4GB Compatible</span></div>
+        <a href="../dsa/index.html" class="nav-tab nav-tab-dsa">Silicon DSA Cockpit ↗</a>
+        <a href="../index.html" class="nav-tab nav-tab-return">← AI Infra Roadmap</a>
+      </div>
+    </div>
+    <nav class="nav-tabs">
+      <a href="index.html" class="nav-tab">Overview &amp; Market</a>
+      <a href="curriculum.html" class="nav-tab">Curriculum (Phases A–M)</a>
+      <a href="matrix.html" class="nav-tab">Topic-to-Resource Matrix</a>
+      <a href="projects.html" class="nav-tab active">7 Progressive Projects</a>
+      <a href="interview.html" class="nav-tab">System Design Interviews</a>
+      <a href="capacity.html" class="nav-tab">Capacity &amp; Sizing Lab</a>
+      <a href="schedule.html" class="nav-tab">Schedule &amp; First 14 Days</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="section-header">
+      <h2>The 7 Progressive Engineering Projects</h2>
+      <span class="sub">From Single-Process API to Full-Stack AI Inference Platform</span>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>🏗️ The Architectural Lineage:</strong> Every project builds directly on the previous one. You do not build random throwaway scripts. Project 1 becomes the core engine of Project 2; Project 2's worker pool connects to Project 5's model registry; and everything culminates in Project 7's production platform.
+    </div>
+
+    <!-- PROJECT 1 -->
+    <div class="card" style="margin-bottom:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+        <div>
+          <span class="badge-p0">Project 1 &bull; Foundations</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">Production-Grade ML Inference Microservice</h3>
+        </div>
+        <span class="tag-badge">FastAPI &bull; Docker &bull; Pydantic &bull; PyTest</span>
+      </div>
+      <p class="card-desc">
+        <strong>Problem Statement:</strong> Deploying an ML model directly inside a web server without proper validation, async non-blocking execution, or health probes causes worker thread starvation and opaque server crashes under burst load.
+      </p>
+      <div class="grid-2">
+        <div style="background:var(--bg-surface);padding:14px;border-radius:6px;border:1px solid var(--border-color);font-size:12.5px;">
+          <strong>Architecture &amp; Features:</strong>
+          <pre style="margin-top:6px;padding:8px;">Client &rarr; [NGINX Reverse Proxy] &rarr; [FastAPI Uvicorn (4 Workers)]
+  &bull; /v1/predict (Pydantic schema validation &amp; tensor serialization)
+  &bull; /health/live (Process liveness check)
+  &bull; /health/ready (Model weights loaded in memory assertion)
+  &bull; Structured JSON logging with request_id &amp; latency_ms timer</pre>
+        </div>
+        <div style="background:var(--bg-surface);padding:14px;border-radius:6px;border:1px solid var(--border-color);font-size:12.5px;">
+          <strong>Resume Bullet Ready:</strong>
+          <p style="color:var(--accent-cyan);margin-top:6px;">
+            "Architected a production-ready ML inference microservice in FastAPI and Docker; implemented startup readiness probes and asynchronous non-blocking handlers, achieving P95 latency of &lt;18ms under 250 concurrent requests."
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="card" style="margin-bottom:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+        <div>
+          <span class="badge-p0">Project 2 &bull; Distributed Concurrency</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">Asynchronous Inference Pipeline with Queue &amp; Worker Pool</h3>
+        </div>
+        <span class="tag-badge">Redis &bull; Celery/RQ &bull; Idempotency &bull; Polling</span>
+      </div>
+      <p class="card-desc">
+        <strong>Problem Statement:</strong> Heavy models (like speech-to-text or image generation) take seconds to run. Keeping HTTP client connections open causes gateway timeouts (504 Gateway Timeout). The system must be decoupled into an asynchronous job queue.
+      </p>
+      <div class="grid-2">
+        <div style="background:var(--bg-surface);padding:14px;border-radius:6px;border:1px solid var(--border-color);font-size:12.5px;">
+          <strong>Architecture &amp; Features:</strong>
+          <pre style="margin-top:6px;padding:8px;">Client &rarr; POST /jobs &rarr; [API Gateway] &rarr; Push Job to [Redis Queue]
+  &bull; Returns HTTP 202 Accepted with { job_id: "uuid-v4" }
+  &bull; [Worker Pool (3 processes)] consumes from Redis queue
+  &bull; Idempotency key checked in Redis to prevent duplicate compute
+  &bull; Exponential backoff retries with dead-letter queue (DLQ)
+Client polls &rarr; GET /jobs/{id} &rarr; Returns PENDING | RUNNING | COMPLETED</pre>
+        </div>
+        <div style="background:var(--bg-surface);padding:14px;border-radius:6px;border:1px solid var(--border-color);font-size:12.5px;">
+          <strong>Failure Handling Handled:</strong>
+          <p style="color:var(--text-muted);margin-top:6px;">
+            What happens when a worker crashes mid-inference? Using Redis visibility timeouts (or ACK confirmation), unacknowledged jobs automatically requeue. Client duplicate submissions with the same idempotency key return cached results without re-triggering inference.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="card" style="margin-bottom:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+        <div>
+          <span class="badge-p1">Project 3 &bull; Performance Engineering</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">Dynamic Batching &amp; Model Serving Benchmark Lab</h3>
+        </div>
+        <span class="tag-badge">Locust &bull; Dynamic Batching &bull; P99 Profiling</span>
+      </div>
+      <p class="card-desc">
+        <strong>Problem Statement:</strong> Running individual inference requests one-by-one underutilizes GPU Tensor Cores. Grouping requests into dynamic micro-batches increases overall throughput by 4x, but adds queueing delay to the first request. How do you find the sweet spot?
+      </p>
+      <div class="grid-2">
+        <div style="background:var(--bg-surface);padding:14px;border-radius:6px;border:1px solid var(--border-color);font-size:12.5px;">
+          <strong>Implementation Highlights:</strong>
+          <pre style="margin-top:6px;padding:8px;">Implement a Dynamic Batcher with a Queue Collector:
+  &bull; Condition A: Batch size reaches <code>max_batch_size = 16</code>
+  &bull; Condition B: Timeout reaches <code>max_delay_ms = 10ms</code>
+Run automated load test using Locust across concurrency 1, 10, 50, 200:
+  &bull; Plot Throughput (RPS) vs P99 Latency curve (The Knee of the Curve)
+  &bull; Measure CPU vs GPU memory footprint and queue waiting time</pre>
+        </div>
+        <div style="background:var(--bg-surface);padding:14px;border-radius:6px;border:1px solid var(--border-color);font-size:12.5px;">
+          <strong>Measurable Results:</strong>
+          <p style="color:var(--accent-cyan);margin-top:6px;">
+            "Engineered dynamic batching scheduler with 10ms latency cutoff; achieved 3.8x throughput increase (from 62 RPS to 238 RPS) while maintaining P99 latency within 45ms SLO."
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div class="card" style="margin-bottom:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+        <div>
+          <span class="badge-p0">Project 4 &bull; Distributed Systems</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">Fault-Tolerant Distributed Cluster Simulator</h3>
+        </div>
+        <span class="tag-badge">Python Multi-Process &bull; Raft Basics &bull; Heartbeats</span>
+      </div>
+      <p class="card-desc">
+        <strong>Problem Statement:</strong> Simulates a real distributed compute cluster on your laptop without expensive cloud infrastructure. Teaches split-brain detection, leader election, and resilient state replication.
+      </p>
+      <div style="background:var(--bg-surface);padding:14px;border-radius:6px;border:1px solid var(--border-color);font-size:12.5px;">
+        <pre style="padding:8px;">Components implemented in pure Python multi-processing:
+  1. Cluster Coordinator (Leader): Receives job requests, partitions tasks across workers.
+  2. Worker Nodes (3 instances): Send periodic heartbeats every 500ms.
+  3. Chaos Monkey thread: Randomly kills worker processes or drops network packets.
+  4. Quorum validation: When leader misses 3 consecutive heartbeats, remaining nodes hold an election.
+  5. Backpressure regulator: When pending task queue exceeds high watermark, coordinator returns HTTP 503 / backpressure signal.</pre>
+      </div>
+    </div>
+
+    <!-- PROJECT 5 -->
+    <div class="card" style="margin-bottom:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+        <div>
+          <span class="badge-p1">Project 5 &bull; MLOps &amp; Platform</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">Mini ML Platform (Model Registry, Canary Deploy &amp; Drift Detection)</h3>
+        </div>
+        <span class="tag-badge">MLflow &bull; MinIO &bull; Evidently AI &bull; Canary Routing</span>
+      </div>
+      <p class="card-desc">
+        <strong>Problem Statement:</strong> Deploying updated models directly to 100% of user traffic risks silent degradation or data drift. You need a platform to register versions, route 10% traffic to canary replicas, and detect statistical drift.
+      </p>
+      <div style="background:var(--bg-surface);padding:14px;border-radius:6px;border:1px solid var(--border-color);font-size:12.5px;">
+        <pre style="padding:8px;">Workflow:
+  &bull; Train baseline model &amp; updated model; log artifacts and parameters into local MLflow + MinIO.
+  &bull; API Gateway implements weighted canary routing: 90% traffic to Model v1, 10% traffic to Model v2.
+  &bull; Background task evaluates prediction distributions using Evidently AI (Kolmogorov-Smirnov test).
+  &bull; Automated rollback trigger: If data drift or error rate exceeds threshold, router automatically switches 100% traffic back to v1.</pre>
+      </div>
+    </div>
+
+    <!-- PROJECT 6 -->
+    <div class="card" style="margin-bottom:28px;border-color:var(--accent-purple);">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+        <div>
+          <span class="badge-p0">Project 6 &bull; LLM Systems Core</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">LLM Inference Architecture Lab (Laptop 4GB GPU Friendly)</h3>
+        </div>
+        <span class="tag-badge">vLLM / Ollama &bull; PagedAttention &bull; Streaming &bull; TTFT</span>
+      </div>
+      <p class="card-desc">
+        <strong>Problem Statement:</strong> Dissecting how high-performance LLM inference works under real physical memory constraints on your 4GB laptop GPU.
+      </p>
+      <div class="grid-2">
+        <div style="background:var(--bg-surface);padding:14px;border-radius:6px;border:1px solid var(--border-color);font-size:12.5px;">
+          <strong>Lab Execution Plan:</strong>
+          <pre style="margin-top:6px;padding:8px;">Model: Qwen-2.5-1.5B or SmolLM2 (4-bit quantized ~1.2GB VRAM)
+Target: NVIDIA RTX 2050 (4GB VRAM)
+Experiments run:
+  1. Prefill vs Decode profiling: measure time spent in prefill (first token) vs decode (subsequent tokens).
+  2. KV-Cache VRAM consumption: measure memory delta as prompt context scales from 512 to 2048 tokens.
+  3. Streaming response architecture: Server-Sent Events (SSE) with cancellation handling when client aborts.</pre>
+        </div>
+        <div style="background:var(--bg-surface);padding:14px;border-radius:6px;border:1px solid var(--border-color);font-size:12.5px;">
+          <strong>What Interviewers Care About:</strong>
+          <p style="color:var(--text-muted);margin-top:6px;">
+            Can you explain why the first token takes 80ms while tokens 2-100 take 15ms each? Can you explain what PagedAttention's block tables do when two requests share a common 500-token system prompt? This lab gives you the empirical numbers to answer with authority.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 7 -->
+    <div class="card" style="border-color:var(--accent-green);">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+        <div>
+          <span class="badge-p0">Project 7 &bull; Capstone Production Platform</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">Production Multi-Tenant AI Inference &amp; Platform Engine</h3>
+        </div>
+        <span class="tag-badge">Full-Stack Architecture &bull; Docker Compose &bull; Prometheus/Grafana</span>
+      </div>
+      <p class="card-desc">
+        <strong>The Master Resume Capstone:</strong> Integrates API Gateway, API-Key authentication, tier-based rate limiting, dynamic model routing (Small model vs Large model), async queue fallback, and full Prometheus/Grafana observability into a single reproducible Docker Compose deployment.
+      </p>
+      <div style="background:var(--bg-surface);padding:14px;border-radius:6px;border:1px solid var(--border-color);font-size:12.5px;">
+        <pre style="padding:8px;">End-to-End Request Journey:
+[Client] &rarr; [API Gateway (NGINX + Auth + Token Bucket)]
+   &boxdr;&boxh;&boxh; If request is small/fast &rarr; [FastAPI GPU Worker Pool (Local Model)] &rarr; Immediate Stream
+   &boxdr;&boxh;&boxh; If request is complex/large &rarr; Route to [Model Router / Heavy Queue] &rarr; Worker Pool
+   &boxur;&boxh;&boxh; Prometheus scrapes metrics &rarr; Grafana displays live TTFT, ITL, VRAM usage, and 429 rate limit counters.</pre>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    System Design Cockpit &bull; 7 Progressive Projects &bull; 2026 Edition
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

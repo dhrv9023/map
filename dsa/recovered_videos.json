@@ -1,0 +1,338 @@
+{
+  "2": {
+    "id": "p3YUQB9-B1g",
+    "title": "Lec-26: While loop in C++ programming | Control Flow statements | C++ by Varun Sir",
+    "author": "Gate Smashers",
+    "url": "https://www.youtube.com/watch?v=p3YUQB9-B1g"
+  },
+  "4": {
+    "id": "WgMPrLX-zsA",
+    "title": "Lecture19: C++ STL in 1 Video (Re-Uploaded)",
+    "author": "CodeHelp - by Babbar",
+    "url": "https://www.youtube.com/watch?v=WgMPrLX-zsA"
+  },
+  "10": {
+    "id": "cQ1Oz4ckceM",
+    "title": "TWO SUM II - Amazon Coding Interview Question - Leetcode 167 - Python",
+    "author": "NeetCode",
+    "url": "https://www.youtube.com/watch?v=cQ1Oz4ckceM"
+  },
+  "29": {
+    "id": "NXOOYYwpbg4",
+    "title": "2 NGR | Nearest Greater to right | Next Largest Element",
+    "author": "Aditya Verma",
+    "url": "https://www.youtube.com/watch?v=NXOOYYwpbg4"
+  },
+  "32": {
+    "id": "2Rr2tW9zvRg",
+    "title": "2 Divide And Conquer",
+    "author": "Abdul Bari",
+    "url": "https://www.youtube.com/watch?v=2Rr2tW9zvRg"
+  },
+  "41": {
+    "id": "RyBM56RIWrM",
+    "title": "Counting Bits - Dynamic Programming - Leetcode 338 - Python",
+    "author": "NeetCode",
+    "url": "https://www.youtube.com/watch?v=RyBM56RIWrM"
+  },
+  "44": {
+    "id": "hTM3phVI6YQ",
+    "title": "Maximum Depth of Binary Tree - 3 Solutions - Leetcode 104 - Python",
+    "author": "NeetCode",
+    "url": "https://www.youtube.com/watch?v=hTM3phVI6YQ"
+  },
+  "52": {
+    "id": "kouxiP_H5WE",
+    "title": "L44. Delete a Node in Binary Search Tree | BST | C++ | Java",
+    "author": "take U forward",
+    "url": "https://www.youtube.com/watch?v=kouxiP_H5WE"
+  },
+  "62": {
+    "id": "k1t_wtLrtWE",
+    "title": "Map Sum Pairs | Leetcode 677 | Live coding session",
+    "author": "Coding Decoded",
+    "url": "https://www.youtube.com/watch?v=k1t_wtLrtWE"
+  },
+  "65": {
+    "id": "iTBaI90lpDQ",
+    "title": "G-23. Detect a Cycle in Directed Graph | Topological Sort | Kahn's Algorithm | BFS",
+    "author": "take U forward",
+    "url": "https://www.youtube.com/watch?v=iTBaI90lpDQ"
+  },
+  "79": {
+    "id": "ZGr5nX-Gi6Y",
+    "title": "G-48. Number of Provinces - Disjoint Set",
+    "author": "take U forward",
+    "url": "https://www.youtube.com/watch?v=ZGr5nX-Gi6Y"
+  },
+  "80": {
+    "id": "4ZlRH0eK-qQ",
+    "title": "3.5 Prims and Kruskals Algorithms - Greedy Method",
+    "author": "Abdul Bari",
+    "url": "https://www.youtube.com/watch?v=4ZlRH0eK-qQ"
+  },
+  "90": {
+    "id": "4Urd0a0BNng",
+    "title": "19  Longest common subsequence Recursive",
+    "author": "Aditya Verma",
+    "url": "https://www.youtube.com/watch?v=4Urd0a0BNng"
+  },
+  "93": {
+    "id": "6sEFap7hIl4",
+    "title": "Dynamic Programming with Bitmasking",
+    "author": "Kartik Arora",
+    "url": "https://www.youtube.com/watch?v=6sEFap7hIl4"
+  },
+  "94": {
+    "id": "kMK148J9qEE",
+    "title": "34  Matrix Chain Multiplication Recursive",
+    "author": "Aditya Verma",
+    "url": "https://www.youtube.com/watch?v=kMK148J9qEE"
+  },
+  "97": {
+    "id": "I7j0F7AHpb8",
+    "title": "Best Time to Buy and Sell Stock with Cooldown - Leetcode 309 - Python",
+    "author": "NeetCode",
+    "url": "https://www.youtube.com/watch?v=I7j0F7AHpb8"
+  },
+  "99": {
+    "id": "RgITNht_f4Q",
+    "title": "Fenwick Tree range queries",
+    "author": "WilliamFiset",
+    "url": "https://www.youtube.com/watch?v=RgITNht_f4Q"
+  },
+  "100": {
+    "id": "rwXVCELcrqU",
+    "title": "Segment Tree: Point and Range Updates (Lazy Propagation)",
+    "author": "take U forward",
+    "url": "https://www.youtube.com/watch?v=rwXVCELcrqU"
+  },
+  "102": {
+    "id": "xV92hYM6iCU",
+    "title": "COUNT OF SMALLER NUMBERS AFTER SELF | LEETCODE 315 | PYTHON BINARY SEARCH SOLUTION",
+    "author": "Cracking FAANG",
+    "url": "https://www.youtube.com/watch?v=xV92hYM6iCU"
+  },
+  "105": {
+    "id": "d7kSgkC32uY",
+    "title": "\u3010\u6bcf\u65e5\u4e00\u9898\u3011699. Falling Squares, 4/5/2021",
+    "author": "Huifeng Guan",
+    "url": "https://www.youtube.com/watch?v=d7kSgkC32uY"
+  },
+  "110": {
+    "id": "GhjwOiJ4SqU",
+    "title": "Unweighted Bipartite Matching | Network Flow | Graph Theory",
+    "author": "WilliamFiset",
+    "url": "https://www.youtube.com/watch?v=GhjwOiJ4SqU"
+  },
+  "111": {
+    "id": "83JnUxrLKJU",
+    "title": "Find Critical and Pseudo Critical Edges in Minimum Spanning Tree - Leetcode 1489 - Python",
+    "author": "NeetCodeIO",
+    "url": "https://www.youtube.com/watch?v=83JnUxrLKJU"
+  },
+  "113": {
+    "id": "rX0ItVEVjHc",
+    "title": "CppCon 2014: Mike Acton \"Data-Oriented Design and C++\"",
+    "author": "CppCon",
+    "url": "https://www.youtube.com/watch?v=rX0ItVEVjHc"
+  },
+  "115": {
+    "id": "T0yzrZL1py0",
+    "title": "1. Persistent Data Structures",
+    "author": "MIT OpenCourseWare",
+    "url": "https://www.youtube.com/watch?v=T0yzrZL1py0"
+  },
+  "116": {
+    "id": "V3pzxngeLqw",
+    "title": "Bloom Filters | Algorithms You Should Know #2 | Real-world Examples",
+    "author": "ByteByteGo",
+    "url": "https://www.youtube.com/watch?v=V3pzxngeLqw"
+  },
+  "117": {
+    "id": "GJJ2OWKHADs",
+    "title": "All O`one Data Structure | Super Simple Explanation | Leetcode 432 | codestorywithMIK",
+    "author": "codestorywithMIK",
+    "url": "https://www.youtube.com/watch?v=GJJ2OWKHADs"
+  },
+  "118": {
+    "id": "oXEPfYaMOwI",
+    "title": "[Java] Leetcode 588. Design In-Memory File System [Trie #2]",
+    "author": "Eric Programming",
+    "url": "https://www.youtube.com/watch?v=oXEPfYaMOwI"
+  },
+  "122": {
+    "id": "XWujo7KQL54",
+    "title": "Ctrl+F on steroids - Aho-Corasick Algorithm (pt. 1)",
+    "author": "ComputerBread",
+    "url": "https://www.youtube.com/watch?v=XWujo7KQL54"
+  },
+  "124": {
+    "id": "zqKlL3ZpTqs",
+    "title": "Suffix array introduction",
+    "author": "WilliamFiset",
+    "url": "https://www.youtube.com/watch?v=zqKlL3ZpTqs"
+  },
+  "125": {
+    "id": "swciWFPq3NE",
+    "title": "Karp-Rabin String Matching Algorithm | Substring Search Pattern",
+    "author": "Kunal Kushwaha",
+    "url": "https://www.youtube.com/watch?v=swciWFPq3NE"
+  },
+  "127": {
+    "id": "Moz2AgC9hG4",
+    "title": "05 - Buffer Pools & ARC Cache (CMU 15-445 Database Systems)",
+    "author": "Andy Pavlo (CMU)",
+    "url": "https://www.youtube.com/watch?v=Moz2AgC9hG4"
+  },
+  "128": {
+    "id": "YZ0PndX174s",
+    "title": "Buffer Pool Replacement Policies: LRU, Clock, 2Q & Direct I/O",
+    "author": "Techno Bytes Unlocked",
+    "url": "https://www.youtube.com/watch?v=YZ0PndX174s"
+  },
+  "129": {
+    "id": "xMwHQJW6zbw",
+    "title": "Lec60:Clock Page Replacement Algorithm",
+    "author": "Engineering Wing",
+    "url": "https://www.youtube.com/watch?v=xMwHQJW6zbw"
+  },
+  "130": {
+    "id": "RtW4UEYGdME",
+    "title": "Aaron David Goldman on \"Hashed and Hierarchical Timing Wheels\"",
+    "author": "Aaron Goldman",
+    "url": "https://www.youtube.com/watch?v=RtW4UEYGdME"
+  },
+  "131": {
+    "id": "A31NcxUuuU4",
+    "title": "LOGGER RATE LIMITER | LEETCODE # 359 | PYTHON SOLUTION",
+    "author": "Cracking FAANG",
+    "url": "https://www.youtube.com/watch?v=A31NcxUuuU4"
+  },
+  "132": {
+    "id": "8BaEwoTk8XI",
+    "title": "vLLM: Easy, Fast, and Cheap LLM Serving, Woosuk Kwon, UC Berkeley",
+    "author": "AMD Developer Central",
+    "url": "https://www.youtube.com/watch?v=8BaEwoTk8XI"
+  },
+  "134": {
+    "id": "MC1EKLQ2Wmg",
+    "title": "Mythbusting Modern Hardware to Gain 'Mechanical Sympathy' \u2022 Martin Thompson \u2022 GOTO 2012",
+    "author": "GOTO Conferences",
+    "url": "https://www.youtube.com/watch?v=MC1EKLQ2Wmg"
+  },
+  "135": {
+    "id": "bjz_bMNNWRk",
+    "title": "User API & C++ Implementation of a Multi Producer, Multi Consumer, Lock Free, Atomic Queue - CppCon",
+    "author": "CppCon",
+    "url": "https://www.youtube.com/watch?v=bjz_bMNNWRk"
+  },
+  "136": {
+    "id": "F8yY7jri32M",
+    "title": "MIT 6.172 Lec 14: Dynamic Multithreading & Work Stealing (Charles Leiserson)",
+    "author": "MIT OpenCourseWare",
+    "url": "https://www.youtube.com/watch?v=F8yY7jri32M"
+  },
+  "137": {
+    "id": "WWEz-uoyoPE",
+    "title": "Tracing and Linux-Kernel RCU, Paul E. McKenney (IBM)",
+    "author": "DiaMon Workgroup",
+    "url": "https://www.youtube.com/watch?v=WWEz-uoyoPE"
+  },
+  "139": {
+    "id": "KODDnMyxIvE",
+    "title": "LeetCode Concurrency | Print In Order",
+    "author": "CppNuts",
+    "url": "https://www.youtube.com/watch?v=KODDnMyxIvE"
+  },
+  "141": {
+    "id": "XcET3oOkGrY",
+    "title": "Implementing kD-trees (using Scala)",
+    "author": "Mark Lewis",
+    "url": "https://www.youtube.com/watch?v=XcET3oOkGrY"
+  },
+  "142": {
+    "id": "-vh6huY2rgE",
+    "title": "Inverted File Index (IVF) Explained | Mastering Vector Databases | TensorTeach",
+    "author": "TensorTeach",
+    "url": "https://www.youtube.com/watch?v=-vh6huY2rgE"
+  },
+  "143": {
+    "id": "GY2QznJOSnk",
+    "title": "Hierarchical Navigable Small Worlds (HNSW) Explained #machinelearning #datascience #vectordatabase",
+    "author": "DataMListic",
+    "url": "https://www.youtube.com/watch?v=GY2QznJOSnk"
+  },
+  "144": {
+    "id": "t9mRf2S5vDI",
+    "title": "Product Quantization for Vector Similarity Search (+ Python)",
+    "author": "James Briggs",
+    "url": "https://www.youtube.com/watch?v=t9mRf2S5vDI"
+  },
+  "145": {
+    "id": "QkCCyLW0ehU",
+    "title": "Approximate nearest neighbors and vector models, introduction to Annoy",
+    "author": "AI Council",
+    "url": "https://www.youtube.com/watch?v=QkCCyLW0ehU"
+  },
+  "148": {
+    "id": "UUKTIhxznF0",
+    "title": "MIT 6.172 Lec 13: Parallelism, Work and Span, Cilk DAG Scheduling",
+    "author": "MIT OpenCourseWare",
+    "url": "https://www.youtube.com/watch?v=UUKTIhxznF0"
+  },
+  "149": {
+    "id": "isc3UfOq1Bc",
+    "title": "NSDI '22 - Check-N-Run: a Checkpointing System for Training Deep Learning Recommendation Models",
+    "author": "USENIX",
+    "url": "https://www.youtube.com/watch?v=isc3UfOq1Bc"
+  },
+  "150": {
+    "id": "--E-hW8hHzU",
+    "title": "Unlocking PyTorch Internals",
+    "author": "Vinh Nguyen",
+    "url": "https://www.youtube.com/watch?v=--E-hW8hHzU"
+  },
+  "152": {
+    "id": "1dGRTOwBkQs",
+    "title": "01: direct methods for sparse linear systems (lecture 1 of 42)",
+    "author": "Tim Davis",
+    "url": "https://www.youtube.com/watch?v=1dGRTOwBkQs"
+  },
+  "153": {
+    "id": "GwqxnD3Zmbk",
+    "title": "Shortest Path Visiting All Nodes | Leetcode 847 | BFS | Graph | BitMask | DP",
+    "author": "Nitesh Nanda",
+    "url": "https://www.youtube.com/watch?v=GwqxnD3Zmbk"
+  },
+  "156": {
+    "id": "ibxXO-b14j4",
+    "title": "Count-Min Sketch: Streaming Frequency Estimation & Heavy Hitters",
+    "author": "Tech Dummies (Narendra L)",
+    "url": "https://www.youtube.com/watch?v=ibxXO-b14j4"
+  },
+  "157": {
+    "id": "tOsb-tFoPCg",
+    "title": "HyperLogLog and Cardinality Estimation: Math, Registers & Redis",
+    "author": "Arpit Bhayani",
+    "url": "https://www.youtube.com/watch?v=tOsb-tFoPCg"
+  },
+  "158": {
+    "id": "JS8QTpigTFE",
+    "title": "Streaming Frequency Estimation 1: Misra-Gries Algorithm",
+    "author": "Kasper Green Larsen",
+    "url": "https://www.youtube.com/watch?v=JS8QTpigTFE"
+  },
+  "160": {
+    "id": "rN1_JftfV9E",
+    "title": "Implement Rand10() Using Rand7() | leetcode 470 | Hindi",
+    "author": "Codebix",
+    "url": "https://www.youtube.com/watch?v=rN1_JftfV9E"
+  },
+  "162": {
+    "id": "DRAHRJEAEso",
+    "title": "Operating Systems: Memory Allocation - Slab & Buddy Allocators",
+    "author": "Gabriel Parmer (GWU OS)",
+    "url": "https://www.youtube.com/watch?v=DRAHRJEAEso"
+  }
+}

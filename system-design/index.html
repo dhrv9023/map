@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Design Cockpit - AI Infrastructure Engineering (2026)</title>
+  <meta name="description" content="Production-Grade System Design & AI Infrastructure Cockpit for AI Platform, ML Infra, and Distributed Systems Engineers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand-section">
+        <a href="index.html" class="brand-lockup">
+          <div class="brand-icon">📐</div>
+          <div class="brand-titles">
+            <span class="brand-title">System Design Cockpit</span>
+            <span class="brand-subtitle">AI Infrastructure &bull; 2026 Edition</span>
+          </div>
+        </a>
+      </div>
+      <div class="header-stats">
+        <div class="stat-chip">
+          <span class="label">Target:</span>
+          <span class="val">AI Infra / Platform Eng</span>
+        </div>
+        <div class="stat-chip">
+          <span class="label">Progress:</span>
+          <span class="val green" id="stat-progress">0%</span>
+        </div>
+        <div class="stat-chip">
+          <span class="label">Readiness:</span>
+          <span class="val green" id="stat-readiness">0 / 100</span>
+        </div>
+        <a href="../dsa/index.html" class="nav-tab nav-tab-dsa">Silicon DSA Cockpit ↗</a>
+        <a href="../index.html" class="nav-tab nav-tab-return">← AI Infra Roadmap</a>
+      </div>
+    </div>
+    <nav class="nav-tabs">
+      <a href="index.html" class="nav-tab active">Overview &amp; Market</a>
+      <a href="curriculum.html" class="nav-tab">Curriculum (Phases A–M)</a>
+      <a href="matrix.html" class="nav-tab">Topic-to-Resource Matrix</a>
+      <a href="projects.html" class="nav-tab">7 Progressive Projects</a>
+      <a href="interview.html" class="nav-tab">System Design Interviews</a>
+      <a href="capacity.html" class="nav-tab">Capacity &amp; Sizing Lab</a>
+      <a href="schedule.html" class="nav-tab">Schedule &amp; First 14 Days</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="tag-badge">Executive Briefing &bull; 2026 Architecture</div>
+      <h1>System Design for <span>AI Infrastructure Engineering</span></h1>
+      <p>
+        A battle-tested, implementation-oriented curriculum designed specifically for engineers targeting <strong>AI Infrastructure, ML Platform, and LLM Inference Engineering</strong> roles. Zero generic fluff — focused on high-throughput serving, KV-cache management, distributed systems, GPU cluster scheduling, and hardware-aware bottlenecks.
+      </p>
+      <div class="hardware-bar">
+        <span class="title">⚡ Target Equipment Constraints:</span>
+        <span class="hardware-item">RAM: <strong>16 GB</strong></span>
+        <span class="hardware-item">GPU: <strong>NVIDIA RTX 2050 (4 GB VRAM)</strong></span>
+        <span class="hardware-item">CPU: <strong>AMD Ryzen 5</strong></span>
+        <span class="hardware-item">OS: <strong>Ubuntu / Linux</strong></span>
+        <span class="hardware-item">Budget: <strong>$0 (100% Free Verified Resources &amp; Local Simulations)</strong></span>
+      </div>
+    </section>
+
+    <!-- PART 1: EXECUTIVE SUMMARY -->
+    <div class="section-header">
+      <h2>Part 1 &bull; Executive Summary</h2>
+      <span class="sub">The Reality of Modern AI Systems</span>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-title"><span style="color:var(--accent-purple)">01</span> What AI Infra Actually Is</div>
+        <div class="card-desc">
+          AI Infrastructure is <strong>Systems &amp; High-Performance Distributed Computing</strong> applied to neural execution. It is NOT training models or doing exploratory Jupyter data analysis. It is ensuring multi-terabyte weights stay in GPU SRAM/HBM without starving, clusters communicate over NCCL without deadlocks, and inference requests serve within strict P99 latency budgets.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><span style="color:var(--accent-cyan)">02</span> Most Realistic Initial Role</div>
+        <div class="card-desc">
+          <strong>AI Platform / Inference Serving Engineer (Stage 1)</strong>. Directly designing inference APIs, dynamic batching, asynchronous worker queues, and automated evaluation harnesses. Once inside an engineering team with production traffic, you leverage company-funded H100 clusters to transition into deep Distributed Training &amp; GPU Kernel optimization (Stage 2).
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><span style="color:var(--accent-green)">03</span> The 3 Non-Negotiable Skills</div>
+        <div class="card-desc">
+          1. <strong>Asynchronous Concurrency &amp; Queuing:</strong> Designing resilient multi-worker producer-consumer pipelines.<br>
+          2. <strong>Memory-Hierarchy Intuition:</strong> Knowing why KV-cache causes OOMs, why decode is memory-bound, and how to avoid cache thrashing.<br>
+          3. <strong>Distributed Fault Tolerance:</strong> Handling partial network failures, timeouts, and idempotent retries.
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-warning">
+      <strong>⚠️ Major Risk &amp; Misconception to Avoid:</strong><br>
+      Do not mistake <em>"Calling the OpenAI or Anthropic API via LangChain"</em> for AI Infrastructure Engineering. In an infrastructure system design interview, you will be asked: <em>"How does vLLM schedule continuous batches without blocking the event loop?", "What happens to the KV cache block table during a client TCP disconnect?", "How do you size GPU cluster nodes for 10,000 QPS with p99 &lt; 25ms?"</em>. This curriculum trains you to answer those exact questions with whiteboard derivations.
+    </div>
+
+    <!-- PART 2: JOB MARKET & SKILL ANALYSIS -->
+    <div class="section-header">
+      <h2>Part 2 &bull; Job Market &amp; Role-versus-Skill Matrix</h2>
+      <span class="sub">Verified 2026 Industry Landscape</span>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Role Title</th>
+            <th>Primary Focus</th>
+            <th>Daily Tech Stack</th>
+            <th>Required Core Competencies</th>
+            <th>Realistic Entry Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AI Platform Engineer</strong></td>
+            <td>Developer platforms, model serving APIs, feature stores, workflow orchestration.</td>
+            <td>FastAPI, Docker, Kubernetes, Redis, PostgreSQL, Ray Serve, MLflow</td>
+            <td>REST/gRPC APIs, asynchronous task queues, autoscaling, database indexing, CI/CD pipelines.</td>
+            <td><span class="badge-p1">Most Realistic (Stage 1 Target)</span></td>
+          </tr>
+          <tr>
+            <td><strong>LLM Inference Engineer</strong></td>
+            <td>High-throughput low-latency model serving, KV-cache optimization, batching.</td>
+            <td>vLLM, SGLang, TensorRT-LLM, OpenAI Triton, CUDA basics, Prometheus</td>
+            <td>Continuous batching, PagedAttention, quantization (FP8/INT4), TTFT vs ITL latency profiling.</td>
+            <td><span class="badge-p1">High Demand (Stage 1.5 Target)</span></td>
+          </tr>
+          <tr>
+            <td><strong>ML Infrastructure Engineer</strong></td>
+            <td>End-to-end MLOps pipelines, automated model retraining, feature engineering at scale.</td>
+            <td>Apache Kafka, Spark, Airflow, Kubeflow, Feast, Evidently AI, S3/MinIO</td>
+            <td>Data ingestion pipelines, training-serving skew detection, model versioning, lineage tracking.</td>
+            <td><span class="badge-p2">Intermediate</span></td>
+          </tr>
+          <tr>
+            <td><strong>AI Infrastructure Systems Engineer</strong></td>
+            <td>GPU cluster orchestration, low-level kernel optimization, multi-node networking.</td>
+            <td>CUDA C++, Triton, NCCL, InfiniBand/RoCE, Slurm, KubeRay, DCGM</td>
+            <td>Memory coalescing, bank conflicts, 3D parallelism (Megatron), RoPE/FlashAttention kernel fusion.</td>
+            <td><span class="badge-p0">Advanced (Stage 2 Target)</span></td>
+          </tr>
+          <tr>
+            <td><strong>Distributed Systems Engineer (AI)</strong></td>
+            <td>Cluster fault tolerance, consensus, distributed storage, RPC frameworks.</td>
+            <td>Go / Rust / C++, Raft, gRPC, Etcd, Ceph / GPUDirect Storage, DPDK</td>
+            <td>Distributed consensus, network partition recovery, zero-copy I/O, custom memory allocators.</td>
+            <td><span class="badge-p3">Specialized (Senior / Staff)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PART 3: PREREQUISITE ASSESSMENT & DIAGNOSTIC TEST -->
+    <div class="section-header">
+      <h2>Part 3 &bull; Prerequisite Assessment &amp; Diagnostic Test</h2>
+      <span class="sub">Benchmark Your Current Foundation</span>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">✅ What You Already Bring</div>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--text-muted);">
+          <li>• <strong>Python &amp; ML Basics:</strong> Understand tensor shapes, supervised learning, and basic neural forward passes.</li>
+          <li>• <strong>API &amp; Backend Intuition:</strong> FastAPI endpoints, JSON serialization, HTTP status codes, Docker containerization.</li>
+          <li>• <strong>Catalog &amp; Data Quality Mindset:</strong> Testing edge cases, data sanitization, verifying structured outputs.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">⚡ What Must Be Strengthened</div>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--text-muted);">
+          <li>• <strong>Linux OS Internals:</strong> Processes vs threads, virtual memory, paging, file descriptors, non-blocking sockets.</li>
+          <li>• <strong>Distributed Systems Fundamentals:</strong> Replication, leader election, idempotent retries, backpressure, circuit breakers.</li>
+          <li>• <strong>GPU Hardware Memory Hierarchy:</strong> SRAM vs L2 vs HBM, memory bandwidth bottlenecks, KV-cache sizing.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DIAGNOSTIC TEST -->
+    <div class="card" style="margin-bottom:28px;">
+      <div class="card-title">🧪 5-Question Self-Diagnostic Test</div>
+      <div class="card-desc">Answer these without searching. If you can explain 3 or more with trade-offs, you can skip Phase A and start directly in Phase B:</div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:13px;">
+        <div style="background:var(--bg-surface);padding:12px 16px;border-radius:6px;border:1px solid var(--border-color);">
+          <strong>Q1 (Networking &amp; OS):</strong> In a Python FastAPI server running behind Gunicorn with 4 workers, what happens if an endpoint calls a blocking synchronous function <code>time.sleep(10)</code>? How does asyncio event loop differ from multi-process worker pools?
+        </div>
+        <div style="background:var(--bg-surface);padding:12px 16px;border-radius:6px;border:1px solid var(--border-color);">
+          <strong>Q2 (Distributed Systems):</strong> Why is "exactly-once" message processing considered theoretically impossible over an unreliable network, and how do systems like Kafka achieve effective exactly-once semantics using idempotency keys and transactional offsets?
+        </div>
+        <div style="background:var(--bg-surface);padding:12px 16px;border-radius:6px;border:1px solid var(--border-color);">
+          <strong>Q3 (Storage &amp; Databases):</strong> What is the difference between an Append-Only Log (LSM-tree) and a B+ Tree, and why do high-throughput write systems (like metric collectors or vector index logs) prefer LSM trees?
+        </div>
+        <div style="background:var(--bg-surface);padding:12px 16px;border-radius:6px;border:1px solid var(--border-color);">
+          <strong>Q4 (LLM Hardware):</strong> Why is generating tokens from a 70B parameter model in FP16 fundamentally memory-bandwidth bound rather than compute-bound when serving a single request?
+        </div>
+        <div style="background:var(--bg-surface);padding:12px 16px;border-radius:6px;border:1px solid var(--border-color);">
+          <strong>Q5 (Reliability &amp; Evals):</strong> What is the "Retry Storm" problem, and how do jittered exponential backoff and circuit breakers prevent downstream inference services from collapsing?
+        </div>
+      </div>
+    </div>
+
+    <!-- PART 4: THE FINISH LINE COMPETENCIES -->
+    <div class="section-header">
+      <h2>Part 4 &bull; The Finish Line: Observable Engineering Competencies</h2>
+      <span class="sub">Graduated Benchmark Levels</span>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-title"><span class="badge-p1">Level 1: Beginner</span></div>
+        <div class="card-desc">
+          • Build a production-grade FastAPI model inference service with Docker, structured logging, health checks, and P95 latency timers.<br>
+          • Design an asynchronous job queue using Redis &amp; Celery with status polling and idempotent retry mechanisms.<br>
+          • Set up Prometheus metrics and Grafana dashboards tracking QPS, error rate, and queue depth.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><span class="badge-p0">Level 2: Intermediate</span></div>
+        <div class="card-desc">
+          • Calculate exact KV-cache sizing, memory bandwidth limits, and tokens/sec throughput for any transformer model.<br>
+          • Implement dynamic request batching to group individual inference requests into batched tensor operations.<br>
+          • Deploy and benchmark local inference engines (vLLM / Ollama) comparing FP16 vs INT4 quantization and measuring Time-To-First-Token (TTFT) vs Inter-Token Latency (ITL).
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><span class="badge-p2">Level 3: Advanced</span></div>
+        <div class="card-desc">
+          • Defend a complete multi-tenant LLM serving architecture on a whiteboard, explaining PagedAttention, continuous batching, rate limiting, and disaggregated prefill/decode.<br>
+          • Design a fault-tolerant distributed training platform with spot instance recovery, asynchronous checkpointing, and NCCL communication.<br>
+          • Formulate an interactive capacity plan sizing GPU clusters, network fabrics, and storage bandwidth for 500+ QPS workloads.
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE NAVIGATION CTA -->
+    <div style="text-align:center;padding:30px 0;background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);margin-top:20px;">
+      <h3 style="font-size:18px;color:#fff;margin-bottom:8px;">Ready to Explore the Cockpit Modules?</h3>
+      <p style="font-size:13.5px;color:var(--text-muted);margin-bottom:20px;max-width:600px;margin-left:auto;margin-right:auto;">
+        Select any specialized cockpit view from the top tabs, or dive straight into the complete 13-phase curriculum and the 7 progressive engineering projects.
+      </p>
+      <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+        <a href="curriculum.html" class="btn btn-primary">📖 Explore Curriculum (Phases A–M) &rarr;</a>
+        <a href="matrix.html" class="btn btn-secondary">🔗 Verified Resource Matrix</a>
+        <a href="projects.html" class="btn btn-secondary">🚀 7 Progressive Projects</a>
+        <a href="capacity.html" class="btn btn-secondary">⚡ Live Capacity Lab</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    AI Infrastructure System Design Cockpit &bull; 2026 Edition &bull; 100% Free Verified Resources
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

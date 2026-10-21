@@ -4,19 +4,25 @@
 
 ---
 
-## ⚡ Two Unified Systems in One Repository
+## ⚡ Three Unified Systems in One Repository
 
-This repository integrates two production-ready web applications:
+This repository integrates three production-ready web applications:
 
-1. **AI Infrastructure Roadmap & Study OS** (`/index.html`)
-   - **27 Comprehensive Modules**: Foundations, Classical ML, Deep Learning, GenAI, LLMs, AI Infrastructure (vLLM, CUDA, Triton, TensorRT-LLM, NCCL), System Design, and Real-world Projects.
-   - **Modern Interactive UI**: Liquid morph floating navigation pill, Spotlight search (<kbd>⌘K</kbd> / <kbd>Ctrl+K</kbd>), dynamic reading progress indicator, dark/light theme, and browser-saved weekly learning log.
-   - **Instant DSA Linkage**: Direct redirection to the DSA Cockpit from top navbar, section 6 hero card, spotlight search, and floating action button.
+1. **AI Infrastructure Roadmap & Unified Study OS** (`/index.html`)
+   - **✦ Dedicated AI Engineer Track (2026)**: Directly embedded career roadmap with 100% free resources, market salary data ($95k–$140k / ₹18L–₹40L), 8 daily responsibilities, weekly schedule (18–20 hrs/wk), and tactical career transition guidance for Catalog QA engineers.
+   - **📐 Complete AI System Design Manual & Lab**: Directly integrated 13-Phase Curriculum (Phases A–M), Live Interactive Capacity & Sizing Calculator (VRAM, KV-cache, decode throughput, H100 counts), 7 Progressive Projects, Whiteboard Interview Vault (Levels 1–3), and Actionable First 14 Days Plan.
+   - **4 Core Technical Phases**: Foundations, Classical ML & Deep Learning, GenAI & LLMs (with automated evals & Stage 1 Exit Gate), and AI Infrastructure (Triton, CUDA, vLLM/SGLang, FSDP/ZeRO, K8s).
+   - **Hardware-Aware Silicon DSA**: C++ track with Step 18 physical silicon mapping (Warp shuffles, lock-free ring buffers, PagedAttention block manager).
+   - **Modern Interactive UI**: Liquid morph floating navigation pill, Spotlight search (<kbd>⌘K</kbd> / <kbd>Ctrl+K</kbd>), dynamic reading progress indicator, dark mode, and browser-saved weekly learning log.
+   - **Dual Cockpit Linkage**: Instant 1-click access to both the DSA Specialist Cockpit and the standalone System Design Cockpit suite.
 
 2. **168-Day Silicon-Aware DSA & NVIDIA Cockpit** (`/dsa/index.html`)
-   - **9 Dedicated Interactive Pages**: Dashboard, 168-Day Daily Plan (24 weeks), 22 Algorithmic Patterns, Flashcards (with SRS flip & filter), NVIDIA Silicon-Aware DSA, Failure Modes & Fixes, 12 Mock Interviews, Curated Video Resources (Striver, NeetCode, Aditya Verma, Padho with Pratyush, Love Babbar), and Golden Rules.
-   - **100% Zero-Server & Offline**: Built with vanilla HTML/CSS/JS and embedded datasets (`data.js`). Works out-of-the-box locally and on any static host.
-   - **Bidirectional Return**: Every DSA page features an **"🤖 AI Infra Roadmap ↗"** button in both the header and navbar to jump straight back to the main roadmap.
+   - **9 Dedicated Interactive Pages**: Dashboard, 168-Day Daily Plan (24 weeks), 22 Algorithmic Patterns, Flashcards (with SRS flip & filter), NVIDIA Silicon-Aware DSA, Failure Modes & Fixes, 12 Mock Interviews, Curated Video Resources, and Golden Rules.
+   - **100% Zero-Server & Offline**: Built with vanilla HTML/CSS/JS and embedded datasets (`data.js`).
+
+3. **AI Infrastructure System Design Cockpit** (`/system-design/index.html`)
+   - **7 Dedicated Interactive Pages**: Executive Dashboard, 13-Phase Curriculum (Phases A–M), Verified Topic-to-Resource Matrix, 7 Progressive Implementation Projects, Whiteboard Interview Vault (Levels 1–3), Live Capacity & Sizing Calculator, and 6-Mo / 12-Mo Schedules + Actionable First 14 Days.
+   - **Hardware-Aware & Zero Budget**: Tailored for laptop hardware (16GB RAM + RTX 2050 4GB VRAM) with 100% free verified canonical links.
 
 ---
 
@@ -148,75 +154,79 @@ npm run preview
 23. My Schedule - Structured study schedule
 24. Weekly Learning Log - Interactive browser journal
 
-## ⏱️ Timeline
+## ⏱️ Timeline & 2-Stage Career Transition
 
-- **Phase 1 (Months 1-6):** Foundations
-  - Python, Math, Linux, Backend
-  - DSA (parallel)
-  
-- **Phase 2 (Months 6-12):** ML & DL
-  - Classical ML, Deep Learning
-  - Hugging Face, Experiment Tracking
-  - DSA (parallel)
-  
-- **Phase 3 (Months 12-17):** GenAI & LLMs
-  - RAG Systems, Fine-tuning
-  - Agents, Evaluation
-  - DSA (parallel)
-  
-- **Phase 4 (Months 17-24):** AI Infrastructure
-  - GPU Optimization, vLLM
-  - Distributed Training
-  - Production Deployment
+> [!TIP]
+> **Don't wait 24 months to get hired!** Follow the **2-Stage Stepping-Stone Strategy**:
+
+```text
+[Now] Catalog QA Engineer
+   │
+   ▼ Stage 1: Fast-Track Exit (Months 6–9 · Phase 3 Completion)
+[AI Evaluation & LLM Application Engineer]
+ • Automated Evals (Ragas, DeepEval, Promptfoo, G-Eval)
+ • RAG & Agent Systems (FastAPI, Qdrant/Pinecone, LangGraph)
+ • Catalog & Fine-Tuning Data Curation (TRL/QLoRA)
+ • Target: ₹18L–₹35L / $100K–$140K · 0–2 yrs exp
+   │
+   ▼ Stage 2: Systems Transition (Months 12–20 · Full Phase 4 Completion)
+[Core AI Infrastructure & Systems Engineer]
+ • OpenAI Triton & CUDA Kernels (FlashAttention, Fused RoPE)
+ • High-Throughput Serving (vLLM, SGLang, TensorRT-LLM, FP8 KV-Cache)
+ • Distributed Training (FSDP, DeepSpeed ZeRO 1-3, Megatron 3D Parallelism, NCCL)
+ • Target: ₹45L–₹100L+ / $250K–$500K+ senior
+```
+
+- **Phase 1 (Months 1–6):** Foundations (Python 3.11+, Math, Linux OS, Docker, Backend FastAPI, C++ DSA)
+- **Phase 2 (Months 6–12):** ML & DL (Scikit-Learn, PyTorch, Transformers, Hugging Face, Experiment Tracking)
+- **Phase 3 (Months 12–17):** GenAI, LLMs & Automated Evals ➔ **🎯 STAGE 1 EXIT GATE**
+- **Phase 4 (Months 17–24):** AI Infrastructure, Triton, CUDA & Systems ➔ **🚀 STAGE 2 EXIT GATE**
 
 ## 💡 Key Features
 
-✅ **No Paid Resources** - Everything is free
-✅ **Realistic Timeline** - 20-24 months, 3-5 hours/day
-✅ **DSA Parallel** - 1 hour weekday, 2 hours Saturday
-✅ **Real Projects** - Build portfolio-worthy projects
-✅ **Interview Prep** - Interview questions & system design
-✅ **Cheat Sheets** - 4 comprehensive reference guides
-✅ **Day Plans** - Detailed daily schedules
-✅ **Brutal Honesty** - Real market insights
+✅ **2-Stage Stepping Stone** - Get hired at Phase 3 in AI Evals / App Engineering, then pivot to AI Infra  
+✅ **OpenAI Triton & CUDA** - Modern 2026 kernel development in Python + bare-metal C++  
+✅ **Budget Hardware Lab (<$20/mo)** - Practice on Modal, RunPod spot instances, and CPU DDP without buying $8k GPUs  
+✅ **2026 Serving Stacks** - vLLM, SGLang (RadixAttention), Chunked Prefill, FP8 Quantization  
+✅ **Silicon-Aware Systems DSA** - Striver A2Z + Step 18 Hardware Track (Warp shuffles, lock-free ring buffers, PagedAttention block simulation)  
+✅ **No Paid Courses** - 100% free gold-standard resources (Stanford CS149, CUDA Mode, Triton docs, fast.ai, DeepLearning.AI)  
 
 ## 🎯 What You'll Learn
 
 ### Phase 1: Foundations
-- Python (production-level)
-- Mathematics (Linear Algebra, Probability, Calculus)
-- Linux & Systems
-- Backend Development (FastAPI, Databases)
-- DSA (Arrays, Strings, Sorting)
+- Production-level Python 3.11+ (asyncio, memory profiling, type safety)
+- Mathematics for ML (Linear Algebra, Multivariable Calculus, Probability)
+- Linux Operating System & Systems Programming (concurrency, memory hierarchy)
+- Backend & Microservices (FastAPI, Docker, PostgreSQL)
+- DSA Core (Arrays, Strings, Two Pointers, Sliding Window in C++)
 
 ### Phase 2: ML & Deep Learning
-- Classical ML (Scikit-learn, XGBoost)
-- Deep Learning (PyTorch, Transformers)
-- Hugging Face Ecosystem
-- Experiment Tracking (MLflow, W&B)
-- DSA (Trees, Graphs, DP)
+- Classical ML (Scikit-learn, XGBoost, Cross-validation)
+- Deep Learning (PyTorch from scratch, Backpropagation, Attention mechanisms)
+- Hugging Face Ecosystem (Transformers, Datasets, Tokenizers)
+- Experiment Tracking & MLOps (MLflow, Weights & Biases, Optuna)
+- DSA Intermediate (Trees, Graphs, Recursion, Dynamic Programming)
 
-### Phase 3: GenAI & LLMs
-- Production RAG Systems
-- Fine-tuning & Adaptation
-- Agents & Evaluation
-- LLM Optimization
-- DSA (Advanced patterns)
+### Phase 3: GenAI, LLMs & Automated Evals (Stage 1 Exit)
+- Production RAG Systems (Hybrid search, BM25 + Dense, Vector DBs, Context compression)
+- Fine-tuning & Adaptation (QLoRA, PEFT, TRL, DPO, Data curation)
+- Autonomous AI Agents (ReAct pattern, LangGraph, tool calling, persistent state)
+- **Automated LLM Evaluation** (DeepEval, Ragas, Promptfoo, CI/CD regression gates)
+- **Career Milestone:** Job-Ready as AI Engineer / AI Evaluation Engineer (₹18L–₹35L)
 
-### Phase 4: AI Infrastructure
-- GPU Optimization & CUDA
-- vLLM & Model Serving
-- Distributed Training
-- Kubernetes & Deployment
-- System Design at Scale
+### Phase 4: AI Infrastructure & Systems (Stage 2 Exit)
+- **OpenAI Triton & GPU Architecture** (Streaming Multiprocessors, Warps, SRAM vs HBM, `@triton.jit`, block pointers)
+- **CUDA C++ & Nsight Profiling** (Tiled shared memory matmul, arithmetic intensity, Roofline model)
+- **Production Inference** (vLLM PagedAttention, SGLang RadixAttention, Speculative Decoding, FP8/INT4 quantization)
+- **Distributed Training & Networking** (PyTorch DDP/FSDP, DeepSpeed ZeRO 1-3, Megatron 3D Parallelism, NCCL ring all-reduce)
+- **GPU Cluster Orchestration** (KubeRay, NVIDIA GPU Operator, DCGM Prometheus metrics, Grafana dashboards)
+- **Capstone Project:** FlashAttention forward pass in both Triton & CUDA with Nsight Roofline benchmark report
 
-## 📊 Salary Expectations
+## 📊 Realistic Salary Expectations (2026 Market)
 
-- **Entry Level (6 months):** ₹20-30L / $80-120K
-- **Mid Level (12 months):** ₹35-60L / $150-250K
-- **Senior (18+ months):** ₹60-120L / $250-500K
-
-*Note: Salaries vary by location, company, and negotiation skills*
+- **Stage 1 — AI Eval / Application Engineer (Phase 3 exit, 0–2 yrs):** ₹18L–₹35L / $100K–$140K
+- **Stage 2 — AI Infrastructure Systems Engineer (Phase 4, 1–3 yrs):** ₹35L–₹65L / $160K–$260K
+- **Senior / Staff AI Infrastructure Engineer (3+ yrs systems):** ₹70L–₹120L+ / $300K–$550K+
 
 ## 🔗 Resources Included
 

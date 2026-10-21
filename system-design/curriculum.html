@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum (Phases A–M) - System Design Cockpit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand-section">
+        <a href="index.html" class="brand-lockup">
+          <div class="brand-icon">📐</div>
+          <div class="brand-titles">
+            <span class="brand-title">System Design Cockpit</span>
+            <span class="brand-subtitle">Curriculum &bull; Phases A–M</span>
+          </div>
+        </a>
+      </div>
+      <div class="header-stats">
+        <div class="stat-chip"><span class="label">Phases:</span><span class="val">13 Modules</span></div>
+        <div class="stat-chip"><span class="label">Priority P0:</span><span class="val green">6 Core</span></div>
+        <a href="../dsa/index.html" class="nav-tab nav-tab-dsa">Silicon DSA Cockpit ↗</a>
+        <a href="../index.html" class="nav-tab nav-tab-return">← AI Infra Roadmap</a>
+      </div>
+    </div>
+    <nav class="nav-tabs">
+      <a href="index.html" class="nav-tab">Overview &amp; Market</a>
+      <a href="curriculum.html" class="nav-tab active">Curriculum (Phases A–M)</a>
+      <a href="matrix.html" class="nav-tab">Topic-to-Resource Matrix</a>
+      <a href="projects.html" class="nav-tab">7 Progressive Projects</a>
+      <a href="interview.html" class="nav-tab">System Design Interviews</a>
+      <a href="capacity.html" class="nav-tab">Capacity &amp; Sizing Lab</a>
+      <a href="schedule.html" class="nav-tab">Schedule &amp; First 14 Days</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Complete 13-Phase AI Systems Curriculum</h2>
+      <span class="sub">Progressive &bull; Implementation-Oriented &bull; Zero Fluff</span>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>📌 How to Navigate Dependencies:</strong><br>
+      Do not skip foundational phases. Phase A (Design Foundations), Phase B (Linux/Networking), and Phase C (Distributed Systems) are the bedrock. If these are weak, Phase G (Model Serving) and Phase I (LLM Infrastructure) will reduce to memorizing jargon instead of engineering systems.
+    </div>
+
+    <!-- PHASE A -->
+    <div class="card" style="margin-bottom:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+        <div>
+          <span class="badge-p0">Phase A &bull; P0 Essential</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">System Design Fundamentals</h3>
+        </div>
+        <div style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Duration: 3 Weeks &bull; ~45 Hours</div>
+      </div>
+      <p class="card-desc">
+        <strong>Why it matters:</strong> Before designing distributed GPU clusters, you must master the fundamental building blocks of scalable computing. In AI systems, these same primitives govern inference gateways, model artifact caches, and rate-limited API endpoints.
+      </p>
+      <div style="font-size:13px;margin-bottom:12px;">
+        <strong>Detailed Subtopics:</strong>
+        <div style="color:var(--text-muted);margin-top:4px;">
+          • Functional vs non-functional requirements (SLAs, SLOs, SLIs).<br>
+          • Latency (P50, P95, P99), throughput (RPS/QPS), concurrency, and saturation.<br>
+          • Horizontal vs vertical scaling; stateless services vs stateful model workers.<br>
+          • Load balancing algorithms (Round Robin, Least Connections, Consistent Hashing for KV-cache prefix affinity).<br>
+          • Caching strategies: Cache-aside, Write-through, Write-back; Eviction policies (LRU, LFU, ARC).<br>
+          • Relational vs NoSQL trade-offs; Message queues (Kafka/RabbitMQ) for decoupled ingestion.<br>
+          • Idempotency keys, circuit breakers, exponential backoff with jitter, backpressure.
+        </div>
+      </div>
+      <div style="background:var(--bg-surface);padding:12px 16px;border-radius:6px;font-size:12.5px;border:1px solid var(--border-color);">
+        <strong>🛠️ Hands-on Exercise:</strong> Implement a token-bucket rate limiter in Python using Redis and assert that burst traffic exceeding 50 RPS receives HTTP 429 while healthy traffic proceeds.
+      </div>
+    </div>
+
+    <!-- PHASE B -->
+    <div class="card" style="margin-bottom:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+        <div>
+          <span class="badge-p0">Phase B &bull; P0 Essential</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">Networking &amp; Linux Systems Internals</h3>
+        </div>
+        <div style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Duration: 2 Weeks &bull; ~35 Hours</div>
+      </div>
+      <p class="card-desc">
+        <strong>Why it matters:</strong> AI inference and distributed training are bounded by operating system throughput and network interfaces. Knowing how Linux allocates pages, switches process contexts, and handles sockets is mandatory to diagnose latency spikes.
+      </p>
+      <div style="font-size:13px;margin-bottom:12px;">
+        <strong>Detailed Subtopics:</strong>
+        <div style="color:var(--text-muted);margin-top:4px;">
+          • Linux process model, threads, fork(), copy-on-write, CPU context switching.<br>
+          • Virtual memory, page tables, page faults, huge pages (transparent huge pages in GPU runtimes).<br>
+          • File descriptors, standard I/O, epoll vs select in asynchronous servers (uvloop/FastAPI).<br>
+          • Sockets, TCP 3-way handshake, TCP slow start, TIME_WAIT states, HTTP/1.1 keep-alive vs HTTP/2 multiplexing vs gRPC.<br>
+          • Linux profiling tools: <code>top</code>, <code>htop</code>, <code>vmstat</code>, <code>iostat</code>, <code>strace</code>, <code>netstat</code>, <code>perf</code>.
+        </div>
+      </div>
+      <div style="background:var(--bg-surface);padding:12px 16px;border-radius:6px;font-size:12.5px;border:1px solid var(--border-color);">
+        <strong>🛠️ Hands-on Exercise:</strong> Run <code>strace -c</code> on a Python FastAPI model endpoint under a 100-request load test to inspect the number and latency of syscalls (read, write, futex, epoll_wait).
+      </div>
+    </div>
+
+    <!-- PHASE C -->
+    <div class="card" style="margin-bottom:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+        <div>
+          <span class="badge-p0">Phase C &bull; P0 Essential</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">Distributed Systems Fundamentals</h3>
+        </div>
+        <div style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Duration: 4 Weeks &bull; ~60 Hours</div>
+      </div>
+      <p class="card-desc">
+        <strong>Why it matters:</strong> Modern AI models do not fit on a single machine or GPU. Understanding distributed consensus, network partitions, split-brain scenarios, and replication is the hallmark of a true infrastructure engineer.
+      </p>
+      <div style="font-size:13px;margin-bottom:12px;">
+        <strong>Detailed Subtopics:</strong>
+        <div style="color:var(--text-muted);margin-top:4px;">
+          • Network failure models: asynchronous networks, partial failures, network partitions.<br>
+          • Consistency models: Strong consistency (Linearizability), Sequential, Eventual consistency.<br>
+          • The CAP theorem: why consistency must be traded against availability during network partitions.<br>
+          • Consensus algorithms: Leader-follower replication, Quorums (W + R &gt; N), Raft algorithm (leader election, log replication, safety).<br>
+          • Distributed transactions: Two-Phase Commit (2PC) limitations vs Saga pattern.<br>
+          • Delivery guarantees: At-most-once, At-least-once, and handling idempotency via unique request tokens.<br>
+          • Backpressure and avoiding cascading failure: Jitter, dead letter queues (DLQs), bulkhead pattern.
+        </div>
+      </div>
+      <div style="background:var(--bg-surface);padding:12px 16px;border-radius:6px;font-size:12.5px;border:1px solid var(--border-color);">
+        <strong>🛠️ Hands-on Exercise:</strong> Build a 3-node in-memory leader-follower key-value store in Python where followers poll logs from a leader; simulate node disconnection and observe how the quorum handles writes.
+      </div>
+    </div>
+
+    <!-- PHASE D -->
+    <div class="card" style="margin-bottom:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+        <div>
+          <span class="badge-p1">Phase D &bull; P1 Practical</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">Databases, Storage &amp; Data Systems</h3>
+        </div>
+        <div style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Duration: 3 Weeks &bull; ~40 Hours</div>
+      </div>
+      <p class="card-desc">
+        <strong>Why it matters:</strong> AI systems store different assets with drastically different latency and throughput requirements: structured metadata (PostgreSQL), high-speed state/cache (Redis), multi-gigabyte model checkpoints (S3/MinIO), and embeddings (Vector DBs).
+      </p>
+      <div style="font-size:13px;margin-bottom:12px;">
+        <strong>Detailed Subtopics:</strong>
+        <div style="color:var(--text-muted);margin-top:4px;">
+          • Relational databases (PostgreSQL): B+ Tree indexing, EXPLAIN ANALYZE, connection pooling (PgBouncer).<br>
+          • Distributed key-value caches (Redis): Data structures, pub/sub, TTL eviction, Redis Cluster sharding.<br>
+          • Object storage (AWS S3 / MinIO): Immutable blobs, multipart uploads, byte-range requests for checkpoint loading.<br>
+          • Message streams (Apache Kafka): Partitions, offsets, consumer groups, write-ahead logging.<br>
+          • Vector databases &amp; Approximate Nearest Neighbors (ANN): HNSW graph traversal, IVF-PQ quantization (Qdrant, Chroma).
+        </div>
+      </div>
+      <div style="background:var(--bg-surface);padding:12px 16px;border-radius:6px;font-size:12.5px;border:1px solid var(--border-color);">
+        <strong>🛠️ Hands-on Exercise:</strong> Spin up local MinIO and Qdrant in Docker; write a Python script that uploads a 50MB dummy model checkpoint to MinIO and indexes 10,000 vector embeddings into Qdrant with HNSW.
+      </div>
+    </div>
+
+    <!-- PHASE E -->
+    <div class="card" style="margin-bottom:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+        <div>
+          <span class="badge-p1">Phase E &bull; P1 Practical</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">Containers, Kubernetes &amp; Workload Orchestration</h3>
+        </div>
+        <div style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Duration: 3 Weeks &bull; ~45 Hours</div>
+      </div>
+      <p class="card-desc">
+        <strong>Why it matters:</strong> Production AI services run on Kubernetes. You must understand how Pods are scheduled on GPU nodes, how resource limits work, and how autoscaling operates under queue depth spikes.
+      </p>
+      <div style="font-size:13px;margin-bottom:12px;">
+        <strong>Detailed Subtopics:</strong>
+        <div style="color:var(--text-muted);margin-top:4px;">
+          • Docker architecture: Linux cgroups, namespaces, image layer caching, multi-stage builds.<br>
+          • Kubernetes core primitives: Pods, Deployments, Services (ClusterIP vs NodePort), ConfigMaps, Secrets.<br>
+          • Resource scheduling: CPU/Memory requests vs limits; OOMKilled triggers.<br>
+          • Health probes: Liveness, Readiness, and Startup probes (critical for 2-minute LLM weight loading).<br>
+          • GPU scheduling: NVIDIA Container Toolkit, <code>nvidia.com/gpu</code> resource limits, taints and tolerations for GPU node pools.<br>
+          • Local testing without cloud bills: Using <code>kind</code> (Kubernetes in Docker) or <code>minikube</code> on your laptop.
+        </div>
+      </div>
+      <div style="background:var(--bg-surface);padding:12px 16px;border-radius:6px;font-size:12.5px;border:1px solid var(--border-color);">
+        <strong>🛠️ Hands-on Exercise:</strong> Deploy a local FastAPI service in a <code>kind</code> cluster with 3 replicas, readiness probe delay for simulated model loading, and Horizontal Pod Autoscaler (HPA) simulating load.
+      </div>
+    </div>
+
+    <!-- PHASE G & H & I: THE AI INFRA CORE -->
+    <div class="card" style="margin-bottom:24px;border-color:var(--accent-purple);">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+        <div>
+          <span class="badge-p0">Phases G, H &amp; I &bull; P0 The AI Infra Money Zone</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">Model Serving, GPU Hardware &amp; LLM Inference Infrastructure</h3>
+        </div>
+        <div style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Duration: 6 Weeks &bull; ~90 Hours</div>
+      </div>
+      <p class="card-desc">
+        <strong>Why it matters:</strong> This is where general software engineers get filtered out. Here you master why LLM inference is memory-bandwidth bound, how KV-cache paging eliminates memory fragmentation, and how dynamic continuous batching maximizes GPU utilization.
+      </p>
+      <div style="font-size:13px;margin-bottom:12px;">
+        <strong>Detailed Subtopics:</strong>
+        <div style="color:var(--text-muted);margin-top:4px;">
+          • GPU Architecture: Streaming Multiprocessors (SMs), Tensor Cores, HBM vs SRAM (on-chip cache).<br>
+          • Prefill (compute-bound) vs Decode (memory-bandwidth-bound) phases.<br>
+          • KV-Cache memory consumption math: $2 \times 2 \times \text{layers} \times \text{heads} \times \text{dim} \times \text{bytes}$.<br>
+          • Continuous Batching (iteration-level scheduling) vs Static batching.<br>
+          • PagedAttention (vLLM architecture) — physical block tables and eliminating external fragmentation.<br>
+          • SGLang &amp; RadixAttention — KV-cache prefix tree sharing across multi-turn chats.<br>
+          • Quantization: FP16 vs BF16 vs FP8 (E4M3) vs INT4 (AWQ).<br>
+          • Serving engines compared: FastAPI vs Triton Inference Server vs vLLM vs Hugging Face TGI vs Ray Serve.
+        </div>
+      </div>
+      <div style="background:var(--bg-surface);padding:12px 16px;border-radius:6px;font-size:12.5px;border:1px solid var(--border-color);">
+        <strong>🛠️ Hands-on Exercise (RTX 2050 4GB Compatible):</strong> Run a quantized 1.5B or 3B small open-weight model (e.g. Qwen-2.5-1.5B or SmolLM2) locally on your 4GB laptop GPU using Ollama or vLLM; profile memory footprint before and after token generation and measure TTFT vs ITL.
+      </div>
+    </div>
+
+    <!-- PHASE J & K & L -->
+    <div class="card" style="margin-bottom:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+        <div>
+          <span class="badge-p1">Phases J, K &amp; L &bull; P1 Production Engineering</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">Distributed Training, Observability &amp; Multi-Tenant Security</h3>
+        </div>
+        <div style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Duration: 4 Weeks &bull; ~55 Hours</div>
+      </div>
+      <p class="card-desc">
+        <strong>Why it matters:</strong> Shipping to production requires complete observability (Prometheus/Grafana), automated health recovery, and multi-tenant isolation.
+      </p>
+      <div style="font-size:13px;margin-bottom:12px;">
+        <strong>Detailed Subtopics:</strong>
+        <div style="color:var(--text-muted);margin-top:4px;">
+          • Distributed training strategies: Data Parallelism (DDP/FSDP), ZeRO 1/2/3, Tensor Parallelism.<br>
+          • NCCL collectives: Ring All-Reduce, Reduce-Scatter, All-Gather.<br>
+          • OpenTelemetry distributed tracing: Tracing requests from API Gateway &rarr; Queue &rarr; GPU Worker &rarr; DB.<br>
+          • GPU metrics via DCGM: SM utilization, memory bandwidth percentage, PCIe throughput, thermal throttles.<br>
+          • Multi-tenancy: API key quotas, tier-based rate limiting, prompt sanitization, network isolation.
+        </div>
+      </div>
+      <div style="background:var(--bg-surface);padding:12px 16px;border-radius:6px;font-size:12.5px;border:1px solid var(--border-color);">
+        <strong>🛠️ Hands-on Exercise:</strong> Instrument a Python inference worker with Prometheus metrics (<code>inference_latency_seconds_bucket</code>, <code>kv_cache_usage_percent</code>) and configure a local Grafana dashboard.
+      </div>
+    </div>
+
+    <!-- PHASE M: CAPSTONE ARCHITECTURES -->
+    <div class="card" style="border-color:var(--accent-green);">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+        <div>
+          <span class="badge-p0">Phase M &bull; P0 Capstone</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">Advanced System Design Architectural Deep-Dives</h3>
+        </div>
+        <div style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Duration: 3 Weeks &bull; ~45 Hours</div>
+      </div>
+      <p class="card-desc">
+        <strong>Why it matters:</strong> Synthesizes everything into end-to-end architectures that mirror actual Staff / Principal Engineer design reviews.
+      </p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;color:var(--text-muted);">
+        <div>• 1. Multi-Tenant LLM Inference API Platform</div>
+        <div>• 2. Distributed GPU Cluster Gang Scheduler</div>
+        <div>• 3. Low-Latency Feature Store (Redis + Feast)</div>
+        <div>• 4. Billion-Scale Vector Search System</div>
+        <div>• 5. Fault-Tolerant Distributed Training Orchestrator</div>
+        <div>• 6. Real-Time Model Monitoring &amp; Drift Pipeline</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    System Design Cockpit &bull; Curriculum (Phases A–M) &bull; Updated 2026
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

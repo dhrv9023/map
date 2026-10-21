@@ -1229,7 +1229,7 @@ table.data-table tr:hover td {
 
 /* Specific Day Plan Table Column Layout */
 #table-dayplan {
-  min-width: 1020px;
+  min-width: 1180px;
 }
 
 #table-dayplan th,
@@ -1280,40 +1280,51 @@ table.data-table tr:hover td {
 }
 
 #table-dayplan th:nth-child(7),
-#table-dayplan td:nth-child(7) { /* Tutorial */
-  min-width: 130px;
-  max-width: 155px;
+#table-dayplan td:nth-child(7) { /* Tutorial (YT) */
+  min-width: 135px;
+  max-width: 175px;
 }
 
 #table-dayplan td:nth-child(7) div[style*="min-width"] {
-  min-width: 125px !important;
-  max-width: 155px;
+  min-width: 130px !important;
+  max-width: 175px;
 }
 
 #table-dayplan th:nth-child(8),
-#table-dayplan td:nth-child(8) { /* Mode */
+#table-dayplan td:nth-child(8) { /* Tutorial (Doc) */
+  min-width: 135px;
+  max-width: 175px;
+}
+
+#table-dayplan td:nth-child(8) div[style*="min-width"] {
+  min-width: 130px !important;
+  max-width: 175px;
+}
+
+#table-dayplan th:nth-child(9),
+#table-dayplan td:nth-child(9) { /* Mode */
   width: 58px;
   min-width: 54px;
   text-align: center;
   font-size: 0.73rem;
 }
 
-#table-dayplan th:nth-child(9),
-#table-dayplan td:nth-child(9) { /* NVIDIA Focus */
+#table-dayplan th:nth-child(10),
+#table-dayplan td:nth-child(10) { /* NVIDIA Focus */
   width: 72px;
   min-width: 68px;
   text-align: center;
 }
 
-#table-dayplan th:nth-child(10),
-#table-dayplan td:nth-child(10) { /* Status */
+#table-dayplan th:nth-child(11),
+#table-dayplan td:nth-child(11) { /* Status */
   width: 68px;
   min-width: 64px;
   text-align: center;
 }
 
-#table-dayplan th:nth-child(11),
-#table-dayplan td:nth-child(11) { /* Action */
+#table-dayplan th:nth-child(12),
+#table-dayplan td:nth-child(12) { /* Action */
   width: 88px;
   min-width: 82px;
   text-align: center;
@@ -1324,12 +1335,12 @@ table.data-table tr:hover td {
   z-index: 5;
 }
 
-#table-dayplan th:nth-child(11) {
+#table-dayplan th:nth-child(12) {
   background: #0d1624;
   z-index: 20;
 }
 
-#table-dayplan tr:hover td:nth-child(11) {
+#table-dayplan tr:hover td:nth-child(12) {
   background: #162438;
 }
 

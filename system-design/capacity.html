@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capacity &amp; Performance Lab - System Design Cockpit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand-section">
+        <a href="index.html" class="brand-lockup">
+          <div class="brand-icon">📐</div>
+          <div class="brand-titles">
+            <span class="brand-title">System Design Cockpit</span>
+            <span class="brand-subtitle">Interactive Capacity &amp; Sizing Lab</span>
+          </div>
+        </a>
+      </div>
+      <div class="header-stats">
+        <div class="stat-chip"><span class="label">Calculator:</span><span class="val green">Live Client-Side</span></div>
+        <div class="stat-chip"><span class="label">Architecture:</span><span class="val">Roofline &bull; KV-Cache</span></div>
+        <a href="../dsa/index.html" class="nav-tab nav-tab-dsa">Silicon DSA Cockpit ↗</a>
+        <a href="../index.html" class="nav-tab nav-tab-return">← AI Infra Roadmap</a>
+      </div>
+    </div>
+    <nav class="nav-tabs">
+      <a href="index.html" class="nav-tab">Overview &amp; Market</a>
+      <a href="curriculum.html" class="nav-tab">Curriculum (Phases A–M)</a>
+      <a href="matrix.html" class="nav-tab">Topic-to-Resource Matrix</a>
+      <a href="projects.html" class="nav-tab">7 Progressive Projects</a>
+      <a href="interview.html" class="nav-tab">System Design Interviews</a>
+      <a href="capacity.html" class="nav-tab active">Capacity &amp; Sizing Lab</a>
+      <a href="schedule.html" class="nav-tab">Schedule &amp; First 14 Days</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Interactive AI Infrastructure Sizing Lab</h2>
+      <span class="sub">Mathematical Derivations &bull; Real-Time VRAM &amp; Throughput Sizing</span>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>💡 Live Engineering Sandbox:</strong> Adjust any parameter below (Model Size, Precision, Context Length, Concurrency, GPU Bandwidth) to calculate real-time VRAM allocation, KV-cache footprint, and the physical decode throughput ceiling of the hardware.
+    </div>
+
+    <div class="calc-panel">
+      <div class="calc-grid">
+        <!-- Input Parameters -->
+        <div>
+          <h3 style="font-size:16px;color:#fff;margin-bottom:16px;">Model &amp; Serving Workload Inputs</h3>
+
+          <div class="form-group">
+            <label class="form-label">Model Parameters (Billions)</label>
+            <select class="form-control calc-trigger" id="calc-params">
+              <option value="1.5">1.5B (Small edge/laptop model - Qwen-2.5)</option>
+              <option value="7" selected>7B or 8B (Llama-3-8B, Mistral-7B)</option>
+              <option value="14">14B (Qwen-2.5-14B)</option>
+              <option value="70">70B (Llama-3-70B)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Weight &amp; KV Cache Numerical Precision</label>
+            <select class="form-control calc-trigger" id="calc-precision">
+              <option value="2" selected>FP16 / BF16 (2 bytes per parameter)</option>
+              <option value="1">FP8 / INT8 (1 byte per parameter)</option>
+              <option value="0.5">INT4 / AWQ (0.5 bytes per parameter)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Context Sequence Length (Prompt + Output Tokens)</label>
+            <select class="form-control calc-trigger" id="calc-seqlen">
+              <option value="1024">1,024 Tokens (Short query)</option>
+              <option value="2048" selected>2,048 Tokens (Standard chat)</option>
+              <option value="4096">4,096 Tokens (RAG doc search)</option>
+              <option value="8192">8,192 Tokens (Long context)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Concurrent Requests (Batch Size)</label>
+            <input type="number" class="form-control calc-trigger" id="calc-batch" value="16" min="1" max="512">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Target Hardware GPU Memory Bandwidth (GB/s)</label>
+            <select class="form-control calc-trigger" id="calc-bandwidth">
+              <option value="3350" selected>NVIDIA H100 SXM5 (3,350 GB/s HBM3)</option>
+              <option value="2039">NVIDIA A100 SXM4 (2,039 GB/s HBM2e)</option>
+              <option value="1008">NVIDIA RTX 4090 (1,008 GB/s GDDR6X)</option>
+              <option value="112">NVIDIA RTX 2050 Laptop (112 GB/s GDDR6)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Real-Time Output Calculation -->
+        <div>
+          <h3 style="font-size:16px;color:#fff;margin-bottom:16px;">Calculated Capacity &amp; Memory Allocation</h3>
+
+          <div class="calc-result-box">
+            <div class="result-item">
+              <span class="k">Static Parameter Weights Memory:</span>
+              <span class="v" id="res-param-mem">14.0 GB</span>
+            </div>
+            <div class="result-item">
+              <span class="k">KV-Cache per Individual Stream:</span>
+              <span class="v" id="res-kv-seq">16.0 MB</span>
+            </div>
+            <div class="result-item">
+              <span class="k">Total KV-Cache across Concurrent Batch:</span>
+              <span class="v" id="res-kv-total">0.25 GB</span>
+            </div>
+            <div class="result-item">
+              <span class="k">Total Estimated VRAM Needed (Weights + KV + 20% Overhead):</span>
+              <span class="v" style="color:var(--accent-coral);" id="res-total-vram">17.1 GB</span>
+            </div>
+            <div class="result-item">
+              <span class="k">Single-Stream Decode Throughput Ceiling:</span>
+              <span class="v" style="color:var(--accent-green);" id="res-decode-speed">240 tok/s</span>
+            </div>
+            <div class="result-item">
+              <span class="k">Recommended GPU Node Provisioning:</span>
+              <span class="v" style="color:var(--accent-purple);" id="res-h100-count">1x 80GB GPU</span>
+            </div>
+          </div>
+
+          <div style="margin-top:16px;font-size:12px;color:var(--text-dim);line-height:1.6;">
+            <strong>📌 The Governing Formula:</strong><br>
+            $$\text{KV-Cache Bytes} = 2 \times 2 \times \text{layers} \times \text{kv\_heads} \times \text{head\_dim} \times \text{precision\_bytes} \times \text{seq\_len} \times \text{batch\_size}$$
+            $$\text{Max Single-Stream Decode Speed} = \frac{\text{Memory Bandwidth (GB/s)}}{\text{Model Size (GB)}}$$
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LITTLE'S LAW & CONCURRENCY SIZING -->
+    <div class="card">
+      <div class="card-title">📐 Little's Law in Model Serving Architecture</div>
+      <div class="card-desc">
+        Little's Law is the universal mathematical bridge between QPS, response latency, and system concurrency:
+        $$L = \lambda \times W$$
+        Where:
+        <br>• $L$ = Average number of concurrent requests in the system.
+        <br>• $\lambda$ = Arrival rate in Requests Per Second (RPS / QPS).
+        <br>• $W$ = Average end-to-end response time / latency in seconds.
+        <br><br>
+        <strong>Worked Example:</strong> If your LLM serving API receives <strong>200 QPS</strong> and each generation takes an average of <strong>1.5 seconds</strong> ($W = 1.5$), the serving system must hold:
+        $$L = 200 \times 1.5 = \mathbf{300\text{ concurrent active requests}}$$
+        Your GPU cluster must possess sufficient KV-cache memory to support 300 simultaneous active streams without dropping requests or triggering memory eviction.
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    System Design Cockpit &bull; Capacity &amp; Sizing Lab &bull; 2026 Edition
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

@@ -249,18 +249,21 @@ def generate_index_html(data):
               </div>
             </div>
 
-            <!-- Curated Video Tutorial (if scheduled) -->
-            <div class="tutorial-row" id="hero-tut-box" style="{'' if d1.get('tutYn') == 'YES' else 'display: none;'}">
+            <!-- Curated Video Tutorial & Documentation (if scheduled) -->
+            <div class="tutorial-row" id="hero-tut-box" style="{'' if (d1.get('tutYn') == 'YES' or d1.get('tutYt') or d1.get('tutDoc')) else 'display: none;'}">
               <div class="tutorial-left">
                 <span class="tutorial-icon-badge" id="hero-tut-badge">Tutorial ({d1.get('tutMin', 25)}m)</span>
                 <div class="tutorial-info">
                   <span class="tutorial-title" id="hero-tut-title">{escape(d1.get('tutTopic', ''))}</span>
-                  <span class="tutorial-meta" id="hero-tut-meta">Recommended: {escape(d1.get('tutResource', {}).get('primaryChannel', 'Striver') if d1.get('tutResource') else 'Striver')} &bull; Striver, Aditya Verma, Padho with Pratyush, NeetCode</span>
+                  <span class="tutorial-meta" id="hero-tut-meta">Curated Goldmine: {escape((d1.get('tutYt') or {}).get('creator', d1.get('tutResource', {}).get('primaryChannel', 'Striver')))}</span>
                 </div>
               </div>
-              <div class="tutorial-actions" id="hero-tut-actions">
-                <a href="{d1.get('tutResource', {}).get('primaryUrl', 'resources.html') if d1.get('tutResource') else 'resources.html'}" target="_blank" class="btn btn-tutorial-action" id="hero-tut-link">
-                  &blacktriangleright; Watch Tutorial &nearr;
+              <div class="tutorial-actions" id="hero-tut-actions" style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+                <a href="{(d1.get('tutYt') or {}).get('url', d1.get('tutResource', {}).get('primaryUrl', 'resources.html'))}" target="_blank" class="btn btn-tutorial-action" id="hero-tut-link" style="{'' if (d1.get('tutYt') or d1.get('tutResource')) else 'display: none;'}">
+                  &blacktriangleright; Watch ({(d1.get('tutYt') or {}).get('creator', d1.get('tutResource', {}).get('primaryChannel', 'Video'))}) &nearr;
+                </a>
+                <a href="{(d1.get('tutDoc') or {}).get('url', '#')}" target="_blank" class="btn btn-outline" id="hero-doc-link" style="{'display: inline-flex;' if d1.get('tutDoc') else 'display: none;'} font-size: 0.8rem; padding: 0.35rem 0.75rem; border-color: rgba(56, 189, 248, 0.45); color: #38bdf8; background: rgba(56, 189, 248, 0.08); text-decoration: none; border-radius: 6px; font-weight: 700;">
+                  📄 Read ({(d1.get('tutDoc') or {}).get('source', 'Doc')}) &nearr;
                 </a>
               </div>
             </div>
@@ -496,28 +499,47 @@ def generate_plan_html(data):
     rows_html = []
     for d in data["days"]:
         nv_tag = '<span class="brand-badge" style="font-size: 0.65rem;">🟢 NVIDIA</span>' if d['isNvidia'] else '—'
-        if d['tutYn'] == 'YES':
-            tut_res = d.get('tutResource')
-            if tut_res:
-                primary_ch = tut_res.get('primaryChannel', 'Striver')
-                cls = tut_res['channels'][0]['cls'] if tut_res.get('channels') else 'striver'
-                tut_tag = f"""
-                  <div style="min-width: 170px;">
-                    <div style="font-size: 0.78rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;">{escape(d['tutTopic'])}</div>
-                    <div style="display: flex; gap: 0.35rem; align-items: center; flex-wrap: wrap;">
-                      <a href="{tut_res['primaryUrl']}" target="_blank" class="btn btn-primary" style="padding: 0.15rem 0.45rem; font-size: 0.68rem; text-decoration: none; font-weight: 700;">
-                        ▶ Watch ({escape(primary_ch)}) ↗
-                      </a>
-                      <a href="resources.html" class="yt-channel-pill {cls}" style="font-size: 0.65rem; padding: 0.1rem 0.35rem;">
-                        All Creators &rarr;
-                      </a>
-                    </div>
-                  </div>
-                """
-            else:
-                tut_tag = f"📺 {escape(d['tutTopic'])}"
+        
+        # Tutorial (YT) Column
+        tut_yt = d.get('tutYt')
+        if not tut_yt and d.get('tutResource') and d['tutResource'].get('yt'):
+            tut_yt = d['tutResource']['yt']
+
+        if tut_yt:
+            yt_creator = tut_yt.get('creator', 'Watch')
+            yt_title = tut_yt.get('title', d.get('tutTopic', 'Video Tutorial'))
+            yt_url = tut_yt.get('url', '#')
+            yt_tag = f"""
+              <div style="min-width: 135px; max-width: 175px;">
+                <div style="font-size: 0.77rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem; line-height: 1.25;" title="{escape(yt_title)}">{escape(yt_title)}</div>
+                <a href="{yt_url}" target="_blank" class="btn btn-primary" style="padding: 0.16rem 0.48rem; font-size: 0.68rem; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem; border-radius: 4px;">
+                  ▶ Watch ({escape(yt_creator)}) ↗
+                </a>
+              </div>
+            """
         else:
-            tut_tag = '<span style="color: var(--text-muted);">—</span>'
+            yt_tag = '<span style="color: var(--text-muted); font-size: 0.85rem;">—</span>'
+
+        # Tutorial (Doc) Column
+        tut_doc = d.get('tutDoc')
+        if not tut_doc and d.get('tutResource') and d['tutResource'].get('doc'):
+            tut_doc = d['tutResource']['doc']
+
+        if tut_doc:
+            doc_source = tut_doc.get('source', 'Doc')
+            doc_title = tut_doc.get('title', d.get('tutTopic', 'Documentation'))
+            doc_url = tut_doc.get('url', '#')
+            doc_tag = f"""
+              <div style="min-width: 135px; max-width: 175px;">
+                <div style="font-size: 0.77rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem; line-height: 1.25;" title="{escape(doc_title)}">{escape(doc_title)}</div>
+                <a href="{doc_url}" target="_blank" class="btn btn-outline" style="padding: 0.16rem 0.48rem; font-size: 0.68rem; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem; border-radius: 4px; border-color: rgba(56, 189, 248, 0.45); color: #38bdf8; background: rgba(56, 189, 248, 0.08);">
+                  📄 Read ({escape(doc_source)}) ↗
+                </a>
+              </div>
+            """
+        else:
+            doc_tag = '<span style="color: var(--text-muted); font-size: 0.85rem;">—</span>'
+
         rows_html.append(f"""
           <tr data-day="{d['day']}" data-phase="{d['phase']}" data-week="{d['week']}" data-nvidia="{str(d['isNvidia']).lower()}">
             <td style="font-weight: 700; color: #fff;">{d['day']}</td>
@@ -539,7 +561,8 @@ def generate_plan_html(data):
               </a>
               <span class="diff-tag diff-{d['d2']}" style="font-size: 0.65rem; margin-left: 0.25rem;">{d['d2']}</span>
             </td>
-            <td><span style="font-size: 0.75rem;">{tut_tag}</span></td>
+            <td><span style="font-size: 0.75rem;">{yt_tag}</span></td>
+            <td><span style="font-size: 0.75rem;">{doc_tag}</span></td>
             <td><span style="font-size: 0.75rem; color: var(--text-muted);">{escape(d['mode'])}</span></td>
             <td>{nv_tag}</td>
             <td>
@@ -595,7 +618,8 @@ def generate_plan_html(data):
               <th>Pattern</th>
               <th>Problem 1</th>
               <th>Problem 2</th>
-              <th>Tutorial</th>
+              <th>Tutorial (YT)</th>
+              <th>Tutorial (Doc)</th>
               <th>Mode</th>
               <th>NVIDIA Focus</th>
               <th>Status</th>
@@ -1415,10 +1439,11 @@ def generate_resources_html(data):
             <td style="font-size: 0.82rem; color: var(--text-secondary); max-width: 240px; line-height: 1.4;">{escape(r['whyItMatters'])}</td>
             <td style="font-size: 0.82rem; color: var(--text-muted); max-width: 260px; line-height: 1.4;">{escape(r['whatToExtract'])}</td>
             <td style="min-width: 250px;">
-              <div style="margin-bottom: 0.45rem;">
-                <a href="{r['primaryUrl']}" target="_blank" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-weight: 700;">
+              <div style="margin-bottom: 0.45rem; display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center;">
+                <a href="{r['primaryUrl']}" target="_blank" class="btn btn-primary" style="padding: 0.32rem 0.65rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.35rem; text-decoration: none; font-weight: 700;">
                   ▶ Watch ({escape(r['primaryChannel'])}) ↗
                 </a>
+                {f'<a href="{r["doc"]["url"]}" target="_blank" class="btn btn-outline" style="padding: 0.32rem 0.65rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.35rem; text-decoration: none; font-weight: 700; border-color: rgba(56, 189, 248, 0.45); color: #38bdf8; background: rgba(56, 189, 248, 0.08);">📄 Read ({escape(r["doc"]["source"])}) ↗</a>' if r.get('doc') else ''}
               </div>
               <div class="channel-links-group">
                 {pills_html}

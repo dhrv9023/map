@@ -137,6 +137,26 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
 .fmi:hover{background:#ffffff14;color:#fff}
 .fmn{font-size:10px;font-family:var(--mono);color:#ffffff30;width:18px;font-weight:700}
 @media(max-width:640px){.tabs{gap:1px}.tab{padding:4px 8px;font-size:11px}.hero h1{font-size:28px}.page{padding:1.5rem .85rem 7rem}.g2,.g3{grid-template-columns:1fr}.dbs{flex-direction:column;align-items:center}}
+.form-group{margin-bottom:1rem}
+.form-label{display:block;font-size:11.5px;font-weight:700;color:var(--text2);margin-bottom:.35rem;text-transform:uppercase;letter-spacing:.05em}
+.form-control{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:.5rem .75rem;color:var(--text);font-family:var(--sans);font-size:13px;outline:none;transition:border-color .15s}
+.form-control:focus{border-color:var(--accent2)}
+.calc-panel{background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--r);padding:1.5rem;margin:1.5rem 0}
+.calc-res{background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:1.25rem}
+.calc-item{display:flex;justify-content:space-between;align-items:center;padding:.55rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.calc-item:last-child{border-bottom:none}
+.calc-k{color:var(--text2);font-weight:600}
+.calc-v{font-family:var(--mono);font-weight:800;color:var(--teal)}
+.calc-v.hl{color:var(--accent2);font-size:14px}
+.calc-v.gr{color:var(--green)}
+.sd-nav{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0 1.5rem}
+.sd-tab{background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:12px;font-weight:700;padding:.4rem .85rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:all .15s;display:inline-flex;align-items:center;gap:6px}
+.sd-tab:hover{border-color:var(--accent2);color:var(--text)}
+.dc-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.15rem;transition:border-color .15s,transform .15s}
+.dc-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.dc-icon{font-size:22px;margin-bottom:8px;display:block}
+.dc-tit{font-size:13.5px;font-weight:800;color:var(--text);margin-bottom:4px}
+.dc-desc{font-size:12.5px;color:var(--text2);line-height:1.6}
 </style>
 </head>
 <body>
@@ -163,12 +183,13 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <a class="brand" href="#" onclick="sP('home')">⬡ <span>AI Infra</span></a>
     <div class="tabs" id="tabs">
       <button class="tab active" data-p="home">Overview</button>
+      <button class="tab" data-p="ai-eng" style="color:var(--accent2);font-weight:700;">✦ AI Engineer Track</button>
       <button class="tab" data-p="p1">Phase 1</button>
       <button class="tab" data-p="p2">Phase 2</button>
       <button class="tab" data-p="p3">Phase 3</button>
       <button class="tab" data-p="p4">Phase 4</button>
       <button class="tab gt" data-p="dsa">DSA</button>
-      <button class="tab" data-p="sd">System Design</button>
+      <button class="tab" data-p="sd" style="color:var(--teal);font-weight:700;">System Design</button>
       <button class="tab" data-p="proj">Projects</button>
     </div>
     <div class="utils">
@@ -180,43 +201,322 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
 <!-- HOME -->
 <div id="page-home" class="page active">
   <div class="hero">
-    <div class="tag">AI Infrastructure Roadmap — 24 Months</div>
+    <div class="tag">AI Infrastructure & Systems Roadmap — 2026 Edition</div>
     <h1>From Zero to<br>AI Infra Engineer</h1>
-    <p>No fluff. Just phases, actions, and resources. Follow the order. Do the projects. Get the job.</p>
+    <p>Battle-tested systems curriculum upgraded with OpenAI Triton, 2026 Serving Stacks, Hardware-Aware Systems DSA, and a realistic 2-stage career transition path.</p>
   </div>
-  <div class="alert ai"><strong>Goal:</strong> AI Infrastructure / AI Systems Engineer at NVIDIA, Google DeepMind, Meta, Anthropic, Groq. Target: ₹60-120L / $250-500K senior.</div>
+  
+  <div class="alert ai"><strong>Strategic Goal:</strong> AI Systems / AI Infrastructure Engineer at NVIDIA, Google DeepMind, Meta, Anthropic, Databricks, Groq. Target: ₹60-120L+ / $250-500K senior.</div>
+
+  <!-- 2-STAGE STEPPING STONE TRANSITION -->
+  <div class="dla" style="text-align:left;margin-bottom:2rem;background:linear-gradient(135deg,#121324,#0e1520);border-color:var(--accent2);">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.75rem;flex-wrap:wrap;">
+      <span class="pill pp" style="font-size:11px;">Career Transition Strategy</span>
+      <h2 style="font-size:20px;border:none;margin:0;padding:0;color:#fff;">🎯 The 2-Stage Career Pivot (Catalog QA → AI Eng → AI Infra)</h2>
+    </div>
+    <p style="font-size:13.5px;color:var(--text2);margin-bottom:1.25rem;line-height:1.6;">
+      <strong>The Brutal Reality:</strong> Jumping straight from Catalog QA into deep CUDA/Systems engineering without prior C++/OS experience takes 18–24 months of solitary grind. Instead, take the <strong>stepping-stone route</strong> to get hired faster, earn an AI salary, and get company-funded access to enterprise GPU clusters:
+    </p>
+    <div class="g2" style="gap:1rem;">
+      <div style="background:var(--bg3);border:1px solid #22c55e40;border-radius:10px;padding:1.15rem;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <span style="font-weight:800;color:var(--green);font-size:14px;">Stage 1: AI Evaluation & App Engineer</span>
+          <span class="pill pg">Months 6–9 · Exit at Phase 3</span>
+        </div>
+        <p style="font-size:12.5px;color:var(--text2);line-height:1.6;margin-bottom:8px;">
+          <strong>Your QA Superpower:</strong> AI teams face a massive eval crisis. Leverage your test methodology, structured catalog data intuition, and automated evals (DeepEval, Ragas, Promptfoo) + RAG & FastAPI to land your first AI role.
+        </p>
+        <div style="font-size:12px;font-family:var(--mono);color:var(--teal);">💰 Target: ₹18L–₹35L / $100K–$140K · 0–2 yrs exp</div>
+      </div>
+      <div style="background:var(--bg3);border:1px solid #818cf840;border-radius:10px;padding:1.15rem;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <span style="font-weight:800;color:var(--accent2);font-size:14px;">Stage 2: AI Infrastructure & Systems</span>
+          <span class="pill pp">Months 12–20 · Full Phase 4</span>
+        </div>
+        <p style="font-size:12.5px;color:var(--text2);line-height:1.6;margin-bottom:8px;">
+          <strong>The Systems Level:</strong> Once inside an AI team with real production traffic and H100 GPU clusters, learn Triton kernels, continuous batching, vLLM/SGLang serving, and distributed training to pivot internally to AI Infra.
+        </p>
+        <div style="font-size:12px;font-family:var(--mono);color:var(--amber);">💰 Target: ₹45L–₹100L+ / $250K–$450K+ senior</div>
+      </div>
+    </div>
+  </div>
+
   <h2>The 4-Phase Plan <span class="hs">24 months</span></h2>
   <div class="g2">
     <div class="block bg" style="cursor:pointer" onclick="sP('p1')"><div class="bt">🟢 Phase 1 — Foundations <span class="wk">Months 1–6</span></div><div class="bb">Python · Math · Linux · Backend · Docker. No ML until this is solid.</div></div>
     <div class="block bt2" style="cursor:pointer" onclick="sP('p2')"><div class="bt">🔵 Phase 2 — ML & Deep Learning <span class="wk">Months 6–12</span></div><div class="bb">Scikit-learn · PyTorch · Transformers · Hugging Face · Experiment Tracking.</div></div>
-    <div class="block ba" style="cursor:pointer" onclick="sP('p3')"><div class="bt">🟣 Phase 3 — GenAI & LLMs <span class="wk">Months 12–17</span></div><div class="bb">RAG · Fine-tuning · Agents · LLM Evaluation · Production serving basics.</div></div>
-    <div class="block bc" style="cursor:pointer" onclick="sP('p4')"><div class="bt">🔴 Phase 4 — AI Infrastructure <span class="wk">Months 17–24</span></div><div class="bb">CUDA · Distributed Training · vLLM · TensorRT · Kubernetes. The money zone.</div></div>
+    <div class="block ba" style="cursor:pointer" onclick="sP('p3')"><div class="bt">🟣 Phase 3 — GenAI & LLMs <span class="wk">Months 12–17</span></div><div class="bb">RAG · Fine-tuning · Agents · LLM Evaluation & Evals · Production serving basics. <strong style="color:var(--green)">[Exit Gate 1]</strong></div></div>
+    <div class="block bc" style="cursor:pointer" onclick="sP('p4')"><div class="bt">🔴 Phase 4 — AI Infrastructure <span class="wk">Months 17–24</span></div><div class="bb">OpenAI Triton · CUDA · Distributed Training (FSDP/ZeRO) · vLLM/SGLang · Kubernetes. <strong style="color:var(--coral)">[Exit Gate 2]</strong></div></div>
   </div>
   <h2>Parallel Tracks (run every phase) <span class="hs">daily</span></h2>
   <div class="g2">
-    <div class="block ba" style="cursor:pointer" onclick="sP('dsa')"><div class="bt">🧠 DSA — C++ Daily <span class="wk">1hr weekday, 2hr Sat</span></div><div class="bb">LeetCode in C++. 168-day structured cockpit. Required to pass any FAANG/NVIDIA screen.</div></div>
-    <div class="block bam" style="cursor:pointer" onclick="sP('sd')"><div class="bt">🏗️ System Design <span class="wk">Saturdays from Week 12</span></div><div class="bb">DDIA + Grokking + AI-specific designs (model serving, RAG, GPU clusters).</div></div>
+    <div class="block ba" style="cursor:pointer" onclick="sP('dsa')"><div class="bt">🧠 Silicon & Systems DSA — C++ <span class="wk">1hr weekday, 2hr Sat</span></div><div class="bb">Striver A2Z + Hardware-Aware Step 18 (Warp shuffles, lock-free ring buffers, PagedAttention block simulation). Required for NVIDIA/systems screens.</div></div>
+    <div class="block bam" style="cursor:pointer" onclick="sP('sd')"><div class="bt">🏗️ System Design <span class="wk">Saturdays from Week 12</span></div><div class="bb">DDIA + Grokking + AI-specific designs (distributed KV-cache serving, multi-GPU training clusters, vector retrieval at scale).</div></div>
   </div>
   <h2>Hard Rules</h2>
   <ul class="steps">
     <li>Do phases in order. Phase 1 weak → everything after will be garbage.</li>
-    <li>DSA every single day. No exceptions. 1 LeetCode problem minimum in C++.</li>
+    <li>DSA every single day. 1 problem minimum. Mix Striver A2Z with Step 18 Systems DSA.</li>
     <li>Build every project listed. Watching tutorials ≠ learning.</li>
-    <li>Use C++ for DSA, Python for ML/AI work.</li>
+    <li>Use C++ for Systems/DSA, Python & Triton for ML/AI and kernel optimization.</li>
     <li>Target: 3–5 hours/day. Realistic, not wishful.</li>
-    <li>Phase 1 completion test: can you deploy a Dockerized FastAPI + PostgreSQL service?</li>
-    <li>Phase 4 completion test: can you write a CUDA kernel and explain its roofline chart?</li>
+    <li>Phase 1 completion test: can you deploy a Dockerized FastAPI + PostgreSQL service with async I/O?</li>
+    <li>Phase 3 completion test: can you build an automated evaluation pipeline with DeepEval/Ragas that halts CI on regression?</li>
+    <li>Phase 4 completion test: can you write a Triton/CUDA kernel, profile memory traffic with Nsight, and explain its Roofline chart?</li>
   </ul>
-  <h2>Timeline</h2>
+  <h2>Timeline & Exit Milestones</h2>
   <div class="tw"><table>
-    <thead><tr><th>Phase</th><th>Duration</th><th>Key Outcome</th></tr></thead>
+    <thead><tr><th>Phase</th><th>Duration</th><th>Key Outcome</th><th>Career Milestone</th></tr></thead>
     <tbody>
-      <tr><td><span class="pill pg">Phase 1</span> Foundations</td><td>Months 1–6</td><td>Production Python, Docker, FastAPI, SQL, Linux</td></tr>
-      <tr><td><span class="pill pt">Phase 2</span> ML & DL</td><td>Months 6–12</td><td>Train & deploy real models. Understand transformers.</td></tr>
-      <tr><td><span class="pill pp">Phase 3</span> GenAI/LLMs</td><td>Months 12–17</td><td>Build RAG systems, fine-tune LLMs, evaluate them.</td></tr>
-      <tr><td><span class="pill pc">Phase 4</span> AI Infra</td><td>Months 17–24</td><td>GPU kernels, distributed training, vLLM, K8s, CUDA.</td></tr>
+      <tr><td><span class="pill pg">Phase 1</span> Foundations</td><td>Months 1–6</td><td>Production Python, Docker, FastAPI, SQL, Linux OS</td><td>Junior Backend Ready</td></tr>
+      <tr><td><span class="pill pt">Phase 2</span> ML & DL</td><td>Months 6–12</td><td>Train & deploy real models. Understand transformers.</td><td>ML Apprentice</td></tr>
+      <tr><td><span class="pill pp">Phase 3</span> GenAI/LLMs</td><td>Months 12–17</td><td>RAG systems, fine-tuning, automated evals, agents.</td><td><strong>🎯 Stage 1 Exit: AI Eval / App Eng (₹18L–35L)</strong></td></tr>
+      <tr><td><span class="pill pc">Phase 4</span> AI Infra</td><td>Months 17–24</td><td>Triton, CUDA, vLLM/SGLang, DDP/FSDP/ZeRO, K8s.</td><td><strong>🚀 Stage 2 Exit: AI Infra Systems Eng (₹45L–100L+)</strong></td></tr>
     </tbody>
   </table></div>
+</div>
+
+<!-- AI ENGINEER TRACK (2026) -->
+<div id="page-ai-eng" class="page">
+  <div class="hero">
+    <div class="tag">Career Track — 2026 Edition</div>
+    <h1>The AI Engineer Roadmap</h1>
+    <p>A minimalist, professional career roadmap with 100% free resources — tailored for career switchers (Catalog QA to AI Engineering).</p>
+  </div>
+
+  <div class="meta-row" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:1.75rem;">
+    <span class="chip" style="color:var(--text);border-color:var(--border2);background:var(--bg3);">⏱ 8–14 Months</span>
+    <span class="chip" style="color:var(--green);border-color:#22c55e40;background:#22c55e10;">✦ 100% Free Resources</span>
+    <span class="chip" style="color:var(--accent2);border-color:#818cf840;background:#818cf810;">🔄 QA-to-AI Switcher Friendly</span>
+    <span class="chip" style="color:var(--teal);border-color:#2dd4bf40;background:#2dd4bf10;">🎯 Stage 1 Stepping Stone</span>
+  </div>
+
+  <!-- SALARY & TRANSITION REALITY -->
+  <div class="dla" style="text-align:left;background:linear-gradient(135deg,#121324,#0e1520);border-color:var(--accent2);margin-bottom:2.25rem;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.75rem;flex-wrap:wrap;">
+      <span class="pill pp">Market Compensation (2026)</span>
+      <h2 style="font-size:20px;border:none;margin:0;padding:0;color:#fff;">💰 Salary Reality &amp; The Catalog QA Advantage</h2>
+    </div>
+    <div class="g3" style="margin-bottom:1.25rem;">
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
+        <div style="font-size:22px;font-weight:900;color:var(--green);font-family:var(--mono);">$95k–$140k</div>
+        <div style="font-size:12px;color:var(--text3);margin-top:2px;">US — Entry Level AI Engineer</div>
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
+        <div style="font-size:22px;font-weight:900;color:var(--teal);font-family:var(--mono);">₹18L–₹40L</div>
+        <div style="font-size:12px;color:var(--text3);margin-top:2px;">India — 0–2 yr AI Engineer</div>
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
+        <div style="font-size:22px;font-weight:900;color:var(--amber);font-family:var(--mono);">$160k–$220k+</div>
+        <div style="font-size:12px;color:var(--text3);margin-top:2px;">US — Senior AI Systems Engineer</div>
+      </div>
+    </div>
+    <div class="alert as" style="margin-bottom:0;">
+      <strong>Why You Have an Unfair Advantage:</strong> In 2026, AI engineering is not about writing transformer math from scratch — it's about <strong>data quality, model evaluations (evals), and structured outputs</strong>. Your Catalog QA instincts (validating taxonomies, catching subtle hallucinations, edge-case analysis, and structured catalog QA) directly map to AI evaluation engineering (DeepEval, Promptfoo, Ragas). You are <em>not</em> starting from zero.
+    </div>
+  </div>
+
+  <!-- WHAT AN AI ENGINEER DOES DAILY -->
+  <h2>📅 What an AI Engineer Does Daily <span class="hs">8 Core Realities</span></h2>
+  <p style="color:var(--text2);font-size:13.5px;margin-bottom:1.25rem;">Before learning tools, understand the day-to-day job. This is what you will actually be paid to do on the clock:</p>
+  <div class="g2" style="margin-bottom:2.25rem;">
+    <div class="dc-card">
+      <span class="dc-icon">🧠</span>
+      <div class="dc-tit">1. Prompt Engineering &amp; Automated Evals</div>
+      <div class="dc-desc">Write and optimize system prompts, few-shot examples, and chain-of-thought instructions. Build automated CI test suites (DeepEval/Promptfoo) to ensure prompt revisions do not regress accuracy.</div>
+    </div>
+    <div class="dc-card">
+      <span class="dc-icon">🔗</span>
+      <div class="dc-tit">2. Build Production RAG Pipelines</div>
+      <div class="dc-desc">Connect foundation models to external documents and relational databases. Implement intelligent chunking, hybrid search (BM25 + vector dense search), and cross-encoder re-ranking.</div>
+    </div>
+    <div class="dc-card">
+      <span class="dc-icon">🤖</span>
+      <div class="dc-tit">3. Build &amp; Orchestrate AI Agents</div>
+      <div class="dc-desc">Design autonomous agents using tool calling / function calling. Build state machines (LangGraph) for deterministic multi-step workflows, retry logic, and human-in-the-loop approvals.</div>
+    </div>
+    <div class="dc-card">
+      <span class="dc-icon">🚢</span>
+      <div class="dc-tit">4. Deploy &amp; Monitor Microservices</div>
+      <div class="dc-desc">Wrap model logic inside asynchronous FastAPI REST/gRPC endpoints. Stream responses with Server-Sent Events (SSE). Monitor TTFT, token cost, latency percentiles, and drift in production.</div>
+    </div>
+    <div class="dc-card">
+      <span class="dc-icon">🔧</span>
+      <div class="dc-tit">5. Fine-Tuning &amp; Model Adaptation</div>
+      <div class="dc-desc">Fine-tune open-weight models (Llama-3, Gemma-2) on domain-specific datasets using LoRA/QLoRA. Align outputs with Direct Preference Optimization (DPO) and structured schema enforcement.</div>
+    </div>
+    <div class="dc-card">
+      <span class="dc-icon">📊</span>
+      <div class="dc-tit">6. Data Curation &amp; Synthetic Datasets</div>
+      <div class="dc-desc">Clean, filter, and structure training data. Generate high-quality synthetic datasets using frontier models (GPT-4o/Claude 3.5 Sonnet) as teacher judges for evaluation and distillation.</div>
+    </div>
+    <div class="dc-card">
+      <span class="dc-icon">🛡️</span>
+      <div class="dc-tit">7. Safety, Guardrails &amp; Token Cost Control</div>
+      <div class="dc-desc">Implement input/output guardrails (NeMo Guardrails, Llama Guard) to prevent prompt injection and PII leakage. Cache common queries (GPTCache/Redis) to slash token expenses by 40–60%.</div>
+    </div>
+    <div class="dc-card">
+      <span class="dc-icon">🤝</span>
+      <div class="dc-tit">8. Cross-Functional Translation</div>
+      <div class="dc-desc">Collaborate with product managers and backend engineers to translate messy business requirements into reliable AI features with predictable latency, cost, and accuracy bounds.</div>
+    </div>
+  </div>
+
+  <!-- 4-PHASE ROADMAP -->
+  <h2>🗺️ The 4 Minimalist Learning Phases <span class="hs">100% Free Resources</span></h2>
+  <p style="color:var(--text2);font-size:13.5px;margin-bottom:1.5rem;">Follow these 4 progressive phases in order. Each phase maps directly to real-world deliverables.</p>
+
+  <!-- PHASE 1 -->
+  <div class="pc2" style="--_a:var(--green);margin-bottom:1.5rem;">
+    <div class="ptit">Phase 1: Python &amp; ML Foundations <span class="pill pg">Months 1–3 · ~120 Hours</span></div>
+    <div class="pmeta">
+      <span class="chip">Python Syntax</span><span class="chip">NumPy</span><span class="chip">Pandas</span>
+      <span class="chip">Data Structures</span><span class="chip">Linear Algebra basics</span>
+      <span class="chip">Probability</span><span class="chip">Scikit-learn</span><span class="chip">Git / GitHub</span>
+    </div>
+    <div class="pb2">
+      Before touching LLMs, you need Python fluency and core ML intuition. Everything else builds on this bedrock.
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Verified 100% Free Resources:</h4>
+      <ul class="steps">
+        <li><strong>Python Micro-Course:</strong> <a href="https://www.kaggle.com/learn/python" target="_blank">Kaggle Learn: Python for Everyone</a> — Hands-on syntax, lists, dictionaries, functions; browser-based with zero local setup.</li>
+        <li><strong>Machine Learning Basics:</strong> <a href="https://www.kaggle.com/learn/intro-to-machine-learning" target="_blank">Kaggle Learn: Intro to Machine Learning</a> — Decision trees, random forests, model validation, underfitting vs overfitting.</li>
+        <li><strong>Practical Deep Learning:</strong> <a href="https://course.fast.ai/" target="_blank">fast.ai: Practical Deep Learning for Coders</a> — Top-down, highly practical curriculum by Jeremy Howard; run free notebooks on Google Colab.</li>
+        <li><strong>Stanford Lecture Series:</strong> <a href="https://cs229.stanford.edu/" target="_blank">Stanford CS229: Machine Learning (Andrew Ng)</a> — Free lecture notes and YouTube playlist for mathematical and statistical intuition.</li>
+        <li><strong>Visual Neural Network Intuition:</strong> <a href="https://www.youtube.com/watch?v=aircAruvnKk&amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi" target="_blank">3Blue1Brown: Neural Networks Playlist</a> — 4 geometric, intuitive videos explaining gradient descent and backpropagation.</li>
+      </ul>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-top:10px;font-size:12.5px;">
+        <strong>Phase 1 Deliverable:</strong> Clean Python repository containing a Scikit-Learn classifier with training/test splits, cross-validation, and confusion matrix evaluation pushed to GitHub.
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="pc2" style="--_a:var(--teal);margin-bottom:1.5rem;">
+    <div class="ptit">Phase 2: LLMs, Prompting &amp; Production RAG <span class="pill pt">Months 4–6 · ~140 Hours</span></div>
+    <div class="pmeta">
+      <span class="chip">Transformers</span><span class="chip">Tokenization</span><span class="chip">Prompt Engineering</span>
+      <span class="chip">Few-Shot / CoT</span><span class="chip">Vector DBs (Qdrant/Chroma)</span><span class="chip">Embeddings</span>
+      <span class="chip">RAG Architecture</span><span class="chip">LangChain / LlamaIndex</span><span class="chip">Google Gemini Free API</span>
+    </div>
+    <div class="pb2">
+      The core of modern AI engineering. Learn how LLMs work, how to steer their generation with precision, and how to ground them in domain-specific documents.
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Verified 100% Free Resources:</h4>
+      <ul class="steps">
+        <li><strong>Short Course Collection:</strong> <a href="https://www.deeplearning.ai/short-courses/" target="_blank">DeepLearning.AI Short Courses (Andrew Ng)</a> — 1-hour courses on ChatGPT Prompt Engineering, LangChain for LLM App Development, and Building Systems with ChatGPT.</li>
+        <li><strong>Definitive Prompt Guide:</strong> <a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank">DAIR.AI: Prompt Engineering Guide</a> — Comprehensive guide covering Chain-of-Thought, ReAct, Directional Stimulus, and jailbreak defense.</li>
+        <li><strong>Conceptual Breakthrough:</strong> <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g" target="_blank">Andrej Karpathy: Intro to Large Language Models</a> — 1-hour masterclass explaining pretraining, fine-tuning, RLHF, and system architecture.</li>
+        <li><strong>The Complete Course:</strong> <a href="https://github.com/mlabonne/llm-course" target="_blank">Maxime Labonne: The LLM Course</a> — GitHub repository with step-by-step notebooks from basic prompting to vector stores and open-source models.</li>
+        <li><strong>Official LLM Free Tier:</strong> <a href="https://ai.google.dev/gemini-api/docs" target="_blank">Google Gemini API Docs &amp; Free Tier</a> — Generous free quota with access to Gemini 1.5 Flash / Pro, structured JSON outputs, and multimodal vision.</li>
+        <li><strong>Framework Documentation:</strong> <a href="https://python.langchain.com/docs/get_started/introduction" target="_blank">LangChain Official Tutorials</a> — Master document loaders, text splitters, vector stores, and LCEL chains.</li>
+      </ul>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-top:10px;font-size:12.5px;">
+        <strong>Phase 2 Deliverable:</strong> End-to-end RAG system indexing 50+ technical PDFs in ChromaDB/Qdrant, returning cited answers with precision scores, deployed as an interactive Streamlit UI.
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="pc2" style="--_a:var(--accent2);margin-bottom:1.5rem;">
+    <div class="ptit">Phase 3: AI Agents, Evals &amp; Production Serving <span class="pill pp">Months 7–9 · ~150 Hours</span> <span class="pill pg">🎯 Stage 1 Exit Gate</span></div>
+    <div class="pmeta">
+      <span class="chip">ReAct Agents</span><span class="chip">Tool Calling</span><span class="chip">LangGraph</span>
+      <span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">DeepEval</span>
+      <span class="chip">Promptfoo</span><span class="chip">LangSmith</span><span class="chip">Streaming (SSE)</span>
+    </div>
+    <div class="pb2">
+      This is the milestone where you become employable as an AI engineer. Build agents that take actions autonomously, and wrap them in robust APIs with CI evaluation harnesses.
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Verified 100% Free Resources:</h4>
+      <ul class="steps">
+        <li><strong>LangGraph Agent Mastery:</strong> <a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">DeepLearning.AI: AI Agents in LangGraph</a> — Build stateful multi-agent architectures with memory, persistence, and conditional branching.</li>
+        <li><strong>Free Certification Course:</strong> <a href="https://huggingface.co/learn/agents-course/en/unit0/introduction" target="_blank">HuggingFace: Agents Course 2025</a> — Official certified course covering tool calling, multi-agent systems, and open-source models.</li>
+        <li><strong>Multi-Agent Framework:</strong> <a href="https://github.com/microsoft/autogen" target="_blank">Microsoft AutoGen Framework</a> — Open-source multi-agent conversation framework for complex problem solving.</li>
+        <li><strong>Backend REST API:</strong> <a href="https://fastapi.tiangolo.com/tutorial/" target="_blank">FastAPI Official Tutorial</a> — Build high-throughput async REST endpoints, request validation with Pydantic, and streaming responses.</li>
+        <li><strong>Production Observability:</strong> <a href="https://docs.smith.langchain.com/" target="_blank">LangSmith Documentation &amp; Free Tier</a> — Trace token latency, debug broken agent loops, and track real-time LLM cost in production.</li>
+      </ul>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-top:10px;font-size:12.5px;">
+        <strong>Phase 3 Exit Gate Deliverable:</strong> Dockerized FastAPI microservice featuring a multi-step agent with web search &amp; calculator tools, protected by a DeepEval test suite that runs in GitHub Actions CI and halts pull requests on hallucination regressions.
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 4 -->
+  <div class="pc2" style="--_a:var(--coral);margin-bottom:2.25rem;">
+    <div class="ptit">Phase 4: Fine-Tuning, Serving &amp; MLOps Specialization <span class="pill pc">Months 10–13 · ~160 Hours</span></div>
+    <div class="pmeta">
+      <span class="chip">LoRA / QLoRA</span><span class="chip">HuggingFace PEFT</span><span class="chip">DPO Alignment</span>
+      <span class="chip">Quantization (GGUF/AWQ/FP8)</span><span class="chip">vLLM / Ollama</span>
+      <span class="chip">Weights &amp; Biases</span><span class="chip">MLOps</span><span class="chip">System Design for AI</span>
+    </div>
+    <div class="pb2">
+      Level up into senior territory. Learn how to adapt foundation models to narrow domains on budget hardware, serve them with maximum throughput, and optimize inference.
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Verified 100% Free Resources:</h4>
+      <ul class="steps">
+        <li><strong>Transformers Deep Dive:</strong> <a href="https://huggingface.co/learn/nlp-course/chapter1/1" target="_blank">HuggingFace NLP Course</a> — Fine-tuning, tokenizers, datasets library, and model hub deployment from scratch.</li>
+        <li><strong>Fine-Tuning &amp; Quantization:</strong> <a href="https://github.com/mlabonne/llm-course#4-quantization" target="_blank">Maxime Labonne: LoRA, QLoRA &amp; Quantization</a> — Hands-on Google Colab notebooks showing how to fine-tune Llama/Mistral on free T4 GPUs.</li>
+        <li><strong>Under the Hood:</strong> <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY" target="_blank">Andrej Karpathy: Let's Build GPT from Scratch</a> — 2-hour code-along implementing the multi-head self-attention mechanism in pure PyTorch.</li>
+        <li><strong>MLOps Lifecycle:</strong> <a href="https://www.deeplearning.ai/short-courses/mlops-deployment-and-lifecycle/" target="_blank">DeepLearning.AI: MLOps Deployment &amp; Lifecycle</a> — Model registries, blue/green deployments, data drift, and continuous retraining.</li>
+        <li><strong>Portfolio Competitions:</strong> <a href="https://ai.google.dev/competition" target="_blank">Google AI Competitions &amp; Kaggle Community</a> — Compete in real-world NLP and GenAI challenges to earn public recognition.</li>
+      </ul>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-top:10px;font-size:12.5px;">
+        <strong>Phase 4 Deliverable:</strong> Fine-tuned 3B model (e.g. Llama-3.2-3B or SmolLM2) adapted on e-commerce catalog taxonomy using LoRA on your local laptop GPU (RTX 2050 4GB) or free Colab, served with vLLM/Ollama.
+      </div>
+    </div>
+  </div>
+
+  <!-- CAREER TRANSITION TIPS -->
+  <h2>🎯 Catalog QA Career Switcher Blueprint <span class="hs">Tactical Secrets</span></h2>
+  <div class="g2" style="margin-bottom:2.25rem;">
+    <div class="block bg">
+      <div class="bt">🧪 1. Lead with Evals in Interviews</div>
+      <div class="bb">Every AI startup has prompt demos, but almost none have reliable evaluation pipelines. Frame your QA background as an asset: you know how to write test suites, catch boundary regressions, and build automated eval matrices (DeepEval/Ragas). Hiring managers love this.</div>
+    </div>
+    <div class="block ba">
+      <div class="bt">🏗️ 2. Build 3 Specific Portfolio Projects</div>
+      <div class="bb">Don't collect course certificates. Build 3 clean GitHub repositories: 1) Production RAG with hybrid search; 2) Multi-actor Agent with LangGraph and tool calling; 3) Fine-tuned model with published benchmark evals. Add Loom video walk-throughs in the README.</div>
+    </div>
+    <div class="block bam">
+      <div class="bt">📝 3. Target "AI Engineer" not "ML Researcher"</div>
+      <div class="bb">ML Researchers need PhDs and advanced calculus to invent architectures. AI Engineers write Python, call APIs, build RAG pipelines, optimize prompts, and build applications. Target "AI Engineer", "GenAI Developer", or "AI Evaluation Engineer".</div>
+    </div>
+    <div class="block bt2">
+      <div class="bt">🔄 4. Start Applying at Phase 3 (Stage 1 Exit)</div>
+      <div class="bb">Do not wait until you know everything. Once you complete Phase 3 (RAG + Agents + FastAPI + Evals) with 2 working GitHub projects, you are qualified for entry/mid AI Engineer roles (₹18L–35L / $100k–140k). Start interviewing immediately.</div>
+    </div>
+    <div class="block bc">
+      <div class="bt">📊 5. Reframe Catalog QA as Data Curation</div>
+      <div class="bb">Catalog quality engineers understand taxonomy trees, structured JSON metadata, entity resolution, and edge cases. That is <em>exactly</em> what training data curation and synthetic dataset generation require. Update your resume bullets to emphasize data curation.</div>
+    </div>
+    <div class="block br">
+      <div class="bt">🤝 6. Open Source &amp; Community Visibility</div>
+      <div class="bb">Join HuggingFace and LangChain Discord servers. Post a concise 2-minute breakdown on LinkedIn when you complete a project. Referrals through developer communities bypass ATS resume filters 10x faster than cold applications.</div>
+    </div>
+  </div>
+
+  <!-- WEEKLY STUDY SCHEDULE -->
+  <h2>📅 Weekly Study Schedule <span class="hs">18–20 hrs / week</span></h2>
+  <div class="calc-panel" style="margin-bottom:2.5rem;">
+    <div class="g2" style="gap:1.5rem;margin-bottom:1rem;">
+      <div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:10px;">Weekdays (Mon–Fri) &bull; 2.5 hrs / day</div>
+        <ul class="steps">
+          <li><strong>1.0 hr:</strong> Video lecture or conceptual reading (fast.ai / DeepLearning.AI / Karpathy).</li>
+          <li><strong>1.0 hr:</strong> Hands-on coding — replicate the notebook, write unit tests, debug locally.</li>
+          <li><strong>30 min:</strong> Review HuggingFace Daily Papers, Twitter/X AI announcements, or GitHub trending repos.</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);margin-bottom:10px;">Weekend (Sat–Sun) &bull; Deep Work</div>
+        <ul class="steps">
+          <li><strong>3–4 hrs (Saturday):</strong> Focused project building — writing core logic, Dockerizing, pushing commits.</li>
+          <li><strong>2.0 hrs (Sunday):</strong> Code review, writing markdown documentation, recording demo GIF.</li>
+          <li><strong>1.0 hr (Sunday):</strong> Weekly retrospective and planning the next week's milestones.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert as" style="margin-bottom:0;">
+      💡 <strong>The Golden Rule: Consistency Beats Intensity.</strong> Putting in 2.5 hours every single weekday morning or evening beats 10-hour weekend marathons that lead to burnout. At 18–20 hours/week, you will complete the first 3 phases in 6–8 months and be interview-ready.
+    </div>
+  </div>
 </div>
 
 <!-- PHASE 1 -->
@@ -402,112 +702,155 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <li>Code agent: problem → write code → run → debug on failure → return result.</li>
   </ul>
 
-  <h2>4 · LLM Evaluation <span class="hs">Weeks 10–14</span></h2>
-  <div class="chips"><span class="chip">RAGAS</span><span class="chip">LLM-as-a-judge</span><span class="chip">MMLU/HellaSwag/GSM8K</span><span class="chip">Evaluation harnesses</span><span class="chip">Hallucination detection</span></div>
+  <h2>4 · LLM Evaluation, Benchmarking & Data Quality <span class="hs">Weeks 10–14</span></h2>
+  <div class="alert as" style="margin-bottom:1rem">
+    <strong>⭐ The Catalog QA Superpower:</strong> While general developers struggle with model hallucination and subjective outputs, a QA engineer knows test cases, edge boundaries, regression testing, and data integrity. <strong>AI Evaluation Engineering</strong> is one of the highest-demand niches in AI right now.
+  </div>
+  <h3>What to learn</h3>
+  <div class="chips"><span class="chip">RAGAS</span><span class="chip">DeepEval</span><span class="chip">Promptfoo</span><span class="chip">TruLens</span><span class="chip">G-Eval</span><span class="chip">LLM-as-a-judge</span><span class="chip">Synthetic test generation</span><span class="chip">Faithfulness & answer relevancy</span><span class="chip">CI/CD eval gates (GitHub Actions)</span><span class="chip">Catalog & dataset cleaning</span></div>
+  <h3>Resources</h3>
   <ul class="steps">
-    <li><a href="https://docs.ragas.io/en/latest/" target="_blank">RAGAS Docs</a> — For RAG evaluation. Use on every RAG project.</li>
-    <li><a href="https://github.com/EleutherAI/lm-evaluation-harness" target="_blank">LM Evaluation Harness (EleutherAI)</a> — Standard benchmark runner.</li>
+    <li><a href="https://docs.ragas.io/en/latest/" target="_blank">RAGAS Documentation</a> — The gold standard for RAG evaluation (faithfulness, answer relevance, context recall).</li>
+    <li><a href="https://docs.confident-ai.com/" target="_blank">DeepEval (Confident AI)</a> — Unit testing framework for LLMs. Write test cases like PyTest for AI.</li>
+    <li><a href="https://www.promptfoo.dev/" target="_blank">Promptfoo</a> — CLI & library for automated prompt testing, red-teaming, and regression prevention.</li>
+    <li><a href="https://github.com/EleutherAI/lm-evaluation-harness" target="_blank">LM Evaluation Harness (EleutherAI)</a> — Open-source foundation model benchmark suite (MMLU, GSM8K, ARC).</li>
   </ul>
-  <div class="alert as"><strong>Phase 3 check:</strong> Can you build a production RAG? Fine-tune an LLM? Evaluate it properly? Build an agent? Yes → go to Phase 4.</div>
+  <h3>Build these (Portfolio Essentials)</h3>
+  <ul class="steps">
+    <li>Automated RAG evaluation pipeline: generate 100 synthetic QA pairs from domain docs, compute RAGAS metrics, and block CI/CD pipeline if faithfulness drops below 0.85.</li>
+    <li>Red-teaming & prompt injection test suite: write 50 edge-case test cases using Promptfoo to assert structured JSON output and guardrails adherence.</li>
+    <li>Domain Fine-Tuning dataset curation tool: clean, deduplicate, and format raw unstructured catalog data into high-quality instruction-tuning JSONL pairs with automated validation.</li>
+  </ul>
+
+  <!-- STAGE 1 EXIT GATE -->
+  <div class="block bg" style="margin-top:2rem;border-width:2px;background:linear-gradient(135deg,#0a1a14,#101a18);">
+    <div class="bt" style="font-size:16px;color:var(--green)">🎯 STAGE 1 EXIT GATE: Job-Ready as AI Engineer / AI Eval Engineer</div>
+    <div class="bb" style="color:var(--text);">
+      <p style="margin-bottom:0.75rem">You do <strong>NOT</strong> have to wait 24 months to land an AI role! At the completion of Phase 3, you possess the exact stack needed for modern AI application engineering:</p>
+      <ul class="steps" style="margin-bottom:0.75rem;">
+        <li>✅ Production RAG service (FastAPI + Qdrant/Pinecone + Docker)</li>
+        <li>✅ Autonomous Agent with tool calling (LangGraph + memory)</li>
+        <li>✅ Automated LLM evaluation harness with DeepEval & CI/CD integration</li>
+        <li>✅ Fine-tuned 7B model using QLoRA/TRL with documented eval metrics</li>
+      </ul>
+      <p style="font-size:13px;color:var(--text2);margin-bottom:0.5rem;">
+        💼 <strong>Target Roles:</strong> AI Engineer, AI Evaluation Engineer, LLM Application Engineer, Prompt & QA Systems Engineer.<br>
+        💰 <strong>Compensation:</strong> ₹18L–₹35L (India) / $100K–$140K (US).<br>
+        🚀 <strong>The Game Plan:</strong> Apply to jobs now. Once inside an AI team with production traffic, proceed to Phase 4 using company-paid GPU clusters to transition into Core AI Infrastructure!
+      </p>
+    </div>
+  </div>
+  <div class="alert as" style="margin-top:1rem"><strong>Phase 3 check:</strong> Can you build production RAG, fine-tune with QLoRA, automate evals in CI, and deploy an agent? Yes → You are employable! Start applying while studying Phase 4.</div>
 </div>
 
 <!-- PHASE 4 -->
 <div id="page-p4" class="page">
-  <div class="hero"><div class="tag">Phase 4 · Months 17–24</div><h1>AI Infrastructure<br>& Systems</h1><p>GPU clusters. Distributed training. Inference at scale. The top 5% territory.</p></div>
+  <div class="hero"><div class="tag">Phase 4 · Months 17–24</div><h1>AI Infrastructure<br>& Systems</h1><p>GPU clusters. OpenAI Triton & CUDA. Distributed training (NCCL). Inference serving at scale. The top 5% territory.</p></div>
   <div class="alert ad"><strong>Prerequisites:</strong> Complete OS fundamentals (OSTEP: memory + concurrency) and basic C++ reading BEFORE starting. GPU architecture won't make sense without understanding virtual memory, paging, and cache hierarchies.</div>
 
-  <h3>4 Gold-Standard Curricula — Anchor everything here</h3>
-  <div class="g2">
-    <div class="block bc"><div class="bt"><a href="https://www.youtube.com/playlist?list=PLoROMvodv4rPOWA-omMM6STXaWW4FvJT8" target="_blank" style="color:inherit;text-decoration:none">Stanford CS149 — Parallel Computing ↗</a><span class="wk">Weeks 1–4</span></div><div class="bb">Multi-core execution, SIMD, memory bandwidth, roofline model, GPU warp scheduling. THE hardware bible.</div></div>
-    <div class="block bc"><div class="bt"><a href="https://github.com/cuda-mode" target="_blank" style="color:inherit;text-decoration:none">CUDA Mode Community ↗</a><span class="wk">Weeks 1–7</span></div><div class="bb">30+ lectures by PyTorch/Meta/NVIDIA engineers. Custom CUDA kernels, Triton, FlashAttention from scratch.</div></div>
-    <div class="block ba"><div class="bt"><a href="https://efficientml.ai/" target="_blank" style="color:inherit;text-decoration:none">MIT 6.5940 — Efficient ML Systems ↗</a><span class="wk">Inference focus</span></div><div class="bb">Quantization (AWQ, SmoothQuant), FlashAttention-2, speculative decoding, continuous batching. Prof. Song Han.</div></div>
-    <div class="block bt2"><div class="bt"><a href="https://fullstackdeeplearning.com/llm-bootcamp/" target="_blank" style="color:inherit;text-decoration:none">Full Stack LLM Bootcamp (FSDL) ↗</a><span class="wk">Production</span></div><div class="bb">GPU cluster planning, cost/latency tradeoffs, evaluation harnesses, RAG infra, serving stacks.</div></div>
+  <!-- HARDWARE LAB ON A BUDGET -->
+  <div class="alert ai" style="margin-bottom:1.5rem;background:#131526;border-color:var(--accent2);">
+    <strong style="color:var(--accent2);font-size:14px;">💻 Hardware Lab Setup on a Budget (&lt;$20/Month)</strong><br>
+    <span style="font-size:13px;color:var(--text2);line-height:1.6;">
+      You do <strong>NOT</strong> need to buy an $8,000 GPU or spend thousands on cloud compute to learn AI Infra:
+      <br>• <strong>Free Tier:</strong> Google Colab (Free T4) for testing basic Triton syntax and PyTorch DDP on CPU with <code>torchrun --nproc_per_node=2 --backend=gloo</code>.
+      <br>• <strong>Free GPU Credits:</strong> <a href="https://modal.com" target="_blank" style="color:var(--accent2);font-weight:700;">Modal Labs</a> ($30/month free credit) — runs serverless H100, A100, and L4 GPUs in seconds.
+      <br>• <strong>Low-Cost Bare Metal:</strong> <a href="https://runpod.io" target="_blank" style="color:var(--accent2);font-weight:700;">RunPod</a> or <a href="https://lambdalabs.com" target="_blank" style="color:var(--accent2);font-weight:700;">Lambda Labs</a> spot instances ($0.20–$0.40/hr for RTX 4090 or A4000) with root SSH access to run NVIDIA Nsight Compute & Nsight Systems profilers. 20 hours of monthly profiling = under $8!
+    </span>
   </div>
 
-  <h2>1 · GPU Architecture & CUDA <span class="hs">Weeks 1–4</span></h2>
+  <h3>5 Gold-Standard Curricula — Anchor everything here</h3>
+  <div class="g2">
+    <div class="block bc"><div class="bt"><a href="https://www.youtube.com/playlist?list=PLoROMvodv4rPOWA-omMM6STXaWW4FvJT8" target="_blank" style="color:inherit;text-decoration:none">Stanford CS149 — Parallel Computing ↗</a><span class="wk">Weeks 1–4</span></div><div class="bb">Multi-core execution, SIMD, memory bandwidth, roofline model, GPU warp scheduling. THE hardware bible.</div></div>
+    <div class="block bc"><div class="bt"><a href="https://github.com/cuda-mode" target="_blank" style="color:inherit;text-decoration:none">CUDA Mode Community ↗</a><span class="wk">Weeks 1–8</span></div><div class="bb">30+ lectures by PyTorch/Meta/NVIDIA engineers. Custom CUDA kernels, Triton, FlashAttention from scratch.</div></div>
+    <div class="block ba"><div class="bt"><a href="https://triton-lang.org/main/getting-started/tutorials/index.html" target="_blank" style="color:inherit;text-decoration:none">OpenAI Triton Official Tutorials ↗</a><span class="wk">Weeks 3–6</span></div><div class="bb">The industry standard in 2026. Write high-performance GPU kernels directly in Python with block-level tiling.</div></div>
+    <div class="block bt2"><div class="bt"><a href="https://efficientml.ai/" target="_blank" style="color:inherit;text-decoration:none">MIT 6.5940 — Efficient ML Systems ↗</a><span class="wk">Inference focus</span></div><div class="bb">Quantization (AWQ, SmoothQuant, FP8), FlashAttention-2, speculative decoding, continuous batching. Prof. Song Han.</div></div>
+  </div>
+
+  <h2>1 · GPU Architecture, CUDA & OpenAI Triton <span class="hs">Weeks 1–5</span></h2>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">GPU architecture (SMs, warps)</span><span class="chip">Memory hierarchy (HBM, L2, SRAM)</span><span class="chip">Memory bandwidth vs compute</span><span class="chip">CUDA basics</span><span class="chip">Nsight profiling</span><span class="chip">Memory-bound vs compute-bound</span><span class="chip">Tensor cores</span><span class="chip">Multi-GPU (NVLink, PCIe)</span></div>
+  <div class="chips"><span class="chip">Streaming Multiprocessors (SMs)</span><span class="chip">Warps & divergence</span><span class="chip">Memory hierarchy (HBM3 vs L2 vs SRAM)</span><span class="chip">Memory coalescing</span><span class="chip">Shared memory bank conflicts</span><span class="chip">OpenAI Triton (@triton.jit)</span><span class="chip">Triton block pointers</span><span class="chip">Autotuning kernels</span><span class="chip">PyTorch 2.x torch.compile</span><span class="chip">NVIDIA Nsight Compute</span><span class="chip">Roofline analysis</span></div>
   <h3>Resources</h3>
   <ul class="steps">
-    <li><a href="https://developer.nvidia.com/blog/even-easier-introduction-cuda/" target="_blank">NVIDIA Blog — Easy Intro to CUDA</a> — Start here if CUDA is new.</li>
-    <li><a href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/" target="_blank">NVIDIA CUDA Programming Guide</a> — The bible. Read memory hierarchy + execution model chapters.</li>
-    <li><a href="https://github.com/karpathy/llm.c" target="_blank">llm.c — Andrej Karpathy</a> — LLM training in pure C/CUDA. Essential code study.</li>
-    <li><a href="https://horace.io/brrr_intro.html" target="_blank">Making Deep Learning Go Brrrr</a> — Excellent GPU perf intro.</li>
-    <li><a href="https://arxiv.org/abs/2205.14135" target="_blank">Flash Attention Paper</a> — MUST READ. Understand IO-aware attention.</li>
+    <li><a href="https://triton-lang.org/main/getting-started/tutorials/index.html" target="_blank">OpenAI Triton Tutorials</a> — Start with vector addition, then fused softmax, fused layernorm, and matrix multiplication.</li>
+    <li><a href="https://developer.nvidia.com/blog/even-easier-introduction-cuda/" target="_blank">NVIDIA Blog — Easy Intro to CUDA</a> — Start here to understand thread indexing (gridDim, blockDim, blockIdx, threadIdx).</li>
+    <li><a href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/" target="_blank">NVIDIA CUDA Programming Guide</a> — Read memory hierarchy, coalescing, and execution model chapters.</li>
+    <li><a href="https://github.com/karpathy/llm.c" target="_blank">llm.c — Andrej Karpathy</a> — LLM training in pure C/CUDA. Essential code study for kernel dispatch.</li>
+    <li><a href="https://arxiv.org/abs/2205.14135" target="_blank">Flash Attention Paper</a> — MUST READ. Understand IO-awareness: SRAM tiling avoids round-trips to HBM.</li>
   </ul>
   <h3>Build these</h3>
   <ul class="steps">
-    <li>Profile a PyTorch model with torch.profiler + NVIDIA Nsight. Identify bottlenecks. Write a report.</li>
-    <li>Implement matrix multiplication in CUDA: naive → tiled → tensor core. Benchmark each.</li>
-    <li>GPU memory optimization: take a model that OOMs, make it fit. Document all techniques.</li>
+    <li>Implement Fused Softmax in <strong>OpenAI Triton</strong>: compare memory traffic and speedup against standard PyTorch.</li>
+    <li>Implement matrix multiplication in CUDA C++ (naive global memory → tiled shared memory → analyze bank conflicts).</li>
+    <li>Profile both with <strong>NVIDIA Nsight Compute</strong>: generate Roofline model showing memory bandwidth ceiling vs compute ceiling.</li>
+    <li>GPU memory optimization: take a transformer that OOMs, integrate gradient checkpointing + mixed precision (AMP) + memory defragmentation.</li>
   </ul>
 
-  <h2>2 · Distributed Training <span class="hs">Weeks 4–7</span></h2>
+  <h2>2 · Distributed Training & Collective Communication <span class="hs">Weeks 5–8</span></h2>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">PyTorch DDP</span><span class="chip">FSDP</span><span class="chip">DeepSpeed ZeRO</span><span class="chip">Data parallelism</span><span class="chip">Model parallelism</span><span class="chip">Tensor parallelism</span><span class="chip">Pipeline parallelism</span><span class="chip">Gradient accumulation</span><span class="chip">Mixed precision (AMP)</span><span class="chip">NCCL</span></div>
+  <div class="chips"><span class="chip">PyTorch DDP</span><span class="chip">FSDP (Fully Sharded Data Parallel)</span><span class="chip">DeepSpeed ZeRO 1/2/3</span><span class="chip">NCCL collectives (All-Reduce, Reduce-Scatter, All-Gather)</span><span class="chip">Ring All-Reduce algorithm</span><span class="chip">Tensor Parallelism (Megatron-LM)</span><span class="chip">Pipeline Parallelism (1F1B schedule)</span><span class="chip">3D Parallelism</span><span class="chip">NVLink vs PCIe vs InfiniBand/RoCE</span><span class="chip">Mixed precision (FP16 / BF16 / FP8)</span></div>
   <h3>Resources</h3>
   <ul class="steps">
-    <li><a href="https://pytorch.org/tutorials/intermediate/ddp_tutorial.html" target="_blank">PyTorch DDP Tutorial</a> — Start here.</li>
-    <li><a href="https://www.deepspeed.ai/getting-started/" target="_blank">DeepSpeed Getting Started</a> — ZeRO stages are critical to understand.</li>
-    <li><a href="https://lilianweng.github.io/posts/2021-09-25-train-large/" target="_blank">Lilian Weng — How to Train Really Large Models</a> — Best parallelism strategy overview.</li>
-    <li><a href="https://arxiv.org/abs/1910.02054" target="_blank">ZeRO Paper</a> — Understand memory optimization for distributed training.</li>
+    <li><a href="https://pytorch.org/tutorials/intermediate/ddp_tutorial.html" target="_blank">PyTorch DDP Tutorial</a> — Master the distributed process group and gradient bucketing.</li>
+    <li><a href="https://www.deepspeed.ai/getting-started/" target="_blank">DeepSpeed Documentation</a> — ZeRO-1 (optimizer), ZeRO-2 (gradients), ZeRO-3 (parameter sharding).</li>
+    <li><a href="https://lilianweng.github.io/posts/2021-09-25-train-large/" target="_blank">Lilian Weng — How to Train Really Large Models</a> — The definitive visual guide to 3D parallelism.</li>
+    <li><a href="https://developer.nvidia.com/nccl" target="_blank">NVIDIA NCCL Overview</a> — Understand Ring and Tree all-reduce over high-speed interconnects.</li>
   </ul>
   <h3>Build these</h3>
   <ul class="steps">
-    <li>Train a model with PyTorch DDP across 2–4 GPUs. Measure scaling efficiency.</li>
-    <li>Fine-tune a 7B model with FSDP + mixed precision. Document memory usage at each stage.</li>
-    <li>Compare DeepSpeed ZeRO Stage 1 vs 2 vs 3: memory savings vs communication overhead.</li>
+    <li>Distributed training benchmark: train a model using PyTorch DDP across multiple GPUs (or multi-process CPU) and plot linear scaling efficiency.</li>
+    <li>Fine-tune a 7B/8B model with PyTorch FSDP + BF16: measure VRAM per GPU and communication overhead across sharding strategies.</li>
+    <li>DeepSpeed ZeRO empirical comparison: profile memory consumption vs step time across ZeRO-1, ZeRO-2, and ZeRO-3.</li>
   </ul>
 
-  <h2>3 · Production Inference at Scale <span class="hs">Weeks 7–11</span></h2>
+  <h2>3 · Production Inference & High-Throughput Serving <span class="hs">Weeks 8–12</span></h2>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">TensorRT-LLM</span><span class="chip">Triton Inference Server</span><span class="chip">ONNX Runtime</span><span class="chip">Speculative decoding</span><span class="chip">Flash Attention 2</span><span class="chip">Continuous batching</span><span class="chip">PagedAttention (vLLM)</span><span class="chip">Quantization (INT8/FP8)</span><span class="chip">KV cache management</span></div>
+  <div class="chips"><span class="chip">vLLM (PagedAttention & V1 engine)</span><span class="chip">SGLang & RadixAttention</span><span class="chip">Continuous batching</span><span class="chip">Chunked prefill</span><span class="chip">KV cache quantization (FP8 / INT4)</span><span class="chip">Speculative decoding (EAGLE/Medusa)</span><span class="chip">TensorRT-LLM</span><span class="chip">Triton Inference Server</span><span class="chip">Time-to-First-Token (TTFT)</span><span class="chip">Inter-Token Latency (ITL)</span></div>
   <h3>Resources</h3>
   <ul class="steps">
-    <li><a href="https://docs.vllm.ai/" target="_blank">vLLM Documentation</a> — Read architecture guide. Understand PagedAttention.</li>
-    <li><a href="https://nvidia.github.io/TensorRT-LLM/" target="_blank">TensorRT-LLM Docs</a> — NVIDIA's production LLM inference.</li>
-    <li><a href="https://arxiv.org/abs/2302.01318" target="_blank">Speculative Decoding Paper</a> — 2–3x speedup. Understand this.</li>
-    <li><a href="https://www.anyscale.com/blog/continuous-batching-llm-inference" target="_blank">Anyscale — Continuous Batching Explained</a></li>
+    <li><a href="https://docs.vllm.ai/" target="_blank">vLLM Documentation</a> — Architecture guide: understand virtual memory paging for KV cache and continuous batching.</li>
+    <li><a href="https://github.com/sgl-project/sglang" target="_blank">SGLang (LMSYS)</a> — RadixAttention: automatic KV-cache prefix reuse across agent loops and multi-turn conversations.</li>
+    <li><a href="https://nvidia.github.io/TensorRT-LLM/" target="_blank">TensorRT-LLM Documentation</a> — NVIDIA's enterprise C++ inference engine for H100/H200/B200.</li>
+    <li><a href="https://www.anyscale.com/blog/continuous-batching-llm-inference" target="_blank">Anyscale — Continuous Batching Explained</a> — How iteration-level scheduling eliminates idle GPU bubbles.</li>
   </ul>
   <h3>Build these</h3>
   <ul class="steps">
-    <li>Self-hosted LLM serving: vLLM + load balancer + autoscaling. Benchmark at 100/500/1000 concurrent.</li>
-    <li>Optimization pipeline: PyTorch → ONNX → TensorRT. Measure latency at each stage.</li>
-    <li>Full inference benchmark: TTFT, tokens/sec, p50/p95/p99, GPU utilization. Open-source it.</li>
+    <li>High-throughput serving benchmark: deploy vLLM and SGLang side-by-side with continuous batching. Run load tests at 50, 200, and 1000 concurrent streams measuring TTFT, ITL, and throughput (tokens/sec).</li>
+    <li>KV-Cache compression pipeline: benchmark an 8B model with FP16 vs FP8 KV-cache. Measure context length capacity and throughput gains before OOM.</li>
+    <li>Speculative decoding benchmark: pair a 70B target model with an 8B draft model. Measure latency speedup across coding and conversational prompts.</li>
   </ul>
 
-  <h2>4 · Kubernetes + Cloud for AI <span class="hs">Weeks 11–16</span></h2>
+  <h2>4 · Kubernetes, Ray & GPU Cluster Infrastructure <span class="hs">Weeks 12–16</span></h2>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">Kubernetes</span><span class="chip">Helm charts</span><span class="chip">GPU scheduling (nvidia-device-plugin)</span><span class="chip">KEDA autoscaling</span><span class="chip">Terraform/Pulumi</span><span class="chip">AWS EKS/GKE</span><span class="chip">Spot instances</span><span class="chip">Prometheus + Grafana</span></div>
+  <div class="chips"><span class="chip">Kubernetes</span><span class="chip">KubeRay (Ray on K8s)</span><span class="chip">NVIDIA GPU Operator</span><span class="chip">DCGM Prometheus Exporter</span><span class="chip">Grafana GPU Dashboards</span><span class="chip">KEDA Autoscaling (on queue depth)</span><span class="chip">Terraform/Pulumi IaC</span><span class="chip">Spot instance fault tolerance</span><span class="chip">Storage (GPUDirect Storage & S3 caching)</span></div>
   <h3>Resources</h3>
   <ul class="steps">
-    <li><a href="https://www.youtube.com/watch?v=X48VuDVv0do" target="_blank">Kubernetes Tutorial — TechWorld with Nana</a> — Best K8s video. 4 hrs.</li>
-    <li><a href="https://docs.ray.io/en/latest/cluster/kubernetes/index.html" target="_blank">KubeRay — Ray on Kubernetes</a> — Industry standard for distributed AI on K8s.</li>
-    <li><a href="https://developer.hashicorp.com/terraform/tutorials" target="_blank">Terraform Tutorials</a> — Infrastructure as code for GPU clusters.</li>
+    <li><a href="https://docs.ray.io/en/latest/cluster/kubernetes/index.html" target="_blank">KubeRay Documentation</a> — Industry standard for orchestrating distributed PyTorch and vLLM clusters on K8s.</li>
+    <li><a href="https://github.com/NVIDIA/gpu-operator" target="_blank">NVIDIA GPU Operator</a> — Automates driver, container toolkit, and device plugin provisioning on Kubernetes.</li>
+    <li><a href="https://www.youtube.com/watch?v=X48VuDVv0do" target="_blank">Kubernetes Tutorial — TechWorld with Nana</a> — 4 hours comprehensive K8s foundation.</li>
   </ul>
   <h3>Build these</h3>
   <ul class="steps">
-    <li>Deploy vLLM on Kubernetes with GPU scheduling, KEDA autoscaling on queue depth, health checks.</li>
-    <li>Full observability: Prometheus + Grafana for GPU util, VRAM, latency, cost/request.</li>
-    <li>Terraform IaC for complete AI inference platform on AWS/GCP with spot instance handling.</li>
+    <li>Production vLLM Cluster on K8s: deploy with KubeRay, NVIDIA GPU Operator, and KEDA autoscaling based on pending request queue length.</li>
+    <li>Full-stack GPU observability: setup Prometheus + Grafana scraping DCGM metrics (GPU utilization, SM clock, VRAM, PCIe throughput, and power limits).</li>
+    <li>Infrastructure-as-Code: write Terraform configurations for auto-provisioning GPU nodes on cloud with spot instance preemption handlers.</li>
   </ul>
 
   <div class="block br" style="margin-top:2.5rem">
-    <div class="bt" style="font-size:16px">🏆 Phase 4 Capstone: Flash Attention CUDA Kernel + Production Serving Stack</div>
+    <div class="bt" style="font-size:16px">🏆 Phase 4 Capstone: Flash Attention (Triton + CUDA) + Production Serving Stack</div>
     <div class="bb">
-      <p style="margin-bottom:.75rem">The single project that signals "I am an AI infrastructure engineer, not a framework consumer."</p>
+      <p style="margin-bottom:.75rem">The master project that proves you are a true AI systems engineer who understands physical hardware:</p>
       <ul class="steps" style="margin:0">
-        <li>Naive CUDA matmul (global memory only) → establish baseline TFLOPS</li>
-        <li>Tiled shared-memory matmul → analyze bank conflicts</li>
-        <li>Flash Attention forward pass (tiled, IO-aware) — no N×N materialization</li>
-        <li>Profile with Nsight Compute: arithmetic intensity, memory bandwidth, SM occupancy</li>
-        <li>Roofline chart showing each kernel vs hardware ceiling (A100/H100/RTX 4090)</li>
-        <li>vLLM + custom kernel via PyTorch C++ extension + K8s deployment + Grafana dashboard</li>
-        <li>Blog post: "Implementing Flash Attention from scratch — what the paper doesn't tell you"</li>
+        <li>Implement Flash Attention forward pass in <strong>OpenAI Triton</strong> with autotuned block sizes (BLOCK_M, BLOCK_N).</li>
+        <li>Implement tiled Flash Attention in <strong>CUDA C++</strong> using shared memory without materializing the N×N attention matrix.</li>
+        <li>Profile both kernels using <strong>NVIDIA Nsight Compute</strong>: measure memory bandwidth efficiency and arithmetic intensity.</li>
+        <li>Plot empirical <strong>Roofline charts</strong> comparing naive Attention vs Triton FlashAttention vs CUDA FlashAttention against hardware ceiling.</li>
+        <li>Package the custom kernel into a PyTorch C++ extension, integrate into a continuous-batching vLLM serving pipeline on Kubernetes with Grafana metrics.</li>
+        <li>Publish technical post: <em>"Dissecting FlashAttention: Triton vs CUDA Kernel Implementation and Roofline Analysis"</em>.</li>
       </ul>
     </div>
   </div>
-  <div class="alert as" style="margin-top:1rem"><strong>Phase 4 check:</strong> Can you profile GPU workloads? Set up distributed training? Optimize inference 3x+? Deploy on K8s with autoscaling? Write a CUDA kernel and explain its roofline chart? Yes → AI Infra ready.</div>
+  <div class="alert as" style="margin-top:1rem"><strong>Phase 4 check:</strong> Can you profile GPU workloads with Nsight? Write Triton & CUDA kernels? Set up distributed FSDP/ZeRO? Deploy auto-scaling vLLM/SGLang on K8s? Yes → You are ready for Staff AI Infra & Systems roles.</div>
 </div>
 
 <!-- DSA MASTER SHEET (STRIVER A2Z + SILICON TRACK) -->
@@ -522,6 +865,7 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <p>Practice platform with live stopwatch, 42 patterns library, 30 SRS flashcards, dynamic revision vault, and 24 mock interview sessions.</p>
     <div class="dbs">
       <a href="./dsa/index.html" class="db dbp">🚀 Launch DSA Cockpit →</a>
+      <a href="./dsa/plan.html" class="db dbg">🗓️ 168-Day Plan &amp; Goldmine Tutorials</a>
       <a href="./dsa/patterns.html" class="db dbg">🧠 42 Patterns Library</a>
       <a href="./dsa/revision.html" class="db dbg">🔄 Revision Vault</a>
       <a href="./DSA_AI_Infra_Training.xlsx" download class="db dbg">📥 Master Excel Sheet</a>
@@ -1773,57 +2117,585 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
 </div>
 
 <!-- SYSTEM DESIGN -->
+<!-- SYSTEM DESIGN TRACK (2026) -->
 <div id="page-sd" class="page">
-  <div class="hero"><div class="tag">Parallel Track — Start Week 12</div><h1>System Design</h1><p>Classical distributed systems + AI-specific designs. Study Saturdays. Required for senior interviews.</p></div>
-
-  <h2>Resources — in order</h2>
-  <ul class="steps">
-    <li><strong>Book:</strong> <a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/" target="_blank">Designing Data-Intensive Applications — Martin Kleppmann</a> — The bible. Read cover to cover. Non-negotiable.</li>
-    <li><strong>Book:</strong> Grokking the System Design Interview — Pattern-based. Do all exercises.</li>
-    <li><a href="https://sre.google/sre-book/table-of-contents/" target="_blank">Google SRE Book (free online)</a> — SLOs, monitoring, alerting, incident management.</li>
-    <li><strong>Book:</strong> System Design Interview Vol 1 & 2 — Alex Xu — Direct interview prep.</li>
-  </ul>
-
-  <h2>Classical Systems to Master</h2>
-  <div class="block ba">
-    <div class="bt">Tier 1 — Must Know</div>
-    <ul class="steps" style="margin-top:.5rem">
-      <li>Design URL Shortener — Hashing, redirects, analytics, 100M URLs/day</li>
-      <li>Design Twitter/News Feed — Fan-out, timeline generation, Redis, sharding</li>
-      <li>Design Rate Limiter — Token bucket, sliding window, distributed state</li>
-      <li>Design Key-Value Store — LSM trees, consistent hashing, replication</li>
-      <li>Design Distributed Message Queue — Kafka internals, partitioning, consumer groups</li>
-      <li>Design Chat System — WebSockets, presence, message storage, ordering</li>
-    </ul>
+  <div class="hero">
+    <div class="tag">AI Infrastructure System Design — 2026 Edition</div>
+    <h1>System Design for AI Infrastructure</h1>
+    <p>From classical distributed systems fundamentals to multi-tenant 500 QPS LLM serving architectures, GPU memory mathematics, and whiteboard interview mastery.</p>
   </div>
 
-  <h2>AI-Specific System Designs <span class="hs">unique to AI Infra roles</span></h2>
-  <div class="block bc">
-    <div class="bt">Tier 1 — AI Infra Must Know</div>
-    <ul class="steps" style="margin-top:.5rem">
-      <li><strong>Design LLM Serving System</strong> — vLLM/TGI, continuous batching, autoscaling, load balancing, TTFT/TPOT SLOs</li>
-      <li><strong>Design Production RAG System</strong> — Vector DB, embedding pipeline, retrieval ranking, evaluation, latency budget</li>
-      <li><strong>Design ML Training Infrastructure</strong> — Distributed training, checkpointing, spot instance fault tolerance, data pipeline</li>
-      <li><strong>Design Model Registry & Deployment</strong> — Model versioning, canary deployments, A/B testing, rollback</li>
-      <li><strong>Design GPU Cluster Scheduler</strong> — Job scheduling, gang scheduling for distributed jobs, priority queues</li>
-    </ul>
+  <!-- IN-PAGE NAVIGATION -->
+  <div class="sd-nav">
+    <a href="#sd-calc" class="sd-tab">⚡ Live Sizing Lab</a>
+    <a href="#sd-whiteboard" class="sd-tab">🎯 4-Step Whiteboard</a>
+    <a href="#sd-curriculum" class="sd-tab">📖 13-Phase Curriculum</a>
+    <a href="#sd-matrix" class="sd-tab">🔗 Resource Matrix</a>
+    <a href="#sd-projects" class="sd-tab">🛠️ 7 Progressive Projects</a>
+    <a href="#sd-interview" class="sd-tab">💬 Interview Vault</a>
+    <a href="#sd-schedule" class="sd-tab">🗓️ First 14 Days</a>
   </div>
 
-  <h2>How to Answer a System Design Question</h2>
-  <ul class="steps">
-    <li><strong>Step 1 (5 min):</strong> Clarify requirements. Functional + non-functional. Ask QPS, storage, latency, availability targets.</li>
-    <li><strong>Step 2 (5 min):</strong> High-level design. Draw the boxes. Don't overdesign yet.</li>
-    <li><strong>Step 3 (15 min):</strong> Deep dive into 2–3 components. This is where you show depth.</li>
-    <li><strong>Step 4 (5 min):</strong> Bottlenecks and tradeoffs. What breaks at 10x scale? How do you fix it?</li>
-    <li>For AI Infra roles: always bring it back to GPU utilization, latency, throughput, and cost.</li>
-  </ul>
+  <!-- STANDALONE COCKPIT LAUNCHPAD BANNER -->
+  <div class="dla" style="background:linear-gradient(135deg,rgba(121,113,245,0.14),rgba(34,211,238,0.08));border-color:var(--accent2);margin-bottom:2.25rem;text-align:center;">
+    <h2 style="font-size:22px;border:none;margin:0 0 8px;justify-content:center;">📐 Interactive AI System Design Cockpit Suite</h2>
+    <p style="color:var(--text2);font-size:14px;max-width:650px;margin:0 auto 1.25rem;">
+      Full standalone companion suite with persistent localStorage progress tracking, checklist states, and isolated deep-dive modules.
+    </p>
+    <div class="dbs">
+      <a href="./system-design/index.html" class="db dbp">🚀 Open Standalone Cockpit →</a>
+      <a href="./system-design/curriculum.html" class="db dbg">Phases A–M</a>
+      <a href="./system-design/matrix.html" class="db dbg">Resource Matrix</a>
+      <a href="./system-design/projects.html" class="db dbg">7 Projects</a>
+      <a href="./system-design/interview.html" class="db dbg">Interview Vault</a>
+      <a href="./system-design/capacity.html" class="db dbg">Sizing Lab</a>
+      <a href="./system-design/schedule.html" class="db dbg">First 14 Days</a>
+    </div>
+  </div>
 
-  <h2>Key Concepts to Know Cold</h2>
-  <div class="g2">
-    <div class="block"><div class="bt">Distributed Systems</div><div class="chips" style="margin:.4rem 0 0"><span class="chip">CAP theorem</span><span class="chip">Consistent hashing</span><span class="chip">Replication</span><span class="chip">Sharding</span><span class="chip">Vector clocks</span><span class="chip">2PC/Saga</span><span class="chip">Raft consensus</span><span class="chip">Gossip protocol</span></div></div>
-    <div class="block"><div class="bt">Storage & Databases</div><div class="chips" style="margin:.4rem 0 0"><span class="chip">LSM trees vs B-trees</span><span class="chip">Column-oriented storage</span><span class="chip">Write-ahead logging</span><span class="chip">MVCC</span><span class="chip">Query optimization</span></div></div>
-    <div class="block"><div class="bt">Caching</div><div class="chips" style="margin:.4rem 0 0"><span class="chip">Write-through vs write-back</span><span class="chip">LRU/LFU/ARC</span><span class="chip">Cache stampede</span><span class="chip">Cache coherence</span><span class="chip">Redis cluster</span></div></div>
-    <div class="block"><div class="bt">Networking</div><div class="chips" style="margin:.4rem 0 0"><span class="chip">TCP vs UDP</span><span class="chip">HTTP/2 vs HTTP/3</span><span class="chip">gRPC</span><span class="chip">Load balancing (L4/L7)</span><span class="chip">Service mesh (Istio)</span></div></div>
+  <!-- SECTION: SIZING LAB -->
+  <h2 id="sd-calc">⚡ Interactive AI Infrastructure Sizing Lab <span class="hs">Live Mathematical Sandbox</span></h2>
+  <p style="color:var(--text2);font-size:13.5px;margin-bottom:1rem;">Adjust any input parameter below (Model Parameters, Numerical Precision, Context Length, Batch Size, GPU Bandwidth) to calculate real-time VRAM allocation, KV-cache footprint, and the physical decode throughput ceiling of the hardware.</p>
+
+  <div class="calc-panel">
+    <div class="g2" style="gap:2rem;">
+      <!-- INPUT PARAMETERS -->
+      <div>
+        <h3 style="font-size:13px;color:#fff;margin-bottom:14px;">Workload &amp; Hardware Inputs</h3>
+        
+        <div class="form-group">
+          <label class="form-label">Model Parameters (Billions)</label>
+          <select class="form-control calc-trigger" id="calc-params">
+            <option value="1.5">1.5B (Small edge/laptop model - Qwen-2.5)</option>
+            <option value="7" selected>7B or 8B (Llama-3-8B, Mistral-7B)</option>
+            <option value="14">14B (Qwen-2.5-14B)</option>
+            <option value="70">70B (Llama-3-70B)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Numerical Precision</label>
+          <select class="form-control calc-trigger" id="calc-precision">
+            <option value="2" selected>FP16 / BF16 (2 bytes / parameter)</option>
+            <option value="1">FP8 / INT8 (1 byte / parameter)</option>
+            <option value="0.5">INT4 / AWQ (0.5 bytes / parameter)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Context Sequence Length (Prompt + Output)</label>
+          <select class="form-control calc-trigger" id="calc-seqlen">
+            <option value="1024">1,024 Tokens (Short query)</option>
+            <option value="2048" selected>2,048 Tokens (Standard chat)</option>
+            <option value="4096">4,096 Tokens (RAG document lookup)</option>
+            <option value="8192">8,192 Tokens (Long context)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Concurrent Requests (Batch Size)</label>
+          <input type="number" class="form-control calc-trigger" id="calc-batch" value="16" min="1" max="512">
+        </div>
+
+        <div class="form-group" style="margin-bottom:0;">
+          <label class="form-label">Target GPU Memory Bandwidth (GB/s)</label>
+          <select class="form-control calc-trigger" id="calc-bandwidth">
+            <option value="3350" selected>NVIDIA H100 SXM5 (3,350 GB/s HBM3)</option>
+            <option value="2039">NVIDIA A100 SXM4 (2,039 GB/s HBM2e)</option>
+            <option value="1008">NVIDIA RTX 4090 (1,008 GB/s GDDR6X)</option>
+            <option value="112">NVIDIA RTX 2050 Laptop (112 GB/s GDDR6)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- REAL-TIME CALCULATED OUTPUTS -->
+      <div>
+        <h3 style="font-size:13px;color:#fff;margin-bottom:14px;">Calculated Capacity &amp; Memory Allocation</h3>
+        <div class="calc-res">
+          <div class="calc-item">
+            <span class="calc-k">Static Parameter Weights:</span>
+            <span class="calc-v" id="res-param-mem">14.0 GB</span>
+          </div>
+          <div class="calc-item">
+            <span class="calc-k">KV-Cache per Stream:</span>
+            <span class="calc-v" id="res-kv-seq">16.0 MB</span>
+          </div>
+          <div class="calc-item">
+            <span class="calc-k">Total Batch KV-Cache:</span>
+            <span class="calc-v" id="res-kv-total">0.2 GB</span>
+          </div>
+          <div class="calc-item">
+            <span class="calc-k">Total VRAM (+20% activation overhead):</span>
+            <span class="calc-v hl" id="res-total-vram">17.1 GB</span>
+          </div>
+          <div class="calc-item">
+            <span class="calc-k">Single-Stream Decode Ceiling:</span>
+            <span class="calc-v" id="res-decode-speed">240 tok/s</span>
+          </div>
+          <div class="calc-item" style="border-bottom:none;padding-bottom:0;">
+            <span class="calc-k">Recommended GPU Hardware:</span>
+            <span class="calc-v gr" id="res-h100-count">1x 80GB GPUs (1 GPU)</span>
+          </div>
+        </div>
+
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-top:12px;font-size:12px;color:var(--text3);line-height:1.6;">
+          <strong style="color:var(--text2);">The Mathematical Equations:</strong><br>
+          • <strong>KV Cache Memory:</strong> <code>2 × layers(32) × KV_heads(8) × head_dim(128) × precision_bytes × tokens</code><br>
+          • <strong>Decode Speed Bound:</strong> <code>GPU Memory Bandwidth (GB/s) ÷ Model Weight Memory (GB)</code> (Token generation is strictly memory-bandwidth bound).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: 4-STEP WHITEBOARD BLUEPRINT -->
+  <h2 id="sd-whiteboard">🎯 The 4-Step Whiteboard Blueprint <span class="hs">45-Minute Interview Engine</span></h2>
+  <div class="g2" style="margin-bottom:2.25rem;">
+    <div class="block ba">
+      <div class="bt">1. Scope &amp; Clarify (5 min)</div>
+      <div class="bb">
+        <strong>Functional:</strong> Chat streaming, completions, multi-modal, embedding lookup.<br>
+        <strong>Non-Functional:</strong> Target QPS, P99 latency SLA, TTFT &lt; 200ms, ITL &lt; 25ms, availability 99.99%, budget $/million tokens.
+      </div>
+    </div>
+    <div class="block bg">
+      <div class="bt">2. Capacity &amp; Sizing (5 min)</div>
+      <div class="bb">
+        <strong>Memory:</strong> Weights (Params × precision) + KV-Cache (Batch × SeqLen × 2 × Layers × Heads × Dim × Precision).<br>
+        <strong>Hardware:</strong> Memory bandwidth saturation check, Tensor Parallelism split (TP=2/4/8), GPU count.
+      </div>
+    </div>
+    <div class="block bam">
+      <div class="bt">3. High-Level Architecture (15 min)</div>
+      <div class="bb">
+        Draw the pipeline: Client &rarr; API Gateway (Rate limit / Token Bucket) &rarr; Router (Prefix Hash) &rarr; Scheduler (Continuous Batching) &rarr; Model Workers (PagedAttention / NVLink TP) &rarr; SSE Streaming.
+      </div>
+    </div>
+    <div class="block bc">
+      <div class="bt">4. Deep Dive &amp; Failure Modes (15 min)</div>
+      <div class="bb">
+        Discuss: Client TCP socket disconnects (canceling KV blocks), RadixAttention prefix caching, Chunked Prefill preventing decode starvation, OOM fallback to CPU paging.
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: 13-PHASE CURRICULUM -->
+  <h2 id="sd-curriculum">📖 The Complete 13-Phase Curriculum (Phases A–M) <span class="hs">Deep Systems Engineering</span></h2>
+  <p style="color:var(--text2);font-size:13.5px;margin-bottom:1.5rem;">A progressive, dependency-aware curriculum spanning classical distributed systems primitives to custom GPU kernel orchestration.</p>
+
+  <!-- PHASE A -->
+  <div class="pc2" style="--_a:var(--accent);margin-bottom:1.25rem;">
+    <div class="ptit">Phase A: System Design Fundamentals <span class="pill pr">P0 Essential · 3 Weeks · ~45 Hours</span></div>
+    <div class="pmeta"><span class="chip">SLA / SLO / SLI</span><span class="chip">P99 Latency</span><span class="chip">Consistent Hashing</span><span class="chip">Rate Limiting</span><span class="chip">Circuit Breakers</span></div>
+    <div class="pb2">
+      <strong>Why it matters:</strong> Before designing distributed GPU clusters, you must master the fundamental building blocks of scalable computing. In AI systems, these same primitives govern inference gateways, model artifact caches, and rate-limited API endpoints.
+      <ul>
+        <li>Functional vs non-functional requirements (SLAs, SLOs, SLIs); Latency (P50, P95, P99), throughput (RPS/QPS).</li>
+        <li>Load balancing algorithms (Round Robin, Least Connections, Consistent Hashing for KV-cache prefix affinity).</li>
+        <li>Caching strategies (Cache-aside, Write-through, Write-back); Eviction policies (LRU, LFU, ARC).</li>
+        <li>Idempotency keys, circuit breakers, exponential backoff with jitter, backpressure.</li>
+      </ul>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-top:8px;font-size:12.5px;">
+        <strong>🛠️ Local Hands-On:</strong> Implement a token-bucket rate limiter in Python using Redis; assert that burst traffic exceeding 50 RPS receives HTTP 429 while normal traffic proceeds.
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE B -->
+  <div class="pc2" style="--_a:var(--teal);margin-bottom:1.25rem;">
+    <div class="ptit">Phase B: Networking &amp; Linux Systems Internals <span class="pill pr">P0 Essential · 2 Weeks · ~35 Hours</span></div>
+    <div class="pmeta"><span class="chip">Linux cgroups</span><span class="chip">epoll</span><span class="chip">Page Tables</span><span class="chip">TCP TIME_WAIT</span><span class="chip">gRPC / HTTP/2</span><span class="chip">strace</span></div>
+    <div class="pb2">
+      <strong>Why it matters:</strong> AI inference and distributed training are bounded by operating system throughput and network interfaces. Knowing how Linux allocates pages, switches contexts, and handles sockets is mandatory to diagnose latency spikes.
+      <ul>
+        <li>Linux process model, threads, fork(), copy-on-write, CPU context switching, virtual memory, huge pages.</li>
+        <li>File descriptors, standard I/O, epoll vs select in asynchronous servers (uvloop/FastAPI).</li>
+        <li>TCP 3-way handshake, slow start, TIME_WAIT states, HTTP/1.1 keep-alive vs HTTP/2 multiplexing vs gRPC.</li>
+        <li>Linux profiling tools: <code>top</code>, <code>htop</code>, <code>vmstat</code>, <code>iostat</code>, <code>strace</code>, <code>perf</code>.</li>
+      </ul>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-top:8px;font-size:12.5px;">
+        <strong>🛠️ Local Hands-On:</strong> Run <code>strace -c</code> on a Python FastAPI model endpoint under a 100-request load test to inspect the number and latency of syscalls (read, write, futex, epoll_wait).
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE C -->
+  <div class="pc2" style="--_a:var(--accent2);margin-bottom:1.25rem;">
+    <div class="ptit">Phase C: Distributed Systems Fundamentals <span class="pill pr">P0 Essential · 4 Weeks · ~60 Hours</span></div>
+    <div class="pmeta"><span class="chip">CAP Theorem</span><span class="chip">Raft Consensus</span><span class="chip">Linearizability</span><span class="chip">Quorum W+R&gt;N</span><span class="chip">Saga Pattern</span></div>
+    <div class="pb2">
+      <strong>Why it matters:</strong> Modern AI models do not fit on a single machine or GPU. Understanding distributed consensus, network partitions, split-brain scenarios, and replication is the hallmark of a true infrastructure engineer.
+      <ul>
+        <li>Network failure models: asynchronous networks, partial failures, network partitions.</li>
+        <li>Consistency models: Strong consistency (Linearizability), Sequential, Eventual consistency.</li>
+        <li>Consensus algorithms: Leader-follower replication, Quorums (W + R &gt; N), Raft algorithm (leader election, log replication, safety).</li>
+        <li>Distributed transactions: Two-Phase Commit (2PC) limitations vs Saga pattern.</li>
+      </ul>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-top:8px;font-size:12.5px;">
+        <strong>🛠️ Local Hands-On:</strong> Build a 3-node in-memory leader-follower key-value store in Python where followers poll logs from a leader; simulate node disconnection and observe quorum recovery.
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE D -->
+  <div class="pc2" style="--_a:var(--green);margin-bottom:1.25rem;">
+    <div class="ptit">Phase D: Databases, Storage &amp; Data Systems <span class="pill pa">P1 Practical · 3 Weeks · ~40 Hours</span></div>
+    <div class="pmeta"><span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">MinIO / S3</span><span class="chip">Apache Kafka</span><span class="chip">HNSW Vector Search</span></div>
+    <div class="pb2">
+      <strong>Why it matters:</strong> AI systems store different assets with drastically different latency and throughput requirements: structured metadata (PostgreSQL), high-speed state/cache (Redis), multi-gigabyte model checkpoints (S3/MinIO), and embeddings (Vector DBs).
+      <ul>
+        <li>Relational databases (PostgreSQL): B+ Tree indexing, EXPLAIN ANALYZE, connection pooling (PgBouncer).</li>
+        <li>Distributed key-value caches (Redis): Data structures, TTL eviction, Redis Cluster sharding.</li>
+        <li>Object storage (AWS S3 / MinIO): Immutable blobs, multipart uploads, byte-range requests for checkpoint loading.</li>
+        <li>Vector databases &amp; Approximate Nearest Neighbors (ANN): HNSW graph traversal, IVF-PQ quantization (Qdrant, Chroma).</li>
+      </ul>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-top:8px;font-size:12.5px;">
+        <strong>🛠️ Local Hands-On:</strong> Spin up local MinIO and Qdrant in Docker; upload a 50MB dummy model checkpoint to MinIO and index 10,000 vector embeddings into Qdrant with HNSW.
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE E -->
+  <div class="pc2" style="--_a:var(--pink);margin-bottom:1.25rem;">
+    <div class="ptit">Phase E: Containers, Kubernetes &amp; Workload Orchestration <span class="pill pa">P1 Practical · 3 Weeks · ~45 Hours</span></div>
+    <div class="pmeta"><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">NVIDIA Container Toolkit</span><span class="chip">Readiness Probes</span><span class="chip">kind / minikube</span></div>
+    <div class="pb2">
+      <strong>Why it matters:</strong> Production AI services run on Kubernetes. You must understand how Pods are scheduled on GPU nodes, how resource limits work, and how autoscaling operates under queue depth spikes.
+      <ul>
+        <li>Docker architecture: Linux cgroups, namespaces, image layer caching, multi-stage builds.</li>
+        <li>Kubernetes core primitives: Pods, Deployments, Services, ConfigMaps, Secrets, HPA autoscaling.</li>
+        <li>Health probes: Liveness, Readiness, and Startup probes (critical for 2-minute LLM weight loading).</li>
+        <li>GPU scheduling: NVIDIA Container Toolkit, <code>nvidia.com/gpu</code> limits, taints and tolerations for GPU pools.</li>
+      </ul>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-top:8px;font-size:12.5px;">
+        <strong>🛠️ Local Hands-On:</strong> Deploy a local FastAPI service in a <code>kind</code> (Kubernetes in Docker) cluster with 3 replicas, readiness probe delay for simulated model loading, and HPA simulating load.
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASES G, H, I: THE AI INFRA MONEY ZONE -->
+  <div class="pc2" style="--_a:var(--coral);margin-bottom:1.25rem;border-color:var(--accent2);">
+    <div class="ptit">Phases G, H &amp; I: Model Serving, GPU Hardware &amp; LLM Inference <span class="pill pr">P0 The Core Money Zone · 6 Weeks · ~90 Hours</span></div>
+    <div class="pmeta"><span class="chip">Continuous Batching</span><span class="chip">PagedAttention (vLLM)</span><span class="chip">SGLang RadixTree</span><span class="chip">Prefill vs Decode</span><span class="chip">FP8 / INT4</span><span class="chip">Roofline Model</span></div>
+    <div class="pb2">
+      <strong>Why it matters:</strong> This is where general software engineers get filtered out. Here you master why LLM inference is memory-bandwidth bound, how KV-cache paging eliminates memory fragmentation, and how dynamic continuous batching maximizes GPU utilization.
+      <ul>
+        <li>GPU Architecture: Streaming Multiprocessors (SMs), Tensor Cores, HBM vs SRAM (on-chip cache).</li>
+        <li>Prefill (compute-bound) vs Decode (memory-bandwidth-bound) phases; TTFT vs Inter-Token Latency (ITL).</li>
+        <li>KV-Cache memory consumption math: $2 \times 2 \times \text{layers} \times \text{heads} \times \text{dim} \times \text{bytes}$.</li>
+        <li>Continuous Batching (iteration-level scheduling) vs Static batching; chunked prefill to avoid decode starvation.</li>
+        <li>PagedAttention (vLLM architecture) — physical block tables and eliminating external fragmentation.</li>
+        <li>SGLang &amp; RadixAttention — KV-cache prefix tree sharing across multi-turn chats.</li>
+        <li>Serving engines compared: FastAPI vs Triton Inference Server vs vLLM vs Hugging Face TGI vs Ray Serve.</li>
+      </ul>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-top:8px;font-size:12.5px;">
+        <strong>🛠️ Local Hands-On (RTX 2050 4GB Compatible):</strong> Run a quantized 1.5B or 3B small open-weight model (Qwen-2.5-1.5B or SmolLM2) locally on your 4GB laptop GPU using Ollama or vLLM; profile memory footprint before and after token generation and measure TTFT vs ITL.
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASES J, K, L -->
+  <div class="pc2" style="--_a:var(--amber);margin-bottom:1.25rem;">
+    <div class="ptit">Phases J, K &amp; L: Distributed Training, Observability &amp; Multi-Tenancy <span class="pill pa">P1 Production Systems · 4 Weeks · ~55 Hours</span></div>
+    <div class="pmeta"><span class="chip">DDP / FSDP</span><span class="chip">ZeRO-1/2/3</span><span class="chip">NCCL Ring All-Reduce</span><span class="chip">DCGM Metrics</span><span class="chip">Prometheus / Grafana</span></div>
+    <div class="pb2">
+      <strong>Why it matters:</strong> Shipping to production requires complete observability (Prometheus/Grafana), automated health recovery, and multi-tenant isolation.
+      <ul>
+        <li>Distributed training strategies: Data Parallelism (DDP/FSDP), ZeRO 1/2/3, Tensor Parallelism over NVLink.</li>
+        <li>NCCL collectives: Ring All-Reduce, Reduce-Scatter, All-Gather communication overhead.</li>
+        <li>GPU metrics via NVIDIA DCGM: SM utilization, memory bandwidth percentage, PCIe throughput, thermal throttles.</li>
+        <li>Multi-tenancy: API key quotas, tier-based rate limiting, prompt sanitization, network isolation.</li>
+      </ul>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-top:8px;font-size:12.5px;">
+        <strong>🛠️ Local Hands-On:</strong> Instrument a Python inference worker with Prometheus metrics (<code>inference_latency_seconds_bucket</code>, <code>kv_cache_usage_percent</code>) and configure a local Grafana dashboard.
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE M: CAPSTONE ARCHITECTURES -->
+  <div class="pc2" style="--_a:var(--green);margin-bottom:2.25rem;">
+    <div class="ptit">Phase M: Advanced System Design Architectural Deep-Dives <span class="pill pr">P0 Capstone · 3 Weeks · ~45 Hours</span></div>
+    <div class="pmeta"><span class="chip">LLM Inference Platform</span><span class="chip">GPU Gang Scheduler</span><span class="chip">Feast Feature Store</span><span class="chip">Vector Retrieval at Scale</span></div>
+    <div class="pb2">
+      Synthesizes everything into end-to-end architectures that mirror actual Staff / Principal Engineer design reviews:
+      <div class="g2" style="margin-top:8px;gap:8px;">
+        <div>• 1. Multi-Tenant LLM Inference API Platform (500 QPS)</div>
+        <div>• 2. Distributed GPU Cluster Gang Scheduler (K8s)</div>
+        <div>• 3. Low-Latency Feature Store (Redis + Feast)</div>
+        <div>• 4. Billion-Scale Vector Search System (Faiss / Milvus)</div>
+        <div>• 5. Fault-Tolerant Distributed Training Orchestrator</div>
+        <div>• 6. Real-Time Model Monitoring &amp; Drift Pipeline</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: RESOURCE MATRIX -->
+  <h2 id="sd-matrix">🔗 Verified Zero-Cost Topic-to-Resource Matrix <span class="hs">100% Free &amp; Legal</span></h2>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th>Pri</th>
+          <th>Prerequisites</th>
+          <th>Primary Free Resource</th>
+          <th>Practical Local Exercise</th>
+          <th>Hours</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Distributed Systems</strong></td>
+          <td><span class="pill pr">P0</span></td>
+          <td>Basic Networking</td>
+          <td><a href="https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB" target="_blank">Martin Kleppmann Distributed Systems Playlist (Cambridge)</a></td>
+          <td>Build a 3-node mock KV store with leader replication and heartbeat failure detection in Python.</td>
+          <td><strong>25h</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Parallel &amp; GPU Computing</strong></td>
+          <td><span class="pill pr">P0</span></td>
+          <td>C/C++ &amp; Memory</td>
+          <td><a href="https://www.youtube.com/playlist?list=PLoROMvodv4rPOWA-omMM6STXaWW4FvJT8" target="_blank">Stanford CS149: Parallel Computing (Kayvon Fatahalian)</a></td>
+          <td>Calculate arithmetic intensity of matrix multiplication and draw Roofline curve for RTX 2050.</td>
+          <td><strong>30h</strong></td>
+        </tr>
+        <tr>
+          <td><strong>OpenAI Triton Kernels</strong></td>
+          <td><span class="pill pr">P0</span></td>
+          <td>Python &amp; GPU Memory</td>
+          <td><a href="https://triton-lang.org/main/getting-started/tutorials/index.html" target="_blank">OpenAI Triton Official Tutorials</a></td>
+          <td>Implement Fused Softmax in Triton; benchmark latency against standard PyTorch softmax.</td>
+          <td><strong>20h</strong></td>
+        </tr>
+        <tr>
+          <td><strong>PagedAttention &amp; vLLM</strong></td>
+          <td><span class="pill pr">P0</span></td>
+          <td>Transformers</td>
+          <td><a href="https://arxiv.org/abs/2309.06180" target="_blank">PagedAttention Paper (Kwon et al. 2023)</a> &amp; <a href="https://docs.vllm.ai/" target="_blank">vLLM Docs</a></td>
+          <td>Run small 1.5B model with vLLM on 4GB laptop GPU or Colab; inspect physical block tables.</td>
+          <td><strong>25h</strong></td>
+        </tr>
+        <tr>
+          <td><strong>SRE, SLOs &amp; Incidents</strong></td>
+          <td><span class="pill pa">P1</span></td>
+          <td>Linux Basics</td>
+          <td><a href="https://sre.google/sre-book/table-of-contents/" target="_blank">Google SRE Book (Official Free Online)</a></td>
+          <td>Define SLI/SLO for TTFT &lt; 200ms; write Prometheus alert rule for error budget burn rate.</td>
+          <td><strong>15h</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Distributed Consensus (Raft)</strong></td>
+          <td><span class="pill pa">P1</span></td>
+          <td>Distributed Systems</td>
+          <td><a href="https://raft.github.io/" target="_blank">The Secret Lives of Data (Raft Visualization)</a> &amp; <a href="https://www.youtube.com/playlist?list=PLrw6LRcGd_z3OCMErWghk_K3jT92w8Uv6" target="_blank">MIT 6.824</a></td>
+          <td>Trace leader election and log replication step-by-step through network partitions.</td>
+          <td><strong>20h</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION: 7 PROGRESSIVE PROJECTS -->
+  <h2 id="sd-projects">🛠️ The 7 Progressive Implementation Projects <span class="hs">From Microservice to Platform</span></h2>
+  <div class="alert ai" style="margin-bottom:1.5rem;">
+    <strong>Architectural Lineage:</strong> Every project builds directly on the previous one. Project 1 becomes the core engine of Project 2; Project 2's worker pool connects to Project 5's model registry; and everything culminates in Project 7's production platform.
+  </div>
+
+  <!-- PROJECT 1 -->
+  <div class="pc2" style="--_a:var(--green);margin-bottom:1.25rem;">
+    <div class="ptit">Project 1: Production-Grade ML Inference Microservice <span class="pill pg">Foundations</span></div>
+    <div class="pmeta"><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">Pydantic</span><span class="chip">PyTest</span><span class="chip">Health Probes</span></div>
+    <div class="pb2">
+      <strong>Problem Statement:</strong> Deploying an ML model directly inside a web server without proper validation, async non-blocking execution, or health probes causes worker thread starvation and opaque server crashes under burst load.
+      <pre style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin:8px 0;font-size:12px;color:var(--teal);">Client &rarr; [NGINX Reverse Proxy] &rarr; [FastAPI Uvicorn (4 Workers)]
+  &bull; /v1/predict (Pydantic schema validation &amp; tensor serialization)
+  &bull; /health/live (Process liveness check)
+  &bull; /health/ready (Model weights loaded in memory assertion)
+  &bull; Structured JSON logging with request_id &amp; latency_ms timer</pre>
+      <div style="color:var(--text2);font-size:12.5px;">
+        <strong>Resume Bullet:</strong> "Architected a production-ready ML inference microservice in FastAPI and Docker; implemented startup readiness probes and asynchronous non-blocking handlers, achieving P95 latency &lt;18ms under 250 concurrent requests."
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 2 -->
+  <div class="pc2" style="--_a:var(--teal);margin-bottom:1.25rem;">
+    <div class="ptit">Project 2: Asynchronous Inference Pipeline with Queue &amp; Worker Pool <span class="pill pt">Concurrency</span></div>
+    <div class="pmeta"><span class="chip">Redis</span><span class="chip">Celery/RQ</span><span class="chip">Idempotency</span><span class="chip">Dead Letter Queue (DLQ)</span></div>
+    <div class="pb2">
+      <strong>Problem Statement:</strong> Heavy models take seconds to run. Keeping HTTP client connections open causes gateway timeouts (504 Gateway Timeout). The system must be decoupled into an asynchronous job queue.
+      <pre style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin:8px 0;font-size:12px;color:var(--teal);">Client &rarr; POST /jobs &rarr; [API Gateway] &rarr; Push Job to [Redis Queue] &rarr; Returns HTTP 202 Accepted { job_id: "uuid" }
+  &bull; [Worker Pool (3 processes)] consumes from Redis queue
+  &bull; Idempotency key checked in Redis to prevent duplicate compute
+  &bull; Dead-Letter Queue (DLQ) handles crashes and poisoned inputs
+Client polls &rarr; GET /jobs/{id} &rarr; Returns PENDING | RUNNING | COMPLETED</pre>
+      <div style="color:var(--text2);font-size:12.5px;">
+        <strong>Resume Bullet:</strong> "Engineered an asynchronous inference pipeline with Redis and worker processes; implemented idempotency checks and exponential backoff retry mechanisms, eliminating 504 timeouts across 10,000 background jobs."
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 3 -->
+  <div class="pc2" style="--_a:var(--accent2);margin-bottom:1.25rem;">
+    <div class="ptit">Project 3: Real-Time Dynamic Batching Engine <span class="pill pp">Serving Optimization</span></div>
+    <div class="pmeta"><span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">Queue Flusher</span><span class="chip">Dynamic Batching</span></div>
+    <div class="pb2">
+      <strong>Problem Statement:</strong> Processing requests individually on GPU leaves compute units idle (10–15% SM utilization). The engine must combine incoming concurrent requests into a single tensor batch without violating latency SLOs.
+      <pre style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin:8px 0;font-size:12px;color:var(--teal);">DynamicBatcher loop:
+  if queue_size &gt;= max_batch_size (e.g. 16) OR wait_time &gt;= timeout (e.g. 10ms):
+      batch = flush_queue() &rarr; pad_tensors() &rarr; model.forward(batch) &rarr; dispatch_results()</pre>
+      <div style="color:var(--text2);font-size:12.5px;">
+        <strong>Resume Bullet:</strong> "Built a dynamic batching middleware in PyTorch and asyncio with timeout-based queue flushing, increasing inference GPU throughput by 3.8x while maintaining P99 latency within 25ms SLO."
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 4 -->
+  <div class="pc2" style="--_a:var(--pink);margin-bottom:1.25rem;">
+    <div class="ptit">Project 4: Distributed KV-Cache Simulation &amp; PagedAttention Memory Manager <span class="pill pr">Elite</span></div>
+    <div class="pmeta"><span class="chip">PagedAttention</span><span class="chip">Virtual Memory</span><span class="chip">Block Table</span><span class="chip">Zero Fragmentation</span></div>
+    <div class="pb2">
+      <strong>Problem Statement:</strong> LLM generation dynamically grows token by token. Pre-allocating contiguous memory for max context length wastes 60–80% of VRAM due to internal and external memory fragmentation.
+      <ul style="margin:6px 0;">
+        <li>Simulates OS virtual memory paging: fixed-size physical memory blocks (16 tokens per block).</li>
+        <li>Block Manager allocates non-contiguous physical blocks on demand and maps them via logical block tables.</li>
+        <li>Benchmarking demonstrates 95%+ VRAM utilization and 2.5x larger batch concurrency on identical hardware.</li>
+      </ul>
+      <div style="color:var(--text2);font-size:12.5px;">
+        <strong>Resume Bullet:</strong> "Implemented a PagedAttention memory manager prototype simulating virtual memory block tables; eliminated external memory fragmentation and increased maximum concurrent request capacity by 240%."
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS 5, 6, 7 -->
+  <div class="g3" style="gap:1rem;margin-bottom:2.25rem;">
+    <div class="block ba">
+      <div class="bt">Project 5: Model Registry &amp; Hot-Reload Gateway</div>
+      <div class="bb">Versioned S3/MinIO artifact storage, SHA-256 verification, and zero-downtime blue/green hot-swapping between model versions without restarting containers.</div>
+    </div>
+    <div class="block bg">
+      <div class="bt">Project 6: Production Observability &amp; DCGM</div>
+      <div class="bb">OpenTelemetry distributed tracing, NVIDIA DCGM GPU utilization metrics, Prometheus alerting, and Grafana dashboard tracking TTFT, TPOT, and error rates.</div>
+    </div>
+    <div class="block bc">
+      <div class="bt">Project 7: Capstone AI Platform</div>
+      <div class="bb">Multi-tenant LLM serving platform deployed on Kubernetes (kind) with vLLM/SGLang, Triton kernels, token bucket quotas, and auto-scaling based on queue depth.</div>
+    </div>
+  </div>
+
+  <!-- SECTION: INTERVIEW VAULT -->
+  <h2 id="sd-interview">💬 Whiteboard Interview Question Vault <span class="hs">Levels 1, 2, and 3</span></h2>
+  
+  <!-- LEVEL 1 & 2 -->
+  <div class="g2" style="margin-bottom:1.5rem;">
+    <div class="block ba">
+      <div class="bt">Level 1: Design a Distributed Rate Limiter</div>
+      <div class="bb">
+        <strong>Context:</strong> Enforcing strict TPM (tokens/min) and RPM (requests/min) across API keys.<br>
+        <strong>Architecture:</strong> Redis Token Bucket with sliding window log; Lua script atomic execution prevents race conditions across multi-instance API gateways; returns HTTP 429 with <code>Retry-After</code> headers.
+      </div>
+    </div>
+    <div class="block bt2">
+      <div class="bt">Level 2: Design a Low-Latency Feature Store</div>
+      <div class="bb">
+        <strong>Context:</strong> Dual storage for training (offline batch) and real-time inference (online single-digit ms lookup).<br>
+        <strong>Architecture:</strong> Dual-tier: Redis for online low-latency entity lookups (&lt;5ms) + Parquet/S3 for offline training batches; Kafka streaming updates processed via Flink to maintain training-serving consistency.
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 3: FLAGSHIP STAFF QUESTION -->
+  <div class="pc2" style="--_a:var(--red);margin-bottom:2.25rem;">
+    <div class="ptit">Level 3 (Staff Level): Design a 500 QPS Multi-Tenant LLM Inference API Platform <span class="pill pr">Tier-1 Company Flagship</span></div>
+    <div class="pmeta"><span class="chip">500 QPS</span><span class="chip">Llama-3-70B</span><span class="chip">TTFT &lt; 200ms</span><span class="chip">Tensor Parallelism TP=4</span><span class="chip">PagedAttention</span></div>
+    <div class="pb2">
+      <div style="margin-bottom:10px;">
+        <strong>1. Requirements &amp; SLA:</strong> Model: Llama-3-70B (FP8: 70 GB weights) &bull; Workload: 500 QPS &bull; Prompt: 1,000 tokens &bull; Output: 200 tokens &bull; SLO: TTFT &lt; 200ms, ITL &lt; 25ms.
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-bottom:10px;font-size:12.5px;">
+        <strong>2. Step-by-Step Mathematical Derivations:</strong><br>
+        • <strong>Weights Memory:</strong> 70B parameters in FP8 (1 byte/param) = <code>70 GB</code>.<br>
+        • <strong>KV-Cache per Stream:</strong> <code>2 × 2 × 80 layers × 8 KV heads × 128 head dim × 1 byte (FP8) × 1200 tokens ≈ 393 MB per stream</code>.<br>
+        • <strong>Total KV-Cache for 500 Concurrent Streams:</strong> <code>500 × 393 MB ≈ 196.5 GB purely for KV-Cache!</code><br>
+        • <strong>Cluster Sizing:</strong> Provision clusters of 8×H100 SXM5 nodes with Tensor Parallelism TP=4 (2 model instances per 8-GPU node) connected over 900 GB/s NVLink.
+      </div>
+      <pre style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;margin-bottom:10px;font-size:12px;color:var(--teal);">[Client (SSE / gRPC Streaming)]
+   &boxv;
+[API Gateway] &rarr; API Key Auth, Redis Token Bucket Rate Limiter
+   &boxv;
+[Router with KV-Cache Prefix Affinity (RadixTree Hash)]
+   &boxv;
+[Inference Node: 8x H100 SXM5]
+   &boxdr;&boxh;&boxh; [Continuous Batching Scheduler] (Chunked prefill &amp; decode interleaving)
+   &boxdr;&boxh;&boxh; [PagedAttention Memory Manager] (Virtual block tables in HBM)
+   &boxdr;&boxh;&boxh; [4-way Tensor Parallelism over NVLink (900 GB/s interconnect)]
+   &boxur;&boxh;&boxh; [SSE Streaming Engine] &rarr; Yields tokens back to client</pre>
+      <div style="color:var(--text2);font-size:12.5px;">
+        <strong>3. Failure Modes Handled:</strong> 1) Client disconnects detected immediately by gateway to free KV blocks and abort generation; 2) Common system prompts shared across requests via RadixAttention to eliminate 80% of prefill compute; 3) Chunked prefill prevents long prompts from stalling decode streams.
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: SCHEDULE & FIRST 14 DAYS -->
+  <h2 id="sd-schedule">🗓️ Execution Timelines &amp; The First 14 Days <span class="hs">Daily Action Plan</span></h2>
+  <div class="g2" style="margin-bottom:1.5rem;">
+    <div class="block ba">
+      <div class="bt">Plan A: 6-Month Fast-Track (30–35 hrs/wk)</div>
+      <div class="bb">Prioritizes System Design Fundamentals, Linux, Distributed Queues, Model Serving (vLLM), and Projects 1, 2, 3, and 6. Gets you job-ready for Stage 1 (AI Platform / Inference Engineer).</div>
+    </div>
+    <div class="block bg">
+      <div class="bt">Plan B: 9–12 Month Deep Systems Track</div>
+      <div class="bb">Extends into low-level Triton GPU kernel optimization, NCCL network fabrics, Kubernetes KubeRay clusters, and Capstone Project 7 for Senior AI Systems roles at Tier-1 companies.</div>
+    </div>
+  </div>
+
+  <!-- FIRST 14 DAYS DAY-BY-DAY -->
+  <div class="calc-panel" style="margin-bottom:2.25rem;">
+    <div style="font-size:14px;font-weight:800;color:#fff;margin-bottom:12px;">🚀 Actionable Day-by-Day Plan: The First 14 Days</div>
+    <div class="g2" style="gap:10px;font-size:12.5px;color:var(--text2);">
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;">
+        <strong style="color:var(--accent2);">Day 1:</strong> Latency vs Throughput SLOs &bull; Read Google SRE Ch. 4 &bull; Implement <code>day01_latency_calculator.py</code> with P50/P95/P99.
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;">
+        <strong style="color:var(--accent2);">Day 2:</strong> FastAPI Event Loop &bull; Read async def vs def docs &bull; Implement <code>day02_fastapi_concurrency/</code> with <code>hey</code> benchmarks.
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;">
+        <strong style="color:var(--accent2);">Day 3:</strong> Project 1 Model Packaging &bull; Implement <code>@asynccontextmanager lifespan</code> model weight loading on startup.
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;">
+        <strong style="color:var(--accent2);">Day 4:</strong> Docker Multi-Stage Builds &bull; Add <code>/health/live</code> and <code>/health/ready</code> probes &bull; Commit Dockerfile.
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;">
+        <strong style="color:var(--accent2);">Day 5:</strong> Linux Profiling &bull; Run <code>strace -c -p &lt;PID&gt;</code> under load &bull; Commit <code>day05_syscall_profiling_report.md</code>.
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;">
+        <strong style="color:var(--accent2);">Day 6:</strong> Redis Caching &bull; Implement atomic Token Bucket rate limiter in Lua restricting API keys to 20 req/min.
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;">
+        <strong style="color:var(--accent2);">Day 7:</strong> Week 1 Architecture Review &bull; Draw full rate-limited ML microservice diagram on Excalidraw &bull; Commit design doc.
+      </div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 12px;">
+        <strong style="color:var(--teal);">Days 8–14:</strong> Message Queues &amp; Project 2 &bull; Build detached Redis worker pool, idempotency key checks, dead-letter queue (DLQ), and Locust load testing. Tag Project 2 v1.0.0 on GitHub!
+      </div>
+    </div>
+  </div>
+
+  <!-- 0 TO 5 RUBRIC -->
+  <h2>0 to 5 Evaluation &amp; Mastery Rubric <span class="hs">Self-Assessment</span></h2>
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>Score</th><th>Mastery Level</th><th>Observed Ability</th><th>Action Required</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>0</strong></td><td>Unaware</td><td>Cannot explain the concept or recognize the problem it solves.</td><td>Cannot pass. Re-read primary documentation and watch lecture.</td></tr>
+        <tr><td><strong>1</strong></td><td>Superficial</td><td>Recognizes the buzzwords (e.g. "PagedAttention", "Raft") but cannot describe mechanics.</td><td>Watch the deep-dive lecture and write notes on failure modes.</td></tr>
+        <tr><td><strong>2</strong></td><td>Guided</td><td>Can explain the basic idea when prompted with diagrams or guided questions.</td><td>Build the small hands-on code exercise independently.</td></tr>
+        <tr><td><strong>3</strong></td><td>Independent</td><td>Can explain independently on a whiteboard and solve a standard coding exercise.</td><td><strong>Minimum Passing Grade for Stage 1.</strong></td></tr>
+        <tr><td><strong>4</strong></td><td>Production-Ready</td><td>Can implement a working multi-process solution, configure Docker/K8s, and discuss trade-offs.</td><td>Ready for Junior-to-Mid AI Platform interview screens.</td></tr>
+        <tr><td><strong>5</strong></td><td>Staff-Level</td><td>Can analyze edge-case failure modes, hardware bottlenecks, memory fragmentation, and defend architecture.</td><td>Target for Senior / Staff AI Systems roles.</td></tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
@@ -1885,12 +2757,13 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
   <div class="fm" id="fm">
     <div class="fmt">Navigation</div>
     <div class="fmi" onclick="sP('home');cF()"><span class="fmn">0</span>Overview</div>
+    <div class="fmi" onclick="sP('ai-eng');cF()"><span class="fmn" style="color:var(--accent2)">✦</span>AI Engineer Track</div>
     <div class="fmi" onclick="sP('p1');cF()"><span class="fmn">1</span>Phase 1 — Foundations</div>
     <div class="fmi" onclick="sP('p2');cF()"><span class="fmn">2</span>Phase 2 — ML & DL</div>
     <div class="fmi" onclick="sP('p3');cF()"><span class="fmn">3</span>Phase 3 — GenAI & LLMs</div>
     <div class="fmi" onclick="sP('p4');cF()"><span class="fmn">4</span>Phase 4 — AI Infra</div>
     <div class="fmi" onclick="sP('dsa');cF()"><span class="fmn" style="color:#4ade80">★</span>DSA — C++ Daily</div>
-    <div class="fmi" onclick="sP('sd');cF()"><span class="fmn">6</span>System Design</div>
+    <div class="fmi" onclick="sP('sd');cF()"><span class="fmn" style="color:var(--teal)">6</span>System Design</div>
     <div class="fmi" onclick="sP('proj');cF()"><span class="fmn">7</span>Projects Portfolio</div>
     <div class="fmi" onclick="oS();cF()"><span class="fmn">⌘</span>Spotlight Search</div>
   </div>
@@ -1903,12 +2776,13 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
 <script>
 const SECS=[
   {id:'home',label:'Overview',tag:'Home'},
+  {id:'ai-eng',label:'✦ AI Engineer Track (2026)',tag:'Career'},
   {id:'p1',label:'Phase 1 — Foundations',tag:'Phase'},
   {id:'p2',label:'Phase 2 — ML & Deep Learning',tag:'Phase'},
   {id:'p3',label:'Phase 3 — GenAI & LLMs',tag:'Phase'},
   {id:'p4',label:'Phase 4 — AI Infrastructure',tag:'Phase'},
   {id:'dsa',label:'DSA — C++ Daily Track',tag:'DSA'},
-  {id:'sd',label:'System Design',tag:'Design'},
+  {id:'sd',label:'System Design (Cockpit)',tag:'Design'},
   {id:'proj',label:'Projects Portfolio',tag:'Projects'},
 ];
 let sIdx=-1;
@@ -1940,7 +2814,51 @@ function sP(id){
   if(pg){pg.classList.add('active');window.scrollTo(0,0);}
   document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.p===id));
   history.replaceState(null,'','#'+id);
+  if(id==='sd'&&window.calculateCapacity){setTimeout(window.calculateCapacity,30);}
 }
+window.calculateCapacity = function() {
+  const modelParamB = parseFloat(document.getElementById('calc-params')?.value || 7);
+  const precisionBytes = parseFloat(document.getElementById('calc-precision')?.value || 2);
+  const seqLen = parseInt(document.getElementById('calc-seqlen')?.value || 2048, 10);
+  const batchSize = parseInt(document.getElementById('calc-batch')?.value || 16, 10);
+  const numLayers = 32;
+  const numKvHeads = 8;
+  const headDim = 128;
+  const gpuBandwidthGBs = parseFloat(document.getElementById('calc-bandwidth')?.value || 3350);
+
+  const paramMemGB = (modelParamB * 1e9 * precisionBytes) / (1024 ** 3);
+  const kvBytesPerToken = 2 * numLayers * numKvHeads * headDim * precisionBytes;
+  const kvMemPerSeqMB = (kvBytesPerToken * seqLen) / (1024 ** 2);
+  const totalKvMemGB = (kvBytesPerToken * seqLen * batchSize) / (1024 ** 3);
+  const overheadGB = (paramMemGB + totalKvMemGB) * 0.20;
+  const totalVramGB = paramMemGB + totalKvMemGB + overheadGB;
+  const singleStreamTokensPerSec = (gpuBandwidthGBs / paramMemGB);
+
+  const elParam = document.getElementById('res-param-mem');
+  if (elParam) elParam.textContent = paramMemGB.toFixed(1) + ' GB';
+  const elKvSeq = document.getElementById('res-kv-seq');
+  if (elKvSeq) elKvSeq.textContent = kvMemPerSeqMB.toFixed(1) + ' MB';
+  const elKvTotal = document.getElementById('res-kv-total');
+  if (elKvTotal) elKvTotal.textContent = totalKvMemGB.toFixed(1) + ' GB';
+  const elVram = document.getElementById('res-total-vram');
+  if (elVram) elVram.textContent = totalVramGB.toFixed(1) + ' GB';
+  const elSpeed = document.getElementById('res-decode-speed');
+  if (elSpeed) elSpeed.textContent = Math.round(singleStreamTokensPerSec) + ' tok/s';
+  const elH100 = document.getElementById('res-h100-count');
+  if (elH100) {
+    const gpusNeeded = Math.ceil(totalVramGB / 80);
+    elH100.textContent = gpusNeeded + 'x 80GB GPUs (' + (gpusNeeded <= 1 ? '1 GPU' : 'Tensor Parallelism TP=' + (gpusNeeded <= 2 ? '2' : gpusNeeded <= 4 ? '4' : '8')) + ')';
+  }
+};
+document.addEventListener('DOMContentLoaded', function() {
+  if (document.getElementById('calc-params')) {
+    calculateCapacity();
+    document.querySelectorAll('.calc-trigger').forEach(input => {
+      input.addEventListener('input', calculateCapacity);
+      input.addEventListener('change', calculateCapacity);
+    });
+  }
+});
 document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>sP(t.dataset.p)));
 window.addEventListener('scroll',()=>{
   const el=document.querySelector('.page.active');

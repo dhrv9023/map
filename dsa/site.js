@@ -280,21 +280,38 @@
     // Tutorial Callout Box
     const tutBox = document.getElementById('hero-tut-box');
     if (tutBox) {
-      if (day.tutYn === 'YES') {
+      const hasTut = day.tutYn === 'YES' || day.tutYt || day.tutDoc;
+      if (hasTut) {
         tutBox.style.display = '';
         const tutTitle = document.getElementById('hero-tut-title');
         const tutBadge = document.getElementById('hero-tut-badge');
         const tutMeta = document.getElementById('hero-tut-meta');
         const tutLink = document.getElementById('hero-tut-link');
-        if (tutTitle) tutTitle.textContent = day.tutTopic;
+        const docLink = document.getElementById('hero-doc-link');
+        if (tutTitle) tutTitle.textContent = day.tutTopic || (day.tutYt && day.tutYt.title) || 'Curated Tutorial';
         if (tutBadge) tutBadge.textContent = `📺 TUTORIAL (${day.tutMin || 25}m)`;
+        const ytCreator = (day.tutYt && day.tutYt.creator) || (day.tutResource && day.tutResource.primaryChannel) || "Striver";
         if (tutMeta) {
-          const pChan = (day.tutResource && day.tutResource.primaryChannel) || "Striver";
-          tutMeta.textContent = `Recommended: ${pChan} • Striver, Aditya Verma, Love Babbar, Padho with Pratyush, NeetCode`;
+          tutMeta.textContent = `Curated Goldmine: ${ytCreator}`;
         }
-        if (tutLink && day.tutResource) {
-          tutLink.href = day.tutResource.primaryUrl;
-          tutLink.textContent = `▶ Watch (${day.tutResource.primaryChannel}) ↗`;
+        if (tutLink) {
+          const ytUrl = (day.tutYt && day.tutYt.url) || (day.tutResource && day.tutResource.primaryUrl);
+          if (ytUrl) {
+            tutLink.style.display = 'inline-flex';
+            tutLink.href = ytUrl;
+            tutLink.textContent = `▶ Watch (${ytCreator}) ↗`;
+          } else {
+            tutLink.style.display = 'none';
+          }
+        }
+        if (docLink) {
+          if (day.tutDoc && day.tutDoc.url) {
+            docLink.style.display = 'inline-flex';
+            docLink.href = day.tutDoc.url;
+            docLink.textContent = `📄 Read (${day.tutDoc.source || 'Doc'}) ↗`;
+          } else {
+            docLink.style.display = 'none';
+          }
         }
       } else {
         tutBox.style.display = 'none';

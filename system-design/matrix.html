@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic-to-Resource Matrix - System Design Cockpit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand-section">
+        <a href="index.html" class="brand-lockup">
+          <div class="brand-icon">📐</div>
+          <div class="brand-titles">
+            <span class="brand-title">System Design Cockpit</span>
+            <span class="brand-subtitle">Topic-to-Resource Matrix &bull; 100% Free</span>
+          </div>
+        </a>
+      </div>
+      <div class="header-stats">
+        <div class="stat-chip"><span class="label">Verified URLs:</span><span class="val green">100% Verified</span></div>
+        <div class="stat-chip"><span class="label">Cost:</span><span class="val green">$0 Zero-Dollar</span></div>
+        <a href="../dsa/index.html" class="nav-tab nav-tab-dsa">Silicon DSA Cockpit ↗</a>
+        <a href="../index.html" class="nav-tab nav-tab-return">← AI Infra Roadmap</a>
+      </div>
+    </div>
+    <nav class="nav-tabs">
+      <a href="index.html" class="nav-tab">Overview &amp; Market</a>
+      <a href="curriculum.html" class="nav-tab">Curriculum (Phases A–M)</a>
+      <a href="matrix.html" class="nav-tab active">Topic-to-Resource Matrix</a>
+      <a href="projects.html" class="nav-tab">7 Progressive Projects</a>
+      <a href="interview.html" class="nav-tab">System Design Interviews</a>
+      <a href="capacity.html" class="nav-tab">Capacity &amp; Sizing Lab</a>
+      <a href="schedule.html" class="nav-tab">Schedule &amp; First 14 Days</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Verified Topic-to-Resource Matrix</h2>
+      <span class="sub">Direct Canonical Links &bull; Quality-Checked &bull; No Paywalls</span>
+    </div>
+
+    <div class="callout callout-success">
+      <strong>✅ Quality Control Verified:</strong> Every resource listed below has been verified for public zero-cost access. No subscriptions, no pirate links, no generic landing pages. Direct links point to exact playlists, official documentation, or legal academic PDFs.
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th style="min-width:180px;">Topic</th>
+            <th>Priority</th>
+            <th>Prerequisites</th>
+            <th style="min-width:240px;">Primary Free Resource</th>
+            <th style="min-width:200px;">Supplementary Resource</th>
+            <th style="min-width:220px;">Practical Exercise (Local)</th>
+            <th>Est. Hours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Distributed Systems Fundamentals</strong></td>
+            <td><span class="badge-p0">P0</span></td>
+            <td>Basic Networking</td>
+            <td>
+              <a href="https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB" target="_blank" style="color:var(--accent-cyan);font-weight:700;text-decoration:none;">
+                ▶ Martin Kleppmann Distributed Systems Playlist ↗
+              </a><br>
+              <span style="font-size:11.5px;color:var(--text-dim);">Univ of Cambridge 8-lecture series + slides</span>
+            </td>
+            <td>
+              <a href="https://www.youtube.com/playlist?list=PLrw6LRcGd_z3OCMErWghk_K3jT92w8Uv6" target="_blank" style="color:var(--text-muted);text-decoration:none;">
+                MIT 6.824 (Spring 2020) Robert Morris ↗
+              </a>
+            </td>
+            <td>Build a 3-node mock key-value store with leader replication and heartbeat failure detection in Python.</td>
+            <td><strong>25h</strong></td>
+          </tr>
+
+          <tr>
+            <td><strong>Parallel Computing &amp; GPU Architecture</strong></td>
+            <td><span class="badge-p0">P0</span></td>
+            <td>C/C++ &amp; Memory</td>
+            <td>
+              <a href="https://www.youtube.com/playlist?list=PLoROMvodv4rPOWA-omMM6STXaWW4FvJT8" target="_blank" style="color:var(--accent-cyan);font-weight:700;text-decoration:none;">
+                ▶ Stanford CS149: Parallel Computing (Kayvon Fatahalian) ↗
+              </a><br>
+              <span style="font-size:11.5px;color:var(--text-dim);">Hardware execution, SIMD, warps, cache hierarchy</span>
+            </td>
+            <td>
+              <a href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/" target="_blank" style="color:var(--text-muted);text-decoration:none;">
+                NVIDIA CUDA C Programming Guide ↗
+              </a>
+            </td>
+            <td>Calculate arithmetic intensity of matrix multiplication and draw Roofline curve comparing to RTX 2050 specs.</td>
+            <td><strong>30h</strong></td>
+          </tr>
+
+          <tr>
+            <td><strong>OpenAI Triton GPU Kernels</strong></td>
+            <td><span class="badge-p0">P0</span></td>
+            <td>Python &amp; GPU Memory</td>
+            <td>
+              <a href="https://triton-lang.org/main/getting-started/tutorials/index.html" target="_blank" style="color:var(--accent-cyan);font-weight:700;text-decoration:none;">
+                📄 OpenAI Triton Official Tutorials ↗
+              </a><br>
+              <span style="font-size:11.5px;color:var(--text-dim);">Vector add, Fused Softmax, LayerNorm, MatMul</span>
+            </td>
+            <td>
+              <a href="https://github.com/cuda-mode" target="_blank" style="color:var(--text-muted);text-decoration:none;">
+                CUDA Mode Community Lectures (YouTube &amp; GitHub) ↗
+              </a>
+            </td>
+            <td>Implement Fused Softmax in Triton; benchmark latency against standard PyTorch softmax.</td>
+            <td><strong>20h</strong></td>
+          </tr>
+
+          <tr>
+            <td><strong>LLM Inference, PagedAttention &amp; vLLM</strong></td>
+            <td><span class="badge-p0">P0</span></td>
+            <td>Transformer basics</td>
+            <td>
+              <a href="https://arxiv.org/abs/2309.06180" target="_blank" style="color:var(--accent-cyan);font-weight:700;text-decoration:none;">
+                📑 PagedAttention Paper (Kwon et al. 2023) ↗
+              </a><br>
+              <span style="font-size:11.5px;color:var(--text-dim);">Efficient Memory Management for LLMs with PagedAttention</span>
+            </td>
+            <td>
+              <a href="https://docs.vllm.ai/" target="_blank" style="color:var(--text-muted);text-decoration:none;">
+                vLLM Architecture Documentation ↗
+              </a>
+            </td>
+            <td>Run a small 1.5B model on laptop GPU using Ollama or vLLM; measure TTFT vs ITL across batch sizes 1, 4, and 8.</td>
+            <td><strong>25h</strong></td>
+          </tr>
+
+          <tr>
+            <td><strong>IO-Aware Attention (FlashAttention)</strong></td>
+            <td><span class="badge-p0">P0</span></td>
+            <td>Memory hierarchy</td>
+            <td>
+              <a href="https://arxiv.org/abs/2205.14135" target="_blank" style="color:var(--accent-cyan);font-weight:700;text-decoration:none;">
+                📑 FlashAttention Paper (Tri Dao et al. 2022) ↗
+              </a><br>
+              <span style="font-size:11.5px;color:var(--text-dim);">Fast and Memory-Efficient Exact Attention with IO-Awareness</span>
+            </td>
+            <td>
+              <a href="https://horace.io/brrr_intro.html" target="_blank" style="color:var(--text-muted);text-decoration:none;">
+                Making Deep Learning Go Brrrr (Horace He) ↗
+              </a>
+            </td>
+            <td>Write a Python simulation of FlashAttention tiling: compute attention in SRAM-sized blocks without materializing N×N matrix.</td>
+            <td><strong>15h</strong></td>
+          </tr>
+
+          <tr>
+            <td><strong>Database Systems Internals</strong></td>
+            <td><span class="badge-p1">P1</span></td>
+            <td>Basic SQL</td>
+            <td>
+              <a href="https://15445.courses.cs.cmu.edu/" target="_blank" style="color:var(--accent-cyan);font-weight:700;text-decoration:none;">
+                ▶ CMU 15-445/645: Intro to Database Systems (Andy Pavlo) ↗
+              </a><br>
+              <span style="font-size:11.5px;color:var(--text-dim);">Storage engines, B+ Trees, Buffer Pools, Concurrency</span>
+            </td>
+            <td>
+              <a href="https://www.postgresql.org/docs/current/" target="_blank" style="color:var(--text-muted);text-decoration:none;">
+                PostgreSQL Official Documentation ↗
+              </a>
+            </td>
+            <td>Analyze query plans using <code>EXPLAIN (ANALYZE, BUFFERS)</code> on a 1M-row table; compare sequential scan vs B+Tree index.</td>
+            <td><strong>25h</strong></td>
+          </tr>
+
+          <tr>
+            <td><strong>Kubernetes for Production Systems</strong></td>
+            <td><span class="badge-p1">P1</span></td>
+            <td>Docker fundamentals</td>
+            <td>
+              <a href="https://www.youtube.com/watch?v=X48VuDVv0do" target="_blank" style="color:var(--accent-cyan);font-weight:700;text-decoration:none;">
+                ▶ Kubernetes Tutorial for Beginners (TechWorld with Nana) ↗
+              </a><br>
+              <span style="font-size:11.5px;color:var(--text-dim);">4 hours complete overview: Pods, Deployments, Services</span>
+            </td>
+            <td>
+              <a href="https://kubernetes.io/docs/home/" target="_blank" style="color:var(--text-muted);text-decoration:none;">
+                Kubernetes Official Documentation ↗
+              </a>
+            </td>
+            <td>Deploy a local 3-node cluster using <code>kind</code>; deploy a model service with readiness probes and resource limits.</td>
+            <td><strong>20h</strong></td>
+          </tr>
+
+          <tr>
+            <td><strong>Distributed Training (ZeRO &amp; FSDP)</strong></td>
+            <td><span class="badge-p1">P1</span></td>
+            <td>PyTorch &amp; DDP</td>
+            <td>
+              <a href="https://arxiv.org/abs/1910.02054" target="_blank" style="color:var(--accent-cyan);font-weight:700;text-decoration:none;">
+                📑 ZeRO Paper (Rajbhandari et al. Microsoft) ↗
+              </a><br>
+              <span style="font-size:11.5px;color:var(--text-dim);">Memory Optimizations for Trillion-Parameter Models</span>
+            </td>
+            <td>
+              <a href="https://lilianweng.github.io/posts/2021-09-25-train-large/" target="_blank" style="color:var(--text-muted);text-decoration:none;">
+                How to Train Really Large Models (Lilian Weng) ↗
+              </a>
+            </td>
+            <td>Simulate PyTorch DDP locally across 2 CPU processes using <code>torchrun --nproc_per_node=2 --backend=gloo</code>.</td>
+            <td><strong>18h</strong></td>
+          </tr>
+
+          <tr>
+            <td><strong>Production Reliability &amp; SLOs</strong></td>
+            <td><span class="badge-p1">P1</span></td>
+            <td>Basic Monitoring</td>
+            <td>
+              <a href="https://sre.google/sre-book/table-of-contents/" target="_blank" style="color:var(--accent-cyan);font-weight:700;text-decoration:none;">
+                📖 Site Reliability Engineering (Google SRE Book - Free) ↗
+              </a><br>
+              <span style="font-size:11.5px;color:var(--text-dim);">Chapters 3-6: SLAs/SLOs, Monitoring, Eliminating Toil</span>
+            </td>
+            <td>
+              <a href="https://prometheus.io/docs/introduction/overview/" target="_blank" style="color:var(--text-muted);text-decoration:none;">
+                Prometheus Documentation ↗
+              </a>
+            </td>
+            <td>Instrument a model server with Prometheus histograms; define an SLO rule alert when P99 latency exceeds 300ms.</td>
+            <td><strong>15h</strong></td>
+          </tr>
+
+          <tr>
+            <td><strong>Automated LLM Evaluation Engineering</strong></td>
+            <td><span class="badge-p1">P1</span></td>
+            <td>Python &amp; QA intuition</td>
+            <td>
+              <a href="https://docs.confident-ai.com/" target="_blank" style="color:var(--accent-cyan);font-weight:700;text-decoration:none;">
+                📄 DeepEval Documentation (Confident AI) ↗
+              </a><br>
+              <span style="font-size:11.5px;color:var(--text-dim);">LLM unit testing, hallucination metrics, G-Eval</span>
+            </td>
+            <td>
+              <a href="https://docs.ragas.io/en/latest/" target="_blank" style="color:var(--text-muted);text-decoration:none;">
+                RAGAS Official Documentation ↗
+              </a>
+            </td>
+            <td>Build a test suite of 50 prompt test cases asserting hallucination score &lt; 0.15; fail GitHub Actions PR if regression occurs.</td>
+            <td><strong>12h</strong></td>
+          </tr>
+
+          <tr>
+            <td><strong>High-Throughput Storage &amp; Data Loading</strong></td>
+            <td><span class="badge-p2">P2</span></td>
+            <td>Linux File Systems</td>
+            <td>
+              <a href="https://pdos.csail.mit.edu/6.824/papers/gfs.pdf" target="_blank" style="color:var(--accent-cyan);font-weight:700;text-decoration:none;">
+                📑 The Google File System (GFS Paper) ↗
+              </a><br>
+              <span style="font-size:11.5px;color:var(--text-dim);">Ghemawat et al. (Architecture of large distributed files)</span>
+            </td>
+            <td>
+              <a href="https://developer.nvidia.com/gpudirect-storage" target="_blank" style="color:var(--text-muted);text-decoration:none;">
+                NVIDIA GPUDirect Storage (GDS) Architectural Overview ↗
+              </a>
+            </td>
+            <td>Benchmark PyTorch standard DataLoader vs memory-mapped binary array format; measure sample loading throughput in MB/s.</td>
+            <td><strong>12h</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <footer>
+    System Design Cockpit &bull; Verified Topic-to-Resource Matrix &bull; 2026 Edition
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

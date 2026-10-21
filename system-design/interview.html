@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Design Interviews - AI Infrastructure Cockpit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand-section">
+        <a href="index.html" class="brand-lockup">
+          <div class="brand-icon">📐</div>
+          <div class="brand-titles">
+            <span class="brand-title">System Design Cockpit</span>
+            <span class="brand-subtitle">Interview Vault &bull; 3 Levels</span>
+          </div>
+        </a>
+      </div>
+      <div class="header-stats">
+        <div class="stat-chip"><span class="label">Level 1:</span><span class="val">Fundamentals</span></div>
+        <div class="stat-chip"><span class="label">Level 2:</span><span class="val">ML Systems</span></div>
+        <div class="stat-chip"><span class="label">Level 3:</span><span class="val green">AI Infrastructure</span></div>
+        <a href="../dsa/index.html" class="nav-tab nav-tab-dsa">Silicon DSA Cockpit ↗</a>
+        <a href="../index.html" class="nav-tab nav-tab-return">← AI Infra Roadmap</a>
+      </div>
+    </div>
+    <nav class="nav-tabs">
+      <a href="index.html" class="nav-tab">Overview &amp; Market</a>
+      <a href="curriculum.html" class="nav-tab">Curriculum (Phases A–M)</a>
+      <a href="matrix.html" class="nav-tab">Topic-to-Resource Matrix</a>
+      <a href="projects.html" class="nav-tab">7 Progressive Projects</a>
+      <a href="interview.html" class="nav-tab active">System Design Interviews</a>
+      <a href="capacity.html" class="nav-tab">Capacity &amp; Sizing Lab</a>
+      <a href="schedule.html" class="nav-tab">Schedule &amp; First 14 Days</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Progressive System Design Interview Preparation</h2>
+      <span class="sub">Structured Whiteboard Derivations &bull; Never Memorize Diagrams</span>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>🎯 The 4-Step Whiteboard Framework:</strong>
+      <br>1. <strong>Scope &amp; Clarify (5 min):</strong> Functional requirements, non-functional requirements, traffic scale (QPS, throughput, latency SLOs, model size).
+      <br>2. <strong>Capacity Estimation (5 min):</strong> Memory bounds, parameter size, KV-cache footprint, bandwidth saturation, node counts.
+      <br>3. <strong>High-Level Architecture (15 min):</strong> Ingestion, API gateway, scheduler, compute/inference layer, storage, caching.
+      <br>4. <strong>Deep Dive, Failure Modes &amp; Bottlenecks (15 min):</strong> Straggler GPUs, OOM fragmentation, network partition recovery, rate limiting.
+    </div>
+
+    <!-- LEVEL 1 -->
+    <div class="section-header">
+      <h3 style="font-size:17px;color:#fff;">Level 1 &bull; Distributed Systems Prerequisite Questions</h3>
+      <span class="sub">Foundational Building Blocks</span>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">1. Design a Distributed Rate Limiter</div>
+        <div class="card-desc">
+          <strong>Why AI Infra cares:</strong> LLM APIs (like OpenAI / Anthropic) enforce strict token-per-minute (TPM) and request-per-minute (RPM) quotas per customer tier.<br>
+          <strong>Architecture:</strong> Redis Token Bucket with sliding window log; Lua script atomic execution prevents race conditions across multi-instance API gateways; graceful 429 response with <code>Retry-After</code> headers.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">2. Design a Distributed Key-Value Cache</div>
+        <div class="card-desc">
+          <strong>Why AI Infra cares:</strong> Foundation for feature caching, model metadata, and prefix KV-cache block index tables.<br>
+          <strong>Architecture:</strong> Consistent hashing with virtual nodes to avoid rehashing churn; LRU eviction with doubly-linked list + hash map; read-through cache with connection pooling.
+        </div>
+      </div>
+    </div>
+
+    <!-- LEVEL 2 -->
+    <div class="section-header">
+      <h3 style="font-size:17px;color:#fff;">Level 2 &bull; ML Platform &amp; Data Pipeline Questions</h3>
+      <span class="sub">Machine Learning Systems</span>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">3. Design a Real-Time Model Serving API</div>
+        <div class="card-desc">
+          <strong>Requirements:</strong> 1,000 QPS, P99 latency &lt; 50ms, model size 500MB.<br>
+          <strong>Architecture:</strong> Client &rarr; Load Balancer &rarr; Stateless FastAPI Pods &rarr; Model warm-up on startup &rarr; Dynamic batcher queues requests for 5ms &rarr; PyTorch inference worker &rarr; Prometheus histogram metrics.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">4. Design a Low-Latency Feature Store</div>
+        <div class="card-desc">
+          <strong>Requirements:</strong> Dual storage for training (offline batch) and real-time inference (online single-digit ms lookup).<br>
+          <strong>Architecture:</strong> Dual-tier: Redis for online low-latency entity lookups (&lt;5ms) + Parquet/S3 for offline training batches; Kafka streaming updates processed via Flink to maintain training-serving consistency.
+        </div>
+      </div>
+    </div>
+
+    <!-- LEVEL 3: DEEP AI INFRASTRUCTURE -->
+    <div class="section-header">
+      <h3 style="font-size:17px;color:#fff;">Level 3 &bull; Core AI Infrastructure &amp; LLM Systems (Staff Level)</h3>
+      <span class="sub">Tier-1 Company Questions (NVIDIA, Meta, OpenAI, Anthropic)</span>
+    </div>
+
+    <!-- QUESTION: DESIGN LLM INFERENCE PLATFORM -->
+    <div class="card" style="margin-bottom:28px;border-color:var(--accent-purple);">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+        <div>
+          <span class="badge-p0">Flagship Interview Question</span>
+          <h4 style="font-size:18px;color:#fff;margin-top:6px;">Design a Multi-Tenant High-Throughput LLM Inference API Platform</h4>
+        </div>
+        <span class="tag-badge">500 QPS &bull; Llama-3-70B &bull; TTFT &lt; 200ms</span>
+      </div>
+
+      <div style="font-size:13px;color:var(--text-muted);display:flex;flex-direction:column;gap:12px;">
+        <div>
+          <strong style="color:#fff;">1. Requirements &amp; SLA:</strong>
+          <br>• Model: Llama-3-70B (FP16: 140 GB weights, FP8: 70 GB weights).
+          <br>• Workload: 500 QPS; average prompt = 1,000 tokens; average output = 200 tokens.
+          <br>• SLO: Time-To-First-Token (TTFT) &lt; 200ms; Inter-Token Latency (ITL) &lt; 25ms.
+        </div>
+
+        <div>
+          <strong style="color:#fff;">2. Capacity &amp; Hardware Estimation:</strong>
+          <br>• <strong>Weights Memory:</strong> 70B in FP8 = 70 GB &rarr; Fits on a single 80GB H100 GPU for weights, but requires multi-GPU (Tensor Parallelism TP=4 or TP=8) to provide memory bandwidth for 500 concurrent decode streams.
+          <br>• <strong>KV-Cache Memory:</strong> At 1,200 total tokens per request, each sequence requires:
+          $$\text{Mem} = 2 \times 2 \times 80\text{ layers} \times 8\text{ KV heads} \times 128\text{ head dim} \times 1\text{ byte (FP8)} \times 1200\text{ tokens} \approx 393\text{ MB per stream}$$
+          For 500 concurrent streams: $500 \times 393\text{ MB} \approx 196.5\text{ GB}$ purely for KV-Cache!
+          <br>• <strong>Node Sizing:</strong> Provision clusters of 8×H100 SXM5 nodes running vLLM or SGLang with Tensor Parallelism TP=4 (2 model instances per 8-GPU node).
+        </div>
+
+        <div>
+          <strong style="color:#fff;">3. Architectural Flow:</strong>
+          <pre style="margin-top:6px;padding:10px;">[Clients (HTTP/gRPC Streaming)]
+   &boxv;
+[API Gateway] &rarr; Authenticate API Key, Rate Limit (Token Bucket per tenant)
+   &boxv;
+[Load Balancer with KV-Cache Prefix Affinity (SGLang RadixTree Hash)]
+   &boxv;
+[Inference Node: 8x H100 SXM5]
+   &boxdr;&boxh;&boxh; [Continuous Batching Scheduler] (Iteration-level prefill &amp; decode interleaving)
+   &boxdr;&boxh;&boxh; [PagedAttention Memory Manager] (Virtual block tables in HBM eliminate external fragmentation)
+   &boxdr;&boxh;&boxh; [4-way Tensor Parallelism over NVLink (900 GB/s interconnect)]
+   &boxur;&boxh;&boxh; [Server-Sent Events (SSE) Streaming Engine] &rarr; Yields tokens back to client</pre>
+        </div>
+
+        <div>
+          <strong style="color:#fff;">4. Critical Bottlenecks &amp; Failure Modes Handled:</strong>
+          <br>• <strong>Client Disconnects:</strong> When a user closes the browser mid-generation, gateway detects broken TCP pipe and sends cancellation signal to vLLM scheduler, immediately freeing the KV-cache blocks rather than wasting 200 compute steps.
+          <br>• <strong>Prefix Cache Sharing:</strong> System prompts (e.g. 800-token legal context) are shared across multiple requests using RadixAttention prefix caching, reducing prefill computation by 80%.
+          <br>• <strong>Chunked Prefill:</strong> Prevents massive 8,000-token prompt requests from stalling ongoing single-token decode streams.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    System Design Cockpit &bull; Interview Preparation &bull; 2026 Edition
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

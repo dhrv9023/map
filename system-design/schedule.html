@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule &amp; First 14 Days - System Design Cockpit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand-section">
+        <a href="index.html" class="brand-lockup">
+          <div class="brand-icon">📐</div>
+          <div class="brand-titles">
+            <span class="brand-title">System Design Cockpit</span>
+            <span class="brand-subtitle">Schedule &bull; First 14 Days Execution Plan</span>
+          </div>
+        </a>
+      </div>
+      <div class="header-stats">
+        <div class="stat-chip"><span class="label">Plan A:</span><span class="val">6 Months (Fast-Track)</span></div>
+        <div class="stat-chip"><span class="label">Plan B:</span><span class="val green">9–12 Months (Deep)</span></div>
+        <a href="../dsa/index.html" class="nav-tab nav-tab-dsa">Silicon DSA Cockpit ↗</a>
+        <a href="../index.html" class="nav-tab nav-tab-return">← AI Infra Roadmap</a>
+      </div>
+    </div>
+    <nav class="nav-tabs">
+      <a href="index.html" class="nav-tab">Overview &amp; Market</a>
+      <a href="curriculum.html" class="nav-tab">Curriculum (Phases A–M)</a>
+      <a href="matrix.html" class="nav-tab">Topic-to-Resource Matrix</a>
+      <a href="projects.html" class="nav-tab">7 Progressive Projects</a>
+      <a href="interview.html" class="nav-tab">System Design Interviews</a>
+      <a href="capacity.html" class="nav-tab">Capacity &amp; Sizing Lab</a>
+      <a href="schedule.html" class="nav-tab active">Schedule &amp; First 14 Days</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Study Schedule &amp; Execution Roadmap</h2>
+      <span class="sub">Structured Weekly Rhythm &bull; Measurable Milestones</span>
+    </div>
+
+    <!-- WEEKLY RHYTHM -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">📅 Target Weekly Time Allocation (~33–35 Hours)</div>
+        <div class="card-desc">
+          • <strong>Mon &ndash; Thu (Evenings):</strong> 3.5 &ndash; 4.0 hrs/day (Deep reading + code implementation)<br>
+          • <strong>Friday:</strong> 7.0 hrs (Consolidated project build sessions &amp; benchmarking)<br>
+          • <strong>Saturday:</strong> 7.0 hrs (System design whiteboarding, failure simulation, interview mocks)<br>
+          • <strong>Sunday:</strong> 5.0 hrs (Spaced repetition, architecture review, rest after 6 PM)
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">⚖️ Two Phased Timelines Compared</div>
+        <div class="card-desc">
+          • <strong>Plan A (6 Months Focused):</strong> Prioritizes System Design Fundamentals, Linux, Distributed Queues, Model Serving (vLLM), and Projects 1, 2, 3, and 6. Gets you job-ready for Stage 1 (AI Platform / Inference Engineer).<br>
+          • <strong>Plan B (9&ndash;12 Months Deep):</strong> Extends into low-level Triton GPU kernel optimization, NCCL network fabrics, Kubernetes KubeRay clusters, and Capstone Project 7.
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIONABLE FIRST 14 DAYS -->
+    <div class="section-header">
+      <h2>🚀 Actionable Day-by-Day Plan: The First 14 Days</h2>
+      <span class="sub">Zero Passive Watching &bull; Implementation Starts Day 1</span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:40px;">
+
+      <!-- DAY 1 -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span class="badge-p0">Day 1</span>
+          <span style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Foundations &amp; Latency SLOs</span>
+        </div>
+        <div style="font-size:13.5px;color:var(--text-main);">
+          <strong>Topic:</strong> Latency vs Throughput &amp; Non-Functional Requirements.<br>
+          <strong>Watch/Read:</strong> Google SRE Book, Chapter 4 (Service Level Objectives) &bull; Martin Kleppmann Lecture 1 (Distributed Systems Introduction).<br>
+          <strong>Implement:</strong> Write a Python script using <code>time.perf_counter()</code> that sends 100 requests to a dummy endpoint and calculates P50, P90, P95, and P99 latency percentiles.<br>
+          <strong>GitHub Deliverable:</strong> Commit <code>day01_latency_calculator.py</code> to your repo.
+        </div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span class="badge-p0">Day 2</span>
+          <span style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">FastAPI Asynchronous Architecture</span>
+        </div>
+        <div style="font-size:13.5px;color:var(--text-main);">
+          <strong>Topic:</strong> Event Loops, AsyncIO, and Worker Thread Pools.<br>
+          <strong>Watch/Read:</strong> FastAPI official concurrency documentation (async def vs def).<br>
+          <strong>Implement:</strong> Build a minimal FastAPI service with two endpoints: <code>/fast</code> (async non-blocking) and <code>/slow</code> (synchronous blocking CPU call). Benchmark under 50 concurrent requests with <code>wrk</code> or <code>hey</code>.<br>
+          <strong>GitHub Deliverable:</strong> Commit <code>day02_fastapi_concurrency/</code> with benchmark notes.
+        </div>
+      </div>
+
+      <!-- DAY 3 -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span class="badge-p0">Day 3</span>
+          <span style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Project 1 Kickoff: Model Packaging</span>
+        </div>
+        <div style="font-size:13.5px;color:var(--text-main);">
+          <strong>Topic:</strong> Model Lifecycle, Pydantic Schema Validation &amp; Startup Lifespan.<br>
+          <strong>Implement:</strong> Create Project 1 structure. Load a small PyTorch or Scikit-Learn model during FastAPI <code>@asynccontextmanager lifespan</code>. Assert model weights load into memory once on startup rather than per-request.<br>
+          <strong>GitHub Deliverable:</strong> Commit <code>project1_inference_api/</code> with lifespan model loading.
+        </div>
+      </div>
+
+      <!-- DAY 4 -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span class="badge-p0">Day 4</span>
+          <span style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Dockerization &amp; Health Probes</span>
+        </div>
+        <div style="font-size:13.5px;color:var(--text-main);">
+          <strong>Topic:</strong> Docker Multi-Stage Builds, <code>/health/live</code> vs <code>/health/ready</code>.<br>
+          <strong>Implement:</strong> Write an optimized multi-stage Dockerfile; add liveness and readiness probe endpoints. Ensure readiness returns HTTP 503 until model weights finish loading.<br>
+          <strong>GitHub Deliverable:</strong> Commit <code>Dockerfile</code> and <code>docker-compose.yml</code>.
+        </div>
+      </div>
+
+      <!-- DAY 5 -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span class="badge-p0">Day 5</span>
+          <span style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Linux Profiling &amp; Syscall Tracing</span>
+        </div>
+        <div style="font-size:13.5px;color:var(--text-main);">
+          <strong>Topic:</strong> Syscalls, File Descriptors, and <code>strace</code>.<br>
+          <strong>Implement:</strong> Run your containerized model server under load; execute <code>strace -c -p &lt;PID&gt;</code> to analyze where CPU time is spent. Log findings into an engineering report.<br>
+          <strong>GitHub Deliverable:</strong> Commit <code>day05_syscall_profiling_report.md</code>.
+        </div>
+      </div>
+
+      <!-- DAY 6 -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span class="badge-p0">Day 6</span>
+          <span style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Distributed Caching &amp; Rate Limiting</span>
+        </div>
+        <div style="font-size:13.5px;color:var(--text-main);">
+          <strong>Topic:</strong> Redis Key-Value Store &amp; Token Bucket Rate Limiting.<br>
+          <strong>Implement:</strong> Add Redis to your Docker Compose. Implement a token-bucket rate limiter that restricts API keys to 20 requests per minute with atomic Lua scripts.<br>
+          <strong>GitHub Deliverable:</strong> Commit <code>rate_limiter.py</code> with PyTest assertion suite.
+        </div>
+      </div>
+
+      <!-- DAY 7 -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span class="badge-p0">Day 7</span>
+          <span style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Week 1 Review &amp; System Design Mock</span>
+        </div>
+        <div style="font-size:13.5px;color:var(--text-main);">
+          <strong>Topic:</strong> Week 1 Architecture Review &amp; System Design Practice.<br>
+          <strong>Whiteboard Task:</strong> Design a Rate-Limited ML Inference API on paper/Excalidraw. Include load balancing, rate limiting, and health probes.<br>
+          <strong>GitHub Deliverable:</strong> Commit architecture diagram <code>week1_system_design.png</code> and write a 1-page design document.
+        </div>
+      </div>
+
+      <!-- DAY 8–14 Highlights -->
+      <div class="card" style="border-color:var(--accent-purple);">
+        <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:8px;">Days 8 &ndash; 14 &bull; Asynchronous Queues &amp; Project 2</div>
+        <div style="font-size:13px;color:var(--text-muted);line-height:1.7;">
+          • <strong>Day 8:</strong> Message Queues (Kafka vs Redis vs RabbitMQ) &bull; Implement Redis background job publisher.<br>
+          • <strong>Day 9:</strong> Project 2 Worker Pool &bull; Build detached Python worker consuming from queue.<br>
+          • <strong>Day 10:</strong> Idempotency &amp; Polling &bull; Client polls <code>GET /jobs/{id}</code> with deduplication key.<br>
+          • <strong>Day 11:</strong> Dead-Letter Queues (DLQ) &bull; Simulating worker crashes and automatic requeue.<br>
+          • <strong>Day 12:</strong> Distributed Systems &bull; Martin Kleppmann Lecture 2 (Failure Models &amp; RPCs).<br>
+          • <strong>Day 13:</strong> Performance Load Testing &bull; Run Locust load test generating 1,000 asynchronous jobs.<br>
+          • <strong>Day 14:</strong> Comprehensive Milestone Audit &bull; Tag Project 2 v1.0.0 release on GitHub with complete README and benchmark report.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 0 TO 5 ASSESSMENT RUBRIC -->
+    <div class="section-header">
+      <h2>0 to 5 Evaluation &amp; Mastery Rubric</h2>
+      <span class="sub">How to Grade Yourself After Each Phase</span>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Score</th>
+            <th>Mastery Level</th>
+            <th>Observed Ability</th>
+            <th>Action Required</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>0</strong></td>
+            <td>Unaware</td>
+            <td>Cannot explain the concept or recognize the problem it solves.</td>
+            <td>Cannot pass. Re-read primary documentation and watch lecture.</td>
+          </tr>
+          <tr>
+            <td><strong>1</strong></td>
+            <td>Superficial</td>
+            <td>Recognizes the buzzwords (e.g. "PagedAttention", "Raft") but cannot describe mechanics.</td>
+            <td>Watch the deep-dive lecture and write notes on the failure mode.</td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td>Guided</td>
+            <td>Can explain the basic idea when prompted with diagrams or guided questions.</td>
+            <td>Build the small hands-on code exercise independently.</td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td>Independent</td>
+            <td>Can explain independently on a whiteboard and solve a standard coding exercise.</td>
+            <td><strong>Minimum Passing Grade for Stage 1.</strong></td>
+          </tr>
+          <tr>
+            <td><strong>4</strong></td>
+            <td>Production-Ready</td>
+            <td>Can implement a working multi-process solution, configure Docker/K8s, and discuss trade-offs.</td>
+            <td>Ready for Junior-to-Mid AI Platform interview screens.</td>
+          </tr>
+          <tr>
+            <td><strong>5</strong></td>
+            <td>Staff-Level</td>
+            <td>Can analyze edge-case failure modes, hardware bottlenecks, memory fragmentation, and defend design decisions against alternative architectures.</td>
+            <td>Target for Senior / Staff AI Systems roles.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <footer>
+    System Design Cockpit &bull; Schedule &amp; Execution Plan &bull; 2026 Edition
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

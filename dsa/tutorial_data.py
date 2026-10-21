@@ -474,20 +474,42 @@ TUTORIAL_CREATORS = {
 }
 
 def get_tutorial_resource(day_num, topic):
-    creator_info = TUTORIAL_CREATORS.get(day_num, {
-        "primary": "Striver",
-        "query": f"striver {topic}",
-        "channels": [
+    try:
+        from curated_resources import get_curated_resource
+        curated = get_curated_resource(day_num, topic)
+    except Exception:
+        curated = {}
+
+    yt = curated.get("yt")
+    doc = curated.get("doc")
+
+    creator_info = TUTORIAL_CREATORS.get(day_num)
+    if yt:
+        primary_ch = yt["creator"]
+        primary_yt_url = yt["url"]
+        query = f"{primary_ch} {topic}"
+        channels_spec = creator_info["channels"] if creator_info else [
+            {"name": primary_ch, "query": f"{primary_ch} {topic}", "cls": "striver" if "striver" in primary_ch.lower() else "other"}
+        ]
+    elif creator_info:
+        primary_ch = creator_info["primary"]
+        query = creator_info["query"]
+        primary_yt_url = f"https://www.youtube.com/results?search_query={urllib.parse.quote(query)}"
+        channels_spec = creator_info["channels"]
+    else:
+        primary_ch = "Striver"
+        query = f"striver {topic}"
+        primary_yt_url = f"https://www.youtube.com/results?search_query={urllib.parse.quote(query)}"
+        channels_spec = [
             {"name": "Striver", "query": f"striver {topic}", "cls": "striver"},
             {"name": "Aditya Verma", "query": f"aditya verma {topic}", "cls": "aditya"},
             {"name": "Love Babbar", "query": f"love babbar {topic}", "cls": "babbar"},
             {"name": "Padho with Pratyush", "query": f"padho with pratyush {topic}", "cls": "pratyush"},
             {"name": "NeetCode", "query": f"neetcode {topic}", "cls": "neetcode"}
         ]
-    })
-    primary_yt_url = f"https://www.youtube.com/results?search_query={urllib.parse.quote(creator_info['query'])}"
+
     channel_links = []
-    for ch in creator_info["channels"]:
+    for ch in channels_spec:
         ch_url = f"https://www.youtube.com/results?search_query={urllib.parse.quote(ch['query'])}"
         channel_links.append({
             "name": ch["name"],
@@ -495,11 +517,15 @@ def get_tutorial_resource(day_num, topic):
             "cls": ch.get("cls", "other"),
             "query": ch["query"]
         })
+
     return {
-        "primary": creator_info["primary"],
-        "primaryChannel": creator_info["primary"],
+        "primary": primary_ch,
+        "primaryChannel": primary_ch,
         "primary_url": primary_yt_url,
         "primaryUrl": primary_yt_url,
         "channels": channel_links,
-        "query": creator_info["query"]
+        "query": query,
+        "yt": yt,
+        "doc": doc
     }
+
