@@ -49,21 +49,55 @@
     </div>
 
     <!-- WEEKLY RHYTHM -->
+    <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:10px;padding:14px 18px;margin-bottom:24px;font-size:13px;color:#fca5a5;">
+      <strong>⚠️ Calibrated Schedule — Not Aspirational</strong><br>
+      The weekly plan below reflects your <em>actual</em> availability, not the maximum possible hours. Following a schedule you can't sustain causes burnout, not progress. Protect Mon/Wed evenings for rest and light review only.
+    </div>
     <div class="grid-2">
       <div class="card">
-        <div class="card-title">📅 Target Weekly Time Allocation (~33–35 Hours)</div>
+        <div class="card-title">📅 Realistic Weekly Time Budget (~24–26 Hours Total)</div>
         <div class="card-desc">
-          • <strong>Mon &ndash; Thu (Evenings):</strong> 3.5 &ndash; 4.0 hrs/day (Deep reading + code implementation)<br>
-          • <strong>Friday:</strong> 7.0 hrs (Consolidated project build sessions &amp; benchmarking)<br>
-          • <strong>Saturday:</strong> 7.0 hrs (System design whiteboarding, failure simulation, interview mocks)<br>
-          • <strong>Sunday:</strong> 5.0 hrs (Spaced repetition, architecture review, rest after 6 PM)
+          • <strong>Monday (back pain):</strong> Light only — 30–45 min review/reading. No deep coding.<br>
+          • <strong>Tuesday:</strong> 2.5–3.0 hrs (7 PM–10:30 PM; one focused topic + implement)<br>
+          • <strong>Wednesday (back pain):</strong> Light only — 30–45 min flashcards/notes. No heavy sessions.<br>
+          • <strong>Thursday:</strong> 2.5–3.0 hrs (7 PM–10:30 PM; project work or problem-solving)<br>
+          • <strong>Friday:</strong> 6.0–7.0 hrs (deep project builds, benchmarking, long-form reading)<br>
+          • <strong>Saturday:</strong> 6.0–7.0 hrs (system design whiteboarding, architecture reviews, mocks)<br>
+          • <strong>Sunday:</strong> 4.0–5.0 hrs (SRS revision, documentation, wrap-up; stop by 6 PM)<br>
+          <br>
+          <strong>Effective weekly study hours: ~24–26 hrs</strong><br>
+          Mon/Wed total: ~1.5 hrs | Tue/Thu: ~6 hrs | Fri: ~7 hrs | Sat: ~7 hrs | Sun: ~5 hrs
         </div>
       </div>
       <div class="card">
-        <div class="card-title">⚖️ Two Phased Timelines Compared</div>
+        <div class="card-title">⚖️ Two Phased Timelines</div>
         <div class="card-desc">
-          • <strong>Plan A (6 Months Focused):</strong> Prioritizes System Design Fundamentals, Linux, Distributed Queues, Model Serving (vLLM), and Projects 1, 2, 3, and 6. Gets you job-ready for Stage 1 (AI Platform / Inference Engineer).<br>
-          • <strong>Plan B (9&ndash;12 Months Deep):</strong> Extends into low-level Triton GPU kernel optimization, NCCL network fabrics, Kubernetes KubeRay clusters, and Capstone Project 7.
+          • <strong>Plan A (7–8 Months Focused):</strong> System Design Fundamentals → Linux → Distributed Queues → Model Serving (vLLM) → Projects 1–3 + 6. Job-ready for Stage 1 (AI Platform / Inference Engineer).<br>
+          • <strong>Plan B (12–15 Months Deep):</strong> Extends into low-level Triton GPU kernel optimization, NCCL network fabrics, KubeRay clusters, and Capstone Project 7.<br><br>
+          <em>Note: Plan A assumes 24–26 hrs/week. Plan B timelines are based on the same availability — do not compress into 6 months on this schedule.</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEKLY AUDIT & ZERO-DEBT RECOVERY -->
+    <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:10px;padding:16px 20px;margin-bottom:24px;">
+      <div style="font-size:14px;font-weight:800;color:var(--accent-cyan);margin-bottom:8px;display:flex;align-items:center;gap:6px;">
+        <span>🔄</span> Sunday 5-Question Audit &amp; The Zero-Debt Recovery Protocol
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;font-size:12.5px;color:var(--text-muted);line-height:1.6;">
+        <div style="background:var(--bg-surface);padding:10px 14px;border-radius:6px;border-left:3px solid var(--accent-purple);">
+          <strong style="color:#fff;">Sunday 5:00 PM Audit (10-min written log):</strong><br>
+          1. What was actually completed? (git commits)<br>
+          2. What working system was built? (runnable test/demo)<br>
+          3. What can I explain independently without notes?<br>
+          4. What blocked progress or caused friction?<br>
+          5. What must change in next week's focus?
+        </div>
+        <div style="background:var(--bg-surface);padding:10px 14px;border-radius:6px;border-left:3px solid var(--accent-coral);">
+          <strong style="color:#fff;">Strict Zero-Debt Recovery Rule:</strong><br>
+          • <strong>NEVER carry over missed hours:</strong> If you miss 8 hours, next week's budget remains 24.5 hrs, NOT 32.5 hrs.<br>
+          • <strong>Shed Scope Immediately:</strong> Drop P3 Optional topics; defer secondary P1 polish; protect P0 code and tests.<br>
+          • <strong>Inviolable Health Rule:</strong> Mon/Wed light review days are non-negotiable regardless of schedule slippage.
         </div>
       </div>
     </div>

@@ -26,6 +26,41 @@ This repository integrates three production-ready web applications:
 
 ---
 
+## 🛡️ The Execution-Proof Engineering Framework (8 Inviolable Rules)
+
+To eliminate analysis paralysis, tutorial hell, and cognitive overload, the entire roadmap operates under eight strict engineering principles:
+
+1. **Strict Priority System (P0–P3):**
+   - **P0 (Essential):** Immediate prerequisite for next project or interview milestone. *Non-negotiable.*
+   - **P1 (Important):** Production hardening & observability, scheduled after P0 passes tests.
+   - **P2 (Advanced):** Specialized systems/GPU infra, blocked until Stages 1–3 are clear.
+   - **P3 (Optional):** Research tooling or hardware specifics, studied only on explicit demand.
+   - **The Invariant:** *A P2 or P3 topic is STRICTLY FORBIDDEN from delaying P0 work.*
+
+2. **The 5-Step Build-First Learning Loop:**
+   - (1) Learn minimum theory (max 45 min reading) $\to$ (2) Implement small working example $\to$ (3) Self-debug (20-min AI blackout) $\to$ (4) Write 1-page TIL note $\to$ (5) Stop the moment criteria pass and advance immediately.
+
+3. **Measurable Exit Gates:**
+   - Advancement is gated by automated evidence, not videos watched: runnable code, passing `pytest`/`mypy`, single-command deployment, whiteboard architecture explanation, and verified latency/memory benchmarks.
+
+4. **The Rule of Three (Zero Resource Bloat):**
+   - For every single subject: **1 Primary Resource** (free preferred), **1 Reference Resource** for gap-filling, and **1 Practical Task** with an automated test and stopping condition.
+
+5. **Zero-Debt Recovery Rules & Weekly Retrospective:**
+   - Weekly 5-question review every Sunday at 5:00 PM.
+   - **No-Debt Policy:** Missed study hours are **never rolled over** into the following week. When behind, shed scope (drop P3, defer P1); protect P0 and the Monday/Wednesday ergonomic health limit.
+
+6. **Real Job Market Alignment:**
+   - Concrete breakdown across 4 distinct roles: (1) AI / LLM Application Engineer (Stage 1 exit); (2) ML Platform / MLOps Engineer; (3) Machine Learning Engineer; (4) AI Infrastructure Engineer (Stage 2 exit). Assessed strictly on portfolio evidence, never calendar promises.
+
+7. **Project-First Portfolio Bar (6 Core Artifacts):**
+   - Every phase produces an MVP with unit tests, README, architecture diagrams, and empirical benchmarks (e.g. p95 latency, tokens/sec, VRAM profiling).
+
+8. **Single Next Action Directive:**
+   - Always provides a single, unambiguous next task with exact docs, a tight timebox, and automated acceptance criteria.
+
+---
+
 ## 🌐 1-Click GitHub Pages Deployment
 
 This repository is pre-configured for instant zero-configuration deployment to **GitHub Pages**:
@@ -174,7 +209,7 @@ npm run preview
  • OpenAI Triton & CUDA Kernels (FlashAttention, Fused RoPE)
  • High-Throughput Serving (vLLM, SGLang, TensorRT-LLM, FP8 KV-Cache)
  • Distributed Training (FSDP, DeepSpeed ZeRO 1-3, Megatron 3D Parallelism, NCCL)
- • Target: ₹45L–₹100L+ / $250K–$500K+ senior
+ • Target: ₹30L–₹60L / $160K–$250K · 1–3 yrs exp (senior FAANG higher with proven track record)
 ```
 
 - **Phase 1 (Months 1–6):** Foundations (Python 3.11+, Math, Linux OS, Docker, Backend FastAPI, C++ DSA)
@@ -224,9 +259,9 @@ npm run preview
 
 ## 📊 Realistic Salary Expectations (2026 Market)
 
-- **Stage 1 — AI Eval / Application Engineer (Phase 3 exit, 0–2 yrs):** ₹18L–₹35L / $100K–$140K
-- **Stage 2 — AI Infrastructure Systems Engineer (Phase 4, 1–3 yrs):** ₹35L–₹65L / $160K–$260K
-- **Senior / Staff AI Infrastructure Engineer (3+ yrs systems):** ₹70L–₹120L+ / $300K–$550K+
+- **Stage 1 — AI Eval / Application Engineer (Phase 3 exit, 0–2 yrs exp):** ₹18L–₹35L / $100K–$140K
+- **Stage 2 — AI Infrastructure Systems Engineer (Phase 4, 1–3 yrs exp):** ₹30L–₹60L / $160K–$250K
+- **Senior / Staff AI Infrastructure Engineer (5+ yrs systems track record):** ₹60L–₹100L+ / $250K–$450K+ *(top-tier FAANG/frontier lab compensation requires proven large-scale production delivery)*
 
 ## 🔗 Resources Included
 
@@ -248,23 +283,23 @@ npm run preview
 ## 🎓 Success Tips
 
 1. **Start with Phase 1** - Don't skip foundations
-2. **Do DSA daily** - 1 hour weekday, 2 hours Saturday
-3. **Build projects** - Real projects > tutorials
-4. **Join communities** - Find peers learning the same path
+2. **Do DSA daily** - 1 core problem daily from Striver A2Z (Steps 1–17)
+3. **Build projects** - Real projects with automated tests > watching tutorials
+4. **Join communities** - Find peers learning the same path (CUDA Mode, PyTorch forums)
 5. **Track progress** - Use weekly self-audit questions
-6. **Stay consistent** - 3-5 hours daily is key
-7. **Review regularly** - Use cheat sheets for quick reference
-8. **Build in public** - Share progress on GitHub/Twitter
+6. **Stay consistent with realistic workload** - ~24–26 hrs/week total: Mon/Wed light review (30–45m) to protect health/back; Tue/Thu 2.5–3h; Fri 6–7h; Sat 6–7h; Sun 4–5h
+7. **Review regularly** - Use spaced-repetition flashcards
+8. **Build in public** - Push clean code and benchmarks to GitHub
 
 ## 🚨 Common Mistakes to Avoid
 
 ❌ Skipping Phase 1 foundations
-❌ Not doing DSA consistently
-❌ Only watching tutorials (no coding)
-❌ Trying to learn everything at once
-❌ Not building real projects
-❌ Ignoring system design
-❌ Not reading error messages carefully
+❌ Attempting 35+ hours/week on top of a full-time job (leads to immediate burnout)
+❌ Attempting CUDA kernel programming before learning model serving and OS memory fundamentals
+❌ Only watching tutorials (no code written or benchmarked)
+❌ Trying to learn everything simultaneously (follow sequential modules)
+❌ Fine-tuning 7B models locally on a 4GB GPU (use free Google Colab T4 or 1.5B/3B models)
+❌ Ignoring system design and production observability
 ❌ Giving up too early
 
 ## 📞 Questions?
@@ -286,7 +321,7 @@ This roadmap is updated regularly to reflect:
 - Salary insights
 - Interview patterns
 
-**Last Updated:** May 27, 2026
+**Last Updated:** October 2026 (Audited & Calibrated Edition)
 
 ---
 

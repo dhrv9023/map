@@ -49,8 +49,26 @@
     </div>
 
     <div class="callout callout-info">
-      <strong>📌 How to Navigate Dependencies:</strong><br>
-      Do not skip foundational phases. Phase A (Design Foundations), Phase B (Linux/Networking), and Phase C (Distributed Systems) are the bedrock. If these are weak, Phase G (Model Serving) and Phase I (LLM Infrastructure) will reduce to memorizing jargon instead of engineering systems.
+      <strong>📌 4-Level Progressive AI Systems Design Framework:</strong><br>
+      Do not skip foundational phases. Learn system design progressively in lockstep with hands-on building:
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:10px;margin-top:10px;font-size:12px;">
+        <div style="background:rgba(255,255,255,0.05);padding:8px 12px;border-radius:6px;border-left:3px solid var(--accent-cyan);">
+          <strong>Level 1: Essential Fundamentals</strong><br>
+          <span style="color:var(--text-muted);">Phases A, B, D</span> &bull; Client-server, TCP/Linux, latency/throughput, SQL/caching.
+        </div>
+        <div style="background:rgba(255,255,255,0.05);padding:8px 12px;border-radius:6px;border-left:3px solid var(--accent-blue);">
+          <strong>Level 2: Distributed Systems</strong><br>
+          <span style="color:var(--text-muted);">Phases C, E</span> &bull; Replication, Raft consensus, idempotency, Kubernetes orchestration.
+        </div>
+        <div style="background:rgba(255,255,255,0.05);padding:8px 12px;border-radius:6px;border-left:3px solid var(--accent-purple);">
+          <strong>Level 3: ML Systems Design</strong><br>
+          <span style="color:var(--text-muted);">Phases F, G &amp; H</span> &bull; Feature stores, model serving, continuous batching, KV-cache.
+        </div>
+        <div style="background:rgba(255,255,255,0.05);padding:8px 12px;border-radius:6px;border-left:3px solid var(--accent-green);">
+          <strong>Level 4: Advanced AI Infra</strong><br>
+          <span style="color:var(--text-muted);">Phases I, J, K, L, M</span> &bull; Multi-GPU DDP/FSDP, NCCL networks, gang scheduling, capstones.
+        </div>
+      </div>
     </div>
 
     <!-- PHASE A -->
@@ -190,6 +208,34 @@
       </div>
       <div style="background:var(--bg-surface);padding:12px 16px;border-radius:6px;font-size:12.5px;border:1px solid var(--border-color);">
         <strong>🛠️ Hands-on Exercise:</strong> Deploy a local FastAPI service in a <code>kind</code> cluster with 3 replicas, readiness probe delay for simulated model loading, and Horizontal Pod Autoscaler (HPA) simulating load.
+      </div>
+    </div>
+
+    <!-- PHASE F -->
+    <div class="card" style="margin-bottom:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+        <div>
+          <span class="badge-p1">Phase F &bull; P1 Practical</span>
+          <h3 style="font-size:18px;color:#fff;margin-top:6px;">Feature Stores, Ingestion Pipelines &amp; Model Artifact Registries</h3>
+        </div>
+        <div style="font-size:12px;font-family:var(--font-mono);color:var(--accent-cyan);">Duration: 2 Weeks &bull; ~30 Hours</div>
+      </div>
+      <p class="card-desc">
+        <strong>Why it matters:</strong> Machine learning models require real-time feature retrieval with point-in-time correctness to prevent train-serve skew. Model weight artifacts (multi-gigabyte safetensors) need versioned, immutable storage with fast streaming retrieval.
+      </p>
+      <div style="font-size:13px;margin-bottom:12px;">
+        <strong>Detailed Subtopics:</strong>
+        <div style="color:var(--text-muted);margin-top:4px;">
+          • Online vs Offline Feature Stores (Redis/Cassandra for &lt;10ms online inference; Snowflake/Parquet for offline training).<br>
+          • Train-serve skew and historical point-in-time joins.<br>
+          • Feast / Hopsworks architecture: feature definitions, registry, online sync jobs.<br>
+          • Batch &amp; stream feature ingestion (Kafka topics &rarr; streaming aggregations &rarr; key-value cache).<br>
+          • Model Artifact Storage: MLflow / Hugging Face Hub / S3, safetensors vs pickle (security &amp; zero-copy mmap loading).<br>
+          • Model lineage, semantic versioning, and canary deployment tagging.
+        </div>
+      </div>
+      <div style="background:var(--bg-surface);padding:12px 16px;border-radius:6px;font-size:12.5px;border:1px solid var(--border-color);">
+        <strong>🛠️ Hands-on Exercise:</strong> Set up a local Feast feature repository backed by SQLite (offline) and Redis (online); write a feature retrieval function that serves fresh features with &lt;5ms latency and verifies point-in-time correctness.
       </div>
     </div>
 
