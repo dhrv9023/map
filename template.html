@@ -9,71 +9,99 @@
 <style>
 *,::before,::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0a0b0f;--bg2:#111217;--bg3:#18191f;--bg4:#1f2028;
-  --border:#ffffff12;--border2:#ffffff1f;
-  --text:#f1f3f8;--text2:#9aa0b4;--text3:#5a6075;
-  --accent:#6c6ef5;--accent2:#818cf8;
-  --teal:#2dd4bf;--green:#22c55e;--amber:#f59e0b;
-  --coral:#f97316;--red:#ef4444;--pink:#ec4899;
-  --mono:'JetBrains Mono',monospace;--sans:'Inter',system-ui,sans-serif;--r:10px;
+  /* Calibrated Low-Eye-Strain Dark Palette (GitHub/Linear/VS Code slate aesthetic) */
+  --bg:#0d1117;
+  --bg2:#161b22;
+  --bg3:#21262d;
+  --bg4:#2c313c;
+  
+  /* Soft, non-glare borders */
+  --border:rgba(255,255,255,0.08);
+  --border2:rgba(255,255,255,0.14);
+  
+  /* Anti-fatigue typography */
+  --text:#e6edf3;
+  --text2:#94a3b8;
+  --text3:#64748b;
+  
+  /* Restrained, harmonious accents (anti-glare) */
+  --accent:#6366f1;
+  --accent2:#818cf8;
+  --accent-soft:rgba(99,102,241,0.10);
+  
+  /* Subdued semantic tones */
+  --teal:#38bdf8;
+  --green:#34d399;
+  --amber:#fbbf24;
+  --coral:#fb923c;
+  --red:#f87171;
+  --pink:#f472b6;
+  
+  --mono:'JetBrains Mono',monospace;
+  --sans:'Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+  --r:10px;
 }
 html,body{width:100%;overflow-x:hidden;scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.7;min-height:100vh}
-#pb{position:fixed;top:0;left:0;height:2px;width:0%;z-index:9999;background:linear-gradient(90deg,var(--accent),var(--teal),var(--amber));transition:width .1s;pointer-events:none}
-.nav{position:sticky;top:0;z-index:1000;background:#0a0b0fe8;backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 clamp(1rem,3vw,2.5rem)}
+#pb{position:fixed;top:0;left:0;height:2px;width:0%;z-index:9999;background:var(--accent2);transition:width .1s;pointer-events:none}
+.nav{position:sticky;top:0;z-index:1000;background:rgba(13,17,23,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 clamp(1rem,3vw,2.5rem)}
 .nav-in{display:flex;align-items:center;gap:1rem;height:52px}
 .brand{font-size:13px;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:6px;flex-shrink:0}
 .brand span{color:var(--accent2)}
-.tabs{display:flex;align-items:center;gap:2px;flex:1;overflow-x:auto;scrollbar-width:none}
+.tabs{display:flex;align-items:center;gap:3px;flex:1;overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
-.tab{color:var(--text3);font-size:12px;font-weight:600;padding:5px 10px;border-radius:6px;cursor:pointer;white-space:nowrap;transition:all .15s;border:none;background:transparent;font-family:var(--sans)}
+.tab{color:var(--text2);font-size:12px;font-weight:600;padding:5px 11px;border-radius:6px;cursor:pointer;white-space:nowrap;transition:all .15s;border:none;background:transparent;font-family:var(--sans)}
 .tab:hover{color:var(--text);background:var(--bg3)}
-.tab.active{color:var(--text);background:var(--bg4)}
-.tab.gt{color:#4ade80}.tab.gt:hover,.tab.gt.active{background:#22c55e18}
+.tab.active{color:var(--text);background:var(--bg4);border:1px solid var(--border2)}
+.tab.res-tab{color:var(--teal);font-weight:700}
+.tab.res-tab.active{background:rgba(56,189,248,0.12);border-color:rgba(56,189,248,0.3);color:#fff}
 .utils{display:flex;align-items:center;gap:6px;flex-shrink:0}
 .ubtn{background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:11.5px;font-weight:600;font-family:var(--sans);border-radius:7px;padding:4px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:all .15s}
-.ubtn:hover{border-color:var(--accent);color:var(--accent)}
+.ubtn:hover{border-color:var(--border2);color:var(--text)}
 kbd{font-size:9.5px;font-family:var(--mono);background:var(--bg4);border:1px solid var(--border2);border-radius:3px;padding:1px 4px;color:var(--text3)}
 .page{display:none;max-width:min(98vw,1400px);margin:0 auto;padding:2.5rem clamp(1rem,3vw,2.5rem) 8rem}
 .page.active{display:block}
 .hero{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);margin-bottom:2.5rem}
-.tag{font-size:10.5px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--accent2);background:var(--bg3);border:1px solid var(--border2);border-radius:999px;padding:3px 10px;font-weight:800;display:inline-block;margin-bottom:.85rem}
-.hero h1{font-size:clamp(28px,5vw,46px);font-weight:900;letter-spacing:-.025em;line-height:1.15;margin-bottom:.65rem}
-.hero p{color:var(--text2);font-size:15px;max-width:600px}
+.tag{font-size:10.5px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--text2);background:var(--bg3);border:1px solid var(--border);border-radius:999px;padding:3px 10px;font-weight:700;display:inline-block;margin-bottom:.85rem}
+.hero h1{font-size:clamp(28px,5vw,46px);font-weight:900;letter-spacing:-.025em;line-height:1.15;margin-bottom:.65rem;color:var(--text)}
+.hero p{color:var(--text2);font-size:15px;max-width:650px}
 h2{font-size:18px;font-weight:800;color:var(--text);margin:2.5rem 0 1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
-.hs{font-size:11px;font-family:var(--mono);font-weight:700;color:var(--text3);background:var(--bg3);border-radius:4px;padding:2px 7px;margin-left:auto}
-h3{font-size:13px;font-weight:800;color:var(--text2);text-transform:uppercase;letter-spacing:.06em;margin:1.75rem 0 .65rem}
+.hs{font-size:11px;font-family:var(--mono);font-weight:600;color:var(--text3);background:var(--bg3);border-radius:4px;padding:2px 7px;margin-left:auto}
+h3{font-size:13px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.06em;margin:1.75rem 0 .65rem}
 .block{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem 1.5rem;margin-bottom:.75rem;transition:border-color .15s}
 .block:hover{border-color:var(--border2)}
 .bt{font-size:14px;font-weight:700;color:var(--text);margin-bottom:.5rem;display:flex;align-items:center;gap:7px}
 .bb{color:var(--text2);font-size:13.5px;line-height:1.7}
-.ba{border-left:2px solid var(--accent)}.bg{border-left:2px solid var(--green)}
-.bt2{border-left:2px solid var(--teal)}.bc{border-left:2px solid var(--coral)}
-.bam{border-left:2px solid var(--amber)}.br{border-left:2px solid var(--red)}
+.ba{border-left:3px solid var(--accent)}.bg{border-left:3px solid var(--green)}
+.bt2{border-left:3px solid var(--teal)}.bc{border-left:3px solid var(--coral)}
+.bam{border-left:3px solid var(--amber)}.br{border-left:3px solid var(--red)}
 .steps{list-style:none;display:flex;flex-direction:column;gap:.5rem}
 .steps li{display:flex;gap:10px;font-size:13.5px;color:var(--text2);padding:.45rem 0;border-bottom:1px solid var(--border);align-items:flex-start}
 .steps li:last-child{border:none}
 .steps li::before{content:'→';color:var(--accent2);font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px}
-.steps li a{color:var(--accent2);text-decoration:none;font-weight:600}
+.steps li a{color:var(--teal);text-decoration:none;font-weight:600}
 .steps li a:hover{color:var(--text);text-decoration:underline}
 .steps li strong{color:var(--text)}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin:.5rem 0 .85rem}
 .chip{font-size:11.5px;font-family:var(--mono);font-weight:600;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:3px 9px;color:var(--text2)}
 .wk{font-size:10px;font-family:var(--mono);color:var(--text3);background:var(--bg4);border-radius:4px;padding:2px 6px;font-weight:700;flex-shrink:0;margin-left:auto;white-space:nowrap}
 .pill{font-size:11px;font-family:var(--mono);font-weight:700;border-radius:999px;padding:2px 9px;display:inline-block}
-.pr{color:var(--red);background:#ef444415}.pg{color:var(--green);background:#22c55e15}
-.pt{color:var(--teal);background:#2dd4bf15}.pa{color:var(--amber);background:#f59e0b15}
-.pp{color:var(--accent2);background:#818cf815}.pc{color:var(--coral);background:#f9731615}
-.p0{color:#fff;background:#dc2626;border:1px solid #ef4444;box-shadow:0 0 8px rgba(220,38,38,0.25);font-weight:800}
-.p1{color:#2dd4bf;background:#14b8a622;border:1px solid #14b8a655;font-weight:800}
-.p2{color:#a5b4fc;background:#6366f122;border:1px solid #6366f155;font-weight:800}
-.p3{color:#94a3b8;background:#33415533;border:1px solid #47556955;font-weight:700}
+.pr{color:#fca5a5;background:rgba(239,68,68,0.10);border:1px solid rgba(239,68,68,0.22)}
+.pg{color:#6ee7b7;background:rgba(52,211,153,0.10);border:1px solid rgba(52,211,153,0.22)}
+.pt{color:#7dd3fc;background:rgba(56,189,248,0.10);border:1px solid rgba(56,189,248,0.22)}
+.pa{color:#fde68a;background:rgba(251,191,36,0.10);border:1px solid rgba(251,191,36,0.22)}
+.pp{color:#c7d2fe;background:rgba(99,102,241,0.10);border:1px solid rgba(99,102,241,0.22)}
+.pc{color:#fed7aa;background:rgba(251,146,60,0.10);border:1px solid rgba(251,146,60,0.22)}
+.p0{color:#fca5a5;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.28);font-weight:800}
+.p1{color:#7dd3fc;background:rgba(56,189,248,0.10);border:1px solid rgba(56,189,248,0.22);font-weight:700}
+.p2{color:#c7d2fe;background:rgba(99,102,241,0.10);border:1px solid rgba(99,102,241,0.22);font-weight:700}
+.p3{color:#94a3b8;background:rgba(148,163,184,0.10);border:1px solid rgba(148,163,184,0.20);font-weight:600}
 .alert{border-radius:8px;padding:.75rem 1rem;font-size:13px;margin-bottom:1rem;border:1px solid transparent;line-height:1.6}
-.alert strong{font-weight:800}
-.aw{background:#f59e0b14;border-color:#f59e0b30;color:var(--text2)}.aw strong{color:var(--amber)}
-.ai{background:#6c6ef514;border-color:#6c6ef530;color:var(--text2)}.ai strong{color:var(--accent2)}
-.as{background:#22c55e14;border-color:#22c55e30;color:var(--text2)}.as strong{color:var(--green)}
-.ad{background:#ef444414;border-color:#ef444430;color:var(--text2)}.ad strong{color:var(--red)}
+.alert strong{font-weight:700;color:var(--text)}
+.aw{background:rgba(251,191,36,0.06);border-color:rgba(251,191,36,0.20);color:var(--text2)}.aw strong{color:var(--amber)}
+.ai{background:rgba(99,102,241,0.06);border-color:rgba(99,102,241,0.20);color:var(--text2)}.ai strong{color:var(--accent2)}
+.as{background:rgba(52,211,153,0.06);border-color:rgba(52,211,153,0.20);color:var(--text2)}.as strong{color:var(--green)}
+.ad{background:rgba(239,68,68,0.06);border-color:rgba(239,68,68,0.20);color:var(--text2)}.ad strong{color:var(--red)}
 .g2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem}
 @media(max-width:900px){.g3{grid-template-columns:repeat(2,1fr)}}
@@ -87,65 +115,68 @@ h3{font-size:13px;font-weight:800;color:var(--text2);text-transform:uppercase;le
 .cl a{font-size:11.5px;font-weight:700;border-radius:6px;padding:3px 9px;border:1px solid;text-decoration:none;transition:all .15s}
 .cl a:hover{filter:brightness(1.15)}
 .pc2{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem 1.5rem;margin-bottom:.75rem;position:relative;overflow:hidden;transition:border-color .15s}
-.pc2::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--_a,var(--accent))}
+.pc2::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--border2)}
 .pc2:hover{border-color:var(--border2)}
 .ptit{font-size:14.5px;font-weight:800;color:var(--text);margin-bottom:.4rem;display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap}
 .pmeta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.65rem}
 .pb2{font-size:13px;color:var(--text2);line-height:1.7}
 .pb2 ul{list-style:none;padding:0;margin:.5rem 0;display:flex;flex-direction:column;gap:3px}
 .pb2 ul li::before{content:'◆';color:var(--accent2);font-size:9px;margin-right:7px}
-.dla{background:linear-gradient(135deg,#6c6ef514,#2dd4bf14);border:1.5px solid var(--accent);border-radius:14px;padding:1.75rem 2rem;text-align:center;margin-bottom:2rem}
+.dla{background:var(--bg2);border:1px solid var(--border2);border-radius:14px;padding:1.75rem 2rem;text-align:center;margin-bottom:2rem}
 .dla h2{border:none;padding:0;margin:0 0 .5rem;justify-content:center;font-size:22px}
 .dla p{color:var(--text2);font-size:14px;max-width:600px;margin:0 auto 1.25rem}
 .dbs{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap}
-.db{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-family:var(--sans);border-radius:9px;padding:10px 20px;font-size:14px;text-decoration:none;border:none;cursor:pointer;transition:all .15s}
-.dbp{background:linear-gradient(135deg,var(--accent),var(--teal));color:#fff;box-shadow:0 4px 16px #6c6ef530}
-.dbp:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.db{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-family:var(--sans);border-radius:9px;padding:9px 18px;font-size:13.5px;text-decoration:none;border:none;cursor:pointer;transition:all .15s}
+.dbp{background:var(--accent);color:#fff}
+.dbp:hover{background:var(--accent2);transform:translateY(-1px)}
 .dbg{background:var(--bg3);border:1px solid var(--border2);color:var(--text2)}
 .dbg:hover{color:var(--text)}
 .tw{overflow-x:auto;margin:1rem 0;border-radius:8px;border:1px solid var(--border)}
 table{border-collapse:collapse;width:100%;font-size:12.5px}
-th{background:var(--bg3);color:var(--text3);text-transform:uppercase;letter-spacing:.05em;font-size:10.5px;font-weight:800;text-align:left;padding:9px 12px;border-bottom:1px solid var(--border)}
+th{background:var(--bg3);color:var(--text3);text-transform:uppercase;letter-spacing:.05em;font-size:10.5px;font-weight:700;text-align:left;padding:9px 12px;border-bottom:1px solid var(--border)}
 td{padding:9px 12px;color:var(--text2);border-bottom:1px solid var(--border);vertical-align:top}
 tr:last-child td{border-bottom:none}
-tr:hover td{background:#ffffff04}
-code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-radius:4px;padding:2px 6px;font-size:12px}
-.so{position:fixed;inset:0;background:#000000b0;backdrop-filter:blur(8px);z-index:99999;display:none;justify-content:center;align-items:flex-start;padding-top:12vh}
+tr:hover td{background:rgba(255,255,255,0.02)}
+code{font-family:var(--mono);background:var(--bg3);color:var(--teal);border-radius:4px;padding:2px 6px;font-size:12px}
+.so{position:fixed;inset:0;background:rgba(0,0,0,0.72);backdrop-filter:blur(8px);z-index:99999;display:none;justify-content:center;align-items:flex-start;padding-top:12vh}
 .so.active{display:flex}
-.sc{background:var(--bg2);border:1px solid var(--border2);border-radius:14px;width:94%;max-width:600px;overflow:hidden;box-shadow:0 24px 64px #00000080;animation:.2s cubic-bezier(.16,1,.3,1) sp}
+.sc{background:var(--bg2);border:1px solid var(--border2);border-radius:14px;width:94%;max-width:600px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.7);animation:.2s cubic-bezier(.16,1,.3,1) sp}
 @keyframes sp{from{opacity:0;transform:translateY(-8px) scale(.97)}to{opacity:1;transform:none}}
 .sir{display:flex;align-items:center;gap:10px;padding:1rem 1.2rem;border-bottom:1px solid var(--border)}
 .sir input{flex:1;background:transparent;border:none;outline:none;color:var(--text);font-size:15px;font-family:var(--sans);font-weight:600}
 .sir input::placeholder{color:var(--text3)}
 .sres{max-height:360px;overflow-y:auto}
 .si{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.2rem;cursor:pointer;transition:background .12s;font-size:13.5px;font-weight:600;color:var(--text2)}
-.si:hover,.si.hl{background:var(--bg3);color:var(--accent2)}
+.si:hover,.si.hl{background:var(--bg3);color:var(--text)}
 .sit{font-size:10px;font-family:var(--mono);font-weight:700;color:var(--text3);background:var(--bg4);border-radius:3px;padding:1px 5px}
 .sf{background:var(--bg3);border-top:1px solid var(--border);padding:.5rem 1.2rem;display:flex;gap:1rem;font-size:11px;color:var(--text3);font-family:var(--mono)}
+
+/* Floating Navigate Pill: low-eye-strain frosted dark pill */
 .fw{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9998}
-.fp{background:#ffe862;border:1.5px solid #c9a830;border-radius:999px;display:flex;align-items:center;gap:8px;padding:10px 20px;cursor:pointer;transition:all .4s cubic-bezier(.22,1,.36,1);box-shadow:0 10px 28px #0000006e;min-width:140px;justify-content:space-between;user-select:none}
-.fp:hover{transform:scale(1.04)}
-.fl{font-size:12.5px;font-weight:900;color:#1a1a1a;letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:7px}
-.fd{width:7px;height:7px;border-radius:50%;background:#16a34a;box-shadow:0 0 6px #16a34a;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-.fi{display:flex;align-items:center;justify-content:center;width:22px;height:22px;position:relative}
-.fli{position:absolute;background:#1a1a1a;height:2px;width:16px;border-radius:2px;transition:all .3s}
-.fli.l1{top:7px}.fli.l2{top:13px}
-.fp.open .fli.l1{top:10px;transform:rotate(45deg)}
-.fp.open .fli.l2{top:10px;transform:rotate(-45deg)}
-.fp.open .fd{background:#f43f5e;box-shadow:0 0 6px #f43f5e}
-.fm{position:absolute;bottom:calc(100% + 10px);left:50%;background:#16161d;border:1px solid #ffffff1a;border-radius:14px;padding:10px;min-width:280px;opacity:0;pointer-events:none;transition:all .25s cubic-bezier(.22,1,.36,1);transform:translateX(-50%) translateY(6px) scale(.97);box-shadow:0 20px 50px #000000b0}
+.fp{background:rgba(22,27,34,0.92);border:1px solid rgba(255,255,255,0.16);border-radius:999px;display:flex;align-items:center;gap:10px;padding:9px 18px;cursor:pointer;transition:all .25s ease;box-shadow:0 12px 36px rgba(0,0,0,0.5);min-width:130px;justify-content:space-between;user-select:none;backdrop-filter:blur(16px)}
+.fp:hover{background:rgba(30,36,46,0.96);border-color:rgba(255,255,255,0.25);transform:scale(1.02)}
+.fl{font-size:12px;font-weight:700;color:var(--text);letter-spacing:.05em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.fd{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 6px var(--teal);animation:pulse 2.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.fi{display:flex;align-items:center;justify-content:center;width:18px;height:18px;position:relative}
+.fli{position:absolute;background:var(--text2);height:1.5px;width:14px;border-radius:2px;transition:all .25s}
+.fli.l1{top:6px}.fli.l2{top:11px}
+.fp.open .fli.l1{top:9px;transform:rotate(45deg);background:var(--text)}
+.fp.open .fli.l2{top:9px;transform:rotate(-45deg);background:var(--text)}
+.fp.open .fd{background:var(--amber);box-shadow:0 0 6px var(--amber)}
+.fm{position:absolute;bottom:calc(100% + 10px);left:50%;background:rgba(22,27,34,0.96);border:1px solid var(--border2);border-radius:14px;padding:8px;min-width:280px;opacity:0;pointer-events:none;transition:all .25s ease;transform:translateX(-50%) translateY(6px) scale(.97);box-shadow:0 20px 50px rgba(0,0,0,0.6);backdrop-filter:blur(16px)}
 .fm.open{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0) scale(1)}
-.fmt{font-size:10px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;color:#ffffff40;padding:4px 8px 8px;font-weight:800}
-.fmi{display:flex;align-items:center;gap:9px;padding:7px 9px;border-radius:8px;cursor:pointer;transition:background .15s;color:#ffffffc0;font-size:12.5px;font-weight:600;font-family:var(--sans)}
-.fmi:hover{background:#ffffff14;color:#fff}
-.fmn{font-size:10px;font-family:var(--mono);color:#ffffff30;width:18px;font-weight:700}
+.fmt{font-size:10px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--text3);padding:4px 8px 8px;font-weight:700}
+.fmi{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:7px;cursor:pointer;transition:background .15s;color:var(--text2);font-size:12.5px;font-weight:600;font-family:var(--sans)}
+.fmi:hover{background:var(--bg3);color:var(--text)}
+.fmn{font-size:11px;font-family:var(--mono);color:var(--text3);width:18px;font-weight:700}
+
 @media(max-width:640px){.tabs{gap:1px}.tab{padding:4px 8px;font-size:11px}.hero h1{font-size:28px}.page{padding:1.5rem .85rem 7rem}.g2,.g3{grid-template-columns:1fr}.dbs{flex-direction:column;align-items:center}}
 .form-group{margin-bottom:1rem}
 .form-label{display:block;font-size:11.5px;font-weight:700;color:var(--text2);margin-bottom:.35rem;text-transform:uppercase;letter-spacing:.05em}
 .form-control{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:.5rem .75rem;color:var(--text);font-family:var(--sans);font-size:13px;outline:none;transition:border-color .15s}
 .form-control:focus{border-color:var(--accent2)}
-.calc-panel{background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--r);padding:1.5rem;margin:1.5rem 0}
+.calc-panel{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;margin:1.5rem 0}
 .calc-res{background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:1.25rem}
 .calc-item{display:flex;justify-content:space-between;align-items:center;padding:.55rem 0;border-bottom:1px solid var(--border);font-size:13px}
 .calc-item:last-child{border-bottom:none}
@@ -157,10 +188,33 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
 .sd-tab{background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:12px;font-weight:700;padding:.4rem .85rem;border-radius:6px;cursor:pointer;text-decoration:none;transition:all .15s;display:inline-flex;align-items:center;gap:6px}
 .sd-tab:hover{border-color:var(--accent2);color:var(--text)}
 .dc-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:1.15rem;transition:border-color .15s,transform .15s}
-.dc-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.dc-card:hover{border-color:var(--accent2);transform:translateY(-2px)}
 .dc-icon{font-size:22px;margin-bottom:8px;display:block}
 .dc-tit{font-size:13.5px;font-weight:800;color:var(--text);margin-bottom:4px}
 .dc-desc{font-size:12.5px;color:var(--text2);line-height:1.6}
+
+/* Dedicated Resource Grid Card Styles */
+.res-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.15rem 1.35rem;transition:all .15s;display:flex;flex-direction:column;justify-content:space-between}
+.res-card:hover{border-color:var(--border2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.25)}
+.res-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:6px}
+.res-tit{font-size:14px;font-weight:800;color:var(--text);text-decoration:none}
+.res-tit:hover{color:var(--teal)}
+.res-badge{font-size:10px;font-family:var(--mono);padding:2px 7px;border-radius:4px;font-weight:700;white-space:nowrap}
+.res-desc{font-size:12.5px;color:var(--text2);line-height:1.6;margin-bottom:10px;flex:1}
+.res-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:8px;font-size:11.5px}
+.res-auth{color:var(--text3);font-family:var(--mono)}
+.res-link{color:var(--teal);text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:4px}
+.res-link:hover{text-decoration:underline;color:var(--text)}
+
+/* How to Learn / Execution Protocol Styles */
+.how-box{background:var(--bg3);border:1px solid var(--border2);border-left:3.5px solid var(--teal);border-radius:8px;padding:1.1rem 1.35rem;margin:1.15rem 0 1.4rem}
+.how-tit{font-size:12.5px;font-family:var(--mono);font-weight:800;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.55rem;display:flex;align-items:center;gap:6px}
+.how-scope{font-size:13px;color:var(--text);margin-bottom:.6rem;line-height:1.6}
+.how-steps{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.45rem}
+.how-steps li{font-size:12.5px;color:var(--text2);display:flex;gap:8px;align-items:flex-start;line-height:1.6}
+.how-steps li strong{color:var(--text)}
+.how-steps li::before{content:'▸';color:var(--teal);font-size:12px;margin-top:1px;flex-shrink:0}
+
 </style>
 </head>
 <body>
@@ -187,15 +241,16 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <a class="brand" href="#" onclick="sP('home')">⬡ <span>AI Infra</span></a>
     <div class="tabs" id="tabs">
       <button class="tab active" data-p="home">Overview</button>
-      <button class="tab" data-p="ai-eng" style="color:var(--accent2);font-weight:700;">✦ AI Engineer Track</button>
+      <button class="tab" data-p="ai-eng">AI Engineer Track</button>
       <button class="tab" data-p="p1">Phase 1</button>
       <button class="tab" data-p="p2">Phase 2</button>
       <button class="tab" data-p="p3">Phase 3</button>
       <button class="tab" data-p="p4">Phase 4</button>
-      <button class="tab" data-p="p5" style="color:var(--coral);font-weight:700;">Phase 5</button>
-      <button class="tab gt" data-p="dsa">DSA</button>
-      <button class="tab" data-p="sd" style="color:var(--teal);font-weight:700;">System Design</button>
+      <button class="tab" data-p="p5">Phase 5</button>
+      <button class="tab" data-p="dsa">DSA (C++)</button>
+      <button class="tab" data-p="sd">System Design</button>
       <button class="tab" data-p="proj">Projects</button>
+      <button class="tab res-tab" data-p="resources">📚 Free Resources</button>
     </div>
     <div class="utils">
       <button class="ubtn" onclick="oS()">🔍 Search <kbd>⌘K</kbd></button>
@@ -217,11 +272,25 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <strong>Sustainable Weekly Budget:</strong> <strong>9–15 Hours / Week</strong> (Ergonomically calibrated for back pain management with light Mon/Wed review).
   </div>
 
+  <!-- 100% FREE LEARNING RESOURCES JUMP BANNER -->
+  <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:1.1rem 1.4rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span style="font-size:24px;">📚</span>
+      <div>
+        <div style="font-size:14px;font-weight:800;color:var(--text);">Looking for Where to Learn? 100% Free Curated Resources Vault</div>
+        <div style="font-size:12.5px;color:var(--text2);">Official documentation, Harvard &amp; MIT courses, Karpathy's masterclasses, Stanford CS149, and complete textbooks with 0 paywalls.</div>
+      </div>
+    </div>
+    <button onclick="sP('resources')" style="background:var(--bg3);border:1px solid var(--border2);color:var(--teal);font-family:var(--sans);font-size:12.5px;font-weight:700;padding:6px 16px;border-radius:6px;cursor:pointer;transition:all 0.15s;" onmouseover="this.style.background='var(--bg4)';this.style.color='#fff'" onmouseout="this.style.background='var(--bg3)';this.style.color='var(--teal)'">
+      Open Free Resources Vault &rarr;
+    </button>
+  </div>
+
   <!-- EXECUTION-PROOF ACTION COCKPIT -->
-  <div style="background:var(--bg2);border:1.5px solid var(--accent);border-radius:12px;padding:1.5rem;margin-bottom:2rem;box-shadow:0 8px 32px rgba(108,110,245,0.12);">
+  <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:1.5rem;margin-bottom:2rem;">
     
     <!-- 1. SINGLE NEXT ACTION -->
-    <div style="background:linear-gradient(135deg,#1e1b4b,#0f172a);border:1.5px solid #818cf8;border-radius:10px;padding:1.25rem 1.4rem;margin-bottom:1.5rem;box-shadow:0 4px 20px rgba(99,102,241,0.2);">
+    <div style="background:var(--bg3);border:1px solid var(--border2);border-left:4px solid var(--accent2);border-radius:10px;padding:1.25rem 1.4rem;margin-bottom:1.5rem;">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:0.6rem;">
         <div style="display:flex;align-items:center;gap:8px;">
           <span style="font-size:20px;">⚡</span>
@@ -247,6 +316,44 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
         </div>
         <div style="font-size:12.5px;color:#94a3b8;border-top:1px solid rgba(255,255,255,0.1);padding-top:0.6rem;">
           <strong style="color:#4ade80;">Next Action After Success:</strong> Wrap the parser into an asynchronous FastAPI endpoint accepting JSON batches at <code>POST /v1/logs</code> and exposing live metrics at <code>GET /metrics</code>.
+        </div>
+      </div>
+    </div>
+
+    <!-- THE MASTER HOW-TO-LEARN PROTOCOL (ANTI-PARALYSIS) -->
+    <div style="margin-bottom:1.5rem;background:var(--bg3);border:1px solid var(--border2);border-left:4px solid var(--teal);border-radius:10px;padding:1.25rem 1.4rem;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.6rem;">
+        <span style="font-size:20px;">📖</span>
+        <h3 style="font-size:14px;font-weight:900;color:var(--teal);margin:0;padding:0;text-transform:uppercase;letter-spacing:0.04em;">THE "HOW TO LEARN" PROTOCOL: DO NOT READ DOCUMENTATION COVER-TO-COVER!</h3>
+      </div>
+      <div style="font-size:13px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;">
+        <strong>The Biggest Trap for Self-Taught Engineers is "Documentation Paralysis":</strong> Opening official Python, FastAPI, or vLLM docs and attempting to read hundreds of pages like a novel. You get exhausted by Chapter 3 and quit. 
+        <strong>Documentation is an index dictionary, not a book!</strong> Nobody reads the entire dictionary from A to Z before speaking English.
+      </div>
+      <div class="g2" style="gap:0.75rem;margin-bottom:0.75rem;">
+        <div style="background:var(--bg4);padding:0.75rem 0.9rem;border-radius:6px;border:1px solid var(--border);">
+          <strong style="color:var(--teal);font-size:12.5px;display:block;margin-bottom:3px;">1. The 45-Minute Hard Timebox</strong>
+          <span style="font-size:12px;color:var(--text2);line-height:1.5;display:block;">
+            Never spend more than 30–45 minutes reading. Read <em>only</em> the specific 2–3 sub-sections targeted in each module below. If the timer rings, close the docs immediately.
+          </span>
+        </div>
+        <div style="background:var(--bg4);padding:0.75rem 0.9rem;border-radius:6px;border:1px solid var(--border);">
+          <strong style="color:var(--accent2);font-size:12.5px;display:block;margin-bottom:3px;">2. Type by Hand &amp; Break It in REPL</strong>
+          <span style="font-size:12px;color:var(--text2);line-height:1.5;display:block;">
+            Never copy-paste. Open your terminal (<code>python3</code>, <code>bash</code>, or <code>g++</code>). Type the 5-line code snippet by hand. Change inputs. Break it intentionally to see how it fails.
+          </span>
+        </div>
+        <div style="background:var(--bg4);padding:0.75rem 0.9rem;border-radius:6px;border:1px solid var(--border);">
+          <strong style="color:var(--amber);font-size:12.5px;display:block;margin-bottom:3px;">3. Close the Docs &amp; Build the Task</strong>
+          <span style="font-size:12px;color:var(--text2);line-height:1.5;display:block;">
+            Close all documentation browser tabs. Open VS Code and start writing the Practical Task. Reopen docs <strong>ONLY via Ctrl+F lookup</strong> when a specific test or compiler error occurs.
+          </span>
+        </div>
+        <div style="background:var(--bg4);padding:0.75rem 0.9rem;border-radius:6px;border:1px solid var(--border);">
+          <strong style="color:var(--green);font-size:12.5px;display:block;margin-bottom:3px;">4. Stop Immediately When Tests Pass</strong>
+          <span style="font-size:12px;color:var(--text2);line-height:1.5;display:block;">
+            The exact second your unit tests pass or acceptance criteria are verified, <strong>STOP</strong>. Do not read extra chapters to "feel productive". Advance immediately to the next task.
+          </span>
         </div>
       </div>
     </div>
@@ -465,21 +572,21 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <p>A high-signal, industry-demanded curriculum designed to run in parallel with your foundations. Zero basic Python loops or generic tutorials — strictly what top AI engineering teams demand, from beginner to advanced.</p>
   </div>
 
-  <div class="meta-row" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:1.75rem;">
-    <span class="chip" style="color:var(--text);border-color:var(--border2);background:var(--bg3);">⏱ Months 6–10 (or Parallel)</span>
-    <span class="chip" style="color:var(--green);border-color:#22c55e40;background:#22c55e10;">✦ 100% Free Resources</span>
-    <span class="chip" style="color:var(--accent2);border-color:#818cf840;background:#818cf810;">🔄 Catalog QA to AI Transition</span>
-    <span class="chip" style="color:var(--teal);border-color:#2dd4bf40;background:#2dd4bf10;">🎯 Stage 1 Stepping Stone: Job-Ready</span>
+  <div class="meta-row" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.75rem;">
+    <span class="chip" style="color:var(--text2);border-color:var(--border);background:var(--bg3);">⏱ Months 6–10 (or Parallel)</span>
+    <span class="chip" style="color:var(--text2);border-color:var(--border);background:var(--bg3);cursor:pointer;" onclick="sP('resources')">📚 100% Free Resources Vault</span>
+    <span class="chip" style="color:var(--text2);border-color:var(--border);background:var(--bg3);">🔄 Catalog QA to AI Transition</span>
+    <span class="chip" style="color:var(--teal);border-color:rgba(56,189,248,0.25);background:rgba(56,189,248,0.08);">🎯 Stage 1 Stepping Stone: Job-Ready</span>
   </div>
 
   <!-- MOTIVATION & CONSISTENCY HABIT ANCHOR -->
-  <div style="background:linear-gradient(135deg,#13162b,#0f111c);border:1.5px solid var(--accent);border-radius:12px;padding:1.4rem;margin-bottom:2rem;box-shadow:0 8px 30px rgba(108,110,245,0.15);">
+  <div style="background:var(--bg2);border:1px solid var(--border2);border-top:2px solid var(--accent2);border-radius:12px;padding:1.4rem;margin-bottom:2rem;">
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:0.75rem;">
       <div style="display:flex;align-items:center;gap:8px;">
         <span style="font-size:24px;">🔥</span>
         <h2 style="font-size:18px;font-weight:900;color:#fff;margin:0;padding:0;border:none;">Daily Habit Anchor &amp; Physical Ergonomics Engine</h2>
       </div>
-      <div id="streak-badge" style="background:rgba(99,102,241,0.2);border:1px solid #818cf8;border-radius:999px;padding:4px 14px;font-family:var(--mono);font-size:12px;color:#a5b4fc;font-weight:800;">
+      <div id="streak-badge" style="background:rgba(99,102,241,0.10);border:1px solid rgba(99,102,241,0.25);border-radius:999px;padding:4px 14px;font-family:var(--mono);font-size:12px;color:var(--text);font-weight:700;">
         ⚡ Consistency Streak: <span id="streak-days">Active</span>
       </div>
     </div>
@@ -503,17 +610,17 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
       <span style="font-size:12.5px;color:var(--text2);">
         Completed your daily target or 15-min reclining review today?
       </span>
-      <button onclick="logDailyStudy()" style="background:linear-gradient(135deg,var(--accent),var(--teal));border:none;color:#fff;font-family:var(--sans);font-size:12px;font-weight:700;padding:6px 16px;border-radius:6px;cursor:pointer;transition:transform 0.15s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+      <button onclick="logDailyStudy()" style="background:var(--accent);border:none;color:#fff;font-family:var(--sans);font-size:12px;font-weight:700;padding:6px 16px;border-radius:6px;cursor:pointer;transition:all 0.15s;" onmouseover="this.style.background='var(--accent2)'" onmouseout="this.style.background='var(--accent)'">
         ✅ Log Today's Win
       </button>
     </div>
   </div>
 
   <!-- THE CATALOG QA ADVANTAGE -->
-  <div class="dla" style="text-align:left;background:linear-gradient(135deg,#121324,#0e1520);border-color:var(--accent2);margin-bottom:2.25rem;">
+  <div class="dla" style="text-align:left;background:var(--bg2);border:1px solid var(--border2);border-left:4px solid var(--teal);margin-bottom:2.25rem;">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.75rem;flex-wrap:wrap;">
       <span class="pill pp">Strategic Leverage</span>
-      <h2 style="font-size:20px;border:none;margin:0;padding:0;color:#fff;">🎯 Why Catalog QA Engineers Succeed in AI Engineering</h2>
+      <h2 style="font-size:18px;border:none;margin:0;padding:0;color:#fff;">🎯 Why Catalog QA Engineers Succeed in AI Engineering</h2>
     </div>
     <p style="font-size:13.5px;color:var(--text2);line-height:1.65;margin-bottom:1rem;">
       In 2026, building a toy RAG prototype takes 30 minutes with high-level frameworks. But production AI deployments fail because of <strong>poor data quality, subtle hallucinations, schema drift, and regression failures</strong>.
@@ -570,6 +677,21 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
         <li><strong>Reference Resource:</strong> <a href="https://platform.openai.com/docs/guides/function-calling" target="_blank">OpenAI Function Calling Guide</a> <em>(Free)</em>.</li>
         <li><strong>Practical Task:</strong> Build a catalog item attribute extractor that accepts messy product descriptions and outputs strictly validated Pydantic JSON schemas (SKU, brand, technical specifications, price) with 0 formatting hallucinations.</li>
       </ul>
+      <div class="how-box" style="margin-top:12px;">
+        <div class="how-tit">⚡ HOW TO LEARN STAGE 1 (DO NOT READ ALL API DOCS)</div>
+        <div class="how-scope">
+          <strong>Exact Reading Scope (Max 30 Min):</strong>
+          <ul style="margin:4px 0 6px 1.25rem;padding:0;line-height:1.6;font-size:12.5px;color:var(--text2);">
+            <li>📖 Read ONLY: <a href="https://ai.google.dev/gemini-api/docs/structured-output" target="_blank" style="color:var(--teal)">Gemini API: Structured Outputs with Pydantic</a> (the 1 code example showing <code>response_schema=MyModel</code>).</li>
+            <li>📖 DAIR.AI: Skim the "Few-Shot Prompting" page for prompt structure (System Prompt + 2 Examples + User Input).</li>
+            <li>🚫 Skip: Multimodal video generation, audio live streaming, embeddings (covered in Stage 2).</li>
+          </ul>
+        </div>
+        <ul class="how-steps">
+          <li><strong>How to Execute:</strong> Write a 20-line Python script. Define a <code>CatalogItem(BaseModel)</code> with 4 fields. Call Gemini passing messy product text. Print <code>item.model_dump_json()</code>.</li>
+          <li><strong>Stopping Gate:</strong> Feed 10 messy product strings; 10/10 return 100% valid Pydantic objects with zero JSONDecodeErrors. Stop immediately and advance!</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -588,6 +710,21 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
         <li><strong>Reference Resource:</strong> <a href="https://www.sbert.net/examples/applications/cross-encoder/README.html" target="_blank">Sentence-Transformers Cross-Encoders Reference</a> <em>(Free)</em>.</li>
         <li><strong>Practical Task:</strong> Implement a hybrid retrieval engine indexing 1,000 product catalog documents in Qdrant; fuse BM25 keyword matches with dense BGE embeddings using Reciprocal Rank Fusion (RRF) and re-rank the top 20 candidates with a cross-encoder.</li>
       </ul>
+      <div class="how-box" style="margin-top:12px;">
+        <div class="how-tit">⚡ HOW TO LEARN STAGE 2 (DO NOT READ ALL VECTOR DB DOCS)</div>
+        <div class="how-scope">
+          <strong>Exact Reading Scope (Max 35 Min):</strong>
+          <ul style="margin:4px 0 6px 1.25rem;padding:0;line-height:1.6;font-size:12.5px;color:var(--text2);">
+            <li>📖 Read ONLY: <a href="https://qdrant.tech/documentation/quickstart/" target="_blank" style="color:var(--teal)">Qdrant Quickstart</a> (Creating collections, inserting vectors, searching with cosine distance).</li>
+            <li>📖 Skim: <a href="https://qdrant.tech/articles/hybrid-search/" target="_blank" style="color:var(--teal)">Qdrant Hybrid Search &amp; RRF</a> (understanding why combining BM25 keyword + dense vectors beats dense alone).</li>
+            <li>🚫 Skip: Distributed sharding, Raft consensus cluster nodes, binary quantization internals.</li>
+          </ul>
+        </div>
+        <ul class="how-steps">
+          <li><strong>How to Execute:</strong> Launch local Qdrant via Docker: <code>docker run -p 6333:6333 qdrant/qdrant</code>. In Python, embed 20 product catalog items with <code>fastembed</code> or <code>sentence-transformers</code>. Insert points and run a search query.</li>
+          <li><strong>Stopping Gate:</strong> Querying "waterproof hiking boots under $100" retrieves the correct product item in top 3 with payload metadata intact. Stop and advance!</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -725,6 +862,25 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <li><strong>Reference Resource:</strong> "Fluent Python" (2nd Ed) by Luciano Ramalho <em>(Chapters 1–3, 7–9)</em> &mdash; Deep lookup for data models, closures, and dunder methods.</li>
     <li><strong>Practical Task &amp; Stopping Condition:</strong> Build a CLI log analyzer with Pydantic schemas, parsing structured JSON/text logs and calculating error rates. <strong>Stopping Condition:</strong> <code>mypy --strict</code> passes with 0 errors and <code>pytest</code> passes >80% coverage. <em>Stop immediately once tests pass.</em></li>
   </ul>
+  <!-- HOW TO LEARN THIS MODULE -->
+  <div class="how-box">
+    <div class="how-tit">⚡ HOW TO LEARN THIS MODULE (DO NOT READ THE ENTIRE DOCS!)</div>
+    <div class="how-scope">
+      <strong>Exact Reading Targets (Max 45 Minutes Total):</strong>
+      <ul style="margin:4px 0 8px 1.25rem;padding:0;line-height:1.6;font-size:12.5px;color:var(--text2);">
+        <li>📖 <strong>Python Official Docs:</strong> Read ONLY <a href="https://docs.python.org/3/tutorial/datastructures.html" target="_blank" style="color:var(--teal)">Section 5 (Data Structures: list comprehensions, dicts)</a>, <a href="https://docs.python.org/3/tutorial/errors.html" target="_blank" style="color:var(--teal)">Section 8 (Errors &amp; Exceptions: try/except/finally)</a>, and <a href="https://docs.python.org/3/tutorial/classes.html" target="_blank" style="color:var(--teal)">Section 9.1–9.6 (Classes &amp; Inheritance)</a>.</li>
+        <li>📖 <strong>Real Python:</strong> Skim the first 3 sections of the Type Checking guide (Type hints syntax, <code>Optional[T]</code>, and running <code>mypy script.py</code>).</li>
+        <li>🚫 <strong>Skip Everything Else:</strong> Do NOT read the C-API, standard library reference, packaging guides, or advanced metaclasses.</li>
+      </ul>
+    </div>
+    <ul class="how-steps">
+      <li><strong>1. The 15-Minute REPL Exercise:</strong> Open terminal, launch <code>python3</code>. Type a 10-line class with type annotations and a custom exception. Break it by passing a string instead of an int. Run <code>mypy</code> on it to see the error.</li>
+      <li><strong>2. Close the Docs:</strong> Close the browser tabs. Open VS Code and immediately create <code>parser.py</code> and <code>test_parser.py</code>.</li>
+      <li><strong>3. Search Only on Blocker:</strong> If you forget syntax for a dict comprehension or Pydantic validator, use <code>Ctrl+F</code> to find that specific syntax. Never browse randomly.</li>
+      <li><strong>4. Hard Exit Gate:</strong> The moment <code>mypy --strict parser.py</code> reports 0 errors and <code>pytest</code> passes >80% coverage, <strong>STOP STUDYING PYTHON</strong>. You have completed Module 1!</li>
+    </ul>
+  </div>
+
   <h3>Module 1 Deliverables</h3>
   <ul class="steps">
     <li><strong>Week 2 Artifact:</strong> CLI log analyzer that parses structured logs, aggregates error codes with type hints, and passes a full <code>pytest</code> test suite.</li>
@@ -742,6 +898,24 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <li><strong>Reference Resource:</strong> <a href="https://linuxjourney.com/" target="_blank">Linux Journey</a> &amp; <a href="https://beej.us/guide/bgnet/" target="_blank">Beej's Guide to Network Programming</a> <em>(Free)</em> &mdash; Sockets, processes, permissions.</li>
     <li><strong>Practical Task &amp; Stopping Condition:</strong> Write a minimal TCP/HTTP server in raw Python sockets (no web frameworks) returning valid 200/404 HTTP responses. <strong>Stopping Condition:</strong> <code>curl -I localhost:8080</code> returns valid HTTP headers and connection closes cleanly.</li>
   </ul>
+  <!-- HOW TO LEARN THIS MODULE -->
+  <div class="how-box">
+    <div class="how-tit">⚡ HOW TO LEARN THIS MODULE (DO NOT READ THE ENTIRE DOCS!)</div>
+    <div class="how-scope">
+      <strong>Exact Reading Targets (Max 45 Minutes Total):</strong>
+      <ul style="margin:4px 0 8px 1.25rem;padding:0;line-height:1.6;font-size:12.5px;color:var(--text2);">
+        <li>📖 <strong>MIT Missing Semester:</strong> Watch/read ONLY <a href="https://missing.csail.mit.edu/2020/course-shell/" target="_blank" style="color:var(--teal)">Lecture 1 (The Shell)</a> and <a href="https://missing.csail.mit.edu/2020/shell-tools/" target="_blank" style="color:var(--teal)">Lecture 2 (Shell Tools &amp; Scripting)</a>.</li>
+        <li>📖 <strong>Beej's Guide to Network Programming:</strong> Read ONLY <a href="https://beej.us/guide/bgnet/html/split/what-is-a-socket.html" target="_blank" style="color:var(--teal)">Chapter 2 (What is a socket?)</a> and <a href="https://beej.us/guide/bgnet/html/split/ip-addresses-structs-and-data-munging.html" target="_blank" style="color:var(--teal)">Chapter 3 (IP addresses &amp; structs)</a>.</li>
+        <li>🚫 <strong>Skip Everything Else:</strong> Do NOT memorize all 200 flags of <code>curl</code>, <code>sed</code>, or <code>awk</code>. Skip raw packet crafting and network kernel drivers.</li>
+      </ul>
+    </div>
+    <ul class="how-steps">
+      <li><strong>1. The Terminal Practice (Live Execution):</strong> Execute every single command in your Linux terminal as you see it. Pipe outputs: <code>ps aux | grep python | awk '{print $2}'</code>. Kill a test background sleep process with <code>kill -9</code>.</li>
+      <li><strong>2. Raw Socket Test:</strong> Write a 25-line Python script using <code>import socket</code>. Bind to <code>localhost:8080</code>. Open a second terminal window and run <code>curl -v http://localhost:8080</code>. Inspect the HTTP request headers arriving in your Python script.</li>
+      <li><strong>3. Hard Exit Gate:</strong> When your Python raw socket server returns a valid <code>HTTP/1.1 200 OK</code> with a JSON body and closes cleanly, <strong>STOP STUDYING NETWORKING</strong>. Advance to Module 3!</li>
+    </ul>
+  </div>
+
   <h3>Module 2 Deliverables</h3>
   <ul class="steps">
     <li><strong>Week 5 Artifact:</strong> 3 robust bash automation scripts: automated server backup, process health monitor with alerts, and structured system report.</li>
@@ -759,6 +933,25 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <li><strong>Reference Resource:</strong> <a href="https://mode.com/sql-tutorial/" target="_blank">Mode Analytics SQL Tutorial</a> <em>(Free)</em> &mdash; Indexing, query plans, joins.</li>
     <li><strong>Practical Task &amp; Stopping Condition:</strong> Dockerized FastAPI + PostgreSQL + Redis service with async endpoints and health probes. <strong>Stopping Condition:</strong> <code>docker compose up -d &amp;&amp; pytest tests/ -v</code> passes cleanly without human intervention.</li>
   </ul>
+  <!-- HOW TO LEARN THIS MODULE -->
+  <div class="how-box">
+    <div class="how-tit">⚡ HOW TO LEARN THIS MODULE (DO NOT READ THE ENTIRE DOCS!)</div>
+    <div class="how-scope">
+      <strong>Exact Reading Targets (Max 45 Minutes Total):</strong>
+      <ul style="margin:4px 0 8px 1.25rem;padding:0;line-height:1.6;font-size:12.5px;color:var(--text2);">
+        <li>📖 <strong>FastAPI Tutorial:</strong> Read ONLY <a href="https://fastapi.tiangolo.com/tutorial/first-steps/" target="_blank" style="color:var(--teal)">First Steps</a>, <a href="https://fastapi.tiangolo.com/tutorial/path-params/" target="_blank" style="color:var(--teal)">Path Parameters</a>, <a href="https://fastapi.tiangolo.com/tutorial/body/" target="_blank" style="color:var(--teal)">Request Body (Pydantic)</a>, and <a href="https://fastapi.tiangolo.com/tutorial/dependencies/" target="_blank" style="color:var(--teal)">Dependencies</a>.</li>
+        <li>📖 <strong>Docker Docs:</strong> Read ONLY <a href="https://docs.docker.com/get-started/workshop/02_our_app/" target="_blank" style="color:var(--teal)">Part 2: Containerize an Application</a> and <a href="https://docs.docker.com/compose/gettingstarted/" target="_blank" style="color:var(--teal)">Getting Started with Docker Compose</a>.</li>
+        <li>📖 <strong>Mode Analytics SQL:</strong> Read ONLY the chapters on <a href="https://mode.com/sql-tutorial/sql-joins/" target="_blank" style="color:var(--teal)">SQL Joins</a> and <a href="https://mode.com/sql-tutorial/sql-indexes/" target="_blank" style="color:var(--teal)">Indexes</a>.</li>
+        <li>🚫 <strong>Skip Everything Else:</strong> Skip OAuth2 JWT security scopes, Kubernetes, Docker Swarm, and PostgreSQL database replication clustering.</li>
+      </ul>
+    </div>
+    <ul class="how-steps">
+      <li><strong>1. The 10-Line FastAPI Proof:</strong> Create <code>main.py</code>. Write 1 endpoint returning a Pydantic model. Run <code>uvicorn main:app --reload</code>. Open <code>http://localhost:8000/docs</code> and execute the request interactively.</li>
+      <li><strong>2. Dockerize Immediately:</strong> Write a 6-line <code>Dockerfile</code> and a <code>docker-compose.yml</code> containing your FastAPI app and a <code>postgres:16-alpine</code> container. Run <code>docker compose up -d</code>.</li>
+      <li><strong>3. Hard Exit Gate:</strong> When <code>docker compose up -d &amp;&amp; pytest tests/ -v</code> passes cleanly and queries return data from PostgreSQL with Redis caching, <strong>STOP STUDYING BACKEND</strong>. You are ready for Phase 1 Capstone!</li>
+    </ul>
+  </div>
+
   <h3>Module 3 Deliverable (Phase 1 Capstone)</h3>
   <ul class="steps">
     <li><strong>Week 9 Capstone:</strong> Production-style REST API with FastAPI, async PostgreSQL via SQLAlchemy/AsyncPG, Redis caching layer, Docker Compose multi-container setup, <code>pytest</code> test suite with mock DB fixtures, and structured JSON logging.</li>
@@ -775,6 +968,23 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <li><strong>Reference Resource:</strong> <a href="https://en.cppreference.com/w/" target="_blank">cppreference.com</a> <em>(Free)</em> &mdash; Standard library container and memory reference.</li>
     <li><strong>Practical Task &amp; Stopping Condition:</strong> Custom dynamic array (vector) with manual heap allocation, capacity doubling, and RAII cleanup. <strong>Stopping Condition:</strong> Compiles with <code>g++ -fsanitize=address -std=c++20</code> and runs with zero memory leaks.</li>
   </ul>
+  <!-- HOW TO LEARN THIS MODULE -->
+  <div class="how-box">
+    <div class="how-tit">⚡ HOW TO LEARN THIS MODULE (DO NOT READ THE ENTIRE DOCS!)</div>
+    <div class="how-scope">
+      <strong>Exact Reading Targets (Max 45 Minutes Total):</strong>
+      <ul style="margin:4px 0 8px 1.25rem;padding:0;line-height:1.6;font-size:12.5px;color:var(--text2);">
+        <li>📖 <strong>LearnCpp.com:</strong> Read ONLY <a href="https://www.learncpp.com/cpp-tutorial/introduction-to-pointers/" target="_blank" style="color:var(--teal)">Chapter 9.1–9.6 (Pointers &amp; Memory Addresses)</a>, <a href="https://www.learncpp.com/cpp-tutorial/dynamically-allocating-arrays/" target="_blank" style="color:var(--teal)">Chapter 9.12 (Dynamically Allocating Arrays with new/delete)</a>, and <a href="https://www.learncpp.com/cpp-tutorial/destructors/" target="_blank" style="color:var(--teal)">Chapter 13.5 (Destructors &amp; RAII)</a>.</li>
+        <li>🚫 <strong>Skip Everything Else:</strong> Do NOT read about template metaprogramming, C++20 coroutines, operator overloading complexities, or multi-threading.</li>
+      </ul>
+    </div>
+    <ul class="how-steps">
+      <li><strong>1. The Memory Experiment:</strong> Write 15 lines in <code>main.cpp</code> allocating an array with <code>int* arr = new int[10];</code>. Print the pointer address with <code>std::cout &lt;&lt; arr;</code>. Delete it with <code>delete[] arr;</code>.</li>
+      <li><strong>2. Break It with AddressSanitizer:</strong> Comment out <code>delete[] arr;</code>. Compile with <code>g++ -fsanitize=address -std=c++20 main.cpp</code> and run <code>./a.out</code>. Witness AddressSanitizer print the exact byte leak and stack trace. This builds visceral physical memory intuition.</li>
+      <li><strong>3. Hard Exit Gate:</strong> When your custom <code>MyVector&lt;T&gt;</code> class doubles its capacity when full, frees its memory in the destructor, and compiles with AddressSanitizer showing <strong>0 memory leaks</strong>, STOP. You have completed Phase 1!</li>
+    </ul>
+  </div>
+
   <h3>Module 4 Deliverable</h3>
   <ul class="steps">
     <li><strong>Week 12 Artifact:</strong> Custom dynamic array (<code>MyVector&lt;T&gt;</code>) in C++ with manual heap allocation, RAII cleanup, and memory leak validation via AddressSanitizer (<code>-fsanitize=address</code>).</li>
@@ -818,6 +1028,24 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <li><strong>Reference Resource:</strong> <a href="https://scikit-learn.org/stable/user_guide.html" target="_blank">Scikit-learn User Guide</a> <em>(Free)</em> &mdash; Algorithm formulas &amp; parameter reference.</li>
     <li><strong>Practical Task &amp; Stopping Condition:</strong> End-to-end classification pipeline with cross-validation deployed as a FastAPI endpoint. <strong>Stopping Condition:</strong> Pipeline achieves >0.82 F1-score on test split and unit tests assert inference latency &lt; 15ms.</li>
   </ul>
+  <!-- HOW TO LEARN THIS MODULE -->
+  <div class="how-box">
+    <div class="how-tit">⚡ HOW TO LEARN THIS MODULE (DO NOT READ THE ENTIRE DOCS!)</div>
+    <div class="how-scope">
+      <strong>Exact Reading Targets (Max 45 Minutes Total):</strong>
+      <ul style="margin:4px 0 8px 1.25rem;padding:0;line-height:1.6;font-size:12.5px;color:var(--text2);">
+        <li>📖 <strong>Scikit-Learn Docs:</strong> Read ONLY <a href="https://scikit-learn.org/stable/tutorial/basic/tutorial.html" target="_blank" style="color:var(--teal)">An Introduction to Machine Learning with scikit-learn</a> and the <a href="https://scikit-learn.org/stable/modules/ensemble.html#forest" target="_blank" style="color:var(--teal)">RandomForestClassifier Guide</a>.</li>
+        <li>📖 <strong>StatQuest Videos:</strong> Watch ONLY the 15-min videos on "Decision Trees" and "Random Forests Explained".</li>
+        <li>🚫 <strong>Skip Everything Else:</strong> Skip mathematical proofs of Support Vector Machine dual formulations, kernel ridge regression, and manifold learning.</li>
+      </ul>
+    </div>
+    <ul class="how-steps">
+      <li><strong>1. The 20-Minute Script:</strong> In Python, load <code>load_iris()</code> or a tabular dataset. Write 15 lines: <code>X_train, X_test, y_train, y_test = train_test_split(...)</code>, fit a <code>RandomForestClassifier</code>, and call <code>classification_report(y_test, y_pred)</code>.</li>
+      <li><strong>2. Close the Docs:</strong> Wrap this trained model with <code>joblib.dump(model, 'model.pkl')</code> and load it inside your Phase 1 FastAPI endpoint.</li>
+      <li><strong>3. Stopping Gate:</strong> Pipeline achieves >0.82 F1-score on test split and unit tests assert inference latency &lt; 15ms. Stop studying classical ML and advance!</li>
+    </ul>
+  </div>
+
   <h3>Module 1 Deliverables</h3>
   <ul class="steps">
     <li>End-to-end ML pipeline: data ingestion &rarr; cleaning &rarr; feature engineering &rarr; train &rarr; cross-validate &rarr; deploy as API.</li>
@@ -833,6 +1061,24 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <li><strong>Reference Resource:</strong> <a href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html" target="_blank">PyTorch 60-Min Blitz</a> <em>(Free)</em> &mdash; Tensor mechanics and DataLoader.</li>
     <li><strong>Practical Task &amp; Stopping Condition:</strong> Build micrograd autograd engine from scratch in pure Python. <strong>Stopping Condition:</strong> Automated test asserts analytic gradients match finite-difference numerical gradients within $10^{-4}$ across 5 ops.</li>
   </ul>
+  <!-- HOW TO LEARN THIS MODULE -->
+  <div class="how-box">
+    <div class="how-tit">⚡ HOW TO LEARN THIS MODULE (DO NOT READ THE ENTIRE DOCS!)</div>
+    <div class="how-scope">
+      <strong>Exact Reading / Viewing Targets (Max 60 Minutes Total):</strong>
+      <ul style="margin:4px 0 8px 1.25rem;padding:0;line-height:1.6;font-size:12.5px;color:var(--text2);">
+        <li>📺 <strong>Karpathy's Neural Networks: Zero to Hero:</strong> Watch Episode 1 ("Building micrograd"). Have your editor open side-by-side.</li>
+        <li>📖 <strong>PyTorch Docs:</strong> Read ONLY <a href="https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html" target="_blank" style="color:var(--teal)">A Gentle Introduction to torch.autograd</a>.</li>
+        <li>🚫 <strong>Skip Everything Else:</strong> Skip complex academic research papers, gradient descent mathematical optimization proofs, and advanced distributed tensors.</li>
+      </ul>
+    </div>
+    <ul class="how-steps">
+      <li><strong>1. Code micrograd with Karpathy:</strong> Type the <code>Value</code> class with <code>data</code>, <code>grad</code>, <code>_backward()</code> by hand. Run backpropagation on a simple expression <code>L = d * f</code>.</li>
+      <li><strong>2. Verify Gradients Numerically:</strong> Write a 10-line test computing numerical slope <code>(f(x+h) - f(x))/h</code> with <code>h = 1e-5</code> and assert that analytic gradient matches within $10^{-4}$.</li>
+      <li><strong>3. Stopping Gate:</strong> Your custom autograd engine trains a 2-layer MLP to solve a non-linear binary classification problem. Stop reading and advance to Transformers!</li>
+    </ul>
+  </div>
+
   <h3>Module 2 Deliverables</h3>
   <ul class="steps">
     <li>Build micrograd: tiny autograd engine with reverse-mode graph backpropagation.</li>
@@ -849,6 +1095,24 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <li><strong>Reference Resource:</strong> <a href="https://jalammar.github.io/illustrated-transformer/" target="_blank">Jay Alammar: The Illustrated Transformer</a> <em>(Free)</em>.</li>
     <li><strong>Practical Task &amp; Stopping Condition:</strong> Implement a character-level transformer decoder in PyTorch and generate text. <strong>Stopping Condition:</strong> Multi-head attention outputs match official PyTorch implementation within $10^{-5}$ tolerance.</li>
   </ul>
+  <!-- HOW TO LEARN THIS MODULE -->
+  <div class="how-box">
+    <div class="how-tit">⚡ HOW TO LEARN THIS MODULE (DO NOT READ THE ENTIRE DOCS!)</div>
+    <div class="how-scope">
+      <strong>Exact Reading Targets (Max 45 Minutes Total):</strong>
+      <ul style="margin:4px 0 8px 1.25rem;padding:0;line-height:1.6;font-size:12.5px;color:var(--text2);">
+        <li>📖 <strong>Jay Alammar:</strong> Read ONLY the visual sections of <a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" style="color:var(--teal)">The Illustrated Transformer</a> covering Self-Attention at High Level and Matrix Calculation of Self-Attention ($Q, K, V$).</li>
+        <li>📖 <strong>Hugging Face NLP Course:</strong> Read ONLY <a href="https://huggingface.co/course/chapter2/2" target="_blank" style="color:var(--teal)">Chapter 2: Behind the Pipeline</a> (tokenizers, model forward pass).</li>
+        <li>🚫 <strong>Skip Everything Else:</strong> Skip training massive BERT models from scratch, TPU acceleration, and translation sequence-to-sequence pipelines.</li>
+      </ul>
+    </div>
+    <ul class="how-steps">
+      <li><strong>1. Type the Attention Math in PyTorch:</strong> Create <code>attention.py</code>. Write 15 lines of raw PyTorch implementing: <code>scores = (Q @ K.T) / math.sqrt(d_k); weights = softmax(scores); out = weights @ V</code>.</li>
+      <li><strong>2. Verify Against Official PyTorch:</strong> Assert your output matches <code>torch.nn.MultiheadAttention</code> within $10^{-5}$ tolerance.</li>
+      <li><strong>3. Stopping Gate:</strong> Multi-head attention outputs match official PyTorch implementation and a pre-trained Hugging Face model generates text. Stop and advance to Phase 3 / Applied AI!</li>
+    </ul>
+  </div>
+
   <h3>Module 3 Deliverables</h3>
   <ul class="steps">
     <li>Decoder-only transformer block (multi-head self-attention + MLP + LayerNorm) implemented from scratch.</li>
@@ -1086,6 +1350,23 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <li><strong>Reference Resource:</strong> <a href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/" target="_blank">NVIDIA CUDA C++ Programming Guide</a> <em>(Free)</em>.</li>
     <li><strong>Practical Task (Project 5 Milestone):</strong> Implement a fused layernorm or fused softmax kernel in OpenAI Triton; verify numerical accuracy within $10^{-5}$ vs PyTorch; profile with Nsight Compute and construct an empirical Roofline analysis.</li>
   </ul>
+  <!-- HOW TO LEARN THIS MODULE -->
+  <div class="how-box">
+    <div class="how-tit">⚡ HOW TO LEARN TRITON &amp; GPU KERNELS (DO NOT READ ALL CUDA C++ DOCS!)</div>
+    <div class="how-scope">
+      <strong>Exact Reading Targets (Max 45 Minutes Total):</strong>
+      <ul style="margin:4px 0 8px 1.25rem;padding:0;line-height:1.6;font-size:12.5px;color:var(--text2);">
+        <li>📖 <strong>OpenAI Triton Docs:</strong> Read ONLY <a href="https://triton-lang.org/main/getting-started/tutorials/01-vector-add.html" target="_blank" style="color:var(--teal)">Tutorial 01: Vector Addition</a> and <a href="https://triton-lang.org/main/getting-started/tutorials/02-fused-softmax.html" target="_blank" style="color:var(--teal)">Tutorial 02: Fused Softmax</a>.</li>
+        <li>📖 <strong>Stanford CS149:</strong> Skim Lecture 1 &amp; 2 slides on SIMD vectorization and memory bandwidth limits.</li>
+        <li>🚫 <strong>Skip Everything Else:</strong> Do NOT write raw CUDA C++ from scratch or read NVIDIA PTX assembly. Triton lets you write high-performance kernels in pure Python.</li>
+      </ul>
+    </div>
+    <ul class="how-steps">
+      <li><strong>1. Run Triton Vector Add:</strong> Open a Python script. Execute the vector addition kernel using <code>@triton.jit</code>. Verify that output matches <code>x + y</code> in PyTorch.</li>
+      <li><strong>2. Profile with Benchmark Utility:</strong> Use <code>triton.testing.perf_report</code> to graph execution time across tensor sizes ($10^3$ to $10^7$ elements).</li>
+      <li><strong>3. Stopping Gate:</strong> Custom fused Triton kernel achieves numerical accuracy within $10^{-5}$ vs PyTorch baseline and demonstrates speedup on large tensors. Stop and advance!</li>
+    </ul>
+  </div>
 
   <h2>3 &bull; High-Throughput LLM Serving &amp; Inference Optimization <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 77–82 &bull; 9–15 hrs/wk</span></h2>
   <h3>What to learn</h3>
@@ -1096,6 +1377,23 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
     <li><strong>Reference Resource:</strong> <a href="https://arxiv.org/abs/2309.06180" target="_blank">PagedAttention Paper (Kwon et al.)</a> <em>(Free PDF)</em>.</li>
     <li><strong>Practical Task (Project 4 Milestone):</strong> Benchmark deployment comparing naive Hugging Face sequential serving vs vLLM continuous batching across 10, 50, 200 concurrent streams; measure TTFT, ITL, and memory fragmentation.</li>
   </ul>
+  <!-- HOW TO LEARN THIS MODULE -->
+  <div class="how-box">
+    <div class="how-tit">⚡ HOW TO LEARN VLLM &amp; SERVING (DO NOT READ ALL INFERENCE ENGINE INTERNALS!)</div>
+    <div class="how-scope">
+      <strong>Exact Reading Targets (Max 40 Minutes Total):</strong>
+      <ul style="margin:4px 0 8px 1.25rem;padding:0;line-height:1.6;font-size:12.5px;color:var(--text2);">
+        <li>📖 <strong>vLLM Docs:</strong> Read ONLY <a href="https://docs.vllm.ai/en/latest/getting_started/quickstart.html" target="_blank" style="color:var(--teal)">Quickstart (Offline Batched Inference &amp; OpenAI-Compatible Server)</a>.</li>
+        <li>📖 <strong>Anyscale Blog:</strong> Read the article on <a href="https://www.anyscale.com/blog/continuous-batching-llm-inference" target="_blank" style="color:var(--teal)">Continuous Batching vs Static Batching</a>.</li>
+        <li>🚫 <strong>Skip Everything Else:</strong> Skip modifying PagedAttention CUDA C++ kernels or multi-node Ray orchestrators.</li>
+      </ul>
+    </div>
+    <ul class="how-steps">
+      <li><strong>1. Launch vLLM Local Server:</strong> Start server with a small 1.5B model (<code>python3 -m vllm.entrypoints.openai.api_server --model Qwen/Qwen2.5-1.5B-Instruct</code>).</li>
+      <li><strong>2. Benchmark TTFT &amp; ITL:</strong> Write an async Python script sending 20 concurrent requests using <code>httpx.AsyncClient</code>. Record Time to First Token (TTFT) and Inter-Token Latency (ITL).</li>
+      <li><strong>3. Stopping Gate:</strong> Benchmark report clearly demonstrates vLLM's continuous batching throughput gain over naive pipeline under concurrency. Stop and advance!</li>
+    </ul>
+  </div>
 
   <h2>4 &bull; Distributed Training &amp; Collective Communications <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 83–88 &bull; 9–15 hrs/wk</span></h2>
   <h3>What to learn</h3>
@@ -3273,6 +3571,624 @@ Client polls &rarr; GET /jobs/{id} &rarr; Returns PENDING | RUNNING | COMPLETED<
 </div>
 
 
+<!-- FREE LEARNING RESOURCES VAULT PAGE -->
+<div id="page-resources" class="page">
+  <div class="hero">
+    <div class="tag">Zero Paywalls &bull; Canonical Curricula &bull; 100% Free</div>
+    <h1>The Free Learning Resources Vault</h1>
+    <p>Every single topic across the 24-month roadmap and parallel AI Engineer track mapped directly to its highest-signal, 100% free canonical resource. Zero fluff, zero generic bootcamps &mdash; strictly official docs, university lectures, and battle-tested open-source textbooks.</p>
+  </div>
+
+  <!-- THE HOW TO STUDY MANIFESTO BANNER -->
+  <div style="background:var(--bg3);border:1px solid var(--border2);border-left:4px solid var(--teal);border-radius:10px;padding:1.25rem 1.4rem;margin-bottom:2rem;">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.6rem;">
+      <span style="font-size:22px;">💡</span>
+      <h3 style="font-size:14.5px;font-weight:900;color:var(--teal);margin:0;padding:0;text-transform:uppercase;letter-spacing:0.04em;">CRITICAL INSTRUCTION: HOW TO STUDY FROM THESE RESOURCES WITHOUT OVERWHELM</h3>
+    </div>
+    <div style="font-size:13px;color:var(--text);line-height:1.65;margin-bottom:0.75rem;">
+      <strong>Do NOT treat any resource below as a novel.</strong> If a resource is 400 pages (like Python documentation or OSTEP), your goal is <strong>NOT</strong> to read it from start to finish. Follow this 4-step execution filter:
+    </div>
+    <div class="g2" style="gap:0.75rem;">
+      <div style="background:var(--bg4);padding:0.75rem 0.9rem;border-radius:6px;border:1px solid var(--border);">
+        <strong style="color:var(--text);font-size:12.5px;display:block;margin-bottom:3px;">Step 1: The 30-Minute Targeted Scan</strong>
+        <span style="font-size:12px;color:var(--text2);line-height:1.5;display:block;">
+          Open ONLY the specific chapter matching your active task. Skim diagrams, core concepts, and minimal code snippets. Ignore appendixes and edge-case flags.
+        </span>
+      </div>
+      <div style="background:var(--bg4);padding:0.75rem 0.9rem;border-radius:6px;border:1px solid var(--border);">
+        <strong style="color:var(--text);font-size:12.5px;display:block;margin-bottom:3px;">Step 2: Type Out 1 Working Example by Hand</strong>
+        <span style="font-size:12px;color:var(--text2);line-height:1.5;display:block;">
+          Never copy-paste. Type the code snippet into an interactive REPL or scratch file. Modify variable values. Cause an intentional error to see the traceback.
+        </span>
+      </div>
+      <div style="background:var(--bg4);padding:0.75rem 0.9rem;border-radius:6px;border:1px solid var(--border);">
+        <strong style="color:var(--text);font-size:12.5px;display:block;margin-bottom:3px;">Step 3: Close the Browser Tab Immediately</strong>
+        <span style="font-size:12px;color:var(--text2);line-height:1.5;display:block;">
+          Switch directly to your project workspace. Start coding your deliverable. Reopen the documentation <em>only</em> via <code>Ctrl+F</code> when your compiler or test suite throws an error.
+        </span>
+      </div>
+      <div style="background:var(--bg4);padding:0.75rem 0.9rem;border-radius:6px;border:1px solid var(--border);">
+        <strong style="color:var(--text);font-size:12.5px;display:block;margin-bottom:3px;">Step 4: The Stopping Invariant</strong>
+        <span style="font-size:12px;color:var(--text2);line-height:1.5;display:block;">
+          The moment your tests pass or the feature works as expected, <strong>STOP READING IMMEDIATELY</strong>. You have extracted the exact signal required. Advance to the next task.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert as" style="margin-bottom:2rem;">
+    <strong>Why Free Resources Beat Paid Bootcamps:</strong> In modern AI and systems engineering, the industry standards (Python standard library, PyTorch, vLLM, Triton, Qdrant, Docker) evolve monthly. Paid courses are almost always outdated within 6 months. Learning directly from canonical documentation, university lectures (Harvard, MIT, Stanford), and core creator repos (Karpathy, Hugging Face, Anthropic) builds permanent first-principles intuition.
+  </div>
+
+  <!-- QUICK CATEGORY JUMP BAR -->
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2.5rem;">
+    <a href="#res-python" class="chip" style="text-decoration:none;cursor:pointer;">🐍 Python &amp; Systems</a>
+    <a href="#res-dsa" class="chip" style="text-decoration:none;cursor:pointer;">⚡ DSA in C++</a>
+    <a href="#res-ml" class="chip" style="text-decoration:none;cursor:pointer;">🧠 ML &amp; Deep Learning</a>
+    <a href="#res-ai" class="chip" style="text-decoration:none;cursor:pointer;">🤖 Applied AI &amp; LLMs</a>
+    <a href="#res-rag" class="chip" style="text-decoration:none;cursor:pointer;">🔍 RAG &amp; Vector DBs</a>
+    <a href="#res-evals" class="chip" style="text-decoration:none;cursor:pointer;">🛡️ Evals &amp; Guardrails</a>
+    <a href="#res-serving" class="chip" style="text-decoration:none;cursor:pointer;">🚀 Serving &amp; MLOps</a>
+    <a href="#res-infra" class="chip" style="text-decoration:none;cursor:pointer;">⚙️ GPU Infra &amp; Triton</a>
+    <a href="#res-sd" class="chip" style="text-decoration:none;cursor:pointer;">📐 System Design</a>
+  </div>
+
+  <!-- SECTION 1: PYTHON & BACKEND SYSTEMS -->
+  <h2 id="res-python">1 &bull; Python, Linux &amp; Backend Engineering Foundations <span class="hs">Phase 1</span></h2>
+  <div class="g2" style="margin-bottom:2.5rem;">
+    
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://docs.python.org/3/tutorial/" target="_blank" class="res-tit">Python 3.12+ Official Tutorial &amp; Standard Library</a>
+          <span class="res-badge" style="background:rgba(52,211,153,0.12);color:var(--green);">Docs &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          The definitive foundation. Skip third-party syntax summaries. Master data models, standard library data structures (<code>collections</code>, <code>itertools</code>, <code>dataclasses</code>), type hinting, exceptions, and context managers.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Python Software Foundation</span>
+        <a href="https://docs.python.org/3/tutorial/" target="_blank" class="res-link">docs.python.org &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://cs50.harvard.edu/python/" target="_blank" class="res-tit">CS50P: Harvard's Introduction to Python</a>
+          <span class="res-badge" style="background:rgba(56,189,248,0.12);color:var(--teal);">Video &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Taught by Prof. David J. Malan. Covers clean code, unit testing with <code>pytest</code>, regex pattern matching, OOP, and file I/O. The gold standard for clean programming habits.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Harvard University / edX</span>
+        <a href="https://cs50.harvard.edu/python/" target="_blank" class="res-link">cs50.harvard.edu/python &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://realpython.com/python-type-checking/" target="_blank" class="res-tit">Real Python: Type Checking &amp; Async Deep Dives</a>
+          <span class="res-badge" style="background:rgba(99,102,241,0.12);color:var(--accent2);">Tutorials &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Top-tier free tutorials on <code>mypy</code> static typing, <code>asyncio</code> event loops, generators (<code>yield</code>), and modern decorators. Essential for writing robust production AI code.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Real Python</span>
+        <a href="https://realpython.com/python-type-checking/" target="_blank" class="res-link">realpython.com &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://fastapi.tiangolo.com/tutorial/" target="_blank" class="res-tit">FastAPI Official Tutorial &amp; Architecture Guide</a>
+          <span class="res-badge" style="background:rgba(52,211,153,0.12);color:var(--green);">Docs &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          The best technical documentation in the Python ecosystem. Learn async request lifecycles, Pydantic v2 validation, dependency injection, and streaming token responses with SSE.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Sebastián Ramírez</span>
+        <a href="https://fastapi.tiangolo.com/tutorial/" target="_blank" class="res-link">fastapi.tiangolo.com &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://missing.csail.mit.edu/" target="_blank" class="res-tit">MIT 6.NULL: The Missing Semester of Your CS Education</a>
+          <span class="res-badge" style="background:rgba(251,191,36,0.12);color:var(--amber);">Course &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Master the terminal, shell scripting (Bash), Git branching, data wrangling with <code>sed</code>/<code>awk</code>/<code>grep</code>, SSH setup, and command-line debugging tools.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">MIT CSAIL</span>
+        <a href="https://missing.csail.mit.edu/" target="_blank" class="res-link">missing.csail.mit.edu &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://beej.us/guide/bgnet/" target="_blank" class="res-tit">Beej's Guide to Network Programming (Sockets)</a>
+          <span class="res-badge" style="background:rgba(251,146,60,0.12);color:var(--coral);">Online Book &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          The legendary free book explaining TCP/IP, sockets, client-server architectures, and HTTP handshakes from first principles in simple, humorous prose.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Brian "Beej" Hall</span>
+        <a href="https://beej.us/guide/bgnet/" target="_blank" class="res-link">beej.us/guide/bgnet &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://www.learncpp.com/" target="_blank" class="res-tit">LearnCpp.com &mdash; Complete Modern C++ Course</a>
+          <span class="res-badge" style="background:rgba(52,211,153,0.12);color:var(--green);">Online Course &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          The undisputed gold standard for learning C++ (C++20). Chapters 1–16 teach pointers, references, dynamic heap allocation, stack memory, and RAII. Crucial for DSA and later systems code.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Alex / LearnCpp</span>
+        <a href="https://www.learncpp.com/" target="_blank" class="res-link">learncpp.com &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://mode.com/sql-tutorial/" target="_blank" class="res-tit">Mode Analytics SQL Tutorial &amp; Postgres Docs</a>
+          <span class="res-badge" style="background:rgba(56,189,248,0.12);color:var(--teal);">Interactive &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Interactive SQL exercises from basic SELECTs to advanced window functions, indexing trade-offs, query planning, and relational database schema design.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Mode Analytics</span>
+        <a href="https://mode.com/sql-tutorial/" target="_blank" class="res-link">mode.com/sql-tutorial &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SECTION 2: DATA STRUCTURES & ALGORITHMS (C++) -->
+  <h2 id="res-dsa">2 &bull; Data Structures &amp; Algorithms in C++ <span class="hs">Daily Track</span></h2>
+  <div class="g2" style="margin-bottom:2.5rem;">
+    
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://neetcode.io/roadmap" target="_blank" class="res-tit">NeetCode.io &mdash; Blind 75 &amp; NeetCode 150 Roadmap</a>
+          <span class="res-badge" style="background:rgba(56,189,248,0.12);color:var(--teal);">Roadmap &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Visual roadmap categorizing problems into core patterns (Two Pointers, Sliding Window, Binary Search, Trees, Graphs, DP). Includes 100% free video walkthroughs and clean C++ solutions.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Navdeep Singh (NeetCode)</span>
+        <a href="https://neetcode.io/roadmap" target="_blank" class="res-link">neetcode.io/roadmap &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/" target="_blank" class="res-tit">Striver's A2Z DSA Sheet (takeUforward)</a>
+          <span class="res-badge" style="background:rgba(52,211,153,0.12);color:var(--green);">Course &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          The most thorough, beginner-to-advanced DSA sheet available. Contains step-by-step video lectures, written articles, optimal C++ STL approaches, and time/space complexity proofs.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Raj Vikramaditya (Striver)</span>
+        <a href="https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/" target="_blank" class="res-link">takeuforward.org &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://usaco.guide/" target="_blank" class="res-tit">USACO Guide (Bronze to Gold) in C++</a>
+          <span class="res-badge" style="background:rgba(99,102,241,0.12);color:var(--accent2);">Curriculum &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Free, community-driven curriculum teaching algorithmic problem-solving in modern C++. Outstanding for developing deep systems intuition and algorithmic speed.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">USACO Guide Community</span>
+        <a href="https://usaco.guide/" target="_blank" class="res-link">usaco.guide &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://cp-algorithms.com/" target="_blank" class="res-tit">CP-Algorithms (Algorithms &amp; Data Structures)</a>
+          <span class="res-badge" style="background:rgba(251,191,36,0.12);color:var(--amber);">Encyclopedia &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          The definitive reference for algorithmic data structures (Tries, Fenwick Trees, Segment Trees, Disjoint Set Union) with clean C++ implementations and mathematical proofs.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">E-Maxx Translation Project</span>
+        <a href="https://cp-algorithms.com/" target="_blank" class="res-link">cp-algorithms.com &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SECTION 3: MACHINE LEARNING & DEEP LEARNING -->
+  <h2 id="res-ml">3 &bull; Machine Learning &amp; Deep Learning Foundations <span class="hs">Phase 2</span></h2>
+  <div class="g2" style="margin-bottom:2.5rem;">
+    
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ" target="_blank" class="res-tit">Andrej Karpathy: Neural Networks: Zero to Hero</a>
+          <span class="res-badge" style="background:rgba(239,68,68,0.12);color:var(--red);">Masterclass &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          The single highest-signal deep learning resource on earth. Build <code>micrograd</code> (autograd engine in pure Python), <code>makemore</code>, and code <code>nanoGPT</code> (decoder transformer) from scratch.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Andrej Karpathy (ex-OpenAI, Tesla)</span>
+        <a href="https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ" target="_blank" class="res-link">YouTube Playlist &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://course.fast.ai/" target="_blank" class="res-tit">Fast.ai: Practical Deep Learning for Coders</a>
+          <span class="res-badge" style="background:rgba(52,211,153,0.12);color:var(--green);">Course &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Jeremy Howard's top-down course teaching PyTorch, computer vision, embeddings, tabular data, and training mechanics with zero unnecessary mathematical gatekeeping.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Jeremy Howard (fast.ai)</span>
+        <a href="https://course.fast.ai/" target="_blank" class="res-link">course.fast.ai &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html" target="_blank" class="res-tit">PyTorch 60-Minute Blitz &amp; Official Tutorials</a>
+          <span class="res-badge" style="background:rgba(251,146,60,0.12);color:var(--coral);">Docs &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Official walkthrough of PyTorch tensor operations, GPU memory allocation (<code>tensor.cuda()</code>), Autograd backprop mechanics, and custom training loops.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">PyTorch Core Team</span>
+        <a href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html" target="_blank" class="res-link">pytorch.org/tutorials &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" class="res-tit">Jay Alammar: The Illustrated Transformer</a>
+          <span class="res-badge" style="background:rgba(56,189,248,0.12);color:var(--teal);">Visual Guide &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          The visual masterpiece explaining how Self-Attention, Query-Key-Value projection matrices, multi-head attention, and positional encodings work under the hood.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Jay Alammar</span>
+        <a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" class="res-link">jalammar.github.io &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SECTION 4: APPLIED AI & LLM ENGINEERING -->
+  <h2 id="res-ai">4 &bull; Applied AI Engineering, LLMs &amp; Agents <span class="hs">AI Engineer Track &bull; Months 6–10</span></h2>
+  <div class="g2" style="margin-bottom:2.5rem;">
+    
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank" class="res-tit">DAIR.AI: Prompt Engineering Guide &amp; Taxonomy</a>
+          <span class="res-badge" style="background:rgba(52,211,153,0.12);color:var(--green);">GitHub / Guide &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Comprehensive guide to Few-Shot prompting, Chain-of-Thought (CoT), ReAct agent patterns, directional prompting, and hallucination reduction strategies.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Elvis Saravia (DAIR.AI)</span>
+        <a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank" class="res-link">promptingguide.ai &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://ai.google.dev/gemini-api/docs" target="_blank" class="res-tit">Google Gemini API Free Tier &amp; Official Cookbooks</a>
+          <span class="res-badge" style="background:rgba(56,189,248,0.12);color:var(--teal);">Docs &bull; Free Tier</span>
+        </div>
+        <div class="res-desc">
+          Free API quota for experiments. Master Structured Outputs (enforcing Pydantic schemas at inference), Function Calling, and Context Caching without burning cloud credits.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Google DeepMind</span>
+        <a href="https://ai.google.dev/gemini-api/docs" target="_blank" class="res-link">ai.google.dev/docs &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://langchain-ai.github.io/langgraph/tutorials/introduction/" target="_blank" class="res-tit">LangGraph Official Documentation &amp; Tutorials</a>
+          <span class="res-badge" style="background:rgba(99,102,241,0.12);color:var(--accent2);">Docs &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Learn stateful multi-agent systems, cyclic graphs (StateGraph), tool execution nodes, checkpointing, and Human-in-the-Loop approval workflows.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">LangChain Team</span>
+        <a href="https://langchain-ai.github.io/langgraph/tutorials/introduction/" target="_blank" class="res-link">langgraph.docs &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://github.com/mlabonne/llm-course" target="_blank" class="res-tit">Maxime Labonne: The Open-Source LLM Course</a>
+          <span class="res-badge" style="background:rgba(251,191,36,0.12);color:var(--amber);">GitHub &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Over 42,000 GitHub stars. Structured into LLM Scientist (architecture, pre-training) and LLM Engineer (fine-tuning, quantization with AWQ/GGUF, deployment). Includes free Colabs.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Maxime Labonne</span>
+        <a href="https://github.com/mlabonne/llm-course" target="_blank" class="res-link">github.com/mlabonne/llm-course &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SECTION 5: RAG, VECTOR DATABASES & EVALS -->
+  <h2 id="res-rag">5 &bull; Production RAG, Vector Search &amp; Quality Engineering <span class="hs">Catalog QA Advantage</span></h2>
+  <div class="g2" style="margin-bottom:2.5rem;">
+    
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://qdrant.tech/documentation/" target="_blank" class="res-tit">Qdrant Vector Database Official Docs &amp; Bootcamp</a>
+          <span class="res-badge" style="background:rgba(52,211,153,0.12);color:var(--green);">Docs &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Learn HNSW vector indexing, payload metadata filtering, BM25 sparse vector integration, and Reciprocal Rank Fusion (RRF) for production hybrid search.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Qdrant Team</span>
+        <a href="https://qdrant.tech/documentation/" target="_blank" class="res-link">qdrant.tech/documentation &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://www.anthropic.com/news/contextual-retrieval" target="_blank" class="res-tit">Anthropic: Contextual Retrieval Architecture</a>
+          <span class="res-badge" style="background:rgba(99,102,241,0.12);color:var(--accent2);">Architecture Paper &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Anthropic's seminal guide on reducing retrieval failure by prepending chunk-specific context before embedding. Demonstrates a 49% reduction in failed retrievals.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Anthropic Research</span>
+        <a href="https://www.anthropic.com/news/contextual-retrieval" target="_blank" class="res-link">anthropic.com &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://docs.confident-ai.com/" target="_blank" class="res-tit">DeepEval (Confident AI) &mdash; LLM Unit Testing</a>
+          <span class="res-badge" style="background:rgba(56,189,248,0.12);color:var(--teal);">Docs &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Production LLM evaluation framework. Implement unit tests for Faithfulness, Answer Relevancy, Hallucination, and Bias. Perfect match for Catalog Quality Engineers!
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Confident AI</span>
+        <a href="https://docs.confident-ai.com/" target="_blank" class="res-link">docs.confident-ai.com &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://www.promptfoo.dev/docs/intro/" target="_blank" class="res-tit">Promptfoo: CI/CD Security, Guardrails &amp; Evals</a>
+          <span class="res-badge" style="background:rgba(239,68,68,0.12);color:var(--red);">CLI &bull; Free Open-Source</span>
+        </div>
+        <div class="res-desc">
+          Fast CLI and GitHub Actions integration for automated prompt security, prompt injection detection, and regression testing before merging PRs.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Promptfoo Community</span>
+        <a href="https://www.promptfoo.dev/docs/intro/" target="_blank" class="res-link">promptfoo.dev &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SECTION 6: ML PLATFORMS, SERVING & CORE AI INFRA -->
+  <h2 id="res-serving">6 &bull; ML Platforms, High-Throughput Serving &amp; GPU Systems <span class="hs">Phases 4 &amp; 5</span></h2>
+  <div class="g2" style="margin-bottom:2.5rem;">
+    
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://madewithml.com/" target="_blank" class="res-tit">Made With ML (End-to-End MLOps) by Goku Mohandas</a>
+          <span class="res-badge" style="background:rgba(52,211,153,0.12);color:var(--green);">Course &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Complete production MLOps course covering data ingestion, unit testing, model packaging, CI/CD deployment, drift monitoring, and experiment tracking.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Goku Mohandas</span>
+        <a href="https://madewithml.com/" target="_blank" class="res-link">madewithml.com &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://docs.vllm.ai/en/latest/" target="_blank" class="res-tit">vLLM Architecture Guide &amp; Documentation</a>
+          <span class="res-badge" style="background:rgba(56,189,248,0.12);color:var(--teal);">Docs &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Learn PagedAttention (managing KV cache like OS virtual memory paging), continuous batching, chunked prefill, and multi-GPU tensor parallelism.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">vLLM / UC Berkeley SkyLab</span>
+        <a href="https://docs.vllm.ai/en/latest/" target="_blank" class="res-link">docs.vllm.ai &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://cs149.stanford.edu/" target="_blank" class="res-tit">Stanford CS149: Parallel Computing &amp; GPU Architecture</a>
+          <span class="res-badge" style="background:rgba(239,68,68,0.12);color:var(--red);">University Lectures &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Taught by Kayvon Fatahalian. The ultimate course on multi-core parallelism, SIMD vectorization, cache coherence, GPU architecture, and memory bandwidth bottlenecks.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Stanford University</span>
+        <a href="https://cs149.stanford.edu/" target="_blank" class="res-link">cs149.stanford.edu &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://pages.cs.wisc.edu/~remzi/OSTEP/" target="_blank" class="res-tit">OSTEP: Operating Systems: Three Easy Pieces</a>
+          <span class="res-badge" style="background:rgba(251,191,36,0.12);color:var(--amber);">Textbook &bull; Free PDF</span>
+        </div>
+        <div class="res-desc">
+          The finest operating systems book in existence. Free online chapters on Virtual Memory, Paging, Locks, Concurrency, and File Systems.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Remzi &amp; Andrea Arpaci-Dusseau</span>
+        <a href="https://pages.cs.wisc.edu/~remzi/OSTEP/" target="_blank" class="res-link">cs.wisc.edu/~remzi/OSTEP &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://triton-lang.org/main/getting-started/tutorials/index.html" target="_blank" class="res-tit">OpenAI Triton Official Tutorials (GPU Programming)</a>
+          <span class="res-badge" style="background:rgba(99,102,241,0.12);color:var(--accent2);">Tutorials &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Write custom high-performance GPU kernels in Python without writing complex CUDA C++. Master vector addition, fused softmax, and FlashAttention implementations.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">OpenAI Triton Community</span>
+        <a href="https://triton-lang.org/main/getting-started/tutorials/index.html" target="_blank" class="res-link">triton-lang.org &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://lilianweng.github.io/posts/2021-09-24-train-large/" target="_blank" class="res-tit">Lilian Weng: Distributed Training Deep Dives</a>
+          <span class="res-badge" style="background:rgba(52,211,153,0.12);color:var(--green);">Research Blog &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Detailed technical synthesis on training massive models across clusters: Data Parallelism, Tensor Parallelism (Megatron-LM), Pipeline Parallelism, and ZeRO / FSDP.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Lilian Weng (OpenAI)</span>
+        <a href="https://lilianweng.github.io/posts/2021-09-24-train-large/" target="_blank" class="res-link">lilianweng.github.io &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SECTION 7: SYSTEM DESIGN -->
+  <h2 id="res-sd">7 &bull; System Design &amp; Distributed Architectures <span class="hs">8-Level System Design Track</span></h2>
+  <div class="g2" style="margin-bottom:2rem;">
+    
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://github.com/donnemartin/system-design-primer" target="_blank" class="res-tit">System Design Primer by Donne Martin</a>
+          <span class="res-badge" style="background:rgba(56,189,248,0.12);color:var(--teal);">GitHub &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Over 280,000 GitHub stars. An open-source masterwork covering CDN caching, SQL vs NoSQL sharding, replication, asynchronous message queues, and end-to-end interview blueprints.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">Donne Martin</span>
+        <a href="https://github.com/donnemartin/system-design-primer" target="_blank" class="res-link">github.com/donnemartin/system-design-primer &rarr;</a>
+      </div>
+    </div>
+
+    <div class="res-card">
+      <div>
+        <div class="res-head">
+          <a href="https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFeocUXRLR6" target="_blank" class="res-tit">Martin Kleppmann: Cambridge Distributed Systems Course</a>
+          <span class="res-badge" style="background:rgba(239,68,68,0.12);color:var(--red);">Lectures &bull; Free</span>
+        </div>
+        <div class="res-desc">
+          Author of "Designing Data-Intensive Applications". 8 complete university video lectures explaining physical clocks, vector clocks, consensus (Raft/Paxos), and replication.
+        </div>
+      </div>
+      <div class="res-foot">
+        <span class="res-auth">University of Cambridge</span>
+        <a href="https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFeocUXRLR6" target="_blank" class="res-link">Cambridge YouTube Playlist &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 <!-- FLOATING NAV -->
 <div class="fw" id="fw">
   <div class="fm" id="fm">
@@ -3287,6 +4203,7 @@ Client polls &rarr; GET /jobs/{id} &rarr; Returns PENDING | RUNNING | COMPLETED<
     <div class="fmi" onclick="sP('dsa');cF()"><span class="fmn" style="color:#4ade80">★</span>DSA — C++ Daily</div>
     <div class="fmi" onclick="sP('sd');cF()"><span class="fmn" style="color:var(--teal)">6</span>System Design</div>
     <div class="fmi" onclick="sP('proj');cF()"><span class="fmn">7</span>Projects Portfolio</div>
+    <div class="fmi" onclick="sP('resources');cF()"><span class="fmn" style="color:var(--teal)">📚</span>Free Resources Vault</div>
     <div class="fmi" onclick="oS();cF()"><span class="fmn">⌘</span>Spotlight Search</div>
   </div>
   <div class="fp" id="fp" onclick="tF()">
@@ -3307,6 +4224,7 @@ const SECS=[
   {id:'dsa',label:'DSA — C++ Daily Track',tag:'DSA'},
   {id:'sd',label:'System Design (8 Levels)',tag:'Design'},
   {id:'proj',label:'Projects Portfolio (5 Core)',tag:'Projects'},
+  {id:'resources',label:'100% Free Learning Resources Vault',tag:'Vault'},
 ];
 
 function logDailyStudy() {
