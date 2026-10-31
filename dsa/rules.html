@@ -41,7 +41,7 @@
             <span class="chip-label">Streak</span>
             <span class="chip-value" id="header-streak">0d</span>
           </div>
-          <a href="../DSA_AI_Infra_Training.xlsx" class="btn btn-header-action" download title="Download Complete 14-Sheet Master Excel Workbook">📥 Excel</a>
+          <a href="../DSA_AI_Infra_Training.xlsx" class="btn btn-header-action" download title="Download Complete 15-Sheet Master Excel Workbook">📥 Excel</a>
           <button class="btn btn-header-action" id="btn-open-sync" title="Export/Import and Backup data">💾 Backup</button>
         </div>
       </div>
@@ -85,6 +85,80 @@ The metric that predicts interview success:
   * Hint-dependency rate (target: &lt;20% by week 10)
   * Ability to reconstruct any solved problem from memory 3 days later
 Dashboard tracks all four. Fill it honestly or it becomes useless.
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">THE 8 INVIOLABLE ENGINEERING RULES (THE EXECUTION-PROOF FRAMEWORK)</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              To eliminate analysis paralysis, tutorial hell, and cognitive overload, the entire training roadmap operates under eight strict engineering principles:
+
+1. STRICT PRIORITY SYSTEM (P0–P3):
+   * P0 (Essential): Required for immediate project MVP or interview screening. Non-negotiable.
+   * P1 (Important): Production hardening, observability, and scale. Scheduled strictly after P0 passes tests.
+   * P2 (Advanced): Specialized systems and GPU infrastructure. Blocked until Stages 1–3 are clear.
+   * P3 (Optional): Research tooling, hardware specifics, or experimental frameworks. Studied only on demand.
+   * THE INVARIANT: A P2 or P3 topic is STRICTLY FORBIDDEN from delaying P0 work. If tests are broken, reading about CUDA warp shuffles or Megatron-LM is prohibited.
+
+2. THE 5-STEP BUILD-FIRST LEARNING LOOP:
+   * (1) Theory Minimum: Max 45 min reading docs/papers only until I/O and mental models are understood.
+   * (2) Implement: Write small working script + at least 1 test asserting correct behavior.
+   * (3) Self-Debug: 20-min AI blackout. Zero ChatGPT/Gemini for the first 20 min. Inspect tracebacks.
+   * (4) Synthesize: 1-page markdown note logging: (a) What broke? (b) Root cause? (c) How resolved?
+   * (5) Advance: Stopping condition. The moment automated tests pass, STOP immediately. Move to next task.
+
+3. MEASURABLE EXIT GATES (5 PASSING CRITERIA):
+   * 1. Code: Runs cleanly and passes automated tests (pytest, mypy --strict with 0 errors).
+   * 2. Deployment: Runnable via single command (docker compose up -d).
+   * 3. Whiteboard: Explain architecture, dataflow, and invariants aloud without looking at notes.
+   * 4. Metrics: Documented latency (p50/p95/p99), throughput (tokens/sec or QPS), and memory footprint.
+   * 5. Debugging: Independent troubleshooting of edge cases without relying on AI crutches.
+
+4. THE RULE OF THREE (ZERO RESOURCE BLOAT):
+   * For every single subject, you are strictly restricted to:
+     - 1 Primary Resource: Official documentation or highest-signal tutorial (free preferred).
+     - 1 Reference Resource: Standard manual or textbook for gap-filling.
+     - 1 Practical Task: Runnable code with an automated test and a tight stopping condition.
+   * Never bookmark 5 courses or watch 10 hours of video for the same topic.
+
+5. ZERO-DEBT RECOVERY RULES &amp; SUNDAY AUDIT:
+   * Sunday 5:00 PM Audit (10-min written log): (1) What was completed? (2) What working system was built? (3) What can I explain? (4) What blocked progress? (5) What must change?
+   * Strict No-Debt Policy: Missed study hours are NEVER carried over into the following week. If you miss 8 hours, next week&#x27;s budget remains 24.5 hrs, NOT 32.5 hrs.
+   * Shed Scope Immediately: Drop P3, defer secondary P1 polish; protect P0 and the ergonomic health limit.
+
+6. REAL JOB MARKET ALIGNMENT (4 TARGET ROLES):
+   * (1) AI / LLM Application Engineer (Stage 1 exit): FastAPI, RAG, tool calling, telemetry, evals.
+   * (2) ML Platform / MLOps Engineer: KubeRay, Triton server, feature stores, CI/CD pipelines, Docker.
+   * (3) Machine Learning Engineer: Distributed training (FSDP, ZeRO), loss debugging, PyTorch profiling.
+   * (4) AI Infrastructure Engineer (Stage 2 exit): GPU kernel optimization (Triton/CUDA), vLLM KV-cache paging, NCCL ring fabrics.
+
+7. PROJECT-FIRST PORTFOLIO BAR (6 CORE PRODUCTION ARTIFACTS):
+   * Every phase produces a standalone, tested repository with architecture diagrams, README, and reproducible benchmarks.
+
+8. SINGLE NEXT ACTION DIRECTIVE:
+   * Focus exclusively on your single current next action. Avoid jumping between 5 different topics simultaneously.
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">CALIBRATED SUSTAINABLE STUDY RHYTHM (~24–26 HOURS TOTAL)</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              The weekly schedule below reflects realistic, sustainable availability rather than aspirational burnout schedules.
+
+• MONDAY (Ergonomic / Back Pain Care): Light only — 30–45 min review/reading/flashcards while reclining. Zero desk-bound coding marathons.
+• TUESDAY: 2.5–3.0 hrs (Evening Deep Work 7:30–10:15 PM): 1 focused roadmap module + 1 Striver DSA problem.
+• WEDNESDAY (Ergonomic / Back Pain Care): Light only — 30–45 min review/notes. No heavy sessions.
+• THURSDAY: 2.5–3.0 hrs (Evening Deep Work 7:30–10:15 PM): Project implementation and problem derivation.
+• FRIDAY: 6.0–7.0 hrs (Deep Project Build): Benchmark runs, profiling, Docker builds, long-form systems reading.
+• SATURDAY: 6.0–7.0 hrs (Architecture &amp; Mocks): System design whiteboarding, failure simulation, interview mocks.
+• SUNDAY: 4.0–5.0 hrs (Retrospective &amp; Audit): Spaced repetition, test suite verification, Sunday 5:00 PM audit (hard stop by 6:00 PM).
+
+Effective weekly study budget: ~24.5 hrs total.
+Inviolable Health Rule: Mon/Wed light review days are non-negotiable regardless of schedule slippage.
             </div>
           </div>
         
@@ -158,7 +232,7 @@ The goal: &quot;I understand WHY this solution exists.&quot; NOT &quot;I underst
         
           <div class="card" style="margin-bottom: 1.25rem;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
-              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">TUTORIAL RULES  (35 curated tutorials across 168 days)</h3>
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">TUTORIAL &amp; DOCUMENTATION RULES (35 Core Tutorials + 168 Official Docs)</h3>
             </div>
             <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
               Watch BEFORE a problem only when the mental model is genuinely new (DayPlan marks these explicitly).
@@ -166,7 +240,7 @@ Do NOT watch because a specific problem is hard. Struggle first.
 Watch AFTER only when you failed to recognise the SAME pattern twice.
 Rewatch only if you cannot reconstruct the concept from memory.
 
-For every tutorial, extract:
+For every tutorial / official doc, extract:
   * The TRIGGER (what wording in a problem should activate this pattern?)
   * The INVARIANT (what remains true throughout the algorithm?)
   * The COMPLEXITY ARGUMENT (why is it O(n)? O(n log n)?  -  derive it, do not accept it)
@@ -217,7 +291,7 @@ If F2 or F3 each appear 5+ times in a single week: run a pattern-recognition dri
         
           <div class="card" style="margin-bottom: 1.25rem;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
-              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">MISSED DAYS  (no restarts, ever)</h3>
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">MISSED DAYS &amp; STRICT ZERO-DEBT RECOVERY PROTOCOL</h3>
             </div>
             <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
               1 day missed      -&gt;  resume exactly where you left off. Nothing special.
@@ -225,8 +299,8 @@ If F2 or F3 each appear 5+ times in a single week: run a pattern-recognition dri
                     2 problems from top of ReviewQueue + nothing new.
 1+ week missed    -&gt;  MINI-DIAGNOSTIC: 3 unlabelled problems from the pool (60 min).
                     Re-enter the plan at the week whose patterns you failed.
-                    Do NOT go back to Day 1. Do NOT do a multi-day catch-up pile.
-                    Catch-up piles produce shallow results and break motivation.
+STRICT INVARIANT  -&gt;  NEVER do a multi-day catch-up pile. Catch-up piles break motivation.
+                    Shed scope: drop P3, defer P1; protect P0 and the Mon/Wed health limits.
             </div>
           </div>
         
@@ -391,6 +465,25 @@ n &lt;= 5,000     -&gt;  O(n^2) tight
 n &lt;= 100,000   -&gt;  O(n log n) required
 n &lt;= 1,000,000 -&gt;  O(n) strongly preferred
 n &lt;= 10^9      -&gt;  O(log n) or O(1) only
+            </div>
+          </div>
+        
+          <div class="card" style="margin-bottom: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+              <h3 style="font-size: 1.1rem; font-weight: 700; color: #fff;">REALISTIC SALARY EXPECTATIONS (2026 MARKET)</h3>
+            </div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; white-space: pre-line;">
+              • Stage 1 — AI Eval / Application Engineer (Phase 3 exit, 0–2 yrs exp):
+  - India: ₹18L – ₹35L | US/Remote: $100K – $140K
+  - Focus: FastAPI, RAG, prompt engineering, evaluation harnesses, synthetic data generation.
+
+• Stage 2 — AI Infrastructure Systems Engineer (Phase 4, 1–3 yrs exp):
+  - India: ₹30L – ₹60L | US/Remote: $160K – $250K
+  - Focus: vLLM, PagedAttention, Ray/KubeRay, high-throughput model serving, Triton/CUDA kernels.
+
+• Senior / Staff AI Infrastructure Engineer (5+ yrs systems track record):
+  - India: ₹60L – ₹100L+ | US/Remote: $250K – $450K+
+  - Focus: Distributed cluster architecture, multi-node NCCL scaling, custom silicon accelerators. Top-tier FAANG/frontier lab compensation requires proven large-scale production delivery.
             </div>
           </div>
         

@@ -77,9 +77,9 @@ Ye sunte hi interviewer samajh jayega ki saamne koi normal leetcoder nahi, balki
 
 ---
 
-## 📑 13 Sheets ka Chakravyuh (Kaunsi Sheet Kis Kaam Ki Hai?)
+## 📑 15 Sheets ka Chakravyuh (Kaunsi Sheet Kis Kaam Ki Hai?)
 
-Workbook me total 13 sheets hain. Ghabrao mat, roz sabme nahi ghusna hota. Samajh lo kaun kya karti hai:
+Workbook me total 15 sheets hain. Ghabrao mat, roz sabme nahi ghusna hota. Samajh lo kaun kya karti hai:
 
 ### 1. `Dashboard` 🎛️ (Tumhara Main Cockpit)
 * **Kya hai:** Roz subah sabse pehle yahi sheet kholni hai.
@@ -89,18 +89,19 @@ Workbook me total 13 sheets hain. Ghabrao mat, roz sabme nahi ghusna hota. Samaj
   * Tutorial dekhna allowed hai ya nahi.
   * Tumhara **Interview Readiness Score (0 se 100)** live update hota hai.
   * Sabse badi kamzori (most failure-prone category) apne aap highlight hoti hai.
+  * Quick links to `SystemDesign`, `YouTubeChannels`, aur `ResourcePlan`.
 * **Rule:** **Is sheet me kisi formula ko haath mat lagana!** Ye sab kuch baaki sheets se auto-calculate karti hai.
 
 ---
 
 ### 2. `README` 📜 (System Ke Niyam)
-* Isme pure program ke non-negotiable rules hain.
-* Sabse important: **The Stuck Protocol (Phasne par kya karna hai)** aur **Failure Codes (F1 se F12)**. Sunday ko ek baar re-read kar lene ka.
+* Isme pure program ke non-negotiable rules hain: **The 8 Inviolable Operating Rules**, **The Stuck Protocol (Phasne par kya karna hai)**, **Failure Codes (F1 se F12)**, **Calibrated Sustainable Study Rhythm (~24.5 hrs/week)**, aur **2026 Realistic Salary Expectations**. Sunday ko ek baar re-read kar lene ka.
 
 ---
 
 ### 3. `DayPlan` 🗓️ (Roz Ka Time-Table - 168 Days)
 * **Kya hai:** Day 1 se lekar Day 168 tak har ek din ka plan pre-filled hai.
+* **Curated Links:** Har din ke liye direct **YouTube Tutorial (Col 28)** aur **Official Documentation (Col 29)** clickable links diye gaye hain.
 * **Kaise use karein:**
   * Apna current day row dekho (maan lo Day 1).
   * `Problem 1` aur `Problem 2` dekho aur unhe solve karo.
@@ -110,7 +111,29 @@ Workbook me total 13 sheets hain. Ghabrao mat, roz sabme nahi ghusna hota. Samaj
 
 ---
 
-### 4. `ProblemDB` 🧠 (Tumhari Mehnat Ka Khata - 750 Rows)
+### 4. `SystemDesign` 🏗️ (AI-Infra & Systems Architecture Track)
+* **Part 1: 9-Phase Curriculum (Phases A–I)**: Foundations, Core Storage, Distributed Foundations, Streaming & Ingestion, Advanced DB, Feature Stores & Ingestion (Phase F), AI/ML Serving Infra, Distributed Training & KV Cache, Security & Governance.
+* **Part 2: 7 Capstone Projects**: Production-grade systems (Distributed KV Store, Log-Structured Storage Engine, Distributed Message Broker, Stream Processing Engine, Feature Store with Point-in-Time Correctness, High-Throughput LLM Inference Server, Large Scale Retrieval Engine).
+* **Part 3: Calibrated 24.5-Hr Weekly Schedule**: Mon/Wed light review days (ergonomics & back care), Tue/Thu deep architecture, Fri practical lab, Sat long system design deep-dive, Sun mock + 5:00 PM audit.
+* **Part 4: Sunday 5:00 PM Audit & Zero-Debt Rule**: 5 audit questions and strict Monday recovery protocol.
+
+---
+
+### 5. `PatternLibrary` 📚 (42 Master Patterns)
+* 42 patterns ka encyclopedia hai: Two Pointers, Sliding Window, Monotonic Stack se lekar HNSW vector search aur Lock-free Ring Buffers tak.
+* Har pattern ke saamne constraints, common traps, aur AI-infra relevance likhi hai.
+* **Tumhara kaam:** Column J me apna **Mastery rating (1 se 5)** daalo. Jo weak hai use time do.
+
+---
+
+### 6. `PatternCards` 🗂️ (Dimag Ka Test - 30 Cards)
+* 30 anchor problems ke flashcards hain.
+* Isme Trigger aur Complexity pehle se likhi hai.
+* **Column D (Core Insight) aur Column F (Invariant) intentionally khali hain!** Ye tumhe bina solution dekhe, apne dimag se fill karna hai active recall test karne ke liye.
+
+---
+
+### 7. `ProblemDB` 🧠 (Tumhari Mehnat Ka Khata - 750 Rows)
 * **Kya hai:** Jo bhi problem tumne solve kiya (ya try kiya), uski entry yahan hoti hai.
 * **Tumhe kya bharna hai:**
   * Problem ka naam, LeetCode number, Difficulty (E/M/H).
@@ -124,7 +147,7 @@ Workbook me total 13 sheets hain. Ghabrao mat, roz sabme nahi ghusna hota. Samaj
 
 ---
 
-### 5. `FailureLog` 💥 (Galti Sudhar Register - 500 Rows)
+### 8. `FailureLog` 💥 (Galti Sudhar Register - 500 Rows)
 * **Rule:** Agar kisi problem me 20 min se zyada phase, hint lena pada, ya galat approach lagayi — **turant yahan entry padegi.**
 * **Kya bharna hai:**
   * Kaunsa problem tha.
@@ -136,7 +159,7 @@ Workbook me total 13 sheets hain. Ghabrao mat, roz sabme nahi ghusna hota. Samaj
 
 ---
 
-### 6. `ReviewQueue` 🎯 (Kamzori Pe Hamla - Top 25)
+### 9. `ReviewQueue` 🎯 (Kamzori Pe Hamla - Top 25)
 * **Kya hai:** Ye sheet tumhare `ProblemDB` ko scan karti hai aur ek priority formula chala ke **Top 25 sabse zaroori revision questions** auto-rank karti hai.
 * Jis problem me tumne solution dekha tha ya bahut zyada time lagaya tha, wo apne aap **Rank 1** pe aake baith jayega!
 * Column I me ye tumhe exact action batata hai:
@@ -144,54 +167,39 @@ Workbook me total 13 sheets hain. Ghabrao mat, roz sabme nahi ghusna hota. Samaj
 
 ---
 
-### 7. `PatternLibrary` 📚 (42 Master Patterns)
-* 42 patterns ka encyclopedia hai: Two Pointers, Sliding Window, Monotonic Stack se lekar HNSW vector search aur Lock-free Ring Buffers tak.
-* Har pattern ke saamne constraints, common traps, aur AI-infra relevance likhi hai.
-* **Tumhara kaam:** Column J me apna **Mastery rating (1 se 5)** daalo. Jo weak hai use time do.
-
----
-
-### 8. `PatternCards` 🗂️ (Dimag Ka Test - 30 Cards)
-* 30 anchor problems ke flashcards hain.
-* Isme Trigger aur Complexity pehle se likhi hai.
-* **Column D (Core Insight) aur Column F (Invariant) intentionally khali hain!** Ye tumhe bina solution dekhe, apne dimag se fill karna hai active recall test karne ke liye.
-
----
-
-### 9. `WeeklyAssessment` 📊 (Sunday Ki Panchayat)
+### 10. `WeeklyAssessment` 📊 (Sunday Ki Panchayat)
 * Har Sunday ko yahan aao.
-* Ye sheet pure hafte ka hisaab khud lagati hai: kitne solve kiye, kitne independent the, kitne hints liye.
+* Ye sheet pure hafte ka hisaab khud lagati hai: kitne solve kiye, kitne independent the, kitne hints liye (All 24 Weeks).
 * **Warning Bell:** Agar kisi ek category me (jaise pattern na pehchan pana `F2`) 3 se zyada galtiyan hui, toh Column V me laal rang me likh ke aayega: **`YES - see README`**. Iska matlab agle hafte tumhe extra pattern drill karni padegi!
 
 ---
 
-### 10. `MockInterviews` ⏱️ (24 Parikshayen)
+### 11. `MockInterviews` ⏱️ (24 Parikshayen)
 * 24 diagnostics aur mock sessions ka schedule.
 * Days 28, 56, 84, 98, 112, 126, 140, 154, aur 168 par test hote hain.
 * Unlabelled questions, clock on, no hints. Real interview simulation.
 
 ---
 
-### 11. `ResourcePlan` 📺 (Bas 35 Kaam Ke Tutorials with Direct YouTube Links)
-* YouTube pe bhatakna band! Har topic ke liye direct curated video links attach kar diye gaye hain from the best teachers:
-  * 👑 **Striver (take U forward)**: Graphs, Trees, Arrays, DSU, Dijkstra, Greedy, Segment Trees, Bitmask DP.
-  * 🟢 **Aditya Verma**: Dynamic Programming (Knapsack, LCS, MCM), Sliding Window, Heaps, Monotonic Stack, Binary Search, Backtracking.
-  * 🔵 **Love Babbar (CodeHelp)**: Tries, Binary Trees, Recursion, Core Data Structures & Invariants.
-  * 🟣 **Padho with Pratyush**: Low-level Systems, LRU/ARC Caches, Lock-Free Ring Buffers (SPSC/MPMC), HNSW Vector Search, ML DAG Schedulers.
-  * 🟢 **NeetCode**: Clean Pythonic invariants & LeetCode patterns.
-  * 🎓 **Abdul Bari, WilliamFiset, Errichto**: Formal Algorithm Proofs & Graph Theory.
-* **Web App me:** `resources.html` kholo — wahan har tutorial ke liye direct `▶ Watch` button aur creator pills (`[📺 Striver]`, `[📺 Aditya Verma]`, `[📺 Love Babbar]`, `[📺 Padho with Pratyush]`, `[📺 NeetCode]`) diye hue hain. Upar creator filter buttons par click karke apne favorite teacher ke saare videos ek saath dekh sakte ho!
-* Ye saaf-saaf batata hai: **Kya note karna hai (invariants/triggers)** aur **Kya bilkul ratna nahi hai (code syntax)**.
+### 12. `ResourcePlan` 📺 (Curated Tutorials & Official Documentation)
+* Har topic ke liye direct curated YouTube video links aur Official Documentation (Python, C++ cppreference, PyTorch, CUDA, RFCs) attach kiye gaye hain.
+* Top creators: **Striver**, **Aditya Verma**, **Padho with Pratyush**, **Love Babbar**, **NeetCode**, **Abdul Bari**, **WilliamFiset**, **Errichto**.
 
 ---
 
-### 12. `ProgressionCurve` 📈 (Target vs Reality)
+### 13. `YouTubeChannels` 🎥 (Master Creator & Playlist Directory)
+* Top YouTube channels aur official playlists ki 1-click curated directory.
+* Direct master playlist links for A2Z DSA, Dynamic Programming, Graphs, Low-Level Concurrency, and System Design.
+
+---
+
+### 14. `ProgressionCurve` 📈 (Target vs Reality)
 * Target set hai: Shuruat me Medium problem pe 12 minute me pattern pehchanna hai, Week 24 tak aate-aate **3 minute** me pehchanna hai!
 * Har mock ke baad apne actual numbers yahan enter karo aur dekho graph sahi ja raha hai ya nahi.
 
 ---
 
-### 13. `BlindProblemPool` 🕵️ (Khufia Questions)
+### 15. `BlindProblemPool` 🕵️ (Khufia Questions)
 * 20 surprise questions diagnostics ke liye.
 * Rule: Attempt karne se pehle Column D (Pattern name) bilkul mat dekhna! Pehle solve karo, apna guess likho, phir check karo.
 

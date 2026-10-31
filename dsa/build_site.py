@@ -94,7 +94,7 @@ def page_shell(title, active_page, content_html):
             <span class="chip-label">Streak</span>
             <span class="chip-value" id="header-streak">0d</span>
           </div>
-          <a href="../DSA_AI_Infra_Training.xlsx" class="btn btn-header-action" download title="Download Complete 14-Sheet Master Excel Workbook">📥 Excel</a>
+          <a href="../DSA_AI_Infra_Training.xlsx" class="btn btn-header-action" download title="Download Complete 15-Sheet Master Excel Workbook">📥 Excel</a>
           <button class="btn btn-header-action" id="btn-open-sync" title="Export/Import and Backup data">💾 Backup</button>
         </div>
       </div>

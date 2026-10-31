@@ -18,6 +18,8 @@ from openpyxl.formatting.rule import (
 )
 import urllib.parse
 from tutorial_data import TUTORIAL_CREATORS, get_tutorial_resource
+from curated_resources import get_curated_resource
+
 
 # --- CONFIG --------------------------------------------------------------------
 START    = date(2026, 10, 1)
@@ -141,6 +143,68 @@ The metric that predicts interview success:
   * Ability to reconstruct any solved problem from memory 3 days later
 Dashboard tracks all four. Fill it honestly or it becomes useless."""),
 
+("THE 8 INVIOLABLE ENGINEERING RULES (THE EXECUTION-PROOF FRAMEWORK)",
+"""To eliminate analysis paralysis, tutorial hell, and cognitive overload, the entire training roadmap operates under eight strict engineering principles:
+
+1. STRICT PRIORITY SYSTEM (P0–P3):
+   * P0 (Essential): Required for immediate project MVP or interview screening. Non-negotiable.
+   * P1 (Important): Production hardening, observability, and scale. Scheduled strictly after P0 passes tests.
+   * P2 (Advanced): Specialized systems and GPU infrastructure. Blocked until Stages 1–3 are clear.
+   * P3 (Optional): Research tooling, hardware specifics, or experimental frameworks. Studied only on demand.
+   * THE INVARIANT: A P2 or P3 topic is STRICTLY FORBIDDEN from delaying P0 work. If tests are broken, reading about CUDA warp shuffles or Megatron-LM is prohibited.
+
+2. THE 5-STEP BUILD-FIRST LEARNING LOOP:
+   * (1) Theory Minimum: Max 45 min reading docs/papers only until I/O and mental models are understood.
+   * (2) Implement: Write small working script + at least 1 test asserting correct behavior.
+   * (3) Self-Debug: 20-min AI blackout. Zero ChatGPT/Gemini for the first 20 min. Inspect tracebacks.
+   * (4) Synthesize: 1-page markdown note logging: (a) What broke? (b) Root cause? (c) How resolved?
+   * (5) Advance: Stopping condition. The moment automated tests pass, STOP immediately. Move to next task.
+
+3. MEASURABLE EXIT GATES (5 PASSING CRITERIA):
+   * 1. Code: Runs cleanly and passes automated tests (pytest, mypy --strict with 0 errors).
+   * 2. Deployment: Runnable via single command (docker compose up -d).
+   * 3. Whiteboard: Explain architecture, dataflow, and invariants aloud without looking at notes.
+   * 4. Metrics: Documented latency (p50/p95/p99), throughput (tokens/sec or QPS), and memory footprint.
+   * 5. Debugging: Independent troubleshooting of edge cases without relying on AI crutches.
+
+4. THE RULE OF THREE (ZERO RESOURCE BLOAT):
+   * For every single subject, you are strictly restricted to:
+     - 1 Primary Resource: Official documentation or highest-signal tutorial (free preferred).
+     - 1 Reference Resource: Standard manual or textbook for gap-filling.
+     - 1 Practical Task: Runnable code with an automated test and a tight stopping condition.
+   * Never bookmark 5 courses or watch 10 hours of video for the same topic.
+
+5. ZERO-DEBT RECOVERY RULES & SUNDAY AUDIT:
+   * Sunday 5:00 PM Audit (10-min written log): (1) What was completed? (2) What working system was built? (3) What can I explain? (4) What blocked progress? (5) What must change?
+   * Strict No-Debt Policy: Missed study hours are NEVER carried over into the following week. If you miss 8 hours, next week's budget remains 24.5 hrs, NOT 32.5 hrs.
+   * Shed Scope Immediately: Drop P3, defer secondary P1 polish; protect P0 and the ergonomic health limit.
+
+6. REAL JOB MARKET ALIGNMENT (4 TARGET ROLES):
+   * (1) AI / LLM Application Engineer (Stage 1 exit): FastAPI, RAG, tool calling, telemetry, evals.
+   * (2) ML Platform / MLOps Engineer: KubeRay, Triton server, feature stores, CI/CD pipelines, Docker.
+   * (3) Machine Learning Engineer: Distributed training (FSDP, ZeRO), loss debugging, PyTorch profiling.
+   * (4) AI Infrastructure Engineer (Stage 2 exit): GPU kernel optimization (Triton/CUDA), vLLM KV-cache paging, NCCL ring fabrics.
+
+7. PROJECT-FIRST PORTFOLIO BAR (6 CORE PRODUCTION ARTIFACTS):
+   * Every phase produces a standalone, tested repository with architecture diagrams, README, and reproducible benchmarks.
+
+8. SINGLE NEXT ACTION DIRECTIVE:
+   * Focus exclusively on your single current next action. Avoid jumping between 5 different topics simultaneously."""),
+
+("CALIBRATED SUSTAINABLE STUDY RHYTHM (~24–26 HOURS TOTAL)",
+"""The weekly schedule below reflects realistic, sustainable availability rather than aspirational burnout schedules.
+
+• MONDAY (Ergonomic / Back Pain Care): Light only — 30–45 min review/reading/flashcards while reclining. Zero desk-bound coding marathons.
+• TUESDAY: 2.5–3.0 hrs (Evening Deep Work 7:30–10:15 PM): 1 focused roadmap module + 1 Striver DSA problem.
+• WEDNESDAY (Ergonomic / Back Pain Care): Light only — 30–45 min review/notes. No heavy sessions.
+• THURSDAY: 2.5–3.0 hrs (Evening Deep Work 7:30–10:15 PM): Project implementation and problem derivation.
+• FRIDAY: 6.0–7.0 hrs (Deep Project Build): Benchmark runs, profiling, Docker builds, long-form systems reading.
+• SATURDAY: 6.0–7.0 hrs (Architecture & Mocks): System design whiteboarding, failure simulation, interview mocks.
+• SUNDAY: 4.0–5.0 hrs (Retrospective & Audit): Spaced repetition, test suite verification, Sunday 5:00 PM audit (hard stop by 6:00 PM).
+
+Effective weekly study budget: ~24.5 hrs total.
+Inviolable Health Rule: Mon/Wed light review days are non-negotiable regardless of schedule slippage."""),
+
 ("DAILY BLOCK STRUCTURE  (1-2 hours total)",
 """A) RETRIEVAL  [10-15 min]
    From memory, no notes: state yesterday's pattern trigger + invariant + complexity.
@@ -191,13 +255,13 @@ The goal: "I understand WHY this solution exists." NOT "I understood it after be
 7. RECONSTRUCT   -  Close everything. Rebuild from memory and explain aloud.
 8. SCHEDULE      -  ProblemDB auto-computes review dates based on your performance."""),
 
-("TUTORIAL RULES  (35 curated tutorials across 168 days)",
+("TUTORIAL & DOCUMENTATION RULES (35 Core Tutorials + 168 Official Docs)",
 """Watch BEFORE a problem only when the mental model is genuinely new (DayPlan marks these explicitly).
 Do NOT watch because a specific problem is hard. Struggle first.
 Watch AFTER only when you failed to recognise the SAME pattern twice.
 Rewatch only if you cannot reconstruct the concept from memory.
 
-For every tutorial, extract:
+For every tutorial / official doc, extract:
   * The TRIGGER (what wording in a problem should activate this pattern?)
   * The INVARIANT (what remains true throughout the algorithm?)
   * The COMPLEXITY ARGUMENT (why is it O(n)? O(n log n)?  -  derive it, do not accept it)
@@ -232,14 +296,14 @@ F12-CantExplain  : could implement but could not explain the solution"""),
 If F2 or F3 each appear 5+ times in a single week: run a pattern-recognition drill session
 (20 problems, no coding, just write "pattern: X" for each) before continuing the plan."""),
 
-("MISSED DAYS  (no restarts, ever)",
+("MISSED DAYS & STRICT ZERO-DEBT RECOVERY PROTOCOL",
 """1 day missed      ->  resume exactly where you left off. Nothing special.
 2-3 days missed   ->  RECOVERY SESSION: 15 min retrieval of last 3 patterns +
                     2 problems from top of ReviewQueue + nothing new.
 1+ week missed    ->  MINI-DIAGNOSTIC: 3 unlabelled problems from the pool (60 min).
                     Re-enter the plan at the week whose patterns you failed.
-                    Do NOT go back to Day 1. Do NOT do a multi-day catch-up pile.
-                    Catch-up piles produce shallow results and break motivation."""),
+STRICT INVARIANT  ->  NEVER do a multi-day catch-up pile. Catch-up piles break motivation.
+                    Shed scope: drop P3, defer P1; protect P0 and the Mon/Wed health limits."""),
 
 ("PRODUCTIVITY TRAPS  (re-read every Sunday)",
 """* Watching tutorials instead of struggling
@@ -362,6 +426,19 @@ n <= 5,000     ->  O(n^2) tight
 n <= 100,000   ->  O(n log n) required
 n <= 1,000,000 ->  O(n) strongly preferred
 n <= 10^9      ->  O(log n) or O(1) only"""),
+
+("REALISTIC SALARY EXPECTATIONS (2026 MARKET)",
+"""• Stage 1 — AI Eval / Application Engineer (Phase 3 exit, 0–2 yrs exp):
+  - India: ₹18L – ₹35L | US/Remote: $100K – $140K
+  - Focus: FastAPI, RAG, prompt engineering, evaluation harnesses, synthetic data generation.
+
+• Stage 2 — AI Infrastructure Systems Engineer (Phase 4, 1–3 yrs exp):
+  - India: ₹30L – ₹60L | US/Remote: $160K – $250K
+  - Focus: vLLM, PagedAttention, Ray/KubeRay, high-throughput model serving, Triton/CUDA kernels.
+
+• Senior / Staff AI Infrastructure Engineer (5+ yrs systems track record):
+  - India: ₹60L – ₹100L+ | US/Remote: $250K – $450K+
+  - Focus: Distributed cluster architecture, multi-node NCCL scaling, custom silicon accelerators. Top-tier FAANG/frontier lab compensation requires proven large-scale production delivery."""),
 
 ("RESOURCE DISCIPLINE & CURATED YOUTUBE CREATORS",
 """Curated tutorial channels:
@@ -2498,8 +2575,9 @@ DP_HEADERS = [
     "AI-Infra Connection","Skill Gained",
     "Completed?","Actual min","Notes","Failure Category","2nd-Sol?",
     "YouTube Tutorial ↗",
+    "Official Documentation 📄",
 ]
-DP_WIDTHS = [5,5,12,46,24,36,9,30,6,11,18,38,6,8,38,6,8,34,46,44,40,22,10,8,34,18,8,22]
+DP_WIDTHS = [5,5,12,46,24,36,9,30,6,11,18,38,6,8,38,6,8,34,46,44,40,22,10,8,34,18,8,24,26]
 write_header(ws_dp, DP_HEADERS, DP_WIDTHS, freeze="D2")
 
 WEEK_THEMES = [
@@ -2548,13 +2626,35 @@ for i, day_data in enumerate(PLAN):
     dt = START + timedelta(days=i)
     wk_fill = GREY if week % 2 == 0 else WHITE
 
-    if tY == "YES" and tT:
-        tut = get_tutorial_resource(day, tT)
-        tT_val = f'=HYPERLINK("{tut["primary_url"]}", "{tT}")'
+    tut = get_tutorial_resource(day, tT)
+    curated = get_curated_resource(day, tT)
+
+    # 1. Topic text & link
+    topic_text = curated.get("topic") if curated.get("topic") else (tT or "")
+    if (tY == "YES" or curated.get("yt")) and topic_text:
+        yt_target = curated["yt"]["url"] if curated.get("yt") else tut.get("primary_url", "")
+        if yt_target:
+            tT_val = f'=HYPERLINK("{yt_target}", "{topic_text}")'
+        else:
+            tT_val = topic_text
+    else:
+        tT_val = topic_text
+
+    # 2. Curated YouTube Button
+    if curated.get("yt"):
+        yt_btn_val = f'=HYPERLINK("{curated["yt"]["url"]}", "▶ Watch ({curated["yt"]["creator"]}) ↗")'
+    elif tY == "YES" and tT:
         yt_btn_val = f'=HYPERLINK("{tut["primary_url"]}", "▶ Watch ({tut["primary"]}) ↗")'
     else:
-        tT_val = tT if tT else ""
         yt_btn_val = "—"
+
+    # 3. Curated Documentation / Article Button
+    if curated.get("doc"):
+        doc_btn_val = f'=HYPERLINK("{curated["doc"]["url"]}", "📄 Read ({curated["doc"]["source"]}) ↗")'
+    elif tut.get("doc"):
+        doc_btn_val = f'=HYPERLINK("{tut["doc"]["url"]}", "📄 Read ({tut["doc"]["source"]}) ↗")'
+    else:
+        doc_btn_val = "—"
 
     vals = [
         day, week, dt, obj, pat, con,
@@ -2562,17 +2662,23 @@ for i, day_data in enumerate(PLAN):
         p1, d1, t1, p2, d2, t2,
         rev, rec, asr, infra, skill,
         None, None, None, None, None,
-        yt_btn_val
+        yt_btn_val,
+        doc_btn_val
     ]
     for c, v in enumerate(vals, 1):
         cell = put(ws_dp, r, c, v, bg=wk_fill if wk_fill != WHITE else None)
         if c == 3:  cell.number_format = "ddd dd-mmm-yy"
-        if c in (1,2,9,13,14,16,17,23,24,27,28): cell.alignment = CTR
-        if c == 8 and tY == "YES":
+        if c in (1,2,9,13,14,16,17,23,24,27,28,29): cell.alignment = CTR
+        if c == 8 and (tY == "YES" or curated.get("yt")):
             cell.font = fnt(color=BLUE, underline="single", bold=True)
         if c == 28:
-            if tY == "YES":
+            if yt_btn_val != "—":
                 cell.font = fnt(color=GREEN_D, underline="single", bold=True)
+            else:
+                cell.font = fnt(color="94A3B8")
+        if c == 29:
+            if doc_btn_val != "—":
+                cell.font = fnt(color=BLUE, underline="single", bold=True)
             else:
                 cell.font = fnt(color="94A3B8")
 
@@ -2608,8 +2714,371 @@ ws_dp.conditional_formatting.add(f"E2:E{last}",
     CellIsRule("containsText" if False else "equal", ['"Blind"'],
                fill=fill("F3E8FF")))
 
-ws_dp.auto_filter.ref = f"A1:AB{last}"
+ws_dp.auto_filter.ref = f"A1:AC{last}"
 print("[OK] DayPlan sheet built")
+
+# --- SHEET: SystemDesign ------------------------------------------------------
+ws_sd = wb.create_sheet("SystemDesign")
+ws_sd.sheet_view.showGridLines = False
+
+for col, w in zip("ABCDEFGH", [10, 42, 16, 18, 48, 50, 52, 24]):
+    ws_sd.column_dimensions[col].width = w
+
+# 1. Main Title
+ws_sd.merge_cells("A1:H1")
+for col in "ABCDEFGH":
+    ws_sd[f"{col}1"].fill = fill(NAVY)
+t_sd = ws_sd["A1"]
+t_sd.value = "SYSTEM DESIGN & AI-INFRASTRUCTURE ARCHITECTURE TRACK (2026)"
+t_sd.font  = fnt(bold=True, sz=13, color=WHITE)
+t_sd.alignment = Alignment(horizontal="center", vertical="center")
+ws_sd.row_dimensions[1].height = 36
+
+# 2. Subtitle
+ws_sd.merge_cells("A2:H2")
+for col in "ABCDEFGH":
+    ws_sd[f"{col}2"].fill = fill(LIGHT)
+s_sd = ws_sd["A2"]
+s_sd.value = "9-Phase Curriculum (incl. Phase F Feature Stores) • 7 Production Capstone Projects • Calibrated 24.5-Hr Sustainable Schedule • Measurable Exit Gates"
+s_sd.font  = fnt(italic=True, sz=9, color="475569")
+s_sd.alignment = Alignment(horizontal="center", vertical="center")
+ws_sd.row_dimensions[2].height = 24
+
+# PART 1: 9-Phase Curriculum
+ws_sd.merge_cells("A4:H4")
+for col in "ABCDEFGH":
+    ws_sd[f"{col}4"].fill = fill(BLUE)
+h1_sd = ws_sd["A4"]
+h1_sd.value = "  PART 1: 9-PHASE AI INFRASTRUCTURE & DISTRIBUTED SYSTEMS CURRICULUM"
+h1_sd.font  = fnt(bold=True, sz=10, color=WHITE)
+h1_sd.alignment = Alignment(vertical="center", horizontal="left")
+ws_sd.row_dimensions[4].height = 26
+
+CURRICULUM_HEADERS = [
+    "Phase", "Phase Title", "Priority Tier", "Duration (Weeks)",
+    "Core Technologies & Architecture", "Key Invariant / Mental Model",
+    "Hands-On Practical Exercise", "Target Stage / Role"
+]
+for c_idx, h_text in enumerate(CURRICULUM_HEADERS, start=1):
+    cell = ws_sd.cell(row=5, column=c_idx, value=h_text)
+    cell.font = fnt(bold=True, sz=9, color=WHITE)
+    cell.fill = fill(NAVY)
+    cell.border = BORDER_H
+    cell.alignment = CTR if c_idx in (1, 3, 4, 8) else Alignment(vertical="center")
+ws_sd.row_dimensions[5].height = 24
+
+CURRICULUM_DATA = [
+    (
+        "Phase A", "Foundations & Distributed Systems Primers", "P0 · Essential", "2 Weeks (~30h)",
+        "Linux Networking, epoll, TCP/IP socket lifecycle, gRPC, Protobuf, eBPF, zero-copy socket transfers",
+        "TCP flow control, head-of-line blocking, connection pooling, backpressure propagation",
+        "Build async Protobuf RPC echo service with <500μs p99 latency & automated load test",
+        "Stage 1 (AI Platform)"
+    ),
+    (
+        "Phase B", "Distributed Storage, Consensus & File Systems", "P0 · Essential", "3 Weeks (~45h)",
+        "Raft consensus, Paxos, MinIO, Ceph, Lustre, POSIX vs S3 Object Storage, write-ahead logs",
+        "Quorum consistency (N/2 + 1), leader election invariants, log matching, split-brain protection",
+        "Implement in-memory 3-node Raft leader election & log replication in Go/Python",
+        "Stage 1 (AI Platform)"
+    ),
+    (
+        "Phase C", "High-Throughput Streaming & Message Brokers", "P0 · Essential", "2 Weeks (~30h)",
+        "Apache Kafka, Redpanda, Zero-copy sendfile, Partitioning, Consumer groups, offset commits",
+        "Partition ordering guarantee, log compaction, exactly-once semantics (EOS), consumer rebalancing",
+        "Build high-throughput event streamer processing 100k msgs/sec with backpressure",
+        "Stage 1 (AI Platform)"
+    ),
+    (
+        "Phase D", "Distributed Caching, Key-Value Stores & KV Offload", "P0 · Essential", "2 Weeks (~30h)",
+        "Redis cluster, Memcached, Consistent hashing (virtual nodes), Cache-aside, Write-through, Stampede prevention",
+        "Cache stampede mutual exclusion, hot-key replication, memory eviction bounds (LRU/LFU/ARC)",
+        "Implement sharded Redis cluster with MurmurHash3 and simulated failover",
+        "Stage 1 (AI Platform)"
+    ),
+    (
+        "Phase E", "Database Scaling, Sharding & Columnar OLAP", "P1 · Important", "2 Weeks (~30h)",
+        "PostgreSQL sharding, ClickHouse, Parquet, DuckDB, LSM Trees vs B+ Trees, write amplification",
+        "Columnar compression (Run-Length, Dictionary), vector execution vs row scan, compaction costs",
+        "Set up ClickHouse cluster ingesting 10M rows and query p95 latency <50ms",
+        "Stage 1 & 2"
+    ),
+    (
+        "Phase F", "Feature Stores, Ingestion Pipelines & Model Registries", "P1 · Important", "2 Weeks (~30h)",
+        "Feast, Hopsworks, Redis (online <10ms), Snowflake/Parquet (offline), safetensors vs pickle, MLflow, HF Hub",
+        "Train-serve skew prevention, point-in-time correctness joins, immutable model lineage, mmap loading",
+        "Set up local Feast repo with SQLite (offline) & Redis (online); verify point-in-time join correctness",
+        "Stage 1 & 2"
+    ),
+    (
+        "Phase G", "High-Throughput LLM Model Serving Architectures", "P0 · Essential", "4 Weeks (~60h)",
+        "vLLM, PagedAttention, Continuous Batching, Speculative Decoding, Chunked Prefill, TensorRT-LLM, FP8 KV",
+        "KV-cache fragmentation elimination, TTFT vs ITL trade-off, memory-bound decode vs compute-bound prefill",
+        "Build async inference server with continuous batching & simulated paged KV-cache engine",
+        "Stage 2 (AI Infra)"
+    ),
+    (
+        "Phase H", "Distributed ML Training Systems", "P1 · Important", "3 Weeks (~45h)",
+        "PyTorch FSDP, DeepSpeed ZeRO 1-3, Megatron 3D Parallelism, NCCL AllReduce, Tensor/Pipeline Parallelism",
+        "Memory vs communication overhead, pipeline bubble minimization (1F1B), gradient synchronization bounds",
+        "Train multi-GPU model with FSDP across nodes and profile NCCL AllReduce ring bandwidth",
+        "Stage 2 (AI Infra)"
+    ),
+    (
+        "Phase I", "GPU Hardware Architecture, CUDA & Triton Systems", "P2 · Advanced", "3 Weeks (~45h)",
+        "NVIDIA Hopper/Blackwell H100/B200, HBM3e bandwidth, SM cores, OpenAI Triton, FlashAttention-2/3, Tensor Cores",
+        "Arithmetic intensity (FLOPs/byte), memory coalescing, bank conflicts, warp divergence, tiling",
+        "Write fused Softmax & block-tiled attention kernel in OpenAI Triton matching PyTorch accuracy",
+        "Senior AI Infra (FAANG)"
+    ),
+]
+
+row_cursor = 6
+for item in CURRICULUM_DATA:
+    bg_fill = GREY if row_cursor % 2 == 0 else WHITE
+    for c_idx, val in enumerate(item, start=1):
+        cell = ws_sd.cell(row=row_cursor, column=c_idx, value=val)
+        cell.fill = fill(bg_fill)
+        cell.border = BORDER
+        cell.font = fnt(sz=9, bold=(c_idx in (1, 3)))
+        if c_idx in (1, 3, 4, 8):
+            cell.alignment = CTR
+        else:
+            cell.alignment = Alignment(wrap_text=True, vertical="center", horizontal="left")
+        if c_idx == 3:
+            if "P0" in val:
+                cell.font = fnt(bold=True, sz=9, color=RED_D)
+            elif "P1" in val:
+                cell.font = fnt(bold=True, sz=9, color=GREEN_D)
+            else:
+                cell.font = fnt(bold=True, sz=9, color=PURPLE)
+    ws_sd.row_dimensions[row_cursor].height = 42
+    row_cursor += 1
+
+# PART 2: The 7 Core Capstone Projects
+row_cursor += 1
+ws_sd.merge_cells(f"A{row_cursor}:H{row_cursor}")
+for col in "ABCDEFGH":
+    ws_sd[f"{col}{row_cursor}"].fill = fill(BLUE)
+h2_sd = ws_sd[f"A{row_cursor}"]
+h2_sd.value = "  PART 2: THE 7 CORE CAPSTONE PRODUCTION PROJECTS (PORTFOLIO PROOF)"
+h2_sd.font  = fnt(bold=True, sz=10, color=WHITE)
+h2_sd.alignment = Alignment(vertical="center", horizontal="left")
+ws_sd.row_dimensions[row_cursor].height = 26
+row_cursor += 1
+
+PROJ_HEADERS = [
+    "Project #", "Project Name", "Priority", "Recommended Tech Stack",
+    "Architectural Specification & Deliverables", "Measurable Acceptance Criteria (Passing Gate)",
+    "Single-Command Deployment", "Target Stage"
+]
+for c_idx, h_text in enumerate(PROJ_HEADERS, start=1):
+    cell = ws_sd.cell(row=row_cursor, column=c_idx, value=h_text)
+    cell.font = fnt(bold=True, sz=9, color=WHITE)
+    cell.fill = fill(NAVY)
+    cell.border = BORDER_H
+    cell.alignment = CTR if c_idx in (1, 3, 7, 8) else Alignment(vertical="center")
+ws_sd.row_dimensions[row_cursor].height = 24
+row_cursor += 1
+
+PROJECTS_DATA = [
+    (
+        "Project 1", "Real-time Feature Store & Ingestion Pipeline", "P1", "Feast + Redis + Parquet + Kafka",
+        "Dual-storage feature engine: Redis for online <10ms inference; Parquet/S3 for offline training with point-in-time correct joins.",
+        "p99 retrieval <5ms under 1,000 req/sec; automated pytest suite asserts zero train-serve skew on historical joins.",
+        "docker compose up -d", "Stage 1 Exit"
+    ),
+    (
+        "Project 2", "High-Throughput Async Inference Engine", "P0", "FastAPI + Python/C++ Async + PyTorch",
+        "Inference server with continuous batching, dynamic request queue, streaming SSE tokens, and Prometheus latency telemetry.",
+        "Achieves >=3x throughput vs naive sequential serving; p50, p95, p99 latency benchmarked and documented in README.",
+        "docker compose up inference", "Stage 1 Exit"
+    ),
+    (
+        "Project 3", "Distributed KV-Cache Paging & Offload Engine", "P0", "C++ / Python + Shared Memory",
+        "Paged memory manager allocating non-contiguous block tables; tiered offloading across GPU HBM, host DRAM, and NVMe SSD.",
+        "Zero internal memory fragmentation; <1ms block eviction and prefetch; unit test suite passes 100%.",
+        "pytest tests/test_kv_cache.py", "Stage 2 (AI Infra)"
+    ),
+    (
+        "Project 4", "Model Sharding & Pipeline Parallelism Framework", "P1", "PyTorch + NCCL Collective APIs",
+        "1D Megatron column/row parallel linear layers + 1F1B activation scheduling across simulated multi-GPU nodes.",
+        "Backward pass gradients and loss match single-GPU execution within 1e-4 tolerance; pipeline bubbles <15%.",
+        "torchrun --nproc_per_node=2 train.py", "Stage 2 (AI Infra)"
+    ),
+    (
+        "Project 5", "GPU Kernel Fusion & FlashAttention in Triton", "P2", "OpenAI Triton + CUDA",
+        "Custom GPU kernels: fused Cross-Entropy and block-tiled FlashAttention-2 avoiding intermediate HBM roundtrips.",
+        "Achieves >=2.5x speedup vs naive PyTorch eager ops; VRAM footprint reduced by >60% on 4K context sequences.",
+        "pytest tests/test_triton_ops.py", "Senior AI Infra"
+    ),
+    (
+        "Project 6", "KubeRay Distributed Serving Operator", "P1", "Kubernetes + KubeRay + vLLM",
+        "Kubernetes operator managing autoscaling LLM inference pools with GPU device plugin partitioning and RayCluster CRDs.",
+        "Single-command Helm install; Horizontal Pod Autoscaler (HPA) dynamically scales pods from 1 to 4 under simulated spike.",
+        "helm install llm-operator ./helm", "Stage 2 (AI Infra)"
+    ),
+    (
+        "Project 7", "End-to-End Autonomous AI Infrastructure Cluster", "P1", "Complete Modern AI Stack",
+        "Capstone unified system: streaming data ingestion -> distributed fine-tuning -> model registry -> high-throughput serving.",
+        "End-to-end integration test passes automatically; live Grafana dashboard displaying real-time TTFT, ITL, and GPU VRAM.",
+        "make deploy-cluster && make test", "Staff / Specialist"
+    ),
+]
+
+for item in PROJECTS_DATA:
+    bg_fill = GREY if row_cursor % 2 == 0 else WHITE
+    for c_idx, val in enumerate(item, start=1):
+        cell = ws_sd.cell(row=row_cursor, column=c_idx, value=val)
+        cell.fill = fill(bg_fill)
+        cell.border = BORDER
+        cell.font = fnt(sz=9, bold=(c_idx in (1, 3)))
+        if c_idx in (1, 3, 7, 8):
+            cell.alignment = CTR
+        else:
+            cell.alignment = Alignment(wrap_text=True, vertical="center", horizontal="left")
+        if c_idx == 3:
+            if "P0" in val:
+                cell.font = fnt(bold=True, sz=9, color=RED_D)
+            elif "P1" in val:
+                cell.font = fnt(bold=True, sz=9, color=GREEN_D)
+            else:
+                cell.font = fnt(bold=True, sz=9, color=PURPLE)
+        if c_idx == 7:
+            cell.font = fnt(sz=8.5, color="475569")
+    ws_sd.row_dimensions[row_cursor].height = 42
+    row_cursor += 1
+
+# PART 3: Calibrated Weekly Schedule (24.5 Hrs)
+row_cursor += 1
+ws_sd.merge_cells(f"A{row_cursor}:H{row_cursor}")
+for col in "ABCDEFGH":
+    ws_sd[f"{col}{row_cursor}"].fill = fill(BLUE)
+h3_sd = ws_sd[f"A{row_cursor}"]
+h3_sd.value = "  PART 3: CALIBRATED SUSTAINABLE WEEKLY SCHEDULE (~24.5 HOURS TOTAL)"
+h3_sd.font  = fnt(bold=True, sz=10, color=WHITE)
+h3_sd.alignment = Alignment(vertical="center", horizontal="left")
+ws_sd.row_dimensions[row_cursor].height = 26
+row_cursor += 1
+
+SCHED_HEADERS = [
+    "Day of Week", "Study Budget", "Focus Session Type", "Primary Activities & Output",
+    "Ergonomic Protocol & Rules", "Stopping Condition", "Target Hours", "Status"
+]
+for c_idx, h_text in enumerate(SCHED_HEADERS, start=1):
+    cell = ws_sd.cell(row=row_cursor, column=c_idx, value=h_text)
+    cell.font = fnt(bold=True, sz=9, color=WHITE)
+    cell.fill = fill(NAVY)
+    cell.border = BORDER_H
+    cell.alignment = CTR if c_idx in (1, 2, 7, 8) else Alignment(vertical="center")
+ws_sd.row_dimensions[row_cursor].height = 24
+row_cursor += 1
+
+SCHEDULE_DATA = [
+    (
+        "Monday", "30–45 min", "Ergonomic Light Review",
+        "Light reading, flashcards (Anki/SRS), architecture overview notes review.",
+        "Mon/Wed Back Pain Care: Read while reclining/resting. Zero desk-bound coding marathons.",
+        "Hard stop at 45 min", "0.75h", "Protected"
+    ),
+    (
+        "Tuesday", "2.5–3.0 hrs", "Evening Deep Work",
+        "7:30–10:15 PM: 1 focused roadmap module + 1 Striver DSA problem implementation.",
+        "Desk session with ergonomic posture; 20-min AI blackout on debugging.",
+        "Tests pass or 10:15 PM reached", "2.75h", "Core Session"
+    ),
+    (
+        "Wednesday", "30–45 min", "Ergonomic Light Review",
+        "Light reading, system design concept check, ReviewQueue retrieval only.",
+        "Mon/Wed Back Pain Care: Non-negotiable light day regardless of schedule slippage.",
+        "Hard stop at 45 min", "0.75h", "Protected"
+    ),
+    (
+        "Thursday", "2.5–3.0 hrs", "Evening Deep Work",
+        "7:30–10:15 PM: Core project implementation, test writing, or problem derivation.",
+        "Desk session with ergonomic posture; focus exclusively on current P0 task.",
+        "Tests pass or 10:15 PM reached", "2.75h", "Core Session"
+    ),
+    (
+        "Friday", "6.0–7.0 hrs", "Deep Project Build",
+        "Deep implementation block: benchmarks, profiling, Docker builds, long-form reading.",
+        "Split into 2 focused blocks with 45-min break; full concentration on code artifacts.",
+        "Runnable build + benchmarks logged", "6.50h", "Heavy Build"
+    ),
+    (
+        "Saturday", "6.0–7.0 hrs", "Architecture & Mocks",
+        "System design whiteboarding, failure simulation, interview mocks, trade-off writeups.",
+        "Split into 2 blocks; speak aloud during whiteboarding as if in an interview.",
+        "Whiteboard explanation complete", "6.50h", "Heavy Build"
+    ),
+    (
+        "Sunday", "4.0–5.0 hrs", "Retrospective & Audit",
+        "Spaced repetition, test suite verification, Sunday 5:00 PM 5-Question written audit.",
+        "Strict Zero-Debt Rule: Never roll over missed hours. Stop work completely by 6:00 PM.",
+        "Hard stop at 6:00 PM", "4.50h", "Audit & Wrap"
+    ),
+]
+
+for item in SCHEDULE_DATA:
+    bg_fill = "FEF2F2" if item[0] in ("Monday", "Wednesday") else (GREY if row_cursor % 2 == 0 else WHITE)
+    for c_idx, val in enumerate(item, start=1):
+        cell = ws_sd.cell(row=row_cursor, column=c_idx, value=val)
+        cell.fill = fill(bg_fill)
+        cell.border = BORDER
+        cell.font = fnt(sz=9, bold=(c_idx in (1, 2, 7)))
+        if c_idx in (1, 2, 7, 8):
+            cell.alignment = CTR
+        else:
+            cell.alignment = Alignment(wrap_text=True, vertical="center", horizontal="left")
+        if c_idx == 8 and val == "Protected":
+            cell.font = fnt(bold=True, sz=9, color=RED_D)
+    ws_sd.row_dimensions[row_cursor].height = 36
+    row_cursor += 1
+
+# PART 4: Strict Zero-Debt Recovery Rules & Sunday Audit
+row_cursor += 1
+ws_sd.merge_cells(f"A{row_cursor}:H{row_cursor}")
+for col in "ABCDEFGH":
+    ws_sd[f"{col}{row_cursor}"].fill = fill(NAVY)
+h4_sd = ws_sd[f"A{row_cursor}"]
+h4_sd.value = "  PART 4: THE STRICT ZERO-DEBT RECOVERY PROTOCOL & SUNDAY 5:00 PM AUDIT"
+h4_sd.font  = fnt(bold=True, sz=10, color=WHITE)
+h4_sd.alignment = Alignment(vertical="center", horizontal="left")
+ws_sd.row_dimensions[row_cursor].height = 26
+row_cursor += 1
+
+AUDIT_RULES = [
+    ("Sunday 5:00 PM Audit Question 1", "What was actually completed? (List verified git commits only — not articles read or videos watched)"),
+    ("Sunday 5:00 PM Audit Question 2", "What working system was built? (Runnable test suite or demo passing with 0 errors)"),
+    ("Sunday 5:00 PM Audit Question 3", "What can I explain independently without notes? (Whiteboard architecture & key invariants)"),
+    ("Sunday 5:00 PM Audit Question 4", "What blocked progress or caused friction? (Identify root cause: scope creep, fatigue, or missing theory)"),
+    ("Sunday 5:00 PM Audit Question 5", "What must change in next week's focus? (Concrete adjustments to preserve momentum)"),
+    ("Inviolable Zero-Debt Rule 1", "NEVER carry over missed study hours into the following week. If you missed 8 hours, next week remains 24.5h, NOT 32.5h."),
+    ("Inviolable Zero-Debt Rule 2", "Shed scope immediately when behind: drop P3 Optional topics; defer secondary P1 polish; protect P0 code and tests."),
+    ("Inviolable Health Rule 3", "Monday and Wednesday light review days (30–45 min) are strictly non-negotiable to protect health and back pain."),
+]
+
+for title_text, desc_text in AUDIT_RULES:
+    ws_sd.merge_cells(f"A{row_cursor}:B{row_cursor}")
+    ws_sd.merge_cells(f"C{row_cursor}:H{row_cursor}")
+    for col in "ABCDEFGH":
+        cell = ws_sd[f"{col}{row_cursor}"]
+        cell.fill = fill(LIGHT if "Question" in title_text else "FEF2F2")
+        cell.border = BORDER
+    t_c = ws_sd[f"A{row_cursor}"]
+    t_c.value = title_text
+    t_c.font = fnt(bold=True, sz=9, color=NAVY if "Question" in title_text else RED_D)
+    t_c.alignment = Alignment(vertical="center", horizontal="left")
+
+    d_c = ws_sd[f"C{row_cursor}"]
+    d_c.value = desc_text
+    d_c.font = fnt(sz=9, color="1E293B")
+    d_c.alignment = Alignment(wrap_text=True, vertical="center", horizontal="left")
+    ws_sd.row_dimensions[row_cursor].height = 28
+    row_cursor += 1
+
+print("[OK] SystemDesign sheet built")
+
 
 # --- SHEET: PatternLibrary -----------------------------------------------------
 ws_pl = wb.create_sheet("PatternLibrary")
@@ -3701,16 +4170,16 @@ for i, (wk, theme) in enumerate(WEEK_DATA):
     ws_wa.row_dimensions[r].height = 30
 
 for col in "HIJKLM":
-    dv(ws_wa, SCORE_VALS, f"{col}2:{col}15", "Score 1-5")
-dv(ws_wa, FCATS, "O2:O15", "Dominant failure")
+    dv(ws_wa, SCORE_VALS, f"{col}2:{col}{len(WEEK_DATA)+1}", "Score 1-5")
+dv(ws_wa, FCATS, f"O2:O{len(WEEK_DATA)+1}", "Dominant failure")
 
-ws_wa.conditional_formatting.add("H2:N15",
+ws_wa.conditional_formatting.add(f"H2:N{len(WEEK_DATA)+1}",
     ColorScaleRule(start_type="num", start_value=1, start_color=RED_D,
                    mid_type="num",   mid_value=3,   mid_color=AMBER_D,
                    end_type="num",   end_value=5,   end_color=GREEN_D))
-ws_wa.conditional_formatting.add("V2:V15",
+ws_wa.conditional_formatting.add(f"V2:V{len(WEEK_DATA)+1}",
     CellIsRule("equal", ['"YES  -  see README"'], fill=fill(RED)))
-ws_wa.conditional_formatting.add("R2:U25",
+ws_wa.conditional_formatting.add(f"R2:U{len(WEEK_DATA)+1}",
     CellIsRule("greaterThanOrEqual", ["3"], fill=fill(RED)))
 print("[OK] WeeklyAssessment sheet built")
 
@@ -3803,6 +4272,7 @@ RP_H = [
     "What NOT to memorize","Problems immediately after",
     "What to recall next day","Watched?","Watch-by Date",
     "Primary YouTube Video",
+    "Official Documentation 📄",
     "📺 Striver",
     "📺 Aditya Verma",
     "📺 Love Babbar",
@@ -3810,7 +4280,7 @@ RP_H = [
     "📺 NeetCode",
     "📺 Other / Specialized",
 ]
-RP_W = [6,22,32,28,10,44,42,36,34,36,10,12,24,18,18,18,22,18,24]
+RP_W = [6,22,32,28,10,44,42,36,34,36,10,12,24,26,18,18,18,22,18,24]
 write_header(ws_rp, RP_H, RP_W, freeze="C2")
 
 RESOURCES = [
@@ -4048,10 +4518,28 @@ for i, row in enumerate(RESOURCES):
     ws_rp.row_dimensions[r].height = 44
 
     tut = get_tutorial_resource(day, topic)
+    curated = get_curated_resource(day, topic)
 
-    # Col 13: Primary
-    put(ws_rp, r, 13, f'=HYPERLINK("{tut["primary_url"]}", "▶ Watch ({tut["primary"]}) ↗")', align=CTR)
+    # Col 13: Primary YouTube Video
+    if curated.get("yt"):
+        primary_yt_url = curated["yt"]["url"]
+        primary_ch = curated["yt"]["creator"]
+    else:
+        primary_yt_url = tut["primary_url"]
+        primary_ch = tut["primary"]
+    put(ws_rp, r, 13, f'=HYPERLINK("{primary_yt_url}", "▶ Watch ({primary_ch}) ↗")', align=CTR)
     ws_rp.cell(r, 13).font = fnt(color=GREEN_D, underline="single", bold=True)
+
+    # Col 14: Official Documentation / Article
+    if curated.get("doc"):
+        put(ws_rp, r, 14, f'=HYPERLINK("{curated["doc"]["url"]}", "📄 Read ({curated["doc"]["source"]}) ↗")', align=CTR)
+        ws_rp.cell(r, 14).font = fnt(color=BLUE, underline="single", bold=True)
+    elif tut.get("doc"):
+        put(ws_rp, r, 14, f'=HYPERLINK("{tut["doc"]["url"]}", "📄 Read ({tut["doc"]["source"]}) ↗")', align=CTR)
+        ws_rp.cell(r, 14).font = fnt(color=BLUE, underline="single", bold=True)
+    else:
+        put(ws_rp, r, 14, "—", align=CTR)
+        ws_rp.cell(r, 14).font = fnt(color="94A3B8")
 
     def find_ch_url(ch_name):
         for ch in tut["channels"]:
@@ -4059,62 +4547,62 @@ for i, row in enumerate(RESOURCES):
                 return f"https://www.youtube.com/results?search_query={urllib.parse.quote(ch['query'])}"
         return None
 
-    # Col 14: Striver
+    # Col 15: Striver
     striver_url = find_ch_url("Striver")
     if striver_url:
-        put(ws_rp, r, 14, f'=HYPERLINK("{striver_url}", "📺 Striver ↗")', align=CTR)
-        ws_rp.cell(r, 14).font = fnt(color=BLUE, underline="single")
-    else:
-        put(ws_rp, r, 14, "—", align=CTR)
-        ws_rp.cell(r, 14).font = fnt(color="94A3B8")
-
-    # Col 15: Aditya Verma
-    aditya_url = find_ch_url("Aditya Verma")
-    if aditya_url:
-        put(ws_rp, r, 15, f'=HYPERLINK("{aditya_url}", "📺 Aditya Verma ↗")', align=CTR)
+        put(ws_rp, r, 15, f'=HYPERLINK("{striver_url}", "📺 Striver ↗")', align=CTR)
         ws_rp.cell(r, 15).font = fnt(color=BLUE, underline="single")
     else:
         put(ws_rp, r, 15, "—", align=CTR)
         ws_rp.cell(r, 15).font = fnt(color="94A3B8")
 
-    # Col 16: Love Babbar
-    babbar_url = find_ch_url("Love Babbar")
-    if babbar_url:
-        put(ws_rp, r, 16, f'=HYPERLINK("{babbar_url}", "📺 Love Babbar ↗")', align=CTR)
+    # Col 16: Aditya Verma
+    aditya_url = find_ch_url("Aditya Verma")
+    if aditya_url:
+        put(ws_rp, r, 16, f'=HYPERLINK("{aditya_url}", "📺 Aditya Verma ↗")', align=CTR)
         ws_rp.cell(r, 16).font = fnt(color=BLUE, underline="single")
     else:
         put(ws_rp, r, 16, "—", align=CTR)
         ws_rp.cell(r, 16).font = fnt(color="94A3B8")
 
-    # Col 17: Padho with Pratyush
-    pratyush_url = find_ch_url("Padho with Pratyush")
-    if pratyush_url:
-        put(ws_rp, r, 17, f'=HYPERLINK("{pratyush_url}", "📺 Padho with Pratyush ↗")', align=CTR)
+    # Col 17: Love Babbar
+    babbar_url = find_ch_url("Love Babbar")
+    if babbar_url:
+        put(ws_rp, r, 17, f'=HYPERLINK("{babbar_url}", "📺 Love Babbar ↗")', align=CTR)
         ws_rp.cell(r, 17).font = fnt(color=BLUE, underline="single")
     else:
         put(ws_rp, r, 17, "—", align=CTR)
         ws_rp.cell(r, 17).font = fnt(color="94A3B8")
 
-    # Col 18: NeetCode
-    neetcode_url = find_ch_url("NeetCode")
-    if neetcode_url:
-        put(ws_rp, r, 18, f'=HYPERLINK("{neetcode_url}", "📺 NeetCode ↗")', align=CTR)
+    # Col 18: Padho with Pratyush
+    pratyush_url = find_ch_url("Padho with Pratyush")
+    if pratyush_url:
+        put(ws_rp, r, 18, f'=HYPERLINK("{pratyush_url}", "📺 Padho with Pratyush ↗")', align=CTR)
         ws_rp.cell(r, 18).font = fnt(color=BLUE, underline="single")
     else:
         put(ws_rp, r, 18, "—", align=CTR)
         ws_rp.cell(r, 18).font = fnt(color="94A3B8")
 
-    # Col 19: Additional / Specialized
+    # Col 19: NeetCode
+    neetcode_url = find_ch_url("NeetCode")
+    if neetcode_url:
+        put(ws_rp, r, 19, f'=HYPERLINK("{neetcode_url}", "📺 NeetCode ↗")', align=CTR)
+        ws_rp.cell(r, 19).font = fnt(color=BLUE, underline="single")
+    else:
+        put(ws_rp, r, 19, "—", align=CTR)
+        ws_rp.cell(r, 19).font = fnt(color="94A3B8")
+
+    # Col 20: Additional / Specialized
     spec_channels = [ch for ch in tut["channels"] if ch["name"].lower() not in ("striver", "aditya verma", "love babbar", "padho with pratyush", "neetcode")]
     if spec_channels:
         sp = spec_channels[0]
         sp_name = sp["name"]
         sp_url = f"https://www.youtube.com/results?search_query={urllib.parse.quote(sp['query'])}"
-        put(ws_rp, r, 19, f'=HYPERLINK("{sp_url}", "📺 {sp_name} ↗")', align=CTR)
-        ws_rp.cell(r, 19).font = fnt(color=PURPLE, underline="single")
+        put(ws_rp, r, 20, f'=HYPERLINK("{sp_url}", "📺 {sp_name} ↗")', align=CTR)
+        ws_rp.cell(r, 20).font = fnt(color=PURPLE, underline="single")
     else:
-        put(ws_rp, r, 19, "—", align=CTR)
-        ws_rp.cell(r, 19).font = fnt(color="94A3B8")
+        put(ws_rp, r, 20, "—", align=CTR)
+        ws_rp.cell(r, 20).font = fnt(color="94A3B8")
 
 dv(ws_rp, YN_VALS, f"K2:K{len(RESOURCES)+1}", "Watched?")
 ws_rp.conditional_formatting.add(f"K2:K{len(RESOURCES)+1}",
@@ -4122,13 +4610,13 @@ ws_rp.conditional_formatting.add(f"K2:K{len(RESOURCES)+1}",
 ws_rp.conditional_formatting.add(f"K2:K{len(RESOURCES)+1}",
     CellIsRule("equal", ['"No"'],  fill=fill(AMBER)))
 
-ws_rp.auto_filter.ref = f"A1:S{len(RESOURCES)+1}"
+ws_rp.auto_filter.ref = f"A1:T{len(RESOURCES)+1}"
 
 # Rule banner
-ws_rp["U1"] = (f"RULE: {len(RESOURCES)} tutorials in {DAYS} days = the cap. "
+ws_rp["V1"] = (f"RULE: {len(RESOURCES)} tutorials in {DAYS} days = the cap. "
                "Every tutorial not on this list that you watch is procrastination. "
                "Log it as a productivity trap in FailureLog if you break this rule.")
-ws_rp["U1"].font = fnt(bold=True, sz=10, color=RED_D)
+ws_rp["V1"].font = fnt(bold=True, sz=10, color=RED_D)
 print(f"[OK] ResourcePlan: {len(RESOURCES)} tutorials")
 
 # --- SHEET: YouTubeChannels (Master YouTube Creator & Playlists Directory) ------
@@ -4655,29 +5143,87 @@ c19.alignment = CTR
 c19.border = BORDER
 ws_dash.row_dimensions[19].height = 20
 
+# Link to System Design Architecture Track in Dashboard
+ws_dash.merge_cells("D21:E21")
+c21 = ws_dash["D21"]
+c21.value = "SYSTEM DESIGN & AI-INFRA TRACK"
+c21.font = fnt(bold=True, sz=10, color=WHITE)
+c21.fill = fill(NAVY)
+c21.alignment = Alignment(vertical="center", horizontal="left")
+c21.border = BORDER_H
+ws_dash.row_dimensions[21].height = 24
+
+ws_dash.merge_cells("D22:E22")
+c22 = ws_dash["D22"]
+c22.value = '=HYPERLINK("#\'SystemDesign\'!A1", "🏛️ Open System Design Track (Phases A–I) ↗")'
+c22.font = fnt(bold=True, sz=9, color=BLUE, underline="single")
+c22.fill = fill(LIGHT)
+c22.alignment = CTR
+c22.border = BORDER
+ws_dash.row_dimensions[22].height = 24
+
+ws_dash.merge_cells("D23:E23")
+c23 = ws_dash["D23"]
+c23.value = "Phases A–I • 7 Projects • Calibrated 24.5h Schedule"
+c23.font = fnt(sz=8, color="64748B", italic=True)
+c23.fill = fill(WHITE)
+c23.alignment = CTR
+c23.border = BORDER
+ws_dash.row_dimensions[23].height = 20
+
+# Link to 35 Core Tutorials & Official Documentation Vault
+ws_dash.merge_cells("D25:E25")
+c25 = ws_dash["D25"]
+c25.value = "35 TUTORIALS & OFFICIAL DOCS VAULT"
+c25.font = fnt(bold=True, sz=10, color=WHITE)
+c25.fill = fill(NAVY)
+c25.alignment = Alignment(vertical="center", horizontal="left")
+c25.border = BORDER_H
+ws_dash.row_dimensions[25].height = 24
+
+ws_dash.merge_cells("D26:E26")
+c26 = ws_dash["D26"]
+c26.value = '=HYPERLINK("#\'ResourcePlan\'!A1", "📚 Open 35 Tutorials & Official Documentation Vault ↗")'
+c26.font = fnt(bold=True, sz=9, color=PURPLE, underline="single")
+c26.fill = fill(LIGHT)
+c26.alignment = CTR
+c26.border = BORDER
+ws_dash.row_dimensions[26].height = 24
+
+ws_dash.merge_cells("D27:E27")
+c27 = ws_dash["D27"]
+c27.value = "Curated Video Walkthroughs + Reference Documentation"
+c27.font = fnt(sz=8, color="64748B", italic=True)
+c27.fill = fill(WHITE)
+c27.alignment = CTR
+c27.border = BORDER
+ws_dash.row_dimensions[27].height = 20
+
 # Quick-start guide column G
 GUIDE_LINES = [
-    ("QUICK-START DAILY PROTOCOL", True),
-    ("1. Open DayPlan  ->  go to 'Current day' row. Do exactly that row.", False),
-    ("2. Write target TC from constraints BEFORE touching the keyboard.", False),
-    ("3. Obey the Stuck Protocol (see README): 0 -> 10 -> 20 -> 30 min checkpoints.", False),
-    ("4. Log every problem in ProblemDB the same day. Review dates auto-compute.", False),
-    ("5. Log every failure in FailureLog with a category + one preventive rule.", False),
-    ("6. Sunday: fill WeeklyAssessment. Let the data steer the next week.", False),
-    ("7. Diagnostics on Days 28/56/84/98. Unlabelled. Timed. No hints. Real measurements.", False),
-    ("8. Master YouTube Directory: Check 'YouTubeChannels' sheet for flagship playlists.", False),
+    ("THE 8 INVIOLABLE OPERATING RULES", True),
+    ("1. Strict Priority (P0 Essential first; P2/P3 never delay P0 work).", False),
+    ("2. 5-Step Loop: Theory min (45m) -> Implement + test -> 20m AI blackout -> 1-page note -> Advance.", False),
+    ("3. Exit Gates: Code passes pytest & mypy --strict (0 errors), single-command run.", False),
+    ("4. Rule of Three: 1 Primary doc, 1 Reference guide, 1 Practical task with automated test.", False),
+    ("5. Calibrated Schedule: ~24.5 hrs/wk total. Mon/Wed light review (30-45m) to protect health/back.", False),
+    ("6. Zero-Debt Recovery: NEVER roll over missed hours. Shed scope (drop P3, defer P1).", False),
+    ("7. Sunday 5:00 PM Audit: Complete 5 written self-audit questions every Sunday.", False),
+    ("8. Single Next Action: Implement typed inference log parser with automated test suite.", False),
     ("", False),
     ("SIGNS THE PLAN IS WORKING", True),
-    ("[OK] Time-to-pattern dropping at each diagnostic", False),
-    ("[OK] Hint-dependency rate below 25% by week 8", False),
+    ("[OK] Time-to-pattern dropping at each diagnostic (<5 min by week 10)", False),
+    ("[OK] Hint-dependency rate below 20% by week 10", False),
+    ("[OK] Independent-solve rate above 70% by week 12", False),
     ("[OK] Can reconstruct any pattern without notes 3 days later", False),
-    ("[OK] Mock scores increasing", False),
+    ("[OK] Mock scores increasing across each evaluation session", False),
     ("", False),
     ("SIGNS YOU NEED TO ADJUST", True),
     ("[NO] Same failure category 3+ weeks in a row", False),
-    ("[NO] Hint-dependency above 40% for 2+ weeks", False),
-    ("[NO] Time-to-pattern not dropping between diagnostics", False),
-    ("[NO] Can solve only when problem is labelled with the pattern", False),
+    ("[NO] Hint-dependency above 35% for 2+ weeks", False),
+    ("[NO] Rolling over missed study hours into the next week", False),
+    ("[NO] Reading ahead into CUDA/P2 when P0 services lack passing tests", False),
+    ("[NO] Watching tutorials when DayPlan says NO tutorial", False),
     ("[NO] Cannot reconstruct a solution 2 days after solving it", False),
 ]
 
@@ -4701,7 +5247,7 @@ print("[OK] Dashboard sheet built")
 # --- MOVE README AFTER DASHBOARD ----------------------------------------------
 # Dashboard first, README second (already done by move_sheet above)
 # Final sheet order:
-# Dashboard | README | DayPlan | PatternLibrary | PatternCards |
+# Dashboard | README | DayPlan | SystemDesign | PatternLibrary | PatternCards |
 # ProblemDB | FailureLog | ReviewQueue | WeeklyAssessment |
 # MockInterviews | ResourcePlan | YouTubeChannels | ProgressionCurve | BlindProblemPool
 
@@ -4728,12 +5274,26 @@ wb.save(OUT)
 print(f"\n{'='*60}")
 print(f"[SUCCESS] {OUT} saved successfully")
 import shutil, os
-if os.path.exists("../package.json"):
-    shutil.copyfile(OUT, "../DSA_AI_Infra_Training.xlsx")
-    print(f"[SYNC] Copied {OUT} -> ../DSA_AI_Infra_Training.xlsx")
-elif os.path.exists("dsa"):
-    shutil.copyfile(OUT, "dsa/DSA_AI_Infra_Training.xlsx")
-    print(f"[SYNC] Copied {OUT} -> dsa/DSA_AI_Infra_Training.xlsx")
+
+# Comprehensive sync across all project locations
+target_sync_paths = [
+    "../DSA_AI_Infra_Training.xlsx",
+    "DSA_AI_Infra_Training.xlsx",
+    "dsa/DSA_AI_Infra_Training.xlsx",
+    "dist/DSA_AI_Infra_Training.xlsx",
+    "dist/dsa/DSA_AI_Infra_Training.xlsx",
+    "../dist/DSA_AI_Infra_Training.xlsx",
+    "../dist/dsa/DSA_AI_Infra_Training.xlsx",
+]
+for p in target_sync_paths:
+    parent_dir = os.path.dirname(p)
+    if parent_dir == "" or os.path.exists(parent_dir):
+        try:
+            if os.path.abspath(p) != os.path.abspath(OUT):
+                shutil.copyfile(OUT, p)
+                print(f"[SYNC] Copied {OUT} -> {p}")
+        except Exception as e:
+            pass
 print(f"{'='*60}")
 print(f"Sheets : {', '.join(ws.title for ws in wb.worksheets)}")
 print(f"Days   : {DAYS}")
@@ -4742,3 +5302,4 @@ print(f"Pattern cards: {len(CARDS)}")
 print(f"Tutorials: {len(RESOURCES)}")
 print(f"Blind pool: {len(BLIND_POOL)} problems")
 print(f"Mocks/Diagnostics: {len(MOCKS)} sessions")
+

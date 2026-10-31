@@ -10,9 +10,12 @@ Aditya Verma, NeetCode, Love Babbar, Abdul Bari, and other top specialists.
 """
 
 import json
+import os
 from datetime import date, timedelta
 import urllib.parse
 import re
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Import raw data from dsa_builder
 import dsa_builder
@@ -395,17 +398,19 @@ def run_export():
     }
 
     # Save to data.json
-    with open("data.json", "w", encoding="utf-8") as f:
+    out_json = os.path.join(SCRIPT_DIR, "data.json")
+    with open(out_json, "w", encoding="utf-8") as f:
         json.dump(dsa_full_data, f, indent=2, ensure_ascii=False)
-    print(f"[OK] data.json written ({len(json.dumps(dsa_full_data))} bytes)")
+    print(f"[OK] data.json written to {out_json} ({len(json.dumps(dsa_full_data))} bytes)")
 
     # Save to data.js for direct browser consumption
-    with open("data.js", "w", encoding="utf-8") as f:
+    out_js = os.path.join(SCRIPT_DIR, "data.js")
+    with open(out_js, "w", encoding="utf-8") as f:
         f.write("// Complete Zero-Data-Loss Dataset for DSA & AI-Infrastructure Web App\n")
         f.write("window.DSA_DATA = ")
         json.dump(dsa_full_data, f, indent=2, ensure_ascii=False)
         f.write(";\n")
-    print(f"[OK] data.js written successfully")
+    print(f"[OK] data.js written successfully to {out_js}")
 
 if __name__ == "__main__":
     run_export()

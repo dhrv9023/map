@@ -23,9 +23,9 @@ A **true Specialist** must possess two distinct layers of mastery:
 
 ---
 
-## 🗺️ System Architecture: 13 Interconnected Sheets
+## 🗺️ System Architecture: 15 Interconnected Sheets
 
-The workbook functions as a reactive, self-contained operating system:
+The workbook functions as a reactive, self-contained operating system across 15 synchronized sheets:
 
 ```
                   ┌────────────────────────────────────────┐
@@ -34,22 +34,29 @@ The workbook functions as a reactive, self-contained operating system:
                   └───▲────────────────▲───────────────▲───┘
                       │                │               │
        ┌──────────────┴────────┐       │       ┌───────┴─────────────────┐
-       │     3. DayPlan        │       │       │   10. MockInterviews    │
+       │     3. DayPlan        │       │       │   11. MockInterviews    │
        │ (168-day curriculum)  │       │       │ (24 diagnostic sessions)│
        └──────┬────────────────┘       │       └─────────────────────────┘
               │                        │
               ▼                        │
        ┌──────────────┐       ┌────────┴────────┐
-       │ 6. ProblemDB │◄─────►│  7. FailureLog  │
+       │ 7. ProblemDB │◄─────►│  8. FailureLog  │
        │(750 rows SRS)│       │ (500 rows RCA)  │
        └──────┬───────┘       └────────┬────────┘
               │                        │
       ┌───────┴──────────┐             │
       ▼                  ▼             ▼
 ┌───────────────┐ ┌──────────────┐  ┌──────────────────────┐
-│8. ReviewQueue │ │4. PatternLib │  │ 9. WeeklyAssessment  │
+│9. ReviewQueue │ │5. PatternLib │  │10. WeeklyAssessment  │
 │ (Dynamic Top25)│ │(42 patterns)│  │ (24-week escalation) │
 └───────────────┘ └──────────────┘  └──────────────────────┘
+      │                  │                     │
+      ▼                  ▼                     ▼
+┌───────────────┐ ┌──────────────┐  ┌──────────────────────┐
+│4. SystemDesign│ │12. Resource  │  │ 13. YouTubeChannels  │
+│ (A–I & 7 Proj)│ │ (Video+Docs) │  │ 14. ProgressionCurve │
+└───────────────┘ └──────────────┘  │ 15. BlindProblemPool │
+                                    └──────────────────────┘
 ```
 
 ---
@@ -294,7 +301,7 @@ To re-calendar the 168-day journey to start from today:
    ```bash
    python3 dsa_builder.py
    ```
-4. All 168 days across all 13 sheets will regenerate in $\approx 10$ seconds.
+4. All 168 days across all 15 sheets will regenerate in $\approx 10$ seconds.
 
 ---
 

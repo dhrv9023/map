@@ -192,6 +192,7 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
       <button class="tab" data-p="p2">Phase 2</button>
       <button class="tab" data-p="p3">Phase 3</button>
       <button class="tab" data-p="p4">Phase 4</button>
+      <button class="tab" data-p="p5" style="color:var(--coral);font-weight:700;">Phase 5</button>
       <button class="tab gt" data-p="dsa">DSA</button>
       <button class="tab" data-p="sd" style="color:var(--teal);font-weight:700;">System Design</button>
       <button class="tab" data-p="proj">Projects</button>
@@ -205,24 +206,28 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
 <!-- HOME -->
 <div id="page-home" class="page active">
   <div class="hero">
-    <div class="tag">AI Infrastructure & Systems Roadmap — 2026 Edition</div>
-    <h1>From Zero to<br>AI Infra Engineer</h1>
-    <p>Battle-tested systems curriculum upgraded with OpenAI Triton, 2026 Serving Stacks, Hardware-Aware Systems DSA, and a realistic 2-stage career transition path.</p>
+    <div class="tag">AI Engineering &amp; AI Infrastructure Roadmap — 2026 Unified Edition</div>
+    <h1>From Catalog QA to<br>AI Infra Engineer</h1>
+    <p>A unified, realistic, industry-aligned preparation system. Transition into <strong>Applied AI Engineering</strong> first (Months 6–10), while systematically mastering the systems prerequisites for <strong>Core AI Infrastructure</strong> (Months 16–24+).</p>
   </div>
   
-  <div class="alert ai"><strong>Strategic Goal:</strong> AI Systems / AI Infrastructure Engineer at NVIDIA, Google DeepMind, Meta, Anthropic, Databricks, Groq. Target compensation varies significantly by geography, company tier, and years of experience — see Stage 1 &amp; Stage 2 breakdowns below.</div>
+  <div class="alert ai">
+    <strong>Strategic Career Progression:</strong> Catalog Quality Engineer &rarr; AI / Applied AI Engineer &rarr; ML Platform / Systems Engineer &rarr; AI Infrastructure Engineer.<br>
+    <strong>Primary Language:</strong> Python (Backend Services, RAG, Evals, Serving) &bull; <strong>Secondary Language:</strong> C++ (DSA, Systems &amp; GPU Primitives).<br>
+    <strong>Sustainable Weekly Budget:</strong> <strong>9–15 Hours / Week</strong> (Ergonomically calibrated for back pain management with light Mon/Wed review).
+  </div>
 
   <!-- EXECUTION-PROOF ACTION COCKPIT -->
   <div style="background:var(--bg2);border:1.5px solid var(--accent);border-radius:12px;padding:1.5rem;margin-bottom:2rem;box-shadow:0 8px 32px rgba(108,110,245,0.12);">
     
-    <!-- 1. SINGLE NEXT ACTION (RULE 8) -->
+    <!-- 1. SINGLE NEXT ACTION -->
     <div style="background:linear-gradient(135deg,#1e1b4b,#0f172a);border:1.5px solid #818cf8;border-radius:10px;padding:1.25rem 1.4rem;margin-bottom:1.5rem;box-shadow:0 4px 20px rgba(99,102,241,0.2);">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:0.6rem;">
         <div style="display:flex;align-items:center;gap:8px;">
           <span style="font-size:20px;">⚡</span>
           <h2 style="font-size:16px;font-weight:900;color:#fff;margin:0;padding:0;border:none;letter-spacing:0.02em;">YOUR SINGLE NEXT ACTION (DO NOT SKIP OR REDESIGN)</h2>
         </div>
-        <span class="pill p0" style="font-size:10.5px;">P0 · IMMEDIATE FOCUS</span>
+        <span class="pill p0" style="font-size:10.5px;">P0 &bull; IMMEDIATE FOCUS</span>
       </div>
       
       <div style="background:rgba(0,0,0,0.35);border-radius:8px;padding:1rem;margin-bottom:0.75rem;">
@@ -235,7 +240,7 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
           <strong>Acceptance Criteria (Passing Gate):</strong>
           <ul style="margin:4px 0 0 1.25rem;padding:0;line-height:1.6;">
             <li>Script parses streaming JSON server logs containing <code>timestamp</code>, <code>model_id</code>, <code>prompt_tokens</code>, <code>completion_tokens</code>, and <code>latency_ms</code>.</li>
-            <li>Calculates rolling p50, p95, and p99 latency across a batch of 1,000 synthetic records.</li>
+            <li>Calculates rolling p50, p95, and p99 latency across a synthetic batch of 1,000 records.</li>
             <li><code>mypy --strict parser.py</code> passes with <strong>0 errors</strong>.</li>
             <li><code>pytest test_parser.py -v</code> passes 3 test cases (valid input, malformed record, empty stream).</li>
           </ul>
@@ -246,7 +251,7 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
       </div>
     </div>
 
-    <!-- 2. STRICT PRIORITY SYSTEM (RULE 1) -->
+    <!-- 2. STRICT PRIORITY SYSTEM -->
     <div style="margin-bottom:1.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
       <div style="font-size:12px;font-family:var(--mono);color:var(--accent2);text-transform:uppercase;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px;">
         <span>🎯</span> Strict Priority System: Operational Tiers
@@ -262,7 +267,7 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
         </div>
         <div style="background:var(--bg4);border-radius:6px;padding:0.65rem 0.85rem;border-left:3px solid #6366f1;">
           <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px;"><span class="pill p2">P2</span> <strong style="font-size:12px;color:#fff;">Advanced</strong></div>
-          <div style="font-size:11.5px;color:var(--text2);">Deep systems/GPU infra for Tier-1 roles. Blocked until Stages 1–3 clear.</div>
+          <div style="font-size:11.5px;color:var(--text2);">Deep systems/GPU infra for Tier-1 roles. Blocked until Phases 1–3 clear.</div>
         </div>
         <div style="background:var(--bg4);border-radius:6px;padding:0.65rem 0.85rem;border-left:3px solid #64748b;">
           <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px;"><span class="pill p3">P3</span> <strong style="font-size:12px;color:#fff;">Optional</strong></div>
@@ -270,11 +275,11 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
         </div>
       </div>
       <div class="alert ad" style="margin:0;padding:0.5rem 0.75rem;font-size:12px;">
-        <strong>The Inviolable Invariant:</strong> A P2 or P3 topic is <strong>strictly forbidden</strong> from delaying P0 work. If your P0 service has broken tests, reading about CUDA warp shuffles or Megatron-LM is prohibited.
+        <strong>The Inviolable Invariant:</strong> A P2 or P3 topic is <strong>strictly forbidden</strong> from delaying P0 work. If your active backend or RAG service has broken tests, reading about CUDA warp shuffles or Megatron-LM is prohibited.
       </div>
     </div>
 
-    <!-- 3. BUILD-FIRST LEARNING LOOP (RULE 2) -->
+    <!-- 3. BUILD-FIRST LEARNING LOOP -->
     <div style="margin-bottom:1.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
       <div style="font-size:12px;font-family:var(--mono);color:var(--teal);text-transform:uppercase;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px;">
         <span>🔄</span> The 5-Step Build-First Learning Loop (For Every Single Topic)
@@ -308,31 +313,32 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
       </div>
     </div>
 
-    <!-- 4. OPERATING ANSWERS (RULES 3, 4, 5) -->
+    <!-- 4. OPERATING RULES & SUSTAINABLE SCHEDULE -->
     <div class="g2" style="gap:1rem;margin-bottom:1.5rem;">
       <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
-        <div style="font-size:12px;font-family:var(--mono);color:var(--accent2);text-transform:uppercase;font-weight:800;margin-bottom:4px;">1. Weekly Time Allocation (24.5 Hrs / Sustainable)</div>
+        <div style="font-size:12px;font-family:var(--mono);color:var(--accent2);text-transform:uppercase;font-weight:800;margin-bottom:4px;">1. Calibrated Weekly Time Allocation (9–15 Hrs / Sustainable)</div>
         <div style="font-size:13px;color:var(--text);line-height:1.6;">
-          • <strong>Mon / Wed (Back-Pain Ergonomic Light Days):</strong> 30–45 min review only. Reading/flashcards while reclining. <em>Zero desk-bound coding marathons.</em><br>
-          • <strong>Tue / Thu (Evening Deep Work 7:30–10:15 PM):</strong> 2.5 hrs primary module + 1 Striver DSA problem.<br>
-          • <strong>Fri / Sat (Deep Implementation &amp; Projects):</strong> 6.5 hrs hands-on coding, profiling, Docker builds.<br>
-          • <strong>Sun (Review, Retrospective &amp; Wrap):</strong> 4.5 hrs test suite validation &amp; GitHub push. <em>Hard stop at 6:00 PM.</em>
+          &bull; <strong>Mon / Wed (Ergonomic Light Days):</strong> 30–45 min review only. Reading/flashcards while reclining. <em>Zero desk-bound coding marathons.</em><br>
+          &bull; <strong>Tue / Thu (Evening Deep Work 7:30–9:30 PM):</strong> 1.5–2.0 hrs primary module + 1 Striver DSA problem.<br>
+          &bull; <strong>Fri (Deep Implementation):</strong> 2.5–3.0 hrs hands-on coding, Docker, API builds.<br>
+          &bull; <strong>Sat (Deep Project Work):</strong> 3.0–4.0 hrs core architecture &amp; benchmarking.<br>
+          &bull; <strong>Sun (Review, Retrospective &amp; Wrap):</strong> 1.5–2.0 hrs test validation &amp; Sunday 5:00 PM written audit. <em>Hard stop at 6:00 PM.</em>
         </div>
       </div>
 
       <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
-        <div style="font-size:12px;font-family:var(--mono);color:var(--teal);text-transform:uppercase;font-weight:800;margin-bottom:4px;">2. Rule of Three: Zero Resource Bloat (Rule 4)</div>
+        <div style="font-size:12px;font-family:var(--mono);color:var(--teal);text-transform:uppercase;font-weight:800;margin-bottom:4px;">2. Rule of Three: Zero Resource Bloat</div>
         <div style="font-size:13px;color:var(--text);line-height:1.6;">
           For every single subject, you are restricted to:<br>
-          • <strong>1 Primary Resource:</strong> Official documentation or highest-signal guide <em>(free preferred)</em>.<br>
-          • <strong>1 Reference Resource:</strong> Standard manual or book for gap-filling.<br>
-          • <strong>1 Practical Task:</strong> Runnable code with automated tests and stopping condition.<br>
+          &bull; <strong>1 Primary Resource:</strong> Official documentation or highest-signal guide <em>(free preferred)</em>.<br>
+          &bull; <strong>1 Reference Resource:</strong> Standard manual or book for gap-filling.<br>
+          &bull; <strong>1 Practical Task:</strong> Runnable code with automated tests and stopping condition.<br>
           <em>Never bookmark 5 courses for the same subject.</em>
         </div>
       </div>
 
       <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
-        <div style="font-size:12px;font-family:var(--mono);color:var(--green);text-transform:uppercase;font-weight:800;margin-bottom:4px;">3. Objective Exit Gates: Evidence of Competence (Rule 3)</div>
+        <div style="font-size:12px;font-family:var(--mono);color:var(--green);text-transform:uppercase;font-weight:800;margin-bottom:4px;">3. Objective Exit Gates: Evidence of Competence</div>
         <div style="font-size:13px;color:var(--text);line-height:1.6;">
           You advance when you satisfy 5 concrete evidence gates:<br>
           1. <strong>Code:</strong> Runs cleanly and passes automated tests (<code>pytest</code>, <code>mypy --strict</code>).<br>
@@ -344,792 +350,792 @@ code{font-family:var(--mono);background:var(--bg3);color:var(--accent2);border-r
       </div>
 
       <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
-        <div style="font-size:12px;font-family:var(--mono);color:var(--coral);text-transform:uppercase;font-weight:800;margin-bottom:4px;">4. Zero-Debt Recovery Rules &amp; Weekly Review (Rule 5)</div>
+        <div style="font-size:12px;font-family:var(--mono);color:var(--coral);text-transform:uppercase;font-weight:800;margin-bottom:4px;">4. Zero-Debt Recovery Rules &amp; Sunday Review</div>
         <div style="font-size:13px;color:var(--text);line-height:1.6;">
-          • <strong>Sunday 5-Question Audit (5:00 PM):</strong> (1) What was completed? (2) What was built? (3) What can I explain? (4) What blocked progress? (5) What changes next week?<br>
-          • <strong>Strict No-Debt Rule:</strong> If you miss hours, <strong>never roll them into the next week</strong>. That causes burnout. Instead, <strong>shed scope</strong>: drop P3, defer P1 secondary tasks, and protect P0. Mon/Wed health limits remain inviolable.
+          &bull; <strong>Sunday 5-Question Audit (5:00 PM):</strong> (1) What was completed? (2) What was built? (3) What can I explain? (4) What blocked progress? (5) What changes next week?<br>
+          &bull; <strong>Strict No-Debt Rule:</strong> If you miss hours, <strong>never roll them into the next week</strong>. That causes burnout. Instead, <strong>shed scope</strong>: drop P3, defer P1 secondary tasks, and protect P0. Mon/Wed health limits remain inviolable.
         </div>
-      </div>
-    </div>
-
-    <!-- 5. REAL JOB MARKET ALIGNMENT (RULE 6) -->
-    <div style="margin-bottom:1.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
-      <div style="font-size:12px;font-family:var(--mono);color:#ec4899;text-transform:uppercase;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px;">
-        <span>💼</span> Real Job Market Alignment: Role Archetypes &amp; Skill Boundaries (Rule 6)
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:8px;">
-        <div style="background:var(--bg4);border-radius:6px;padding:0.75rem;border:1px solid var(--border);">
-          <div style="font-size:13px;font-weight:800;color:var(--teal);">1. AI / LLM Application Engineer</div>
-          <div style="font-size:11px;color:var(--accent2);margin-bottom:4px;">Fastest Career Pivot (Stage 1 Exit Gate)</div>
-          <div style="font-size:11.5px;color:var(--text2);line-height:1.5;">
-            • <strong>Entry Requirements (P0):</strong> Python, FastAPI, Docker, RAG chunking, Vector DBs, DeepEval/Ragas evaluation.<br>
-            • <strong>Specialized (P1):</strong> Semantic caching, streaming SSE, LangGraph orchestration.<br>
-            • <strong>Bonus:</strong> Prompt compression, cost optimization.
-          </div>
-        </div>
-        <div style="background:var(--bg4);border-radius:6px;padding:0.75rem;border:1px solid var(--border);">
-          <div style="font-size:13px;font-weight:800;color:var(--accent2);">2. ML Platform / MLOps Engineer</div>
-          <div style="font-size:11px;color:var(--green);margin-bottom:4px;">Infrastructure Stepping Stone (Stage 2 Bridge)</div>
-          <div style="font-size:11.5px;color:var(--text2);line-height:1.5;">
-            • <strong>Entry Requirements (P0):</strong> Docker, Kubernetes basics, CI/CD pipelines, MLflow, Feast feature stores.<br>
-            • <strong>Specialized (P1):</strong> KServe, Kubeflow, Prometheus model drift monitoring.<br>
-            • <strong>Bonus:</strong> Ray Core distributed task orchestration.
-          </div>
-        </div>
-        <div style="background:var(--bg4);border-radius:6px;padding:0.75rem;border:1px solid var(--border);">
-          <div style="font-size:13px;font-weight:800;color:var(--amber);">3. Machine Learning Engineer (MLE)</div>
-          <div style="font-size:11px;color:var(--coral);margin-bottom:4px;">Modeling &amp; Fine-Tuning Focus</div>
-          <div style="font-size:11.5px;color:var(--text2);line-height:1.5;">
-            • <strong>Entry Requirements (P0):</strong> PyTorch, Scikit-Learn, data pipelines, LoRA/QLoRA fine-tuning.<br>
-            • <strong>Specialized (P1):</strong> PyTorch DDP, custom loss functions, synthetic data curation.<br>
-            • <strong>Bonus:</strong> DeepSpeed ZeRO-2, quantization (AWQ/GPTQ).
-          </div>
-        </div>
-        <div style="background:var(--bg4);border-radius:6px;padding:0.75rem;border:1px solid var(--border);">
-          <div style="font-size:13px;font-weight:800;color:var(--coral);">4. AI Infrastructure Engineer</div>
-          <div style="font-size:11px;color:#ec4899;margin-bottom:4px;">Long-Term Systems Mastery (Stage 2 Target)</div>
-          <div style="font-size:11.5px;color:var(--text2);line-height:1.5;">
-            • <strong>Core Systems (P0):</strong> Linux kernel internals, C++, vLLM continuous batching, PyTorch internals.<br>
-            • <strong>Specialized (P1/P2):</strong> Triton C++ backends, Nsight Systems GPU profiling, Triton kernels.<br>
-            • <strong>Bonus (P3):</strong> NCCL multi-node networking, CUDA warp programming.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 6. PROGRESSIVE ENGINEERING QUALITY LADDER (RULE 9D) -->
-    <div style="margin-bottom:1.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
-      <div style="font-size:12px;font-family:var(--mono);color:var(--teal);text-transform:uppercase;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px;">
-        <span>📐</span> Progressive Engineering Quality Ladder (Scale Standards with Project Depth)
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px;">
-        <div style="background:var(--bg4);border-radius:6px;padding:0.65rem 0.85rem;border-left:3px solid #38bdf8;">
-          <div style="font-size:11.5px;font-weight:800;color:#38bdf8;margin-bottom:2px;">LEVEL 1 · Foundations</div>
-          <div style="font-size:11px;color:var(--text2);line-height:1.5;">Explicit type hints (<code>mypy --strict</code>), atomic Git commits, self-contained unit tests asserting edge cases.</div>
-        </div>
-        <div style="background:var(--bg4);border-radius:6px;padding:0.65rem 0.85rem;border-left:3px solid #2dd4bf;">
-          <div style="font-size:11.5px;font-weight:800;color:#2dd4bf;margin-bottom:2px;">LEVEL 2 · Microservices</div>
-          <div style="font-size:11px;color:var(--text2);line-height:1.5;">Pydantic v2 schemas, <code>.env</code> secrets, structured JSON logging, Docker containerization, <code>pytest</code> &gt;80%.</div>
-        </div>
-        <div style="background:var(--bg4);border-radius:6px;padding:0.65rem 0.85rem;border-left:3px solid #818cf8;">
-          <div style="font-size:11.5px;font-weight:800;color:#818cf8;margin-bottom:2px;">LEVEL 3 · Pipelines &amp; CI</div>
-          <div style="font-size:11px;color:var(--text2);line-height:1.5;">Multi-container Docker Compose, GitHub Actions CI/CD on PR, MLflow dataset &amp; weight versioning.</div>
-        </div>
-        <div style="background:var(--bg4);border-radius:6px;padding:0.65rem 0.85rem;border-left:3px solid #f43f5e;">
-          <div style="font-size:11.5px;font-weight:800;color:#f43f5e;margin-bottom:2px;">LEVEL 4 · Production Infra</div>
-          <div style="font-size:11px;color:var(--text2);line-height:1.5;">Prometheus DCGM metrics, TTFT/ITL p99 latency benchmarks, Kubernetes manifests, Architecture Decision Records (ADRs).</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 7. SOCRATIC AI DEBUGGING PROTOCOL (RULE 9C) -->
-    <div style="margin-bottom:1.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
-      <div style="font-size:12px;font-family:var(--mono);color:var(--amber);text-transform:uppercase;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px;">
-        <span>🔍</span> The 5-Step Socratic AI Debugging Protocol (Zero Copy-Paste)
-      </div>
-      <div style="font-size:12.5px;color:var(--text2);line-height:1.6;background:var(--bg4);padding:0.75rem 1rem;border-radius:6px;border:1px solid var(--border);">
-        When encountering bugs: <strong>(1)</strong> Articulate expected vs. actual behavior; <strong>(2)</strong> Inspect exact traceback and types; <strong>(3)</strong> Ask AI for conceptual hints before code; <strong>(4)</strong> Deconstruct root cause; <strong>(5)</strong> Independently explain the fix in your 1-page TIL note.
-      </div>
-    </div>
-
-    <!-- 8. EXECUTION PROTECTION SHIELD & DEFERRED TOPICS (RULE 9F) -->
-    <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.25);border-radius:8px;padding:0.9rem 1.15rem;font-size:12.5px;">
-      <div style="color:var(--red);font-weight:800;margin-bottom:4px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;">
-        <div style="display:flex;align-items:center;gap:6px;">
-          <span>🛡️</span> EXECUTION PROTECTION SHIELD: WHAT NOT TO STUDY YET
-        </div>
-        <span class="pill pr" style="font-size:10px;">The "Do Not Add" Gateway</span>
-      </div>
-      <div style="color:var(--text2);line-height:1.6;">
-        If you are tempted to add a new tutorial, framework, or model: <em>Ask "Is it mandatory for the active P0 milestone?"</em> If no, it is automatically blocked into this deferred vault:
-        <span style="display:inline-block;margin-top:4px;">
-          • <strong>CUDA C++ Kernels &amp; Warp Shuffles:</strong> Deferred until Phase 4 (Month 17+).<br>
-          • <strong>Multi-GPU Distributed Training (FSDP / ZeRO / NCCL):</strong> Deferred until Phase 4.<br>
-          • <strong>Lock-Free MPMC Ring Buffers:</strong> Optional Silicon DSA track only after completing Striver A2Z Steps 1–17.<br>
-          • <strong>Multi-Agent Swarm Orchestration:</strong> Deferred; master direct API calls + Pydantic schema validation first.<br>
-          • <strong>Local Fine-Tuning of 7B+ Models:</strong> RTX 2050 (4GB VRAM) cannot train 7B models. Use free Google Colab T4 or small 1.5B/3B models (Qwen2.5-1.5B, SmolLM2).
-        </span>
       </div>
     </div>
   </div>
 
-  <!-- 2-STAGE STEPPING STONE TRANSITION -->
+  <!-- THE 2-STAGE STEPPING STONE TRANSITION -->
   <div class="dla" style="text-align:left;margin-bottom:2rem;background:linear-gradient(135deg,#121324,#0e1520);border-color:var(--accent2);">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.75rem;flex-wrap:wrap;">
-      <span class="pill pp" style="font-size:11px;">Career Transition Strategy</span>
-      <h2 style="font-size:20px;border:none;margin:0;padding:0;color:#fff;">🎯 The 2-Stage Career Pivot (Catalog QA → AI Eng → AI Infra)</h2>
+      <span class="pill pp" style="font-size:11px;">Realistic Career Transition</span>
+      <h2 style="font-size:20px;border:none;margin:0;padding:0;color:#fff;">🎯 The 2-Stage Career Pivot (Catalog QA &rarr; AI Eng &rarr; AI Infra)</h2>
     </div>
     <p style="font-size:13.5px;color:var(--text2);margin-bottom:1.25rem;line-height:1.6;">
-      <strong>The Brutal Reality:</strong> Jumping straight from Catalog QA into deep CUDA/Systems engineering without prior C++/OS experience takes 18–24 months of solitary grind. Instead, take the <strong>stepping-stone route</strong> to get hired faster, earn an AI salary, and get company-funded access to enterprise GPU clusters:
+      <strong>The Pragmatic Strategy:</strong> Jumping directly from Catalog QA into deep CUDA/distributed GPU infrastructure without prior C++/systems experience is unrealistic. Instead, follow the <strong>2-stage stepping-stone route</strong> to get hired faster into an AI Engineer role, gain enterprise production credibility, and build towards core infrastructure:
     </p>
     <div class="g2" style="gap:1rem;">
       <div style="background:var(--bg3);border:1px solid #22c55e40;border-radius:10px;padding:1.15rem;">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-          <span style="font-weight:800;color:var(--green);font-size:14px;">Stage 1: AI Evaluation &amp; App Engineer</span>
-          <span class="pill pg">Months 6–9 · Exit at Phase 3</span>
+          <span style="font-weight:800;color:var(--green);font-size:14px;">Stage 1 Target: AI / Applied AI Engineer</span>
+          <span class="pill pg">Months 6–10 &bull; Exit at Phase 3</span>
         </div>
         <p style="font-size:12.5px;color:var(--text2);line-height:1.6;margin-bottom:8px;">
-          <strong>Your QA Superpower:</strong> AI teams face a massive eval crisis. Leverage your test methodology, structured catalog data intuition, and automated evals (DeepEval, Ragas, Promptfoo) + RAG &amp; FastAPI to land your first AI role.
+          <strong>Your QA Superpower:</strong> AI teams face an evaluation crisis. Leverage your test methodology, structured catalog taxonomy intuition, and automated evals (DeepEval, Ragas, Promptfoo) + RAG &amp; FastAPI to land your first AI role.
         </p>
-        <div style="font-size:12px;font-family:var(--mono);color:var(--teal);">💰 Target: ₹18L–₹35L / $100K–$140K · 0–2 yrs exp</div>
+        <div style="font-size:12px;font-family:var(--mono);color:var(--teal);">💼 Roles: AI Engineer, Applied AI Engineer, AI Evaluation Engineer</div>
       </div>
       <div style="background:var(--bg3);border:1px solid #818cf840;border-radius:10px;padding:1.15rem;">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-          <span style="font-weight:800;color:var(--accent2);font-size:14px;">Stage 2: AI Infrastructure &amp; Systems</span>
-          <span class="pill pp">Months 12–20 · Full Phase 4</span>
+          <span style="font-weight:800;color:var(--accent2);font-size:14px;">Stage 2 Target: AI Infrastructure &amp; Systems</span>
+          <span class="pill pp">Months 16–24+ &bull; Phase 5 Mastery</span>
         </div>
         <p style="font-size:12.5px;color:var(--text2);line-height:1.6;margin-bottom:8px;">
-          <strong>The Systems Level:</strong> Once inside an AI team with real production traffic and H100 GPU clusters, learn Triton kernels, continuous batching, vLLM/SGLang serving, and distributed training to pivot internally to AI Infra.
+          <strong>The Systems Level:</strong> Once working with production models and cloud workloads, master Triton kernels, continuous batching, vLLM/SGLang serving, and distributed training to pivot internally into core AI Infra.
         </p>
-        <div style="font-size:12px;font-family:var(--mono);color:var(--amber);">💰 Target: ₹30L–₹60L / $160K–$250K · 2–4 yrs exp <span style="color:var(--text3);font-size:10px;">(FAANG TC higher with pedigree)</span></div>
+        <div style="font-size:12px;font-family:var(--mono);color:var(--amber);">💼 Roles: AI Infrastructure Engineer, ML Systems Engineer, GPU Performance Engineer</div>
       </div>
     </div>
   </div>
 
-  <h2>The 4-Phase Plan <span class="hs">24 months</span></h2>
-  <div class="g2">
-    <div class="block bg" style="cursor:pointer" onclick="sP('p1')"><div class="bt">🟢 Phase 1 — Foundations <span class="wk">Months 1–6</span></div><div class="bb">Python · Math · Linux · Backend · Docker. No ML until this is solid.</div></div>
-    <div class="block bt2" style="cursor:pointer" onclick="sP('p2')"><div class="bt">🔵 Phase 2 — ML &amp; Deep Learning <span class="wk">Months 6–12</span></div><div class="bb">Scikit-learn · PyTorch · Transformers · Hugging Face · Experiment Tracking.</div></div>
-    <div class="block ba" style="cursor:pointer" onclick="sP('p3')"><div class="bt">🟣 Phase 3 — GenAI &amp; LLMs <span class="wk">Months 12–17</span></div><div class="bb">RAG · Fine-tuning · Agents · LLM Evaluation &amp; Evals · Production serving basics. <strong style="color:var(--green)">[Exit Gate 1]</strong></div></div>
-    <div class="block bc" style="cursor:pointer" onclick="sP('p4')"><div class="bt">🔴 Phase 4 — AI Infrastructure <span class="wk">Months 17–24</span></div><div class="bb">OpenAI Triton · CUDA · Distributed Training (FSDP/ZeRO) · vLLM/SGLang · Kubernetes. <strong style="color:var(--coral)">[Exit Gate 2]</strong></div></div>
+  <h2>The 5 Unified Roadmap Phases <span class="hs">24 Months Total</span></h2>
+  <div class="g3">
+    <div class="block bg" style="cursor:pointer" onclick="sP('p1')">
+      <div class="bt">🟢 Phase 1 &bull; Software Eng Foundations <span class="wk">Months 1–3</span></div>
+      <div class="bb">Advanced Python, OOP, Linux CLI, PostgreSQL &amp; SQL, HTTP/REST, FastAPI, Docker, and C++ memory basics.</div>
+    </div>
+    <div class="block bt2" style="cursor:pointer" onclick="sP('p2')">
+      <div class="bt">🔵 Phase 2 &bull; ML &amp; Deep Learning <span class="wk">Months 3–6</span></div>
+      <div class="bb">NumPy, Pandas, Scikit-learn, PyTorch autograd from scratch, CNNs, Transformers, attention mechanisms, and Hugging Face.</div>
+    </div>
+    <div class="block ba" style="cursor:pointer" onclick="sP('p3')">
+      <div class="bt">🟣 Phase 3 &bull; Applied AI Engineering <span class="wk">Months 6–10</span></div>
+      <div class="bb">Production RAG, Vector DBs, AI Agents with LangGraph, DeepEval evaluation suites, LoRA/QLoRA fine-tuning. <strong style="color:var(--green)">[Stage 1 Exit Gate]</strong></div>
+    </div>
+    <div class="block bam" style="cursor:pointer" onclick="sP('p4')">
+      <div class="bt">🟠 Phase 4 &bull; ML Platform &amp; Systems <span class="wk">Months 10–16</span></div>
+      <div class="bb">MLflow, model versioning, batch/online serving, drift monitoring, Redis, Kafka, Kubernetes, and distributed systems.</div>
+    </div>
+    <div class="block br" style="cursor:pointer" onclick="sP('p5')">
+      <div class="bt">🔴 Phase 5 &bull; Advanced AI Infrastructure <span class="wk">Months 16–24+</span></div>
+      <div class="bb">C++ systems, GPU architecture, OpenAI Triton, CUDA kernels, vLLM continuous batching, FSDP/ZeRO, and NCCL. <strong style="color:var(--coral)">[Stage 2 Exit Gate]</strong></div>
+    </div>
+    <div class="block pp" style="cursor:pointer" onclick="sP('ai-eng')">
+      <div class="bt" style="color:var(--accent2)">✦ Parallel AI Engineer Track <span class="wk">Parallel</span></div>
+      <div class="bb">Dedicated track running alongside your foundational studies. Skips basic Python and starts with modern industry AI demands.</div>
+    </div>
   </div>
-  <h2>Parallel Tracks (run every phase) <span class="hs">daily</span></h2>
+
+  <h2>Parallel Routine Tracks (Run Every Phase) <span class="hs">Daily / Weekly</span></h2>
   <div class="g2">
-    <div class="block ba" style="cursor:pointer" onclick="sP('dsa')"><div class="bt">🧠 DSA — Algorithms &amp; Data Structures <span class="wk">~1hr weekday</span></div><div class="bb">Striver A2Z Steps 1–17 (core algorithms). <strong>Step 18 Silicon Track</strong> (warp primitives, lock-free buffers, PagedAttention) is an <em>advanced optional extension</em> — only begin after completing Step 17 and entering Phase 3/4.</div></div>
-    <div class="block bam" style="cursor:pointer" onclick="sP('sd')"><div class="bt">🏗️ System Design <span class="wk">Saturdays from Week 12</span></div><div class="bb">DDIA + Grokking + AI-specific designs (distributed KV-cache serving, multi-GPU training clusters, vector retrieval at scale).</div></div>
+    <div class="block ba" style="cursor:pointer" onclick="sP('dsa')">
+      <div class="bt">🧠 DSA — Algorithms &amp; C++ Systems Practice <span class="wk">1 Problem / Study Day</span></div>
+      <div class="bb">168-day pattern-based progression in C++ (Striver A2Z). Includes 7 progressive C++ systems exercises (dynamic array, LRU cache, thread-safe queue, basic thread pool) reinforcing memory and concurrency.</div>
+    </div>
+    <div class="block bam" style="cursor:pointer" onclick="sP('sd')">
+      <div class="bt">🏗️ System Design — 8 Prerequisite Levels <span class="wk">Saturdays from Week 12</span></div>
+      <div class="bb">Reorganized into 8 prerequisite-driven levels from backend networking up to LLM inference infrastructure and distributed training clusters.</div>
+    </div>
   </div>
-  <h2>Hard Rules</h2>
-  <ul class="steps">
-    <li>Do phases in order. Phase 1 weak → everything after will be garbage.</li>
-    <li>DSA daily: 1 core problem minimum from Striver A2Z (Steps 1–17). Leave Step 18 as an optional specialization.</li>
-    <li>Build every project listed. Watching tutorials ≠ learning.</li>
-    <li>Use C++ for Systems/DSA, Python &amp; Triton for ML/AI and kernel optimization.</li>
-    <li>Realistic daily budget: <strong>Mon/Wed evenings = 30–45 min light review only</strong> (back pain protection). Tue/Thu = 2.5–3 hrs focused work. Fri = 6–7 hrs. Sat = 6–7 hrs. Sun = 4–5 hrs. Total: ~24–26 hrs/week.</li>
-    <li>Phase 1 completion test: can you deploy a Dockerized FastAPI + PostgreSQL service with async I/O?</li>
-    <li>Phase 3 completion test: can you build an automated evaluation pipeline with DeepEval/Ragas that halts CI on regression?</li>
-    <li>Phase 4 completion test: can you write a Triton/CUDA kernel, profile memory traffic with Nsight, and explain its Roofline chart?</li>
-  </ul>
-  <h2>Timeline &amp; Exit Milestones</h2>
+
+  <h2>The 5 Core Portfolio Projects Preview <span class="hs">No Tutorial Clones</span></h2>
   <div class="tw"><table>
-    <thead><tr><th>Phase</th><th>Duration</th><th>Key Outcome</th><th>Career Milestone</th></tr></thead>
+    <thead><tr><th>Project</th><th>Focus Track</th><th>Core Tech Stack</th><th>Primary Engineering Deliverable</th></tr></thead>
     <tbody>
-      <tr><td><span class="pill pg">Phase 1</span> Foundations</td><td>Months 1–6</td><td>Production Python, Docker, FastAPI, SQL, Linux OS</td><td>Junior Backend Ready</td></tr>
-      <tr><td><span class="pill pt">Phase 2</span> ML &amp; DL</td><td>Months 6–12</td><td>Train &amp; deploy real models. Understand transformers.</td><td>ML Apprentice</td></tr>
-      <tr><td><span class="pill pp">Phase 3</span> GenAI/LLMs</td><td>Months 12–17</td><td>RAG systems, fine-tuning, automated evals, agents.</td><td><strong>🎯 Stage 1 Exit: AI Eval / App Eng (₹18L–35L · $95K–$140K US)</strong></td></tr>
-      <tr><td><span class="pill pc">Phase 4</span> AI Infra</td><td>Months 17–24</td><td>Triton, CUDA, vLLM/SGLang, DDP/FSDP/ZeRO, K8s.</td><td><strong>🚀 Stage 2 Exit: AI Infra Eng (₹30L–60L · $160K–$250K US)</strong> <span style="font-size:11px;color:var(--text3);">FAANG TC higher with 3+ yrs exp</span></td></tr>
+      <tr><td><strong>1. Production RAG System</strong></td><td><span class="pill pg">AI Engineer</span></td><td>FastAPI, Qdrant/pgvector, BGE-Reranker, Docker</td><td>Hybrid search (BM25 + vector), cross-encoder re-ranking, and retrieval recall benchmarks.</td></tr>
+      <tr><td><strong>2. LLM Evaluation Platform</strong></td><td><span class="pill pg">AI Engineer (QA Superpower)</span></td><td>DeepEval, Promptfoo, GitHub Actions CI, Python</td><td>Automated evaluation harness testing hallucinations, schema validity, and regression gates.</td></tr>
+      <tr><td><strong>3. Production AI Agent</strong></td><td><span class="pill pg">AI Engineer</span></td><td>LangGraph, Pydantic v2, SQLite Checkpointer</td><td>Cyclic state graph with tool execution, retries, fallbacks, and human approval gates.</td></tr>
+      <tr><td><strong>4. LLM Inference Benchmarking Platform</strong></td><td><span class="pill pc">AI Infrastructure</span></td><td>vLLM, Locust, Prometheus, Matplotlib</td><td>Throughput, TTFT, and ITL benchmarking under 10–200 concurrent streams with KV cache profile.</td></tr>
+      <tr><td><strong>5. GPU Kernel Optimisation</strong></td><td><span class="pill pc">AI Infrastructure</span></td><td>OpenAI Triton, PyTorch, Nsight Compute</td><td>Custom fused GPU kernel achieving verified speedup with empirical Roofline analysis.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Unified Timeline &amp; Career Exit Gates</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Phase</th><th>Timeline</th><th>Key Technical Outcome</th><th>Career Milestone &amp; Readiness</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill pg">Phase 1</span> Software Eng Foundations</td><td>Months 1–3</td><td>Async FastAPI, PostgreSQL indexing, Docker Compose, Linux, C++ dynamic memory</td><td>Backend &amp; Systems Ready</td></tr>
+      <tr><td><span class="pill pt">Phase 2</span> ML &amp; Deep Learning</td><td>Months 3–6</td><td>Scikit-learn, PyTorch autograd from scratch, transformers, Hugging Face models</td><td>ML Fundamentals Verified</td></tr>
+      <tr><td><span class="pill pp">Phase 3</span> Applied AI Engineering</td><td>Months 6–10</td><td>Production RAG, LangGraph agents, DeepEval CI/CD evals, LoRA/QLoRA fine-tuning</td><td><strong>🎯 Stage 1 Career Exit: AI / Applied AI Engineer</strong></td></tr>
+      <tr><td><span class="pill pa">Phase 4</span> ML Platform &amp; Systems</td><td>Months 10–16</td><td>MLflow registry, model serving, Prometheus drift monitoring, Kafka, Kubernetes</td><td>ML Platform / Systems Engineer</td></tr>
+      <tr><td><span class="pill pc">Phase 5</span> Advanced AI Infra</td><td>Months 16–24+</td><td>Triton kernels, Nsight profiling, vLLM continuous batching, FSDP/ZeRO, NCCL</td><td><strong>🚀 Stage 2 Career Exit: AI Infrastructure Engineer</strong></td></tr>
     </tbody>
   </table></div>
 </div>
 
-<!-- AI ENGINEER TRACK (2026) -->
+
 <div id="page-ai-eng" class="page">
   <div class="hero">
-    <div class="tag">Career Track — 2026 Edition</div>
-    <h1>The AI Engineer Roadmap</h1>
-    <p>A minimalist, professional career roadmap with 100% free resources — tailored for career switchers (Catalog QA to AI Engineering).</p>
+    <div class="tag">Parallel Career Track — 2026 Edition</div>
+    <h1>The Applied AI Engineer Roadmap</h1>
+    <p>A high-signal, industry-demanded curriculum designed to run in parallel with your foundations. Zero basic Python loops or generic tutorials — strictly what top AI engineering teams demand, from beginner to advanced.</p>
   </div>
 
   <div class="meta-row" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:1.75rem;">
-    <span class="chip" style="color:var(--text);border-color:var(--border2);background:var(--bg3);">⏱ 8–14 Months</span>
+    <span class="chip" style="color:var(--text);border-color:var(--border2);background:var(--bg3);">⏱ Months 6–10 (or Parallel)</span>
     <span class="chip" style="color:var(--green);border-color:#22c55e40;background:#22c55e10;">✦ 100% Free Resources</span>
-    <span class="chip" style="color:var(--accent2);border-color:#818cf840;background:#818cf810;">🔄 QA-to-AI Switcher Friendly</span>
-    <span class="chip" style="color:var(--teal);border-color:#2dd4bf40;background:#2dd4bf10;">🎯 Stage 1 Stepping Stone</span>
+    <span class="chip" style="color:var(--accent2);border-color:#818cf840;background:#818cf810;">🔄 Catalog QA to AI Transition</span>
+    <span class="chip" style="color:var(--teal);border-color:#2dd4bf40;background:#2dd4bf10;">🎯 Stage 1 Stepping Stone: Job-Ready</span>
   </div>
 
-  <!-- SALARY & TRANSITION REALITY -->
+  <!-- MOTIVATION & CONSISTENCY HABIT ANCHOR -->
+  <div style="background:linear-gradient(135deg,#13162b,#0f111c);border:1.5px solid var(--accent);border-radius:12px;padding:1.4rem;margin-bottom:2rem;box-shadow:0 8px 30px rgba(108,110,245,0.15);">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:0.75rem;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span style="font-size:24px;">🔥</span>
+        <h2 style="font-size:18px;font-weight:900;color:#fff;margin:0;padding:0;border:none;">Daily Habit Anchor &amp; Physical Ergonomics Engine</h2>
+      </div>
+      <div id="streak-badge" style="background:rgba(99,102,241,0.2);border:1px solid #818cf8;border-radius:999px;padding:4px 14px;font-family:var(--mono);font-size:12px;color:#a5b4fc;font-weight:800;">
+        ⚡ Consistency Streak: <span id="streak-days">Active</span>
+      </div>
+    </div>
+    
+    <div class="g2" style="gap:1rem;margin-bottom:1rem;">
+      <div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:0.9rem;border:1px solid var(--border);">
+        <strong style="color:var(--teal);font-size:13px;display:block;margin-bottom:4px;">1. The "Slow is Smooth, Smooth is Fast" Manifesto</strong>
+        <p style="font-size:12.5px;color:var(--text2);line-height:1.6;margin:0;">
+          Rushing causes burnout, back pain flare-ups, and shallow tutorial copying. A consistent <strong>9–15 hours/week</strong> where you truly understand how systems work under the hood will put you ahead of 90% of engineers who just churn YouTube tutorials without building.
+        </p>
+      </div>
+      <div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:0.9rem;border:1px solid var(--border);">
+        <strong style="color:var(--amber);font-size:13px;display:block;margin-bottom:4px;">2. The 15-Minute Reclining Micro-Win (Back-Pain Care)</strong>
+        <p style="font-size:12.5px;color:var(--text2);line-height:1.6;margin:0;">
+          On high back-pain days, <strong>never force yourself to sit at a desk</strong>. Lie down or recline, open your flashcards, or read official architecture documentation for just 15 minutes. That small touchpoint preserves neural plasticity and protects your daily habit without spinal strain.
+        </p>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:rgba(0,0,0,0.3);padding:0.75rem 1rem;border-radius:8px;">
+      <span style="font-size:12.5px;color:var(--text2);">
+        Completed your daily target or 15-min reclining review today?
+      </span>
+      <button onclick="logDailyStudy()" style="background:linear-gradient(135deg,var(--accent),var(--teal));border:none;color:#fff;font-family:var(--sans);font-size:12px;font-weight:700;padding:6px 16px;border-radius:6px;cursor:pointer;transition:transform 0.15s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+        ✅ Log Today's Win
+      </button>
+    </div>
+  </div>
+
+  <!-- THE CATALOG QA ADVANTAGE -->
   <div class="dla" style="text-align:left;background:linear-gradient(135deg,#121324,#0e1520);border-color:var(--accent2);margin-bottom:2.25rem;">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:0.75rem;flex-wrap:wrap;">
-      <span class="pill pp">Market Compensation (2026)</span>
-      <h2 style="font-size:20px;border:none;margin:0;padding:0;color:#fff;">💰 Salary Reality &amp; The Catalog QA Advantage</h2>
+      <span class="pill pp">Strategic Leverage</span>
+      <h2 style="font-size:20px;border:none;margin:0;padding:0;color:#fff;">🎯 Why Catalog QA Engineers Succeed in AI Engineering</h2>
     </div>
-    <div class="g3" style="margin-bottom:1.25rem;">
-      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
-        <div style="font-size:22px;font-weight:900;color:var(--green);font-family:var(--mono);">$95k–$140k</div>
-        <div style="font-size:12px;color:var(--text3);margin-top:2px;">US — Entry Level AI Engineer</div>
-      </div>
-      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
-        <div style="font-size:22px;font-weight:900;color:var(--teal);font-family:var(--mono);">₹18L–₹40L</div>
-        <div style="font-size:12px;color:var(--text3);margin-top:2px;">India — 0–2 yr AI Engineer</div>
-      </div>
-      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1rem;">
-        <div style="font-size:22px;font-weight:900;color:var(--amber);font-family:var(--mono);">$160k–$220k+</div>
-        <div style="font-size:12px;color:var(--text3);margin-top:2px;">US — Senior AI Systems Engineer</div>
-      </div>
-    </div>
+    <p style="font-size:13.5px;color:var(--text2);line-height:1.65;margin-bottom:1rem;">
+      In 2026, building a toy RAG prototype takes 30 minutes with high-level frameworks. But production AI deployments fail because of <strong>poor data quality, subtle hallucinations, schema drift, and regression failures</strong>.
+    </p>
     <div class="alert as" style="margin-bottom:0;">
-      <strong>Why You Have an Unfair Advantage:</strong> In 2026, AI engineering is not about writing transformer math from scratch — it's about <strong>data quality, model evaluations (evals), and structured outputs</strong>. Your Catalog QA instincts (validating taxonomies, catching subtle hallucinations, edge-case analysis, and structured catalog QA) directly map to AI evaluation engineering (DeepEval, Promptfoo, Ragas). You are <em>not</em> starting from zero.
+      <strong>Your Direct Translation:</strong> As a Catalog Quality Engineer, you already understand product taxonomy trees, structured JSON metadata validation, boundary edge-cases, and regression testing. In AI engineering, this is called <strong>AI Evaluation Engineering, Structured Output Schemas, and Automated Guardrails</strong>. You are not starting from zero — you are building engineering tools around skills you already practice daily!
     </div>
   </div>
 
-  <!-- WHAT AN AI ENGINEER DOES DAILY -->
-  <h2>📅 What an AI Engineer Does Daily <span class="hs">8 Core Realities</span></h2>
-  <p style="color:var(--text2);font-size:13.5px;margin-bottom:1.25rem;">Before learning tools, understand the day-to-day job. This is what you will actually be paid to do on the clock:</p>
-  <div class="g2" style="margin-bottom:2.25rem;">
-    <div class="dc-card">
-      <span class="dc-icon">🧠</span>
-      <div class="dc-tit">1. Prompt Engineering &amp; Automated Evals</div>
-      <div class="dc-desc">Write and optimize system prompts, few-shot examples, and chain-of-thought instructions. Build automated CI test suites (DeepEval/Promptfoo) to ensure prompt revisions do not regress accuracy.</div>
+  <!-- MODULE 0: RAPID PYTHON REVISION -->
+  <h2>⚡ Module 0: Rapid Python Revision for AI Services <span class="hs">1 Week &bull; Zero Basics</span></h2>
+  <p style="color:var(--text2);font-size:13.5px;margin-bottom:1rem;">
+    You will master fundamental Python in the main infrastructure track. This rapid revision module strictly covers the advanced, modern Python patterns required for AI APIs, async clients, and structured LLM outputs:
+  </p>
+  <div class="pc2" style="--_a:var(--accent2);margin-bottom:2rem;">
+    <div class="ptit">Applied Python Primitives for AI Engineers <span class="pill pp">1-Week Crash Revision</span></div>
+    <div class="pmeta">
+      <span class="chip">Pydantic v2</span><span class="chip">async/await</span><span class="chip">asyncio.gather()</span>
+      <span class="chip">Streaming Generators (yield)</span><span class="chip">httpx async</span><span class="chip">Tenacity Retries</span>
+      <span class="chip">TypedDict &amp; Literal</span><span class="chip">python-dotenv</span>
     </div>
-    <div class="dc-card">
-      <span class="dc-icon">🔗</span>
-      <div class="dc-tit">2. Build Production RAG Pipelines</div>
-      <div class="dc-desc">Connect foundation models to external documents and relational databases. Implement intelligent chunking, hybrid search (BM25 + vector dense search), and cross-encoder re-ranking.</div>
-    </div>
-    <div class="dc-card">
-      <span class="dc-icon">🤖</span>
-      <div class="dc-tit">3. Build &amp; Orchestrate AI Agents</div>
-      <div class="dc-desc">Design autonomous agents using tool calling / function calling. Build state machines (LangGraph) for deterministic multi-step workflows, retry logic, and human-in-the-loop approvals.</div>
-    </div>
-    <div class="dc-card">
-      <span class="dc-icon">🚢</span>
-      <div class="dc-tit">4. Deploy &amp; Monitor Microservices</div>
-      <div class="dc-desc">Wrap model logic inside asynchronous FastAPI REST/gRPC endpoints. Stream responses with Server-Sent Events (SSE). Monitor TTFT, token cost, latency percentiles, and drift in production.</div>
-    </div>
-    <div class="dc-card">
-      <span class="dc-icon">🔧</span>
-      <div class="dc-tit">5. Fine-Tuning &amp; Model Adaptation</div>
-      <div class="dc-desc">Fine-tune open-weight models (Llama-3, Gemma-2) on domain-specific datasets using LoRA/QLoRA. Align outputs with Direct Preference Optimization (DPO) and structured schema enforcement.</div>
-    </div>
-    <div class="dc-card">
-      <span class="dc-icon">📊</span>
-      <div class="dc-tit">6. Data Curation &amp; Synthetic Datasets</div>
-      <div class="dc-desc">Clean, filter, and structure training data. Generate high-quality synthetic datasets using frontier models (GPT-4o/Claude 3.5 Sonnet) as teacher judges for evaluation and distillation.</div>
-    </div>
-    <div class="dc-card">
-      <span class="dc-icon">🛡️</span>
-      <div class="dc-tit">7. Safety, Guardrails &amp; Token Cost Control</div>
-      <div class="dc-desc">Implement input/output guardrails (NeMo Guardrails, Llama Guard) to prevent prompt injection and PII leakage. Cache common queries (GPTCache/Redis) to slash token expenses by 40–60%.</div>
-    </div>
-    <div class="dc-card">
-      <span class="dc-icon">🤝</span>
-      <div class="dc-tit">8. Cross-Functional Translation</div>
-      <div class="dc-desc">Collaborate with product managers and backend engineers to translate messy business requirements into reliable AI features with predictable latency, cost, and accuracy bounds.</div>
+    <div class="pb2">
+      <ul class="steps">
+        <li><strong>Pydantic v2 Schema Modeling:</strong> Master <code>BaseModel</code>, <code>Field(description=...)</code>, custom validators (<code>@field_validator</code>), and <code>model.model_dump_json()</code>. This is the bedrock of structured LLM outputs and function calling.</li>
+        <li><strong>Asynchronous Event Loops:</strong> Learn when to use <code>async def</code> vs <code>def</code>. Call concurrent external LLM APIs with <code>asyncio.gather()</code> without blocking the server thread.</li>
+        <li><strong>Streaming Generators (SSE):</strong> Write Python async generator functions using <code>yield</code> to stream token deltas over Server-Sent Events to frontend clients.</li>
+        <li><strong>Resilient HTTP Clients:</strong> Use <code>httpx.AsyncClient</code> with connection timeouts and exponential backoff retry decorators (<code>tenacity</code>) to handle LLM rate limits (HTTP 429).</li>
+        <li><strong>Strict Type Annotations:</strong> Type your code with <code>Optional[T]</code>, <code>Union</code>, <code>TypedDict</code>, and <code>Literal</code> for compile-time safety with <code>mypy</code>.</li>
+      </ul>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-top:10px;font-size:12.5px;">
+        <strong>Passing Check:</strong> Write a 40-line async script that concurrently queries 3 mock endpoints using <code>httpx</code>, validates responses with a Pydantic schema, handles retries on failures, and streams results as an async generator.
+      </div>
     </div>
   </div>
 
-  <!-- 4-PHASE ROADMAP -->
-  <h2>🗺️ The 4 Minimalist Learning Phases <span class="hs">100% Free Resources</span></h2>
-  <p style="color:var(--text2);font-size:13.5px;margin-bottom:1.5rem;">Follow these 4 progressive phases in order. Each phase maps directly to real-world deliverables.</p>
+  <!-- 7 PROGRESSIVE INDUSTRY-DEMANDED AI MODULES -->
+  <h2>🗺️ The 7 Progressive AI Engineering Modules <span class="hs">Beginner to Advanced</span></h2>
+  <p style="color:var(--text2);font-size:13.5px;margin-bottom:1.5rem;">
+    Follow these 7 progressive modules. Each module moves from industry concepts directly to hands-on code with 100% free official documentation and tools.
+  </p>
 
-  <!-- PHASE 1 -->
+  <!-- STAGE 1 -->
   <div class="pc2" style="--_a:var(--green);margin-bottom:1.5rem;">
-    <div class="ptit">Phase 1: Python &amp; ML Foundations <span class="pill pg">Months 1–3 · ~120 Hours</span></div>
+    <div class="ptit">Stage 1: LLM APIs, Prompt Engineering &amp; Structured Outputs <span class="pill pg">Weeks 1–3</span></div>
     <div class="pmeta">
-      <span class="chip">Python Syntax</span><span class="chip">NumPy</span><span class="chip">Pandas</span>
-      <span class="chip">Data Structures</span><span class="chip">Linear Algebra basics</span>
-      <span class="chip">Probability</span><span class="chip">Scikit-learn</span><span class="chip">Git / GitHub</span>
+      <span class="chip">Google Gemini Free API</span><span class="chip">OpenAI Python SDK</span><span class="chip">Few-Shot Prompting</span>
+      <span class="chip">Chain of Thought (CoT)</span><span class="chip">Structured Outputs</span><span class="chip">Function Calling Schemas</span>
     </div>
     <div class="pb2">
-      Before touching LLMs, you need Python fluency and core ML intuition. Everything else builds on this bedrock.
-      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Verified 100% Free Resources:</h4>
+      Learn to steer modern foundation models with deterministic precision. Move beyond simple chat prompts into strict JSON schema extraction and function calling.
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Curated Free Resources:</h4>
       <ul class="steps">
-        <li><strong>Python Micro-Course:</strong> <a href="https://www.kaggle.com/learn/python" target="_blank">Kaggle Learn: Python for Everyone</a> — Hands-on syntax, lists, dictionaries, functions; browser-based with zero local setup.</li>
-        <li><strong>Machine Learning Basics:</strong> <a href="https://www.kaggle.com/learn/intro-to-machine-learning" target="_blank">Kaggle Learn: Intro to Machine Learning</a> — Decision trees, random forests, model validation, underfitting vs overfitting.</li>
-        <li><strong>Practical Deep Learning:</strong> <a href="https://course.fast.ai/" target="_blank">fast.ai: Practical Deep Learning for Coders</a> — Top-down, highly practical curriculum by Jeremy Howard; run free notebooks on Google Colab.</li>
-        <li><strong>Stanford Lecture Series:</strong> <a href="https://cs229.stanford.edu/" target="_blank">Stanford CS229: Machine Learning (Andrew Ng)</a> — Free lecture notes and YouTube playlist for mathematical and statistical intuition.</li>
-        <li><strong>Visual Neural Network Intuition:</strong> <a href="https://www.youtube.com/watch?v=aircAruvnKk&amp;list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi" target="_blank">3Blue1Brown: Neural Networks Playlist</a> — 4 geometric, intuitive videos explaining gradient descent and backpropagation.</li>
+        <li><strong>Primary Guide:</strong> <a href="https://ai.google.dev/gemini-api/docs/structured-output" target="_blank">Google Gemini Structured Output Docs</a> &amp; <a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank">DAIR.AI: Prompt Engineering Guide</a> <em>(Free)</em>.</li>
+        <li><strong>Reference Resource:</strong> <a href="https://platform.openai.com/docs/guides/function-calling" target="_blank">OpenAI Function Calling Guide</a> <em>(Free)</em>.</li>
+        <li><strong>Practical Task:</strong> Build a catalog item attribute extractor that accepts messy product descriptions and outputs strictly validated Pydantic JSON schemas (SKU, brand, technical specifications, price) with 0 formatting hallucinations.</li>
       </ul>
-      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-top:10px;font-size:12.5px;">
-        <strong>Phase 1 Deliverable:</strong> Clean Python repository containing a Scikit-Learn classifier with training/test splits, cross-validation, and confusion matrix evaluation pushed to GitHub.
-      </div>
     </div>
   </div>
 
-  <!-- PHASE 2 -->
+  <!-- STAGE 2 -->
   <div class="pc2" style="--_a:var(--teal);margin-bottom:1.5rem;">
-    <div class="ptit">Phase 2: LLMs, Prompting &amp; Production RAG <span class="pill pt">Months 4–6 · ~140 Hours</span></div>
+    <div class="ptit">Stage 2: Embeddings, Vector Databases &amp; Hybrid Retrieval <span class="pill pt">Weeks 4–6</span></div>
     <div class="pmeta">
-      <span class="chip">Transformers</span><span class="chip">Tokenization</span><span class="chip">Prompt Engineering</span>
-      <span class="chip">Few-Shot / CoT</span><span class="chip">Vector DBs (Qdrant/Chroma)</span><span class="chip">Embeddings</span>
-      <span class="chip">RAG Architecture</span><span class="chip">LangChain / LlamaIndex</span><span class="chip">Google Gemini Free API</span>
+      <span class="chip">Dense Embeddings</span><span class="chip">Cosine Distance</span><span class="chip">Qdrant Vector DB</span>
+      <span class="chip">pgvector (Postgres)</span><span class="chip">BM25 Sparse Search</span><span class="chip">Reciprocal Rank Fusion (RRF)</span><span class="chip">Cross-Encoder Re-rankers</span>
     </div>
     <div class="pb2">
-      The core of modern AI engineering. Learn how LLMs work, how to steer their generation with precision, and how to ground them in domain-specific documents.
-      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Verified 100% Free Resources:</h4>
+      Master the physical mathematics and engineering behind semantic search. Combine dense vector embeddings with classical keyword search for robust retrieval.
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Curated Free Resources:</h4>
       <ul class="steps">
-        <li><strong>Short Course Collection:</strong> <a href="https://www.deeplearning.ai/short-courses/" target="_blank">DeepLearning.AI Short Courses (Andrew Ng)</a> — 1-hour courses on ChatGPT Prompt Engineering, LangChain for LLM App Development, and Building Systems with ChatGPT.</li>
-        <li><strong>Definitive Prompt Guide:</strong> <a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank">DAIR.AI: Prompt Engineering Guide</a> — Comprehensive guide covering Chain-of-Thought, ReAct, Directional Stimulus, and jailbreak defense.</li>
-        <li><strong>Conceptual Breakthrough:</strong> <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g" target="_blank">Andrej Karpathy: Intro to Large Language Models</a> — 1-hour masterclass explaining pretraining, fine-tuning, RLHF, and system architecture.</li>
-        <li><strong>The Complete Course:</strong> <a href="https://github.com/mlabonne/llm-course" target="_blank">Maxime Labonne: The LLM Course</a> — GitHub repository with step-by-step notebooks from basic prompting to vector stores and open-source models.</li>
-        <li><strong>Official LLM Free Tier:</strong> <a href="https://ai.google.dev/gemini-api/docs" target="_blank">Google Gemini API Docs &amp; Free Tier</a> — Generous free quota with access to Gemini 1.5 Flash / Pro, structured JSON outputs, and multimodal vision.</li>
-        <li><strong>Framework Documentation:</strong> <a href="https://python.langchain.com/docs/get_started/introduction" target="_blank">LangChain Official Tutorials</a> — Master document loaders, text splitters, vector stores, and LCEL chains.</li>
+        <li><strong>Primary Guide:</strong> <a href="https://qdrant.tech/documentation/overview/" target="_blank">Qdrant Vector Database Official Docs</a> &amp; <a href="https://qdrant.tech/articles/hybrid-search/" target="_blank">Hybrid Search Deep Dive</a> <em>(Free)</em>.</li>
+        <li><strong>Reference Resource:</strong> <a href="https://www.sbert.net/examples/applications/cross-encoder/README.html" target="_blank">Sentence-Transformers Cross-Encoders Reference</a> <em>(Free)</em>.</li>
+        <li><strong>Practical Task:</strong> Implement a hybrid retrieval engine indexing 1,000 product catalog documents in Qdrant; fuse BM25 keyword matches with dense BGE embeddings using Reciprocal Rank Fusion (RRF) and re-rank the top 20 candidates with a cross-encoder.</li>
       </ul>
-      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-top:10px;font-size:12.5px;">
-        <strong>Phase 2 Deliverable:</strong> End-to-end RAG system indexing 50+ technical PDFs in ChromaDB/Qdrant, returning cited answers with precision scores, deployed as an interactive Streamlit UI.
-      </div>
     </div>
   </div>
 
-  <!-- PHASE 3 -->
+  <!-- STAGE 3 -->
   <div class="pc2" style="--_a:var(--accent2);margin-bottom:1.5rem;">
-    <div class="ptit">Phase 3: AI Agents, Evals &amp; Production Serving <span class="pill pp">Months 7–9 · ~150 Hours</span> <span class="pill pg">🎯 Stage 1 Exit Gate</span></div>
+    <div class="ptit">Stage 3: Production RAG Architectures &amp; Advanced Context Strategies <span class="pill pp">Weeks 7–10</span></div>
     <div class="pmeta">
-      <span class="chip">ReAct Agents</span><span class="chip">Tool Calling</span><span class="chip">LangGraph</span>
-      <span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">DeepEval</span>
-      <span class="chip">Promptfoo</span><span class="chip">LangSmith</span><span class="chip">Streaming (SSE)</span>
+      <span class="chip">Semantic Chunking</span><span class="chip">Parent-Document Retrieval</span><span class="chip">Metadata Filtering</span>
+      <span class="chip">Contextual Retrieval</span><span class="chip">HyDE (Hypothetical Embeddings)</span><span class="chip">FastAPI Streaming</span>
     </div>
     <div class="pb2">
-      This is the milestone where you become employable as an AI engineer. Build agents that take actions autonomously, and wrap them in robust APIs with CI evaluation harnesses.
-      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Verified 100% Free Resources:</h4>
+      Transition from basic tutorial RAG into resilient, production-grade retrieval-augmented generation. Solve document chunking boundaries and context loss.
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Curated Free Resources:</h4>
       <ul class="steps">
-        <li><strong>LangGraph Agent Mastery:</strong> <a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">DeepLearning.AI: AI Agents in LangGraph</a> — Build stateful multi-agent architectures with memory, persistence, and conditional branching.</li>
-        <li><strong>Free Certification Course:</strong> <a href="https://huggingface.co/learn/agents-course/en/unit0/introduction" target="_blank">HuggingFace: Agents Course 2025</a> — Official certified course covering tool calling, multi-agent systems, and open-source models.</li>
-        <li><strong>Multi-Agent Framework:</strong> <a href="https://github.com/microsoft/autogen" target="_blank">Microsoft AutoGen Framework</a> — Open-source multi-agent conversation framework for complex problem solving.</li>
-        <li><strong>Backend REST API:</strong> <a href="https://fastapi.tiangolo.com/tutorial/" target="_blank">FastAPI Official Tutorial</a> — Build high-throughput async REST endpoints, request validation with Pydantic, and streaming responses.</li>
-        <li><strong>Production Observability:</strong> <a href="https://docs.smith.langchain.com/" target="_blank">LangSmith Documentation &amp; Free Tier</a> — Trace token latency, debug broken agent loops, and track real-time LLM cost in production.</li>
+        <li><strong>Primary Guide:</strong> <a href="https://www.anthropic.com/news/contextual-retrieval" target="_blank">Anthropic: Contextual Retrieval Architecture</a> &amp; <a href="https://python.langchain.com/docs/tutorials/rag/" target="_blank">LangChain Production RAG Tutorial</a> <em>(Free)</em>.</li>
+        <li><strong>Reference Resource:</strong> <a href="https://arxiv.org/abs/2312.10997" target="_blank">RAG for Large Language Models: A Comprehensive Survey</a> <em>(Free PDF)</em>.</li>
+        <li><strong>Practical Task (Project 1 Milestone):</strong> Build an end-to-end production RAG microservice with FastAPI, Qdrant/pgvector, contextual chunking, streaming token responses, and source attribution citations.</li>
       </ul>
-      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-top:10px;font-size:12.5px;">
-        <strong>Phase 3 Exit Gate Deliverable:</strong> Dockerized FastAPI microservice featuring a multi-step agent with web search &amp; calculator tools, protected by a DeepEval test suite that runs in GitHub Actions CI and halts pull requests on hallucination regressions.
-      </div>
     </div>
   </div>
 
-  <!-- PHASE 4 -->
-  <div class="pc2" style="--_a:var(--coral);margin-bottom:2.25rem;">
-    <div class="ptit">Phase 4: Fine-Tuning, Serving &amp; MLOps Specialization <span class="pill pc">Months 10–13 · ~160 Hours</span></div>
+  <!-- STAGE 4 -->
+  <div class="pc2" style="--_a:var(--amber);margin-bottom:1.5rem;">
+    <div class="ptit">Stage 4: Production AI Agents &amp; Multi-Step Workflows <span class="pill pa">Weeks 11–14</span></div>
     <div class="pmeta">
-      <span class="chip">LoRA / QLoRA</span><span class="chip">HuggingFace PEFT</span><span class="chip">DPO Alignment</span>
-      <span class="chip">Quantization (GGUF/AWQ/FP8)</span><span class="chip">vLLM / Ollama</span>
-      <span class="chip">Weights &amp; Biases</span><span class="chip">MLOps</span><span class="chip">System Design for AI</span>
+      <span class="chip">LangGraph</span><span class="chip">StateGraph</span><span class="chip">Tool Calling</span>
+      <span class="chip">Cyclic Graphs</span><span class="chip">State Persistence</span><span class="chip">Human-in-the-Loop (HITL)</span><span class="chip">LangSmith Tracing</span>
     </div>
     <div class="pb2">
-      Level up into senior territory. Learn how to adapt foundation models to narrow domains on budget hardware, serve them with maximum throughput, and optimize inference.
-      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Verified 100% Free Resources:</h4>
+      Build reliable agents that take autonomous actions, call APIs, handle failures gracefully, and pause for human approval on high-stakes tasks.
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Curated Free Resources:</h4>
       <ul class="steps">
-        <li><strong>Transformers Deep Dive:</strong> <a href="https://huggingface.co/learn/nlp-course/chapter1/1" target="_blank">HuggingFace NLP Course</a> — Fine-tuning, tokenizers, datasets library, and model hub deployment from scratch.</li>
-        <li><strong>Fine-Tuning &amp; Quantization:</strong> <a href="https://github.com/mlabonne/llm-course#4-quantization" target="_blank">Maxime Labonne: LoRA, QLoRA &amp; Quantization</a> — Hands-on Google Colab notebooks showing how to fine-tune Llama/Mistral on free T4 GPUs.</li>
-        <li><strong>Under the Hood:</strong> <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY" target="_blank">Andrej Karpathy: Let's Build GPT from Scratch</a> — 2-hour code-along implementing the multi-head self-attention mechanism in pure PyTorch.</li>
-        <li><strong>MLOps Lifecycle:</strong> <a href="https://www.deeplearning.ai/short-courses/mlops-deployment-and-lifecycle/" target="_blank">DeepLearning.AI: MLOps Deployment &amp; Lifecycle</a> — Model registries, blue/green deployments, data drift, and continuous retraining.</li>
-        <li><strong>Portfolio Competitions:</strong> <a href="https://ai.google.dev/competition" target="_blank">Google AI Competitions &amp; Kaggle Community</a> — Compete in real-world NLP and GenAI challenges to earn public recognition.</li>
+        <li><strong>Primary Guide:</strong> <a href="https://langchain-ai.github.io/langgraph/tutorials/introduction/" target="_blank">LangGraph Official Introduction &amp; Core Concepts</a> <em>(Free)</em>.</li>
+        <li><strong>Reference Resource:</strong> <a href="https://docs.smith.langchain.com/" target="_blank">LangSmith Observability &amp; Trace Inspection</a> <em>(Free Tier)</em>.</li>
+        <li><strong>Practical Task (Project 3 Milestone):</strong> Construct a multi-step catalog enrichment agent in LangGraph: searches catalog DB &rarr; calculates missing attributes &rarr; flags low-confidence edits for human approval &rarr; commits updates with complete transaction rollback on errors.</li>
       </ul>
-      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-top:10px;font-size:12.5px;">
-        <strong>Phase 4 Deliverable:</strong> Fine-tuned 3B model (e.g. Llama-3.2-3B or SmolLM2) adapted on e-commerce catalog taxonomy using LoRA on your local laptop GPU (RTX 2050 4GB) or free Colab, served with vLLM/Ollama.
-      </div>
     </div>
   </div>
 
-  <!-- CAREER TRANSITION TIPS -->
-  <h2>🎯 Catalog QA Career Switcher Blueprint <span class="hs">Tactical Secrets</span></h2>
-  <div class="g2" style="margin-bottom:2.25rem;">
-    <div class="block bg">
-      <div class="bt">🧪 1. Lead with Evals in Interviews</div>
-      <div class="bb">Every AI startup has prompt demos, but almost none have reliable evaluation pipelines. Frame your QA background as an asset: you know how to write test suites, catch boundary regressions, and build automated eval matrices (DeepEval/Ragas). Hiring managers love this.</div>
+  <!-- STAGE 5 -->
+  <div class="pc2" style="--_a:var(--coral);margin-bottom:1.5rem;">
+    <div class="ptit">Stage 5: LLM Evaluation, Quality Engineering &amp; Guardrails <span class="pill pc">Weeks 15–18</span> <span class="pill pg">⭐ QA Advantage</span></div>
+    <div class="pmeta">
+      <span class="chip">DeepEval</span><span class="chip">Ragas</span><span class="chip">Promptfoo</span>
+      <span class="chip">Faithfulness Metric</span><span class="chip">Hallucination Checks</span><span class="chip">Prompt Injection Tests</span><span class="chip">GitHub Actions CI Gates</span>
     </div>
-    <div class="block ba">
-      <div class="bt">🏗️ 2. Build 3 Specific Portfolio Projects</div>
-      <div class="bb">Don't collect course certificates. Build 3 clean GitHub repositories: 1) Production RAG with hybrid search; 2) Multi-actor Agent with LangGraph and tool calling; 3) Fine-tuned model with published benchmark evals. Add Loom video walk-throughs in the README.</div>
-    </div>
-    <div class="block bam">
-      <div class="bt">📝 3. Target "AI Engineer" not "ML Researcher"</div>
-      <div class="bb">ML Researchers need PhDs and advanced calculus to invent architectures. AI Engineers write Python, call APIs, build RAG pipelines, optimize prompts, and build applications. Target "AI Engineer", "GenAI Developer", or "AI Evaluation Engineer".</div>
-    </div>
-    <div class="block bt2">
-      <div class="bt">🔄 4. Start Applying at Phase 3 (Stage 1 Exit)</div>
-      <div class="bb">Do not wait until you know everything. Once you complete Phase 3 (RAG + Agents + FastAPI + Evals) with 2 working GitHub projects, you are qualified for entry/mid AI Engineer roles (₹18L–35L / $100k–140k). Start interviewing immediately.</div>
-    </div>
-    <div class="block bc">
-      <div class="bt">📊 5. Reframe Catalog QA as Data Curation</div>
-      <div class="bb">Catalog quality engineers understand taxonomy trees, structured JSON metadata, entity resolution, and edge cases. That is <em>exactly</em> what training data curation and synthetic dataset generation require. Update your resume bullets to emphasize data curation.</div>
-    </div>
-    <div class="block br">
-      <div class="bt">🤝 6. Open Source &amp; Community Visibility</div>
-      <div class="bb">Join HuggingFace and LangChain Discord servers. Post a concise 2-minute breakdown on LinkedIn when you complete a project. Referrals through developer communities bypass ATS resume filters 10x faster than cold applications.</div>
+    <div class="pb2">
+      This is where your Catalog QA background shines. Create deterministic evaluation test harnesses that measure LLM accuracy and prevent broken prompts from shipping to production.
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Curated Free Resources:</h4>
+      <ul class="steps">
+        <li><strong>Primary Guide:</strong> <a href="https://docs.confident-ai.com/" target="_blank">DeepEval (Confident AI) Documentation</a> &amp; <a href="https://www.promptfoo.dev/docs/intro/" target="_blank">Promptfoo CI/CD Security &amp; Eval Docs</a> <em>(Free)</em>.</li>
+        <li><strong>Reference Resource:</strong> <a href="https://docs.ragas.io/en/latest/" target="_blank">Ragas: Evaluation Framework for RAG</a> <em>(Free)</em>.</li>
+        <li><strong>Practical Task (Project 2 Milestone):</strong> Build an automated CI/CD evaluation harness using DeepEval and Promptfoo: runs 50+ synthetic QA test cases, validates JSON schema constraints, detects prompt injection attempts, and automatically fails GitHub Actions pull requests on hallucination regressions.</li>
+      </ul>
     </div>
   </div>
 
-  <!-- WEEKLY STUDY SCHEDULE -->
-  <h2>📅 Weekly Study Schedule <span class="hs">18–20 hrs / week</span></h2>
-  <div class="calc-panel" style="margin-bottom:2.5rem;">
-    <div class="g2" style="gap:1.5rem;margin-bottom:1rem;">
-      <div>
-        <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:10px;">Weekdays (Mon–Fri) &bull; 2.5 hrs / day</div>
-        <ul class="steps">
-          <li><strong>1.0 hr:</strong> Video lecture or conceptual reading (fast.ai / DeepLearning.AI / Karpathy).</li>
-          <li><strong>1.0 hr:</strong> Hands-on coding — replicate the notebook, write unit tests, debug locally.</li>
-          <li><strong>30 min:</strong> Review HuggingFace Daily Papers, Twitter/X AI announcements, or GitHub trending repos.</li>
-        </ul>
-      </div>
-      <div>
-        <div style="font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);margin-bottom:10px;">Weekend (Sat–Sun) &bull; Deep Work</div>
-        <ul class="steps">
-          <li><strong>3–4 hrs (Saturday):</strong> Focused project building — writing core logic, Dockerizing, pushing commits.</li>
-          <li><strong>2.0 hrs (Sunday):</strong> Code review, writing markdown documentation, recording demo GIF.</li>
-          <li><strong>1.0 hr (Sunday):</strong> Weekly retrospective and planning the next week's milestones.</li>
-        </ul>
-      </div>
+  <!-- STAGE 6 -->
+  <div class="pc2" style="--_a:var(--pink);margin-bottom:1.5rem;">
+    <div class="ptit">Stage 6: Fine-Tuning &amp; Model Adaptation Fundamentals <span class="pill pp">Weeks 19–22</span></div>
+    <div class="pmeta">
+      <span class="chip">LoRA &amp; QLoRA</span><span class="chip">Hugging Face PEFT</span><span class="chip">TRL (SFTTrainer)</span>
+      <span class="chip">SmolLM2 / Qwen2.5-1.5B</span><span class="chip">ChatML JSONL Curation</span><span class="chip">Quantization (AWQ/GGUF/FP8)</span>
     </div>
-    <div class="alert as" style="margin-bottom:0;">
-      💡 <strong>The Golden Rule: Consistency Beats Intensity.</strong> Putting in 2.5 hours every single weekday morning or evening beats 10-hour weekend marathons that lead to burnout. At 18–20 hours/week, you will complete the first 3 phases in 6–8 months and be interview-ready.
+    <div class="pb2">
+      Understand when to fine-tune vs when to RAG. Learn to adapt small open-weight models on custom domain datasets using parameter-efficient fine-tuning on budget hardware.
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Curated Free Resources:</h4>
+      <ul class="steps">
+        <li><strong>Primary Guide:</strong> <a href="https://huggingface.co/docs/trl/sft_trainer" target="_blank">Hugging Face TRL SFTTrainer Guide</a> &amp; <a href="https://github.com/mlabonne/llm-course" target="_blank">Maxime Labonne: The LLM Course</a> <em>(Free)</em>.</li>
+        <li><strong>Reference Resource:</strong> <a href="https://github.com/huggingface/peft" target="_blank">Hugging Face PEFT (LoRA/QLoRA) Docs</a> <em>(Free)</em>.</li>
+        <li><strong>Practical Task:</strong> Format a 500-sample catalog taxonomy dataset into ChatML JSONL; fine-tune a 1.5B model (Qwen2.5-1.5B or SmolLM2) using 4-bit QLoRA on your local GPU (RTX 2050 4GB) or free Google Colab T4; evaluate before-and-after accuracy.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STAGE 7 -->
+  <div class="pc2" style="--_a:var(--teal);margin-bottom:2rem;">
+    <div class="ptit">Stage 7: Production AI Serving, Streaming &amp; Observability <span class="pill pt">Weeks 23–26</span> <span class="pill pg">🎯 Stage 1 Career Exit</span></div>
+    <div class="pmeta">
+      <span class="chip">FastAPI Async</span><span class="chip">Server-Sent Events (SSE)</span><span class="chip">Redis Semantic Cache</span>
+      <span class="chip">OpenTelemetry &amp; LangSmith</span><span class="chip">Rate Limiting</span><span class="chip">Docker Containerization</span>
+    </div>
+    <div class="pb2">
+      Package your AI systems into high-performance, containerized microservices ready for real production user traffic.
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:10px 0 6px;letter-spacing:.05em;">Curated Free Resources:</h4>
+      <ul class="steps">
+        <li><strong>Primary Guide:</strong> <a href="https://fastapi.tiangolo.com/tutorial/" target="_blank">FastAPI Official Tutorial</a> &amp; <a href="https://redis.io/docs/latest/develop/use/semantic-cache/" target="_blank">Redis Semantic Caching Guide</a> <em>(Free)</em>.</li>
+        <li><strong>Reference Resource:</strong> <a href="https://docs.docker.com/get-started/" target="_blank">Docker Getting Started Guide</a> <em>(Free)</em>.</li>
+        <li><strong>Practical Task:</strong> Deploy a multi-container Docker Compose service combining FastAPI + Redis semantic cache + Qdrant; expose streaming SSE endpoints with latency and token-cost tracking; achieve &lt;50ms cache response time.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STAGE 1 EXIT GATE -->
+  <div class="block bg" style="margin-top:2rem;border-width:2px;background:linear-gradient(135deg,#0a1a14,#101a18);">
+    <div class="bt" style="font-size:16px;color:var(--green)">🎯 STAGE 1 EXIT GATE: Job-Ready as AI Engineer / Applied AI Engineer</div>
+    <div class="bb" style="color:var(--text);">
+      <p style="margin-bottom:0.75rem;">
+        <strong>You do NOT need to wait until completing the entire 24-month infrastructure roadmap!</strong> Once you complete these 7 stages and have built the first 3 core portfolio projects, you are qualified to interview for:
+      </p>
+      <ul class="steps" style="margin-bottom:0.75rem;">
+        <li>✅ <strong>Production RAG System:</strong> Hybrid search + cross-encoder re-ranking + cited answers.</li>
+        <li>✅ <strong>LLM Evaluation Platform:</strong> Automated DeepEval/Promptfoo CI/CD quality gate stopping hallucinations.</li>
+        <li>✅ <strong>Autonomous AI Agent:</strong> LangGraph state machine with tool execution, retries, and human approval.</li>
+        <li>✅ <strong>Independent Explanation:</strong> Explain retrieval trade-offs, vector math, and eval metrics without notes.</li>
+      </ul>
+      <p style="font-size:13px;color:var(--text2);margin-bottom:0.5rem;">
+        💼 <strong>Target Titles:</strong> AI Engineer, Applied AI Engineer, LLM Application Developer, AI Evaluation Engineer.<br>
+        🚀 <strong>Career Strategy:</strong> Begin applying for roles immediately. Once inside an AI engineering team, continue with Phase 4 &amp; Phase 5 on company-funded cloud GPU infrastructure!
+      </p>
     </div>
   </div>
 </div>
 
-<!-- PHASE 1 -->
+
 <div id="page-p1" class="page">
-  <div class="hero"><div class="tag">Phase 1 · Months 1–6 (24 Weeks)</div><h1>Programming &amp; Systems Foundations</h1><p>Sequential, collision-free curriculum: Python → Linux/Networking → Backend/Docker → C++ Systems → Applied Math. Build real software before touching ML.</p></div>
-  <div class="alert ad"><strong>Sequential Rule:</strong> Do not study these tracks simultaneously. Follow the 5 progressive modules in order. Each module builds the concrete prerequisites required by the next.</div>
+  <div class="hero">
+    <div class="tag">Phase 1 &bull; Months 1–3 (Weeks 1–12)</div>
+    <h1>Software Engineering Foundations</h1>
+    <p>Build real, reliable software before touching ML. Master advanced Python, Linux processes, PostgreSQL, asynchronous backends with FastAPI, and C++ memory fundamentals.</p>
+  </div>
+  
+  <div class="alert ai">
+    <strong>Objective:</strong> Become capable of building, debugging, testing, and deploying reliable backend applications independently. No ML frameworks until software engineering fundamentals are proven.
+  </div>
 
   <!-- MODULE 1 -->
-  <h2>1 · Python Proficiency, Clean Code &amp; Tooling <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 1–4 · ~25 hrs/wk</span></h2>
-  <div class="alert ai"><strong>Prerequisites:</strong> None. Minimum viable starting point: Python syntax basics.</div>
+  <h2>1 &bull; Advanced Python, Object-Oriented Design &amp; Testing <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 1–3 &bull; 9–15 hrs/wk</span></h2>
+  <div class="alert ai"><strong>Prerequisites:</strong> None. Minimum starting point: Basic Python syntax.</div>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">Python 3.11+</span><span class="chip">Type hints + mypy</span><span class="chip">pytest &amp; TDD</span><span class="chip">Decorators</span><span class="chip">Generators &amp; iterators</span><span class="chip">Context managers (with)</span><span class="chip">Pydantic v2</span><span class="chip">Virtual environments (uv)</span><span class="chip">Git branching &amp; clean commits</span></div>
+  <div class="chips"><span class="chip">Python 3.11+</span><span class="chip">Type hints + mypy</span><span class="chip">pytest &amp; TDD</span><span class="chip">OOP &amp; Inheritance</span><span class="chip">Decorators</span><span class="chip">Generators &amp; Iterators</span><span class="chip">Context Managers</span><span class="chip">Pydantic v2</span><span class="chip">Git branching &amp; clean commits</span></div>
   <h3>Curated Resources — Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://docs.python.org/3/tutorial/" target="_blank">Python Official Tutorial</a> &amp; <a href="https://realpython.com/python-type-checking/" target="_blank">Real Python Type Checking</a> <em>(Free)</em> — Core syntax, exceptions, static typing with <code>mypy</code>.</li>
-    <li><strong>Reference Resource (1 Only):</strong> "Fluent Python" (2nd Ed) by Luciano Ramalho <em>(Chapters 1–3, 7–9)</em> — Deep lookup for data model &amp; closures.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://docs.python.org/3/tutorial/" target="_blank">Python Official Tutorial</a> &amp; <a href="https://realpython.com/python-type-checking/" target="_blank">Real Python Type Checking</a> <em>(Free)</em> &mdash; Core syntax, exceptions, static typing with <code>mypy</code>.</li>
+    <li><strong>Reference Resource:</strong> "Fluent Python" (2nd Ed) by Luciano Ramalho <em>(Chapters 1–3, 7–9)</em> &mdash; Deep lookup for data models, closures, and dunder methods.</li>
     <li><strong>Practical Task &amp; Stopping Condition:</strong> Build a CLI log analyzer with Pydantic schemas, parsing structured JSON/text logs and calculating error rates. <strong>Stopping Condition:</strong> <code>mypy --strict</code> passes with 0 errors and <code>pytest</code> passes >80% coverage. <em>Stop immediately once tests pass.</em></li>
   </ul>
   <h3>Module 1 Deliverables</h3>
   <ul class="steps">
     <li><strong>Week 2 Artifact:</strong> CLI log analyzer that parses structured logs, aggregates error codes with type hints, and passes a full <code>pytest</code> test suite.</li>
-    <li><strong>Week 4 Artifact:</strong> Configurable data processor with Pydantic schemas and automated GitHub Actions CI pipeline.</li>
+    <li><strong>Week 3 Artifact:</strong> Configurable data processor with Pydantic schemas and automated GitHub Actions CI pipeline.</li>
   </ul>
 
   <!-- MODULE 2 -->
-  <h2>2 · Linux CLI, Shell Scripting, OS &amp; Networking <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 5–8 · ~25 hrs/wk</span></h2>
+  <h2>2 &bull; Linux CLI, Shell Scripting, OS &amp; Networking <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 4–6 &bull; 9–15 hrs/wk</span></h2>
   <div class="alert ai"><strong>Prerequisites:</strong> Module 1 completed. Needed for: Understanding server runtimes, sockets, and container execution.</div>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">Bash scripting</span><span class="chip">Linux processes &amp; signals</span><span class="chip">File permissions &amp; inodes</span><span class="chip">TCP/IP &amp; Sockets</span><span class="chip">HTTP 1.1 / HTTP 2 / REST</span><span class="chip">SSH keys &amp; config</span><span class="chip">curl &amp; netstat</span><span class="chip">systemd services</span><span class="chip">htop, vmstat, strace</span></div>
+  <div class="chips"><span class="chip">Bash scripting</span><span class="chip">Linux processes &amp; signals</span><span class="chip">Virtual memory basics</span><span class="chip">Stack vs Heap</span><span class="chip">TCP/IP &amp; Sockets</span><span class="chip">HTTP 1.1 / REST lifecycle</span><span class="chip">SSH keys &amp; config</span><span class="chip">curl &amp; netstat</span><span class="chip">htop, vmstat, strace</span></div>
   <h3>Curated Resources — Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://missing.csail.mit.edu/" target="_blank">MIT Missing Semester (Shell, CLI Tools &amp; Data Wrangling)</a> <em>(Free)</em> — Practical terminal mastery.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://linuxjourney.com/" target="_blank">Linux Journey</a> &amp; <a href="https://beej.us/guide/bgnet/" target="_blank">Beej's Guide to Network Programming</a> <em>(Free)</em> — Sockets, processes, permissions.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> Write a minimal TCP/HTTP server in raw Python sockets (no frameworks) returning valid 200/404 HTTP responses. <strong>Stopping Condition:</strong> <code>curl -I localhost:8080</code> returns valid HTTP headers and connection closes cleanly.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://missing.csail.mit.edu/" target="_blank">MIT Missing Semester (Shell, CLI Tools &amp; Data Wrangling)</a> <em>(Free)</em> &mdash; Practical terminal mastery.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://linuxjourney.com/" target="_blank">Linux Journey</a> &amp; <a href="https://beej.us/guide/bgnet/" target="_blank">Beej's Guide to Network Programming</a> <em>(Free)</em> &mdash; Sockets, processes, permissions.</li>
+    <li><strong>Practical Task &amp; Stopping Condition:</strong> Write a minimal TCP/HTTP server in raw Python sockets (no web frameworks) returning valid 200/404 HTTP responses. <strong>Stopping Condition:</strong> <code>curl -I localhost:8080</code> returns valid HTTP headers and connection closes cleanly.</li>
   </ul>
   <h3>Module 2 Deliverables</h3>
   <ul class="steps">
-    <li><strong>Week 6 Artifact:</strong> 3 robust bash automation scripts: automated server backup, process health monitor with alerts, and structured system report.</li>
-    <li><strong>Week 8 Artifact:</strong> Minimal TCP/HTTP server in Python using raw sockets (no web frameworks) to handle GET/POST requests and return HTTP status codes.</li>
+    <li><strong>Week 5 Artifact:</strong> 3 robust bash automation scripts: automated server backup, process health monitor with alerts, and structured system report.</li>
+    <li><strong>Week 6 Artifact:</strong> Minimal TCP/HTTP server in Python using raw sockets (no web frameworks) handling GET/POST requests and returning HTTP status codes.</li>
   </ul>
 
   <!-- MODULE 3 -->
-  <h2>3 · Backend Engineering, PostgreSQL &amp; Containers <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 9–14 · ~25 hrs/wk</span></h2>
-  <div class="alert ai"><strong>Prerequisites:</strong> Modules 1 &amp; 2 completed. Needed for: The Phase 1 Exit Gate milestone.</div>
+  <h2>3 &bull; Backend Engineering, PostgreSQL &amp; Containers <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 7–9 &bull; 9–15 hrs/wk</span></h2>
+  <div class="alert ai"><strong>Prerequisites:</strong> Modules 1 &amp; 2 completed. Needed for: The Software Engineering Exit Gate.</div>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">FastAPI</span><span class="chip">asyncio &amp; async/await</span><span class="chip">PostgreSQL</span><span class="chip">SQL indexing &amp; joins</span><span class="chip">SQLAlchemy 2.0 / AsyncPG</span><span class="chip">Docker &amp; Dockerfile</span><span class="chip">Docker Compose</span><span class="chip">Redis caching</span><span class="chip">Health checks &amp; logging</span></div>
+  <div class="chips"><span class="chip">FastAPI</span><span class="chip">asyncio &amp; async/await</span><span class="chip">PostgreSQL</span><span class="chip">SQL indexing &amp; joins</span><span class="chip">Transactions &amp; ACID</span><span class="chip">SQLAlchemy 2.0 / AsyncPG</span><span class="chip">Docker &amp; Dockerfile</span><span class="chip">Docker Compose</span><span class="chip">Redis caching</span></div>
   <h3>Curated Resources — Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://fastapi.tiangolo.com/tutorial/" target="_blank">FastAPI Official Tutorial</a> &amp; <a href="https://docs.docker.com/get-started/" target="_blank">Docker Getting Started Guide</a> <em>(Free)</em>.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://mode.com/sql-tutorial/" target="_blank">Mode Analytics SQL Tutorial</a> <em>(Free)</em> — Indexing, query plans, joins.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://fastapi.tiangolo.com/tutorial/" target="_blank">FastAPI Official Tutorial</a> &amp; <a href="https://docs.docker.com/get-started/" target="_blank">Docker Getting Started Guide</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://mode.com/sql-tutorial/" target="_blank">Mode Analytics SQL Tutorial</a> <em>(Free)</em> &mdash; Indexing, query plans, joins.</li>
     <li><strong>Practical Task &amp; Stopping Condition:</strong> Dockerized FastAPI + PostgreSQL + Redis service with async endpoints and health probes. <strong>Stopping Condition:</strong> <code>docker compose up -d &amp;&amp; pytest tests/ -v</code> passes cleanly without human intervention.</li>
   </ul>
-  <h3>Module 3 Deliverable (Phase 1 Exit Gate Project)</h3>
+  <h3>Module 3 Deliverable (Phase 1 Capstone)</h3>
   <ul class="steps">
-    <li><strong>Weeks 13–14 Capstone:</strong> Production-style REST API with FastAPI, async PostgreSQL via SQLAlchemy/AsyncPG, Redis caching layer, Docker Compose multi-container setup, <code>pytest</code> test suite with mock DB fixtures, and structured JSON logging.</li>
+    <li><strong>Week 9 Capstone:</strong> Production-style REST API with FastAPI, async PostgreSQL via SQLAlchemy/AsyncPG, Redis caching layer, Docker Compose multi-container setup, <code>pytest</code> test suite with mock DB fixtures, and structured JSON logging.</li>
   </ul>
 
   <!-- MODULE 4 -->
-  <h2>4 · C++ Fundamentals, Memory &amp; Systems Model <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 15–18 · ~25 hrs/wk</span></h2>
-  <div class="alert ai"><strong>Prerequisites:</strong> Module 1 Python &amp; Module 2 Linux. Needed for: Developing systems intuition and unlocking Stage 2 DSA in C++ without panic.</div>
+  <h2>4 &bull; C++ Systems Primitives &amp; Memory Layout <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 10–12 &bull; 9–15 hrs/wk</span></h2>
+  <div class="alert ai"><strong>Prerequisites:</strong> Module 1 Python &amp; Module 2 Linux. Needed for: Developing systems intuition and practical understanding of memory layouts for later GPU and systems programming.</div>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">C++20 fundamentals</span><span class="chip">Pointers &amp; References</span><span class="chip">Stack vs Heap memory</span><span class="chip">RAII &amp; Smart Pointers (unique_ptr, shared_ptr)</span><span class="chip">C++ STL (vector, unordered_map, queue)</span><span class="chip">g++ / clang++ / CMake</span><span class="chip">Valgrind / AddressSanitizer</span></div>
+  <div class="chips"><span class="chip">C++20 fundamentals</span><span class="chip">Pointers &amp; References</span><span class="chip">Stack vs Heap memory</span><span class="chip">RAII &amp; Smart Pointers</span><span class="chip">Dynamic Array Implementation</span><span class="chip">g++ / clang++</span><span class="chip">AddressSanitizer</span></div>
   <h3>Curated Resources — Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://www.learncpp.com/" target="_blank">LearnCpp.com</a> <em>(Chapters 1–11, 13, 16)</em> <em>(Free)</em> — Modern C++ syntax and RAII.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://en.cppreference.com/w/" target="_blank">cppreference.com</a> <em>(Free)</em> — Standard library container and memory reference.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> Custom dynamic array (vector) with manual heap allocation and RAII cleanup. <strong>Stopping Condition:</strong> Compiles with <code>g++ -fsanitize=address -std=c++20</code> and runs with zero memory leaks.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://www.learncpp.com/" target="_blank">LearnCpp.com</a> <em>(Chapters 1–11, 13, 16)</em> <em>(Free)</em> &mdash; Modern C++ syntax, memory, and RAII.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://en.cppreference.com/w/" target="_blank">cppreference.com</a> <em>(Free)</em> &mdash; Standard library container and memory reference.</li>
+    <li><strong>Practical Task &amp; Stopping Condition:</strong> Custom dynamic array (vector) with manual heap allocation, capacity doubling, and RAII cleanup. <strong>Stopping Condition:</strong> Compiles with <code>g++ -fsanitize=address -std=c++20</code> and runs with zero memory leaks.</li>
   </ul>
   <h3>Module 4 Deliverable</h3>
   <ul class="steps">
-    <li><strong>Week 18 Artifact:</strong> Custom dynamic array (vector) and hash table in C++ with manual heap allocation, RAII cleanup, memory leak check via AddressSanitizer (<code>-fsanitize=address</code>).</li>
-  </ul>
-
-  <!-- MODULE 5 -->
-  <h2>5 · Applied Mathematics for Machine Learning <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 19–24 · ~25 hrs/wk</span></h2>
-  <div class="alert ai"><strong>Prerequisites:</strong> Module 1 Python. Prepares directly for: Phase 2 ML &amp; Deep Learning.</div>
-  <h3>What to learn</h3>
-  <div class="chips"><span class="chip">Linear Algebra</span><span class="chip">Vector/Matrix operations</span><span class="chip">Eigenvalues &amp; SVD</span><span class="chip">Multivariate Calculus</span><span class="chip">Gradients &amp; Jacobians</span><span class="chip">Probability &amp; Bayes</span><span class="chip">Distributions</span><span class="chip">NumPy implementations</span></div>
-  <h3>Curated Resources — Rule of Three</h3>
-  <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab" target="_blank">3Blue1Brown: Essence of Linear Algebra</a> &amp; <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr" target="_blank">Calculus</a> <em>(Free)</em> — Visual geometric intuition.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://mml-book.github.io/" target="_blank">Mathematics for Machine Learning (Deisenroth et al.)</a> <em>(Chapters 2–6, Free PDF)</em>.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> Pure NumPy implementations of matrix multiplication, gradient descent, and PCA. <strong>Stopping Condition:</strong> Unit test asserts PCA reconstruction error matches Scikit-Learn within $10^{-5}$ tolerance.</li>
-  </ul>
-  <h3>Module 5 Deliverable</h3>
-  <ul class="steps">
-    <li><strong>Week 24 Artifact:</strong> Pure NumPy implementations of: (1) Matrix multiplication and transpose with cache profiling; (2) Batch gradient descent optimizer; (3) Principal Component Analysis (PCA) via eigendecomposition.</li>
+    <li><strong>Week 12 Artifact:</strong> Custom dynamic array (<code>MyVector&lt;T&gt;</code>) in C++ with manual heap allocation, RAII cleanup, and memory leak validation via AddressSanitizer (<code>-fsanitize=address</code>).</li>
   </ul>
 
   <!-- PHASE 1 FORMAL EXIT GATE -->
   <div class="block bg" style="margin-top:2rem;border-width:2px;background:linear-gradient(135deg,#0a1a14,#101a18);">
-    <div class="bt" style="font-size:16px;color:var(--green)">🏁 PHASE 1 EXIT GATE (Objective Evaluation Criteria)</div>
+    <div class="bt" style="font-size:16px;color:var(--green)">🏁 SOFTWARE ENGINEERING COMPLETION GATE (Exit Assessment)</div>
     <div class="bb" style="color:var(--text);">
-      <p style="margin-bottom:0.75rem;">To pass Phase 1 and advance to Phase 2, you must independently verify that you can:</p>
+      <p style="margin-bottom:0.75rem;">To pass Phase 1 and advance, you must independently verify that you can:</p>
       <ul class="steps" style="margin-bottom:0.75rem;">
-        <li>✅ Build, test, containerize, and document a backend service connected to PostgreSQL.</li>
-        <li>✅ Demonstrate error handling, structured logging, configuration via environment variables, and health probes.</li>
-        <li>✅ Write clean type-annotated Python passing <code>mypy</code> without errors.</li>
-        <li>✅ Write and compile a C++ program using smart pointers and STL containers with zero AddressSanitizer memory leaks.</li>
-        <li>✅ Navigate Linux servers via SSH, manage system processes, and write multi-step bash scripts.</li>
+        <li>✅ Build, test, containerize, and deploy an asynchronous FastAPI backend connected to PostgreSQL.</li>
+        <li>✅ Implement authentication, error handling, structured logging, configuration via environment variables, and health probes.</li>
+        <li>✅ Write clean type-annotated Python passing <code>mypy --strict</code> without errors.</li>
+        <li>✅ Write and compile a C++ dynamic array using RAII with zero AddressSanitizer memory leaks.</li>
+        <li>✅ Explain the HTTP lifecycle, TCP 3-way handshake, and database indexing strategies without notes.</li>
       </ul>
-      <p style="font-size:12.5px;color:var(--text2);">Do not advance to Phase 2 until this criteria is satisfied. Rushing into PyTorch without solid backend and systems fundamentals guarantees confusion later.</p>
+      <p style="font-size:12.5px;color:var(--text2);">Do not advance until this criteria is satisfied. Solid backend foundations guarantee you will never become a fragile framework user.</p>
     </div>
   </div>
 </div>
 
-<!-- PHASE 2 -->
-<div id="page-p2" class="page">
-  <div class="hero"><div class="tag">Phase 2 · Months 6–12</div><h1>Core ML &<br>Deep Learning</h1><p>Build real models. Understand transformers from first principles. Deploy something.</p></div>
-  <div class="alert ai"><strong>The real split:</strong> In production AI, engineering > theory — but you need enough theory to debug why your model is broken. Don't just call .fit() — understand what's happening.</div>
 
-  <h2>1 · Classical ML — Scikit-learn <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 1–6</span></h2>
+<div id="page-p2" class="page">
+  <div class="hero">
+    <div class="tag">Phase 2 &bull; Months 3–6 (Weeks 13–24)</div>
+    <h1>Machine Learning &amp; Deep Learning Foundations</h1>
+    <p>Train real models. Implement PyTorch autograd from scratch. Understand transformers from first principles without unnecessary mathematical gatekeeping.</p>
+  </div>
+  
+  <div class="alert ai">
+    <strong>Focus:</strong> Engineering &gt; Abstract Proofs. Include the mathematics required to understand the algorithms and systems being implemented.
+  </div>
+
+  <h2>1 &bull; Classical ML &amp; Feature Engineering <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 13–16 &bull; 9–15 hrs/wk</span></h2>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">Linear/Logistic Regression</span><span class="chip">Decision Trees/Random Forests</span><span class="chip">XGBoost</span><span class="chip">SVMs</span><span class="chip">K-Means/DBSCAN</span><span class="chip">Feature engineering</span><span class="chip">Cross-validation</span><span class="chip">Bias-variance tradeoff</span><span class="chip">Pipelines</span></div>
+  <div class="chips"><span class="chip">NumPy</span><span class="chip">Pandas</span><span class="chip">Scikit-learn</span><span class="chip">Linear/Logistic Regression</span><span class="chip">Decision Trees &amp; Random Forests</span><span class="chip">Feature Engineering</span><span class="chip">Cross-Validation</span><span class="chip">Precision, Recall, F1</span><span class="chip">Bias-Variance Tradeoff</span></div>
   <h3>Curated Resources — Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://scikit-learn.org/stable/tutorial/" target="_blank">Scikit-learn Official Tutorial</a> &amp; <a href="https://www.youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF5rZwfuC7n" target="_blank">StatQuest ML</a> <em>(Free)</em>.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://scikit-learn.org/stable/user_guide.html" target="_blank">Scikit-learn User Guide</a> <em>(Free)</em> — Parameter &amp; loss function reference.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> End-to-end classification pipeline with cross-validation and FastAPI endpoint. <strong>Stopping Condition:</strong> Pipeline achieves >0.82 F1-score on test split and unit test asserts inference latency &lt; 15ms.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://scikit-learn.org/stable/tutorial/" target="_blank">Scikit-learn Official Tutorial</a> &amp; <a href="https://www.youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF5rZwfuC7n" target="_blank">StatQuest ML Playlist</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://scikit-learn.org/stable/user_guide.html" target="_blank">Scikit-learn User Guide</a> <em>(Free)</em> &mdash; Algorithm formulas &amp; parameter reference.</li>
+    <li><strong>Practical Task &amp; Stopping Condition:</strong> End-to-end classification pipeline with cross-validation deployed as a FastAPI endpoint. <strong>Stopping Condition:</strong> Pipeline achieves >0.82 F1-score on test split and unit tests assert inference latency &lt; 15ms.</li>
   </ul>
   <h3>Module 1 Deliverables</h3>
   <ul class="steps">
-    <li>End-to-end ML pipeline: load data → feature engineer → train → evaluate → deploy as API.</li>
-    <li>Kaggle tabular benchmark with stratified cross-validation and feature importance analysis.</li>
+    <li>End-to-end ML pipeline: data ingestion &rarr; cleaning &rarr; feature engineering &rarr; train &rarr; cross-validate &rarr; deploy as API.</li>
+    <li>Structured benchmark report comparing linear models vs tree ensembles on tabular data.</li>
   </ul>
 
-  <h2>2 · Deep Learning — PyTorch <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 5–14</span></h2>
+  <h2>2 &bull; Deep Learning &amp; PyTorch From Scratch <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 17–20 &bull; 9–15 hrs/wk</span></h2>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">Backpropagation</span><span class="chip">PyTorch tensors &amp; autograd</span><span class="chip">CNNs</span><span class="chip">Attention mechanism</span><span class="chip">Transformers</span><span class="chip">Batch norm/dropout</span><span class="chip">LR schedulers</span><span class="chip">Mixed precision training</span></div>
+  <div class="chips"><span class="chip">Backpropagation</span><span class="chip">PyTorch Tensors</span><span class="chip">Autograd Engine</span><span class="chip">Custom Training Loops</span><span class="chip">Loss Functions</span><span class="chip">Optimizers (SGD, AdamW)</span><span class="chip">GPU Memory &amp; CUDA Tensors</span><span class="chip">CNNs</span><span class="chip">Mixed Precision</span></div>
   <h3>Curated Resources — Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ" target="_blank">Andrej Karpathy — Neural Networks: Zero to Hero</a> <em>(Free)</em> — micrograd to nanoGPT.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html" target="_blank">PyTorch 60-Min Blitz</a> <em>(Free)</em> — Tensor mechanics and DataLoader.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> Build micrograd autograd engine from scratch. <strong>Stopping Condition:</strong> Automated test asserts analytic gradients match finite-difference numerical gradients within $10^{-4}$ across 5 ops.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ" target="_blank">Andrej Karpathy &mdash; Neural Networks: Zero to Hero</a> <em>(Free)</em> &mdash; micrograd to nanoGPT.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html" target="_blank">PyTorch 60-Min Blitz</a> <em>(Free)</em> &mdash; Tensor mechanics and DataLoader.</li>
+    <li><strong>Practical Task &amp; Stopping Condition:</strong> Build micrograd autograd engine from scratch in pure Python. <strong>Stopping Condition:</strong> Automated test asserts analytic gradients match finite-difference numerical gradients within $10^{-4}$ across 5 ops.</li>
   </ul>
   <h3>Module 2 Deliverables</h3>
   <ul class="steps">
-    <li>Build micrograd — a tiny autograd engine with graph backpropagation. Follow Karpathy's video.</li>
-    <li>Implement decoder-only transformer block (multi-head self-attention + MLP + LayerNorm) from scratch.</li>
-    <li>Train a character-level language model on small Shakespeare text (makemore / nanoGPT).</li>
+    <li>Build micrograd: tiny autograd engine with reverse-mode graph backpropagation.</li>
+    <li>Implement a complete PyTorch training loop from scratch: forward pass, loss calculation, backward pass, optimizer step, zero_grad.</li>
   </ul>
 
-  <h2>3 · Hugging Face Ecosystem &amp; Fine-Tuning <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 12–18</span></h2>
-  <div class="alert ai"><strong>Hardware Notice:</strong> Local training on RTX 2050 (4GB VRAM) is strictly restricted to quantized sub-3B models (Qwen2.5-1.5B, SmolLM2-1.7B) via 4-bit QLoRA. Run 7B models on free Google Colab T4.</div>
+  <h2>3 &bull; Transformers, Attention &amp; Hugging Face <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 21–24 &bull; 9–15 hrs/wk</span></h2>
+  <div class="alert ai"><strong>Hardware Notice:</strong> Local training on laptop GPU (RTX 2050 4GB VRAM) is restricted to sub-3B models (SmolLM2, Qwen2.5-1.5B) via 4-bit QLoRA. Use free Google Colab T4 for 7B models.</div>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">transformers library</span><span class="chip">datasets library</span><span class="chip">tokenizers</span><span class="chip">PEFT/LoRA</span><span class="chip">Trainer API</span><span class="chip">Model Hub</span><span class="chip">Inference API</span></div>
+  <div class="chips"><span class="chip">Self-Attention Mechanism</span><span class="chip">Multi-Head Attention</span><span class="chip">Transformer Block</span><span class="chip">Positional Encodings</span><span class="chip">Hugging Face Transformers</span><span class="chip">Tokenizers Library</span><span class="chip">Model Hub</span><span class="chip">Applied Math (SVD, Projections)</span></div>
   <h3>Curated Resources — Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://huggingface.co/course/chapter1/1" target="_blank">Hugging Face NLP Course</a> <em>(Free)</em> — Tokenizers, Trainer, datasets.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://github.com/huggingface/peft" target="_blank">PEFT Official Documentation</a> <em>(Free)</em> — LoRA and QLoRA configuration.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> Fine-tune Qwen2.5-1.5B on custom instruction dataset with QLoRA. <strong>Stopping Condition:</strong> Training loss decreases over 3 epochs, adapter merges cleanly, and response generation produces domain-valid outputs.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://huggingface.co/course/chapter1/1" target="_blank">Hugging Face NLP Course</a> <em>(Free)</em> &amp; <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY" target="_blank">Karpathy: Let's Build GPT from Scratch</a>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://jalammar.github.io/illustrated-transformer/" target="_blank">Jay Alammar: The Illustrated Transformer</a> <em>(Free)</em>.</li>
+    <li><strong>Practical Task &amp; Stopping Condition:</strong> Implement a character-level transformer decoder in PyTorch and generate text. <strong>Stopping Condition:</strong> Multi-head attention outputs match official PyTorch implementation within $10^{-5}$ tolerance.</li>
   </ul>
   <h3>Module 3 Deliverables</h3>
   <ul class="steps">
-    <li>Fine-tune BERT for text classification with structured metrics and confusion matrix.</li>
-    <li>Fine-tune a 1.5B/3B LLM with QLoRA on RTX 2050 (or 7B model on Google Colab T4).</li>
-    <li>Sentiment analysis microservice: HF model + FastAPI + Docker + unit test suite.</li>
+    <li>Decoder-only transformer block (multi-head self-attention + MLP + LayerNorm) implemented from scratch.</li>
+    <li>Text classification microservice using a Hugging Face pre-trained model wrapped in FastAPI and containerized with Docker.</li>
   </ul>
 
-  <h2>4 · Experiment Tracking &amp; Registry <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 14–18</span></h2>
-  <div class="chips"><span class="chip">MLflow</span><span class="chip">Weights &amp; Biases</span><span class="chip">Experiment versioning</span><span class="chip">Model registry</span><span class="chip">Hyperparameter tuning (Optuna)</span></div>
-  <h3>Curated Resources — Rule of Three</h3>
-  <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://mlflow.org/docs/latest/tutorials-and-examples/tutorial.html" target="_blank">MLflow Official Quickstart</a> <em>(Free)</em>.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://docs.wandb.ai/tutorials" target="_blank">Weights &amp; Biases Documentation</a> <em>(Free)</em>.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> Instrument PyTorch training script with MLflow logging. <strong>Stopping Condition:</strong> Model weights registered in local MLflow registry and queryable via Python SDK.</li>
-  </ul>
-  <div class="alert as"><strong>Phase 2 Exit Gate:</strong> Pass automated verification: (1) <code>pytest test_autograd.py</code> asserts custom autograd passes gradient checks; (2) Training script completes 3 epochs and logs to MLflow; (3) FastAPI inference endpoint responds in &lt;50ms with unit tests passing. <em>Advance to Phase 3 once verified.</em></div>
+  <!-- PHASE 2 FORMAL EXIT GATE -->
+  <div class="block bg" style="margin-top:2rem;border-width:2px;background:linear-gradient(135deg,#0a1a14,#101a18);">
+    <div class="bt" style="font-size:16px;color:var(--green)">🏁 ML FOUNDATIONS COMPLETION GATE (Exit Assessment)</div>
+    <div class="bb" style="color:var(--text);">
+      <p style="margin-bottom:0.75rem;">To pass Phase 2 and advance to Applied AI Engineering, you must verify:</p>
+      <ul class="steps" style="margin-bottom:0.75rem;">
+        <li>✅ Independently train and evaluate a machine learning model with proper cross-validation.</li>
+        <li>✅ Implement a custom autograd reverse-mode graph and verify gradients numerically.</li>
+        <li>✅ Write a PyTorch training loop from scratch with loss tracking and optimizer stepping.</li>
+        <li>✅ Explain the multi-head attention mechanism, query/key/value matrix math, and loss functions without notes.</li>
+      </ul>
+      <p style="font-size:12.5px;color:var(--text2);">Advance to Phase 3 once verified. You are now ready to tackle real-world foundation models and Applied AI Engineering.</p>
+    </div>
+  </div>
 </div>
 
-<!-- PHASE 3 -->
+
 <div id="page-p3" class="page">
-  <div class="hero"><div class="tag">Phase 3 · Months 12–17</div><h1>GenAI & LLMs</h1><p>Production RAG. Fine-tuning at scale. Evaluation. The bridge to AI Infrastructure.</p></div>
+  <div class="hero">
+    <div class="tag">Phase 3 &bull; Months 6–10 (Weeks 25–40) &bull; Major Career Target</div>
+    <h1>Applied AI Engineering</h1>
+    <p>Production RAG systems. AI Agents with LangGraph. Automated evaluation harnesses. Parameter-efficient fine-tuning. <strong>This is your first major career-transition target.</strong></p>
+  </div>
+  
+  <div class="alert as">
+    <strong>Career Milestone &bull; Stage 1 Exit Gate:</strong> Once you can independently build and explain the 3 core AI engineering portfolio projects, you should <strong>begin applying for AI Engineer / Applied AI Engineer roles</strong>. Do not wait until you complete the entire infrastructure roadmap!
+  </div>
 
-  <h2>1 · RAG Systems &amp; Vector Databases <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 1–6</span></h2>
+  <h2>1 &bull; LLM Fundamentals, Prompting &amp; Structured Outputs <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 25–27 &bull; 9–15 hrs/wk</span></h2>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">Vector DBs (Qdrant, Chroma, Faiss)</span><span class="chip">Embedding models</span><span class="chip">Chunking strategies</span><span class="chip">Retrieval (BM25, dense, hybrid)</span><span class="chip">Re-ranking</span><span class="chip">Context compression</span><span class="chip">LangChain/LlamaIndex</span></div>
-  <h3>Curated Resources — Rule of Three</h3>
+  <div class="chips"><span class="chip">OpenAI &amp; Gemini APIs</span><span class="chip">Few-Shot Prompting</span><span class="chip">Chain of Thought</span><span class="chip">Strict JSON Schemas</span><span class="chip">Pydantic v2 Enforcement</span><span class="chip">Function Calling</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://python.langchain.com/docs/get_started/introduction" target="_blank">LangChain Official RAG Guide</a> &amp; <a href="https://docs.llamaindex.ai/en/stable/getting_started/starter_example.html" target="_blank">LlamaIndex Quickstart</a> <em>(Free)</em>.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://arxiv.org/abs/2312.10997" target="_blank">Retrieval-Augmented Generation for Large Language Models: A Survey</a> <em>(Free PDF)</em>.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> Production RAG system with hybrid retrieval (dense + BM25) and re-ranking. <strong>Stopping Condition:</strong> Evaluated with DeepEval; context recall > 0.85 and p95 retrieval latency &lt; 350ms.</li>
-  </ul>
-  <h3>Module 1 Deliverables</h3>
-  <ul class="steps">
-    <li>Production RAG pipeline: PDF/Markdown ingestion → recursive chunking → embedding → Qdrant vector store → hybrid retrieval → answer synthesis.</li>
-    <li>Benchmarking retrieval: BM25 vs. dense embeddings vs. reciprocal rank fusion (RRF) on a technical doc corpus.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://ai.google.dev/gemini-api/docs" target="_blank">Google Gemini API Docs</a> &amp; <a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank">DAIR.AI Prompt Guide</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://platform.openai.com/docs/guides/structured-outputs" target="_blank">OpenAI Structured Outputs Guide</a> <em>(Free)</em>.</li>
+    <li><strong>Practical Task:</strong> Build a structured catalog metadata extraction service that guarantees 100% valid Pydantic outputs with zero formatting hallucinations.</li>
   </ul>
 
-  <h2>2 · Fine-Tuning &amp; Parameter-Efficient Adaptation <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 4–10</span></h2>
-  <div class="alert ai"><strong>Hardware Boundary:</strong> Local 4GB RTX 2050 is constrained to quantized 1.5B–3B models (Qwen2.5-1.5B, SmolLM2). Use Google Colab T4 (15GB VRAM) for 7B models.</div>
+  <h2>2 &bull; Production RAG &amp; Vector Databases <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 28–31 &bull; 9–15 hrs/wk</span></h2>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">LoRA/QLoRA</span><span class="chip">RLHF basics</span><span class="chip">DPO/PPO</span><span class="chip">Data curation</span><span class="chip">Instruction tuning</span><span class="chip">Axolotl/TRL</span><span class="chip">bitsandbytes</span></div>
-  <h3>Curated Resources — Rule of Three</h3>
+  <div class="chips"><span class="chip">Vector DBs (Qdrant, pgvector)</span><span class="chip">Dense Embeddings</span><span class="chip">Semantic Chunking</span><span class="chip">BM25 Sparse Retrieval</span><span class="chip">Hybrid Search (RRF)</span><span class="chip">Cross-Encoder Re-ranking</span><span class="chip">Contextual Retrieval</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://github.com/huggingface/trl" target="_blank">TRL (Transformer Reinforcement Learning) Examples</a> <em>(Free)</em>.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://arxiv.org/abs/2305.18290" target="_blank">Direct Preference Optimization (DPO) Paper</a> <em>(Free PDF)</em>.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> Fine-tune Qwen2.5-1.5B on custom instruction dataset. <strong>Stopping Condition:</strong> Validation loss reaches plateau, LoRA adapter weighs &lt; 50MB, and inference script generates structured outputs.</li>
-  </ul>
-  <h3>Module 2 Deliverables</h3>
-  <ul class="steps">
-    <li>Fine-tune a small model locally on RTX 2050 (SmolLM2-1.7B or Qwen2.5-1.5B with 4-bit QLoRA) OR Mistral-7B on Google Colab T4.</li>
-    <li>Compare LoRA vs. full fine-tune trade-offs: memory consumption, training speed, and generation perplexity.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://qdrant.tech/documentation/" target="_blank">Qdrant Official Documentation</a> &amp; <a href="https://python.langchain.com/docs/tutorials/rag/" target="_blank">LangChain Production RAG</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://arxiv.org/abs/2312.10997" target="_blank">RAG Survey Paper</a> <em>(Free PDF)</em>.</li>
+    <li><strong>Practical Task (Project 1 Milestone):</strong> End-to-end production RAG system with hybrid retrieval (dense + BM25), cross-encoder re-ranking, and streaming answers in FastAPI. <strong>Stopping Condition:</strong> Context recall > 0.85 and p95 retrieval latency &lt; 350ms.</li>
   </ul>
 
-  <h2>3 · AI Agents &amp; Tool Orchestration <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 8–14</span></h2>
-  <div class="chips"><span class="chip">ReAct pattern</span><span class="chip">Tool/function calling</span><span class="chip">Code interpreter</span><span class="chip">State machines</span><span class="chip">LangGraph</span><span class="chip">Short &amp; long-term memory</span></div>
-  <h3>Curated Resources — Rule of Three</h3>
+  <h2>3 &bull; AI Agents &amp; Multi-Step Workflows <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 32–35 &bull; 9–15 hrs/wk</span></h2>
+  <h3>What to learn</h3>
+  <div class="chips"><span class="chip">Tool Calling</span><span class="chip">LangGraph</span><span class="chip">State Management</span><span class="chip">Cyclic Graphs</span><span class="chip">Retries &amp; Fallbacks</span><span class="chip">Human-in-the-Loop</span><span class="chip">LangSmith Tracing</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://langchain-ai.github.io/langgraph/" target="_blank">LangGraph Official Documentation &amp; Tutorials</a> <em>(Free)</em> — Cyclic graphs &amp; state persistence.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://arxiv.org/abs/2210.03629" target="_blank">ReAct: Synergizing Reasoning and Acting in Language Models</a> <em>(Free PDF)</em>.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> Build a multi-step research agent with tool calling and SQLite state checkpoints. <strong>Stopping Condition:</strong> Agent successfully executes 3-step reasoning chain (query DB -> calculate -> reply) without infinite tool loops.</li>
-  </ul>
-  <h3>Module 3 Deliverables</h3>
-  <ul class="steps">
-    <li>Autonomous research agent: question input → search docs → run Python code tool → synthesize cited response.</li>
-    <li>Code debugger agent: accepts failing test case → invokes linter tool → patches source → re-runs test until passing.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://langchain-ai.github.io/langgraph/tutorials/introduction/" target="_blank">LangGraph Official Introduction</a> <em>(Free)</em> &mdash; Stateful graphs &amp; checkpoints.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://arxiv.org/abs/2210.03629" target="_blank">ReAct Architecture Paper</a> <em>(Free PDF)</em>.</li>
+    <li><strong>Practical Task (Project 3 Milestone):</strong> Multi-step autonomous agent with tool execution, state persistence, error retries, and human approval gates for critical actions.</li>
   </ul>
 
-  <h2>4 · LLM Evaluation, Benchmarking &amp; Data Quality <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 10–14</span></h2>
-  <div class="alert as" style="margin-bottom:1rem">
-    <strong>⭐ The Catalog QA Superpower:</strong> While general developers struggle with model hallucination and subjective outputs, a QA engineer knows test cases, edge boundaries, regression testing, and data integrity. <strong>AI Evaluation Engineering</strong> is one of the highest-demand niches in AI right now.
+  <h2>4 &bull; LLM Evaluation, Quality Engineering &amp; Guardrails <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 36–38 &bull; 9–15 hrs/wk</span></h2>
+  <div class="alert as">
+    <strong>⭐ Your Catalog QA Superpower:</strong> AI evaluation engineering is one of the highest-demand niches in AI. Use your experience in data quality, validation rules, edge cases, and regression testing to build automated evaluation pipelines.
   </div>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">RAGAS</span><span class="chip">DeepEval</span><span class="chip">Promptfoo</span><span class="chip">TruLens</span><span class="chip">G-Eval</span><span class="chip">LLM-as-a-judge</span><span class="chip">Synthetic test generation</span><span class="chip">Faithfulness &amp; answer relevancy</span><span class="chip">CI/CD eval gates</span><span class="chip">Dataset cleaning</span></div>
-  <h3>Curated Resources — Rule of Three</h3>
+  <div class="chips"><span class="chip">DeepEval</span><span class="chip">Promptfoo</span><span class="chip">Ragas</span><span class="chip">Faithfulness &amp; Relevancy</span><span class="chip">Hallucination Detection</span><span class="chip">Prompt Injection Tests</span><span class="chip">GitHub Actions CI Gates</span><span class="chip">NeMo Guardrails</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://docs.confident-ai.com/" target="_blank">DeepEval (Confident AI) Documentation</a> <em>(Free)</em> — PyTest-style unit testing for LLMs.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://docs.ragas.io/en/latest/" target="_blank">RAGAS Framework Docs</a> <em>(Free)</em> — Faithfulness, context recall, and answer relevance.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> Automated GitHub Actions CI evaluation harness for a RAG pipeline. <strong>Stopping Condition:</strong> Automated test pipeline evaluates 50 test cases and blocks pull requests if faithfulness falls below 0.85.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://docs.confident-ai.com/" target="_blank">DeepEval (Confident AI) Docs</a> &amp; <a href="https://www.promptfoo.dev/" target="_blank">Promptfoo CI/CD Security Docs</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://docs.ragas.io/en/latest/" target="_blank">Ragas Framework Docs</a> <em>(Free)</em>.</li>
+    <li><strong>Practical Task (Project 2 Milestone):</strong> Automated evaluation harness in GitHub Actions CI testing 50+ synthetic test cases; halts pull requests if faithfulness drops below 0.85 or prompt injection tests fail.</li>
   </ul>
-  <h3>Module 4 Deliverables (Portfolio Essentials)</h3>
+
+  <h2>5 &bull; Fine-Tuning &amp; Production Deployment <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 39–40 &bull; 9–15 hrs/wk</span></h2>
+  <h3>What to learn</h3>
+  <div class="chips"><span class="chip">LoRA / QLoRA</span><span class="chip">Hugging Face PEFT</span><span class="chip">TRL SFTTrainer</span><span class="chip">FastAPI Streaming</span><span class="chip">Redis Semantic Cache</span><span class="chip">Dockerized Deployment</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
   <ul class="steps">
-    <li>Automated RAG evaluation pipeline: generate 100 synthetic QA pairs from domain docs, compute RAGAS metrics, and block CI/CD pipeline if faithfulness drops below 0.85.</li>
-    <li>Red-teaming &amp; prompt injection test suite: write 50 edge-case test cases using Promptfoo to assert structured JSON output and guardrails adherence.</li>
-    <li>Domain fine-tuning dataset curation tool: clean, deduplicate, and format raw catalog data into instruction-tuning JSONL pairs with automated validation.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://huggingface.co/docs/trl/sft_trainer" target="_blank">Hugging Face TRL SFTTrainer</a> &amp; <a href="https://github.com/mlabonne/llm-course" target="_blank">Maxime Labonne: The LLM Course</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://fastapi.tiangolo.com/tutorial/" target="_blank">FastAPI Official Tutorial</a> <em>(Free)</em>.</li>
+    <li><strong>Practical Task:</strong> Fine-tune a 1.5B model (Qwen2.5-1.5B or SmolLM2) using 4-bit QLoRA on domain data; deploy inside a Dockerized FastAPI service with Redis semantic caching.</li>
   </ul>
 
   <!-- STAGE 1 EXIT GATE -->
-  <div class="block bg" style="margin-top:2rem;border-width:2px;background:linear-gradient(135deg,#0a1a14,#101a18);">
-    <div class="bt" style="font-size:16px;color:var(--green)">🎯 STAGE 1 EXIT GATE: Job-Ready as AI Engineer / AI Eval Engineer</div>
+  <div class="block bg" style="margin-top:2.5rem;border-width:2px;background:linear-gradient(135deg,#0a1a14,#101a18);">
+    <div class="bt" style="font-size:16px;color:var(--green)">🎯 APPLIED AI ENGINEERING COMPLETION GATE (Stage 1 Career Transition Exit)</div>
     <div class="bb" style="color:var(--text);">
-      <p style="margin-bottom:0.75rem">You do <strong>NOT</strong> have to wait 24 months to land an AI role! At the completion of Phase 3, you possess the exact stack needed for modern AI application engineering:</p>
+      <p style="margin-bottom:0.75rem;">You are now job-ready to interview as an AI Engineer / Applied AI Engineer when you can independently demonstrate:</p>
       <ul class="steps" style="margin-bottom:0.75rem;">
-        <li>✅ Production RAG service (FastAPI + Qdrant/Pinecone + Docker)</li>
-        <li>✅ Autonomous Agent with tool calling (LangGraph + memory)</li>
-        <li>✅ Automated LLM evaluation harness with DeepEval & CI/CD integration</li>
-        <li>✅ Fine-tuned small open-weight LLM using QLoRA/TRL (locally on RTX 2050 4GB or free Google Colab T4) with automated eval metrics</li>
+        <li>✅ <strong>Production RAG System (Project 1):</strong> Tested hybrid search + cross-encoder re-ranking + cited answers in Docker.</li>
+        <li>✅ <strong>LLM Evaluation Platform (Project 2):</strong> Automated CI/CD quality gate with DeepEval/Promptfoo blocking regressions.</li>
+        <li>✅ <strong>Production AI Agent (Project 3):</strong> LangGraph state machine with tool execution, retries, and human approval.</li>
+        <li>✅ <strong>Architectural Defense:</strong> Explain retrieval trade-offs, hallucination mitigation, and evaluation metrics without notes.</li>
       </ul>
       <p style="font-size:13px;color:var(--text2);margin-bottom:0.5rem;">
-        💼 <strong>Target Roles:</strong> AI Engineer, AI Evaluation Engineer, LLM Application Engineer, Prompt & QA Systems Engineer.<br>
-        💰 <strong>Compensation:</strong> ₹18L–₹35L (India) / $100K–$140K (US).<br>
-        🚀 <strong>The Game Plan:</strong> Apply to jobs now. Once inside an AI team with production traffic, proceed to Phase 4 using company-paid GPU clusters to transition into Core AI Infrastructure!
+        💼 <strong>Target Roles:</strong> AI Engineer, Applied AI Engineer, AI Evaluation Engineer, LLM Application Developer.<br>
+        🚀 <strong>Career Strategy:</strong> Begin applying for roles now! Once hired inside an AI engineering team, continue into Phase 4 and Phase 5 on enterprise GPU clusters.
       </p>
     </div>
   </div>
-  <div class="alert as" style="margin-top:1rem"><strong>Phase 3 check:</strong> Can you build production RAG, fine-tune with QLoRA, automate evals in CI, and deploy an agent? Yes → You are employable! Start applying while studying Phase 4.</div>
 </div>
 
-<!-- PHASE 4 -->
+
 <div id="page-p4" class="page">
-  <div class="hero"><div class="tag">Phase 4 · Months 17–24</div><h1>AI Infrastructure<br>& Systems</h1><p>GPU clusters. OpenAI Triton & CUDA. Distributed training (NCCL). Inference serving at scale. The top 5% territory.</p></div>
-  <div class="alert ad"><strong>Prerequisites:</strong> Complete OS fundamentals (OSTEP: memory + concurrency) and basic C++ reading BEFORE starting. GPU architecture won't make sense without understanding virtual memory, paging, and cache hierarchies.</div>
+  <div class="hero">
+    <div class="tag">Phase 4 &bull; Months 10–16 (Weeks 41–64)</div>
+    <h1>ML Platform &amp; AI Systems Engineering</h1>
+    <p>Understand how AI applications and models operate reliably in production. Master MLflow, model serving, drift monitoring, Redis caching, Kafka streaming, and Kubernetes.</p>
+  </div>
+  
+  <div class="alert ai">
+    <strong>Objective:</strong> Bridge the gap between individual AI applications and production platform infrastructure. Learn how models are registered, deployed, monitored, and scaled across distributed services.
+  </div>
+
+  <h2>1 &bull; Experiment Tracking, Model Registry &amp; Versioning <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 41–44 &bull; 9–15 hrs/wk</span></h2>
+  <h3>What to learn</h3>
+  <div class="chips"><span class="chip">MLflow Tracking</span><span class="chip">Model Registry</span><span class="chip">Artifact Storage (S3/MinIO)</span><span class="chip">Model Lineage</span><span class="chip">Weights &amp; Biases</span><span class="chip">Staging &amp; Production Promotion</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
+  <ul class="steps">
+    <li><strong>Primary Resource:</strong> <a href="https://mlflow.org/docs/latest/index.html" target="_blank">MLflow Official Documentation &amp; Quickstart</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://docs.wandb.ai/" target="_blank">Weights &amp; Biases Documentation</a> <em>(Free)</em>.</li>
+    <li><strong>Practical Task &amp; Stopping Condition:</strong> Build an automated training script that logs parameters, loss curves, and artifact weights to a local MLflow registry, promoting candidates to Production. <strong>Stopping Condition:</strong> Model artifact loaded via URI <code>models:/model_name/Production</code> and executes inference cleanly.</li>
+  </ul>
+
+  <h2>2 &bull; Model Serving, Batching &amp; Latency SLOs <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 45–48 &bull; 9–15 hrs/wk</span></h2>
+  <h3>What to learn</h3>
+  <div class="chips"><span class="chip">Offline vs Online Inference</span><span class="chip">Dynamic Request Batching</span><span class="chip">TorchScript / ONNX Runtime</span><span class="chip">Triton Inference Server Basics</span><span class="chip">Latency SLOs (p50/p95/p99)</span><span class="chip">Cold Start Mitigation</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
+  <ul class="steps">
+    <li><strong>Primary Resource:</strong> <a href="https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/index.html" target="_blank">NVIDIA Triton Inference Server Guide</a> <em>(Free)</em> &amp; <a href="https://onnxruntime.ai/docs/" target="_blank">ONNX Runtime Docs</a>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning" target="_blank">Google Cloud MLOps Architecture Guide</a> <em>(Free)</em>.</li>
+    <li><strong>Practical Task &amp; Stopping Condition:</strong> Export a fine-tuned model to ONNX; wrap in an async server with dynamic request batching. <strong>Stopping Condition:</strong> Benchmark proves dynamic batching increases throughput by >2x compared to sequential serving.</li>
+  </ul>
+
+  <h2>3 &bull; Observability, Data Drift &amp; Concept Drift <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 49–52 &bull; 9–15 hrs/wk</span></h2>
+  <h3>What to learn</h3>
+  <div class="chips"><span class="chip">Prometheus Metrics</span><span class="chip">Grafana Dashboards</span><span class="chip">Data Drift Detection</span><span class="chip">Concept Drift</span><span class="chip">Kolmogorov-Smirnov Test</span><span class="chip">Evidently AI</span><span class="chip">Alertmanager</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
+  <ul class="steps">
+    <li><strong>Primary Resource:</strong> <a href="https://docs.evidentlyai.com/" target="_blank">Evidently AI Documentation</a> &amp; <a href="https://prometheus.io/docs/introduction/overview/" target="_blank">Prometheus Official Docs</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://grafana.com/docs/grafana/latest/" target="_blank">Grafana Fundamentals</a> <em>(Free)</em>.</li>
+    <li><strong>Practical Task &amp; Stopping Condition:</strong> Instrument an inference service to emit custom Prometheus metrics (p95 latency, input token distribution); run daily drift checks. <strong>Stopping Condition:</strong> Grafana displays live dashboard and simulated distribution shift triggers an automated alert.</li>
+  </ul>
+
+  <h2>4 &bull; Caching, Streaming &amp; Message Queues <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 53–56 &bull; 9–15 hrs/wk</span></h2>
+  <h3>What to learn</h3>
+  <div class="chips"><span class="chip">Redis Cluster</span><span class="chip">Consistent Hashing</span><span class="chip">Cache Stampede Prevention</span><span class="chip">Apache Kafka</span><span class="chip">Partitioning</span><span class="chip">Consumer Groups</span><span class="chip">Backpressure</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
+  <ul class="steps">
+    <li><strong>Primary Resource:</strong> <a href="https://kafka.apache.org/documentation/" target="_blank">Apache Kafka Official Documentation</a> &amp; <a href="https://redis.io/docs/" target="_blank">Redis Documentation</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> "Designing Data-Intensive Applications" (DDIA) by Martin Kleppmann <em>(Chapters 6 &amp; 11)</em>.</li>
+    <li><strong>Practical Task &amp; Stopping Condition:</strong> Build a high-throughput event streamer processing 10,000 synthetic events/sec through Kafka partitions into a Redis cache. <strong>Stopping Condition:</strong> Handles consumer restarts without message loss or offset corruption.</li>
+  </ul>
+
+  <h2>5 &bull; Kubernetes &amp; Container Orchestration <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 57–60 &bull; 9–15 hrs/wk</span></h2>
+  <h3>What to learn</h3>
+  <div class="chips"><span class="chip">Kubernetes Architecture</span><span class="chip">Pods, Deployments, Services</span><span class="chip">ConfigMaps &amp; Secrets</span><span class="chip">Readiness &amp; Liveness Probes</span><span class="chip">KubeRay (Ray on K8s)</span><span class="chip">Horizontal Pod Autoscaler (HPA)</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
+  <ul class="steps">
+    <li><strong>Primary Resource:</strong> <a href="https://kubernetes.io/docs/tutorials/" target="_blank">Kubernetes Official Tutorials</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://docs.ray.io/en/latest/cluster/kubernetes/index.html" target="_blank">KubeRay Documentation</a> <em>(Free)</em>.</li>
+    <li><strong>Practical Task &amp; Stopping Condition:</strong> Deploy a local <code>kind</code> cluster with a containerized model serving deployment, readiness probes, and HPA. <strong>Stopping Condition:</strong> <code>kubectl get pods</code> shows healthy status and load generator triggers horizontal scaling.</li>
+  </ul>
+
+  <h2>6 &bull; Distributed Systems Fundamentals &amp; Inference Benchmarking <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 61–64 &bull; 9–15 hrs/wk</span></h2>
+  <h3>What to learn</h3>
+  <div class="chips"><span class="chip">CAP Theorem &amp; PACELC</span><span class="chip">Consistent Hashing with Virtual Nodes</span><span class="chip">Data Replication</span><span class="chip">Locust Load Testing</span><span class="chip">Throughput vs Latency</span><span class="chip">Concurrency Modeling</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
+  <ul class="steps">
+    <li><strong>Primary Resource:</strong> <a href="https://locust.io/" target="_blank">Locust Load Testing Guide</a> &amp; <a href="https://github.com/donnemartin/system-design-primer" target="_blank">System Design Primer</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> "Designing Data-Intensive Applications" (DDIA) by Martin Kleppmann <em>(Chapters 5, 7, 8, 9)</em>.</li>
+    <li><strong>Practical Task &amp; Stopping Condition:</strong> Implement consistent hashing with virtual nodes distributing keys across 5 nodes; benchmark model serving under 50 concurrent streams. <strong>Stopping Condition:</strong> Benchmark report clearly plots latency vs concurrency curves.</li>
+  </ul>
+
+  <!-- PHASE 4 FORMAL EXIT GATE -->
+  <div class="block bam" style="margin-top:2.5rem;border-width:2px;background:linear-gradient(135deg,#1f1a10,#261e12);">
+    <div class="bt" style="font-size:16px;color:var(--amber)">🏁 ML PLATFORM COMPLETION GATE (Exit Assessment)</div>
+    <div class="bb" style="color:var(--text);">
+      <p style="margin-bottom:0.75rem;">To pass Phase 4, you must independently demonstrate that you can:</p>
+      <ul class="steps" style="margin-bottom:0.75rem;">
+        <li>✅ Track experiments, log artifacts, and version models using an MLflow registry.</li>
+        <li>✅ Deploy an asynchronous model-serving container to Kubernetes with readiness probes and automated scaling.</li>
+        <li>✅ Instrument inference services with Prometheus metrics and construct a Grafana monitoring dashboard.</li>
+        <li>✅ Implement automated data drift and concept drift detection on streaming inference requests.</li>
+        <li>✅ Benchmark inference latency (p50/p95/p99) and explain throughput vs latency trade-offs under load.</li>
+      </ul>
+      <p style="font-size:12.5px;color:var(--text2);">You now understand how AI applications operate reliably in production. You are ready to enter Phase 5: Core AI Infrastructure.</p>
+    </div>
+  </div>
+</div>
+
+
+<div id="page-p5" class="page">
+  <div class="hero">
+    <div class="tag">Phase 5 &bull; Months 16–24+ (Weeks 65–96+) &bull; Long-Term Mastery</div>
+    <h1>Advanced AI Infrastructure</h1>
+    <p>GPU computing architecture. OpenAI Triton &amp; custom CUDA kernels. High-throughput vLLM serving. Distributed training (FSDP, ZeRO, NCCL). <strong>This is top 5% systems engineering territory.</strong></p>
+  </div>
+  
+  <div class="alert ad">
+    <strong>Prerequisites:</strong> Operating systems fundamentals (processes, virtual memory, concurrency) and C++ fundamentals from Phase 1 must be solid. GPU hardware will not make sense without understanding memory hierarchies and caching.
+  </div>
 
   <!-- HARDWARE LAB ON A BUDGET -->
   <div class="alert ai" style="margin-bottom:1.5rem;background:#131526;border-color:var(--accent2);">
     <strong style="color:var(--accent2);font-size:14px;">💻 Hardware Lab Setup on a Budget (&lt;$20/Month)</strong><br>
     <span style="font-size:13px;color:var(--text2);line-height:1.6;">
-      You do <strong>NOT</strong> need to buy an $8,000 GPU or spend thousands on cloud compute to learn AI Infra:
-      <br>• <strong>Free Tier:</strong> Google Colab (Free T4) for testing basic Triton syntax and PyTorch DDP on CPU with <code>torchrun --nproc_per_node=2 --backend=gloo</code>.
-      <br>• <strong>Free GPU Credits:</strong> <a href="https://modal.com" target="_blank" style="color:var(--accent2);font-weight:700;">Modal Labs</a> ($30/month free credit) — runs serverless H100, A100, and L4 GPUs in seconds.
-      <br>• <strong>Low-Cost Bare Metal:</strong> <a href="https://runpod.io" target="_blank" style="color:var(--accent2);font-weight:700;">RunPod</a> or <a href="https://lambdalabs.com" target="_blank" style="color:var(--accent2);font-weight:700;">Lambda Labs</a> spot instances ($0.20–$0.40/hr for RTX 4090 or A4000) with root SSH access to run NVIDIA Nsight Compute & Nsight Systems profilers. 20 hours of monthly profiling = under $8!
+      You do <strong>NOT</strong> need an $8,000 GPU to master AI Infra:
+      <br>&bull; <strong>Local Laptop GPU:</strong> RTX 2050 (4GB VRAM) for testing basic Triton kernels, PyTorch memory profilers, and quantized sub-3B models.
+      <br>&bull; <strong>Free Tier:</strong> Google Colab (Free T4) for running basic PyTorch DDP on simulated multi-worker setups.
+      <br>&bull; <strong>Low-Cost Bare Metal:</strong> <a href="https://runpod.io" target="_blank" style="color:var(--accent2);font-weight:700;">RunPod</a> or <a href="https://lambdalabs.com" target="_blank" style="color:var(--accent2);font-weight:700;">Lambda Labs</a> spot instances ($0.20–$0.40/hr for RTX 4090 or A4000) with root SSH access to run NVIDIA Nsight Systems &amp; Compute profilers. 20 hours of monthly profiling = under $8!
     </span>
   </div>
 
-  <h3>5 Gold-Standard Curricula — Anchor everything here</h3>
-  <div class="g2">
-    <div class="block bc"><div class="bt"><a href="https://www.youtube.com/playlist?list=PLoROMvodv4rPOWA-omMM6STXaWW4FvJT8" target="_blank" style="color:inherit;text-decoration:none">Stanford CS149 — Parallel Computing ↗</a><span class="wk">Weeks 1–4</span></div><div class="bb">Multi-core execution, SIMD, memory bandwidth, roofline model, GPU warp scheduling. THE hardware bible.</div></div>
-    <div class="block bc"><div class="bt"><a href="https://github.com/cuda-mode" target="_blank" style="color:inherit;text-decoration:none">CUDA Mode Community ↗</a><span class="wk">Weeks 1–8</span></div><div class="bb">30+ lectures by PyTorch/Meta/NVIDIA engineers. Custom CUDA kernels, Triton, FlashAttention from scratch.</div></div>
-    <div class="block ba"><div class="bt"><a href="https://triton-lang.org/main/getting-started/tutorials/index.html" target="_blank" style="color:inherit;text-decoration:none">OpenAI Triton Official Tutorials ↗</a><span class="wk">Weeks 3–6</span></div><div class="bb">The industry standard in 2026. Write high-performance GPU kernels directly in Python with block-level tiling.</div></div>
-    <div class="block bt2"><div class="bt"><a href="https://efficientml.ai/" target="_blank" style="color:inherit;text-decoration:none">MIT 6.5940 — Efficient ML Systems ↗</a><span class="wk">Inference focus</span></div><div class="bb">Quantization (AWQ, SmoothQuant, FP8), FlashAttention-2, speculative decoding, continuous batching. Prof. Song Han.</div></div>
-  </div>
-
-  <!-- MODULE 1: INFERENCE & SERVING -->
-  <h2>1 · Production Inference &amp; High-Throughput Serving <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 1–6 · ~25 hrs/wk</span></h2>
-  <div class="alert ai"><strong>Prerequisites:</strong> Phase 1 Docker/FastAPI + Phase 2/3 PyTorch &amp; Transformers. Start here before writing custom kernels.</div>
+  <h2>1 &bull; C++ Systems Programming, OS Internals &amp; Concurrency <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 65–70 &bull; 9–15 hrs/wk</span></h2>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">vLLM (PagedAttention &amp; V1 engine)</span><span class="chip">SGLang &amp; RadixAttention</span><span class="chip">Continuous batching</span><span class="chip">Chunked prefill</span><span class="chip">KV cache quantization (FP8 / AWQ / INT4)</span><span class="chip">Speculative decoding (EAGLE/Medusa)</span><span class="chip">TensorRT-LLM</span><span class="chip">Time-to-First-Token (TTFT)</span><span class="chip">Inter-Token Latency (ITL)</span><span class="chip">Prefill vs Decode phases</span></div>
-  <h3>Curated Resources — Rule of Three</h3>
+  <div class="chips"><span class="chip">C++ Systems Programming</span><span class="chip">Virtual Memory &amp; Paging</span><span class="chip">Cache Hierarchies (L1/L2/L3)</span><span class="chip">Processes &amp; Threads</span><span class="chip">POSIX Threads (pthread)</span><span class="chip">Mutexes &amp; Condition Variables</span><span class="chip">Lock-Free Ring Buffers</span><span class="chip">Valgrind / AddressSanitizer</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://docs.vllm.ai/" target="_blank">vLLM Architecture Guide</a> &amp; <a href="https://www.anyscale.com/blog/continuous-batching-llm-inference" target="_blank">Continuous Batching Deep Dive</a> <em>(Free)</em>.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://arxiv.org/abs/2309.06180" target="_blank">PagedAttention Paper (Kwon et al.)</a> <em>(Free PDF)</em> — Virtual memory for KV caches.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> Benchmark deployment comparing HuggingFace pipelines vs. vLLM continuous batching across 10, 50, 200 concurrent streams. <strong>Stopping Condition:</strong> Benchmark report clearly proves >2.5x throughput gain and zero OOMs under concurrent load.</li>
-  </ul>
-  <h3>Module 1 Deliverables</h3>
-  <ul class="steps">
-    <li>Benchmark deployment comparing naive HuggingFace pipelines vs. vLLM continuous batching; measure TTFT, ITL, token throughput, and VRAM fragmentation.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://pages.cs.wisc.edu/~remzi/OSTEP/" target="_blank">Operating Systems: Three Easy Pieces (OSTEP)</a> <em>(Chapters on Memory &amp; Concurrency, Free PDF)</em>.</li>
+    <li><strong>Reference Resource:</strong> "C++ Concurrency in Action" by Anthony Williams.</li>
+    <li><strong>Practical Task:</strong> Implement a high-performance multithreaded task queue and worker thread pool in C++20 with atomic sequence counters and zero race conditions under ThreadSanitizer.</li>
   </ul>
 
-  <!-- MODULE 2: K8S & OBSERVABILITY -->
-  <h2>2 · Kubernetes, Ray &amp; GPU Cluster Observability <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 7–10 · ~25 hrs/wk</span></h2>
-  <div class="alert ai"><strong>Prerequisites:</strong> Docker from Phase 1 + Module 1 serving engine.</div>
+  <h2>2 &bull; GPU Architecture, OpenAI Triton &amp; CUDA Kernels <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 71–76 &bull; 9–15 hrs/wk</span></h2>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">Kubernetes</span><span class="chip">KubeRay (Ray on K8s)</span><span class="chip">NVIDIA GPU Operator</span><span class="chip">DCGM Prometheus Exporter</span><span class="chip">Grafana GPU Dashboards</span><span class="chip">KEDA Autoscaling (on queue depth)</span><span class="chip">Spot instance fault tolerance</span><span class="chip">GPUDirect &amp; Object Caching</span></div>
-  <h3>Curated Resources — Rule of Three</h3>
+  <div class="chips"><span class="chip">Streaming Multiprocessors (SMs)</span><span class="chip">Warps &amp; Divergence</span><span class="chip">HBM vs Shared Memory vs Registers</span><span class="chip">Memory Coalescing</span><span class="chip">OpenAI Triton (@triton.jit)</span><span class="chip">Triton Block Pointers</span><span class="chip">NVIDIA Nsight Compute</span><span class="chip">Roofline Analysis</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://kubernetes.io/docs/tutorials/" target="_blank">Kubernetes Official Deployment Guide</a> &amp; <a href="https://docs.ray.io/en/latest/cluster/kubernetes/index.html" target="_blank">KubeRay Docs</a> <em>(Free)</em>.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://github.com/NVIDIA/gpu-operator" target="_blank">NVIDIA GPU Operator Docs</a> <em>(Free)</em> — GPU device plugins &amp; drivers on K8s.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> Deploy a local <code>kind</code> cluster with containerized inference pod, readiness probes, and Prometheus scraping. <strong>Stopping Condition:</strong> <code>kubectl get pods</code> shows healthy status and Prometheus queries return live request latency metrics.</li>
-  </ul>
-  <h3>Module 2 Deliverables</h3>
-  <ul class="steps">
-    <li>Deploy a local <code>kind</code> / minikube cluster with vLLM, instrumented with Prometheus scraping DCGM metrics and a Grafana dashboard monitoring TTFT and GPU memory saturation.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://triton-lang.org/main/getting-started/tutorials/index.html" target="_blank">OpenAI Triton Official Tutorials</a> &amp; <a href="https://www.youtube.com/playlist?list=PLoROMvodv4rPOWA-omMM6STXaWW4FvJT8" target="_blank">Stanford CS149: Parallel Computing</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/" target="_blank">NVIDIA CUDA C++ Programming Guide</a> <em>(Free)</em>.</li>
+    <li><strong>Practical Task (Project 5 Milestone):</strong> Implement a fused layernorm or fused softmax kernel in OpenAI Triton; verify numerical accuracy within $10^{-5}$ vs PyTorch; profile with Nsight Compute and construct an empirical Roofline analysis.</li>
   </ul>
 
-  <!-- MODULE 3: DISTRIBUTED TRAINING -->
-  <h2>3 · Distributed Training &amp; Collective Communication <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 11–16 · ~25 hrs/wk</span></h2>
-  <div class="alert ai"><strong>Prerequisites:</strong> Multi-process concepts from Phase 1 + PyTorch from Phase 2.</div>
+  <h2>3 &bull; High-Throughput LLM Serving &amp; Inference Optimization <span class="pill p0">P0 — Essential</span> <span class="hs">Weeks 77–82 &bull; 9–15 hrs/wk</span></h2>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">PyTorch DDP</span><span class="chip">FSDP (Fully Sharded Data Parallel)</span><span class="chip">DeepSpeed ZeRO 1/2/3</span><span class="chip">NCCL collectives (All-Reduce, Reduce-Scatter)</span><span class="chip">Ring All-Reduce algorithm</span><span class="chip">Tensor Parallelism (Megatron-LM)</span><span class="chip">Pipeline Parallelism</span><span class="chip">NVLink vs PCIe vs InfiniBand</span><span class="chip">Mixed precision (BF16 / FP8)</span></div>
-  <h3>Curated Resources — Rule of Three</h3>
+  <div class="chips"><span class="chip">vLLM Architecture</span><span class="chip">SGLang &amp; RadixAttention</span><span class="chip">PagedAttention</span><span class="chip">Continuous Batching</span><span class="chip">Chunked Prefill</span><span class="chip">KV Cache Quantization (FP8/INT4)</span><span class="chip">Speculative Decoding</span><span class="chip">TTFT vs ITL Metrics</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://pytorch.org/tutorials/intermediate/ddp_tutorial.html" target="_blank">PyTorch DDP Official Guide</a> &amp; <a href="https://lilianweng.github.io/posts/2021-09-25-train-large/" target="_blank">Lilian Weng: Training Large Models</a> <em>(Free)</em>.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://www.deepspeed.ai/getting-started/" target="_blank">DeepSpeed ZeRO Documentation</a> <em>(Free)</em> — ZeRO-1, ZeRO-2, ZeRO-3 sharding.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> Run multi-process PyTorch DDP simulation with `torchrun` and compare against single-worker baseline. <strong>Stopping Condition:</strong> Script completes 5 epochs with synchronized gradients across workers and asserts loss convergence.</li>
-  </ul>
-  <h3>Module 3 Deliverables</h3>
-  <ul class="steps">
-    <li>Multi-process distributed training harness using PyTorch DDP + FSDP; empirically measure VRAM per worker and communication overhead vs scaling efficiency across sharding strategies.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://docs.vllm.ai/" target="_blank">vLLM Architecture Guide</a> &amp; <a href="https://www.anyscale.com/blog/continuous-batching-llm-inference" target="_blank">Continuous Batching Deep Dive</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://arxiv.org/abs/2309.06180" target="_blank">PagedAttention Paper (Kwon et al.)</a> <em>(Free PDF)</em>.</li>
+    <li><strong>Practical Task (Project 4 Milestone):</strong> Benchmark deployment comparing naive Hugging Face sequential serving vs vLLM continuous batching across 10, 50, 200 concurrent streams; measure TTFT, ITL, and memory fragmentation.</li>
   </ul>
 
-  <!-- MODULE 4: TRITON & CUDA SYSTEMS -->
-  <h2>4 · GPU Architecture, OpenAI Triton &amp; CUDA Kernels <span class="pill p2">P2 — Advanced</span> <span class="hs">Weeks 17–24 · ~25 hrs/wk</span></h2>
-  <div class="alert ai"><strong>Prerequisites:</strong> C++ Fundamentals (Phase 1 Module 4) + OS memory &amp; cache hierarchies.</div>
+  <h2>4 &bull; Distributed Training &amp; Collective Communications <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 83–88 &bull; 9–15 hrs/wk</span></h2>
   <h3>What to learn</h3>
-  <div class="chips"><span class="chip">Streaming Multiprocessors (SMs)</span><span class="chip">Warps &amp; divergence</span><span class="chip">Memory hierarchy (HBM vs L2 vs SRAM)</span><span class="chip">Memory coalescing</span><span class="chip">Shared memory bank conflicts</span><span class="chip">OpenAI Triton (@triton.jit)</span><span class="chip">Triton block pointers</span><span class="chip">PyTorch torch.compile</span><span class="chip">NVIDIA Nsight Compute</span><span class="chip">Roofline analysis</span></div>
-  <h3>Curated Resources — Rule of Three</h3>
+  <div class="chips"><span class="chip">PyTorch DDP</span><span class="chip">FSDP (Fully Sharded Data Parallel)</span><span class="chip">DeepSpeed ZeRO 1/2/3</span><span class="chip">NCCL Collectives (AllReduce, ReduceScatter)</span><span class="chip">Ring All-Reduce Algorithm</span><span class="chip">Tensor Parallelism (Megatron-LM)</span><span class="chip">Pipeline Parallelism</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
   <ul class="steps">
-    <li><strong>Primary Resource (1 Only):</strong> <a href="https://triton-lang.org/main/getting-started/tutorials/index.html" target="_blank">OpenAI Triton Official Tutorials</a> &amp; <a href="https://www.youtube.com/playlist?list=PLoROMvodv4rPOWA-omMM6STXaWW4FvJT8" target="_blank">Stanford CS149: Parallel Computing</a> <em>(Free)</em>.</li>
-    <li><strong>Reference Resource (1 Only):</strong> <a href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/" target="_blank">NVIDIA CUDA C++ Programming Guide</a> <em>(Free)</em>.</li>
-    <li><strong>Practical Task &amp; Stopping Condition:</strong> Implement a fused layernorm or fused softmax kernel in OpenAI Triton. <strong>Stopping Condition:</strong> Numerical validation test matches `torch.nn.functional` output within $10^{-5}$ tolerance with >1.2x memory bandwidth speedup.</li>
-  </ul>
-  <h3>Module 4 Deliverables (Capstone Project)</h3>
-  <ul class="steps">
-    <li>Implement a fused attention or fused layernorm kernel in <strong>OpenAI Triton</strong>; profile memory traffic and compute throughput using <strong>NVIDIA Nsight Compute</strong>; construct an empirical Roofline analysis showing compute ceiling vs memory bandwidth bound.</li>
+    <li><strong>Primary Resource:</strong> <a href="https://pytorch.org/tutorials/intermediate/ddp_tutorial.html" target="_blank">PyTorch DDP Official Guide</a> &amp; <a href="https://lilianweng.github.io/posts/2021-09-25-train-large/" target="_blank">Lilian Weng: Training Large Models</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://www.deepspeed.ai/getting-started/" target="_blank">DeepSpeed ZeRO Documentation</a> <em>(Free)</em>.</li>
+    <li><strong>Practical Task:</strong> Multi-process distributed training harness using PyTorch DDP + FSDP; measure VRAM per worker and communication overhead vs scaling efficiency across sharding strategies.</li>
   </ul>
 
-  <!-- STAGE 2 FORMAL EXIT GATE -->
-  <div class="block bc" style="margin-top:2.5rem;border-width:2px;background:linear-gradient(135deg,#1f1315,#261318);">
-    <div class="bt" style="font-size:16px;color:var(--coral)">🚀 STAGE 2 EXIT GATE: AI Infrastructure &amp; Systems Engineer</div>
+  <h2>5 &bull; Kubernetes GPU Workloads &amp; Cluster Infrastructure <span class="pill p1">P1 — Important</span> <span class="hs">Weeks 89–96 &bull; 9–15 hrs/wk</span></h2>
+  <h3>What to learn</h3>
+  <div class="chips"><span class="chip">NVIDIA GPU Operator</span><span class="chip">DCGM Prometheus Exporter</span><span class="chip">Grafana GPU Telemetry</span><span class="chip">KubeRay Distributed Clusters</span><span class="chip">KEDA Queue Autoscaling</span><span class="chip">Spot Instance Fault Tolerance</span></div>
+  <h3>Curated Resources &bull; Rule of Three</h3>
+  <ul class="steps">
+    <li><strong>Primary Resource:</strong> <a href="https://github.com/NVIDIA/gpu-operator" target="_blank">NVIDIA GPU Operator Docs</a> &amp; <a href="https://docs.ray.io/en/latest/cluster/kubernetes/index.html" target="_blank">KubeRay Documentation</a> <em>(Free)</em>.</li>
+    <li><strong>Reference Resource:</strong> <a href="https://docs.nvidia.com/datacenter/dcgm/latest/dcgm-user-guide/" target="_blank">NVIDIA DCGM User Guide</a> <em>(Free)</em>.</li>
+    <li><strong>Practical Task:</strong> Deploy a multi-worker model serving cluster on Kubernetes instrumented with NVIDIA DCGM scraping GPU temperature, VRAM utilization, and compute saturation into Grafana.</li>
+  </ul>
+
+  <!-- STAGE 2 EXIT GATE -->
+  <div class="block br" style="margin-top:2.5rem;border-width:2px;background:linear-gradient(135deg,#1f1315,#261318);">
+    <div class="bt" style="font-size:16px;color:var(--coral)">🚀 AI INFRASTRUCTURE COMPLETION GATE (Stage 2 Career Target)</div>
     <div class="bb" style="color:var(--text);">
-      <p style="margin-bottom:0.75rem;">To pass the final milestone of the roadmap, you must demonstrate real systems capability:</p>
+      <p style="margin-bottom:0.75rem;">To pass the final milestone and qualify for core AI Infrastructure roles, you must verify:</p>
       <ul class="steps" style="margin-bottom:0.75rem;">
-        <li>✅ Deploy a production model-serving system (vLLM / Triton) on Kubernetes with continuous batching.</li>
-        <li>✅ Benchmark throughput and latency (TTFT, ITL) under realistic concurrent load.</li>
-        <li>✅ Identify whether the bottleneck is memory-bandwidth bound or compute-bound using profiling tools (Nsight / DCGM / perf).</li>
-        <li>✅ Implement a measurable optimization (KV-cache quantization, chunked prefill, or custom fused Triton kernel) and prove its speedup.</li>
-        <li>✅ Document the end-to-end architecture, trade-offs, and empirical benchmarks in an engineering post.</li>
+        <li>✅ <strong>LLM Inference Benchmarking (Project 4):</strong> Empirically benchmark vLLM against baseline under 50+ concurrent streams, measuring TTFT, ITL, and memory fragmentation.</li>
+        <li>✅ <strong>GPU Kernel Optimisation (Project 5):</strong> Implement a fused Triton/CUDA kernel, profile memory traffic with Nsight Compute, and prove a measurable speedup.</li>
+        <li>✅ <strong>Distributed Systems Mastery:</strong> Explain PagedAttention virtual block tables, continuous batching iteration scheduling, and DeepSpeed ZeRO-3 memory sharding math.</li>
+        <li>✅ <strong>Distributed Training:</strong> Execute and debug a PyTorch DDP / FSDP multi-process training workload with NCCL collective communications.</li>
       </ul>
       <p style="font-size:13px;color:var(--text2);margin-bottom:0.5rem;">
-        💼 <strong>Target Roles:</strong> AI Infrastructure Engineer, ML Systems Engineer, GPU Performance Engineer, AI Platform Architect.<br>
-        💰 <strong>Compensation:</strong> ₹30L–₹60L (India) / $160K–$250K (US) at top AI labs &amp; tech leaders.
+        💼 <strong>Target Roles:</strong> AI Infrastructure Engineer, ML Systems Engineer, GPU Performance Engineer, AI Platform Architect at NVIDIA, Meta, Google, Databricks, Groq, and top AI labs.
       </p>
     </div>
   </div>
 </div>
 
-<!-- DSA MASTER SHEET (STRIVER A2Z + SILICON TRACK) -->
+
 <div id="page-dsa" class="page">
   <div class="hero">
     <div class="tag">DSA Sheet — Striver A2Z + Silicon Systems Track</div>
@@ -2921,7 +2927,7 @@ Client polls &rarr; GET /jobs/{id} &rarr; Returns PENDING | RUNNING | COMPLETED<
   <h2 id="sd-schedule">🗓️ Execution Timelines &amp; The First 14 Days <span class="hs">Daily Action Plan</span></h2>
   <div class="g2" style="margin-bottom:1.5rem;">
     <div class="block ba">
-      <div class="bt">Plan A: 6-Month Fast-Track (30–35 hrs/wk)</div>
+      <div class="bt">Sustainable Track: 9–15 hrs/week (Ergonomic Pacing)</div>
       <div class="bb">Prioritizes System Design Fundamentals, Linux, Distributed Queues, Model Serving (vLLM), and Projects 1, 2, 3, and 6. Gets you job-ready for Stage 1 (AI Platform / Inference Engineer).</div>
     </div>
     <div class="block bg">
@@ -2982,56 +2988,290 @@ Client polls &rarr; GET /jobs/{id} &rarr; Returns PENDING | RUNNING | COMPLETED<
 
 <!-- PROJECTS -->
 <div id="page-proj" class="page">
-  <div class="hero"><div class="tag">Portfolio — 2026 Edition</div><h1>Projects That Make<br>NVIDIA Engineers Stop</h1><p>No tutorials. Real problems, real benchmarks, real tradeoffs. Build at least 3 from this list.</p></div>
-  <div class="alert ad"><strong>What not to do:</strong> "I deployed vLLM" is not a project. A project = real problem + system you designed + benchmarks you ran + tradeoffs you documented.</div>
-
-  <h2>🔥 Elite — Inference Optimization</h2>
-  <div class="pc2" style="--_a:var(--red)">
-    <div class="ptit">1. Speculative Decoding Engine with Adaptive Draft Selection <span class="pill pr">Phase 4 · 6–8 weeks</span></div>
-    <div class="pmeta"><span class="chip">PyTorch</span><span class="chip">CUDA</span><span class="chip">Triton</span><span class="chip">Speculative Decoding</span><span class="chip">EAGLE/Medusa</span><span class="chip">Roofline analysis</span></div>
-    <div class="pb2">Implement speculative decoding from scratch — token tree verification, acceptance/rejection sampling, rollback. Add adaptive draft length (dynamically adjust based on real-time acceptance rate).<ul><li>2.1–2.8x throughput on Llama-3-8B vs greedy decoding</li><li>Profile with Nsight: before/after traces</li><li>Show token acceptance curves across task types (code vs chat vs math)</li></ul></div>
-  </div>
-  <div class="pc2" style="--_a:var(--red)">
-    <div class="ptit">2. Custom Triton Kernel for Fused RoPE + Attention <span class="pill pr">Phase 4 · 4–6 weeks</span></div>
-    <div class="pmeta"><span class="chip">Triton</span><span class="chip">CUDA</span><span class="chip">Kernel fusion</span><span class="chip">Memory bandwidth analysis</span><span class="chip">Nsight</span></div>
-    <div class="pb2">Fuse RoPE directly into FlashAttention — reads Q/K once, applies rotation in registers, proceeds to tiled attention. Never writes intermediate tensors to HBM.<ul><li>15–25% reduction in attention kernel time</li><li>Roofline chart proving memory-bound improvement</li><li>Correctness verified vs PyTorch reference with fp32 accumulation</li></ul></div>
+  <div class="hero">
+    <div class="tag">Core Engineering Portfolio &bull; 2026 Unified Edition</div>
+    <h1>The 5 Core Portfolio Projects</h1>
+    <p>Replaced tutorial clones with 5 serious, production-grade, progressively difficult systems projects. Clearly separated into <strong>AI Engineer Milestones</strong> (Projects 1–3) and <strong>AI Infrastructure Milestones</strong> (Projects 4–5).</p>
   </div>
 
-  <h2>🔥 Elite — GPU Memory & Profiling</h2>
-  <div class="pc2" style="--_a:var(--coral)">
-    <div class="ptit">3. GPU Memory Profiler — "Where Did My VRAM Go?" <span class="pill pc">Phase 4 · 4–5 weeks</span></div>
-    <div class="pmeta"><span class="chip">PyTorch memory hooks</span><span class="chip">CUDA memory API</span><span class="chip">torch.profiler</span><span class="chip">Visualization (Plotly)</span></div>
-    <div class="pb2">Python library that hooks into PyTorch's memory allocator → produces timeline breakdown: model params, gradients, optimizer states, activations per layer, KV cache, fragmentation. Interactive HTML timeline (like Chrome DevTools for GPUs).<ul><li>Correctly attributes 95%+ of GPU memory to categories</li><li>Publish as <code>pip install gpu-memory-profiler</code></li></ul></div>
+  <div class="alert as">
+    <strong>Strategic Hiring Rule:</strong> Complete Projects 1, 2, and 3 to begin applying for AI Engineer / Applied AI Engineer roles. Projects 4 and 5 are advanced AI Infrastructure systems projects for the subsequent transition.
   </div>
 
-  <h2>🔥 Elite — Research Implementations</h2>
-  <div class="pc2" style="--_a:var(--pink)">
-    <div class="ptit">4. Continuous Batching Scheduler from Scratch (Mini-vLLM) <span class="pill pp">Phase 4 · 6–8 weeks</span></div>
-    <div class="pmeta"><span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">PagedAttention</span><span class="chip">Block manager</span><span class="chip">Preemption</span></div>
-    <div class="pb2">Minimal but correct: block manager, sequence group management, preemption (swap to CPU when OOM), iteration-level scheduling loop.<ul><li>8–12x throughput vs static batching on mixed-length workload</li><li>95%+ memory utilization vs 60–70% for static batching</li><li>Blog post: "I implemented PagedAttention from scratch. Here's what I learned."</li></ul></div>
+  <!-- PART 1: AI ENGINEER PORTFOLIO -->
+  <h2 style="color:var(--green);"><span style="font-size:22px;">🟢</span> Part 1: AI Engineer Portfolio Projects (Stage 1 Exit Gate)</h2>
+  <p style="color:var(--text2);font-size:13.5px;margin-bottom:1.5rem;">Build these 3 projects during Phases 1–3 to qualify for AI Engineer and Applied AI Engineer roles.</p>
+
+  <!-- PROJECT 1 -->
+  <div class="pc2" style="--_a:var(--green);margin-bottom:2rem;">
+    <div class="ptit">
+      Project 1 &bull; Production RAG System with Hybrid Search &amp; Cross-Encoder Re-ranking
+      <span class="pill pg">AI Engineer Portfolio &bull; P0</span>
+    </div>
+    <div class="pmeta">
+      <span class="chip">FastAPI</span><span class="chip">Qdrant / pgvector</span><span class="chip">BM25 Sparse Search</span>
+      <span class="chip">Dense Embeddings</span><span class="chip">Cross-Encoder Re-ranker</span><span class="chip">Docker</span><span class="chip">DeepEval</span>
+    </div>
+    <div class="pb2">
+      <p style="margin-bottom:0.75rem;">
+        An enterprise-grade document retrieval-augmented generation microservice that combines sparse keyword matching (BM25) and dense semantic vectors using Reciprocal Rank Fusion (RRF), re-ranks top candidates with a cross-encoder model, streams responses via SSE, and provides precise source citations.
+      </p>
+      
+      <div class="g2" style="gap:1rem;margin-bottom:0.75rem;">
+        <div style="background:var(--bg3);padding:0.85rem;border-radius:6px;border:1px solid var(--border);">
+          <strong style="color:var(--text);font-size:12px;display:block;margin-bottom:4px;">📋 Prerequisites &amp; Resources</strong>
+          <div style="font-size:11.5px;color:var(--text2);line-height:1.6;">
+            &bull; <strong>Prerequisites:</strong> FastAPI, Docker, basic vector similarity math.<br>
+            &bull; <strong>Primary Resource:</strong> <a href="https://qdrant.tech/articles/hybrid-search/" target="_blank" style="color:var(--accent2)">Qdrant Hybrid Search Guide</a> &bull; <a href="https://python.langchain.com/docs/tutorials/rag/" target="_blank" style="color:var(--accent2)">LangChain RAG Tutorial</a>.
+          </div>
+        </div>
+        <div style="background:var(--bg3);padding:0.85rem;border-radius:6px;border:1px solid var(--border);">
+          <strong style="color:var(--teal);font-size:12px;display:block;margin-bottom:4px;">📊 Metrics &amp; Benchmarks</strong>
+          <div style="font-size:11.5px;color:var(--text2);line-height:1.6;">
+            &bull; Context Recall &gt; 0.88 on test corpus.<br>
+            &bull; Retrieval Latency (p95) &lt; 350ms across 1,000 queries.<br>
+            &bull; Memory footprint &lt; 1.5GB RAM in Docker container.
+          </div>
+        </div>
+      </div>
+
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:8px 0 4px;letter-spacing:.05em;">Implementation Milestones:</h4>
+      <ul class="steps">
+        <li><strong>Milestone 1:</strong> Ingestion pipeline: semantic chunking + metadata enrichment (document title, section, page).</li>
+        <li><strong>Milestone 2:</strong> Hybrid index in Qdrant: dense BGE embeddings + BM25 sparse index combined via Reciprocal Rank Fusion (RRF).</li>
+        <li><strong>Milestone 3:</strong> Cross-encoder re-ranking layer (Cohere / BGE-Reranker) scoring top 20 candidates down to top 4.</li>
+        <li><strong>Milestone 4:</strong> FastAPI backend exposing <code>POST /v1/query</code> (streaming SSE tokens with JSON citation payload).</li>
+      </ul>
+
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:8px 0 4px;letter-spacing:.05em;">Testing &amp; GitHub Requirements:</h4>
+      <ul class="steps">
+        <li><strong>Testing:</strong> <code>pytest tests/ -v</code> covering chunking edge cases, vector store connectivity, and empty query fallbacks. Automated DeepEval test asserting Faithfulness &gt; 0.85.</li>
+        <li><strong>Deliverables &amp; GitHub:</strong> Multi-container <code>docker compose up</code> setup (FastAPI + Qdrant), architecture diagram in README, and Locust load-test script.</li>
+      </ul>
+
+      <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.25);border-radius:6px;padding:0.75rem;margin-top:0.75rem;font-size:12.5px;">
+        <strong style="color:var(--green);">💬 What You Should Explain in an Interview:</strong> Explain why naive dense vector search fails on keyword queries (e.g., exact part numbers or acronyms) and why hybrid search with RRF and cross-encoder re-ranking balances semantic depth with keyword precision. Defend chunk size vs chunk overlap trade-offs and latency overhead of the cross-encoder.
+      </div>
+    </div>
   </div>
 
-  <h2>⚡ Strong — Distributed Training</h2>
-  <div class="pc2" style="--_a:var(--accent)">
-    <div class="ptit">5. Training Efficiency Profiler — Finding the Real Bottleneck <span class="pill pp">Phase 4 · 5–6 weeks</span></div>
-    <div class="pmeta"><span class="chip">PyTorch Profiler</span><span class="chip">NCCL</span><span class="chip">FSDP/DDP</span><span class="chip">MFU tracking</span></div>
-    <div class="pb2">Takes a PyTorch profiler trace → auto-computes MFU (Model FLOP Utilization), communication efficiency, data loading stalls, CPU-GPU sync overhead → outputs prioritized fix recommendations.<ul><li>MFU improvements from 38% → 51% after recommendations</li><li>Correctly identifies bottlenecks in 90%+ of test cases</li></ul></div>
+  <!-- PROJECT 2 -->
+  <div class="pc2" style="--_a:var(--green);margin-bottom:2rem;">
+    <div class="ptit">
+      Project 2 &bull; Automated LLM Evaluation &amp; Guardrail CI/CD Platform
+      <span class="pill pg">AI Engineer Portfolio &bull; P0 &bull; Catalog QA Superpower</span>
+    </div>
+    <div class="pmeta">
+      <span class="chip">DeepEval</span><span class="chip">Promptfoo</span><span class="chip">GitHub Actions CI</span>
+      <span class="chip">Synthetic Test Generation</span><span class="chip">Hallucination Detection</span><span class="chip">Prompt Injection Tests</span><span class="chip">Pydantic v2</span>
+    </div>
+    <div class="pb2">
+      <p style="margin-bottom:0.75rem;">
+        An automated evaluation platform that directly translates your Catalog Quality Engineer experience into AI test engineering. Generates synthetic edge-case test datasets from catalog hierarchies, evaluates model outputs for hallucinations and schema compliance, tests prompt injection vulnerabilities, and blocks GitHub PR merges on score regressions.
+      </p>
+
+      <div class="g2" style="gap:1rem;margin-bottom:0.75rem;">
+        <div style="background:var(--bg3);padding:0.85rem;border-radius:6px;border:1px solid var(--border);">
+          <strong style="color:var(--text);font-size:12px;display:block;margin-bottom:4px;">📋 Prerequisites &amp; Resources</strong>
+          <div style="font-size:11.5px;color:var(--text2);line-height:1.6;">
+            &bull; <strong>Prerequisites:</strong> Catalog QA validation background, Python, GitHub Actions.<br>
+            &bull; <strong>Primary Resource:</strong> <a href="https://docs.confident-ai.com/" target="_blank" style="color:var(--accent2)">DeepEval Documentation</a> &bull; <a href="https://www.promptfoo.dev/docs/intro/" target="_blank" style="color:var(--accent2)">Promptfoo Documentation</a>.
+          </div>
+        </div>
+        <div style="background:var(--bg3);padding:0.85rem;border-radius:6px;border:1px solid var(--border);">
+          <strong style="color:var(--teal);font-size:12px;display:block;margin-bottom:4px;">📊 Metrics &amp; Benchmarks</strong>
+          <div style="font-size:11.5px;color:var(--text2);line-height:1.6;">
+            &bull; 100% detection of malformed schema JSON outputs.<br>
+            &bull; Zero false negatives on prompt injection jailbreak benchmark.<br>
+            &bull; Automated CI test suite completes in &lt; 3 minutes.
+          </div>
+        </div>
+      </div>
+
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:8px 0 4px;letter-spacing:.05em;">Implementation Milestones:</h4>
+      <ul class="steps">
+        <li><strong>Milestone 1:</strong> Synthetic dataset generation engine: turns raw catalog taxonomy into 100 diverse ground-truth QA and edge-case pairs.</li>
+        <li><strong>Milestone 2:</strong> DeepEval test harness implementing Faithfulness, Answer Relevancy, and G-Eval custom metrics.</li>
+        <li><strong>Milestone 3:</strong> Promptfoo red-teaming configuration testing for prompt injection, jailbreaking, and PII leakage.</li>
+        <li><strong>Milestone 4:</strong> GitHub Actions workflow that executes the evaluation pipeline on every Pull Request and fails CI if scores regress.</li>
+      </ul>
+
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:8px 0 4px;letter-spacing:.05em;">Testing &amp; GitHub Requirements:</h4>
+      <ul class="steps">
+        <li><strong>Testing:</strong> Automated assertion that a deliberately broken prompt fails the CI gate with clear regression reports.</li>
+        <li><strong>Deliverables &amp; GitHub:</strong> Full repository with working GitHub Actions workflow, sample evaluation badges in README, and documentation explaining how Catalog QA validation methodology translates into LLM regression testing.</li>
+      </ul>
+
+      <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.25);border-radius:6px;padding:0.75rem;margin-top:0.75rem;font-size:12.5px;">
+        <strong style="color:var(--green);">💬 What You Should Explain in an Interview:</strong> Explain how your Catalog Quality Engineering background gave you an intuition for edge cases, structured taxonomies, and regression prevention. Defend LLM-as-a-judge vs deterministic heuristic checks, how to avoid judge bias, and how evaluation harnesses prevent silent prompt regressions in production.
+      </div>
+    </div>
   </div>
 
-  <h2>⚡ Strong — LLM Serving</h2>
-  <div class="pc2" style="--_a:var(--teal)">
-    <div class="ptit">6. Intelligent Request Router with Cost-Aware Model Selection <span class="pill pt">Phase 3–4 · 4–5 weeks</span></div>
-    <div class="pmeta"><span class="chip">FastAPI</span><span class="chip">vLLM</span><span class="chip">Cascade routing</span><span class="chip">SLO enforcement</span><span class="chip">Prometheus</span></div>
-    <div class="pb2">Router in front of multiple model instances. Tiny classifier scores complexity → routes to 7B or 70B. Cascade routing, cost tracking per request, A/B testing framework.<ul><li>40–60% cost reduction vs always using 70B</li><li>&lt;3ms routing latency added</li><li>Quality degradation &lt;3% on benchmarks</li></ul></div>
+  <!-- PROJECT 3 -->
+  <div class="pc2" style="--_a:var(--green);margin-bottom:2.5rem;">
+    <div class="ptit">
+      Project 3 &bull; Production AI Agent with LangGraph, Resilient Retries &amp; Human Approval
+      <span class="pill pg">AI Engineer Portfolio &bull; P0</span>
+    </div>
+    <div class="pmeta">
+      <span class="chip">LangGraph</span><span class="chip">StateGraph</span><span class="chip">Tool Calling</span>
+      <span class="chip">SQLite Checkpointer</span><span class="chip">Human-in-the-Loop</span><span class="chip">LangSmith</span><span class="chip">Tenacity</span>
+    </div>
+    <div class="pb2">
+      <p style="margin-bottom:0.75rem;">
+        A stateful, multi-step autonomous AI agent built using LangGraph. Features deterministic state transitions, tool execution loops, automatic retry handling, transactional rollbacks, human approval gates for critical state mutations, and end-to-end observability tracing.
+      </p>
+
+      <div class="g2" style="gap:1rem;margin-bottom:0.75rem;">
+        <div style="background:var(--bg3);padding:0.85rem;border-radius:6px;border:1px solid var(--border);">
+          <strong style="color:var(--text);font-size:12px;display:block;margin-bottom:4px;">📋 Prerequisites &amp; Resources</strong>
+          <div style="font-size:11.5px;color:var(--text2);line-height:1.6;">
+            &bull; <strong>Prerequisites:</strong> Python OOP, Pydantic schemas, function calling fundamentals.<br>
+            &bull; <strong>Primary Resource:</strong> <a href="https://langchain-ai.github.io/langgraph/tutorials/introduction/" target="_blank" style="color:var(--accent2)">LangGraph Official Introduction</a> &bull; <a href="https://docs.smith.langchain.com/" target="_blank" style="color:var(--accent2)">LangSmith Docs</a>.
+          </div>
+        </div>
+        <div style="background:var(--bg3);padding:0.85rem;border-radius:6px;border:1px solid var(--border);">
+          <strong style="color:var(--teal);font-size:12px;display:block;margin-bottom:4px;">📊 Metrics &amp; Benchmarks</strong>
+          <div style="font-size:11.5px;color:var(--text2);line-height:1.6;">
+            &bull; 0 infinite loops under adversarial inputs.<br>
+            &bull; 100% state recovery across process restarts.<br>
+            &bull; Deterministic execution trace logging in LangSmith.
+          </div>
+        </div>
+      </div>
+
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:8px 0 4px;letter-spacing:.05em;">Implementation Milestones:</h4>
+      <ul class="steps">
+        <li><strong>Milestone 1:</strong> Define state schema using Pydantic; construct cyclic StateGraph with agent, tool execution, and validation nodes.</li>
+        <li><strong>Milestone 2:</strong> Implement tool suite: SQL query tool, price calculation tool, and external notification tool.</li>
+        <li><strong>Milestone 3:</strong> State persistence using SQLite/Postgres checkpointer; enable session resumption and replay.</li>
+        <li><strong>Milestone 4:</strong> Human-in-the-Loop breakpoint: agent pauses execution, notifies reviewer, and waits for approve/reject signal before updating database records.</li>
+      </ul>
+
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:8px 0 4px;letter-spacing:.05em;">Testing &amp; GitHub Requirements:</h4>
+      <ul class="steps">
+        <li><strong>Testing:</strong> Unit tests mocking tool outputs and verifying that tool failures trigger exponential retries without crashing the graph.</li>
+        <li><strong>Deliverables &amp; GitHub:</strong> Standalone repository with LangSmith trace links, state graph visualization diagram in README, and interactive CLI demo.</li>
+      </ul>
+
+      <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.25);border-radius:6px;padding:0.75rem;margin-top:0.75rem;font-size:12.5px;">
+        <strong style="color:var(--green);">💬 What You Should Explain in an Interview:</strong> Explain why uncontrolled agent while-loops fail in production and why LangGraph state machines provide deterministic control. Defend checkpointing for fault-tolerance, how human approval interrupts work, and how tool failures are caught and repaired automatically.
+      </div>
+    </div>
   </div>
 
-  <h2>✓ Solid — Open Source Tools</h2>
-  <div class="pc2" style="--_a:var(--green)">
-    <div class="ptit">7. LLM Serving Cost Calculator + Hardware Recommendation Engine <span class="pill pg">Phase 3 · 3–4 weeks</span></div>
-    <div class="pmeta"><span class="chip">Python</span><span class="chip">GPU specs DB</span><span class="chip">Cloud pricing APIs</span><span class="chip">CLI + Web UI</span></div>
-    <div class="pb2">CLI + web UI: input model, target QPS, latency SLO, budget → output recommended GPU, number needed, $/million tokens, comparison across GPU options (A100, H100, L40S, A10G).<ul><li>Recommendations within 15% of empirical measurements</li><li>Publish as <code>pip install llm-cost-calc</code></li></ul></div>
+  <!-- PART 2: AI INFRASTRUCTURE PORTFOLIO -->
+  <h2 style="color:var(--coral);"><span style="font-size:22px;">🔴</span> Part 2: AI Infrastructure Portfolio Projects (Stage 2 Exit Gate)</h2>
+  <p style="color:var(--text2);font-size:13.5px;margin-bottom:1.5rem;">Build these 2 advanced systems projects during Phases 4–5 to qualify for AI Infrastructure and ML Systems roles.</p>
+
+  <!-- PROJECT 4 -->
+  <div class="pc2" style="--_a:var(--coral);margin-bottom:2rem;">
+    <div class="ptit">
+      Project 4 &bull; High-Throughput LLM Inference Benchmarking Platform
+      <span class="pill pc">AI Infrastructure Portfolio &bull; P0</span>
+    </div>
+    <div class="pmeta">
+      <span class="chip">vLLM</span><span class="chip">Continuous Batching</span><span class="chip">PagedAttention</span>
+      <span class="chip">Time to First Token (TTFT)</span><span class="chip">Inter-Token Latency (ITL)</span><span class="chip">GPU Memory Saturation</span><span class="chip">Locust / Prometheus</span>
+    </div>
+    <div class="pb2">
+      <p style="margin-bottom:0.75rem;">
+        A rigorous benchmarking and profiling platform that deploys vLLM with PagedAttention and continuous batching, simulates concurrent user traffic (10 to 200 streams), tracks latency percentiles (p50/p95/p99 TTFT and ITL), and empirically compares throughput against naive Hugging Face pipelines.
+      </p>
+
+      <div class="g2" style="gap:1rem;margin-bottom:0.75rem;">
+        <div style="background:var(--bg3);padding:0.85rem;border-radius:6px;border:1px solid var(--border);">
+          <strong style="color:var(--text);font-size:12px;display:block;margin-bottom:4px;">📋 Prerequisites &amp; Resources</strong>
+          <div style="font-size:11.5px;color:var(--text2);line-height:1.6;">
+            &bull; <strong>Prerequisites:</strong> vLLM basics, concurrency modeling, GPU memory math.<br>
+            &bull; <strong>Primary Resource:</strong> <a href="https://docs.vllm.ai/" target="_blank" style="color:var(--accent2)">vLLM Documentation</a> &bull; <a href="https://arxiv.org/abs/2309.06180" target="_blank" style="color:var(--accent2)">PagedAttention Paper</a>.
+          </div>
+        </div>
+        <div style="background:var(--bg3);padding:0.85rem;border-radius:6px;border:1px solid var(--border);">
+          <strong style="color:var(--teal);font-size:12px;display:block;margin-bottom:4px;">📊 Metrics &amp; Benchmarks</strong>
+          <div style="font-size:11.5px;color:var(--text2);line-height:1.6;">
+            &bull; &gt; 3.0x throughput (tokens/sec) vs naive Hugging Face pipeline.<br>
+            &bull; Zero OOM errors under 100 concurrent streams.<br>
+            &bull; VRAM breakdown: Model weights vs KV Cache vs Activations.
+          </div>
+        </div>
+      </div>
+
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:8px 0 4px;letter-spacing:.05em;">Implementation Milestones:</h4>
+      <ul class="steps">
+        <li><strong>Milestone 1:</strong> Deploy vLLM serving open-weight model with continuous batching and PagedAttention.</li>
+        <li><strong>Milestone 2:</strong> Build async Python benchmark client simulating Poisson arrival of user requests with mixed prompt/generation lengths.</li>
+        <li><strong>Milestone 3:</strong> Measure and record TTFT (prefill phase latency) and ITL (decode phase latency) across concurrency levels.</li>
+        <li><strong>Milestone 4:</strong> Profile GPU memory consumption using PyTorch memory hooks and DCGM to analyze KV cache allocation and fragmentation.</li>
+      </ul>
+
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:8px 0 4px;letter-spacing:.05em;">Testing &amp; GitHub Requirements:</h4>
+      <ul class="steps">
+        <li><strong>Testing:</strong> Automated load test asserting that latency SLOs are maintained up to saturation point with zero request drops.</li>
+        <li><strong>Deliverables &amp; GitHub:</strong> Reproducible benchmarking script, Matplotlib latency vs concurrency graphs, and an engineering blog post: "Empirical Dissection of vLLM Continuous Batching."</li>
+      </ul>
+
+      <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.25);border-radius:6px;padding:0.75rem;margin-top:0.75rem;font-size:12.5px;">
+        <strong style="color:var(--coral);">💬 What You Should Explain in an Interview:</strong> Explain why LLM decoding is memory-bandwidth bound while prefill is compute-bound. Derive the KV cache formula ($2 	imes 	ext{layers} 	imes 	ext{heads} 	imes 	ext{dim} 	imes 	ext{bytes} 	imes 	ext{seqlen}$), explain how PagedAttention eliminates internal fragmentation, and explain how chunked prefill prevents decode latency spikes.
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 5 -->
+  <div class="pc2" style="--_a:var(--red);margin-bottom:2rem;">
+    <div class="ptit">
+      Project 5 &bull; Custom GPU Kernel Optimisation &amp; Roofline Analysis in OpenAI Triton
+      <span class="pill pr">AI Infrastructure Portfolio &bull; P2 &bull; Elite Systems Mastery</span>
+    </div>
+    <div class="pmeta">
+      <span class="chip">OpenAI Triton</span><span class="chip">CUDA</span><span class="chip">PyTorch</span>
+      <span class="chip">Nsight Compute</span><span class="chip">Roofline Analysis</span><span class="chip">Kernel Fusion</span><span class="chip">HBM Bandwidth</span>
+    </div>
+    <div class="pb2">
+      <p style="margin-bottom:0.75rem;">
+        Implementation of a high-performance custom GPU kernel in OpenAI Triton (e.g. Fused LayerNorm or Fused Softmax) that fuses memory-bound operations into a single GPU pass. Profiles GPU memory traffic using NVIDIA Nsight Compute, verifies numerical accuracy against PyTorch, and constructs an empirical Roofline analysis.
+      </p>
+
+      <div class="g2" style="gap:1rem;margin-bottom:0.75rem;">
+        <div style="background:var(--bg3);padding:0.85rem;border-radius:6px;border:1px solid var(--border);">
+          <strong style="color:var(--text);font-size:12px;display:block;margin-bottom:4px;">📋 Prerequisites &amp; Resources</strong>
+          <div style="font-size:11.5px;color:var(--text2);line-height:1.6;">
+            &bull; <strong>Prerequisites:</strong> C++ systems memory, GPU architecture (SMs, warps), PyTorch.<br>
+            &bull; <strong>Primary Resource:</strong> <a href="https://triton-lang.org/main/getting-started/tutorials/index.html" target="_blank" style="color:var(--accent2)">OpenAI Triton Tutorials</a> &bull; <a href="https://www.youtube.com/playlist?list=PLoROMvodv4rPOWA-omMM6STXaWW4FvJT8" target="_blank" style="color:var(--accent2)">Stanford CS149: Parallel Computing</a>.
+          </div>
+        </div>
+        <div style="background:var(--bg3);padding:0.85rem;border-radius:6px;border:1px solid var(--border);">
+          <strong style="color:var(--teal);font-size:12px;display:block;margin-bottom:4px;">📊 Metrics &amp; Benchmarks</strong>
+          <div style="font-size:11.5px;color:var(--text2);line-height:1.6;">
+            &bull; &gt; 1.4x speedup vs naive PyTorch eager op.<br>
+            &bull; Numerical accuracy within $10^{-5}$ tolerance vs FP32 reference.<br>
+            &bull; Empirical memory bandwidth utilization &gt; 80% of peak hardware ceiling.
+          </div>
+        </div>
+      </div>
+
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:8px 0 4px;letter-spacing:.05em;">Implementation Milestones:</h4>
+      <ul class="steps">
+        <li><strong>Milestone 1:</strong> Write naive PyTorch reference implementation with timing harness.</li>
+        <li><strong>Milestone 2:</strong> Implement custom Triton kernel using <code>@triton.jit</code>, block pointers, and SRAM accumulation.</li>
+        <li><strong>Milestone 3:</strong> Numerical validation test comparing outputs against PyTorch across various matrix dimensions.</li>
+        <li><strong>Milestone 4:</strong> Profile with NVIDIA Nsight Compute (NCU); calculate arithmetic intensity (FLOPs/byte) and plot empirical Roofline chart.</li>
+      </ul>
+
+      <h4 style="font-size:12px;text-transform:uppercase;color:var(--text3);margin:8px 0 4px;letter-spacing:.05em;">Testing &amp; GitHub Requirements:</h4>
+      <ul class="steps">
+        <li><strong>Testing:</strong> <code>pytest tests/test_kernel.py</code> running parameterized test suite asserting zero numerical divergence across batch and sequence dimensions.</li>
+        <li><strong>Deliverables &amp; GitHub:</strong> Standalone repository with clean Triton source code, Nsight profiling report screenshots, and a clear breakdown of memory coalescing and SRAM register reuse.</li>
+      </ul>
+
+      <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.25);border-radius:6px;padding:0.75rem;margin-top:0.75rem;font-size:12.5px;">
+        <strong style="color:var(--red);">💬 What You Should Explain in an Interview:</strong> Explain why standard PyTorch ops write intermediate tensors back to slow High Bandwidth Memory (HBM) and how Triton kernel fusion keeps data in fast on-chip SRAM. Defend memory coalescing, warp execution, and how to read a Roofline model to determine if a kernel is memory-bandwidth bound or compute bound.
+      </div>
+    </div>
   </div>
 </div>
+
 
 <!-- FLOATING NAV -->
 <div class="fw" id="fw">
@@ -3042,7 +3282,8 @@ Client polls &rarr; GET /jobs/{id} &rarr; Returns PENDING | RUNNING | COMPLETED<
     <div class="fmi" onclick="sP('p1');cF()"><span class="fmn">1</span>Phase 1 — Foundations</div>
     <div class="fmi" onclick="sP('p2');cF()"><span class="fmn">2</span>Phase 2 — ML & DL</div>
     <div class="fmi" onclick="sP('p3');cF()"><span class="fmn">3</span>Phase 3 — GenAI & LLMs</div>
-    <div class="fmi" onclick="sP('p4');cF()"><span class="fmn">4</span>Phase 4 — AI Infra</div>
+    <div class="fmi" onclick="sP('p4');cF()"><span class="fmn">4</span>Phase 4 — ML Platform</div>
+    <div class="fmi" onclick="sP('p5');cF()"><span class="fmn" style="color:var(--coral)">5</span>Phase 5 — AI Infra</div>
     <div class="fmi" onclick="sP('dsa');cF()"><span class="fmn" style="color:#4ade80">★</span>DSA — C++ Daily</div>
     <div class="fmi" onclick="sP('sd');cF()"><span class="fmn" style="color:var(--teal)">6</span>System Design</div>
     <div class="fmi" onclick="sP('proj');cF()"><span class="fmn">7</span>Projects Portfolio</div>
@@ -3057,15 +3298,38 @@ Client polls &rarr; GET /jobs/{id} &rarr; Returns PENDING | RUNNING | COMPLETED<
 <script>
 const SECS=[
   {id:'home',label:'Overview',tag:'Home'},
-  {id:'ai-eng',label:'✦ AI Engineer Track (2026)',tag:'Career'},
-  {id:'p1',label:'Phase 1 — Foundations',tag:'Phase'},
+  {id:'ai-eng',label:'✦ AI Engineer Track (Parallel)',tag:'Career'},
+  {id:'p1',label:'Phase 1 — Software Eng Foundations',tag:'Phase'},
   {id:'p2',label:'Phase 2 — ML & Deep Learning',tag:'Phase'},
-  {id:'p3',label:'Phase 3 — GenAI & LLMs',tag:'Phase'},
-  {id:'p4',label:'Phase 4 — AI Infrastructure',tag:'Phase'},
+  {id:'p3',label:'Phase 3 — Applied AI Engineering',tag:'Phase'},
+  {id:'p4',label:'Phase 4 — ML Platform & Systems',tag:'Phase'},
+  {id:'p5',label:'Phase 5 — Advanced AI Infrastructure',tag:'Phase'},
   {id:'dsa',label:'DSA — C++ Daily Track',tag:'DSA'},
-  {id:'sd',label:'System Design (Cockpit)',tag:'Design'},
-  {id:'proj',label:'Projects Portfolio',tag:'Projects'},
+  {id:'sd',label:'System Design (8 Levels)',tag:'Design'},
+  {id:'proj',label:'Projects Portfolio (5 Core)',tag:'Projects'},
 ];
+
+function logDailyStudy() {
+  const today = new Date().toISOString().split('T')[0];
+  let streak = parseInt(localStorage.getItem('ai_study_streak') || '0', 10);
+  const lastDate = localStorage.getItem('ai_study_last_date');
+  if (lastDate !== today) {
+    streak += 1;
+    localStorage.setItem('ai_study_streak', streak);
+    localStorage.setItem('ai_study_last_date', today);
+  }
+  renderStreak();
+  alert('🎉 Fantastic work! Logged today\'s study session. Current streak: ' + streak + ' day(s). Remember: Consistency beats intensity. Protect your back and rest well!');
+}
+
+function renderStreak() {
+  const el = document.getElementById('streak-days');
+  if (el) {
+    const streak = localStorage.getItem('ai_study_streak') || '1';
+    el.textContent = streak + (parseInt(streak, 10) === 1 ? ' Day' : ' Days');
+  }
+}
+document.addEventListener('DOMContentLoaded', renderStreak);
 let sIdx=-1;
 
 function filterPhase(phaseId){

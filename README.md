@@ -24,6 +24,22 @@ This repository integrates three production-ready web applications:
    - **7 Dedicated Interactive Pages**: Executive Dashboard, 13-Phase Curriculum (Phases A–M), Verified Topic-to-Resource Matrix, 7 Progressive Implementation Projects, Whiteboard Interview Vault (Levels 1–3), Live Capacity & Sizing Calculator, and 6-Mo / 12-Mo Schedules + Actionable First 14 Days.
    - **Hardware-Aware & Zero Budget**: Tailored for laptop hardware (16GB RAM + RTX 2050 4GB VRAM) with 100% free verified canonical links.
 
+4. **Catalog QA to AI Engineer & AI Infra Transition Cockpit** (`/ai-engineer-transition/`)
+   - **Interactive Visual Miro Canvas** (`/ai-engineer-transition/miro/index.html`): Infinite pan/zoom board with minimap, search, dark mode, and modal inspector for all transition stages.
+   - **Translation Playbook** (`CATALOG_QA_TO_AI_ENGINEER_TRANSLATION.md`): Exact dictionary converting catalog validation, taxonomy, and defect analysis into deterministic guardrails, RAG ontologies, and evaluation harnesses.
+   - **6 Connected Portfolio Projects** (`PROJECT_PORTFOLIO_BLUEPRINT.md`): Production blueprints for Data-Quality Assistant, LLM Eval Harness, E-Commerce RAG, Resilient Automation, Tool-Using Agent with Safeguards, and Serving Service.
+   - **Interview Clearing Playbook** (`INTERVIEW_CLEARING_PLAYBOOK.md`): Practical Python DSA, AI system design, capacity math, evaluation metrics, and 25 technical Q&As.
+   - **24-Week Schedule & Audit** (`WEEKLY_EXECUTION_TIMETABLE.md`): Calibrated 10–14 hrs/week plan with light Mon/Wed and zero-debt audit.
+
+
+---
+
+## 🤖 Instant AI Context Primer (For ChatGPT / Claude / Gemini)
+
+Need an AI mentor or coding copilot to understand this entire curriculum, its 8 operating rules, the 168-day DSA track, and 7 production capstones?
+
+Simply copy and paste [**`AI_ROADMAP_AI_PRIMER.md`**](file:///home/dhruv/Desktop/dsa_new/AI_ROADMAP_AI_PRIMER.md) into **ChatGPT** (Custom Instructions / GPT), **Claude** (Project Instructions / Knowledge), **Cursor**, or **Gemini**. It equips any LLM with the complete system architecture, physical hardware constraints, capacity calculation formulas, failure taxonomy (F1–F12), and interactive commands.
+
 ---
 
 ## 🛡️ The Execution-Proof Engineering Framework (8 Inviolable Rules)
